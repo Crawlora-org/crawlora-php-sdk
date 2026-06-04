@@ -1,0 +1,34 @@
+{
+    "name": "crawlora/sdk",
+    "description": "PHP client for the Crawlora web-scraping API: grouped helpers and a dynamic call interface for every public endpoint, with retries, pagination, and middleware hooks.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["crawlora", "web-scraping", "scraping", "api", "sdk", "client"],
+    "homepage": "https://crawlora.net",
+    "require": {
+        "php": ">=8.1",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10",
+        "phpstan/phpstan": "^1.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Crawlora\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Crawlora\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "stan": "phpstan analyse"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

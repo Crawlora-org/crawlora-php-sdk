@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: ["8.1", "8.2", "8.3"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: curl, json
+          coverage: none
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist
+      - name: Regenerate SDK
+        run: python3 scripts/generate.py
+      - name: Check generated files
+        run: git diff --exit-code
+      - name: Test
+        run: vendor/bin/phpunit
+      - name: Static analysis
+        run: vendor/bin/phpstan analyse --no-progress

@@ -1,0 +1,31 @@
+<?php
+
+namespace Crawlora;
+
+/**
+ * Stub: keep PHPStan from expanding the huge generated const literals into
+ * combinatorial union types (which makes analysis hang). The runtime values
+ * live in src/Operations.php; only their shapes matter for analysis.
+ */
+final class Operations
+{
+    /** @var array<string,array<string,mixed>> */
+    public const OPERATIONS = [];
+
+    /** @var array<string,array<string,string>> */
+    public const GROUPS = [];
+
+    public const OPERATION_COUNT = 0;
+
+    /** @var array<int,string> */
+    public const OPERATION_IDS = [];
+
+    /** @return array<string,mixed>|null */
+    public static function get(string $operationId): array|null {}
+
+    /** @return array<string,array<string,string>> */
+    public static function groups(): array {}
+
+    /** @return array<string,array<string,mixed>> */
+    public static function all(): array {}
+}
