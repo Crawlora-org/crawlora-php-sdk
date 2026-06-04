@@ -24,6 +24,15 @@ foreach ($result['data'] as $hit) {
 }
 ```
 
+## Reddit and Brand
+
+Newer platforms are grouped like every other endpoint:
+
+```php
+$posts = $client->reddit->search(['q' => 'php', 'subreddit' => 'programming']);
+$brand = $client->brand->retrieve(['domain' => 'stripe.com']);
+```
+
 ## Walk every page
 
 ```php

@@ -1312,6 +1312,52 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'brand-retrieve' => [
+            'id' => 'brand-retrieve',
+            'method' => 'GET',
+            'path' => '/brand/retrieve',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'domain',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'force_language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'maxSpeed',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'maxAgeMs',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'timeoutMS',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'brave-images' => [
             'id' => 'brave-images',
             'method' => 'GET',
@@ -7221,6 +7267,194 @@ final class Operations
             ],
             'security' => [],
         ],
+        'reddit-comments' => [
+            'id' => 'reddit-comments',
+            'method' => 'GET',
+            'path' => '/reddit/comments/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'confidence',
+                        'top',
+                        'new',
+                        'controversial',
+                        'old',
+                        'qa',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'depth',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-post' => [
+            'id' => 'reddit-post',
+            'method' => 'GET',
+            'path' => '/reddit/post/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-search' => [
+            'id' => 'reddit-search',
+            'method' => 'GET',
+            'path' => '/reddit/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'subreddit',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'hot',
+                        'new',
+                        'top',
+                        'comments',
+                    ],
+                ],
+                [
+                    'name' => 'time',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'hour',
+                        'day',
+                        'week',
+                        'month',
+                        'year',
+                        'all',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-subreddit-posts' => [
+            'id' => 'reddit-subreddit-posts',
+            'method' => 'GET',
+            'path' => '/reddit/subreddit/{subreddit}/posts',
+            'pathParams' => [
+                'subreddit',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'hot',
+                        'new',
+                        'top',
+                        'rising',
+                    ],
+                ],
+                [
+                    'name' => 'time',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'hour',
+                        'day',
+                        'week',
+                        'month',
+                        'year',
+                        'all',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'referrals-click' => [
             'id' => 'referrals-click',
             'method' => 'POST',
@@ -11357,7 +11591,7 @@ final class Operations
                 'application/json',
             ],
             'security' => [
-                'JWTAuth',
+                'ApiKeyAuth',
             ],
         ],
         'usage-me-overview' => [
@@ -11399,7 +11633,7 @@ final class Operations
                 'application/json',
             ],
             'security' => [
-                'JWTAuth',
+                'ApiKeyAuth',
             ],
         ],
         'usage-me-recent-ips' => [
@@ -11446,7 +11680,7 @@ final class Operations
                 'application/json',
             ],
             'security' => [
-                'JWTAuth',
+                'ApiKeyAuth',
             ],
         ],
         'usage-me-timeseries' => [
@@ -11502,7 +11736,7 @@ final class Operations
                 'application/json',
             ],
             'security' => [
-                'JWTAuth',
+                'ApiKeyAuth',
             ],
         ],
         'user-me' => [
@@ -11715,6 +11949,61 @@ final class Operations
             ],
             'security' => [
                 'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-finance-lookup' => [
+            'id' => 'yahoo-finance-lookup',
+            'method' => 'GET',
+            'path' => '/yahoo-finance/lookup',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'equity',
+                        'etf',
+                        'mutualfund',
+                        'index',
+                        'future',
+                        'currency',
+                        'cryptocurrency',
+                    ],
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'start',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'start',
             ],
         ],
         'yahoo-finance-market-status' => [
@@ -13168,6 +13457,9 @@ final class Operations
             'suggest' => 'bing-suggest',
             'videos' => 'bing-videos',
         ],
+        'brand' => [
+            'retrieve' => 'brand-retrieve',
+        ],
         'brave' => [
             'images' => 'brave-images',
             'news' => 'brave-news',
@@ -13318,6 +13610,12 @@ final class Operations
             'reviews' => 'producthunt-reviews',
             'search' => 'producthunt-search',
         ],
+        'reddit' => [
+            'comments' => 'reddit-comments',
+            'post' => 'reddit-post',
+            'search' => 'reddit-search',
+            'subredditPosts' => 'reddit-subreddit-posts',
+        ],
         'referrals' => [
             'click' => 'referrals-click',
             'me' => 'referrals-me',
@@ -13461,6 +13759,7 @@ final class Operations
             'download' => 'yahoo-finance-download',
             'industries' => 'yahoo-finance-industries',
             'industry' => 'yahoo-finance-industry',
+            'lookup' => 'yahoo-finance-lookup',
             'marketStatus' => 'yahoo-finance-market-status',
             'marketSummary' => 'yahoo-finance-market-summary',
             'screenerCustom' => 'yahoo-finance-screener-custom',
@@ -13517,7 +13816,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 330;
+    public const OPERATION_COUNT = 336;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -13556,6 +13855,7 @@ final class Operations
         'bing-search',
         'bing-suggest',
         'bing-videos',
+        'brand-retrieve',
         'brave-images',
         'brave-news',
         'brave-search',
@@ -13682,6 +13982,10 @@ final class Operations
         'producthunt-reviews',
         'producthunt-search',
         'ready',
+        'reddit-comments',
+        'reddit-post',
+        'reddit-search',
+        'reddit-subreddit-posts',
         'referrals-click',
         'referrals-me',
         'referrals-me-events',
@@ -13802,6 +14106,7 @@ final class Operations
         'yahoo-finance-download',
         'yahoo-finance-industries',
         'yahoo-finance-industry',
+        'yahoo-finance-lookup',
         'yahoo-finance-market-status',
         'yahoo-finance-market-summary',
         'yahoo-finance-screener-custom',
@@ -13929,6 +14234,7 @@ final class OperationId
     public const BING_SEARCH = 'bing-search';
     public const BING_SUGGEST = 'bing-suggest';
     public const BING_VIDEOS = 'bing-videos';
+    public const BRAND_RETRIEVE = 'brand-retrieve';
     public const BRAVE_IMAGES = 'brave-images';
     public const BRAVE_NEWS = 'brave-news';
     public const BRAVE_SEARCH = 'brave-search';
@@ -14055,6 +14361,10 @@ final class OperationId
     public const PRODUCT_HUNT_PRODUCT = 'producthunt-product';
     public const PRODUCT_HUNT_REVIEWS = 'producthunt-reviews';
     public const PRODUCT_HUNT_SEARCH = 'producthunt-search';
+    public const REDDIT_COMMENTS = 'reddit-comments';
+    public const REDDIT_POST = 'reddit-post';
+    public const REDDIT_SEARCH = 'reddit-search';
+    public const REDDIT_SUBREDDIT_POSTS = 'reddit-subreddit-posts';
     public const REFERRALS_CLICK = 'referrals-click';
     public const REFERRALS_ME = 'referrals-me';
     public const REFERRALS_ME_EVENTS = 'referrals-me-events';
@@ -14175,6 +14485,7 @@ final class OperationId
     public const YAHOO_FINANCE_DOWNLOAD = 'yahoo-finance-download';
     public const YAHOO_FINANCE_INDUSTRIES = 'yahoo-finance-industries';
     public const YAHOO_FINANCE_INDUSTRY = 'yahoo-finance-industry';
+    public const YAHOO_FINANCE_LOOKUP = 'yahoo-finance-lookup';
     public const YAHOO_FINANCE_MARKET_STATUS = 'yahoo-finance-market-status';
     public const YAHOO_FINANCE_MARKET_SUMMARY = 'yahoo-finance-market-summary';
     public const YAHOO_FINANCE_SCREENER = 'yahoo-finance-screener';

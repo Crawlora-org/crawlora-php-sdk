@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.6.0-sdk.1
+
+- Added the **Reddit** platform (`reddit->search`, `reddit->post`,
+  `reddit->comments`, `reddit->subredditPosts`) and the **Brand** platform
+  (`brand->retrieve`), plus Yahoo Finance `yahooFinance->lookup`. Regenerated
+  from the public API contract.
+
 ## 1.5.0-sdk.3
 
 - Robustness: the curl transport carries the curl error number on failures, and

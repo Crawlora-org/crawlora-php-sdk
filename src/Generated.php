@@ -100,6 +100,12 @@ abstract class BillingGroup {}
 abstract class BingGroup {}
 
 /**
+ * @method mixed retrieve(array $params = [], array $options = []) brand-retrieve (GET /brand/retrieve)
+ *   params: string $domain, string $force_language, bool $maxSpeed, int $maxAgeMs, int $timeoutMS
+ */
+abstract class BrandGroup {}
+
+/**
  * @method mixed images(array $params = [], array $options = []) brave-images (GET /brave/images)
  *   params: string $q, int $offset, int $count, 'all'|'ar'|'at'|'au'|'be'|'br'|'ca'|'ch'|'cl'|'cn'|'de'|'dk'|'es'|'fi'|'fr'|'gb'|'gr'|'hk'|'id'|'in'|'it'|'jp'|'kr'|'mx'|'my'|'nl'|'no'|'nz'|'ph'|'pl'|'pt'|'ru'|'sa'|'se'|'sg'|'tr'|'tw'|'us'|'za' $country, 'de-de'|'en-ca'|'en-gb'|'en-in'|'en-us'|'fi-fi'|'fr-ca'|'fr-fr'|'ja-jp'|'pt-br'|'sq-al'|'sw-ke'|'zh-tw' $lang
  * @method mixed news(array $params = [], array $options = []) brave-news (GET /brave/news)
@@ -389,6 +395,18 @@ abstract class MetaGroup {}
 abstract class ProductHuntGroup {}
 
 /**
+ * @method mixed comments(array $params = [], array $options = []) reddit-comments (GET /reddit/comments/{id})
+ *   params: string $id, 'confidence'|'top'|'new'|'controversial'|'old'|'qa' $sort, int $limit, int $depth
+ * @method mixed post(array $params = [], array $options = []) reddit-post (GET /reddit/post/{id})
+ *   params: string $id
+ * @method mixed search(array $params = [], array $options = []) reddit-search (GET /reddit/search)
+ *   params: string $q, string $subreddit, 'relevance'|'hot'|'new'|'top'|'comments' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
+ * @method mixed subredditPosts(array $params = [], array $options = []) reddit-subreddit-posts (GET /reddit/subreddit/{subreddit}/posts)
+ *   params: string $subreddit, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
+ */
+abstract class RedditGroup {}
+
+/**
  * @method mixed click(array $params = [], array $options = []) referrals-click (POST /referrals/click)
  *   params: array $request
  * @method mixed me(array $params = [], array $options = []) referrals-me (GET /referrals/me)
@@ -658,6 +676,8 @@ abstract class UserGroup {}
  * @method mixed industries(array $params = [], array $options = []) yahoo-finance-industries (GET /yahoo-finance/industries)
  * @method mixed industry(array $params = [], array $options = []) yahoo-finance-industry (GET /yahoo-finance/industries/{key})
  *   params: string $key
+ * @method mixed lookup(array $params = [], array $options = []) yahoo-finance-lookup (GET /yahoo-finance/lookup)
+ *   params: string $query, 'all'|'equity'|'etf'|'mutualfund'|'index'|'future'|'currency'|'cryptocurrency' $type, int $count, int $start
  * @method mixed marketStatus(array $params = [], array $options = []) yahoo-finance-market-status (GET /yahoo-finance/market/{market}/status)
  *   params: string $market
  * @method mixed marketSummary(array $params = [], array $options = []) yahoo-finance-market-summary (GET /yahoo-finance/market/{market}/summary)
@@ -772,6 +792,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\AppStoreGroup $appStore
  * @property-read \Crawlora\Generated\BillingGroup $billing
  * @property-read \Crawlora\Generated\BingGroup $bing
+ * @property-read \Crawlora\Generated\BrandGroup $brand
  * @property-read \Crawlora\Generated\BraveGroup $brave
  * @property-read \Crawlora\Generated\CoinGeckoGroup $coinGecko
  * @property-read \Crawlora\Generated\DatasetsGroup $datasets
@@ -784,6 +805,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
  * @property-read \Crawlora\Generated\MetaGroup $meta
  * @property-read \Crawlora\Generated\ProductHuntGroup $productHunt
+ * @property-read \Crawlora\Generated\RedditGroup $reddit
  * @property-read \Crawlora\Generated\ReferralsGroup $referrals
  * @property-read \Crawlora\Generated\ShopAppGroup $shopApp
  * @property-read \Crawlora\Generated\ShopifyGroup $shopify

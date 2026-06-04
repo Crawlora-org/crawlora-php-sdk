@@ -11,6 +11,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\AppStoreGroup $appStore
  * @property-read \Crawlora\Generated\BillingGroup $billing
  * @property-read \Crawlora\Generated\BingGroup $bing
+ * @property-read \Crawlora\Generated\BrandGroup $brand
  * @property-read \Crawlora\Generated\BraveGroup $brave
  * @property-read \Crawlora\Generated\CoinGeckoGroup $coinGecko
  * @property-read \Crawlora\Generated\DatasetsGroup $datasets
@@ -23,6 +24,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
  * @property-read \Crawlora\Generated\MetaGroup $meta
  * @property-read \Crawlora\Generated\ProductHuntGroup $productHunt
+ * @property-read \Crawlora\Generated\RedditGroup $reddit
  * @property-read \Crawlora\Generated\ReferralsGroup $referrals
  * @property-read \Crawlora\Generated\ShopAppGroup $shopApp
  * @property-read \Crawlora\Generated\ShopifyGroup $shopify
