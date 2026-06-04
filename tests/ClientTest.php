@@ -394,4 +394,30 @@ PHP);
 
         return $params;
     }
+
+    public function testHeaderMergeIsCaseInsensitive(): void
+    {
+        $transport = new RecordingTransport([self::ok([])]);
+        $c = new Client(['apiKey' => 'k', 'transport' => $transport, 'headers' => ['X-Trace' => '1']]);
+        $c->bing->search(['q' => 'x'], ['headers' => ['x-trace' => '2']]);
+        $sent = $transport->calls[0]['headers'];
+        $traceKeys = array_values(array_filter(array_keys($sent), static fn ($k) => strtolower($k) === 'x-trace'));
+        $this->assertCount(1, $traceKeys, 'expected a single x-trace header');
+        $this->assertSame('2', $sent[$traceKeys[0]]);
+    }
+
+    public function testTimeoutClassifiedByCurlErrno(): void
+    {
+        // CurlTransport sets the exception code to the curl errno; 28 = timeout.
+        $transport = static function (array $request): array {
+            throw new \RuntimeException('connection failed', 28);
+        };
+        $c = new Client(['apiKey' => 'k', 'transport' => $transport]);
+        try {
+            $c->bing->search(['q' => 'x']);
+            $this->fail('expected NetworkError');
+        } catch (NetworkError $e) {
+            $this->assertStringContainsString('timed out', $e->getMessage());
+        }
+    }
 }

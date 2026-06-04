@@ -259,7 +259,10 @@ def render_client_stub(model):
 def main():
     if not SPEC_PATH.exists():
         raise SystemExit(f"public OpenAPI spec not found: {SPEC_PATH}")
-    spec = json.loads(SPEC_PATH.read_text())
+    try:
+        spec = json.loads(SPEC_PATH.read_text())
+    except (OSError, json.JSONDecodeError) as exc:
+        raise SystemExit(f"failed to read OpenAPI spec {SPEC_PATH}: {exc}")
     (ROOT / "openapi").mkdir(exist_ok=True)
     target_spec = ROOT / "openapi" / "public.json"
     if SPEC_PATH.resolve() != target_spec.resolve():

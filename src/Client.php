@@ -27,7 +27,7 @@ use Crawlora\Exception\ServerError;
  */
 final class Client
 {
-    public const VERSION = '1.5.0-sdk.2';
+    public const VERSION = '1.5.0-sdk.3';
 
     public const DEFAULT_BASE_URL = 'https://api.crawlora.net/api/v1';
 
@@ -392,8 +392,18 @@ final class Client
             throw new $class($message, status: $status, code: $code, body: $parsed, rawBody: $rawBody, headers: $responseHeaders, requestId: $reqId);
         }
 
+        return $this->applyAfterResponse((string) $operation['id'], $status, $responseHeaders, $parsed);
+    }
+
+    /**
+     * Run the after_response hooks, letting each return a replacement body.
+     *
+     * @param array<string,string> $headers
+     */
+    private function applyAfterResponse(string $operationId, int $status, array $headers, mixed $parsed): mixed
+    {
         foreach ($this->afterResponse as $hook) {
-            $result = $hook((string) $operation['id'], $status, $responseHeaders, $parsed);
+            $result = $hook($operationId, $status, $headers, $parsed);
             if ($result !== null) {
                 $parsed = $result;
             }
@@ -470,11 +480,8 @@ final class Client
 
         $path = (string) $operation['path'];
         foreach ($operation['pathParams'] ?? [] as $name) {
-            $value = $params[$name] ?? null;
-            if ($value === null || $value === '') {
-                throw new \InvalidArgumentException("missing required path parameter: {$name}");
-            }
-            $path = str_replace('{' . $name . '}', rawurlencode((string) self::stringifyParam($value)), $path);
+            // Presence is already enforced by validateRequiredParams() above.
+            $path = str_replace('{' . $name . '}', rawurlencode((string) self::stringifyParam($params[$name])), $path);
         }
 
         $query = [];
@@ -745,6 +752,13 @@ final class Client
 
     private static function isTimeoutError(\Throwable $exc): bool
     {
+        // CurlTransport sets the exception code to the curl error number;
+        // 28 is CURLE_OPERATION_TIMEOUTED. Fall back to the message for custom
+        // transports that don't use curl error codes.
+        if ($exc->getCode() === 28) {
+            return true;
+        }
+
         return str_contains(strtolower($exc->getMessage()), 'timed out')
             || str_contains(strtolower($exc->getMessage()), 'timeout');
     }

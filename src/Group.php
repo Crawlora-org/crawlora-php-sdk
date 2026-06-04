@@ -11,6 +11,9 @@ namespace Crawlora;
  */
 final class Group
 {
+    /** @var array<string,array<int,string>> memoized allowed-param sets per operation id */
+    private array $allowedCache = [];
+
     /**
      * @param array<string,string> $operations method name => operation id
      */
@@ -35,7 +38,7 @@ final class Group
         /** @var array<string,mixed> $options */
         $options = $arguments[1] ?? [];
 
-        $allowed = self::allowedParams($operationId);
+        $allowed = $this->allowedParams($operationId);
         $unknown = array_diff(array_keys($params), $allowed);
         if ($unknown !== []) {
             sort($unknown);
@@ -53,9 +56,19 @@ final class Group
     }
 
     /**
+     * Allowed param keys for an operation, memoized per group instance.
+     *
      * @return array<int,string>
      */
-    private static function allowedParams(string $operationId): array
+    private function allowedParams(string $operationId): array
+    {
+        return $this->allowedCache[$operationId] ??= self::computeAllowedParams($operationId);
+    }
+
+    /**
+     * @return array<int,string>
+     */
+    private static function computeAllowedParams(string $operationId): array
     {
         $operation = Operations::get($operationId) ?? [];
         $allowed = $operation['pathParams'] ?? [];

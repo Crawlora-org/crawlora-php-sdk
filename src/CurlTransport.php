@@ -61,7 +61,11 @@ final class CurlTransport
 
         $body = curl_exec($handle);
         if ($body === false) {
-            throw new \RuntimeException('curl error: ' . curl_error($handle));
+            // Carry the curl error number as the exception code so the client can
+            // classify timeouts (CURLE_OPERATION_TIMEOUTED = 28) without parsing
+            // the message string.
+            $errno = curl_errno($handle);
+            throw new \RuntimeException('curl error ' . $errno . ': ' . curl_error($handle), $errno);
         }
         $status = (int) curl_getinfo($handle, CURLINFO_RESPONSE_CODE);
 

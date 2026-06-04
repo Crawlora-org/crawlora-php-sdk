@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.5.0-sdk.3
+
+- Robustness: the curl transport carries the curl error number on failures, and
+  the client classifies timeouts by that errno (`CURLE_OPERATION_TIMEOUTED`)
+  instead of matching the message string.
+- Internal cleanups: extracted the after-response hook loop from `send()`,
+  deduplicated path-parameter validation, and memoized each group's allowed-param
+  set. No public API changes. (Published to Packagist as a `dev-main` release.)
+
 ## 1.5.0-sdk.1
 
 - Initial release of the Crawlora PHP SDK.
