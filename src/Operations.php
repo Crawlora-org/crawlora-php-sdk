@@ -4822,6 +4822,53 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'google-news' => [
+            'id' => 'google-news',
+            'method' => 'GET',
+            'path' => '/google/news',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'google-search' => [
             'id' => 'google-search',
             'method' => 'POST',
@@ -5433,6 +5480,53 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'google-videos' => [
+            'id' => 'google-videos',
+            'method' => 'GET',
+            'path' => '/google/videos',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'googleplay-app' => [
             'id' => 'googleplay-app',
@@ -13534,6 +13628,7 @@ final class Operations
             'jobs' => 'google-jobs',
             'mapPlace' => 'google-map-place',
             'mapSearch' => 'google-map-search',
+            'news' => 'google-news',
             'search' => 'google-search',
             'suggest' => 'google-suggest',
             'trendsCategories' => 'google-trends-categories',
@@ -13547,6 +13642,7 @@ final class Operations
             'trendsLocations' => 'google-trends-locations',
             'trendsTrending' => 'google-trends-trending',
             'trendsTrendingDetail' => 'google-trends-trending-detail',
+            'videos' => 'google-videos',
         ],
         'googlePlay' => [
             'app' => 'googleplay-app',
@@ -13816,7 +13912,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 336;
+    public const OPERATION_COUNT = 338;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -13919,6 +14015,7 @@ final class Operations
         'google-jobs',
         'google-map-place',
         'google-map-search',
+        'google-news',
         'google-search',
         'google-suggest',
         'google-trends-categories',
@@ -13932,6 +14029,7 @@ final class Operations
         'google-trends-locations',
         'google-trends-trending',
         'google-trends-trending-detail',
+        'google-videos',
         'googleplay-app',
         'googleplay-categories',
         'googleplay-datasafety',
@@ -14298,6 +14396,7 @@ final class OperationId
     public const GOOGLE_JOBS = 'google-jobs';
     public const GOOGLE_MAP_PLACE = 'google-map-place';
     public const GOOGLE_MAP_SEARCH = 'google-map-search';
+    public const GOOGLE_NEWS = 'google-news';
     public const GOOGLE_PLAY_APP = 'googleplay-app';
     public const GOOGLE_PLAY_CATEGORIES = 'googleplay-categories';
     public const GOOGLE_PLAY_DATASAFETY = 'googleplay-datasafety';
@@ -14321,6 +14420,7 @@ final class OperationId
     public const GOOGLE_TRENDS_LOCATIONS = 'google-trends-locations';
     public const GOOGLE_TRENDS_TRENDING = 'google-trends-trending';
     public const GOOGLE_TRENDS_TRENDING_DETAIL = 'google-trends-trending-detail';
+    public const GOOGLE_VIDEOS = 'google-videos';
     public const INSTAGRAM_POST = 'instagram-post';
     public const INSTAGRAM_PROFILE = 'instagram-profile';
     public const INSTAGRAM_REELS = 'instagram-reels';
