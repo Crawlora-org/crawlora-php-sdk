@@ -27,7 +27,7 @@ use Crawlora\Exception\ServerError;
  */
 final class Client
 {
-    public const VERSION = '1.6.0-sdk.2';
+    public const VERSION = '1.6.0-sdk.3';
 
     public const DEFAULT_BASE_URL = 'https://api.crawlora.net/api/v1';
 
