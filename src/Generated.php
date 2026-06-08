@@ -100,6 +100,48 @@ abstract class BillingGroup {}
 abstract class BingGroup {}
 
 /**
+ * @method mixed boxofficemojoBrand(array $params = [], array $options = []) boxofficemojo-brand (GET /boxofficemojo/brand)
+ *   params: string $id, string $path, string $url
+ * @method mixed boxofficemojoBrands(array $params = [], array $options = []) boxofficemojo-brands (GET /boxofficemojo/brands)
+ * @method mixed boxofficemojoCalendar(array $params = [], array $options = []) boxofficemojo-calendar (GET /boxofficemojo/calendar)
+ *   params: int $year, int $month
+ * @method mixed boxofficemojoCalendarChanges(array $params = [], array $options = []) boxofficemojo-calendar-changes (GET /boxofficemojo/calendar/changes)
+ *   params: int $offset
+ * @method mixed boxofficemojoCalendarDate(array $params = [], array $options = []) boxofficemojo-calendar-date (GET /boxofficemojo/calendar/date)
+ *   params: string $date
+ * @method mixed boxofficemojoDateDomestic(array $params = [], array $options = []) boxofficemojo-date-domestic (GET /boxofficemojo/date/domestic)
+ *   params: string $date
+ * @method mixed boxofficemojoFranchise(array $params = [], array $options = []) boxofficemojo-franchise (GET /boxofficemojo/franchise)
+ *   params: string $id, string $path, string $url
+ * @method mixed boxofficemojoFranchises(array $params = [], array $options = []) boxofficemojo-franchises (GET /boxofficemojo/franchises)
+ * @method mixed boxofficemojoGenre(array $params = [], array $options = []) boxofficemojo-genre (GET /boxofficemojo/genre)
+ *   params: string $id, string $path, string $url
+ * @method mixed boxofficemojoGenres(array $params = [], array $options = []) boxofficemojo-genres (GET /boxofficemojo/genres)
+ * @method mixed boxofficemojoLifetimeGrosses(array $params = [], array $options = []) boxofficemojo-lifetime-grosses (GET /boxofficemojo/lifetime-grosses)
+ *   params: 'worldwide'|'domestic' $area, int $offset
+ * @method mixed boxofficemojoRelease(array $params = [], array $options = []) boxofficemojo-release (GET /boxofficemojo/release)
+ *   params: string $id, string $path, string $url
+ * @method mixed boxofficemojoReleaseGroup(array $params = [], array $options = []) boxofficemojo-release-group (GET /boxofficemojo/release-group)
+ *   params: string $id, string $path, string $url
+ * @method mixed boxofficemojoShowdown(array $params = [], array $options = []) boxofficemojo-showdown (GET /boxofficemojo/showdown)
+ *   params: string $id, string $path, string $url
+ * @method mixed boxofficemojoShowdowns(array $params = [], array $options = []) boxofficemojo-showdowns (GET /boxofficemojo/showdowns)
+ * @method mixed boxofficemojoTitle(array $params = [], array $options = []) boxofficemojo-title (GET /boxofficemojo/title)
+ *   params: string $id, string $path, string $url
+ * @method mixed boxofficemojoWeekendDomestic(array $params = [], array $options = []) boxofficemojo-weekend-domestic (GET /boxofficemojo/weekend/domestic)
+ *   params: int $year, int $week
+ * @method mixed boxofficemojoWeekendDomesticByDistributor(array $params = [], array $options = []) boxofficemojo-weekend-domestic-by-distributor (GET /boxofficemojo/weekend/domestic/by-distributor)
+ *   params: int $year, int $week
+ * @method mixed boxofficemojoWeekendDomesticEstimates(array $params = [], array $options = []) boxofficemojo-weekend-domestic-estimates (GET /boxofficemojo/weekend/domestic/estimates)
+ *   params: int $year, int $week
+ * @method mixed boxofficemojoYearDomestic(array $params = [], array $options = []) boxofficemojo-year-domestic (GET /boxofficemojo/year/domestic)
+ *   params: int $year
+ * @method mixed boxofficemojoYearWorldwide(array $params = [], array $options = []) boxofficemojo-year-worldwide (GET /boxofficemojo/year/worldwide)
+ *   params: int $year
+ */
+abstract class BoxOfficeMojoGroup {}
+
+/**
  * @method mixed retrieve(array $params = [], array $options = []) brand-retrieve (GET /brand/retrieve)
  *   params: string $domain, string $force_language, bool $maxSpeed, int $maxAgeMs, int $timeoutMS
  */
@@ -301,6 +343,48 @@ abstract class GoogleGroup {}
 abstract class GooglePlayGroup {}
 
 /**
+ * @method mixed name(array $params = [], array $options = []) imdb-name (GET /imdb/name)
+ *   params: string $id, string $url
+ * @method mixed nameAwards(array $params = [], array $options = []) imdb-name-awards (GET /imdb/name/awards)
+ *   params: string $id, string $url
+ * @method mixed nameCredits(array $params = [], array $options = []) imdb-name-credits (GET /imdb/name/credits)
+ *   params: string $id, string $url
+ * @method mixed search(array $params = [], array $options = []) imdb-search (GET /imdb/search)
+ *   params: string $query, int $limit
+ * @method mixed title(array $params = [], array $options = []) imdb-title (GET /imdb/title)
+ *   params: string $id, string $url
+ * @method mixed titleAwards(array $params = [], array $options = []) imdb-title-awards (GET /imdb/title/awards)
+ *   params: string $id, string $url
+ * @method mixed titleCompanyCredits(array $params = [], array $options = []) imdb-title-company-credits (GET /imdb/title/company-credits)
+ *   params: string $id, string $url
+ * @method mixed titleCredits(array $params = [], array $options = []) imdb-title-credits (GET /imdb/title/credits)
+ *   params: string $id, string $url
+ * @method mixed titleEpisodes(array $params = [], array $options = []) imdb-title-episodes (GET /imdb/title/episodes)
+ *   params: string $id, string $url, int $season, int $limit
+ * @method mixed titleFilmingLocations(array $params = [], array $options = []) imdb-title-filming-locations (GET /imdb/title/filming-locations)
+ *   params: string $id, string $url
+ * @method mixed titleGoofs(array $params = [], array $options = []) imdb-title-goofs (GET /imdb/title/goofs)
+ *   params: string $id, string $url
+ * @method mixed titleKeywords(array $params = [], array $options = []) imdb-title-keywords (GET /imdb/title/keywords)
+ *   params: string $id, string $url
+ * @method mixed titleParentalGuide(array $params = [], array $options = []) imdb-title-parental-guide (GET /imdb/title/parental-guide)
+ *   params: string $id, string $url
+ * @method mixed titlePublicFactsAnalysis(array $params = [], array $options = []) imdb-title-public-facts-analysis (GET /imdb/title/public-facts-analysis)
+ *   params: string $id, string $url
+ * @method mixed titleQuotes(array $params = [], array $options = []) imdb-title-quotes (GET /imdb/title/quotes)
+ *   params: string $id, string $url
+ * @method mixed titleReleaseInfo(array $params = [], array $options = []) imdb-title-release-info (GET /imdb/title/release-info)
+ *   params: string $id, string $url
+ * @method mixed titleReviews(array $params = [], array $options = []) imdb-title-reviews (GET /imdb/title/reviews)
+ *   params: string $id, string $url, int $limit
+ * @method mixed titleTechnicalSpecs(array $params = [], array $options = []) imdb-title-technical-specs (GET /imdb/title/technical-specs)
+ *   params: string $id, string $url
+ * @method mixed titleTrivia(array $params = [], array $options = []) imdb-title-trivia (GET /imdb/title/trivia)
+ *   params: string $id, string $url
+ */
+abstract class ImdbGroup {}
+
+/**
  * @method mixed post(array $params = [], array $options = []) instagram-post (GET /instagram/post/{id}/{post_id})
  *   params: string $id, string $post_id
  * @method mixed profile(array $params = [], array $options = []) instagram-profile (GET /instagram/profile/{username})
@@ -357,6 +441,49 @@ abstract class InstagramGroup {}
 abstract class JustWatchGroup {}
 
 /**
+ * @method mixed event(array $params = [], array $options = []) kalshi-event (GET /kalshi/event/{event_ticker})
+ *   params: string $event_ticker
+ * @method mixed eventHistory(array $params = [], array $options = []) kalshi-event-history (GET /kalshi/event/{event_ticker}/history)
+ *   params: string $event_ticker, string $series_ticker, int $start_ts, int $end_ts, int $period_interval, bool $include_latest_before_start
+ * @method mixed eventMetadata(array $params = [], array $options = []) kalshi-event-metadata (GET /kalshi/event/{event_ticker}/metadata)
+ *   params: string $event_ticker
+ * @method mixed events(array $params = [], array $options = []) kalshi-events (GET /kalshi/events)
+ *   params: int $limit, string $cursor, string $series_ticker, string $category, 'open'|'closed'|'settled' $status, bool $with_nested_markets, bool $with_milestones, int $min_close_ts, int $min_updated_ts
+ * @method mixed multivariateEvents(array $params = [], array $options = []) kalshi-multivariate-events (GET /kalshi/events/multivariate)
+ *   params: int $limit, string $cursor
+ * @method mixed exchangeSchedule(array $params = [], array $options = []) kalshi-exchange-schedule (GET /kalshi/exchange/schedule)
+ * @method mixed exchangeStatus(array $params = [], array $options = []) kalshi-exchange-status (GET /kalshi/exchange/status)
+ * @method mixed historicalCutoff(array $params = [], array $options = []) kalshi-historical-cutoff (GET /kalshi/historical/cutoff)
+ * @method mixed historicalMarket(array $params = [], array $options = []) kalshi-historical-market (GET /kalshi/historical/market/{ticker})
+ *   params: string $ticker
+ * @method mixed historicalMarketHistory(array $params = [], array $options = []) kalshi-historical-market-history (GET /kalshi/historical/market/{ticker}/history)
+ *   params: string $ticker, int $start_ts, int $end_ts, int $period_interval
+ * @method mixed historicalMarkets(array $params = [], array $options = []) kalshi-historical-markets (GET /kalshi/historical/markets)
+ *   params: int $limit, string $cursor, string $tickers, string $event_ticker, string $series_ticker, 'exclude' $mve_filter
+ * @method mixed historicalTrades(array $params = [], array $options = []) kalshi-historical-trades (GET /kalshi/historical/trades)
+ *   params: int $limit, string $cursor, string $ticker, int $min_ts, int $max_ts
+ * @method mixed market(array $params = [], array $options = []) kalshi-market (GET /kalshi/market/{ticker})
+ *   params: string $ticker
+ * @method mixed marketHistory(array $params = [], array $options = []) kalshi-market-history (GET /kalshi/market/{ticker}/history)
+ *   params: string $ticker, string $series_ticker, int $start_ts, int $end_ts, int $period_interval, bool $include_latest_before_start
+ * @method mixed marketOrderbook(array $params = [], array $options = []) kalshi-market-orderbook (GET /kalshi/market/{ticker}/orderbook)
+ *   params: string $ticker
+ * @method mixed markets(array $params = [], array $options = []) kalshi-markets (GET /kalshi/markets)
+ *   params: int $limit, string $cursor, string $event_ticker, string $series_ticker, 'unopened'|'open'|'closed'|'settled' $status, string $ticker
+ * @method mixed marketsHistory(array $params = [], array $options = []) kalshi-markets-history (GET /kalshi/markets/history)
+ *   params: string $market_tickers, int $start_ts, int $end_ts, int $period_interval, bool $include_latest_before_start
+ * @method mixed marketsOrderbooks(array $params = [], array $options = []) kalshi-markets-orderbooks (GET /kalshi/markets/orderbooks)
+ *   params: string $tickers
+ * @method mixed series(array $params = [], array $options = []) kalshi-series (GET /kalshi/series)
+ *   params: int $limit, string $cursor
+ * @method mixed seriesDetail(array $params = [], array $options = []) kalshi-series-detail (GET /kalshi/series/{series_ticker})
+ *   params: string $series_ticker
+ * @method mixed trades(array $params = [], array $options = []) kalshi-trades (GET /kalshi/trades)
+ *   params: int $limit, string $cursor, string $ticker, int $min_ts, int $max_ts
+ */
+abstract class KalshiGroup {}
+
+/**
  * @method mixed linkedinCompany(array $params = [], array $options = []) linkedin-company (GET /linkedin/company/{id})
  *   params: string $id
  * @method mixed linkedinProduct(array $params = [], array $options = []) linkedin-product (GET /linkedin/product/{id})
@@ -367,10 +494,165 @@ abstract class JustWatchGroup {}
 abstract class LinkedInGroup {}
 
 /**
+ * @method mixed categoryQuestions(array $params = [], array $options = []) metaculus-category-questions (GET /metaculus/category/{slug}/questions)
+ *   params: 'artificial-intelligence'|'computing-and-math'|'cryptocurrencies'|'economy-business'|'elections'|'environment-climate'|'geopolitics'|'health-pandemics'|'law'|'metaculus'|'natural-sciences'|'nuclear'|'politics'|'social-sciences'|'space'|'sports-entertainment'|'technology' $slug, int $limit
+ * @method mixed commentsFeed(array $params = [], array $options = []) metaculus-comments-feed (GET /metaculus/comments-feed)
+ *   params: int $limit, string $topic
+ * @method mixed projectQuestions(array $params = [], array $options = []) metaculus-project-questions (GET /metaculus/project/{slug}/questions)
+ *   params: string $slug, int $limit
+ * @method mixed question(array $params = [], array $options = []) metaculus-question (GET /metaculus/question/{id})
+ *   params: string $id
+ * @method mixed questionForecastHistory(array $params = [], array $options = []) metaculus-question-forecast-history (GET /metaculus/question/{id}/forecast-history)
+ *   params: string $id, 'recency_weighted'|'unweighted'|'single_aggregation' $method, int $max_points
+ * @method mixed questionForecasts(array $params = [], array $options = []) metaculus-question-forecasts (GET /metaculus/question/{id}/forecasts)
+ *   params: string $id
+ * @method mixed questionMetadata(array $params = [], array $options = []) metaculus-question-metadata (GET /metaculus/question/{id}/metadata)
+ *   params: string $id
+ * @method mixed questionOptions(array $params = [], array $options = []) metaculus-question-options (GET /metaculus/question/{id}/options)
+ *   params: string $id, 'recency_weighted'|'unweighted'|'single_aggregation' $method
+ * @method mixed questions(array $params = [], array $options = []) metaculus-questions (GET /metaculus/questions)
+ *   params: int $limit, string $topic
+ * @method mixed topComments(array $params = [], array $options = []) metaculus-top-comments (GET /metaculus/top-comments)
+ *   params: int $limit, string $topic
+ * @method mixed tournamentQuestions(array $params = [], array $options = []) metaculus-tournament-questions (GET /metaculus/tournament/{slug}/questions)
+ *   params: string $slug, int $limit
+ */
+abstract class MetaculusGroup {}
+
+/**
  * @method mixed ping(array $params = [], array $options = []) ping (GET /ping)
  * @method mixed ready(array $params = [], array $options = []) ready (GET /ready)
  */
 abstract class MetaGroup {}
+
+/**
+ * @method mixed activityTrades(array $params = [], array $options = []) polymarket-activity-trades (GET /polymarket/activity/trades)
+ *   params: int $limit, int $offset, 'true'|'false' $taker_only, 'CASH' $filter_type, '1'|'5'|'10'|'100'|'1000'|'10000'|'100000' $filter_amount, string $event_id, string $market
+ * @method mixed clobMarket(array $params = [], array $options = []) polymarket-clob-market (GET /polymarket/clob/market/{condition_id})
+ *   params: string $condition_id
+ * @method mixed dashboardMacro(array $params = [], array $options = []) polymarket-dashboard-macro (GET /polymarket/dashboards/macro)
+ *   params: int $limit, string $cursor
+ * @method mixed dataFollowers(array $params = [], array $options = []) polymarket-data-followers (GET /polymarket/data/followers/{address})
+ *   params: string $address, int $limit, int $offset, string $order, bool $ascending, string $after_cursor
+ * @method mixed dataFollowing(array $params = [], array $options = []) polymarket-data-following (GET /polymarket/data/following/{address})
+ *   params: string $address, int $limit, int $offset, string $order, bool $ascending, string $after_cursor
+ * @method mixed dataFollowsCounts(array $params = [], array $options = []) polymarket-data-follows-counts (GET /polymarket/data/follows/counts/{address})
+ *   params: string $address
+ * @method mixed eventDetailById(array $params = [], array $options = []) polymarket-event-detail-by-id (GET /polymarket/event/id/{id})
+ *   params: string $id
+ * @method mixed eventActivityById(array $params = [], array $options = []) polymarket-event-activity-by-id (GET /polymarket/event/id/{id}/activity)
+ *   params: string $id, int $limit, int $offset, 'true'|'false' $taker_only, 'CASH' $filter_type, '1'|'5'|'10'|'100'|'1000'|'10000'|'100000' $filter_amount
+ * @method mixed eventDetail(array $params = [], array $options = []) polymarket-event-detail (GET /polymarket/event/{slug})
+ *   params: string $slug
+ * @method mixed eventActivity(array $params = [], array $options = []) polymarket-event-activity (GET /polymarket/event/{slug}/activity)
+ *   params: string $slug, int $limit, int $offset, 'true'|'false' $taker_only, 'CASH' $filter_type, '1'|'5'|'10'|'100'|'1000'|'10000'|'100000' $filter_amount
+ * @method mixed events(array $params = [], array $options = []) polymarket-events (GET /polymarket/events)
+ *   params: int $limit, int $offset, 'volume24hr'|'volume'|'liquidity'|'endDate'|'updatedAt'|'createdAt'|'id'|'slug'|'title'|'question'|'label' $order, bool $ascending, 'true'|'false' $closed
+ * @method mixed eventsSimilar(array $params = [], array $options = []) polymarket-events-similar (GET /polymarket/events/similar)
+ *   params: int $id, string $event_title, string $event_slug, string $market_title, string $market_slug, int $limit, 'true'|'false' $closed
+ * @method mixed eventTags(array $params = [], array $options = []) polymarket-event-tags (GET /polymarket/events/{id}/tags)
+ *   params: string $id
+ * @method mixed feeTypes(array $params = [], array $options = []) polymarket-fee-types (GET /polymarket/fee-types)
+ *   params: 'true'|'false' $active, string $search
+ * @method mixed games(array $params = [], array $options = []) polymarket-games (GET /polymarket/games)
+ *   params: string $sport, string $ticker
+ * @method mixed homepageFeed(array $params = [], array $options = []) polymarket-homepage-feed (GET /polymarket/homepage/feed)
+ *   params: 'trending'|'breaking'|'new'|'politics'|'sports'|'crypto'|'esports'|'iran'|'finance'|'geopolitics'|'tech'|'culture'|'economy'|'weather'|'mentions'|'elections' $feed, int $limit, string $cursor
+ * @method mixed leaderboard(array $params = [], array $options = []) polymarket-leaderboard (GET /polymarket/leaderboard)
+ *   params: '1d'|'7d'|'30d'|'all' $window, 'profit'|'volume' $sort_by, int $limit
+ * @method mixed marketClarifications(array $params = [], array $options = []) polymarket-market-clarifications (GET /polymarket/market-clarifications)
+ *   params: string $market_id, string $event_id, string $state, string $question_id, string $tx_hash, int $limit, int $offset, string $order, bool $ascending, string $after_cursor
+ * @method mixed marketDetailByCondition(array $params = [], array $options = []) polymarket-market-detail-by-condition (GET /polymarket/market/condition/{condition_id})
+ *   params: string $condition_id
+ * @method mixed marketActivityByCondition(array $params = [], array $options = []) polymarket-market-activity-by-condition (GET /polymarket/market/condition/{condition_id}/activity)
+ *   params: string $condition_id, int $limit, int $offset, 'true'|'false' $taker_only, 'CASH' $filter_type, '1'|'5'|'10'|'100'|'1000'|'10000'|'100000' $filter_amount
+ * @method mixed marketLiquidityByCondition(array $params = [], array $options = []) polymarket-market-liquidity-by-condition (GET /polymarket/market/condition/{condition_id}/liquidity)
+ *   params: string $condition_id
+ * @method mixed marketDetailBySlug(array $params = [], array $options = []) polymarket-market-detail-by-slug (GET /polymarket/market/slug/{slug})
+ *   params: string $slug
+ * @method mixed marketLiquidityBySlug(array $params = [], array $options = []) polymarket-market-liquidity-by-slug (GET /polymarket/market/slug/{slug}/liquidity)
+ *   params: string $slug
+ * @method mixed marketDetail(array $params = [], array $options = []) polymarket-market-detail (GET /polymarket/market/{id})
+ *   params: string $id
+ * @method mixed marketLiquidity(array $params = [], array $options = []) polymarket-market-liquidity (GET /polymarket/market/{id}/liquidity)
+ *   params: string $id
+ * @method mixed marketTags(array $params = [], array $options = []) polymarket-market-tags (GET /polymarket/market/{id}/tags)
+ *   params: string $id
+ * @method mixed markets(array $params = [], array $options = []) polymarket-markets (GET /polymarket/markets)
+ *   params: int $limit, int $offset, 'volume24hr'|'volume'|'liquidity'|'endDate'|'updatedAt'|'createdAt'|'id'|'slug'|'title'|'question'|'label' $order, bool $ascending, 'true'|'false' $closed
+ * @method mixed predictions(array $params = [], array $options = []) polymarket-predictions (GET /polymarket/predictions)
+ *   params: 'active'|'resolved'|'all' $status, 'competitive'|'volume'|'volume_24hr'|'ending_soon'|'liquidity'|'newest'|'closed_time' $sort, string $tag, 'hourly'|'daily'|'weekly'|'monthly'|'yearly' $recurrence, int $limit, string $cursor
+ * @method mixed rewardsMarket(array $params = [], array $options = []) polymarket-rewards-market (GET /polymarket/rewards/market/{condition_id})
+ *   params: string $condition_id
+ * @method mixed rewardsMarkets(array $params = [], array $options = []) polymarket-rewards-markets (GET /polymarket/rewards/markets)
+ *   params: 'market'|'earnings'|'max_spread'|'min_size'|'rate_per_day'|'price'|'earning_percentage'|'spread' $order_by, 'asc'|'desc' $position, string $date, string $q, 'all'|'politics'|'sports'|'crypto'|'pop-culture'|'middle-east'|'business'|'science' $tag_slug, string $cursor, int $limit
+ * @method mixed search(array $params = [], array $options = []) polymarket-search (GET /polymarket/search)
+ *   params: string $q, int $limit, 'open'|'closed'|'all' $status, 'relevance'|'volume24hr'|'volume'|'liquidity'|'endDate' $sort, bool $ascending, bool $include_tags, bool $include_profiles
+ * @method mixed sports(array $params = [], array $options = []) polymarket-sports (GET /polymarket/sports)
+ * @method mixed sportsByPartner(array $params = [], array $options = []) polymarket-sports-by-partner (GET /polymarket/sports/by-partner)
+ *   params: string $partner, string $external_id
+ * @method mixed sportsMarketTypes(array $params = [], array $options = []) polymarket-sports-market-types (GET /polymarket/sports/market-types)
+ * @method mixed sportsSummary(array $params = [], array $options = []) polymarket-sports-summary (GET /polymarket/sports/summary)
+ * @method mixed sport(array $params = [], array $options = []) polymarket-sport (GET /polymarket/sports/{id})
+ *   params: int $id
+ * @method mixed sportExternalPartners(array $params = [], array $options = []) polymarket-sport-external-partners (GET /polymarket/sports/{id}/external-partners)
+ *   params: int $id
+ * @method mixed sportExternalPartner(array $params = [], array $options = []) polymarket-sport-external-partner (GET /polymarket/sports/{id}/external-partners/{partner_ref})
+ *   params: int $id, string $partner_ref
+ * @method mixed spotlights(array $params = [], array $options = []) polymarket-spotlights (GET /polymarket/spotlights)
+ * @method mixed spotlightsKeyset(array $params = [], array $options = []) polymarket-spotlights-keyset (GET /polymarket/spotlights/keyset)
+ *   params: int $limit, int $offset, string $order, bool $ascending, string $after_cursor
+ * @method mixed spotlight(array $params = [], array $options = []) polymarket-spotlight (GET /polymarket/spotlights/{slug})
+ *   params: string $slug
+ * @method mixed status(array $params = [], array $options = []) polymarket-status (GET /polymarket/status)
+ * @method mixed tagBySlug(array $params = [], array $options = []) polymarket-tag-by-slug (GET /polymarket/tag/slug/{slug})
+ *   params: string $slug, string $locale
+ * @method mixed relatedTagsBySlug(array $params = [], array $options = []) polymarket-related-tags-by-slug (GET /polymarket/tag/slug/{slug}/related-tags)
+ *   params: string $slug, 'true'|'false' $omit_empty, string $status, string $locale
+ * @method mixed relatedTagRowsBySlug(array $params = [], array $options = []) polymarket-related-tag-rows-by-slug (GET /polymarket/tag/slug/{slug}/related-tags/tags)
+ *   params: string $slug, 'true'|'false' $omit_empty, string $status, string $locale
+ * @method mixed tag(array $params = [], array $options = []) polymarket-tag (GET /polymarket/tag/{id})
+ *   params: string $id, bool $include_template, string $locale
+ * @method mixed relatedTags(array $params = [], array $options = []) polymarket-related-tags (GET /polymarket/tag/{id}/related-tags)
+ *   params: string $id, 'true'|'false' $omit_empty, string $status, string $locale
+ * @method mixed relatedTagRows(array $params = [], array $options = []) polymarket-related-tag-rows (GET /polymarket/tag/{id}/related-tags/tags)
+ *   params: string $id, 'true'|'false' $omit_empty, string $status, string $locale
+ * @method mixed tags(array $params = [], array $options = []) polymarket-tags (GET /polymarket/tags)
+ *   params: int $limit, int $offset, 'volume24hr'|'volume'|'liquidity'|'endDate'|'updatedAt'|'createdAt'|'id'|'slug'|'title'|'question'|'label' $order, 'true'|'false' $ascending, string $locale
+ * @method mixed teams(array $params = [], array $options = []) polymarket-teams (GET /polymarket/teams)
+ *   params: string $league, string $name, string $abbreviation, string $provider_id, int $limit, int $offset, string $order, bool $ascending
+ * @method mixed teamsByPartner(array $params = [], array $options = []) polymarket-teams-by-partner (GET /polymarket/teams/by-partner)
+ *   params: string $partner, string $external_id
+ * @method mixed team(array $params = [], array $options = []) polymarket-team (GET /polymarket/teams/{id})
+ *   params: int $id
+ * @method mixed teamExternalPartners(array $params = [], array $options = []) polymarket-team-external-partners (GET /polymarket/teams/{id}/external-partners)
+ *   params: int $id
+ * @method mixed teamExternalPartner(array $params = [], array $options = []) polymarket-team-external-partner (GET /polymarket/teams/{id}/external-partners/{partner_ref})
+ *   params: int $id, string $partner_ref
+ * @method mixed tokenMidpoint(array $params = [], array $options = []) polymarket-token-midpoint (GET /polymarket/token/{token_id}/midpoint)
+ *   params: string $token_id
+ * @method mixed tokenOrderbook(array $params = [], array $options = []) polymarket-token-orderbook (GET /polymarket/token/{token_id}/orderbook)
+ *   params: string $token_id
+ * @method mixed tokenPrice(array $params = [], array $options = []) polymarket-token-price (GET /polymarket/token/{token_id}/price)
+ *   params: string $token_id, 'buy'|'sell' $side
+ * @method mixed tokenPriceHistory(array $params = [], array $options = []) polymarket-token-price-history (GET /polymarket/token/{token_id}/price-history)
+ *   params: string $token_id, '1m'|'1h'|'6h'|'1d'|'1w'|'all'|'max' $interval, int $fidelity, int $start_ts, int $end_ts
+ * @method mixed tokenSpread(array $params = [], array $options = []) polymarket-token-spread (GET /polymarket/token/{token_id}/spread)
+ *   params: string $token_id
+ * @method mixed tokensMidpoints(array $params = [], array $options = []) polymarket-tokens-midpoints (POST /polymarket/tokens/midpoints)
+ *   params: array $body
+ * @method mixed tokensOrderbooks(array $params = [], array $options = []) polymarket-tokens-orderbooks (POST /polymarket/tokens/orderbooks)
+ *   params: array $body
+ * @method mixed tokensPrices(array $params = [], array $options = []) polymarket-tokens-prices (POST /polymarket/tokens/prices)
+ *   params: array $body
+ * @method mixed tokensSpreads(array $params = [], array $options = []) polymarket-tokens-spreads (POST /polymarket/tokens/spreads)
+ *   params: array $body
+ * @method mixed tournaments(array $params = [], array $options = []) polymarket-tournaments (GET /polymarket/tournaments)
+ *   params: int $limit, int $offset, string $order, bool $ascending
+ * @method mixed tournament(array $params = [], array $options = []) polymarket-tournament (GET /polymarket/tournaments/{id})
+ *   params: int $id
+ */
+abstract class PolymarketGroup {}
 
 /**
  * @method mixed category(array $params = [], array $options = []) producthunt-category (GET /producthunt/category/{slug})
@@ -401,12 +683,26 @@ abstract class ProductHuntGroup {}
 /**
  * @method mixed comments(array $params = [], array $options = []) reddit-comments (GET /reddit/comments/{id})
  *   params: string $id, 'confidence'|'top'|'new'|'controversial'|'old'|'qa' $sort, int $limit, int $depth
+ * @method mixed domainPosts(array $params = [], array $options = []) reddit-domain-posts (GET /reddit/domain/{domain}/posts)
+ *   params: string $domain, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
  * @method mixed post(array $params = [], array $options = []) reddit-post (GET /reddit/post/{id})
  *   params: string $id
  * @method mixed search(array $params = [], array $options = []) reddit-search (GET /reddit/search)
  *   params: string $q, string $subreddit, 'relevance'|'hot'|'new'|'top'|'comments' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
+ * @method mixed subredditAbout(array $params = [], array $options = []) reddit-subreddit-about (GET /reddit/subreddit/{subreddit}/about)
+ *   params: string $subreddit, int $limit
+ * @method mixed subredditComments(array $params = [], array $options = []) reddit-subreddit-comments (GET /reddit/subreddit/{subreddit}/comments)
+ *   params: string $subreddit, int $limit, string $after
  * @method mixed subredditPosts(array $params = [], array $options = []) reddit-subreddit-posts (GET /reddit/subreddit/{subreddit}/posts)
  *   params: string $subreddit, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
+ * @method mixed subredditsPosts(array $params = [], array $options = []) reddit-subreddits-posts (GET /reddit/subreddits/posts)
+ *   params: string $subreddits, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
+ * @method mixed trends(array $params = [], array $options = []) reddit-trends (GET /reddit/trends)
+ *   params: 'hot'|'new'|'rising'|'top' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
+ * @method mixed userComments(array $params = [], array $options = []) reddit-user-comments (GET /reddit/user/{username}/comments)
+ *   params: string $username, int $limit, string $after
+ * @method mixed userPosts(array $params = [], array $options = []) reddit-user-posts (GET /reddit/user/{username}/posts)
+ *   params: string $username, int $limit, string $after
  */
 abstract class RedditGroup {}
 
@@ -418,6 +714,28 @@ abstract class RedditGroup {}
  *   params: int $limit
  */
 abstract class ReferralsGroup {}
+
+/**
+ * @method mixed rottentomatoesBrowseMovies(array $params = [], array $options = []) rottentomatoes-browse-movies (GET /rottentomatoes/browse/movies)
+ *   params: 'movies_in_theaters'|'movies_at_home'|'movies_coming_soon' $list, 'popular'|'newest'|'top_box_office' $sort, int $limit
+ * @method mixed rottentomatoesBrowseTv(array $params = [], array $options = []) rottentomatoes-browse-tv (GET /rottentomatoes/browse/tv)
+ *   params: 'tv_series_browse' $list, 'popular'|'newest' $sort, int $limit
+ * @method mixed rottentomatoesEpisode(array $params = [], array $options = []) rottentomatoes-episode (GET /rottentomatoes/episode)
+ *   params: string $path, string $url
+ * @method mixed rottentomatoesMovie(array $params = [], array $options = []) rottentomatoes-movie (GET /rottentomatoes/movie)
+ *   params: string $path, string $url
+ * @method mixed rottentomatoesMovieReviews(array $params = [], array $options = []) rottentomatoes-movie-reviews (GET /rottentomatoes/movie/reviews)
+ *   params: string $path, string $url, 'critics'|'top-critics'|'audience'|'verified-audience' $type, int $limit, string $after
+ * @method mixed rottentomatoesPerson(array $params = [], array $options = []) rottentomatoes-person (GET /rottentomatoes/person)
+ *   params: string $path, string $url
+ * @method mixed rottentomatoesSearch(array $params = [], array $options = []) rottentomatoes-search (GET /rottentomatoes/search)
+ *   params: string $query, int $limit
+ * @method mixed rottentomatoesSeason(array $params = [], array $options = []) rottentomatoes-season (GET /rottentomatoes/season)
+ *   params: string $path, string $url
+ * @method mixed rottentomatoesSeries(array $params = [], array $options = []) rottentomatoes-series (GET /rottentomatoes/series)
+ *   params: string $path, string $url
+ */
+abstract class RottenTomatoesGroup {}
 
 /**
  * @method mixed analysis(array $params = [], array $options = []) shop-app-analysis (GET /shop-app/analysis)
@@ -796,6 +1114,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\AppStoreGroup $appStore
  * @property-read \Crawlora\Generated\BillingGroup $billing
  * @property-read \Crawlora\Generated\BingGroup $bing
+ * @property-read \Crawlora\Generated\BoxOfficeMojoGroup $boxOfficeMojo
  * @property-read \Crawlora\Generated\BrandGroup $brand
  * @property-read \Crawlora\Generated\BraveGroup $brave
  * @property-read \Crawlora\Generated\CoinGeckoGroup $coinGecko
@@ -804,13 +1123,18 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
  * @property-read \Crawlora\Generated\GoogleGroup $google
  * @property-read \Crawlora\Generated\GooglePlayGroup $googlePlay
+ * @property-read \Crawlora\Generated\ImdbGroup $imdb
  * @property-read \Crawlora\Generated\InstagramGroup $instagram
  * @property-read \Crawlora\Generated\JustWatchGroup $justWatch
+ * @property-read \Crawlora\Generated\KalshiGroup $kalshi
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
+ * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
  * @property-read \Crawlora\Generated\MetaGroup $meta
+ * @property-read \Crawlora\Generated\PolymarketGroup $polymarket
  * @property-read \Crawlora\Generated\ProductHuntGroup $productHunt
  * @property-read \Crawlora\Generated\RedditGroup $reddit
  * @property-read \Crawlora\Generated\ReferralsGroup $referrals
+ * @property-read \Crawlora\Generated\RottenTomatoesGroup $rottenTomatoes
  * @property-read \Crawlora\Generated\ShopAppGroup $shopApp
  * @property-read \Crawlora\Generated\ShopifyGroup $shopify
  * @property-read \Crawlora\Generated\SimilarWebGroup $similarWeb
