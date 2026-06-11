@@ -207,6 +207,16 @@ abstract class BraveGroup {}
 abstract class CoinGeckoGroup {}
 
 /**
+ * @method mixed contact(array $params = [], array $options = []) contact (POST /contact)
+ *   params: array $option
+ * @method mixed antibotCheck(array $params = [], array $options = []) antibot-check (POST /diagnostics/antibot-check)
+ *   params: array $request
+ * @method mixed scrape(array $params = [], array $options = []) web-scrape (POST /web/scrape)
+ *   params: array $scrapeOption
+ */
+abstract class WebGroup {}
+
+/**
  * @method mixed list_(array $params = [], array $options = []) datasets-list (GET /datasets)
  * @method mixed googleMapBusinessesFacets(array $params = [], array $options = []) datasets-google-map-businesses-facets (GET /datasets/google-map-businesses/facets)
  *   params: string $facet, string $q, string $category, string $country, string $state, string $county, string $city, string $town, float $min_rating, int $min_review_count, bool $has_website, bool $has_phone, float $lat, float $lon, int $radius_m, string $sort
@@ -707,6 +717,20 @@ abstract class ProductHuntGroup {}
 abstract class RedditGroup {}
 
 /**
+ * @method mixed estimate(array $params = [], array $options = []) redfin-estimate (GET /redfin/estimate)
+ *   params: string $property_id
+ * @method mixed property(array $params = [], array $options = []) redfin-property (GET /redfin/property)
+ *   params: string $url, string $property_id, string $listing_id
+ * @method mixed regionTrends(array $params = [], array $options = []) redfin-region-trends (GET /redfin/region-trends)
+ *   params: int $region_id, int $region_type
+ * @method mixed search(array $params = [], array $options = []) redfin-search (GET /redfin/search)
+ *   params: string $location, int $page, int $region_id, int $region_type, string $status, int $min_price, int $max_price, int $min_beds, float $min_baths
+ * @method mixed similar(array $params = [], array $options = []) redfin-similar (GET /redfin/similar)
+ *   params: string $property_id
+ */
+abstract class RedfinGroup {}
+
+/**
  * @method mixed click(array $params = [], array $options = []) referrals-click (POST /referrals/click)
  *   params: array $request
  * @method mixed me(array $params = [], array $options = []) referrals-me (GET /referrals/me)
@@ -1118,6 +1142,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\BrandGroup $brand
  * @property-read \Crawlora\Generated\BraveGroup $brave
  * @property-read \Crawlora\Generated\CoinGeckoGroup $coinGecko
+ * @property-read \Crawlora\Generated\WebGroup $web
  * @property-read \Crawlora\Generated\DatasetsGroup $datasets
  * @property-read \Crawlora\Generated\EBayGroup $eBay
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
@@ -1133,6 +1158,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\PolymarketGroup $polymarket
  * @property-read \Crawlora\Generated\ProductHuntGroup $productHunt
  * @property-read \Crawlora\Generated\RedditGroup $reddit
+ * @property-read \Crawlora\Generated\RedfinGroup $redfin
  * @property-read \Crawlora\Generated\ReferralsGroup $referrals
  * @property-read \Crawlora\Generated\RottenTomatoesGroup $rottenTomatoes
  * @property-read \Crawlora\Generated\ShopAppGroup $shopApp

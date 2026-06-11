@@ -4247,6 +4247,25 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'contact' => [
+            'id' => 'contact',
+            'method' => 'POST',
+            'path' => '/contact',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'option',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'datasets-list' => [
             'id' => 'datasets-list',
             'method' => 'GET',
@@ -4557,6 +4576,25 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'antibot-check' => [
+            'id' => 'antibot-check',
+            'method' => 'POST',
+            'path' => '/diagnostics/antibot-check',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'request',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'ebay-item' => [
             'id' => 'ebay-item',
@@ -12383,6 +12421,190 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'redfin-estimate' => [
+            'id' => 'redfin-estimate',
+            'method' => 'GET',
+            'path' => '/redfin/estimate',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'property_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'redfin-property' => [
+            'id' => 'redfin-property',
+            'method' => 'GET',
+            'path' => '/redfin/property',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'property_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'listing_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'redfin-region-trends' => [
+            'id' => 'redfin-region-trends',
+            'method' => 'GET',
+            'path' => '/redfin/region-trends',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'region_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'region_type',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'redfin-search' => [
+            'id' => 'redfin-search',
+            'method' => 'GET',
+            'path' => '/redfin/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'region_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'region_type',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_price',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_price',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_beds',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_baths',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'redfin-similar' => [
+            'id' => 'redfin-similar',
+            'method' => 'GET',
+            'path' => '/redfin/similar',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'property_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'referrals-click' => [
             'id' => 'referrals-click',
             'method' => 'POST',
@@ -17064,6 +17286,25 @@ final class Operations
                 'JWTAuth',
             ],
         ],
+        'web-scrape' => [
+            'id' => 'web-scrape',
+            'method' => 'POST',
+            'path' => '/web/scrape',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'scrapeOption',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'yahoo-finance-calendars' => [
             'id' => 'yahoo-finance-calendars',
             'method' => 'GET',
@@ -18760,6 +19001,11 @@ final class Operations
             'treasuries' => 'coingecko-treasuries',
             'trending' => 'coingecko-trending',
         ],
+        'web' => [
+            'contact' => 'contact',
+            'antibotCheck' => 'antibot-check',
+            'scrape' => 'web-scrape',
+        ],
         'datasets' => [
             'list_' => 'datasets-list',
             'googleMapBusinessesFacets' => 'datasets-google-map-businesses-facets',
@@ -19019,6 +19265,13 @@ final class Operations
             'userComments' => 'reddit-user-comments',
             'userPosts' => 'reddit-user-posts',
         ],
+        'redfin' => [
+            'estimate' => 'redfin-estimate',
+            'property' => 'redfin-property',
+            'regionTrends' => 'redfin-region-trends',
+            'search' => 'redfin-search',
+            'similar' => 'redfin-similar',
+        ],
         'referrals' => [
             'click' => 'referrals-click',
             'me' => 'referrals-me',
@@ -19230,7 +19483,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 491;
+    public const OPERATION_COUNT = 499;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -19317,11 +19570,13 @@ final class Operations
         'coingecko-token-unlocks',
         'coingecko-treasuries',
         'coingecko-trending',
+        'contact',
         'datasets-list',
         'datasets-google-map-businesses-facets',
         'datasets-google-map-businesses-item',
         'datasets-google-map-businesses-nearby',
         'datasets-google-map-businesses-search',
+        'antibot-check',
         'ebay-item',
         'ebay-search',
         'ebay-seller',
@@ -19546,6 +19801,11 @@ final class Operations
         'reddit-trends',
         'reddit-user-comments',
         'reddit-user-posts',
+        'redfin-estimate',
+        'redfin-property',
+        'redfin-region-trends',
+        'redfin-search',
+        'redfin-similar',
         'referrals-click',
         'referrals-me',
         'referrals-me-events',
@@ -19670,6 +19930,7 @@ final class Operations
         'user-me-api-keys',
         'user-me-api-keys-rotate',
         'user-me-api-keys-reveal',
+        'web-scrape',
         'yahoo-finance-calendars',
         'yahoo-finance-calendar',
         'yahoo-finance-download',
@@ -20080,6 +20341,11 @@ final class OperationId
     public const REDDIT_TRENDS = 'reddit-trends';
     public const REDDIT_USER_COMMENTS = 'reddit-user-comments';
     public const REDDIT_USER_POSTS = 'reddit-user-posts';
+    public const REDFIN_ESTIMATE = 'redfin-estimate';
+    public const REDFIN_PROPERTY = 'redfin-property';
+    public const REDFIN_REGION_TRENDS = 'redfin-region-trends';
+    public const REDFIN_SEARCH = 'redfin-search';
+    public const REDFIN_SIMILAR = 'redfin-similar';
     public const REFERRALS_CLICK = 'referrals-click';
     public const REFERRALS_ME = 'referrals-me';
     public const REFERRALS_ME_EVENTS = 'referrals-me-events';
@@ -20204,6 +20470,9 @@ final class OperationId
     public const USER_ME_API_KEYS = 'user-me-api-keys';
     public const USER_ME_API_KEYS_REVEAL = 'user-me-api-keys-reveal';
     public const USER_ME_API_KEYS_ROTATE = 'user-me-api-keys-rotate';
+    public const WEB_ANTIBOT_CHECK = 'antibot-check';
+    public const WEB_CONTACT = 'contact';
+    public const WEB_SCRAPE = 'web-scrape';
     public const YAHOO_FINANCE_CALENDAR = 'yahoo-finance-calendar';
     public const YAHOO_FINANCE_CALENDARS = 'yahoo-finance-calendars';
     public const YAHOO_FINANCE_DOWNLOAD = 'yahoo-finance-download';
