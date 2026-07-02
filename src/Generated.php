@@ -218,6 +218,14 @@ abstract class WebGroup {}
 
 /**
  * @method mixed list_(array $params = [], array $options = []) datasets-list (GET /datasets)
+ * @method mixed airbnbMarketsFacets(array $params = [], array $options = []) datasets-airbnb-markets-facets (GET /datasets/airbnb-markets/facets)
+ *   params: string $facet, string $group_by, string $country, string $market, bool $superhost, float $min_rating, int $min_review_count, string $active_since, int $min_listings
+ * @method mixed airbnbMarketsItem(array $params = [], array $options = []) datasets-airbnb-markets-item (GET /datasets/airbnb-markets/items/{country})
+ *   params: string $country
+ * @method mixed airbnbMarketsNearby(array $params = [], array $options = []) datasets-airbnb-markets-nearby (GET /datasets/airbnb-markets/nearby)
+ *   params: float $lat, float $lon, int $radius_m, int $precision, int $min_listings, string $country, bool $superhost, float $min_rating, string $active_since
+ * @method mixed airbnbMarketsSearch(array $params = [], array $options = []) datasets-airbnb-markets-search (GET /datasets/airbnb-markets/search)
+ *   params: string $group_by, string $country, string $market, bool $superhost, float $min_rating, int $min_review_count, string $active_since, int $min_listings, string $sort, int $page, int $page_size
  * @method mixed appsChartsSearch(array $params = [], array $options = []) datasets-apps-charts-search (GET /datasets/apps-charts/search)
  *   params: string $q, string $store, string $chart_type, string $collection, string $category, string $country, string $app_id, string $date, string $sort, int $page, int $page_size
  * @method mixed appsReviewsSearch(array $params = [], array $options = []) datasets-apps-reviews-search (GET /datasets/apps-reviews/search)

@@ -4285,6 +4285,237 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'datasets-airbnb-markets-facets' => [
+            'id' => 'datasets-airbnb-markets-facets',
+            'method' => 'GET',
+            'path' => '/datasets/airbnb-markets/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'group_by',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'market',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'superhost',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_review_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'active_since',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_listings',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-airbnb-markets-item' => [
+            'id' => 'datasets-airbnb-markets-item',
+            'method' => 'GET',
+            'path' => '/datasets/airbnb-markets/items/{country}',
+            'pathParams' => [
+                'country',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-airbnb-markets-nearby' => [
+            'id' => 'datasets-airbnb-markets-nearby',
+            'method' => 'GET',
+            'path' => '/datasets/airbnb-markets/nearby',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'lon',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'radius_m',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'precision',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_listings',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'superhost',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'active_since',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-airbnb-markets-search' => [
+            'id' => 'datasets-airbnb-markets-search',
+            'method' => 'GET',
+            'path' => '/datasets/airbnb-markets/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'group_by',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'market',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'superhost',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_review_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'active_since',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_listings',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'datasets-apps-charts-search' => [
             'id' => 'datasets-apps-charts-search',
             'method' => 'GET',
@@ -20381,6 +20612,10 @@ final class Operations
         ],
         'datasets' => [
             'list_' => 'datasets-list',
+            'airbnbMarketsFacets' => 'datasets-airbnb-markets-facets',
+            'airbnbMarketsItem' => 'datasets-airbnb-markets-item',
+            'airbnbMarketsNearby' => 'datasets-airbnb-markets-nearby',
+            'airbnbMarketsSearch' => 'datasets-airbnb-markets-search',
             'appsChartsSearch' => 'datasets-apps-charts-search',
             'appsReviewsSearch' => 'datasets-apps-reviews-search',
             'appsSearch' => 'datasets-apps-search',
@@ -20886,7 +21121,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 525;
+    public const OPERATION_COUNT = 529;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -20975,6 +21210,10 @@ final class Operations
         'coingecko-trending',
         'contact',
         'datasets-list',
+        'datasets-airbnb-markets-facets',
+        'datasets-airbnb-markets-item',
+        'datasets-airbnb-markets-nearby',
+        'datasets-airbnb-markets-search',
         'datasets-apps-charts-search',
         'datasets-apps-reviews-search',
         'datasets-apps-search',
@@ -21541,6 +21780,10 @@ final class OperationId
     public const COIN_GECKO_TOKEN_UNLOCKS = 'coingecko-token-unlocks';
     public const COIN_GECKO_TREASURIES = 'coingecko-treasuries';
     public const COIN_GECKO_TRENDING = 'coingecko-trending';
+    public const DATASETS_AIRBNB_MARKETS_FACETS = 'datasets-airbnb-markets-facets';
+    public const DATASETS_AIRBNB_MARKETS_ITEM = 'datasets-airbnb-markets-item';
+    public const DATASETS_AIRBNB_MARKETS_NEARBY = 'datasets-airbnb-markets-nearby';
+    public const DATASETS_AIRBNB_MARKETS_SEARCH = 'datasets-airbnb-markets-search';
     public const DATASETS_APPS_CHARTS_SEARCH = 'datasets-apps-charts-search';
     public const DATASETS_APPS_REVIEWS_SEARCH = 'datasets-apps-reviews-search';
     public const DATASETS_APPS_SEARCH = 'datasets-apps-search';
