@@ -4285,6 +4285,707 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'datasets-apps-charts-search' => [
+            'id' => 'datasets-apps-charts-search',
+            'method' => 'GET',
+            'path' => '/datasets/apps-charts/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'store',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'chart_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'collection',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'app_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-apps-reviews-search' => [
+            'id' => 'datasets-apps-reviews-search',
+            'method' => 'GET',
+            'path' => '/datasets/apps-reviews/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'store',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'app_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_score',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-apps-search' => [
+            'id' => 'datasets-apps-search',
+            'method' => 'GET',
+            'path' => '/datasets/apps/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'store',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'developer',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'free',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_reviews',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-creators-search' => [
+            'id' => 'datasets-creators-search',
+            'method' => 'GET',
+            'path' => '/datasets/creators/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'handle',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'niche',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'verified',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_followers',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'has_email',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'include_inactive',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-github-users-facets' => [
+            'id' => 'datasets-github-users-facets',
+            'method' => 'GET',
+            'path' => '/datasets/github-users/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'login',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'company',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'influence_tier',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'domain',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'has_email',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_twitter',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_blog',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'reachable',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'active_90d',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'hireable',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'is_org',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'is_bot',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_followers',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_followers',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_repos',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_rank_score',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_account_age_years',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_account_age_years',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lon',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'radius_m',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-github-users-item' => [
+            'id' => 'datasets-github-users-item',
+            'method' => 'GET',
+            'path' => '/datasets/github-users/items/{login}',
+            'pathParams' => [
+                'login',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-github-users-nearby' => [
+            'id' => 'datasets-github-users-nearby',
+            'method' => 'GET',
+            'path' => '/datasets/github-users/nearby',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'lon',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'radius_m',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'influence_tier',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'reachable',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_followers',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-github-users-search' => [
+            'id' => 'datasets-github-users-search',
+            'method' => 'GET',
+            'path' => '/datasets/github-users/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'login',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'company',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'influence_tier',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'domain',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'has_email',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_twitter',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_blog',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'reachable',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'active_90d',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'hireable',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'is_org',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'is_bot',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_followers',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_followers',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_repos',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_rank_score',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_account_age_years',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_account_age_years',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lon',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'radius_m',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'datasets-google-map-businesses-facets' => [
             'id' => 'datasets-google-map-businesses-facets',
             'method' => 'GET',
@@ -4931,6 +5632,604 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'github-org' => [
+            'id' => 'github-org',
+            'method' => 'GET',
+            'path' => '/github/org/{org}',
+            'pathParams' => [
+                'org',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'github-org-repos' => [
+            'id' => 'github-org-repos',
+            'method' => 'GET',
+            'path' => '/github/org/{org}/repos',
+            'pathParams' => [
+                'org',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'created',
+                        'updated',
+                        'pushed',
+                        'full_name',
+                    ],
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'public',
+                        'forks',
+                        'sources',
+                        'member',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'github-repo' => [
+            'id' => 'github-repo',
+            'method' => 'GET',
+            'path' => '/github/repo/{owner}/{repo}',
+            'pathParams' => [
+                'owner',
+                'repo',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'github-repo-contributors' => [
+            'id' => 'github-repo-contributors',
+            'method' => 'GET',
+            'path' => '/github/repo/{owner}/{repo}/contributors',
+            'pathParams' => [
+                'owner',
+                'repo',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'github-repo-forks' => [
+            'id' => 'github-repo-forks',
+            'method' => 'GET',
+            'path' => '/github/repo/{owner}/{repo}/forks',
+            'pathParams' => [
+                'owner',
+                'repo',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'newest',
+                        'oldest',
+                        'stargazers',
+                        'watchers',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'github-repo-languages' => [
+            'id' => 'github-repo-languages',
+            'method' => 'GET',
+            'path' => '/github/repo/{owner}/{repo}/languages',
+            'pathParams' => [
+                'owner',
+                'repo',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'github-repo-releases' => [
+            'id' => 'github-repo-releases',
+            'method' => 'GET',
+            'path' => '/github/repo/{owner}/{repo}/releases',
+            'pathParams' => [
+                'owner',
+                'repo',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'github-repo-stargazers' => [
+            'id' => 'github-repo-stargazers',
+            'method' => 'GET',
+            'path' => '/github/repo/{owner}/{repo}/stargazers',
+            'pathParams' => [
+                'owner',
+                'repo',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'github-search-repositories' => [
+            'id' => 'github-search-repositories',
+            'method' => 'GET',
+            'path' => '/github/search/repositories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'stars',
+                        'forks',
+                        'help-wanted-issues',
+                        'updated',
+                    ],
+                ],
+                [
+                    'name' => 'order',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'github-search-users' => [
+            'id' => 'github-search-users',
+            'method' => 'GET',
+            'path' => '/github/search/users',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'followers',
+                        'repositories',
+                        'joined',
+                    ],
+                ],
+                [
+                    'name' => 'order',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'github-trending' => [
+            'id' => 'github-trending',
+            'method' => 'GET',
+            'path' => '/github/trending',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'since',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'daily',
+                        'weekly',
+                        'monthly',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'github-trending-developers' => [
+            'id' => 'github-trending-developers',
+            'method' => 'GET',
+            'path' => '/github/trending/developers',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'since',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'daily',
+                        'weekly',
+                        'monthly',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'github-user' => [
+            'id' => 'github-user',
+            'method' => 'GET',
+            'path' => '/github/user/{username}',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'github-user-events' => [
+            'id' => 'github-user-events',
+            'method' => 'GET',
+            'path' => '/github/user/{username}/events',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'github-user-pinned' => [
+            'id' => 'github-user-pinned',
+            'method' => 'GET',
+            'path' => '/github/user/{username}/pinned',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'github-user-repos' => [
+            'id' => 'github-user-repos',
+            'method' => 'GET',
+            'path' => '/github/user/{username}/repos',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'created',
+                        'updated',
+                        'pushed',
+                        'full_name',
+                    ],
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'owner',
+                        'member',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'google-finance-analyst-articles' => [
             'id' => 'google-finance-analyst-articles',
@@ -11971,6 +13270,11 @@ final class Operations
                     'in' => 'query',
                     'type' => 'integer',
                 ],
+                [
+                    'name' => 'with_scores',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -12027,6 +13331,11 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                 ],
+                [
+                    'name' => 'with_scores',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -12048,7 +13357,13 @@ final class Operations
             'pathParams' => [
                 'id',
             ],
-            'queryParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'with_scores',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -12114,6 +13429,11 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                 ],
+                [
+                    'name' => 'with_scores',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -12140,6 +13460,11 @@ final class Operations
                     'name' => 'limit',
                     'in' => 'query',
                     'type' => 'integer',
+                ],
+                [
+                    'name' => 'with_scores',
+                    'in' => 'query',
+                    'type' => 'boolean',
                 ],
             ],
             'formParams' => [],
@@ -12172,6 +13497,11 @@ final class Operations
                     'name' => 'after',
                     'in' => 'query',
                     'type' => 'string',
+                ],
+                [
+                    'name' => 'with_scores',
+                    'in' => 'query',
+                    'type' => 'boolean',
                 ],
             ],
             'formParams' => [],
@@ -12228,6 +13558,11 @@ final class Operations
                     'name' => 'after',
                     'in' => 'query',
                     'type' => 'string',
+                ],
+                [
+                    'name' => 'with_scores',
+                    'in' => 'query',
+                    'type' => 'boolean',
                 ],
             ],
             'formParams' => [],
@@ -12289,6 +13624,11 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                 ],
+                [
+                    'name' => 'with_scores',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -12343,6 +13683,11 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                 ],
+                [
+                    'name' => 'with_scores',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -12375,6 +13720,11 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                 ],
+                [
+                    'name' => 'with_scores',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -12406,6 +13756,11 @@ final class Operations
                     'name' => 'after',
                     'in' => 'query',
                     'type' => 'string',
+                ],
+                [
+                    'name' => 'with_scores',
+                    'in' => 'query',
+                    'type' => 'boolean',
                 ],
             ],
             'formParams' => [],
@@ -15736,63 +17091,6 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
-        'tiktok-popular-trend-creator' => [
-            'id' => 'tiktok-popular-trend-creator',
-            'method' => 'GET',
-            'path' => '/tiktok/popular-trend/creator',
-            'pathParams' => [],
-            'queryParams' => [
-                [
-                    'name' => 'page',
-                    'in' => 'query',
-                    'type' => 'integer',
-                ],
-                [
-                    'name' => 'limit',
-                    'in' => 'query',
-                    'type' => 'integer',
-                ],
-                [
-                    'name' => 'sort_by',
-                    'in' => 'query',
-                    'type' => 'string',
-                    'enum' => [
-                        'follower',
-                        'engagement',
-                        'avg_views',
-                    ],
-                ],
-                [
-                    'name' => 'creator_country',
-                    'in' => 'query',
-                    'type' => 'string',
-                ],
-                [
-                    'name' => 'audience_count',
-                    'in' => 'query',
-                    'type' => 'integer',
-                    'enum' => [
-                        '1',
-                        '2',
-                        '3',
-                        '4',
-                    ],
-                ],
-            ],
-            'formParams' => [],
-            'bodyParam' => null,
-            'bodyRequired' => false,
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'security' => [
-                'ApiKeyAuth',
-            ],
-            'paginatable' => true,
-        ],
         'tiktok-post' => [
             'id' => 'tiktok-post',
             'method' => 'GET',
@@ -17295,6 +18593,81 @@ final class Operations
             'formParams' => [],
             'bodyParam' => 'scrapeOption',
             'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'x-post' => [
+            'id' => 'x-post',
+            'method' => 'GET',
+            'path' => '/x/post/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'username',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'x-profile' => [
+            'id' => 'x-profile',
+            'method' => 'GET',
+            'path' => '/x/profile/{username}',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'x-profile-posts' => [
+            'id' => 'x-profile-posts',
+            'method' => 'GET',
+            'path' => '/x/profile/{username}/posts',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
             'consumes' => [
                 'application/json',
             ],
@@ -19008,6 +20381,14 @@ final class Operations
         ],
         'datasets' => [
             'list_' => 'datasets-list',
+            'appsChartsSearch' => 'datasets-apps-charts-search',
+            'appsReviewsSearch' => 'datasets-apps-reviews-search',
+            'appsSearch' => 'datasets-apps-search',
+            'creatorsSearch' => 'datasets-creators-search',
+            'githubUsersFacets' => 'datasets-github-users-facets',
+            'githubUsersItem' => 'datasets-github-users-item',
+            'githubUsersNearby' => 'datasets-github-users-nearby',
+            'githubUsersSearch' => 'datasets-github-users-search',
             'googleMapBusinessesFacets' => 'datasets-google-map-businesses-facets',
             'googleMapBusinessesItem' => 'datasets-google-map-businesses-item',
             'googleMapBusinessesNearby' => 'datasets-google-map-businesses-nearby',
@@ -19025,6 +20406,24 @@ final class Operations
             'lookup' => 'geocoding-lookup',
             'reverse' => 'geocoding-reverse',
             'search' => 'geocoding-search',
+        ],
+        'gitHub' => [
+            'githubOrg' => 'github-org',
+            'githubOrgRepos' => 'github-org-repos',
+            'githubRepo' => 'github-repo',
+            'githubRepoContributors' => 'github-repo-contributors',
+            'githubRepoForks' => 'github-repo-forks',
+            'githubRepoLanguages' => 'github-repo-languages',
+            'githubRepoReleases' => 'github-repo-releases',
+            'githubRepoStargazers' => 'github-repo-stargazers',
+            'githubSearchRepositories' => 'github-search-repositories',
+            'githubSearchUsers' => 'github-search-users',
+            'githubTrending' => 'github-trending',
+            'githubTrendingDevelopers' => 'github-trending-developers',
+            'githubUser' => 'github-user',
+            'githubUserEvents' => 'github-user-events',
+            'githubUserPinned' => 'github-user-pinned',
+            'githubUserRepos' => 'github-user-repos',
         ],
         'google' => [
             'financeAnalystArticles' => 'google-finance-analyst-articles',
@@ -19372,7 +20771,6 @@ final class Operations
             'challenge' => 'tiktok-challenge',
             'challengeList' => 'tiktok-challenge-list',
             'popularTrendCountryIndustryMeta' => 'tiktok-popular-trend-country-industry-meta',
-            'popularTrendCreator' => 'tiktok-popular-trend-creator',
             'post' => 'tiktok-post',
             'profilePost' => 'tiktok-profile-post',
             'profile' => 'tiktok-profile',
@@ -19419,6 +20817,11 @@ final class Operations
             'meApiKeys' => 'user-me-api-keys',
             'meApiKeysRotate' => 'user-me-api-keys-rotate',
             'meApiKeysReveal' => 'user-me-api-keys-reveal',
+        ],
+        'x' => [
+            'post' => 'x-post',
+            'profile' => 'x-profile',
+            'profilePosts' => 'x-profile-posts',
         ],
         'yahooFinance' => [
             'calendars' => 'yahoo-finance-calendars',
@@ -19483,7 +20886,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 499;
+    public const OPERATION_COUNT = 525;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -19572,6 +20975,14 @@ final class Operations
         'coingecko-trending',
         'contact',
         'datasets-list',
+        'datasets-apps-charts-search',
+        'datasets-apps-reviews-search',
+        'datasets-apps-search',
+        'datasets-creators-search',
+        'datasets-github-users-facets',
+        'datasets-github-users-item',
+        'datasets-github-users-nearby',
+        'datasets-github-users-search',
         'datasets-google-map-businesses-facets',
         'datasets-google-map-businesses-item',
         'datasets-google-map-businesses-nearby',
@@ -19586,6 +20997,22 @@ final class Operations
         'geocoding-lookup',
         'geocoding-reverse',
         'geocoding-search',
+        'github-org',
+        'github-org-repos',
+        'github-repo',
+        'github-repo-contributors',
+        'github-repo-forks',
+        'github-repo-languages',
+        'github-repo-releases',
+        'github-repo-stargazers',
+        'github-search-repositories',
+        'github-search-users',
+        'github-trending',
+        'github-trending-developers',
+        'github-user',
+        'github-user-events',
+        'github-user-pinned',
+        'github-user-repos',
         'google-finance-analyst-articles',
         'google-finance-chart',
         'google-finance-classification',
@@ -19891,7 +21318,6 @@ final class Operations
         'tiktok-challenge',
         'tiktok-challenge-list',
         'tiktok-popular-trend-country-industry-meta',
-        'tiktok-popular-trend-creator',
         'tiktok-post',
         'tiktok-profile-post',
         'tiktok-profile',
@@ -19931,6 +21357,9 @@ final class Operations
         'user-me-api-keys-rotate',
         'user-me-api-keys-reveal',
         'web-scrape',
+        'x-post',
+        'x-profile',
+        'x-profile-posts',
         'yahoo-finance-calendars',
         'yahoo-finance-calendar',
         'yahoo-finance-download',
@@ -20112,6 +21541,14 @@ final class OperationId
     public const COIN_GECKO_TOKEN_UNLOCKS = 'coingecko-token-unlocks';
     public const COIN_GECKO_TREASURIES = 'coingecko-treasuries';
     public const COIN_GECKO_TRENDING = 'coingecko-trending';
+    public const DATASETS_APPS_CHARTS_SEARCH = 'datasets-apps-charts-search';
+    public const DATASETS_APPS_REVIEWS_SEARCH = 'datasets-apps-reviews-search';
+    public const DATASETS_APPS_SEARCH = 'datasets-apps-search';
+    public const DATASETS_CREATORS_SEARCH = 'datasets-creators-search';
+    public const DATASETS_GITHUB_USERS_FACETS = 'datasets-github-users-facets';
+    public const DATASETS_GITHUB_USERS_ITEM = 'datasets-github-users-item';
+    public const DATASETS_GITHUB_USERS_NEARBY = 'datasets-github-users-nearby';
+    public const DATASETS_GITHUB_USERS_SEARCH = 'datasets-github-users-search';
     public const DATASETS_GOOGLE_MAP_BUSINESSES_FACETS = 'datasets-google-map-businesses-facets';
     public const DATASETS_GOOGLE_MAP_BUSINESSES_ITEM = 'datasets-google-map-businesses-item';
     public const DATASETS_GOOGLE_MAP_BUSINESSES_NEARBY = 'datasets-google-map-businesses-nearby';
@@ -20126,6 +21563,22 @@ final class OperationId
     public const GEOCODING_LOOKUP = 'geocoding-lookup';
     public const GEOCODING_REVERSE = 'geocoding-reverse';
     public const GEOCODING_SEARCH = 'geocoding-search';
+    public const GIT_HUB_GITHUB_ORG = 'github-org';
+    public const GIT_HUB_GITHUB_ORG_REPOS = 'github-org-repos';
+    public const GIT_HUB_GITHUB_REPO = 'github-repo';
+    public const GIT_HUB_GITHUB_REPO_CONTRIBUTORS = 'github-repo-contributors';
+    public const GIT_HUB_GITHUB_REPO_FORKS = 'github-repo-forks';
+    public const GIT_HUB_GITHUB_REPO_LANGUAGES = 'github-repo-languages';
+    public const GIT_HUB_GITHUB_REPO_RELEASES = 'github-repo-releases';
+    public const GIT_HUB_GITHUB_REPO_STARGAZERS = 'github-repo-stargazers';
+    public const GIT_HUB_GITHUB_SEARCH_REPOSITORIES = 'github-search-repositories';
+    public const GIT_HUB_GITHUB_SEARCH_USERS = 'github-search-users';
+    public const GIT_HUB_GITHUB_TRENDING = 'github-trending';
+    public const GIT_HUB_GITHUB_TRENDING_DEVELOPERS = 'github-trending-developers';
+    public const GIT_HUB_GITHUB_USER = 'github-user';
+    public const GIT_HUB_GITHUB_USER_EVENTS = 'github-user-events';
+    public const GIT_HUB_GITHUB_USER_PINNED = 'github-user-pinned';
+    public const GIT_HUB_GITHUB_USER_REPOS = 'github-user-repos';
     public const GOOGLE_FINANCE_ANALYST_ARTICLES = 'google-finance-analyst-articles';
     public const GOOGLE_FINANCE_CHART = 'google-finance-chart';
     public const GOOGLE_FINANCE_CLASSIFICATION = 'google-finance-classification';
@@ -20430,7 +21883,6 @@ final class OperationId
     public const TIKTOK_CHALLENGE_LIST = 'tiktok-challenge-list';
     public const TIKTOK_EXPLORE = 'tiktok-explore';
     public const TIKTOK_POPULAR_TREND_COUNTRY_INDUSTRY_META = 'tiktok-popular-trend-country-industry-meta';
-    public const TIKTOK_POPULAR_TREND_CREATOR = 'tiktok-popular-trend-creator';
     public const TIKTOK_POST = 'tiktok-post';
     public const TIKTOK_PROFILE = 'tiktok-profile';
     public const TIKTOK_PROFILE_POST = 'tiktok-profile-post';
@@ -20473,6 +21925,9 @@ final class OperationId
     public const WEB_ANTIBOT_CHECK = 'antibot-check';
     public const WEB_CONTACT = 'contact';
     public const WEB_SCRAPE = 'web-scrape';
+    public const XPOST = 'x-post';
+    public const XPROFILE = 'x-profile';
+    public const XPROFILE_POSTS = 'x-profile-posts';
     public const YAHOO_FINANCE_CALENDAR = 'yahoo-finance-calendar';
     public const YAHOO_FINANCE_CALENDARS = 'yahoo-finance-calendars';
     public const YAHOO_FINANCE_DOWNLOAD = 'yahoo-finance-download';

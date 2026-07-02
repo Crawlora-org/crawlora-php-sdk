@@ -19,6 +19,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\DatasetsGroup $datasets
  * @property-read \Crawlora\Generated\EBayGroup $eBay
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
+ * @property-read \Crawlora\Generated\GitHubGroup $gitHub
  * @property-read \Crawlora\Generated\GoogleGroup $google
  * @property-read \Crawlora\Generated\GooglePlayGroup $googlePlay
  * @property-read \Crawlora\Generated\ImdbGroup $imdb
@@ -44,6 +45,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\TrustpilotGroup $trustpilot
  * @property-read \Crawlora\Generated\UsageGroup $usage
  * @property-read \Crawlora\Generated\UserGroup $user
+ * @property-read \Crawlora\Generated\XGroup $x
  * @property-read \Crawlora\Generated\YahooFinanceGroup $yahooFinance
  * @property-read \Crawlora\Generated\YoutubeGroup $youtube
  * @property-read \Crawlora\Generated\ZillowGroup $zillow

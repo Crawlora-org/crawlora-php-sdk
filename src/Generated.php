@@ -218,6 +218,22 @@ abstract class WebGroup {}
 
 /**
  * @method mixed list_(array $params = [], array $options = []) datasets-list (GET /datasets)
+ * @method mixed appsChartsSearch(array $params = [], array $options = []) datasets-apps-charts-search (GET /datasets/apps-charts/search)
+ *   params: string $q, string $store, string $chart_type, string $collection, string $category, string $country, string $app_id, string $date, string $sort, int $page, int $page_size
+ * @method mixed appsReviewsSearch(array $params = [], array $options = []) datasets-apps-reviews-search (GET /datasets/apps-reviews/search)
+ *   params: string $q, string $store, string $app_id, string $country, int $min_score, string $sort, int $page, int $page_size
+ * @method mixed appsSearch(array $params = [], array $options = []) datasets-apps-search (GET /datasets/apps/search)
+ *   params: string $q, string $store, string $category, string $country, string $developer, bool $free, float $min_rating, int $min_reviews, string $sort, int $page, int $page_size
+ * @method mixed creatorsSearch(array $params = [], array $options = []) datasets-creators-search (GET /datasets/creators/search)
+ *   params: string $q, string $handle, string $niche, string $country, bool $verified, int $min_followers, bool $has_email, bool $include_inactive, string $sort, int $page, int $page_size
+ * @method mixed githubUsersFacets(array $params = [], array $options = []) datasets-github-users-facets (GET /datasets/github-users/facets)
+ *   params: string $facet, string $q, string $login, string $company, string $influence_tier, string $country, string $country_code, string $state, string $city, string $domain, bool $has_email, bool $has_twitter, bool $has_blog, bool $reachable, bool $active_90d, bool $hireable, bool $is_org, bool $is_bot, int $min_followers, int $max_followers, int $min_repos, int $min_rank_score, float $min_account_age_years, float $max_account_age_years, float $lat, float $lon, int $radius_m, string $sort
+ * @method mixed githubUsersItem(array $params = [], array $options = []) datasets-github-users-item (GET /datasets/github-users/items/{login})
+ *   params: string $login
+ * @method mixed githubUsersNearby(array $params = [], array $options = []) datasets-github-users-nearby (GET /datasets/github-users/nearby)
+ *   params: float $lat, float $lon, int $radius_m, string $influence_tier, bool $reachable, int $min_followers, int $page, int $page_size
+ * @method mixed githubUsersSearch(array $params = [], array $options = []) datasets-github-users-search (GET /datasets/github-users/search)
+ *   params: string $q, string $login, string $company, string $influence_tier, string $country, string $country_code, string $state, string $city, string $domain, bool $has_email, bool $has_twitter, bool $has_blog, bool $reachable, bool $active_90d, bool $hireable, bool $is_org, bool $is_bot, int $min_followers, int $max_followers, int $min_repos, int $min_rank_score, float $min_account_age_years, float $max_account_age_years, float $lat, float $lon, int $radius_m, string $sort, int $page, int $page_size
  * @method mixed googleMapBusinessesFacets(array $params = [], array $options = []) datasets-google-map-businesses-facets (GET /datasets/google-map-businesses/facets)
  *   params: string $facet, string $q, string $category, string $country, string $state, string $county, string $city, string $town, float $min_rating, int $min_review_count, bool $has_website, bool $has_phone, float $lat, float $lon, int $radius_m, string $sort
  * @method mixed googleMapBusinessesItem(array $params = [], array $options = []) datasets-google-map-businesses-item (GET /datasets/google-map-businesses/items/{place_id})
@@ -254,6 +270,42 @@ abstract class EBayGroup {}
  *   params: string $q, string $street, string $city, string $county, string $state, string $country, string $postalcode, int $limit, string $countrycodes, string $accept_language, bool $addressdetails, bool $extratags, bool $namedetails
  */
 abstract class GeocodingGroup {}
+
+/**
+ * @method mixed githubOrg(array $params = [], array $options = []) github-org (GET /github/org/{org})
+ *   params: string $org
+ * @method mixed githubOrgRepos(array $params = [], array $options = []) github-org-repos (GET /github/org/{org}/repos)
+ *   params: string $org, 'created'|'updated'|'pushed'|'full_name' $sort, 'asc'|'desc' $direction, 'all'|'public'|'forks'|'sources'|'member' $type, int $page, int $per_page
+ * @method mixed githubRepo(array $params = [], array $options = []) github-repo (GET /github/repo/{owner}/{repo})
+ *   params: string $owner, string $repo
+ * @method mixed githubRepoContributors(array $params = [], array $options = []) github-repo-contributors (GET /github/repo/{owner}/{repo}/contributors)
+ *   params: string $owner, string $repo, int $page, int $per_page
+ * @method mixed githubRepoForks(array $params = [], array $options = []) github-repo-forks (GET /github/repo/{owner}/{repo}/forks)
+ *   params: string $owner, string $repo, 'newest'|'oldest'|'stargazers'|'watchers' $sort, int $page, int $per_page
+ * @method mixed githubRepoLanguages(array $params = [], array $options = []) github-repo-languages (GET /github/repo/{owner}/{repo}/languages)
+ *   params: string $owner, string $repo
+ * @method mixed githubRepoReleases(array $params = [], array $options = []) github-repo-releases (GET /github/repo/{owner}/{repo}/releases)
+ *   params: string $owner, string $repo, int $page, int $per_page
+ * @method mixed githubRepoStargazers(array $params = [], array $options = []) github-repo-stargazers (GET /github/repo/{owner}/{repo}/stargazers)
+ *   params: string $owner, string $repo, int $page, int $per_page
+ * @method mixed githubSearchRepositories(array $params = [], array $options = []) github-search-repositories (GET /github/search/repositories)
+ *   params: string $q, 'stars'|'forks'|'help-wanted-issues'|'updated' $sort, 'asc'|'desc' $order, int $page, int $per_page
+ * @method mixed githubSearchUsers(array $params = [], array $options = []) github-search-users (GET /github/search/users)
+ *   params: string $q, 'followers'|'repositories'|'joined' $sort, 'asc'|'desc' $order, int $page, int $per_page
+ * @method mixed githubTrending(array $params = [], array $options = []) github-trending (GET /github/trending)
+ *   params: string $language, 'daily'|'weekly'|'monthly' $since
+ * @method mixed githubTrendingDevelopers(array $params = [], array $options = []) github-trending-developers (GET /github/trending/developers)
+ *   params: string $language, 'daily'|'weekly'|'monthly' $since
+ * @method mixed githubUser(array $params = [], array $options = []) github-user (GET /github/user/{username})
+ *   params: string $username
+ * @method mixed githubUserEvents(array $params = [], array $options = []) github-user-events (GET /github/user/{username}/events)
+ *   params: string $username, int $page, int $per_page
+ * @method mixed githubUserPinned(array $params = [], array $options = []) github-user-pinned (GET /github/user/{username}/pinned)
+ *   params: string $username
+ * @method mixed githubUserRepos(array $params = [], array $options = []) github-user-repos (GET /github/user/{username}/repos)
+ *   params: string $username, 'created'|'updated'|'pushed'|'full_name' $sort, 'asc'|'desc' $direction, 'all'|'owner'|'member' $type, int $page, int $per_page
+ */
+abstract class GitHubGroup {}
 
 /**
  * @method mixed financeAnalystArticles(array $params = [], array $options = []) google-finance-analyst-articles (GET /google/finance/analyst-articles/{quote})
@@ -692,27 +744,27 @@ abstract class ProductHuntGroup {}
 
 /**
  * @method mixed comments(array $params = [], array $options = []) reddit-comments (GET /reddit/comments/{id})
- *   params: string $id, 'confidence'|'top'|'new'|'controversial'|'old'|'qa' $sort, int $limit, int $depth
+ *   params: string $id, 'confidence'|'top'|'new'|'controversial'|'old'|'qa' $sort, int $limit, int $depth, bool $with_scores
  * @method mixed domainPosts(array $params = [], array $options = []) reddit-domain-posts (GET /reddit/domain/{domain}/posts)
- *   params: string $domain, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
+ *   params: string $domain, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after, bool $with_scores
  * @method mixed post(array $params = [], array $options = []) reddit-post (GET /reddit/post/{id})
- *   params: string $id
+ *   params: string $id, bool $with_scores
  * @method mixed search(array $params = [], array $options = []) reddit-search (GET /reddit/search)
- *   params: string $q, string $subreddit, 'relevance'|'hot'|'new'|'top'|'comments' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
+ *   params: string $q, string $subreddit, 'relevance'|'hot'|'new'|'top'|'comments' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after, bool $with_scores
  * @method mixed subredditAbout(array $params = [], array $options = []) reddit-subreddit-about (GET /reddit/subreddit/{subreddit}/about)
- *   params: string $subreddit, int $limit
+ *   params: string $subreddit, int $limit, bool $with_scores
  * @method mixed subredditComments(array $params = [], array $options = []) reddit-subreddit-comments (GET /reddit/subreddit/{subreddit}/comments)
- *   params: string $subreddit, int $limit, string $after
+ *   params: string $subreddit, int $limit, string $after, bool $with_scores
  * @method mixed subredditPosts(array $params = [], array $options = []) reddit-subreddit-posts (GET /reddit/subreddit/{subreddit}/posts)
- *   params: string $subreddit, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
+ *   params: string $subreddit, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after, bool $with_scores
  * @method mixed subredditsPosts(array $params = [], array $options = []) reddit-subreddits-posts (GET /reddit/subreddits/posts)
- *   params: string $subreddits, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
+ *   params: string $subreddits, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after, bool $with_scores
  * @method mixed trends(array $params = [], array $options = []) reddit-trends (GET /reddit/trends)
- *   params: 'hot'|'new'|'rising'|'top' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
+ *   params: 'hot'|'new'|'rising'|'top' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after, bool $with_scores
  * @method mixed userComments(array $params = [], array $options = []) reddit-user-comments (GET /reddit/user/{username}/comments)
- *   params: string $username, int $limit, string $after
+ *   params: string $username, int $limit, string $after, bool $with_scores
  * @method mixed userPosts(array $params = [], array $options = []) reddit-user-posts (GET /reddit/user/{username}/posts)
- *   params: string $username, int $limit, string $after
+ *   params: string $username, int $limit, string $after, bool $with_scores
  */
 abstract class RedditGroup {}
 
@@ -925,8 +977,6 @@ abstract class SpotifyGroup {}
  * @method mixed challengeList(array $params = [], array $options = []) tiktok-challenge-list (GET /tiktok/hashtags)
  *   params: string $id, int $cursor
  * @method mixed popularTrendCountryIndustryMeta(array $params = [], array $options = []) tiktok-popular-trend-country-industry-meta (GET /tiktok/popular-trend/country-industry-meta)
- * @method mixed popularTrendCreator(array $params = [], array $options = []) tiktok-popular-trend-creator (GET /tiktok/popular-trend/creator)
- *   params: int $page, int $limit, 'follower'|'engagement'|'avg_views' $sort_by, string $creator_country, '1'|'2'|'3'|'4' $audience_count
  * @method mixed post(array $params = [], array $options = []) tiktok-post (GET /tiktok/post/{id})
  *   params: string $id
  * @method mixed profilePost(array $params = [], array $options = []) tiktok-profile-post (GET /tiktok/posts)
@@ -1012,6 +1062,16 @@ abstract class UsageGroup {}
  *   params: string $id
  */
 abstract class UserGroup {}
+
+/**
+ * @method mixed post(array $params = [], array $options = []) x-post (GET /x/post/{id})
+ *   params: string $id, string $username
+ * @method mixed profile(array $params = [], array $options = []) x-profile (GET /x/profile/{username})
+ *   params: string $username
+ * @method mixed profilePosts(array $params = [], array $options = []) x-profile-posts (GET /x/profile/{username}/posts)
+ *   params: string $username, int $limit
+ */
+abstract class XGroup {}
 
 /**
  * @method mixed calendars(array $params = [], array $options = []) yahoo-finance-calendars (GET /yahoo-finance/calendars)
@@ -1146,6 +1206,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\DatasetsGroup $datasets
  * @property-read \Crawlora\Generated\EBayGroup $eBay
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
+ * @property-read \Crawlora\Generated\GitHubGroup $gitHub
  * @property-read \Crawlora\Generated\GoogleGroup $google
  * @property-read \Crawlora\Generated\GooglePlayGroup $googlePlay
  * @property-read \Crawlora\Generated\ImdbGroup $imdb
@@ -1171,6 +1232,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\TrustpilotGroup $trustpilot
  * @property-read \Crawlora\Generated\UsageGroup $usage
  * @property-read \Crawlora\Generated\UserGroup $user
+ * @property-read \Crawlora\Generated\XGroup $x
  * @property-read \Crawlora\Generated\YahooFinanceGroup $yahooFinance
  * @property-read \Crawlora\Generated\YoutubeGroup $youtube
  * @property-read \Crawlora\Generated\ZillowGroup $zillow
