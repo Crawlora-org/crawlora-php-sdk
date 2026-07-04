@@ -7,6 +7,12 @@ declare(strict_types=1);
 namespace Crawlora\Generated;
 
 /**
+ * @method mixed host(array $params = [], array $options = []) airbnb-host (GET /airbnb/host/{id})
+ *   params: string $id
+ * @method mixed hostListings(array $params = [], array $options = []) airbnb-host-listings (GET /airbnb/host/{id}/listings)
+ *   params: string $id, int $page
+ * @method mixed hostReviews(array $params = [], array $options = []) airbnb-host-reviews (GET /airbnb/host/{id}/reviews)
+ *   params: string $id, int $page
  * @method mixed room(array $params = [], array $options = []) airbnb-room (GET /airbnb/room/{id})
  *   params: string $id
  * @method mixed roomCalendar(array $params = [], array $options = []) airbnb-room-calendar (GET /airbnb/room/{id}/calendar)
@@ -243,13 +249,13 @@ abstract class WebGroup {}
  * @method mixed githubUsersSearch(array $params = [], array $options = []) datasets-github-users-search (GET /datasets/github-users/search)
  *   params: string $q, string $login, string $company, string $influence_tier, string $country, string $country_code, string $state, string $city, string $domain, bool $has_email, bool $has_twitter, bool $has_blog, bool $reachable, bool $active_90d, bool $hireable, bool $is_org, bool $is_bot, int $min_followers, int $max_followers, int $min_repos, int $min_rank_score, float $min_account_age_years, float $max_account_age_years, float $lat, float $lon, int $radius_m, string $sort, int $page, int $page_size
  * @method mixed googleMapBusinessesFacets(array $params = [], array $options = []) datasets-google-map-businesses-facets (GET /datasets/google-map-businesses/facets)
- *   params: string $facet, string $q, string $category, string $country, string $state, string $county, string $city, string $town, float $min_rating, int $min_review_count, bool $has_website, bool $has_phone, float $lat, float $lon, int $radius_m, string $sort
+ *   params: string $facet, string $q, string $category, string $country, string $state, string $county, string $city, string $town, float $min_rating, int $min_review_count, bool $has_website, bool $has_phone, bool $has_geo, float $lat, float $lon, int $radius_m, string $sort
  * @method mixed googleMapBusinessesItem(array $params = [], array $options = []) datasets-google-map-businesses-item (GET /datasets/google-map-businesses/items/{place_id})
  *   params: string $place_id
  * @method mixed googleMapBusinessesNearby(array $params = [], array $options = []) datasets-google-map-businesses-nearby (GET /datasets/google-map-businesses/nearby)
  *   params: float $lat, float $lon, int $radius_m, string $category, float $min_rating, int $min_review_count, int $page, int $page_size
  * @method mixed googleMapBusinessesSearch(array $params = [], array $options = []) datasets-google-map-businesses-search (GET /datasets/google-map-businesses/search)
- *   params: string $q, string $category, string $country, string $state, string $county, string $city, string $town, float $min_rating, int $min_review_count, bool $has_website, bool $has_phone, float $lat, float $lon, int $radius_m, string $sort, int $page, int $page_size
+ *   params: string $q, string $category, string $country, string $state, string $county, string $city, string $town, float $min_rating, int $min_review_count, bool $has_website, bool $has_phone, bool $has_geo, float $lat, float $lon, int $radius_m, string $sort, int $page, int $page_size
  */
 abstract class DatasetsGroup {}
 

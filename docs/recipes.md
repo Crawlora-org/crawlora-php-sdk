@@ -33,6 +33,16 @@ $posts = $client->reddit->search(['q' => 'php', 'subreddit' => 'programming']);
 $brand = $client->brand->retrieve(['domain' => 'stripe.com']);
 ```
 
+## Airbnb Host Profiles
+
+Look up a public Airbnb host, then page through their listings and guest reviews.
+
+```php
+$host = $client->airbnb->host(['id' => '65056940']);
+$listings = $client->airbnb->hostListings(['id' => '65056940', 'page' => 1]);
+$reviews = $client->airbnb->hostReviews(['id' => '65056940', 'page' => 1]);
+```
+
 ## Walk every page
 
 ```php

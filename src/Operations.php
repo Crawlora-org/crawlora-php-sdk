@@ -15,6 +15,83 @@ final class Operations
 {
     /** @var array<string,array<string,mixed>> */
     public const OPERATIONS = [
+        'airbnb-host' => [
+            'id' => 'airbnb-host',
+            'method' => 'GET',
+            'path' => '/airbnb/host/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'airbnb-host-listings' => [
+            'id' => 'airbnb-host-listings',
+            'method' => 'GET',
+            'path' => '/airbnb/host/{id}/listings',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'airbnb-host-reviews' => [
+            'id' => 'airbnb-host-reviews',
+            'method' => 'GET',
+            'path' => '/airbnb/host/{id}/reviews',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'airbnb-room' => [
             'id' => 'airbnb-room',
             'method' => 'GET',
@@ -5285,6 +5362,11 @@ final class Operations
                     'type' => 'boolean',
                 ],
                 [
+                    'name' => 'has_geo',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
                     'name' => 'lat',
                     'in' => 'query',
                     'type' => 'number',
@@ -5461,6 +5543,11 @@ final class Operations
                 ],
                 [
                     'name' => 'has_phone',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_geo',
                     'in' => 'query',
                     'type' => 'boolean',
                 ],
@@ -20503,6 +20590,9 @@ final class Operations
     /** @var array<string,array<string,string>> */
     public const GROUPS = [
         'airbnb' => [
+            'host' => 'airbnb-host',
+            'hostListings' => 'airbnb-host-listings',
+            'hostReviews' => 'airbnb-host-reviews',
             'room' => 'airbnb-room',
             'roomCalendar' => 'airbnb-room-calendar',
             'roomReviews' => 'airbnb-room-reviews',
@@ -21121,10 +21211,13 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 529;
+    public const OPERATION_COUNT = 532;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
+        'airbnb-host',
+        'airbnb-host-listings',
+        'airbnb-host-reviews',
         'airbnb-room',
         'airbnb-room-calendar',
         'airbnb-room-reviews',
@@ -21697,6 +21790,9 @@ final class Operations
  */
 final class OperationId
 {
+    public const AIRBNB_HOST = 'airbnb-host';
+    public const AIRBNB_HOST_LISTINGS = 'airbnb-host-listings';
+    public const AIRBNB_HOST_REVIEWS = 'airbnb-host-reviews';
     public const AIRBNB_ROOM = 'airbnb-room';
     public const AIRBNB_ROOM_CALENDAR = 'airbnb-room-calendar';
     public const AIRBNB_ROOM_REVIEWS = 'airbnb-room-reviews';
