@@ -135,3 +135,16 @@ $client = new Client([
 $client = new Client(['apiKey' => '...', 'idempotencyKeys' => true]);
 // POST/PATCH operations get a generated Idempotency-Key header automatically.
 ```
+
+## TrustMRR Verified Startup Revenues
+
+Browse verified startup revenues and the acquisition marketplace on TrustMRR: the marketplace snapshot, the revenue leaderboard, startup detail, and categories.
+
+```php
+$deals = $client->trustMrr->trustmrrMarketplace();
+$board = $client->trustMrr->trustmrrLeaderboard(['metric' => 'mrr']);
+$startup = $client->trustMrr->trustmrrStartup(['slug' => 'stan']);
+$cats = $client->trustMrr->trustmrrCategories();
+$saas = $client->trustMrr->trustmrrCategory(['slug' => 'saas']);
+```
+
