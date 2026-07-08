@@ -168,6 +168,27 @@ abstract class BrandGroup {}
 abstract class BraveGroup {}
 
 /**
+ * @method mixed chromewebstoreCategories(array $params = [], array $options = []) chromewebstore-categories (GET /chromewebstore/categories)
+ * @method mixed chromewebstoreCategory(array $params = [], array $options = []) chromewebstore-category (GET /chromewebstore/category)
+ *   params: string $category, int $num, string $country, string $lang
+ * @method mixed chromewebstoreCharts(array $params = [], array $options = []) chromewebstore-charts (GET /chromewebstore/charts)
+ *   params: 'trending'|'popular'|'notable' $chart, int $num, string $country, string $lang
+ * @method mixed chromewebstoreCollection(array $params = [], array $options = []) chromewebstore-collection (GET /chromewebstore/collection)
+ *   params: string $collection, int $num, string $country, string $lang
+ * @method mixed chromewebstoreItem(array $params = [], array $options = []) chromewebstore-item (GET /chromewebstore/item)
+ *   params: string $id, string $country, string $lang
+ * @method mixed chromewebstoreReviews(array $params = [], array $options = []) chromewebstore-reviews (GET /chromewebstore/reviews)
+ *   params: string $id, int $num, string $country, string $lang
+ * @method mixed chromewebstoreSearch(array $params = [], array $options = []) chromewebstore-search (GET /chromewebstore/search)
+ *   params: string $term, int $num, string $country, string $lang
+ * @method mixed chromewebstoreSimilar(array $params = [], array $options = []) chromewebstore-similar (GET /chromewebstore/similar)
+ *   params: string $id, string $country, string $lang
+ * @method mixed chromewebstoreSuggest(array $params = [], array $options = []) chromewebstore-suggest (GET /chromewebstore/suggest)
+ *   params: string $term, int $num, string $country, string $lang
+ */
+abstract class ChromeWebStoreGroup {}
+
+/**
  * @method mixed categories(array $params = [], array $options = []) coingecko-categories (GET /coingecko/categories)
  *   params: int $limit, 'btc'|'eth'|'ltc'|'bch'|'bnb'|'eos'|'xrp'|'xlm'|'link'|'dot'|'yfi'|'sol'|'usd'|'aed'|'ars'|'aud'|'bdt'|'bhd'|'bmd'|'brl'|'cad'|'chf'|'clp'|'cny'|'czk'|'dkk'|'eur'|'gbp'|'gel'|'hkd'|'huf'|'idr'|'ils'|'inr'|'jpy'|'krw'|'kwd'|'lkr'|'mmk'|'mxn'|'myr'|'ngn'|'nok'|'nzd'|'php'|'pkr'|'pln'|'rub'|'sar'|'sek'|'sgd'|'thb'|'try'|'twd'|'uah'|'vef'|'vnd'|'zar'|'xdr'|'xag'|'xau'|'bits'|'sats' $vs_currency
  * @method mixed categoryCoins(array $params = [], array $options = []) coingecko-category-coins (GET /coingecko/category/{slug}/coins)
@@ -219,19 +240,21 @@ abstract class CoinGeckoGroup {}
  *   params: array $request
  * @method mixed scrape(array $params = [], array $options = []) web-scrape (POST /web/scrape)
  *   params: array $scrapeOption
+ * @method mixed techstack(array $params = [], array $options = []) web-techstack (POST /web/techstack)
+ *   params: array $request
  */
 abstract class WebGroup {}
 
 /**
  * @method mixed list_(array $params = [], array $options = []) datasets-list (GET /datasets)
  * @method mixed airbnbMarketsFacets(array $params = [], array $options = []) datasets-airbnb-markets-facets (GET /datasets/airbnb-markets/facets)
- *   params: string $facet, string $group_by, string $country, string $market, bool $superhost, float $min_rating, int $min_review_count, string $active_since, int $min_listings
+ *   params: string $facet, string $group_by, string $country, string $market, bool $superhost, bool $guest_favorite, float $min_rating, int $min_review_count, string $active_since, int $min_listings
  * @method mixed airbnbMarketsItem(array $params = [], array $options = []) datasets-airbnb-markets-item (GET /datasets/airbnb-markets/items/{country})
  *   params: string $country
  * @method mixed airbnbMarketsNearby(array $params = [], array $options = []) datasets-airbnb-markets-nearby (GET /datasets/airbnb-markets/nearby)
  *   params: float $lat, float $lon, int $radius_m, int $precision, int $min_listings, string $country, bool $superhost, float $min_rating, string $active_since
  * @method mixed airbnbMarketsSearch(array $params = [], array $options = []) datasets-airbnb-markets-search (GET /datasets/airbnb-markets/search)
- *   params: string $group_by, string $country, string $market, bool $superhost, float $min_rating, int $min_review_count, string $active_since, int $min_listings, string $sort, int $page, int $page_size
+ *   params: string $group_by, string $country, string $market, bool $superhost, bool $guest_favorite, float $min_rating, int $min_review_count, string $active_since, int $min_listings, string $sort, int $page, int $page_size
  * @method mixed appsChartsSearch(array $params = [], array $options = []) datasets-apps-charts-search (GET /datasets/apps-charts/search)
  *   params: string $q, string $store, string $chart_type, string $collection, string $category, string $country, string $app_id, string $date, string $sort, int $page, int $page_size
  * @method mixed appsReviewsSearch(array $params = [], array $options = []) datasets-apps-reviews-search (GET /datasets/apps-reviews/search)
@@ -241,13 +264,13 @@ abstract class WebGroup {}
  * @method mixed creatorsSearch(array $params = [], array $options = []) datasets-creators-search (GET /datasets/creators/search)
  *   params: string $q, string $handle, string $niche, string $country, bool $verified, int $min_followers, bool $has_email, bool $include_inactive, string $sort, int $page, int $page_size
  * @method mixed githubUsersFacets(array $params = [], array $options = []) datasets-github-users-facets (GET /datasets/github-users/facets)
- *   params: string $facet, string $q, string $login, string $company, string $influence_tier, string $country, string $country_code, string $state, string $city, string $domain, bool $has_email, bool $has_twitter, bool $has_blog, bool $reachable, bool $active_90d, bool $hireable, bool $is_org, bool $is_bot, int $min_followers, int $max_followers, int $min_repos, int $min_rank_score, float $min_account_age_years, float $max_account_age_years, float $lat, float $lon, int $radius_m, string $sort
+ *   params: string $facet, string $q, string $login, string $company, string $influence_tier, string $country, string $country_code, string $state, string $city, string $domain, bool $has_email, bool $has_twitter, bool $has_blog, bool $reachable, bool $active_90d, bool $hireable, bool $is_org, bool $is_bot, bool $is_suspected_automation, int $min_followers, int $max_followers, int $min_repos, int $min_rank_score, float $min_account_age_years, float $max_account_age_years, float $lat, float $lon, int $radius_m, string $sort
  * @method mixed githubUsersItem(array $params = [], array $options = []) datasets-github-users-item (GET /datasets/github-users/items/{login})
  *   params: string $login
  * @method mixed githubUsersNearby(array $params = [], array $options = []) datasets-github-users-nearby (GET /datasets/github-users/nearby)
  *   params: float $lat, float $lon, int $radius_m, string $influence_tier, bool $reachable, int $min_followers, int $page, int $page_size
  * @method mixed githubUsersSearch(array $params = [], array $options = []) datasets-github-users-search (GET /datasets/github-users/search)
- *   params: string $q, string $login, string $company, string $influence_tier, string $country, string $country_code, string $state, string $city, string $domain, bool $has_email, bool $has_twitter, bool $has_blog, bool $reachable, bool $active_90d, bool $hireable, bool $is_org, bool $is_bot, int $min_followers, int $max_followers, int $min_repos, int $min_rank_score, float $min_account_age_years, float $max_account_age_years, float $lat, float $lon, int $radius_m, string $sort, int $page, int $page_size
+ *   params: string $q, string $login, string $company, string $influence_tier, string $country, string $country_code, string $state, string $city, string $domain, bool $has_email, bool $has_twitter, bool $has_blog, bool $reachable, bool $active_90d, bool $hireable, bool $is_org, bool $is_bot, bool $is_suspected_automation, int $min_followers, int $max_followers, int $min_repos, int $min_rank_score, float $min_account_age_years, float $max_account_age_years, float $lat, float $lon, int $radius_m, string $sort, int $page, int $page_size
  * @method mixed googleMapBusinessesFacets(array $params = [], array $options = []) datasets-google-map-businesses-facets (GET /datasets/google-map-businesses/facets)
  *   params: string $facet, string $q, string $category, string $country, string $state, string $county, string $city, string $town, float $min_rating, int $min_review_count, bool $has_website, bool $has_phone, bool $has_geo, float $lat, float $lon, int $radius_m, string $sort
  * @method mixed googleMapBusinessesItem(array $params = [], array $options = []) datasets-google-map-businesses-item (GET /datasets/google-map-businesses/items/{place_id})
@@ -256,6 +279,22 @@ abstract class WebGroup {}
  *   params: float $lat, float $lon, int $radius_m, string $category, float $min_rating, int $min_review_count, int $page, int $page_size
  * @method mixed googleMapBusinessesSearch(array $params = [], array $options = []) datasets-google-map-businesses-search (GET /datasets/google-map-businesses/search)
  *   params: string $q, string $category, string $country, string $state, string $county, string $city, string $town, float $min_rating, int $min_review_count, bool $has_website, bool $has_phone, bool $has_geo, float $lat, float $lon, int $radius_m, string $sort, int $page, int $page_size
+ * @method mixed producthuntMakersFacets(array $params = [], array $options = []) datasets-producthunt-makers-facets (GET /datasets/producthunt-makers/facets)
+ *   params: string $facet, string $q, string $topic, int $min_products, int $min_total_votes
+ * @method mixed producthuntMakersItem(array $params = [], array $options = []) datasets-producthunt-makers-item (GET /datasets/producthunt-makers/items/{username})
+ *   params: string $username
+ * @method mixed producthuntMakersSearch(array $params = [], array $options = []) datasets-producthunt-makers-search (GET /datasets/producthunt-makers/search)
+ *   params: string $q, string $topic, int $min_products, int $min_total_votes, string $sort, int $page, int $page_size
+ * @method mixed producthuntProductsFacets(array $params = [], array $options = []) datasets-producthunt-products-facets (GET /datasets/producthunt-products/facets)
+ *   params: string $facet, string $q, string $topic, string $maker, string $launched_after, string $launched_before, int $min_votes, float $min_rating, string $pricing_type, bool $has_website, bool $is_online
+ * @method mixed producthuntProductsItem(array $params = [], array $options = []) datasets-producthunt-products-item (GET /datasets/producthunt-products/items/{slug})
+ *   params: string $slug
+ * @method mixed producthuntProductsSearch(array $params = [], array $options = []) datasets-producthunt-products-search (GET /datasets/producthunt-products/search)
+ *   params: string $q, string $topic, string $maker, string $launched_after, string $launched_before, int $min_votes, float $min_rating, string $pricing_type, bool $has_website, bool $is_online, string $sort, int $page, int $page_size
+ * @method mixed producthuntTrendsFacets(array $params = [], array $options = []) datasets-producthunt-trends-facets (GET /datasets/producthunt-trends/facets)
+ *   params: string $facet, string $group_by, string $topic, string $launched_after, string $launched_before, int $min_votes, int $min_launches
+ * @method mixed producthuntTrendsSearch(array $params = [], array $options = []) datasets-producthunt-trends-search (GET /datasets/producthunt-trends/search)
+ *   params: string $group_by, string $topic, string $launched_after, string $launched_before, int $min_votes, int $min_launches, string $sort, int $page, int $page_size
  */
 abstract class DatasetsGroup {}
 
@@ -274,6 +313,28 @@ abstract class DatasetsGroup {}
  *   params: string $seller, int $page
  */
 abstract class EBayGroup {}
+
+/**
+ * @method mixed athlete(array $params = [], array $options = []) espn-athlete (GET /espn/athlete)
+ *   params: 'football'|'basketball'|'baseball'|'hockey'|'soccer' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl'|'eng.1'|'esp.1'|'ita.1'|'ger.1'|'fra.1'|'usa.1'|'uefa.champions' $league, string $athlete
+ * @method mixed gameSummary(array $params = [], array $options = []) espn-game-summary (GET /espn/game-summary)
+ *   params: 'football'|'basketball'|'baseball'|'hockey'|'soccer' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl'|'eng.1'|'esp.1'|'ita.1'|'ger.1'|'fra.1'|'usa.1'|'uefa.champions' $league, string $event
+ * @method mixed news(array $params = [], array $options = []) espn-news (GET /espn/news)
+ *   params: 'football'|'basketball'|'baseball'|'hockey'|'soccer' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl'|'eng.1'|'esp.1'|'ita.1'|'ger.1'|'fra.1'|'usa.1'|'uefa.champions' $league
+ * @method mixed rankings(array $params = [], array $options = []) espn-rankings (GET /espn/rankings)
+ *   params: 'football'|'basketball' $sport, 'college-football'|'mens-college-basketball'|'womens-college-basketball' $league
+ * @method mixed scoreboard(array $params = [], array $options = []) espn-scoreboard (GET /espn/scoreboard)
+ *   params: 'football'|'basketball'|'baseball'|'hockey'|'soccer' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl'|'eng.1'|'esp.1'|'ita.1'|'ger.1'|'fra.1'|'usa.1'|'uefa.champions' $league, string $dates, int $week, '1'|'2'|'3'|'4' $seasontype
+ * @method mixed standings(array $params = [], array $options = []) espn-standings (GET /espn/standings)
+ *   params: 'football'|'basketball'|'baseball'|'hockey'|'soccer' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl'|'eng.1'|'esp.1'|'ita.1'|'ger.1'|'fra.1'|'usa.1'|'uefa.champions' $league, int $season, '1'|'2'|'3' $seasontype
+ * @method mixed team(array $params = [], array $options = []) espn-team (GET /espn/team)
+ *   params: 'football'|'basketball'|'baseball'|'hockey'|'soccer' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl'|'eng.1'|'esp.1'|'ita.1'|'ger.1'|'fra.1'|'usa.1'|'uefa.champions' $league, string $team
+ * @method mixed teamRoster(array $params = [], array $options = []) espn-team-roster (GET /espn/team-roster)
+ *   params: 'football'|'basketball'|'baseball'|'hockey'|'soccer' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl'|'eng.1'|'esp.1'|'ita.1'|'ger.1'|'fra.1'|'usa.1'|'uefa.champions' $league, string $team
+ * @method mixed teams(array $params = [], array $options = []) espn-teams (GET /espn/teams)
+ *   params: 'football'|'basketball'|'baseball'|'hockey'|'soccer' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl'|'eng.1'|'esp.1'|'ita.1'|'ger.1'|'fra.1'|'usa.1'|'uefa.champions' $league
+ */
+abstract class EspnGroup {}
 
 /**
  * @method mixed lookup(array $params = [], array $options = []) geocoding-lookup (GET /geocoding/lookup)
@@ -734,7 +795,7 @@ abstract class PolymarketGroup {}
  * @method mixed category(array $params = [], array $options = []) producthunt-category (GET /producthunt/category/{slug})
  *   params: string $slug
  * @method mixed categoryProducts(array $params = [], array $options = []) producthunt-category-products (GET /producthunt/category/{slug}/products)
- *   params: string $slug, bool $featured_only, string $order, int $page, int $page_size, string $tags
+ *   params: string $slug, string $cursor, int $page_size, bool $featured_only, string $order, int $page, string $tags
  * @method mixed leaderboard(array $params = [], array $options = []) producthunt-leaderboard (GET /producthunt/leaderboard)
  *   params: 'daily'|'weekly'|'monthly'|'yearly' $scope, string $date, int $year, int $month, int $day, int $week, bool $featured, string $order, string $cursor
  * @method mixed product(array $params = [], array $options = []) producthunt-product (GET /producthunt/product/{id})
@@ -758,27 +819,27 @@ abstract class ProductHuntGroup {}
 
 /**
  * @method mixed comments(array $params = [], array $options = []) reddit-comments (GET /reddit/comments/{id})
- *   params: string $id, 'confidence'|'top'|'new'|'controversial'|'old'|'qa' $sort, int $limit, int $depth, bool $with_scores
+ *   params: string $id, 'confidence'|'top'|'new'|'controversial'|'old'|'qa' $sort, int $limit, int $depth
  * @method mixed domainPosts(array $params = [], array $options = []) reddit-domain-posts (GET /reddit/domain/{domain}/posts)
- *   params: string $domain, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after, bool $with_scores
+ *   params: string $domain, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
  * @method mixed post(array $params = [], array $options = []) reddit-post (GET /reddit/post/{id})
- *   params: string $id, bool $with_scores
+ *   params: string $id
  * @method mixed search(array $params = [], array $options = []) reddit-search (GET /reddit/search)
- *   params: string $q, string $subreddit, 'relevance'|'hot'|'new'|'top'|'comments' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after, bool $with_scores
+ *   params: string $q, string $subreddit, 'relevance'|'hot'|'new'|'top'|'comments' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
  * @method mixed subredditAbout(array $params = [], array $options = []) reddit-subreddit-about (GET /reddit/subreddit/{subreddit}/about)
- *   params: string $subreddit, int $limit, bool $with_scores
+ *   params: string $subreddit, int $limit
  * @method mixed subredditComments(array $params = [], array $options = []) reddit-subreddit-comments (GET /reddit/subreddit/{subreddit}/comments)
- *   params: string $subreddit, int $limit, string $after, bool $with_scores
+ *   params: string $subreddit, int $limit, string $after
  * @method mixed subredditPosts(array $params = [], array $options = []) reddit-subreddit-posts (GET /reddit/subreddit/{subreddit}/posts)
- *   params: string $subreddit, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after, bool $with_scores
+ *   params: string $subreddit, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
  * @method mixed subredditsPosts(array $params = [], array $options = []) reddit-subreddits-posts (GET /reddit/subreddits/posts)
- *   params: string $subreddits, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after, bool $with_scores
+ *   params: string $subreddits, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
  * @method mixed trends(array $params = [], array $options = []) reddit-trends (GET /reddit/trends)
- *   params: 'hot'|'new'|'rising'|'top' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after, bool $with_scores
+ *   params: 'hot'|'new'|'rising'|'top' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
  * @method mixed userComments(array $params = [], array $options = []) reddit-user-comments (GET /reddit/user/{username}/comments)
- *   params: string $username, int $limit, string $after, bool $with_scores
+ *   params: string $username, int $limit, string $after
  * @method mixed userPosts(array $params = [], array $options = []) reddit-user-posts (GET /reddit/user/{username}/posts)
- *   params: string $username, int $limit, string $after, bool $with_scores
+ *   params: string $username, int $limit, string $after
  */
 abstract class RedditGroup {}
 
@@ -1215,10 +1276,12 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\BoxOfficeMojoGroup $boxOfficeMojo
  * @property-read \Crawlora\Generated\BrandGroup $brand
  * @property-read \Crawlora\Generated\BraveGroup $brave
+ * @property-read \Crawlora\Generated\ChromeWebStoreGroup $chromeWebStore
  * @property-read \Crawlora\Generated\CoinGeckoGroup $coinGecko
  * @property-read \Crawlora\Generated\WebGroup $web
  * @property-read \Crawlora\Generated\DatasetsGroup $datasets
  * @property-read \Crawlora\Generated\EBayGroup $eBay
+ * @property-read \Crawlora\Generated\EspnGroup $espn
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
  * @property-read \Crawlora\Generated\GitHubGroup $gitHub
  * @property-read \Crawlora\Generated\GoogleGroup $google
