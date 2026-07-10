@@ -175,10 +175,16 @@ abstract class BraveGroup {}
  *   params: 'trending'|'popular'|'notable' $chart, int $num, string $country, string $lang
  * @method mixed chromewebstoreCollection(array $params = [], array $options = []) chromewebstore-collection (GET /chromewebstore/collection)
  *   params: string $collection, int $num, string $country, string $lang
+ * @method mixed chromewebstoreDeveloper(array $params = [], array $options = []) chromewebstore-developer (GET /chromewebstore/developer)
+ *   params: string $id, int $num, string $country, string $lang
  * @method mixed chromewebstoreItem(array $params = [], array $options = []) chromewebstore-item (GET /chromewebstore/item)
  *   params: string $id, string $country, string $lang
+ * @method mixed chromewebstorePermissions(array $params = [], array $options = []) chromewebstore-permissions (GET /chromewebstore/permissions)
+ *   params: string $id, string $country, string $lang
+ * @method mixed chromewebstorePrivacy(array $params = [], array $options = []) chromewebstore-privacy (GET /chromewebstore/privacy)
+ *   params: string $id, string $country, string $lang
  * @method mixed chromewebstoreReviews(array $params = [], array $options = []) chromewebstore-reviews (GET /chromewebstore/reviews)
- *   params: string $id, int $num, string $country, string $lang
+ *   params: string $id, int $num, 'recent'|'helpful' $sort, string $country, string $lang
  * @method mixed chromewebstoreSearch(array $params = [], array $options = []) chromewebstore-search (GET /chromewebstore/search)
  *   params: string $term, int $num, string $country, string $lang
  * @method mixed chromewebstoreSimilar(array $params = [], array $options = []) chromewebstore-similar (GET /chromewebstore/similar)
@@ -295,6 +301,18 @@ abstract class WebGroup {}
  *   params: string $facet, string $group_by, string $topic, string $launched_after, string $launched_before, int $min_votes, int $min_launches
  * @method mixed producthuntTrendsSearch(array $params = [], array $options = []) datasets-producthunt-trends-search (GET /datasets/producthunt-trends/search)
  *   params: string $group_by, string $topic, string $launched_after, string $launched_before, int $min_votes, int $min_launches, string $sort, int $page, int $page_size
+ * @method mixed techstackFacets(array $params = [], array $options = []) datasets-techstack-facets (GET /datasets/techstack/facets)
+ *   params: string $facet, string $q, array<string> $technology, array<string> $any_of, array<string> $not, string $category, string $cms, string $ecommerce, string $cdn, string $web_server, string $server_language, string $tld, string $render_tier, string $seed_source, bool $has_captcha, bool $reachable, int $min_tech_count, string $run_id
+ * @method mixed techstackItem(array $params = [], array $options = []) datasets-techstack-item (GET /datasets/techstack/items/{domain})
+ *   params: string $domain
+ * @method mixed techstackSearch(array $params = [], array $options = []) datasets-techstack-search (GET /datasets/techstack/search)
+ *   params: string $q, array<string> $technology, array<string> $any_of, array<string> $not, string $category, string $cms, string $ecommerce, string $cdn, string $web_server, string $server_language, string $tld, string $render_tier, string $seed_source, bool $has_captcha, bool $reachable, int $min_tech_count, string $run_id, string $sort, int $page, int $page_size
+ * @method mixed trustmrrFacets(array $params = [], array $options = []) datasets-trustmrr-facets (GET /datasets/trustmrr/facets)
+ *   params: string $facet, string $q, string $category, string $country, string $payment_provider, bool $on_sale, float $min_mrr
+ * @method mixed trustmrrItem(array $params = [], array $options = []) datasets-trustmrr-item (GET /datasets/trustmrr/items/{slug})
+ *   params: string $slug
+ * @method mixed trustmrrSearch(array $params = [], array $options = []) datasets-trustmrr-search (GET /datasets/trustmrr/search)
+ *   params: string $q, string $slug, string $category, string $country, string $payment_provider, string $target_audience, string $business_type, string $tech, string $channel, string $listing_tier, string $status, bool $on_sale, bool $is_sponsored, float $min_mrr, float $max_mrr, float $min_revenue, float $min_revenue_30d, float $min_traffic, float $min_growth, float $max_multiple, float $min_asking_price, float $max_asking_price, int $min_ahrefs_dr, string $sort, int $page, int $page_size
  */
 abstract class DatasetsGroup {}
 
@@ -663,6 +681,16 @@ abstract class MetaculusGroup {}
 abstract class MetaGroup {}
 
 /**
+ * @method mixed pitchbookCompany(array $params = [], array $options = []) pitchbook-company (GET /pitchbook/company)
+ *   params: string $id, string $url
+ * @method mixed pitchbookFund(array $params = [], array $options = []) pitchbook-fund (GET /pitchbook/fund)
+ *   params: string $id, string $url
+ * @method mixed pitchbookInvestor(array $params = [], array $options = []) pitchbook-investor (GET /pitchbook/investor)
+ *   params: string $id, string $url
+ */
+abstract class PitchBookGroup {}
+
+/**
  * @method mixed activityTrades(array $params = [], array $options = []) polymarket-activity-trades (GET /polymarket/activity/trades)
  *   params: int $limit, int $offset, 'true'|'false' $taker_only, 'CASH' $filter_type, '1'|'5'|'10'|'100'|'1000'|'10000'|'100000' $filter_amount, string $event_id, string $market
  * @method mixed clobMarket(array $params = [], array $options = []) polymarket-clob-market (GET /polymarket/clob/market/{condition_id})
@@ -889,6 +917,30 @@ abstract class ReferralsGroup {}
 abstract class RottenTomatoesGroup {}
 
 /**
+ * @method mixed secCompanyIntelligence(array $params = [], array $options = []) sec-company-intelligence (GET /sec/company/intelligence)
+ *   params: string $cik, string $ticker
+ * @method mixed secCompanySearch(array $params = [], array $options = []) sec-company-search (GET /sec/company/search)
+ *   params: string $q, int $limit
+ * @method mixed secCompanySubmissions(array $params = [], array $options = []) sec-company-submissions (GET /sec/company/submissions)
+ *   params: string $cik, string $ticker, string $form, string $from, string $to, int $limit
+ * @method mixed secFiling(array $params = [], array $options = []) sec-filing (GET /sec/filing)
+ *   params: string $cik, string $ticker, string $accession
+ * @method mixed secFilingSections(array $params = [], array $options = []) sec-filing-sections (GET /sec/filing/sections)
+ *   params: string $cik, string $ticker, string $accession, string $items, int $max_chars
+ * @method mixed secFinancials(array $params = [], array $options = []) sec-financials (GET /sec/financials)
+ *   params: string $cik, string $ticker, 'income'|'balance'|'cash_flow' $statement, 'annual'|'quarterly' $period, int $limit
+ * @method mixed secFrames(array $params = [], array $options = []) sec-frames (GET /sec/frames)
+ *   params: string $concept, string $period, string $unit, 'dei'|'ifrs-full'|'srt'|'us-gaap' $taxonomy, int $limit
+ * @method mixed secFullTextSearch(array $params = [], array $options = []) sec-full-text-search (GET /sec/full-text-search)
+ *   params: string $q, string $forms, string $from, string $to, int $page
+ * @method mixed secInsider(array $params = [], array $options = []) sec-insider (GET /sec/insider)
+ *   params: string $cik, string $ticker, int $limit
+ * @method mixed secInstitutionalHoldings(array $params = [], array $options = []) sec-institutional-holdings (GET /sec/institutional-holdings)
+ *   params: string $cik, int $limit
+ */
+abstract class SecEdgarGroup {}
+
+/**
  * @method mixed analysis(array $params = [], array $options = []) shop-app-analysis (GET /shop-app/analysis)
  *   params: string $query, int $limit, bool $in_stock, bool $on_sale, bool $deep_search
  * @method mixed categories(array $params = [], array $options = []) shop-app-categories (GET /shop-app/categories)
@@ -956,6 +1008,40 @@ abstract class ShopifyGroup {}
  *   params: string $domain
  */
 abstract class SimilarWebGroup {}
+
+/**
+ * @method mixed sofascoreEvent(array $params = [], array $options = []) sofascore-event (GET /sofascore/event)
+ *   params: string $id
+ * @method mixed sofascoreEventH2h(array $params = [], array $options = []) sofascore-event-h2h (GET /sofascore/event-h2h)
+ *   params: string $id
+ * @method mixed sofascoreEventIncidents(array $params = [], array $options = []) sofascore-event-incidents (GET /sofascore/event-incidents)
+ *   params: string $id
+ * @method mixed sofascoreEventLineups(array $params = [], array $options = []) sofascore-event-lineups (GET /sofascore/event-lineups)
+ *   params: string $id
+ * @method mixed sofascoreEventOdds(array $params = [], array $options = []) sofascore-event-odds (GET /sofascore/event-odds)
+ *   params: string $id
+ * @method mixed sofascoreEventStatistics(array $params = [], array $options = []) sofascore-event-statistics (GET /sofascore/event-statistics)
+ *   params: string $id
+ * @method mixed sofascoreLiveEvents(array $params = [], array $options = []) sofascore-live-events (GET /sofascore/live-events)
+ *   params: 'football'|'basketball'|'tennis' $sport
+ * @method mixed sofascorePlayer(array $params = [], array $options = []) sofascore-player (GET /sofascore/player)
+ *   params: string $id
+ * @method mixed sofascoreRoundEvents(array $params = [], array $options = []) sofascore-round-events (GET /sofascore/round-events)
+ *   params: string $id, string $season, int $round
+ * @method mixed sofascoreSearch(array $params = [], array $options = []) sofascore-search (GET /sofascore/search)
+ *   params: string $q
+ * @method mixed sofascoreStandings(array $params = [], array $options = []) sofascore-standings (GET /sofascore/standings)
+ *   params: string $id, string $season, 'total'|'home'|'away' $type
+ * @method mixed sofascoreTeam(array $params = [], array $options = []) sofascore-team (GET /sofascore/team)
+ *   params: string $id
+ * @method mixed sofascoreTeamEvents(array $params = [], array $options = []) sofascore-team-events (GET /sofascore/team-events)
+ *   params: string $id, 'next'|'last' $direction, int $page
+ * @method mixed sofascoreTeamPlayers(array $params = [], array $options = []) sofascore-team-players (GET /sofascore/team-players)
+ *   params: string $id
+ * @method mixed sofascoreTournamentSeasons(array $params = [], array $options = []) sofascore-tournament-seasons (GET /sofascore/tournament-seasons)
+ *   params: string $id
+ */
+abstract class SofaScoreGroup {}
 
 /**
  * @method mixed categories(array $params = [], array $options = []) spotify-podcasts-categories (GET /spotify-podcasts/categories)
@@ -1099,6 +1185,21 @@ abstract class TiktokGroup {}
  *   params: int $geo_id, string $type, string $filter_id, int $class, array<int> $amenities, int $price_min, int $price_max, string $pricing_mode, bool $travelers_choice, bool $travelers_choice_botb, string $restaurant_date, string $restaurant_time, int $restaurant_guests, array<int> $establishment_types, array<int> $online_options, int $offset, int $limit, string $locale, string $currency, string $sort
  */
 abstract class TripAdvisorGroup {}
+
+/**
+ * @method mixed trustmrrAcquire(array $params = [], array $options = []) trustmrr-acquire (GET /trustmrr/acquire)
+ * @method mixed trustmrrCategories(array $params = [], array $options = []) trustmrr-categories (GET /trustmrr/categories)
+ * @method mixed trustmrrCategory(array $params = [], array $options = []) trustmrr-category (GET /trustmrr/category/{slug})
+ *   params: string $slug
+ * @method mixed trustmrrLeaderboard(array $params = [], array $options = []) trustmrr-leaderboard (GET /trustmrr/leaderboard)
+ *   params: 'mrr'|'last_30_days_revenue'|'all_time_revenue'|'growth'|'traffic'|'revenue_per_visitor' $metric
+ * @method mixed trustmrrMarketplace(array $params = [], array $options = []) trustmrr-marketplace (GET /trustmrr/marketplace)
+ * @method mixed trustmrrStartup(array $params = [], array $options = []) trustmrr-startup (GET /trustmrr/startup/{slug})
+ *   params: string $slug
+ * @method mixed trustmrrStartups(array $params = [], array $options = []) trustmrr-startups (GET /trustmrr/startups)
+ *   params: int $page, int $page_size
+ */
+abstract class TrustMrrGroup {}
 
 /**
  * @method mixed businessSearch(array $params = [], array $options = []) trustpilot-business-search (GET /trustpilot/business-units/search)
@@ -1293,19 +1394,23 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
  * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
  * @property-read \Crawlora\Generated\MetaGroup $meta
+ * @property-read \Crawlora\Generated\PitchBookGroup $pitchBook
  * @property-read \Crawlora\Generated\PolymarketGroup $polymarket
  * @property-read \Crawlora\Generated\ProductHuntGroup $productHunt
  * @property-read \Crawlora\Generated\RedditGroup $reddit
  * @property-read \Crawlora\Generated\RedfinGroup $redfin
  * @property-read \Crawlora\Generated\ReferralsGroup $referrals
  * @property-read \Crawlora\Generated\RottenTomatoesGroup $rottenTomatoes
+ * @property-read \Crawlora\Generated\SecEdgarGroup $secEdgar
  * @property-read \Crawlora\Generated\ShopAppGroup $shopApp
  * @property-read \Crawlora\Generated\ShopifyGroup $shopify
  * @property-read \Crawlora\Generated\SimilarWebGroup $similarWeb
+ * @property-read \Crawlora\Generated\SofaScoreGroup $sofaScore
  * @property-read \Crawlora\Generated\SpotifyPodcastsGroup $spotifyPodcasts
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
  * @property-read \Crawlora\Generated\TiktokGroup $tiktok
  * @property-read \Crawlora\Generated\TripAdvisorGroup $tripAdvisor
+ * @property-read \Crawlora\Generated\TrustMrrGroup $trustMrr
  * @property-read \Crawlora\Generated\TrustpilotGroup $trustpilot
  * @property-read \Crawlora\Generated\UsageGroup $usage
  * @property-read \Crawlora\Generated\UserGroup $user
