@@ -2768,10 +2768,123 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'chromewebstore-developer' => [
+            'id' => 'chromewebstore-developer',
+            'method' => 'GET',
+            'path' => '/chromewebstore/developer',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'num',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'chromewebstore-item' => [
             'id' => 'chromewebstore-item',
             'method' => 'GET',
             'path' => '/chromewebstore/item',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chromewebstore-permissions' => [
+            'id' => 'chromewebstore-permissions',
+            'method' => 'GET',
+            'path' => '/chromewebstore/permissions',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chromewebstore-privacy' => [
+            'id' => 'chromewebstore-privacy',
+            'method' => 'GET',
+            'path' => '/chromewebstore/privacy',
             'pathParams' => [],
             'queryParams' => [
                 [
@@ -2820,6 +2933,15 @@ final class Operations
                     'name' => 'num',
                     'in' => 'query',
                     'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'recent',
+                        'helpful',
+                    ],
                 ],
                 [
                     'name' => 'country',
@@ -6352,6 +6474,493 @@ final class Operations
                 ],
                 [
                     'name' => 'min_launches',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-techstack-facets' => [
+            'id' => 'datasets-techstack-facets',
+            'method' => 'GET',
+            'path' => '/datasets/techstack/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'technology',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'any_of',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'not',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cms',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'ecommerce',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cdn',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'web_server',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'server_language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'tld',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'render_tier',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'seed_source',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'has_captcha',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'reachable',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_tech_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-techstack-item' => [
+            'id' => 'datasets-techstack-item',
+            'method' => 'GET',
+            'path' => '/datasets/techstack/items/{domain}',
+            'pathParams' => [
+                'domain',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-techstack-search' => [
+            'id' => 'datasets-techstack-search',
+            'method' => 'GET',
+            'path' => '/datasets/techstack/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'technology',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'any_of',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'not',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cms',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'ecommerce',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cdn',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'web_server',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'server_language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'tld',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'render_tier',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'seed_source',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'has_captcha',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'reachable',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_tech_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-trustmrr-facets' => [
+            'id' => 'datasets-trustmrr-facets',
+            'method' => 'GET',
+            'path' => '/datasets/trustmrr/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'payment_provider',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'on_sale',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_mrr',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-trustmrr-item' => [
+            'id' => 'datasets-trustmrr-item',
+            'method' => 'GET',
+            'path' => '/datasets/trustmrr/items/{slug}',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-trustmrr-search' => [
+            'id' => 'datasets-trustmrr-search',
+            'method' => 'GET',
+            'path' => '/datasets/trustmrr/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'payment_provider',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'target_audience',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'business_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'tech',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'channel',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'listing_tier',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'on_sale',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'is_sponsored',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_mrr',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_mrr',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_revenue',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_revenue_30d',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_traffic',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_growth',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_multiple',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_asking_price',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_asking_price',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_ahrefs_dr',
                     'in' => 'query',
                     'type' => 'integer',
                 ],
@@ -12169,6 +12778,96 @@ final class Operations
             ],
             'security' => [],
         ],
+        'pitchbook-company' => [
+            'id' => 'pitchbook-company',
+            'method' => 'GET',
+            'path' => '/pitchbook/company',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pitchbook-fund' => [
+            'id' => 'pitchbook-fund',
+            'method' => 'GET',
+            'path' => '/pitchbook/fund',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pitchbook-investor' => [
+            'id' => 'pitchbook-investor',
+            'method' => 'GET',
+            'path' => '/pitchbook/investor',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'polymarket-activity-trades' => [
             'id' => 'polymarket-activity-trades',
             'method' => 'GET',
@@ -15948,6 +16647,419 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'sec-company-intelligence' => [
+            'id' => 'sec-company-intelligence',
+            'method' => 'GET',
+            'path' => '/sec/company/intelligence',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'cik',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'ticker',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sec-company-search' => [
+            'id' => 'sec-company-search',
+            'method' => 'GET',
+            'path' => '/sec/company/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sec-company-submissions' => [
+            'id' => 'sec-company-submissions',
+            'method' => 'GET',
+            'path' => '/sec/company/submissions',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'cik',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'ticker',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'form',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sec-filing' => [
+            'id' => 'sec-filing',
+            'method' => 'GET',
+            'path' => '/sec/filing',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'cik',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'ticker',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'accession',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sec-filing-sections' => [
+            'id' => 'sec-filing-sections',
+            'method' => 'GET',
+            'path' => '/sec/filing/sections',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'cik',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'ticker',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'accession',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'items',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'max_chars',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sec-financials' => [
+            'id' => 'sec-financials',
+            'method' => 'GET',
+            'path' => '/sec/financials',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'cik',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'ticker',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'statement',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'income',
+                        'balance',
+                        'cash_flow',
+                    ],
+                ],
+                [
+                    'name' => 'period',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'annual',
+                        'quarterly',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sec-frames' => [
+            'id' => 'sec-frames',
+            'method' => 'GET',
+            'path' => '/sec/frames',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'concept',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'period',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'unit',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'taxonomy',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'dei',
+                        'ifrs-full',
+                        'srt',
+                        'us-gaap',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sec-full-text-search' => [
+            'id' => 'sec-full-text-search',
+            'method' => 'GET',
+            'path' => '/sec/full-text-search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'forms',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'sec-insider' => [
+            'id' => 'sec-insider',
+            'method' => 'GET',
+            'path' => '/sec/insider',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'cik',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'ticker',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sec-institutional-holdings' => [
+            'id' => 'sec-institutional-holdings',
+            'method' => 'GET',
+            'path' => '/sec/institutional-holdings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'cik',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'shop-app-analysis' => [
             'id' => 'shop-app-analysis',
             'method' => 'GET',
@@ -16867,6 +17979,446 @@ final class Operations
                 'domain',
             ],
             'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event' => [
+            'id' => 'sofascore-event',
+            'method' => 'GET',
+            'path' => '/sofascore/event',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-h2h' => [
+            'id' => 'sofascore-event-h2h',
+            'method' => 'GET',
+            'path' => '/sofascore/event-h2h',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-incidents' => [
+            'id' => 'sofascore-event-incidents',
+            'method' => 'GET',
+            'path' => '/sofascore/event-incidents',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-lineups' => [
+            'id' => 'sofascore-event-lineups',
+            'method' => 'GET',
+            'path' => '/sofascore/event-lineups',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-odds' => [
+            'id' => 'sofascore-event-odds',
+            'method' => 'GET',
+            'path' => '/sofascore/event-odds',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-statistics' => [
+            'id' => 'sofascore-event-statistics',
+            'method' => 'GET',
+            'path' => '/sofascore/event-statistics',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-live-events' => [
+            'id' => 'sofascore-live-events',
+            'method' => 'GET',
+            'path' => '/sofascore/live-events',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'football',
+                        'basketball',
+                        'tennis',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-player' => [
+            'id' => 'sofascore-player',
+            'method' => 'GET',
+            'path' => '/sofascore/player',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-round-events' => [
+            'id' => 'sofascore-round-events',
+            'method' => 'GET',
+            'path' => '/sofascore/round-events',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'round',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-search' => [
+            'id' => 'sofascore-search',
+            'method' => 'GET',
+            'path' => '/sofascore/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-standings' => [
+            'id' => 'sofascore-standings',
+            'method' => 'GET',
+            'path' => '/sofascore/standings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'total',
+                        'home',
+                        'away',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-team' => [
+            'id' => 'sofascore-team',
+            'method' => 'GET',
+            'path' => '/sofascore/team',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-team-events' => [
+            'id' => 'sofascore-team-events',
+            'method' => 'GET',
+            'path' => '/sofascore/team-events',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'next',
+                        'last',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'sofascore-team-players' => [
+            'id' => 'sofascore-team-players',
+            'method' => 'GET',
+            'path' => '/sofascore/team-players',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-tournament-seasons' => [
+            'id' => 'sofascore-tournament-seasons',
+            'method' => 'GET',
+            'path' => '/sofascore/tournament-seasons',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -19687,6 +21239,169 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'trustmrr-acquire' => [
+            'id' => 'trustmrr-acquire',
+            'method' => 'GET',
+            'path' => '/trustmrr/acquire',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'trustmrr-categories' => [
+            'id' => 'trustmrr-categories',
+            'method' => 'GET',
+            'path' => '/trustmrr/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'trustmrr-category' => [
+            'id' => 'trustmrr-category',
+            'method' => 'GET',
+            'path' => '/trustmrr/category/{slug}',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'trustmrr-leaderboard' => [
+            'id' => 'trustmrr-leaderboard',
+            'method' => 'GET',
+            'path' => '/trustmrr/leaderboard',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'metric',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'mrr',
+                        'last_30_days_revenue',
+                        'all_time_revenue',
+                        'growth',
+                        'traffic',
+                        'revenue_per_visitor',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'trustmrr-marketplace' => [
+            'id' => 'trustmrr-marketplace',
+            'method' => 'GET',
+            'path' => '/trustmrr/marketplace',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'trustmrr-startup' => [
+            'id' => 'trustmrr-startup',
+            'method' => 'GET',
+            'path' => '/trustmrr/startup/{slug}',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'trustmrr-startups' => [
+            'id' => 'trustmrr-startups',
+            'method' => 'GET',
+            'path' => '/trustmrr/startups',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'trustpilot-business-search' => [
             'id' => 'trustpilot-business-search',
             'method' => 'GET',
@@ -21986,7 +23701,10 @@ final class Operations
             'chromewebstoreCategory' => 'chromewebstore-category',
             'chromewebstoreCharts' => 'chromewebstore-charts',
             'chromewebstoreCollection' => 'chromewebstore-collection',
+            'chromewebstoreDeveloper' => 'chromewebstore-developer',
             'chromewebstoreItem' => 'chromewebstore-item',
+            'chromewebstorePermissions' => 'chromewebstore-permissions',
+            'chromewebstorePrivacy' => 'chromewebstore-privacy',
             'chromewebstoreReviews' => 'chromewebstore-reviews',
             'chromewebstoreSearch' => 'chromewebstore-search',
             'chromewebstoreSimilar' => 'chromewebstore-similar',
@@ -22047,6 +23765,12 @@ final class Operations
             'producthuntProductsSearch' => 'datasets-producthunt-products-search',
             'producthuntTrendsFacets' => 'datasets-producthunt-trends-facets',
             'producthuntTrendsSearch' => 'datasets-producthunt-trends-search',
+            'techstackFacets' => 'datasets-techstack-facets',
+            'techstackItem' => 'datasets-techstack-item',
+            'techstackSearch' => 'datasets-techstack-search',
+            'trustmrrFacets' => 'datasets-trustmrr-facets',
+            'trustmrrItem' => 'datasets-trustmrr-item',
+            'trustmrrSearch' => 'datasets-trustmrr-search',
         ],
         'eBay' => [
             'ebayItem' => 'ebay-item',
@@ -22236,6 +23960,11 @@ final class Operations
             'ping' => 'ping',
             'ready' => 'ready',
         ],
+        'pitchBook' => [
+            'pitchbookCompany' => 'pitchbook-company',
+            'pitchbookFund' => 'pitchbook-fund',
+            'pitchbookInvestor' => 'pitchbook-investor',
+        ],
         'polymarket' => [
             'activityTrades' => 'polymarket-activity-trades',
             'clobMarket' => 'polymarket-clob-market',
@@ -22352,6 +24081,18 @@ final class Operations
             'rottentomatoesSeason' => 'rottentomatoes-season',
             'rottentomatoesSeries' => 'rottentomatoes-series',
         ],
+        'secEdgar' => [
+            'secCompanyIntelligence' => 'sec-company-intelligence',
+            'secCompanySearch' => 'sec-company-search',
+            'secCompanySubmissions' => 'sec-company-submissions',
+            'secFiling' => 'sec-filing',
+            'secFilingSections' => 'sec-filing-sections',
+            'secFinancials' => 'sec-financials',
+            'secFrames' => 'sec-frames',
+            'secFullTextSearch' => 'sec-full-text-search',
+            'secInsider' => 'sec-insider',
+            'secInstitutionalHoldings' => 'sec-institutional-holdings',
+        ],
         'shopApp' => [
             'analysis' => 'shop-app-analysis',
             'categories' => 'shop-app-categories',
@@ -22386,6 +24127,23 @@ final class Operations
         'similarWeb' => [
             'search' => 'similarweb-search',
             'web' => 'similarweb-web',
+        ],
+        'sofaScore' => [
+            'sofascoreEvent' => 'sofascore-event',
+            'sofascoreEventH2h' => 'sofascore-event-h2h',
+            'sofascoreEventIncidents' => 'sofascore-event-incidents',
+            'sofascoreEventLineups' => 'sofascore-event-lineups',
+            'sofascoreEventOdds' => 'sofascore-event-odds',
+            'sofascoreEventStatistics' => 'sofascore-event-statistics',
+            'sofascoreLiveEvents' => 'sofascore-live-events',
+            'sofascorePlayer' => 'sofascore-player',
+            'sofascoreRoundEvents' => 'sofascore-round-events',
+            'sofascoreSearch' => 'sofascore-search',
+            'sofascoreStandings' => 'sofascore-standings',
+            'sofascoreTeam' => 'sofascore-team',
+            'sofascoreTeamEvents' => 'sofascore-team-events',
+            'sofascoreTeamPlayers' => 'sofascore-team-players',
+            'sofascoreTournamentSeasons' => 'sofascore-tournament-seasons',
         ],
         'spotifyPodcasts' => [
             'categories' => 'spotify-podcasts-categories',
@@ -22461,6 +24219,15 @@ final class Operations
             'tripadvisorPlace' => 'tripadvisor-place',
             'tripadvisorReviews' => 'tripadvisor-reviews',
             'tripadvisorSearch' => 'tripadvisor-search',
+        ],
+        'trustMrr' => [
+            'trustmrrAcquire' => 'trustmrr-acquire',
+            'trustmrrCategories' => 'trustmrr-categories',
+            'trustmrrCategory' => 'trustmrr-category',
+            'trustmrrLeaderboard' => 'trustmrr-leaderboard',
+            'trustmrrMarketplace' => 'trustmrr-marketplace',
+            'trustmrrStartup' => 'trustmrr-startup',
+            'trustmrrStartups' => 'trustmrr-startups',
         ],
         'trustpilot' => [
             'businessSearch' => 'trustpilot-business-search',
@@ -22551,7 +24318,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 559;
+    public const OPERATION_COUNT = 603;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -22624,7 +24391,10 @@ final class Operations
         'chromewebstore-category',
         'chromewebstore-charts',
         'chromewebstore-collection',
+        'chromewebstore-developer',
         'chromewebstore-item',
+        'chromewebstore-permissions',
+        'chromewebstore-privacy',
         'chromewebstore-reviews',
         'chromewebstore-search',
         'chromewebstore-similar',
@@ -22676,6 +24446,12 @@ final class Operations
         'datasets-producthunt-products-search',
         'datasets-producthunt-trends-facets',
         'datasets-producthunt-trends-search',
+        'datasets-techstack-facets',
+        'datasets-techstack-item',
+        'datasets-techstack-search',
+        'datasets-trustmrr-facets',
+        'datasets-trustmrr-item',
+        'datasets-trustmrr-search',
         'antibot-check',
         'ebay-item',
         'ebay-search',
@@ -22838,6 +24614,9 @@ final class Operations
         'metaculus-top-comments',
         'metaculus-tournament-questions',
         'ping',
+        'pitchbook-company',
+        'pitchbook-fund',
+        'pitchbook-investor',
         'polymarket-activity-trades',
         'polymarket-clob-market',
         'polymarket-dashboard-macro',
@@ -22943,6 +24722,16 @@ final class Operations
         'rottentomatoes-search',
         'rottentomatoes-season',
         'rottentomatoes-series',
+        'sec-company-intelligence',
+        'sec-company-search',
+        'sec-company-submissions',
+        'sec-filing',
+        'sec-filing-sections',
+        'sec-financials',
+        'sec-frames',
+        'sec-full-text-search',
+        'sec-insider',
+        'sec-institutional-holdings',
         'shop-app-analysis',
         'shop-app-categories',
         'shop-app-product',
@@ -22972,6 +24761,21 @@ final class Operations
         'shopify-store',
         'similarweb-search',
         'similarweb-web',
+        'sofascore-event',
+        'sofascore-event-h2h',
+        'sofascore-event-incidents',
+        'sofascore-event-lineups',
+        'sofascore-event-odds',
+        'sofascore-event-statistics',
+        'sofascore-live-events',
+        'sofascore-player',
+        'sofascore-round-events',
+        'sofascore-search',
+        'sofascore-standings',
+        'sofascore-team',
+        'sofascore-team-events',
+        'sofascore-team-players',
+        'sofascore-tournament-seasons',
         'spotify-podcasts-categories',
         'spotify-podcasts-charts',
         'spotify-podcasts-episode',
@@ -23039,6 +24843,13 @@ final class Operations
         'tripadvisor-place',
         'tripadvisor-reviews',
         'tripadvisor-search',
+        'trustmrr-acquire',
+        'trustmrr-categories',
+        'trustmrr-category',
+        'trustmrr-leaderboard',
+        'trustmrr-marketplace',
+        'trustmrr-startup',
+        'trustmrr-startups',
         'trustpilot-business-search',
         'trustpilot-business',
         'trustpilot-business-related',
@@ -23226,7 +25037,10 @@ final class OperationId
     public const CHROME_WEB_STORE_CHROMEWEBSTORE_CATEGORY = 'chromewebstore-category';
     public const CHROME_WEB_STORE_CHROMEWEBSTORE_CHARTS = 'chromewebstore-charts';
     public const CHROME_WEB_STORE_CHROMEWEBSTORE_COLLECTION = 'chromewebstore-collection';
+    public const CHROME_WEB_STORE_CHROMEWEBSTORE_DEVELOPER = 'chromewebstore-developer';
     public const CHROME_WEB_STORE_CHROMEWEBSTORE_ITEM = 'chromewebstore-item';
+    public const CHROME_WEB_STORE_CHROMEWEBSTORE_PERMISSIONS = 'chromewebstore-permissions';
+    public const CHROME_WEB_STORE_CHROMEWEBSTORE_PRIVACY = 'chromewebstore-privacy';
     public const CHROME_WEB_STORE_CHROMEWEBSTORE_REVIEWS = 'chromewebstore-reviews';
     public const CHROME_WEB_STORE_CHROMEWEBSTORE_SEARCH = 'chromewebstore-search';
     public const CHROME_WEB_STORE_CHROMEWEBSTORE_SIMILAR = 'chromewebstore-similar';
@@ -23277,6 +25091,12 @@ final class OperationId
     public const DATASETS_PRODUCTHUNT_PRODUCTS_SEARCH = 'datasets-producthunt-products-search';
     public const DATASETS_PRODUCTHUNT_TRENDS_FACETS = 'datasets-producthunt-trends-facets';
     public const DATASETS_PRODUCTHUNT_TRENDS_SEARCH = 'datasets-producthunt-trends-search';
+    public const DATASETS_TECHSTACK_FACETS = 'datasets-techstack-facets';
+    public const DATASETS_TECHSTACK_ITEM = 'datasets-techstack-item';
+    public const DATASETS_TECHSTACK_SEARCH = 'datasets-techstack-search';
+    public const DATASETS_TRUSTMRR_FACETS = 'datasets-trustmrr-facets';
+    public const DATASETS_TRUSTMRR_ITEM = 'datasets-trustmrr-item';
+    public const DATASETS_TRUSTMRR_SEARCH = 'datasets-trustmrr-search';
     public const EBAY_EBAY_ITEM = 'ebay-item';
     public const EBAY_EBAY_SEARCH = 'ebay-search';
     public const EBAY_EBAY_SELLER = 'ebay-seller';
@@ -23439,6 +25259,9 @@ final class OperationId
     public const METACULUS_QUESTIONS = 'metaculus-questions';
     public const METACULUS_TOP_COMMENTS = 'metaculus-top-comments';
     public const METACULUS_TOURNAMENT_QUESTIONS = 'metaculus-tournament-questions';
+    public const PITCH_BOOK_PITCHBOOK_COMPANY = 'pitchbook-company';
+    public const PITCH_BOOK_PITCHBOOK_FUND = 'pitchbook-fund';
+    public const PITCH_BOOK_PITCHBOOK_INVESTOR = 'pitchbook-investor';
     public const POLYMARKET_ACTIVITY_TRADES = 'polymarket-activity-trades';
     public const POLYMARKET_CLOB_MARKET = 'polymarket-clob-market';
     public const POLYMARKET_DASHBOARD_MACRO = 'polymarket-dashboard-macro';
@@ -23543,6 +25366,16 @@ final class OperationId
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_SEARCH = 'rottentomatoes-search';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_SEASON = 'rottentomatoes-season';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_SERIES = 'rottentomatoes-series';
+    public const SEC_EDGAR_SEC_COMPANY_INTELLIGENCE = 'sec-company-intelligence';
+    public const SEC_EDGAR_SEC_COMPANY_SEARCH = 'sec-company-search';
+    public const SEC_EDGAR_SEC_COMPANY_SUBMISSIONS = 'sec-company-submissions';
+    public const SEC_EDGAR_SEC_FILING = 'sec-filing';
+    public const SEC_EDGAR_SEC_FILING_SECTIONS = 'sec-filing-sections';
+    public const SEC_EDGAR_SEC_FINANCIALS = 'sec-financials';
+    public const SEC_EDGAR_SEC_FRAMES = 'sec-frames';
+    public const SEC_EDGAR_SEC_FULL_TEXT_SEARCH = 'sec-full-text-search';
+    public const SEC_EDGAR_SEC_INSIDER = 'sec-insider';
+    public const SEC_EDGAR_SEC_INSTITUTIONAL_HOLDINGS = 'sec-institutional-holdings';
     public const SHOP_APP_ANALYSIS = 'shop-app-analysis';
     public const SHOP_APP_CATEGORIES = 'shop-app-categories';
     public const SHOP_APP_COLLECTION_PRODUCTS = 'shop-app-collection-products';
@@ -23572,6 +25405,21 @@ final class OperationId
     public const SHOPIFY_STORE = 'shopify-store';
     public const SIMILAR_WEB_SEARCH = 'similarweb-search';
     public const SIMILAR_WEB_WEB = 'similarweb-web';
+    public const SOFA_SCORE_SOFASCORE_EVENT = 'sofascore-event';
+    public const SOFA_SCORE_SOFASCORE_EVENT_H2H = 'sofascore-event-h2h';
+    public const SOFA_SCORE_SOFASCORE_EVENT_INCIDENTS = 'sofascore-event-incidents';
+    public const SOFA_SCORE_SOFASCORE_EVENT_LINEUPS = 'sofascore-event-lineups';
+    public const SOFA_SCORE_SOFASCORE_EVENT_ODDS = 'sofascore-event-odds';
+    public const SOFA_SCORE_SOFASCORE_EVENT_STATISTICS = 'sofascore-event-statistics';
+    public const SOFA_SCORE_SOFASCORE_LIVE_EVENTS = 'sofascore-live-events';
+    public const SOFA_SCORE_SOFASCORE_PLAYER = 'sofascore-player';
+    public const SOFA_SCORE_SOFASCORE_ROUND_EVENTS = 'sofascore-round-events';
+    public const SOFA_SCORE_SOFASCORE_SEARCH = 'sofascore-search';
+    public const SOFA_SCORE_SOFASCORE_STANDINGS = 'sofascore-standings';
+    public const SOFA_SCORE_SOFASCORE_TEAM = 'sofascore-team';
+    public const SOFA_SCORE_SOFASCORE_TEAM_EVENTS = 'sofascore-team-events';
+    public const SOFA_SCORE_SOFASCORE_TEAM_PLAYERS = 'sofascore-team-players';
+    public const SOFA_SCORE_SOFASCORE_TOURNAMENT_SEASONS = 'sofascore-tournament-seasons';
     public const SPOTIFY_ALBUM = 'spotify-album';
     public const SPOTIFY_ALBUM_TRACKS = 'spotify-album-tracks';
     public const SPOTIFY_ALBUMS_SEARCH = 'spotify-albums-search';
@@ -23639,6 +25487,13 @@ final class OperationId
     public const TRIP_ADVISOR_TRIPADVISOR_PLACE = 'tripadvisor-place';
     public const TRIP_ADVISOR_TRIPADVISOR_REVIEWS = 'tripadvisor-reviews';
     public const TRIP_ADVISOR_TRIPADVISOR_SEARCH = 'tripadvisor-search';
+    public const TRUST_MRR_TRUSTMRR_ACQUIRE = 'trustmrr-acquire';
+    public const TRUST_MRR_TRUSTMRR_CATEGORIES = 'trustmrr-categories';
+    public const TRUST_MRR_TRUSTMRR_CATEGORY = 'trustmrr-category';
+    public const TRUST_MRR_TRUSTMRR_LEADERBOARD = 'trustmrr-leaderboard';
+    public const TRUST_MRR_TRUSTMRR_MARKETPLACE = 'trustmrr-marketplace';
+    public const TRUST_MRR_TRUSTMRR_STARTUP = 'trustmrr-startup';
+    public const TRUST_MRR_TRUSTMRR_STARTUPS = 'trustmrr-startups';
     public const TRUSTPILOT_BUSINESS = 'trustpilot-business';
     public const TRUSTPILOT_BUSINESS_RELATED = 'trustpilot-business-related';
     public const TRUSTPILOT_BUSINESS_REVIEWS = 'trustpilot-business-reviews';
