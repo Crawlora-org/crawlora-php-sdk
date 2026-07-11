@@ -379,8 +379,6 @@ abstract class GeocodingGroup {}
  *   params: string $owner, string $repo
  * @method mixed githubRepoReleases(array $params = [], array $options = []) github-repo-releases (GET /github/repo/{owner}/{repo}/releases)
  *   params: string $owner, string $repo, int $page, int $per_page
- * @method mixed githubRepoStargazers(array $params = [], array $options = []) github-repo-stargazers (GET /github/repo/{owner}/{repo}/stargazers)
- *   params: string $owner, string $repo, int $page, int $per_page
  * @method mixed githubSearchRepositories(array $params = [], array $options = []) github-search-repositories (GET /github/search/repositories)
  *   params: string $q, 'stars'|'forks'|'help-wanted-issues'|'updated' $sort, 'asc'|'desc' $order, int $page, int $per_page
  * @method mixed githubSearchUsers(array $params = [], array $options = []) github-search-users (GET /github/search/users)
@@ -548,6 +546,32 @@ abstract class ImdbGroup {}
  *   params: string $id, string $max_id
  */
 abstract class InstagramGroup {}
+
+/**
+ * @method mixed ashbyBoard(array $params = [], array $options = []) jobs-ashby-board (GET /jobs/ashby/board)
+ *   params: string $org, bool $include_compensation
+ * @method mixed companySearch(array $params = [], array $options = []) jobs-company-search (GET /jobs/company-search)
+ *   params: string $slug
+ * @method mixed greenhouseBoard(array $params = [], array $options = []) jobs-greenhouse-board (GET /jobs/greenhouse/board)
+ *   params: string $token, bool $content
+ * @method mixed greenhouseJob(array $params = [], array $options = []) jobs-greenhouse-job (GET /jobs/greenhouse/job)
+ *   params: string $token, string $id
+ * @method mixed hiringSignals(array $params = [], array $options = []) jobs-hiring-signals (GET /jobs/hiring-signals)
+ *   params: 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters' $provider, string $token, string $company, string $org, string $tenant, string $datacenter, string $site
+ * @method mixed leverPosting(array $params = [], array $options = []) jobs-lever-posting (GET /jobs/lever/posting)
+ *   params: string $company, string $id
+ * @method mixed leverPostings(array $params = [], array $options = []) jobs-lever-postings (GET /jobs/lever/postings)
+ *   params: string $company, string $department, string $location, bool $remote
+ * @method mixed smartrecruitersPosting(array $params = [], array $options = []) jobs-smartrecruiters-posting (GET /jobs/smartrecruiters/posting)
+ *   params: string $company, string $id
+ * @method mixed smartrecruitersPostings(array $params = [], array $options = []) jobs-smartrecruiters-postings (GET /jobs/smartrecruiters/postings)
+ *   params: string $company, int $limit, int $offset
+ * @method mixed workdayBoard(array $params = [], array $options = []) jobs-workday-board (GET /jobs/workday/board)
+ *   params: string $tenant, string $datacenter, string $site, string $search, int $limit, int $offset
+ * @method mixed workdayJob(array $params = [], array $options = []) jobs-workday-job (GET /jobs/workday/job)
+ *   params: string $tenant, string $datacenter, string $site, string $path
+ */
+abstract class JobsGroup {}
 
 /**
  * @method mixed justwatchAgeCertifications(array $params = [], array $options = []) justwatch-age-certifications (GET /justwatch/age-certifications)
@@ -918,7 +942,7 @@ abstract class RottenTomatoesGroup {}
 
 /**
  * @method mixed secCompanyIntelligence(array $params = [], array $options = []) sec-company-intelligence (GET /sec/company/intelligence)
- *   params: string $cik, string $ticker
+ *   params: string $cik, string $ticker, 'market'|'news'|'hiring' $enrich, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters' $ats, string $careers_slug, string $tenant, string $datacenter, string $site
  * @method mixed secCompanySearch(array $params = [], array $options = []) sec-company-search (GET /sec/company/search)
  *   params: string $q, int $limit
  * @method mixed secCompanySubmissions(array $params = [], array $options = []) sec-company-submissions (GET /sec/company/submissions)
@@ -1126,6 +1150,34 @@ abstract class SpotifyPodcastsGroup {}
  *   params: string $q, int $offset, int $limit, int $number_of_top_results, bool $include_audiobooks, bool $include_pre_releases, bool $include_album_pre_releases, bool $include_authors, bool $include_episode_content_ratings_v2
  */
 abstract class SpotifyGroup {}
+
+/**
+ * @method mixed achievements(array $params = [], array $options = []) steam-achievements (GET /steam/achievements)
+ *   params: string $appid
+ * @method mixed app(array $params = [], array $options = []) steam-app (GET /steam/app)
+ *   params: string $appid, string $cc, string $l, string $filters
+ * @method mixed featured(array $params = [], array $options = []) steam-featured (GET /steam/featured)
+ *   params: string $cc, string $l
+ * @method mixed featuredCategories(array $params = [], array $options = []) steam-featured-categories (GET /steam/featured-categories)
+ *   params: string $cc, string $l
+ * @method mixed news(array $params = [], array $options = []) steam-news (GET /steam/news)
+ *   params: string $appid, int $count, int $maxlength
+ * @method mixed package(array $params = [], array $options = []) steam-package (GET /steam/package)
+ *   params: string $packageid, string $cc, string $l
+ * @method mixed players(array $params = [], array $options = []) steam-players (GET /steam/players)
+ *   params: string $appid
+ * @method mixed reviews(array $params = [], array $options = []) steam-reviews (GET /steam/reviews)
+ *   params: string $appid, 'recent'|'updated'|'all' $filter, string $language, 'all'|'positive'|'negative' $review_type, 'all'|'steam'|'non_steam_purchase' $purchase_type, int $day_range, int $num_per_page, string $cursor
+ * @method mixed reviewsHistogram(array $params = [], array $options = []) steam-reviews-histogram (GET /steam/reviews/histogram)
+ *   params: string $appid, string $language
+ * @method mixed search(array $params = [], array $options = []) steam-search (GET /steam/search)
+ *   params: string $term, string $cc, string $l
+ * @method mixed searchResults(array $params = [], array $options = []) steam-search-results (GET /steam/search/results)
+ *   params: string $term, int $start, int $count, 'Relevance'|'Released_DESC'|'Name_ASC'|'Price_ASC'|'Price_DESC'|'Reviews_DESC' $sort_by, string $cc, string $l
+ * @method mixed steamspy(array $params = [], array $options = []) steam-steamspy (GET /steam/steamspy)
+ *   params: string $appid
+ */
+abstract class SteamGroup {}
 
 /**
  * @method mixed category(array $params = [], array $options = []) tiktok-category (GET /tiktok/category)
@@ -1389,6 +1441,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\GooglePlayGroup $googlePlay
  * @property-read \Crawlora\Generated\ImdbGroup $imdb
  * @property-read \Crawlora\Generated\InstagramGroup $instagram
+ * @property-read \Crawlora\Generated\JobsGroup $jobs
  * @property-read \Crawlora\Generated\JustWatchGroup $justWatch
  * @property-read \Crawlora\Generated\KalshiGroup $kalshi
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
@@ -1408,6 +1461,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\SofaScoreGroup $sofaScore
  * @property-read \Crawlora\Generated\SpotifyPodcastsGroup $spotifyPodcasts
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
+ * @property-read \Crawlora\Generated\SteamGroup $steam
  * @property-read \Crawlora\Generated\TiktokGroup $tiktok
  * @property-read \Crawlora\Generated\TripAdvisorGroup $tripAdvisor
  * @property-read \Crawlora\Generated\TrustMrrGroup $trustMrr
