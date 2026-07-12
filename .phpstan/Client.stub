@@ -18,10 +18,12 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\CoinGeckoGroup $coinGecko
  * @property-read \Crawlora\Generated\WebGroup $web
  * @property-read \Crawlora\Generated\DatasetsGroup $datasets
+ * @property-read \Crawlora\Generated\DiscogsGroup $discogs
  * @property-read \Crawlora\Generated\EBayGroup $eBay
  * @property-read \Crawlora\Generated\EspnGroup $espn
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
  * @property-read \Crawlora\Generated\GitHubGroup $gitHub
+ * @property-read \Crawlora\Generated\GoodreadsGroup $goodreads
  * @property-read \Crawlora\Generated\GoogleGroup $google
  * @property-read \Crawlora\Generated\GooglePlayGroup $googlePlay
  * @property-read \Crawlora\Generated\ImdbGroup $imdb
@@ -29,6 +31,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\JobsGroup $jobs
  * @property-read \Crawlora\Generated\JustWatchGroup $justWatch
  * @property-read \Crawlora\Generated\KalshiGroup $kalshi
+ * @property-read \Crawlora\Generated\LetterboxdGroup $letterboxd
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
  * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
  * @property-read \Crawlora\Generated\MetaGroup $meta
@@ -49,6 +52,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
  * @property-read \Crawlora\Generated\SteamGroup $steam
  * @property-read \Crawlora\Generated\TiktokGroup $tiktok
+ * @property-read \Crawlora\Generated\TmdbGroup $tmdb
  * @property-read \Crawlora\Generated\TripAdvisorGroup $tripAdvisor
  * @property-read \Crawlora\Generated\TrustMrrGroup $trustMrr
  * @property-read \Crawlora\Generated\TrustpilotGroup $trustpilot
