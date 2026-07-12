@@ -33,6 +33,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
  * @property-read \Crawlora\Generated\MetaGroup $meta
  * @property-read \Crawlora\Generated\PitchBookGroup $pitchBook
+ * @property-read \Crawlora\Generated\PlayStationGroup $playStation
  * @property-read \Crawlora\Generated\PolymarketGroup $polymarket
  * @property-read \Crawlora\Generated\ProductHuntGroup $productHunt
  * @property-read \Crawlora\Generated\RedditGroup $reddit
