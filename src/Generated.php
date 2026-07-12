@@ -349,6 +349,24 @@ abstract class WebGroup {}
 abstract class DatasetsGroup {}
 
 /**
+ * @method mixed artist(array $params = [], array $options = []) discogs-artist (GET /discogs/artist/{id})
+ *   params: string $id
+ * @method mixed artistReleases(array $params = [], array $options = []) discogs-artist-releases (GET /discogs/artist/{id}/releases)
+ *   params: string $id, int $page, int $per_page
+ * @method mixed label(array $params = [], array $options = []) discogs-label (GET /discogs/label/{id})
+ *   params: string $id
+ * @method mixed labelReleases(array $params = [], array $options = []) discogs-label-releases (GET /discogs/label/{id}/releases)
+ *   params: string $id, int $page, int $per_page
+ * @method mixed master(array $params = [], array $options = []) discogs-master (GET /discogs/master/{id})
+ *   params: string $id
+ * @method mixed release(array $params = [], array $options = []) discogs-release (GET /discogs/release/{id})
+ *   params: string $id
+ * @method mixed search(array $params = [], array $options = []) discogs-search (GET /discogs/search)
+ *   params: string $q, 'release'|'master'|'artist'|'label' $type, int $page, int $per_page
+ */
+abstract class DiscogsGroup {}
+
+/**
  * @method mixed ebayItem(array $params = [], array $options = []) ebay-item (GET /ebay/item/{item_id})
  *   params: string $item_id
  * @method mixed ebaySearch(array $params = [], array $options = []) ebay-search (POST /ebay/search)
@@ -429,6 +447,22 @@ abstract class GeocodingGroup {}
  *   params: string $username, 'created'|'updated'|'pushed'|'full_name' $sort, 'asc'|'desc' $direction, 'all'|'owner'|'member' $type, int $page, int $per_page
  */
 abstract class GitHubGroup {}
+
+/**
+ * @method mixed author(array $params = [], array $options = []) goodreads-author (GET /goodreads/author/{id})
+ *   params: string $id
+ * @method mixed authorBooks(array $params = [], array $options = []) goodreads-author-books (GET /goodreads/author/{id}/books)
+ *   params: string $id, int $page
+ * @method mixed book(array $params = [], array $options = []) goodreads-book (GET /goodreads/book/{id})
+ *   params: string $id
+ * @method mixed bookReviews(array $params = [], array $options = []) goodreads-book-reviews (GET /goodreads/book/{id}/reviews)
+ *   params: string $id, int $limit
+ * @method mixed list_(array $params = [], array $options = []) goodreads-list (GET /goodreads/list/{id})
+ *   params: string $id, int $page
+ * @method mixed search(array $params = [], array $options = []) goodreads-search (GET /goodreads/search)
+ *   params: string $q, int $limit
+ */
+abstract class GoodreadsGroup {}
 
 /**
  * @method mixed financeAnalystArticles(array $params = [], array $options = []) google-finance-analyst-articles (GET /google/finance/analyst-articles/{quote})
@@ -693,6 +727,26 @@ abstract class JustWatchGroup {}
  *   params: int $limit, string $cursor, string $ticker, int $min_ts, int $max_ts
  */
 abstract class KalshiGroup {}
+
+/**
+ * @method mixed film(array $params = [], array $options = []) letterboxd-film (GET /letterboxd/film/{slug})
+ *   params: string $slug
+ * @method mixed filmRatingHistogram(array $params = [], array $options = []) letterboxd-film-rating-histogram (GET /letterboxd/film/{slug}/rating-histogram)
+ *   params: string $slug
+ * @method mixed filmReviews(array $params = [], array $options = []) letterboxd-film-reviews (GET /letterboxd/film/{slug}/reviews)
+ *   params: string $slug, int $limit
+ * @method mixed filmSimilar(array $params = [], array $options = []) letterboxd-film-similar (GET /letterboxd/film/{slug}/similar)
+ *   params: string $slug, int $limit
+ * @method mixed member(array $params = [], array $options = []) letterboxd-member (GET /letterboxd/member/{username})
+ *   params: string $username
+ * @method mixed person(array $params = [], array $options = []) letterboxd-person (GET /letterboxd/person/{slug})
+ *   params: string $slug, 'actor'|'director' $role, int $limit
+ * @method mixed popular(array $params = [], array $options = []) letterboxd-popular (GET /letterboxd/popular)
+ *   params: 'day'|'week'|'month'|'year' $period, string $genre, string $decade, int $limit
+ * @method mixed search(array $params = [], array $options = []) letterboxd-search (GET /letterboxd/search)
+ *   params: string $q, 'film' $type, int $limit
+ */
+abstract class LetterboxdGroup {}
 
 /**
  * @method mixed linkedinCompany(array $params = [], array $options = []) linkedin-company (GET /linkedin/company/{id})
@@ -1293,6 +1347,22 @@ abstract class SteamGroup {}
 abstract class TiktokGroup {}
 
 /**
+ * @method mixed movieList(array $params = [], array $options = []) tmdb-movie-list (GET /tmdb/movie/list)
+ *   params: 'popular'|'top_rated'|'now_playing'|'upcoming' $category, int $limit
+ * @method mixed movie(array $params = [], array $options = []) tmdb-movie (GET /tmdb/movie/{id})
+ *   params: string $id
+ * @method mixed person(array $params = [], array $options = []) tmdb-person (GET /tmdb/person/{id})
+ *   params: string $id, int $limit
+ * @method mixed search(array $params = [], array $options = []) tmdb-search (GET /tmdb/search)
+ *   params: string $query, 'movie'|'tv'|'person' $type, int $limit
+ * @method mixed tvList(array $params = [], array $options = []) tmdb-tv-list (GET /tmdb/tv/list)
+ *   params: 'popular'|'top_rated'|'airing_today'|'on_the_air' $category, int $limit
+ * @method mixed tv(array $params = [], array $options = []) tmdb-tv (GET /tmdb/tv/{id})
+ *   params: string $id
+ */
+abstract class TmdbGroup {}
+
+/**
  * @method mixed tripadvisorAutocomplete(array $params = [], array $options = []) tripadvisor-autocomplete (GET /tripadvisor/autocomplete)
  *   params: string $q, int $limit, string $locale, int $scope_geo_id, string $type, string $search_session_id, string $typeahead_id, string $route_uid
  * @method mixed tripadvisorEnums(array $params = [], array $options = []) tripadvisor-enums (GET /tripadvisor/enums)
@@ -1502,10 +1572,12 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\CoinGeckoGroup $coinGecko
  * @property-read \Crawlora\Generated\WebGroup $web
  * @property-read \Crawlora\Generated\DatasetsGroup $datasets
+ * @property-read \Crawlora\Generated\DiscogsGroup $discogs
  * @property-read \Crawlora\Generated\EBayGroup $eBay
  * @property-read \Crawlora\Generated\EspnGroup $espn
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
  * @property-read \Crawlora\Generated\GitHubGroup $gitHub
+ * @property-read \Crawlora\Generated\GoodreadsGroup $goodreads
  * @property-read \Crawlora\Generated\GoogleGroup $google
  * @property-read \Crawlora\Generated\GooglePlayGroup $googlePlay
  * @property-read \Crawlora\Generated\ImdbGroup $imdb
@@ -1513,6 +1585,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\JobsGroup $jobs
  * @property-read \Crawlora\Generated\JustWatchGroup $justWatch
  * @property-read \Crawlora\Generated\KalshiGroup $kalshi
+ * @property-read \Crawlora\Generated\LetterboxdGroup $letterboxd
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
  * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
  * @property-read \Crawlora\Generated\MetaGroup $meta
@@ -1533,6 +1606,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
  * @property-read \Crawlora\Generated\SteamGroup $steam
  * @property-read \Crawlora\Generated\TiktokGroup $tiktok
+ * @property-read \Crawlora\Generated\TmdbGroup $tmdb
  * @property-read \Crawlora\Generated\TripAdvisorGroup $tripAdvisor
  * @property-read \Crawlora\Generated\TrustMrrGroup $trustMrr
  * @property-read \Crawlora\Generated\TrustpilotGroup $trustpilot
