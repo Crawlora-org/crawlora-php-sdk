@@ -244,6 +244,8 @@ abstract class CoinGeckoGroup {}
  *   params: array $option
  * @method mixed antibotCheck(array $params = [], array $options = []) antibot-check (POST /diagnostics/antibot-check)
  *   params: array $request
+ * @method mixed extract(array $params = [], array $options = []) extract (POST /extract)
+ *   params: array $extractOption
  * @method mixed scrape(array $params = [], array $options = []) web-scrape (POST /web/scrape)
  *   params: array $scrapeOption
  * @method mixed techstack(array $params = [], array $options = []) web-techstack (POST /web/techstack)
@@ -285,6 +287,18 @@ abstract class WebGroup {}
  *   params: float $lat, float $lon, int $radius_m, string $category, float $min_rating, int $min_review_count, int $page, int $page_size
  * @method mixed googleMapBusinessesSearch(array $params = [], array $options = []) datasets-google-map-businesses-search (GET /datasets/google-map-businesses/search)
  *   params: string $q, string $category, string $country, string $state, string $county, string $city, string $town, float $min_rating, int $min_review_count, bool $has_website, bool $has_phone, bool $has_geo, float $lat, float $lon, int $radius_m, string $sort, int $page, int $page_size
+ * @method mixed housingMarketsFacets(array $params = [], array $options = []) datasets-housing-markets-facets (GET /datasets/housing-markets/facets)
+ *   params: string $facet, string $q, string $region_type, string $state_code, string $property_type, string $parent_metro_code, string $zip_code, string $period, bool $latest, float $min_median_sale_price, float $max_median_sale_price, float $min_median_list_price, float $max_median_list_price, float $min_price_to_income, float $max_price_to_income, int $min_salary_to_buy, int $max_salary_to_buy, float $min_median_dom, float $max_median_dom, int $min_inventory, int $max_inventory, int $min_homes_sold
+ * @method mixed housingMarketsItem(array $params = [], array $options = []) datasets-housing-markets-item (GET /datasets/housing-markets/items/{region_type}/{table_id})
+ *   params: string $region_type, int $table_id, string $period, string $property_type, bool $history
+ * @method mixed housingMarketsSearch(array $params = [], array $options = []) datasets-housing-markets-search (GET /datasets/housing-markets/search)
+ *   params: string $q, string $region_type, string $state_code, string $property_type, string $parent_metro_code, string $zip_code, string $period, bool $latest, float $min_median_sale_price, float $max_median_sale_price, float $min_median_list_price, float $max_median_list_price, float $min_price_to_income, float $max_price_to_income, int $min_salary_to_buy, int $max_salary_to_buy, float $min_median_dom, float $max_median_dom, int $min_inventory, int $max_inventory, int $min_homes_sold, string $sort, int $page, int $page_size
+ * @method mixed playstationGamesFacets(array $params = [], array $options = []) datasets-playstation-games-facets (GET /datasets/playstation-games/facets)
+ *   params: string $facet, string $q, string $publisher, string $classification, string $genre, string $platform, string $content_rating, string $content_descriptor, string $price_tier, string $branding, string $region, string $concept_id, string $np_title_id, string $run_id, bool $is_free, bool $is_addon, bool $is_tied_to_subscription, bool $coming_soon, bool $on_sale, int $min_price_value, int $max_price_value, float $min_star_rating, int $min_star_count, int $min_discount_pct, int $min_release_year, int $max_release_year
+ * @method mixed playstationGamesItem(array $params = [], array $options = []) datasets-playstation-games-item (GET /datasets/playstation-games/items/{product_id})
+ *   params: string $product_id
+ * @method mixed playstationGamesSearch(array $params = [], array $options = []) datasets-playstation-games-search (GET /datasets/playstation-games/search)
+ *   params: string $q, string $publisher, string $classification, string $genre, string $platform, string $content_rating, string $content_descriptor, string $price_tier, string $branding, string $region, string $concept_id, string $np_title_id, string $run_id, bool $is_free, bool $is_addon, bool $is_tied_to_subscription, bool $coming_soon, bool $on_sale, int $min_price_value, int $max_price_value, float $min_star_rating, int $min_star_count, int $min_discount_pct, int $min_release_year, int $max_release_year, string $sort, int $page, int $page_size
  * @method mixed producthuntMakersFacets(array $params = [], array $options = []) datasets-producthunt-makers-facets (GET /datasets/producthunt-makers/facets)
  *   params: string $facet, string $q, string $topic, int $min_products, int $min_total_votes
  * @method mixed producthuntMakersItem(array $params = [], array $options = []) datasets-producthunt-makers-item (GET /datasets/producthunt-makers/items/{username})
@@ -301,6 +315,24 @@ abstract class WebGroup {}
  *   params: string $facet, string $group_by, string $topic, string $launched_after, string $launched_before, int $min_votes, int $min_launches
  * @method mixed producthuntTrendsSearch(array $params = [], array $options = []) datasets-producthunt-trends-search (GET /datasets/producthunt-trends/search)
  *   params: string $group_by, string $topic, string $launched_after, string $launched_before, int $min_votes, int $min_launches, string $sort, int $page, int $page_size
+ * @method mixed steamAchievementsSearch(array $params = [], array $options = []) datasets-steam-achievements-search (GET /datasets/steam-achievements/search)
+ *   params: string $app_id, string $sort, int $page, int $page_size
+ * @method mixed steamChartsSearch(array $params = [], array $options = []) datasets-steam-charts-search (GET /datasets/steam-charts/search)
+ *   params: string $q, string $chart, string $country, string $app_id, string $date, string $sort, int $page, int $page_size
+ * @method mixed steamGamesFacets(array $params = [], array $options = []) datasets-steam-games-facets (GET /datasets/steam-games/facets)
+ *   params: string $facet, string $q, string $type, string $developer, string $publisher, string $genre, string $category, string $tag, string $price_tier, string $review_tier, string $owners_bucket, string $run_id, bool $is_free, bool $windows, bool $mac, bool $linux, bool $on_sale, int $min_price_cents, int $max_price_cents, int $min_owners, int $min_positive, int $min_total_reviews, float $min_review_score, int $min_metacritic, int $min_ccu, int $min_release_year, int $max_release_year
+ * @method mixed steamGamesItem(array $params = [], array $options = []) datasets-steam-games-item (GET /datasets/steam-games/items/{appid})
+ *   params: int $appid
+ * @method mixed steamGamesSearch(array $params = [], array $options = []) datasets-steam-games-search (GET /datasets/steam-games/search)
+ *   params: string $q, string $type, string $developer, string $publisher, string $genre, string $category, string $tag, string $price_tier, string $review_tier, string $owners_bucket, string $run_id, bool $is_free, bool $windows, bool $mac, bool $linux, bool $on_sale, int $min_price_cents, int $max_price_cents, int $min_owners, int $min_positive, int $min_total_reviews, float $min_review_score, int $min_metacritic, int $min_ccu, int $min_release_year, int $max_release_year, string $sort, int $page, int $page_size
+ * @method mixed steamNewsSearch(array $params = [], array $options = []) datasets-steam-news-search (GET /datasets/steam-news/search)
+ *   params: string $q, string $app_id, string $sort, int $page, int $page_size
+ * @method mixed steamPlayercountsSearch(array $params = [], array $options = []) datasets-steam-playercounts-search (GET /datasets/steam-playercounts/search)
+ *   params: string $app_id, string $date, string $sort, int $page, int $page_size
+ * @method mixed steamPricesSearch(array $params = [], array $options = []) datasets-steam-prices-search (GET /datasets/steam-prices/search)
+ *   params: string $app_id, string $date, string $sort, int $page, int $page_size
+ * @method mixed steamReviewsSearch(array $params = [], array $options = []) datasets-steam-reviews-search (GET /datasets/steam-reviews/search)
+ *   params: string $q, string $app_id, string $language, string $voted_up, string $sort, int $page, int $page_size
  * @method mixed techstackFacets(array $params = [], array $options = []) datasets-techstack-facets (GET /datasets/techstack/facets)
  *   params: string $facet, string $q, array<string> $technology, array<string> $any_of, array<string> $not, string $category, string $cms, string $ecommerce, string $cdn, string $web_server, string $server_language, string $tld, string $render_tier, string $seed_source, bool $has_captcha, bool $reachable, int $min_tech_count, string $run_id
  * @method mixed techstackItem(array $params = [], array $options = []) datasets-techstack-item (GET /datasets/techstack/items/{domain})
@@ -577,7 +609,7 @@ abstract class JobsGroup {}
  * @method mixed justwatchAgeCertifications(array $params = [], array $options = []) justwatch-age-certifications (GET /justwatch/age-certifications)
  *   params: string $country
  * @method mixed justwatchDiscover(array $params = [], array $options = []) justwatch-discover (GET /justwatch/discover)
- *   params: string $country, string $language, int $limit, 'all'|'movie'|'show' $type, string $genres, string $providers, 'FLATRATE'|'FREE'|'ADS'|'RENT'|'BUY' $monetization_types, int $year_min, int $year_max
+ *   params: string $country, string $language, int $limit, 'all'|'movie'|'show' $type, string $genres, string $providers, string $production_countries, 'FLATRATE'|'FREE'|'ADS'|'RENT'|'BUY' $monetization_types, int $year_min, int $year_max
  * @method mixed justwatchEpisodeById(array $params = [], array $options = []) justwatch-episode-by-id (GET /justwatch/episode/by-id)
  *   params: string $id, string $country, string $language
  * @method mixed justwatchEpisodeOffers(array $params = [], array $options = []) justwatch-episode-offers (GET /justwatch/episode/offers)
@@ -713,6 +745,26 @@ abstract class MetaGroup {}
  *   params: string $id, string $url
  */
 abstract class PitchBookGroup {}
+
+/**
+ * @method mixed playstationBrowse(array $params = [], array $options = []) playstation-browse (GET /playstation/browse)
+ *   params: int $page, string $cc, string $l
+ * @method mixed playstationCategory(array $params = [], array $options = []) playstation-category (GET /playstation/category)
+ *   params: string $id, int $page, string $cc, string $l
+ * @method mixed playstationConcept(array $params = [], array $options = []) playstation-concept (GET /playstation/concept)
+ *   params: string $id, string $cc, string $l
+ * @method mixed playstationDeals(array $params = [], array $options = []) playstation-deals (GET /playstation/deals)
+ *   params: string $cc, string $l
+ * @method mixed playstationLatest(array $params = [], array $options = []) playstation-latest (GET /playstation/latest)
+ *   params: string $cc, string $l
+ * @method mixed playstationPage(array $params = [], array $options = []) playstation-page (GET /playstation/page)
+ *   params: string $alias, string $cc, string $l
+ * @method mixed playstationProduct(array $params = [], array $options = []) playstation-product (GET /playstation/product)
+ *   params: string $id, string $cc, string $l
+ * @method mixed playstationSearch(array $params = [], array $options = []) playstation-search (GET /playstation/search)
+ *   params: string $term, int $page, string $cc, string $l
+ */
+abstract class PlayStationGroup {}
 
 /**
  * @method mixed activityTrades(array $params = [], array $options = []) polymarket-activity-trades (GET /polymarket/activity/trades)
@@ -1156,10 +1208,21 @@ abstract class SpotifyGroup {}
  *   params: string $appid
  * @method mixed app(array $params = [], array $options = []) steam-app (GET /steam/app)
  *   params: string $appid, string $cc, string $l, string $filters
+ * @method mixed category(array $params = [], array $options = []) steam-category (GET /steam/category/{slug})
+ *   params: string $slug, bool $free, bool $released_only, bool $coming_soon_only, int $start, int $count, string $cc, string $l
+ * @method mixed chartsConcurrent(array $params = [], array $options = []) steam-charts-concurrent (GET /steam/charts/concurrent)
+ *   params: bool $enrich, string $cc, string $l
+ * @method mixed chartsMostPlayed(array $params = [], array $options = []) steam-charts-most-played (GET /steam/charts/most-played)
+ *   params: bool $enrich, string $cc, string $l
+ * @method mixed chartsTopReleases(array $params = [], array $options = []) steam-charts-top-releases (GET /steam/charts/top-releases)
+ * @method mixed communityRecommendations(array $params = [], array $options = []) steam-community-recommendations (GET /steam/community-recommendations)
+ *   params: 'helpful'|'recent'|'funny' $review_filter, int $playtime_min, int $playtime_max, string $review_language, string $cc, string $l
  * @method mixed featured(array $params = [], array $options = []) steam-featured (GET /steam/featured)
  *   params: string $cc, string $l
  * @method mixed featuredCategories(array $params = [], array $options = []) steam-featured-categories (GET /steam/featured-categories)
  *   params: string $cc, string $l
+ * @method mixed items(array $params = [], array $options = []) steam-items (GET /steam/items)
+ *   params: string $appids, string $cc, string $l
  * @method mixed news(array $params = [], array $options = []) steam-news (GET /steam/news)
  *   params: string $appid, int $count, int $maxlength
  * @method mixed package(array $params = [], array $options = []) steam-package (GET /steam/package)
@@ -1176,6 +1239,12 @@ abstract class SpotifyGroup {}
  *   params: string $term, int $start, int $count, 'Relevance'|'Released_DESC'|'Name_ASC'|'Price_ASC'|'Price_DESC'|'Reviews_DESC' $sort_by, string $cc, string $l
  * @method mixed steamspy(array $params = [], array $options = []) steam-steamspy (GET /steam/steamspy)
  *   params: string $appid
+ * @method mixed tags(array $params = [], array $options = []) steam-tags (GET /steam/tags)
+ *   params: string $tags, string $untags, string $category1, string $category2, string $category3, string $os, string $maxprice, bool $specials, bool $hidef2p, '1'|'2'|'3' $deck_compatibility, string $vrsupport, 'globaltopsellers'|'topsellers'|'popularnew'|'comingsoon' $filter, string $supportedlang, 'Relevance'|'Released_DESC'|'Name_ASC'|'Price_ASC'|'Price_DESC'|'Reviews_DESC' $sort_by, int $start, int $count, string $cc, string $l
+ * @method mixed tagsList(array $params = [], array $options = []) steam-tags-list (GET /steam/tags/list)
+ *   params: string $l
+ * @method mixed topSellers(array $params = [], array $options = []) steam-top-sellers (GET /steam/top-sellers)
+ *   params: string $cc, string $l
  */
 abstract class SteamGroup {}
 
@@ -1448,6 +1517,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
  * @property-read \Crawlora\Generated\MetaGroup $meta
  * @property-read \Crawlora\Generated\PitchBookGroup $pitchBook
+ * @property-read \Crawlora\Generated\PlayStationGroup $playStation
  * @property-read \Crawlora\Generated\PolymarketGroup $polymarket
  * @property-read \Crawlora\Generated\ProductHuntGroup $productHunt
  * @property-read \Crawlora\Generated\RedditGroup $reddit
