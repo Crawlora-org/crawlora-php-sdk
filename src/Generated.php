@@ -175,10 +175,16 @@ abstract class BraveGroup {}
  *   params: 'trending'|'popular'|'notable' $chart, int $num, string $country, string $lang
  * @method mixed chromewebstoreCollection(array $params = [], array $options = []) chromewebstore-collection (GET /chromewebstore/collection)
  *   params: string $collection, int $num, string $country, string $lang
+ * @method mixed chromewebstoreDeveloper(array $params = [], array $options = []) chromewebstore-developer (GET /chromewebstore/developer)
+ *   params: string $id, int $num, string $country, string $lang
  * @method mixed chromewebstoreItem(array $params = [], array $options = []) chromewebstore-item (GET /chromewebstore/item)
  *   params: string $id, string $country, string $lang
+ * @method mixed chromewebstorePermissions(array $params = [], array $options = []) chromewebstore-permissions (GET /chromewebstore/permissions)
+ *   params: string $id, string $country, string $lang
+ * @method mixed chromewebstorePrivacy(array $params = [], array $options = []) chromewebstore-privacy (GET /chromewebstore/privacy)
+ *   params: string $id, string $country, string $lang
  * @method mixed chromewebstoreReviews(array $params = [], array $options = []) chromewebstore-reviews (GET /chromewebstore/reviews)
- *   params: string $id, int $num, string $country, string $lang
+ *   params: string $id, int $num, 'recent'|'helpful' $sort, string $country, string $lang
  * @method mixed chromewebstoreSearch(array $params = [], array $options = []) chromewebstore-search (GET /chromewebstore/search)
  *   params: string $term, int $num, string $country, string $lang
  * @method mixed chromewebstoreSimilar(array $params = [], array $options = []) chromewebstore-similar (GET /chromewebstore/similar)
@@ -238,6 +244,8 @@ abstract class CoinGeckoGroup {}
  *   params: array $option
  * @method mixed antibotCheck(array $params = [], array $options = []) antibot-check (POST /diagnostics/antibot-check)
  *   params: array $request
+ * @method mixed extract(array $params = [], array $options = []) extract (POST /extract)
+ *   params: array $extractOption
  * @method mixed scrape(array $params = [], array $options = []) web-scrape (POST /web/scrape)
  *   params: array $scrapeOption
  * @method mixed techstack(array $params = [], array $options = []) web-techstack (POST /web/techstack)
@@ -279,6 +287,18 @@ abstract class WebGroup {}
  *   params: float $lat, float $lon, int $radius_m, string $category, float $min_rating, int $min_review_count, int $page, int $page_size
  * @method mixed googleMapBusinessesSearch(array $params = [], array $options = []) datasets-google-map-businesses-search (GET /datasets/google-map-businesses/search)
  *   params: string $q, string $category, string $country, string $state, string $county, string $city, string $town, float $min_rating, int $min_review_count, bool $has_website, bool $has_phone, bool $has_geo, float $lat, float $lon, int $radius_m, string $sort, int $page, int $page_size
+ * @method mixed housingMarketsFacets(array $params = [], array $options = []) datasets-housing-markets-facets (GET /datasets/housing-markets/facets)
+ *   params: string $facet, string $q, string $region_type, string $state_code, string $property_type, string $parent_metro_code, string $zip_code, string $period, bool $latest, float $min_median_sale_price, float $max_median_sale_price, float $min_median_list_price, float $max_median_list_price, float $min_price_to_income, float $max_price_to_income, int $min_salary_to_buy, int $max_salary_to_buy, float $min_median_dom, float $max_median_dom, int $min_inventory, int $max_inventory, int $min_homes_sold
+ * @method mixed housingMarketsItem(array $params = [], array $options = []) datasets-housing-markets-item (GET /datasets/housing-markets/items/{region_type}/{table_id})
+ *   params: string $region_type, int $table_id, string $period, string $property_type, bool $history
+ * @method mixed housingMarketsSearch(array $params = [], array $options = []) datasets-housing-markets-search (GET /datasets/housing-markets/search)
+ *   params: string $q, string $region_type, string $state_code, string $property_type, string $parent_metro_code, string $zip_code, string $period, bool $latest, float $min_median_sale_price, float $max_median_sale_price, float $min_median_list_price, float $max_median_list_price, float $min_price_to_income, float $max_price_to_income, int $min_salary_to_buy, int $max_salary_to_buy, float $min_median_dom, float $max_median_dom, int $min_inventory, int $max_inventory, int $min_homes_sold, string $sort, int $page, int $page_size
+ * @method mixed playstationGamesFacets(array $params = [], array $options = []) datasets-playstation-games-facets (GET /datasets/playstation-games/facets)
+ *   params: string $facet, string $q, string $publisher, string $classification, string $genre, string $platform, string $content_rating, string $content_descriptor, string $price_tier, string $branding, string $region, string $concept_id, string $np_title_id, string $run_id, bool $is_free, bool $is_addon, bool $is_tied_to_subscription, bool $coming_soon, bool $on_sale, int $min_price_value, int $max_price_value, float $min_star_rating, int $min_star_count, int $min_discount_pct, int $min_release_year, int $max_release_year
+ * @method mixed playstationGamesItem(array $params = [], array $options = []) datasets-playstation-games-item (GET /datasets/playstation-games/items/{product_id})
+ *   params: string $product_id
+ * @method mixed playstationGamesSearch(array $params = [], array $options = []) datasets-playstation-games-search (GET /datasets/playstation-games/search)
+ *   params: string $q, string $publisher, string $classification, string $genre, string $platform, string $content_rating, string $content_descriptor, string $price_tier, string $branding, string $region, string $concept_id, string $np_title_id, string $run_id, bool $is_free, bool $is_addon, bool $is_tied_to_subscription, bool $coming_soon, bool $on_sale, int $min_price_value, int $max_price_value, float $min_star_rating, int $min_star_count, int $min_discount_pct, int $min_release_year, int $max_release_year, string $sort, int $page, int $page_size
  * @method mixed producthuntMakersFacets(array $params = [], array $options = []) datasets-producthunt-makers-facets (GET /datasets/producthunt-makers/facets)
  *   params: string $facet, string $q, string $topic, int $min_products, int $min_total_votes
  * @method mixed producthuntMakersItem(array $params = [], array $options = []) datasets-producthunt-makers-item (GET /datasets/producthunt-makers/items/{username})
@@ -295,8 +315,56 @@ abstract class WebGroup {}
  *   params: string $facet, string $group_by, string $topic, string $launched_after, string $launched_before, int $min_votes, int $min_launches
  * @method mixed producthuntTrendsSearch(array $params = [], array $options = []) datasets-producthunt-trends-search (GET /datasets/producthunt-trends/search)
  *   params: string $group_by, string $topic, string $launched_after, string $launched_before, int $min_votes, int $min_launches, string $sort, int $page, int $page_size
+ * @method mixed steamAchievementsSearch(array $params = [], array $options = []) datasets-steam-achievements-search (GET /datasets/steam-achievements/search)
+ *   params: string $app_id, string $sort, int $page, int $page_size
+ * @method mixed steamChartsSearch(array $params = [], array $options = []) datasets-steam-charts-search (GET /datasets/steam-charts/search)
+ *   params: string $q, string $chart, string $country, string $app_id, string $date, string $sort, int $page, int $page_size
+ * @method mixed steamGamesFacets(array $params = [], array $options = []) datasets-steam-games-facets (GET /datasets/steam-games/facets)
+ *   params: string $facet, string $q, string $type, string $developer, string $publisher, string $genre, string $category, string $tag, string $price_tier, string $review_tier, string $owners_bucket, string $run_id, bool $is_free, bool $windows, bool $mac, bool $linux, bool $on_sale, int $min_price_cents, int $max_price_cents, int $min_owners, int $min_positive, int $min_total_reviews, float $min_review_score, int $min_metacritic, int $min_ccu, int $min_release_year, int $max_release_year
+ * @method mixed steamGamesItem(array $params = [], array $options = []) datasets-steam-games-item (GET /datasets/steam-games/items/{appid})
+ *   params: int $appid
+ * @method mixed steamGamesSearch(array $params = [], array $options = []) datasets-steam-games-search (GET /datasets/steam-games/search)
+ *   params: string $q, string $type, string $developer, string $publisher, string $genre, string $category, string $tag, string $price_tier, string $review_tier, string $owners_bucket, string $run_id, bool $is_free, bool $windows, bool $mac, bool $linux, bool $on_sale, int $min_price_cents, int $max_price_cents, int $min_owners, int $min_positive, int $min_total_reviews, float $min_review_score, int $min_metacritic, int $min_ccu, int $min_release_year, int $max_release_year, string $sort, int $page, int $page_size
+ * @method mixed steamNewsSearch(array $params = [], array $options = []) datasets-steam-news-search (GET /datasets/steam-news/search)
+ *   params: string $q, string $app_id, string $sort, int $page, int $page_size
+ * @method mixed steamPlayercountsSearch(array $params = [], array $options = []) datasets-steam-playercounts-search (GET /datasets/steam-playercounts/search)
+ *   params: string $app_id, string $date, string $sort, int $page, int $page_size
+ * @method mixed steamPricesSearch(array $params = [], array $options = []) datasets-steam-prices-search (GET /datasets/steam-prices/search)
+ *   params: string $app_id, string $date, string $sort, int $page, int $page_size
+ * @method mixed steamReviewsSearch(array $params = [], array $options = []) datasets-steam-reviews-search (GET /datasets/steam-reviews/search)
+ *   params: string $q, string $app_id, string $language, string $voted_up, string $sort, int $page, int $page_size
+ * @method mixed techstackFacets(array $params = [], array $options = []) datasets-techstack-facets (GET /datasets/techstack/facets)
+ *   params: string $facet, string $q, array<string> $technology, array<string> $any_of, array<string> $not, string $category, string $cms, string $ecommerce, string $cdn, string $web_server, string $server_language, string $tld, string $render_tier, string $seed_source, bool $has_captcha, bool $reachable, int $min_tech_count, string $run_id
+ * @method mixed techstackItem(array $params = [], array $options = []) datasets-techstack-item (GET /datasets/techstack/items/{domain})
+ *   params: string $domain
+ * @method mixed techstackSearch(array $params = [], array $options = []) datasets-techstack-search (GET /datasets/techstack/search)
+ *   params: string $q, array<string> $technology, array<string> $any_of, array<string> $not, string $category, string $cms, string $ecommerce, string $cdn, string $web_server, string $server_language, string $tld, string $render_tier, string $seed_source, bool $has_captcha, bool $reachable, int $min_tech_count, string $run_id, string $sort, int $page, int $page_size
+ * @method mixed trustmrrFacets(array $params = [], array $options = []) datasets-trustmrr-facets (GET /datasets/trustmrr/facets)
+ *   params: string $facet, string $q, string $category, string $country, string $payment_provider, bool $on_sale, float $min_mrr
+ * @method mixed trustmrrItem(array $params = [], array $options = []) datasets-trustmrr-item (GET /datasets/trustmrr/items/{slug})
+ *   params: string $slug
+ * @method mixed trustmrrSearch(array $params = [], array $options = []) datasets-trustmrr-search (GET /datasets/trustmrr/search)
+ *   params: string $q, string $slug, string $category, string $country, string $payment_provider, string $target_audience, string $business_type, string $tech, string $channel, string $listing_tier, string $status, bool $on_sale, bool $is_sponsored, float $min_mrr, float $max_mrr, float $min_revenue, float $min_revenue_30d, float $min_traffic, float $min_growth, float $max_multiple, float $min_asking_price, float $max_asking_price, int $min_ahrefs_dr, string $sort, int $page, int $page_size
  */
 abstract class DatasetsGroup {}
+
+/**
+ * @method mixed artist(array $params = [], array $options = []) discogs-artist (GET /discogs/artist/{id})
+ *   params: string $id
+ * @method mixed artistReleases(array $params = [], array $options = []) discogs-artist-releases (GET /discogs/artist/{id}/releases)
+ *   params: string $id, int $page, int $per_page
+ * @method mixed label(array $params = [], array $options = []) discogs-label (GET /discogs/label/{id})
+ *   params: string $id
+ * @method mixed labelReleases(array $params = [], array $options = []) discogs-label-releases (GET /discogs/label/{id}/releases)
+ *   params: string $id, int $page, int $per_page
+ * @method mixed master(array $params = [], array $options = []) discogs-master (GET /discogs/master/{id})
+ *   params: string $id
+ * @method mixed release(array $params = [], array $options = []) discogs-release (GET /discogs/release/{id})
+ *   params: string $id
+ * @method mixed search(array $params = [], array $options = []) discogs-search (GET /discogs/search)
+ *   params: string $q, 'release'|'master'|'artist'|'label' $type, int $page, int $per_page
+ */
+abstract class DiscogsGroup {}
 
 /**
  * @method mixed ebayItem(array $params = [], array $options = []) ebay-item (GET /ebay/item/{item_id})
@@ -361,8 +429,6 @@ abstract class GeocodingGroup {}
  *   params: string $owner, string $repo
  * @method mixed githubRepoReleases(array $params = [], array $options = []) github-repo-releases (GET /github/repo/{owner}/{repo}/releases)
  *   params: string $owner, string $repo, int $page, int $per_page
- * @method mixed githubRepoStargazers(array $params = [], array $options = []) github-repo-stargazers (GET /github/repo/{owner}/{repo}/stargazers)
- *   params: string $owner, string $repo, int $page, int $per_page
  * @method mixed githubSearchRepositories(array $params = [], array $options = []) github-search-repositories (GET /github/search/repositories)
  *   params: string $q, 'stars'|'forks'|'help-wanted-issues'|'updated' $sort, 'asc'|'desc' $order, int $page, int $per_page
  * @method mixed githubSearchUsers(array $params = [], array $options = []) github-search-users (GET /github/search/users)
@@ -381,6 +447,22 @@ abstract class GeocodingGroup {}
  *   params: string $username, 'created'|'updated'|'pushed'|'full_name' $sort, 'asc'|'desc' $direction, 'all'|'owner'|'member' $type, int $page, int $per_page
  */
 abstract class GitHubGroup {}
+
+/**
+ * @method mixed author(array $params = [], array $options = []) goodreads-author (GET /goodreads/author/{id})
+ *   params: string $id
+ * @method mixed authorBooks(array $params = [], array $options = []) goodreads-author-books (GET /goodreads/author/{id}/books)
+ *   params: string $id, int $page
+ * @method mixed book(array $params = [], array $options = []) goodreads-book (GET /goodreads/book/{id})
+ *   params: string $id
+ * @method mixed bookReviews(array $params = [], array $options = []) goodreads-book-reviews (GET /goodreads/book/{id}/reviews)
+ *   params: string $id, int $limit
+ * @method mixed list_(array $params = [], array $options = []) goodreads-list (GET /goodreads/list/{id})
+ *   params: string $id, int $page
+ * @method mixed search(array $params = [], array $options = []) goodreads-search (GET /goodreads/search)
+ *   params: string $q, int $limit
+ */
+abstract class GoodreadsGroup {}
 
 /**
  * @method mixed financeAnalystArticles(array $params = [], array $options = []) google-finance-analyst-articles (GET /google/finance/analyst-articles/{quote})
@@ -532,10 +614,36 @@ abstract class ImdbGroup {}
 abstract class InstagramGroup {}
 
 /**
+ * @method mixed ashbyBoard(array $params = [], array $options = []) jobs-ashby-board (GET /jobs/ashby/board)
+ *   params: string $org, bool $include_compensation
+ * @method mixed companySearch(array $params = [], array $options = []) jobs-company-search (GET /jobs/company-search)
+ *   params: string $slug
+ * @method mixed greenhouseBoard(array $params = [], array $options = []) jobs-greenhouse-board (GET /jobs/greenhouse/board)
+ *   params: string $token, bool $content
+ * @method mixed greenhouseJob(array $params = [], array $options = []) jobs-greenhouse-job (GET /jobs/greenhouse/job)
+ *   params: string $token, string $id
+ * @method mixed hiringSignals(array $params = [], array $options = []) jobs-hiring-signals (GET /jobs/hiring-signals)
+ *   params: 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters' $provider, string $token, string $company, string $org, string $tenant, string $datacenter, string $site
+ * @method mixed leverPosting(array $params = [], array $options = []) jobs-lever-posting (GET /jobs/lever/posting)
+ *   params: string $company, string $id
+ * @method mixed leverPostings(array $params = [], array $options = []) jobs-lever-postings (GET /jobs/lever/postings)
+ *   params: string $company, string $department, string $location, bool $remote
+ * @method mixed smartrecruitersPosting(array $params = [], array $options = []) jobs-smartrecruiters-posting (GET /jobs/smartrecruiters/posting)
+ *   params: string $company, string $id
+ * @method mixed smartrecruitersPostings(array $params = [], array $options = []) jobs-smartrecruiters-postings (GET /jobs/smartrecruiters/postings)
+ *   params: string $company, int $limit, int $offset
+ * @method mixed workdayBoard(array $params = [], array $options = []) jobs-workday-board (GET /jobs/workday/board)
+ *   params: string $tenant, string $datacenter, string $site, string $search, int $limit, int $offset
+ * @method mixed workdayJob(array $params = [], array $options = []) jobs-workday-job (GET /jobs/workday/job)
+ *   params: string $tenant, string $datacenter, string $site, string $path
+ */
+abstract class JobsGroup {}
+
+/**
  * @method mixed justwatchAgeCertifications(array $params = [], array $options = []) justwatch-age-certifications (GET /justwatch/age-certifications)
  *   params: string $country
  * @method mixed justwatchDiscover(array $params = [], array $options = []) justwatch-discover (GET /justwatch/discover)
- *   params: string $country, string $language, int $limit, 'all'|'movie'|'show' $type, string $genres, string $providers, 'FLATRATE'|'FREE'|'ADS'|'RENT'|'BUY' $monetization_types, int $year_min, int $year_max
+ *   params: string $country, string $language, int $limit, 'all'|'movie'|'show' $type, string $genres, string $providers, string $production_countries, 'FLATRATE'|'FREE'|'ADS'|'RENT'|'BUY' $monetization_types, int $year_min, int $year_max
  * @method mixed justwatchEpisodeById(array $params = [], array $options = []) justwatch-episode-by-id (GET /justwatch/episode/by-id)
  *   params: string $id, string $country, string $language
  * @method mixed justwatchEpisodeOffers(array $params = [], array $options = []) justwatch-episode-offers (GET /justwatch/episode/offers)
@@ -621,6 +729,26 @@ abstract class JustWatchGroup {}
 abstract class KalshiGroup {}
 
 /**
+ * @method mixed film(array $params = [], array $options = []) letterboxd-film (GET /letterboxd/film/{slug})
+ *   params: string $slug
+ * @method mixed filmRatingHistogram(array $params = [], array $options = []) letterboxd-film-rating-histogram (GET /letterboxd/film/{slug}/rating-histogram)
+ *   params: string $slug
+ * @method mixed filmReviews(array $params = [], array $options = []) letterboxd-film-reviews (GET /letterboxd/film/{slug}/reviews)
+ *   params: string $slug, int $limit
+ * @method mixed filmSimilar(array $params = [], array $options = []) letterboxd-film-similar (GET /letterboxd/film/{slug}/similar)
+ *   params: string $slug, int $limit
+ * @method mixed member(array $params = [], array $options = []) letterboxd-member (GET /letterboxd/member/{username})
+ *   params: string $username
+ * @method mixed person(array $params = [], array $options = []) letterboxd-person (GET /letterboxd/person/{slug})
+ *   params: string $slug, 'actor'|'director' $role, int $limit
+ * @method mixed popular(array $params = [], array $options = []) letterboxd-popular (GET /letterboxd/popular)
+ *   params: 'day'|'week'|'month'|'year' $period, string $genre, string $decade, int $limit
+ * @method mixed search(array $params = [], array $options = []) letterboxd-search (GET /letterboxd/search)
+ *   params: string $q, 'film' $type, int $limit
+ */
+abstract class LetterboxdGroup {}
+
+/**
  * @method mixed linkedinCompany(array $params = [], array $options = []) linkedin-company (GET /linkedin/company/{id})
  *   params: string $id
  * @method mixed linkedinProduct(array $params = [], array $options = []) linkedin-product (GET /linkedin/product/{id})
@@ -661,6 +789,36 @@ abstract class MetaculusGroup {}
  * @method mixed ready(array $params = [], array $options = []) ready (GET /ready)
  */
 abstract class MetaGroup {}
+
+/**
+ * @method mixed pitchbookCompany(array $params = [], array $options = []) pitchbook-company (GET /pitchbook/company)
+ *   params: string $id, string $url
+ * @method mixed pitchbookFund(array $params = [], array $options = []) pitchbook-fund (GET /pitchbook/fund)
+ *   params: string $id, string $url
+ * @method mixed pitchbookInvestor(array $params = [], array $options = []) pitchbook-investor (GET /pitchbook/investor)
+ *   params: string $id, string $url
+ */
+abstract class PitchBookGroup {}
+
+/**
+ * @method mixed playstationBrowse(array $params = [], array $options = []) playstation-browse (GET /playstation/browse)
+ *   params: int $page, string $cc, string $l
+ * @method mixed playstationCategory(array $params = [], array $options = []) playstation-category (GET /playstation/category)
+ *   params: string $id, int $page, string $cc, string $l
+ * @method mixed playstationConcept(array $params = [], array $options = []) playstation-concept (GET /playstation/concept)
+ *   params: string $id, string $cc, string $l
+ * @method mixed playstationDeals(array $params = [], array $options = []) playstation-deals (GET /playstation/deals)
+ *   params: string $cc, string $l
+ * @method mixed playstationLatest(array $params = [], array $options = []) playstation-latest (GET /playstation/latest)
+ *   params: string $cc, string $l
+ * @method mixed playstationPage(array $params = [], array $options = []) playstation-page (GET /playstation/page)
+ *   params: string $alias, string $cc, string $l
+ * @method mixed playstationProduct(array $params = [], array $options = []) playstation-product (GET /playstation/product)
+ *   params: string $id, string $cc, string $l
+ * @method mixed playstationSearch(array $params = [], array $options = []) playstation-search (GET /playstation/search)
+ *   params: string $term, int $page, string $cc, string $l
+ */
+abstract class PlayStationGroup {}
 
 /**
  * @method mixed activityTrades(array $params = [], array $options = []) polymarket-activity-trades (GET /polymarket/activity/trades)
@@ -889,6 +1047,30 @@ abstract class ReferralsGroup {}
 abstract class RottenTomatoesGroup {}
 
 /**
+ * @method mixed secCompanyIntelligence(array $params = [], array $options = []) sec-company-intelligence (GET /sec/company/intelligence)
+ *   params: string $cik, string $ticker, 'market'|'news'|'hiring' $enrich, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters' $ats, string $careers_slug, string $tenant, string $datacenter, string $site
+ * @method mixed secCompanySearch(array $params = [], array $options = []) sec-company-search (GET /sec/company/search)
+ *   params: string $q, int $limit
+ * @method mixed secCompanySubmissions(array $params = [], array $options = []) sec-company-submissions (GET /sec/company/submissions)
+ *   params: string $cik, string $ticker, string $form, string $from, string $to, int $limit
+ * @method mixed secFiling(array $params = [], array $options = []) sec-filing (GET /sec/filing)
+ *   params: string $cik, string $ticker, string $accession
+ * @method mixed secFilingSections(array $params = [], array $options = []) sec-filing-sections (GET /sec/filing/sections)
+ *   params: string $cik, string $ticker, string $accession, string $items, int $max_chars
+ * @method mixed secFinancials(array $params = [], array $options = []) sec-financials (GET /sec/financials)
+ *   params: string $cik, string $ticker, 'income'|'balance'|'cash_flow' $statement, 'annual'|'quarterly' $period, int $limit
+ * @method mixed secFrames(array $params = [], array $options = []) sec-frames (GET /sec/frames)
+ *   params: string $concept, string $period, string $unit, 'dei'|'ifrs-full'|'srt'|'us-gaap' $taxonomy, int $limit
+ * @method mixed secFullTextSearch(array $params = [], array $options = []) sec-full-text-search (GET /sec/full-text-search)
+ *   params: string $q, string $forms, string $from, string $to, int $page
+ * @method mixed secInsider(array $params = [], array $options = []) sec-insider (GET /sec/insider)
+ *   params: string $cik, string $ticker, int $limit
+ * @method mixed secInstitutionalHoldings(array $params = [], array $options = []) sec-institutional-holdings (GET /sec/institutional-holdings)
+ *   params: string $cik, int $limit
+ */
+abstract class SecEdgarGroup {}
+
+/**
  * @method mixed analysis(array $params = [], array $options = []) shop-app-analysis (GET /shop-app/analysis)
  *   params: string $query, int $limit, bool $in_stock, bool $on_sale, bool $deep_search
  * @method mixed categories(array $params = [], array $options = []) shop-app-categories (GET /shop-app/categories)
@@ -956,6 +1138,40 @@ abstract class ShopifyGroup {}
  *   params: string $domain
  */
 abstract class SimilarWebGroup {}
+
+/**
+ * @method mixed sofascoreEvent(array $params = [], array $options = []) sofascore-event (GET /sofascore/event)
+ *   params: string $id
+ * @method mixed sofascoreEventH2h(array $params = [], array $options = []) sofascore-event-h2h (GET /sofascore/event-h2h)
+ *   params: string $id
+ * @method mixed sofascoreEventIncidents(array $params = [], array $options = []) sofascore-event-incidents (GET /sofascore/event-incidents)
+ *   params: string $id
+ * @method mixed sofascoreEventLineups(array $params = [], array $options = []) sofascore-event-lineups (GET /sofascore/event-lineups)
+ *   params: string $id
+ * @method mixed sofascoreEventOdds(array $params = [], array $options = []) sofascore-event-odds (GET /sofascore/event-odds)
+ *   params: string $id
+ * @method mixed sofascoreEventStatistics(array $params = [], array $options = []) sofascore-event-statistics (GET /sofascore/event-statistics)
+ *   params: string $id
+ * @method mixed sofascoreLiveEvents(array $params = [], array $options = []) sofascore-live-events (GET /sofascore/live-events)
+ *   params: 'football'|'basketball'|'tennis' $sport
+ * @method mixed sofascorePlayer(array $params = [], array $options = []) sofascore-player (GET /sofascore/player)
+ *   params: string $id
+ * @method mixed sofascoreRoundEvents(array $params = [], array $options = []) sofascore-round-events (GET /sofascore/round-events)
+ *   params: string $id, string $season, int $round
+ * @method mixed sofascoreSearch(array $params = [], array $options = []) sofascore-search (GET /sofascore/search)
+ *   params: string $q
+ * @method mixed sofascoreStandings(array $params = [], array $options = []) sofascore-standings (GET /sofascore/standings)
+ *   params: string $id, string $season, 'total'|'home'|'away' $type
+ * @method mixed sofascoreTeam(array $params = [], array $options = []) sofascore-team (GET /sofascore/team)
+ *   params: string $id
+ * @method mixed sofascoreTeamEvents(array $params = [], array $options = []) sofascore-team-events (GET /sofascore/team-events)
+ *   params: string $id, 'next'|'last' $direction, int $page
+ * @method mixed sofascoreTeamPlayers(array $params = [], array $options = []) sofascore-team-players (GET /sofascore/team-players)
+ *   params: string $id
+ * @method mixed sofascoreTournamentSeasons(array $params = [], array $options = []) sofascore-tournament-seasons (GET /sofascore/tournament-seasons)
+ *   params: string $id
+ */
+abstract class SofaScoreGroup {}
 
 /**
  * @method mixed categories(array $params = [], array $options = []) spotify-podcasts-categories (GET /spotify-podcasts/categories)
@@ -1042,6 +1258,51 @@ abstract class SpotifyPodcastsGroup {}
 abstract class SpotifyGroup {}
 
 /**
+ * @method mixed achievements(array $params = [], array $options = []) steam-achievements (GET /steam/achievements)
+ *   params: string $appid
+ * @method mixed app(array $params = [], array $options = []) steam-app (GET /steam/app)
+ *   params: string $appid, string $cc, string $l, string $filters
+ * @method mixed category(array $params = [], array $options = []) steam-category (GET /steam/category/{slug})
+ *   params: string $slug, bool $free, bool $released_only, bool $coming_soon_only, int $start, int $count, string $cc, string $l
+ * @method mixed chartsConcurrent(array $params = [], array $options = []) steam-charts-concurrent (GET /steam/charts/concurrent)
+ *   params: bool $enrich, string $cc, string $l
+ * @method mixed chartsMostPlayed(array $params = [], array $options = []) steam-charts-most-played (GET /steam/charts/most-played)
+ *   params: bool $enrich, string $cc, string $l
+ * @method mixed chartsTopReleases(array $params = [], array $options = []) steam-charts-top-releases (GET /steam/charts/top-releases)
+ * @method mixed communityRecommendations(array $params = [], array $options = []) steam-community-recommendations (GET /steam/community-recommendations)
+ *   params: 'helpful'|'recent'|'funny' $review_filter, int $playtime_min, int $playtime_max, string $review_language, string $cc, string $l
+ * @method mixed featured(array $params = [], array $options = []) steam-featured (GET /steam/featured)
+ *   params: string $cc, string $l
+ * @method mixed featuredCategories(array $params = [], array $options = []) steam-featured-categories (GET /steam/featured-categories)
+ *   params: string $cc, string $l
+ * @method mixed items(array $params = [], array $options = []) steam-items (GET /steam/items)
+ *   params: string $appids, string $cc, string $l
+ * @method mixed news(array $params = [], array $options = []) steam-news (GET /steam/news)
+ *   params: string $appid, int $count, int $maxlength
+ * @method mixed package(array $params = [], array $options = []) steam-package (GET /steam/package)
+ *   params: string $packageid, string $cc, string $l
+ * @method mixed players(array $params = [], array $options = []) steam-players (GET /steam/players)
+ *   params: string $appid
+ * @method mixed reviews(array $params = [], array $options = []) steam-reviews (GET /steam/reviews)
+ *   params: string $appid, 'recent'|'updated'|'all' $filter, string $language, 'all'|'positive'|'negative' $review_type, 'all'|'steam'|'non_steam_purchase' $purchase_type, int $day_range, int $num_per_page, string $cursor
+ * @method mixed reviewsHistogram(array $params = [], array $options = []) steam-reviews-histogram (GET /steam/reviews/histogram)
+ *   params: string $appid, string $language
+ * @method mixed search(array $params = [], array $options = []) steam-search (GET /steam/search)
+ *   params: string $term, string $cc, string $l
+ * @method mixed searchResults(array $params = [], array $options = []) steam-search-results (GET /steam/search/results)
+ *   params: string $term, int $start, int $count, 'Relevance'|'Released_DESC'|'Name_ASC'|'Price_ASC'|'Price_DESC'|'Reviews_DESC' $sort_by, string $cc, string $l
+ * @method mixed steamspy(array $params = [], array $options = []) steam-steamspy (GET /steam/steamspy)
+ *   params: string $appid
+ * @method mixed tags(array $params = [], array $options = []) steam-tags (GET /steam/tags)
+ *   params: string $tags, string $untags, string $category1, string $category2, string $category3, string $os, string $maxprice, bool $specials, bool $hidef2p, '1'|'2'|'3' $deck_compatibility, string $vrsupport, 'globaltopsellers'|'topsellers'|'popularnew'|'comingsoon' $filter, string $supportedlang, 'Relevance'|'Released_DESC'|'Name_ASC'|'Price_ASC'|'Price_DESC'|'Reviews_DESC' $sort_by, int $start, int $count, string $cc, string $l
+ * @method mixed tagsList(array $params = [], array $options = []) steam-tags-list (GET /steam/tags/list)
+ *   params: string $l
+ * @method mixed topSellers(array $params = [], array $options = []) steam-top-sellers (GET /steam/top-sellers)
+ *   params: string $cc, string $l
+ */
+abstract class SteamGroup {}
+
+/**
  * @method mixed category(array $params = [], array $options = []) tiktok-category (GET /tiktok/category)
  * @method mixed videoComments(array $params = [], array $options = []) tiktok-video-comments (GET /tiktok/comments)
  *   params: string $aweme_id, int $cursor
@@ -1086,6 +1347,22 @@ abstract class SpotifyGroup {}
 abstract class TiktokGroup {}
 
 /**
+ * @method mixed movieList(array $params = [], array $options = []) tmdb-movie-list (GET /tmdb/movie/list)
+ *   params: 'popular'|'top_rated'|'now_playing'|'upcoming' $category, int $limit
+ * @method mixed movie(array $params = [], array $options = []) tmdb-movie (GET /tmdb/movie/{id})
+ *   params: string $id
+ * @method mixed person(array $params = [], array $options = []) tmdb-person (GET /tmdb/person/{id})
+ *   params: string $id, int $limit
+ * @method mixed search(array $params = [], array $options = []) tmdb-search (GET /tmdb/search)
+ *   params: string $query, 'movie'|'tv'|'person' $type, int $limit
+ * @method mixed tvList(array $params = [], array $options = []) tmdb-tv-list (GET /tmdb/tv/list)
+ *   params: 'popular'|'top_rated'|'airing_today'|'on_the_air' $category, int $limit
+ * @method mixed tv(array $params = [], array $options = []) tmdb-tv (GET /tmdb/tv/{id})
+ *   params: string $id
+ */
+abstract class TmdbGroup {}
+
+/**
  * @method mixed tripadvisorAutocomplete(array $params = [], array $options = []) tripadvisor-autocomplete (GET /tripadvisor/autocomplete)
  *   params: string $q, int $limit, string $locale, int $scope_geo_id, string $type, string $search_session_id, string $typeahead_id, string $route_uid
  * @method mixed tripadvisorEnums(array $params = [], array $options = []) tripadvisor-enums (GET /tripadvisor/enums)
@@ -1099,6 +1376,21 @@ abstract class TiktokGroup {}
  *   params: int $geo_id, string $type, string $filter_id, int $class, array<int> $amenities, int $price_min, int $price_max, string $pricing_mode, bool $travelers_choice, bool $travelers_choice_botb, string $restaurant_date, string $restaurant_time, int $restaurant_guests, array<int> $establishment_types, array<int> $online_options, int $offset, int $limit, string $locale, string $currency, string $sort
  */
 abstract class TripAdvisorGroup {}
+
+/**
+ * @method mixed trustmrrAcquire(array $params = [], array $options = []) trustmrr-acquire (GET /trustmrr/acquire)
+ * @method mixed trustmrrCategories(array $params = [], array $options = []) trustmrr-categories (GET /trustmrr/categories)
+ * @method mixed trustmrrCategory(array $params = [], array $options = []) trustmrr-category (GET /trustmrr/category/{slug})
+ *   params: string $slug
+ * @method mixed trustmrrLeaderboard(array $params = [], array $options = []) trustmrr-leaderboard (GET /trustmrr/leaderboard)
+ *   params: 'mrr'|'last_30_days_revenue'|'all_time_revenue'|'growth'|'traffic'|'revenue_per_visitor' $metric
+ * @method mixed trustmrrMarketplace(array $params = [], array $options = []) trustmrr-marketplace (GET /trustmrr/marketplace)
+ * @method mixed trustmrrStartup(array $params = [], array $options = []) trustmrr-startup (GET /trustmrr/startup/{slug})
+ *   params: string $slug
+ * @method mixed trustmrrStartups(array $params = [], array $options = []) trustmrr-startups (GET /trustmrr/startups)
+ *   params: int $page, int $page_size
+ */
+abstract class TrustMrrGroup {}
 
 /**
  * @method mixed businessSearch(array $params = [], array $options = []) trustpilot-business-search (GET /trustpilot/business-units/search)
@@ -1280,32 +1572,43 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\CoinGeckoGroup $coinGecko
  * @property-read \Crawlora\Generated\WebGroup $web
  * @property-read \Crawlora\Generated\DatasetsGroup $datasets
+ * @property-read \Crawlora\Generated\DiscogsGroup $discogs
  * @property-read \Crawlora\Generated\EBayGroup $eBay
  * @property-read \Crawlora\Generated\EspnGroup $espn
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
  * @property-read \Crawlora\Generated\GitHubGroup $gitHub
+ * @property-read \Crawlora\Generated\GoodreadsGroup $goodreads
  * @property-read \Crawlora\Generated\GoogleGroup $google
  * @property-read \Crawlora\Generated\GooglePlayGroup $googlePlay
  * @property-read \Crawlora\Generated\ImdbGroup $imdb
  * @property-read \Crawlora\Generated\InstagramGroup $instagram
+ * @property-read \Crawlora\Generated\JobsGroup $jobs
  * @property-read \Crawlora\Generated\JustWatchGroup $justWatch
  * @property-read \Crawlora\Generated\KalshiGroup $kalshi
+ * @property-read \Crawlora\Generated\LetterboxdGroup $letterboxd
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
  * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
  * @property-read \Crawlora\Generated\MetaGroup $meta
+ * @property-read \Crawlora\Generated\PitchBookGroup $pitchBook
+ * @property-read \Crawlora\Generated\PlayStationGroup $playStation
  * @property-read \Crawlora\Generated\PolymarketGroup $polymarket
  * @property-read \Crawlora\Generated\ProductHuntGroup $productHunt
  * @property-read \Crawlora\Generated\RedditGroup $reddit
  * @property-read \Crawlora\Generated\RedfinGroup $redfin
  * @property-read \Crawlora\Generated\ReferralsGroup $referrals
  * @property-read \Crawlora\Generated\RottenTomatoesGroup $rottenTomatoes
+ * @property-read \Crawlora\Generated\SecEdgarGroup $secEdgar
  * @property-read \Crawlora\Generated\ShopAppGroup $shopApp
  * @property-read \Crawlora\Generated\ShopifyGroup $shopify
  * @property-read \Crawlora\Generated\SimilarWebGroup $similarWeb
+ * @property-read \Crawlora\Generated\SofaScoreGroup $sofaScore
  * @property-read \Crawlora\Generated\SpotifyPodcastsGroup $spotifyPodcasts
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
+ * @property-read \Crawlora\Generated\SteamGroup $steam
  * @property-read \Crawlora\Generated\TiktokGroup $tiktok
+ * @property-read \Crawlora\Generated\TmdbGroup $tmdb
  * @property-read \Crawlora\Generated\TripAdvisorGroup $tripAdvisor
+ * @property-read \Crawlora\Generated\TrustMrrGroup $trustMrr
  * @property-read \Crawlora\Generated\TrustpilotGroup $trustpilot
  * @property-read \Crawlora\Generated\UsageGroup $usage
  * @property-read \Crawlora\Generated\UserGroup $user
