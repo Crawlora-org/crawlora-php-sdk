@@ -15,6 +15,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\BoxOfficeMojoGroup $boxOfficeMojo
  * @property-read \Crawlora\Generated\BrandGroup $brand
  * @property-read \Crawlora\Generated\BraveGroup $brave
+ * @property-read \Crawlora\Generated\CapterraGroup $capterra
  * @property-read \Crawlora\Generated\ChromeWebStoreGroup $chromeWebStore
  * @property-read \Crawlora\Generated\CoinGeckoGroup $coinGecko
  * @property-read \Crawlora\Generated\WebGroup $web
@@ -35,7 +36,9 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\LetterboxdGroup $letterboxd
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
  * @property-read \Crawlora\Generated\MangaGroup $manga
+ * @property-read \Crawlora\Generated\MetacriticGroup $metacritic
  * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
+ * @property-read \Crawlora\Generated\NumbeoGroup $numbeo
  * @property-read \Crawlora\Generated\MetaGroup $meta
  * @property-read \Crawlora\Generated\PitchBookGroup $pitchBook
  * @property-read \Crawlora\Generated\PlayStationGroup $playStation
@@ -60,6 +63,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\TrustpilotGroup $trustpilot
  * @property-read \Crawlora\Generated\UsageGroup $usage
  * @property-read \Crawlora\Generated\UserGroup $user
+ * @property-read \Crawlora\Generated\WalmartGroup $walmart
  * @property-read \Crawlora\Generated\XGroup $x
  * @property-read \Crawlora\Generated\YahooFinanceGroup $yahooFinance
  * @property-read \Crawlora\Generated\YoutubeGroup $youtube

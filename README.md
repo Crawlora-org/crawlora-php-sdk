@@ -16,7 +16,7 @@ releases from the `main` branch (the shared `-sdk.N` tag scheme is not a valid
 Composer version), so install the aliased dev release:
 
 ```sh
-composer require crawlora/sdk:^1.7@dev
+composer require crawlora/sdk:^1.18@dev
 ```
 
 ## Quick start

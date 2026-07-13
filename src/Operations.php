@@ -534,7 +534,13 @@ final class Operations
             'pathParams' => [
                 'id',
             ],
-            'queryParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'mal',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -2933,6 +2939,90 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'capterra-product' => [
+            'id' => 'capterra-product',
+            'method' => 'GET',
+            'path' => '/capterra/product',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'product_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'capterra-reviews' => [
+            'id' => 'capterra-reviews',
+            'method' => 'GET',
+            'path' => '/capterra/product/reviews',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'product_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'capterra-search' => [
+            'id' => 'capterra-search',
+            'method' => 'GET',
+            'path' => '/capterra/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'chromewebstore-categories' => [
             'id' => 'chromewebstore-categories',
@@ -5591,6 +5681,388 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'datasets-chrome-extensions-changes' => [
+            'id' => 'datasets-chrome-extensions-changes',
+            'method' => 'GET',
+            'path' => '/datasets/chrome-extensions/changes',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'change_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-chrome-extensions-facets' => [
+            'id' => 'datasets-chrome-extensions-facets',
+            'method' => 'GET',
+            'path' => '/datasets/chrome-extensions/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'item_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'developer',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'permission',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'manifest_version',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'collects_data',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_broad_host_access',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_users',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_rating_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-chrome-extensions-history' => [
+            'id' => 'datasets-chrome-extensions-history',
+            'method' => 'GET',
+            'path' => '/datasets/chrome-extensions/history/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-chrome-extensions-item' => [
+            'id' => 'datasets-chrome-extensions-item',
+            'method' => 'GET',
+            'path' => '/datasets/chrome-extensions/items/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-chrome-extensions-metrics' => [
+            'id' => 'datasets-chrome-extensions-metrics',
+            'method' => 'GET',
+            'path' => '/datasets/chrome-extensions/metrics',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'days',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-chrome-extensions-search' => [
+            'id' => 'datasets-chrome-extensions-search',
+            'method' => 'GET',
+            'path' => '/datasets/chrome-extensions/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'item_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'developer',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'permission',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'manifest_version',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'collects_data',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_broad_host_access',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_users',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_rating_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-chrome-extensions-trending' => [
+            'id' => 'datasets-chrome-extensions-trending',
+            'method' => 'GET',
+            'path' => '/datasets/chrome-extensions/trending',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'item_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'developer',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'permission',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'manifest_version',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'collects_data',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_broad_host_access',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_users',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_rating_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'datasets-creators-search' => [
             'id' => 'datasets-creators-search',
             'method' => 'GET',
@@ -6670,6 +7142,440 @@ final class Operations
                     'name' => 'min_homes_sold',
                     'in' => 'query',
                     'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-journalists-facets' => [
+            'id' => 'datasets-journalists-facets',
+            'method' => 'GET',
+            'path' => '/datasets/journalists/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'outlet',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'vertical',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'topic',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'contact_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-journalists-item' => [
+            'id' => 'datasets-journalists-item',
+            'method' => 'GET',
+            'path' => '/datasets/journalists/items/{outlet}/{slug}',
+            'pathParams' => [
+                'outlet',
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-journalists-search' => [
+            'id' => 'datasets-journalists-search',
+            'method' => 'GET',
+            'path' => '/datasets/journalists/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'outlet',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'vertical',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'topic',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'contact_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-numbeo-cities-facets' => [
+            'id' => 'datasets-numbeo-cities-facets',
+            'method' => 'GET',
+            'path' => '/datasets/numbeo-cities/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_cost_of_living_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_cost_of_living_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_quality_of_life_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_crime_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_crime_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_safety_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_health_care_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_pollution_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_traffic_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-numbeo-cities-item' => [
+            'id' => 'datasets-numbeo-cities-item',
+            'method' => 'GET',
+            'path' => '/datasets/numbeo-cities/items/{slug}',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-numbeo-cities-search' => [
+            'id' => 'datasets-numbeo-cities-search',
+            'method' => 'GET',
+            'path' => '/datasets/numbeo-cities/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_cost_of_living_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_cost_of_living_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_quality_of_life_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_crime_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_crime_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_safety_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_health_care_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_pollution_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_traffic_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-numbeo-countries-item' => [
+            'id' => 'datasets-numbeo-countries-item',
+            'method' => 'GET',
+            'path' => '/datasets/numbeo-countries/items/{country}',
+            'pathParams' => [
+                'country',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-numbeo-countries-search' => [
+            'id' => 'datasets-numbeo-countries-search',
+            'method' => 'GET',
+            'path' => '/datasets/numbeo-countries/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_cost_of_living_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_cost_of_living_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_quality_of_life_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_crime_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_crime_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_safety_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_health_care_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_pollution_index',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_traffic_index',
+                    'in' => 'query',
+                    'type' => 'number',
                 ],
                 [
                     'name' => 'sort',
@@ -8401,6 +9307,43 @@ final class Operations
                     'name' => 'min_mrr',
                     'in' => 'query',
                     'type' => 'number',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-trustmrr-history' => [
+            'id' => 'datasets-trustmrr-history',
+            'method' => 'GET',
+            'path' => '/datasets/trustmrr/history/{slug}',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
                 ],
             ],
             'formParams' => [],
@@ -15157,6 +16100,91 @@ final class Operations
             'pathParams' => [
                 'id',
             ],
+            'queryParams' => [
+                [
+                    'name' => 'mal',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'metacritic-browse' => [
+            'id' => 'metacritic-browse',
+            'method' => 'GET',
+            'path' => '/metacritic/browse',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'game',
+                        'movie',
+                        'tv',
+                    ],
+                ],
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'score',
+                        'popularity',
+                        'release_date',
+                        'oldest',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'metacritic-game' => [
+            'id' => 'metacritic-game',
+            'method' => 'GET',
+            'path' => '/metacritic/game/{slug}',
+            'pathParams' => [
+                'slug',
+            ],
             'queryParams' => [],
             'formParams' => [],
             'bodyParam' => null,
@@ -15170,6 +16198,306 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'metacritic-game-critic-reviews' => [
+            'id' => 'metacritic-game-critic-reviews',
+            'method' => 'GET',
+            'path' => '/metacritic/game/{slug}/critic-reviews',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'date',
+                        'score',
+                        'publication',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'metacritic-game-user-reviews' => [
+            'id' => 'metacritic-game-user-reviews',
+            'method' => 'GET',
+            'path' => '/metacritic/game/{slug}/user-reviews',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'date',
+                        'score',
+                        'helpful',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'metacritic-movie' => [
+            'id' => 'metacritic-movie',
+            'method' => 'GET',
+            'path' => '/metacritic/movie/{slug}',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'metacritic-movie-critic-reviews' => [
+            'id' => 'metacritic-movie-critic-reviews',
+            'method' => 'GET',
+            'path' => '/metacritic/movie/{slug}/critic-reviews',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'date',
+                        'score',
+                        'publication',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'metacritic-movie-user-reviews' => [
+            'id' => 'metacritic-movie-user-reviews',
+            'method' => 'GET',
+            'path' => '/metacritic/movie/{slug}/user-reviews',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'date',
+                        'score',
+                        'helpful',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'metacritic-tv' => [
+            'id' => 'metacritic-tv',
+            'method' => 'GET',
+            'path' => '/metacritic/tv/{slug}',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'metacritic-tv-critic-reviews' => [
+            'id' => 'metacritic-tv-critic-reviews',
+            'method' => 'GET',
+            'path' => '/metacritic/tv/{slug}/critic-reviews',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'date',
+                        'score',
+                        'publication',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'metacritic-tv-user-reviews' => [
+            'id' => 'metacritic-tv-user-reviews',
+            'method' => 'GET',
+            'path' => '/metacritic/tv/{slug}/user-reviews',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'date',
+                        'score',
+                        'helpful',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'metaculus-category-questions' => [
             'id' => 'metaculus-category-questions',
@@ -15459,6 +16787,264 @@ final class Operations
                     'name' => 'limit',
                     'in' => 'query',
                     'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'numbeo-cost-of-living-city' => [
+            'id' => 'numbeo-cost-of-living-city',
+            'method' => 'GET',
+            'path' => '/numbeo/cost-of-living/city/{slug}',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'numbeo-cost-of-living-country' => [
+            'id' => 'numbeo-cost-of-living-country',
+            'method' => 'GET',
+            'path' => '/numbeo/cost-of-living/country',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'numbeo-cost-of-living-rankings' => [
+            'id' => 'numbeo-cost-of-living-rankings',
+            'method' => 'GET',
+            'path' => '/numbeo/cost-of-living/rankings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'scope',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'current',
+                        'historical',
+                    ],
+                ],
+                [
+                    'name' => 'period',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'numbeo-cost-of-living-rankings-by-country' => [
+            'id' => 'numbeo-cost-of-living-rankings-by-country',
+            'method' => 'GET',
+            'path' => '/numbeo/cost-of-living/rankings-by-country',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'numbeo-indices-city' => [
+            'id' => 'numbeo-indices-city',
+            'method' => 'GET',
+            'path' => '/numbeo/indices/city/{slug}',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'index',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'quality-of-life',
+                        'crime',
+                        'health-care',
+                        'pollution',
+                        'traffic',
+                        'property-investment',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'numbeo-indices-country' => [
+            'id' => 'numbeo-indices-country',
+            'method' => 'GET',
+            'path' => '/numbeo/indices/country',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'index',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'quality-of-life',
+                        'crime',
+                        'health-care',
+                        'pollution',
+                        'traffic',
+                        'property-investment',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'numbeo-indices-rankings' => [
+            'id' => 'numbeo-indices-rankings',
+            'method' => 'GET',
+            'path' => '/numbeo/indices/rankings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'index',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'quality-of-life',
+                        'crime',
+                        'health-care',
+                        'pollution',
+                        'traffic',
+                        'property-investment',
+                    ],
+                ],
+                [
+                    'name' => 'scope',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'current',
+                        'historical',
+                    ],
+                ],
+                [
+                    'name' => 'period',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'numbeo-indices-rankings-by-country' => [
+            'id' => 'numbeo-indices-rankings-by-country',
+            'method' => 'GET',
+            'path' => '/numbeo/indices/rankings-by-country',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'index',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'quality-of-life',
+                        'crime',
+                        'health-care',
+                        'pollution',
+                        'traffic',
+                        'property-investment',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -26022,6 +27608,93 @@ final class Operations
                 'JWTAuth',
             ],
         ],
+        'walmart-product' => [
+            'id' => 'walmart-product',
+            'method' => 'GET',
+            'path' => '/walmart/product/{item_id}',
+            'pathParams' => [
+                'item_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'walmart-product-reviews' => [
+            'id' => 'walmart-product-reviews',
+            'method' => 'GET',
+            'path' => '/walmart/product/{item_id}/reviews',
+            'pathParams' => [
+                'item_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'walmart-search' => [
+            'id' => 'walmart-search',
+            'method' => 'GET',
+            'path' => '/walmart/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'best_match',
+                        'price_low',
+                        'price_high',
+                        'best_seller',
+                        'new_arrivals',
+                        'rating_high',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'web-scrape' => [
             'id' => 'web-scrape',
             'method' => 'POST',
@@ -27822,6 +29495,11 @@ final class Operations
             'suggest' => 'brave-suggest',
             'videos' => 'brave-videos',
         ],
+        'capterra' => [
+            'product' => 'capterra-product',
+            'reviews' => 'capterra-reviews',
+            'search' => 'capterra-search',
+        ],
         'chromeWebStore' => [
             'chromewebstoreCategories' => 'chromewebstore-categories',
             'chromewebstoreCategory' => 'chromewebstore-category',
@@ -27875,6 +29553,13 @@ final class Operations
             'appsChartsSearch' => 'datasets-apps-charts-search',
             'appsReviewsSearch' => 'datasets-apps-reviews-search',
             'appsSearch' => 'datasets-apps-search',
+            'chromeExtensionsChanges' => 'datasets-chrome-extensions-changes',
+            'chromeExtensionsFacets' => 'datasets-chrome-extensions-facets',
+            'chromeExtensionsHistory' => 'datasets-chrome-extensions-history',
+            'chromeExtensionsItem' => 'datasets-chrome-extensions-item',
+            'chromeExtensionsMetrics' => 'datasets-chrome-extensions-metrics',
+            'chromeExtensionsSearch' => 'datasets-chrome-extensions-search',
+            'chromeExtensionsTrending' => 'datasets-chrome-extensions-trending',
             'creatorsSearch' => 'datasets-creators-search',
             'githubUsersFacets' => 'datasets-github-users-facets',
             'githubUsersItem' => 'datasets-github-users-item',
@@ -27887,6 +29572,14 @@ final class Operations
             'housingMarketsFacets' => 'datasets-housing-markets-facets',
             'housingMarketsItem' => 'datasets-housing-markets-item',
             'housingMarketsSearch' => 'datasets-housing-markets-search',
+            'journalistsFacets' => 'datasets-journalists-facets',
+            'journalistsItem' => 'datasets-journalists-item',
+            'journalistsSearch' => 'datasets-journalists-search',
+            'numbeoCitiesFacets' => 'datasets-numbeo-cities-facets',
+            'numbeoCitiesItem' => 'datasets-numbeo-cities-item',
+            'numbeoCitiesSearch' => 'datasets-numbeo-cities-search',
+            'numbeoCountriesItem' => 'datasets-numbeo-countries-item',
+            'numbeoCountriesSearch' => 'datasets-numbeo-countries-search',
             'playstationGamesFacets' => 'datasets-playstation-games-facets',
             'playstationGamesItem' => 'datasets-playstation-games-item',
             'playstationGamesSearch' => 'datasets-playstation-games-search',
@@ -27911,6 +29604,7 @@ final class Operations
             'techstackItem' => 'datasets-techstack-item',
             'techstackSearch' => 'datasets-techstack-search',
             'trustmrrFacets' => 'datasets-trustmrr-facets',
+            'trustmrrHistory' => 'datasets-trustmrr-history',
             'trustmrrItem' => 'datasets-trustmrr-item',
             'trustmrrSearch' => 'datasets-trustmrr-search',
         ],
@@ -28129,6 +29823,18 @@ final class Operations
             'search' => 'manga-search',
             'title' => 'manga-title',
         ],
+        'metacritic' => [
+            'browse' => 'metacritic-browse',
+            'game' => 'metacritic-game',
+            'gameCriticReviews' => 'metacritic-game-critic-reviews',
+            'gameUserReviews' => 'metacritic-game-user-reviews',
+            'movie' => 'metacritic-movie',
+            'movieCriticReviews' => 'metacritic-movie-critic-reviews',
+            'movieUserReviews' => 'metacritic-movie-user-reviews',
+            'tv' => 'metacritic-tv',
+            'tvCriticReviews' => 'metacritic-tv-critic-reviews',
+            'tvUserReviews' => 'metacritic-tv-user-reviews',
+        ],
         'metaculus' => [
             'categoryQuestions' => 'metaculus-category-questions',
             'commentsFeed' => 'metaculus-comments-feed',
@@ -28141,6 +29847,16 @@ final class Operations
             'questions' => 'metaculus-questions',
             'topComments' => 'metaculus-top-comments',
             'tournamentQuestions' => 'metaculus-tournament-questions',
+        ],
+        'numbeo' => [
+            'costOfLivingCity' => 'numbeo-cost-of-living-city',
+            'costOfLivingCountry' => 'numbeo-cost-of-living-country',
+            'costOfLivingRankings' => 'numbeo-cost-of-living-rankings',
+            'costOfLivingRankingsByCountry' => 'numbeo-cost-of-living-rankings-by-country',
+            'indicesCity' => 'numbeo-indices-city',
+            'indicesCountry' => 'numbeo-indices-country',
+            'indicesRankings' => 'numbeo-indices-rankings',
+            'indicesRankingsByCountry' => 'numbeo-indices-rankings-by-country',
         ],
         'meta' => [
             'ping' => 'ping',
@@ -28477,6 +30193,11 @@ final class Operations
             'meApiKeysRotate' => 'user-me-api-keys-rotate',
             'meApiKeysReveal' => 'user-me-api-keys-reveal',
         ],
+        'walmart' => [
+            'product' => 'walmart-product',
+            'productReviews' => 'walmart-product-reviews',
+            'search' => 'walmart-search',
+        ],
         'x' => [
             'post' => 'x-post',
             'profile' => 'x-profile',
@@ -28545,7 +30266,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 697;
+    public const OPERATION_COUNT = 737;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -28623,6 +30344,9 @@ final class Operations
         'brave-search',
         'brave-suggest',
         'brave-videos',
+        'capterra-product',
+        'capterra-reviews',
+        'capterra-search',
         'chromewebstore-categories',
         'chromewebstore-category',
         'chromewebstore-charts',
@@ -28665,6 +30389,13 @@ final class Operations
         'datasets-apps-charts-search',
         'datasets-apps-reviews-search',
         'datasets-apps-search',
+        'datasets-chrome-extensions-changes',
+        'datasets-chrome-extensions-facets',
+        'datasets-chrome-extensions-history',
+        'datasets-chrome-extensions-item',
+        'datasets-chrome-extensions-metrics',
+        'datasets-chrome-extensions-search',
+        'datasets-chrome-extensions-trending',
         'datasets-creators-search',
         'datasets-github-users-facets',
         'datasets-github-users-item',
@@ -28677,6 +30408,14 @@ final class Operations
         'datasets-housing-markets-facets',
         'datasets-housing-markets-item',
         'datasets-housing-markets-search',
+        'datasets-journalists-facets',
+        'datasets-journalists-item',
+        'datasets-journalists-search',
+        'datasets-numbeo-cities-facets',
+        'datasets-numbeo-cities-item',
+        'datasets-numbeo-cities-search',
+        'datasets-numbeo-countries-item',
+        'datasets-numbeo-countries-search',
         'datasets-playstation-games-facets',
         'datasets-playstation-games-item',
         'datasets-playstation-games-search',
@@ -28701,6 +30440,7 @@ final class Operations
         'datasets-techstack-item',
         'datasets-techstack-search',
         'datasets-trustmrr-facets',
+        'datasets-trustmrr-history',
         'datasets-trustmrr-item',
         'datasets-trustmrr-search',
         'antibot-check',
@@ -28888,6 +30628,16 @@ final class Operations
         'manga-rankings',
         'manga-search',
         'manga-title',
+        'metacritic-browse',
+        'metacritic-game',
+        'metacritic-game-critic-reviews',
+        'metacritic-game-user-reviews',
+        'metacritic-movie',
+        'metacritic-movie-critic-reviews',
+        'metacritic-movie-user-reviews',
+        'metacritic-tv',
+        'metacritic-tv-critic-reviews',
+        'metacritic-tv-user-reviews',
         'metaculus-category-questions',
         'metaculus-comments-feed',
         'metaculus-project-questions',
@@ -28899,6 +30649,14 @@ final class Operations
         'metaculus-questions',
         'metaculus-top-comments',
         'metaculus-tournament-questions',
+        'numbeo-cost-of-living-city',
+        'numbeo-cost-of-living-country',
+        'numbeo-cost-of-living-rankings',
+        'numbeo-cost-of-living-rankings-by-country',
+        'numbeo-indices-city',
+        'numbeo-indices-country',
+        'numbeo-indices-rankings',
+        'numbeo-indices-rankings-by-country',
         'ping',
         'pitchbook-company',
         'pitchbook-fund',
@@ -29186,6 +30944,9 @@ final class Operations
         'user-me-api-keys',
         'user-me-api-keys-rotate',
         'user-me-api-keys-reveal',
+        'walmart-product',
+        'walmart-product-reviews',
+        'walmart-search',
         'web-scrape',
         'web-techstack',
         'x-post',
@@ -29363,6 +31124,9 @@ final class OperationId
     public const BRAVE_SEARCH = 'brave-search';
     public const BRAVE_SUGGEST = 'brave-suggest';
     public const BRAVE_VIDEOS = 'brave-videos';
+    public const CAPTERRA_PRODUCT = 'capterra-product';
+    public const CAPTERRA_REVIEWS = 'capterra-reviews';
+    public const CAPTERRA_SEARCH = 'capterra-search';
     public const CHROME_WEB_STORE_CHROMEWEBSTORE_CATEGORIES = 'chromewebstore-categories';
     public const CHROME_WEB_STORE_CHROMEWEBSTORE_CATEGORY = 'chromewebstore-category';
     public const CHROME_WEB_STORE_CHROMEWEBSTORE_CHARTS = 'chromewebstore-charts';
@@ -29403,6 +31167,13 @@ final class OperationId
     public const DATASETS_APPS_CHARTS_SEARCH = 'datasets-apps-charts-search';
     public const DATASETS_APPS_REVIEWS_SEARCH = 'datasets-apps-reviews-search';
     public const DATASETS_APPS_SEARCH = 'datasets-apps-search';
+    public const DATASETS_CHROME_EXTENSIONS_CHANGES = 'datasets-chrome-extensions-changes';
+    public const DATASETS_CHROME_EXTENSIONS_FACETS = 'datasets-chrome-extensions-facets';
+    public const DATASETS_CHROME_EXTENSIONS_HISTORY = 'datasets-chrome-extensions-history';
+    public const DATASETS_CHROME_EXTENSIONS_ITEM = 'datasets-chrome-extensions-item';
+    public const DATASETS_CHROME_EXTENSIONS_METRICS = 'datasets-chrome-extensions-metrics';
+    public const DATASETS_CHROME_EXTENSIONS_SEARCH = 'datasets-chrome-extensions-search';
+    public const DATASETS_CHROME_EXTENSIONS_TRENDING = 'datasets-chrome-extensions-trending';
     public const DATASETS_CREATORS_SEARCH = 'datasets-creators-search';
     public const DATASETS_GITHUB_USERS_FACETS = 'datasets-github-users-facets';
     public const DATASETS_GITHUB_USERS_ITEM = 'datasets-github-users-item';
@@ -29415,7 +31186,15 @@ final class OperationId
     public const DATASETS_HOUSING_MARKETS_FACETS = 'datasets-housing-markets-facets';
     public const DATASETS_HOUSING_MARKETS_ITEM = 'datasets-housing-markets-item';
     public const DATASETS_HOUSING_MARKETS_SEARCH = 'datasets-housing-markets-search';
+    public const DATASETS_JOURNALISTS_FACETS = 'datasets-journalists-facets';
+    public const DATASETS_JOURNALISTS_ITEM = 'datasets-journalists-item';
+    public const DATASETS_JOURNALISTS_SEARCH = 'datasets-journalists-search';
     public const DATASETS_LIST = 'datasets-list';
+    public const DATASETS_NUMBEO_CITIES_FACETS = 'datasets-numbeo-cities-facets';
+    public const DATASETS_NUMBEO_CITIES_ITEM = 'datasets-numbeo-cities-item';
+    public const DATASETS_NUMBEO_CITIES_SEARCH = 'datasets-numbeo-cities-search';
+    public const DATASETS_NUMBEO_COUNTRIES_ITEM = 'datasets-numbeo-countries-item';
+    public const DATASETS_NUMBEO_COUNTRIES_SEARCH = 'datasets-numbeo-countries-search';
     public const DATASETS_PLAYSTATION_GAMES_FACETS = 'datasets-playstation-games-facets';
     public const DATASETS_PLAYSTATION_GAMES_ITEM = 'datasets-playstation-games-item';
     public const DATASETS_PLAYSTATION_GAMES_SEARCH = 'datasets-playstation-games-search';
@@ -29440,6 +31219,7 @@ final class OperationId
     public const DATASETS_TECHSTACK_ITEM = 'datasets-techstack-item';
     public const DATASETS_TECHSTACK_SEARCH = 'datasets-techstack-search';
     public const DATASETS_TRUSTMRR_FACETS = 'datasets-trustmrr-facets';
+    public const DATASETS_TRUSTMRR_HISTORY = 'datasets-trustmrr-history';
     public const DATASETS_TRUSTMRR_ITEM = 'datasets-trustmrr-item';
     public const DATASETS_TRUSTMRR_SEARCH = 'datasets-trustmrr-search';
     public const DISCOGS_ARTIST = 'discogs-artist';
@@ -29627,6 +31407,16 @@ final class OperationId
     public const MANGA_TITLE = 'manga-title';
     public const META_PING = 'ping';
     public const META_READY = 'ready';
+    public const METACRITIC_BROWSE = 'metacritic-browse';
+    public const METACRITIC_GAME = 'metacritic-game';
+    public const METACRITIC_GAME_CRITIC_REVIEWS = 'metacritic-game-critic-reviews';
+    public const METACRITIC_GAME_USER_REVIEWS = 'metacritic-game-user-reviews';
+    public const METACRITIC_MOVIE = 'metacritic-movie';
+    public const METACRITIC_MOVIE_CRITIC_REVIEWS = 'metacritic-movie-critic-reviews';
+    public const METACRITIC_MOVIE_USER_REVIEWS = 'metacritic-movie-user-reviews';
+    public const METACRITIC_TV = 'metacritic-tv';
+    public const METACRITIC_TV_CRITIC_REVIEWS = 'metacritic-tv-critic-reviews';
+    public const METACRITIC_TV_USER_REVIEWS = 'metacritic-tv-user-reviews';
     public const METACULUS_CATEGORY_QUESTIONS = 'metaculus-category-questions';
     public const METACULUS_COMMENTS_FEED = 'metaculus-comments-feed';
     public const METACULUS_PROJECT_QUESTIONS = 'metaculus-project-questions';
@@ -29638,6 +31428,14 @@ final class OperationId
     public const METACULUS_QUESTIONS = 'metaculus-questions';
     public const METACULUS_TOP_COMMENTS = 'metaculus-top-comments';
     public const METACULUS_TOURNAMENT_QUESTIONS = 'metaculus-tournament-questions';
+    public const NUMBEO_COST_OF_LIVING_CITY = 'numbeo-cost-of-living-city';
+    public const NUMBEO_COST_OF_LIVING_COUNTRY = 'numbeo-cost-of-living-country';
+    public const NUMBEO_COST_OF_LIVING_RANKINGS = 'numbeo-cost-of-living-rankings';
+    public const NUMBEO_COST_OF_LIVING_RANKINGS_BY_COUNTRY = 'numbeo-cost-of-living-rankings-by-country';
+    public const NUMBEO_INDICES_CITY = 'numbeo-indices-city';
+    public const NUMBEO_INDICES_COUNTRY = 'numbeo-indices-country';
+    public const NUMBEO_INDICES_RANKINGS = 'numbeo-indices-rankings';
+    public const NUMBEO_INDICES_RANKINGS_BY_COUNTRY = 'numbeo-indices-rankings-by-country';
     public const PITCH_BOOK_PITCHBOOK_COMPANY = 'pitchbook-company';
     public const PITCH_BOOK_PITCHBOOK_FUND = 'pitchbook-fund';
     public const PITCH_BOOK_PITCHBOOK_INVESTOR = 'pitchbook-investor';
@@ -29923,6 +31721,9 @@ final class OperationId
     public const USER_ME_API_KEYS = 'user-me-api-keys';
     public const USER_ME_API_KEYS_REVEAL = 'user-me-api-keys-reveal';
     public const USER_ME_API_KEYS_ROTATE = 'user-me-api-keys-rotate';
+    public const WALMART_PRODUCT = 'walmart-product';
+    public const WALMART_PRODUCT_REVIEWS = 'walmart-product-reviews';
+    public const WALMART_SEARCH = 'walmart-search';
     public const WEB_ANTIBOT_CHECK = 'antibot-check';
     public const WEB_CONTACT = 'contact';
     public const WEB_EXTRACT = 'extract';

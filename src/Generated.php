@@ -46,7 +46,7 @@ abstract class AmazonGroup {}
  * @method mixed search(array $params = [], array $options = []) anime-search (GET /anime/search)
  *   params: string $query, string $sort, int $page, int $per_page
  * @method mixed title(array $params = [], array $options = []) anime-title (GET /anime/title/{id})
- *   params: string $id
+ *   params: string $id, bool $mal
  * @method mixed titleCharacters(array $params = [], array $options = []) anime-title-characters (GET /anime/title/{id}/characters)
  *   params: string $id, int $page, int $per_page
  * @method mixed titleRecommendations(array $params = [], array $options = []) anime-title-recommendations (GET /anime/title/{id}/recommendations)
@@ -190,6 +190,16 @@ abstract class BrandGroup {}
 abstract class BraveGroup {}
 
 /**
+ * @method mixed product(array $params = [], array $options = []) capterra-product (GET /capterra/product)
+ *   params: string $product_id
+ * @method mixed reviews(array $params = [], array $options = []) capterra-reviews (GET /capterra/product/reviews)
+ *   params: string $product_id, int $page
+ * @method mixed search(array $params = [], array $options = []) capterra-search (GET /capterra/search)
+ *   params: string $q
+ */
+abstract class CapterraGroup {}
+
+/**
  * @method mixed chromewebstoreCategories(array $params = [], array $options = []) chromewebstore-categories (GET /chromewebstore/categories)
  * @method mixed chromewebstoreCategory(array $params = [], array $options = []) chromewebstore-category (GET /chromewebstore/category)
  *   params: string $category, int $num, string $country, string $lang
@@ -291,6 +301,20 @@ abstract class WebGroup {}
  *   params: string $q, string $store, string $app_id, string $country, int $min_score, string $sort, int $page, int $page_size
  * @method mixed appsSearch(array $params = [], array $options = []) datasets-apps-search (GET /datasets/apps/search)
  *   params: string $q, string $store, string $category, string $country, string $developer, bool $free, float $min_rating, int $min_reviews, string $sort, int $page, int $page_size
+ * @method mixed chromeExtensionsChanges(array $params = [], array $options = []) datasets-chrome-extensions-changes (GET /datasets/chrome-extensions/changes)
+ *   params: string $change_type, int $limit
+ * @method mixed chromeExtensionsFacets(array $params = [], array $options = []) datasets-chrome-extensions-facets (GET /datasets/chrome-extensions/facets)
+ *   params: string $facet, string $q, string $item_type, string $category, string $developer, string $permission, string $status, int $manifest_version, bool $collects_data, bool $has_broad_host_access, int $min_users, float $min_rating, int $min_rating_count, string $sort
+ * @method mixed chromeExtensionsHistory(array $params = [], array $options = []) datasets-chrome-extensions-history (GET /datasets/chrome-extensions/history/{id})
+ *   params: string $id, string $from, string $to, int $limit
+ * @method mixed chromeExtensionsItem(array $params = [], array $options = []) datasets-chrome-extensions-item (GET /datasets/chrome-extensions/items/{id})
+ *   params: string $id
+ * @method mixed chromeExtensionsMetrics(array $params = [], array $options = []) datasets-chrome-extensions-metrics (GET /datasets/chrome-extensions/metrics)
+ *   params: int $days, int $limit
+ * @method mixed chromeExtensionsSearch(array $params = [], array $options = []) datasets-chrome-extensions-search (GET /datasets/chrome-extensions/search)
+ *   params: string $q, string $item_type, string $category, string $developer, string $permission, string $status, int $manifest_version, bool $collects_data, bool $has_broad_host_access, int $min_users, float $min_rating, int $min_rating_count, string $sort, int $page, int $page_size
+ * @method mixed chromeExtensionsTrending(array $params = [], array $options = []) datasets-chrome-extensions-trending (GET /datasets/chrome-extensions/trending)
+ *   params: string $q, string $item_type, string $category, string $developer, string $permission, string $status, int $manifest_version, bool $collects_data, bool $has_broad_host_access, int $min_users, float $min_rating, int $min_rating_count, int $page, int $page_size
  * @method mixed creatorsSearch(array $params = [], array $options = []) datasets-creators-search (GET /datasets/creators/search)
  *   params: string $q, string $handle, string $niche, string $country, bool $verified, int $min_followers, bool $has_email, bool $include_inactive, string $sort, int $page, int $page_size
  * @method mixed githubUsersFacets(array $params = [], array $options = []) datasets-github-users-facets (GET /datasets/github-users/facets)
@@ -315,6 +339,22 @@ abstract class WebGroup {}
  *   params: string $region_type, int $table_id, string $period, string $property_type, bool $history
  * @method mixed housingMarketsSearch(array $params = [], array $options = []) datasets-housing-markets-search (GET /datasets/housing-markets/search)
  *   params: string $q, string $region_type, string $state_code, string $property_type, string $parent_metro_code, string $zip_code, string $period, bool $latest, float $min_median_sale_price, float $max_median_sale_price, float $min_median_list_price, float $max_median_list_price, float $min_price_to_income, float $max_price_to_income, int $min_salary_to_buy, int $max_salary_to_buy, float $min_median_dom, float $max_median_dom, int $min_inventory, int $max_inventory, int $min_homes_sold, string $sort, int $page, int $page_size
+ * @method mixed journalistsFacets(array $params = [], array $options = []) datasets-journalists-facets (GET /datasets/journalists/facets)
+ *   params: string $facet, string $q, string $outlet, string $vertical, string $topic, string $contact_type
+ * @method mixed journalistsItem(array $params = [], array $options = []) datasets-journalists-item (GET /datasets/journalists/items/{outlet}/{slug})
+ *   params: string $outlet, string $slug
+ * @method mixed journalistsSearch(array $params = [], array $options = []) datasets-journalists-search (GET /datasets/journalists/search)
+ *   params: string $q, string $outlet, string $vertical, string $topic, string $contact_type, string $sort, int $page, int $page_size
+ * @method mixed numbeoCitiesFacets(array $params = [], array $options = []) datasets-numbeo-cities-facets (GET /datasets/numbeo-cities/facets)
+ *   params: string $facet, string $q, string $country, float $min_cost_of_living_index, float $max_cost_of_living_index, float $min_quality_of_life_index, float $min_crime_index, float $max_crime_index, float $min_safety_index, float $min_health_care_index, float $max_pollution_index, float $max_traffic_index
+ * @method mixed numbeoCitiesItem(array $params = [], array $options = []) datasets-numbeo-cities-item (GET /datasets/numbeo-cities/items/{slug})
+ *   params: string $slug
+ * @method mixed numbeoCitiesSearch(array $params = [], array $options = []) datasets-numbeo-cities-search (GET /datasets/numbeo-cities/search)
+ *   params: string $q, string $country, float $min_cost_of_living_index, float $max_cost_of_living_index, float $min_quality_of_life_index, float $min_crime_index, float $max_crime_index, float $min_safety_index, float $min_health_care_index, float $max_pollution_index, float $max_traffic_index, string $sort, int $page, int $page_size
+ * @method mixed numbeoCountriesItem(array $params = [], array $options = []) datasets-numbeo-countries-item (GET /datasets/numbeo-countries/items/{country})
+ *   params: string $country
+ * @method mixed numbeoCountriesSearch(array $params = [], array $options = []) datasets-numbeo-countries-search (GET /datasets/numbeo-countries/search)
+ *   params: string $q, float $min_cost_of_living_index, float $max_cost_of_living_index, float $min_quality_of_life_index, float $min_crime_index, float $max_crime_index, float $min_safety_index, float $min_health_care_index, float $max_pollution_index, float $max_traffic_index, string $sort, int $page, int $page_size
  * @method mixed playstationGamesFacets(array $params = [], array $options = []) datasets-playstation-games-facets (GET /datasets/playstation-games/facets)
  *   params: string $facet, string $q, string $publisher, string $classification, string $genre, string $platform, string $content_rating, string $content_descriptor, string $price_tier, string $branding, string $region, string $concept_id, string $np_title_id, string $run_id, bool $is_free, bool $is_addon, bool $is_tied_to_subscription, bool $coming_soon, bool $on_sale, int $min_price_value, int $max_price_value, float $min_star_rating, int $min_star_count, int $min_discount_pct, int $min_release_year, int $max_release_year
  * @method mixed playstationGamesItem(array $params = [], array $options = []) datasets-playstation-games-item (GET /datasets/playstation-games/items/{product_id})
@@ -363,6 +403,8 @@ abstract class WebGroup {}
  *   params: string $q, array<string> $technology, array<string> $any_of, array<string> $not, string $category, string $cms, string $ecommerce, string $cdn, string $web_server, string $server_language, string $tld, string $render_tier, string $seed_source, bool $has_captcha, bool $reachable, int $min_tech_count, string $run_id, string $sort, int $page, int $page_size
  * @method mixed trustmrrFacets(array $params = [], array $options = []) datasets-trustmrr-facets (GET /datasets/trustmrr/facets)
  *   params: string $facet, string $q, string $category, string $country, string $payment_provider, bool $on_sale, float $min_mrr
+ * @method mixed trustmrrHistory(array $params = [], array $options = []) datasets-trustmrr-history (GET /datasets/trustmrr/history/{slug})
+ *   params: string $slug, string $from, string $to, int $limit
  * @method mixed trustmrrItem(array $params = [], array $options = []) datasets-trustmrr-item (GET /datasets/trustmrr/items/{slug})
  *   params: string $slug
  * @method mixed trustmrrSearch(array $params = [], array $options = []) datasets-trustmrr-search (GET /datasets/trustmrr/search)
@@ -786,9 +828,33 @@ abstract class LinkedInGroup {}
  * @method mixed search(array $params = [], array $options = []) manga-search (GET /manga/search)
  *   params: string $query, string $sort, int $page, int $per_page
  * @method mixed title(array $params = [], array $options = []) manga-title (GET /manga/title/{id})
- *   params: string $id
+ *   params: string $id, bool $mal
  */
 abstract class MangaGroup {}
+
+/**
+ * @method mixed browse(array $params = [], array $options = []) metacritic-browse (GET /metacritic/browse)
+ *   params: 'game'|'movie'|'tv' $type, string $genre, 'score'|'popularity'|'release_date'|'oldest' $sort, int $page, int $per_page
+ * @method mixed game(array $params = [], array $options = []) metacritic-game (GET /metacritic/game/{slug})
+ *   params: string $slug
+ * @method mixed gameCriticReviews(array $params = [], array $options = []) metacritic-game-critic-reviews (GET /metacritic/game/{slug}/critic-reviews)
+ *   params: string $slug, int $page, int $per_page, 'date'|'score'|'publication' $sort
+ * @method mixed gameUserReviews(array $params = [], array $options = []) metacritic-game-user-reviews (GET /metacritic/game/{slug}/user-reviews)
+ *   params: string $slug, int $page, int $per_page, 'date'|'score'|'helpful' $sort
+ * @method mixed movie(array $params = [], array $options = []) metacritic-movie (GET /metacritic/movie/{slug})
+ *   params: string $slug
+ * @method mixed movieCriticReviews(array $params = [], array $options = []) metacritic-movie-critic-reviews (GET /metacritic/movie/{slug}/critic-reviews)
+ *   params: string $slug, int $page, int $per_page, 'date'|'score'|'publication' $sort
+ * @method mixed movieUserReviews(array $params = [], array $options = []) metacritic-movie-user-reviews (GET /metacritic/movie/{slug}/user-reviews)
+ *   params: string $slug, int $page, int $per_page, 'date'|'score'|'helpful' $sort
+ * @method mixed tv(array $params = [], array $options = []) metacritic-tv (GET /metacritic/tv/{slug})
+ *   params: string $slug
+ * @method mixed tvCriticReviews(array $params = [], array $options = []) metacritic-tv-critic-reviews (GET /metacritic/tv/{slug}/critic-reviews)
+ *   params: string $slug, int $page, int $per_page, 'date'|'score'|'publication' $sort
+ * @method mixed tvUserReviews(array $params = [], array $options = []) metacritic-tv-user-reviews (GET /metacritic/tv/{slug}/user-reviews)
+ *   params: string $slug, int $page, int $per_page, 'date'|'score'|'helpful' $sort
+ */
+abstract class MetacriticGroup {}
 
 /**
  * @method mixed categoryQuestions(array $params = [], array $options = []) metaculus-category-questions (GET /metaculus/category/{slug}/questions)
@@ -815,6 +881,25 @@ abstract class MangaGroup {}
  *   params: string $slug, int $limit
  */
 abstract class MetaculusGroup {}
+
+/**
+ * @method mixed costOfLivingCity(array $params = [], array $options = []) numbeo-cost-of-living-city (GET /numbeo/cost-of-living/city/{slug})
+ *   params: string $slug
+ * @method mixed costOfLivingCountry(array $params = [], array $options = []) numbeo-cost-of-living-country (GET /numbeo/cost-of-living/country)
+ *   params: string $country
+ * @method mixed costOfLivingRankings(array $params = [], array $options = []) numbeo-cost-of-living-rankings (GET /numbeo/cost-of-living/rankings)
+ *   params: 'current'|'historical' $scope, string $period
+ * @method mixed costOfLivingRankingsByCountry(array $params = [], array $options = []) numbeo-cost-of-living-rankings-by-country (GET /numbeo/cost-of-living/rankings-by-country)
+ * @method mixed indicesCity(array $params = [], array $options = []) numbeo-indices-city (GET /numbeo/indices/city/{slug})
+ *   params: string $slug, 'quality-of-life'|'crime'|'health-care'|'pollution'|'traffic'|'property-investment' $index
+ * @method mixed indicesCountry(array $params = [], array $options = []) numbeo-indices-country (GET /numbeo/indices/country)
+ *   params: string $country, 'quality-of-life'|'crime'|'health-care'|'pollution'|'traffic'|'property-investment' $index
+ * @method mixed indicesRankings(array $params = [], array $options = []) numbeo-indices-rankings (GET /numbeo/indices/rankings)
+ *   params: 'quality-of-life'|'crime'|'health-care'|'pollution'|'traffic'|'property-investment' $index, 'current'|'historical' $scope, string $period
+ * @method mixed indicesRankingsByCountry(array $params = [], array $options = []) numbeo-indices-rankings-by-country (GET /numbeo/indices/rankings-by-country)
+ *   params: 'quality-of-life'|'crime'|'health-care'|'pollution'|'traffic'|'property-investment' $index
+ */
+abstract class NumbeoGroup {}
 
 /**
  * @method mixed ping(array $params = [], array $options = []) ping (GET /ping)
@@ -1463,6 +1548,16 @@ abstract class UsageGroup {}
 abstract class UserGroup {}
 
 /**
+ * @method mixed product(array $params = [], array $options = []) walmart-product (GET /walmart/product/{item_id})
+ *   params: string $item_id
+ * @method mixed productReviews(array $params = [], array $options = []) walmart-product-reviews (GET /walmart/product/{item_id}/reviews)
+ *   params: string $item_id
+ * @method mixed search(array $params = [], array $options = []) walmart-search (GET /walmart/search)
+ *   params: string $q, int $page, 'best_match'|'price_low'|'price_high'|'best_seller'|'new_arrivals'|'rating_high' $sort
+ */
+abstract class WalmartGroup {}
+
+/**
  * @method mixed post(array $params = [], array $options = []) x-post (GET /x/post/{id})
  *   params: string $id, string $username
  * @method mixed profile(array $params = [], array $options = []) x-profile (GET /x/profile/{username})
@@ -1601,6 +1696,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\BoxOfficeMojoGroup $boxOfficeMojo
  * @property-read \Crawlora\Generated\BrandGroup $brand
  * @property-read \Crawlora\Generated\BraveGroup $brave
+ * @property-read \Crawlora\Generated\CapterraGroup $capterra
  * @property-read \Crawlora\Generated\ChromeWebStoreGroup $chromeWebStore
  * @property-read \Crawlora\Generated\CoinGeckoGroup $coinGecko
  * @property-read \Crawlora\Generated\WebGroup $web
@@ -1621,7 +1717,9 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\LetterboxdGroup $letterboxd
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
  * @property-read \Crawlora\Generated\MangaGroup $manga
+ * @property-read \Crawlora\Generated\MetacriticGroup $metacritic
  * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
+ * @property-read \Crawlora\Generated\NumbeoGroup $numbeo
  * @property-read \Crawlora\Generated\MetaGroup $meta
  * @property-read \Crawlora\Generated\PitchBookGroup $pitchBook
  * @property-read \Crawlora\Generated\PlayStationGroup $playStation
@@ -1646,6 +1744,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\TrustpilotGroup $trustpilot
  * @property-read \Crawlora\Generated\UsageGroup $usage
  * @property-read \Crawlora\Generated\UserGroup $user
+ * @property-read \Crawlora\Generated\WalmartGroup $walmart
  * @property-read \Crawlora\Generated\XGroup $x
  * @property-read \Crawlora\Generated\YahooFinanceGroup $yahooFinance
  * @property-read \Crawlora\Generated\YoutubeGroup $youtube

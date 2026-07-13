@@ -33,6 +33,15 @@ $posts = $client->reddit->search(['q' => 'php', 'subreddit' => 'programming']);
 $brand = $client->brand->retrieve(['domain' => 'stripe.com']);
 ```
 
+## Software, Reviews, And Market Datasets
+
+```php
+$extensions = $client->datasets->chromeExtensionsSearch(['q' => 'productivity', 'min_users' => 10000]);
+$cities = $client->datasets->numbeoCitiesSearch(['country' => 'Portugal', 'sort' => 'quality_of_life_desc']);
+$software = $client->capterra->search(['q' => 'project management']);
+$games = $client->metacritic->browse(['type' => 'game', 'sort' => 'score']);
+```
+
 ## Airbnb Host Profiles
 
 Look up a public Airbnb host, then page through their listings and guest reviews.
@@ -147,4 +156,3 @@ $startup = $client->trustMrr->trustmrrStartup(['slug' => 'stan']);
 $cats = $client->trustMrr->trustmrrCategories();
 $saas = $client->trustMrr->trustmrrCategory(['slug' => 'saas']);
 ```
-
