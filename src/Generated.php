@@ -35,6 +35,28 @@ abstract class AirbnbGroup {}
 abstract class AmazonGroup {}
 
 /**
+ * @method mixed airingSchedule(array $params = [], array $options = []) anime-airing-schedule (GET /anime/airing-schedule)
+ *   params: int $page, int $per_page
+ * @method mixed characterSearch(array $params = [], array $options = []) anime-character-search (GET /anime/character/search)
+ *   params: string $query, int $page, int $per_page
+ * @method mixed character(array $params = [], array $options = []) anime-character (GET /anime/character/{id})
+ *   params: string $id
+ * @method mixed rankings(array $params = [], array $options = []) anime-rankings (GET /anime/rankings)
+ *   params: string $sort, string $season, int $season_year, string $format, string $genre, string $status, int $page, int $per_page
+ * @method mixed search(array $params = [], array $options = []) anime-search (GET /anime/search)
+ *   params: string $query, string $sort, int $page, int $per_page
+ * @method mixed title(array $params = [], array $options = []) anime-title (GET /anime/title/{id})
+ *   params: string $id
+ * @method mixed titleCharacters(array $params = [], array $options = []) anime-title-characters (GET /anime/title/{id}/characters)
+ *   params: string $id, int $page, int $per_page
+ * @method mixed titleRecommendations(array $params = [], array $options = []) anime-title-recommendations (GET /anime/title/{id}/recommendations)
+ *   params: string $id, int $page, int $per_page
+ * @method mixed titleStaff(array $params = [], array $options = []) anime-title-staff (GET /anime/title/{id}/staff)
+ *   params: string $id, int $page, int $per_page
+ */
+abstract class AnimeGroup {}
+
+/**
  * @method mixed charts(array $params = [], array $options = []) apple-podcasts-charts (GET /apple-podcasts/charts)
  *   params: string $collection, int $category, string $country, int $limit
  * @method mixed episodesSearch(array $params = [], array $options = []) apple-podcasts-episodes-search (GET /apple-podcasts/episodes/search)
@@ -757,6 +779,16 @@ abstract class LetterboxdGroup {}
  *   params: string $id
  */
 abstract class LinkedInGroup {}
+
+/**
+ * @method mixed rankings(array $params = [], array $options = []) manga-rankings (GET /manga/rankings)
+ *   params: string $sort, string $format, string $genre, string $status, int $page, int $per_page
+ * @method mixed search(array $params = [], array $options = []) manga-search (GET /manga/search)
+ *   params: string $query, string $sort, int $page, int $per_page
+ * @method mixed title(array $params = [], array $options = []) manga-title (GET /manga/title/{id})
+ *   params: string $id
+ */
+abstract class MangaGroup {}
 
 /**
  * @method mixed categoryQuestions(array $params = [], array $options = []) metaculus-category-questions (GET /metaculus/category/{slug}/questions)
@@ -1561,6 +1593,7 @@ abstract class ZillowGroup {}
 /**
  * @property-read \Crawlora\Generated\AirbnbGroup $airbnb
  * @property-read \Crawlora\Generated\AmazonGroup $amazon
+ * @property-read \Crawlora\Generated\AnimeGroup $anime
  * @property-read \Crawlora\Generated\ApplePodcastsGroup $applePodcasts
  * @property-read \Crawlora\Generated\AppStoreGroup $appStore
  * @property-read \Crawlora\Generated\BillingGroup $billing
@@ -1587,6 +1620,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\KalshiGroup $kalshi
  * @property-read \Crawlora\Generated\LetterboxdGroup $letterboxd
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
+ * @property-read \Crawlora\Generated\MangaGroup $manga
  * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
  * @property-read \Crawlora\Generated\MetaGroup $meta
  * @property-read \Crawlora\Generated\PitchBookGroup $pitchBook

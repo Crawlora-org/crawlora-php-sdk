@@ -335,6 +335,318 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'anime-airing-schedule' => [
+            'id' => 'anime-airing-schedule',
+            'method' => 'GET',
+            'path' => '/anime/airing-schedule',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'anime-character-search' => [
+            'id' => 'anime-character-search',
+            'method' => 'GET',
+            'path' => '/anime/character/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'anime-character' => [
+            'id' => 'anime-character',
+            'method' => 'GET',
+            'path' => '/anime/character/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'anime-rankings' => [
+            'id' => 'anime-rankings',
+            'method' => 'GET',
+            'path' => '/anime/rankings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'anime-search' => [
+            'id' => 'anime-search',
+            'method' => 'GET',
+            'path' => '/anime/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'anime-title' => [
+            'id' => 'anime-title',
+            'method' => 'GET',
+            'path' => '/anime/title/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'anime-title-characters' => [
+            'id' => 'anime-title-characters',
+            'method' => 'GET',
+            'path' => '/anime/title/{id}/characters',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'anime-title-recommendations' => [
+            'id' => 'anime-title-recommendations',
+            'method' => 'GET',
+            'path' => '/anime/title/{id}/recommendations',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'anime-title-staff' => [
+            'id' => 'anime-title-staff',
+            'method' => 'GET',
+            'path' => '/anime/title/{id}/staff',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'apple-podcasts-charts' => [
             'id' => 'apple-podcasts-charts',
             'method' => 'GET',
@@ -14745,6 +15057,120 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'manga-rankings' => [
+            'id' => 'manga-rankings',
+            'method' => 'GET',
+            'path' => '/manga/rankings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'manga-search' => [
+            'id' => 'manga-search',
+            'method' => 'GET',
+            'path' => '/manga/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'manga-title' => [
+            'id' => 'manga-title',
+            'method' => 'GET',
+            'path' => '/manga/title/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'metaculus-category-questions' => [
             'id' => 'metaculus-category-questions',
             'method' => 'GET',
@@ -27316,6 +27742,17 @@ final class Operations
             'search' => 'amazon-search',
             'suggest' => 'amazon-suggest',
         ],
+        'anime' => [
+            'airingSchedule' => 'anime-airing-schedule',
+            'characterSearch' => 'anime-character-search',
+            'character' => 'anime-character',
+            'rankings' => 'anime-rankings',
+            'search' => 'anime-search',
+            'title' => 'anime-title',
+            'titleCharacters' => 'anime-title-characters',
+            'titleRecommendations' => 'anime-title-recommendations',
+            'titleStaff' => 'anime-title-staff',
+        ],
         'applePodcasts' => [
             'charts' => 'apple-podcasts-charts',
             'episodesSearch' => 'apple-podcasts-episodes-search',
@@ -27686,6 +28123,11 @@ final class Operations
             'linkedinCompany' => 'linkedin-company',
             'linkedinProduct' => 'linkedin-product',
             'linkedinShowcase' => 'linkedin-showcase',
+        ],
+        'manga' => [
+            'rankings' => 'manga-rankings',
+            'search' => 'manga-search',
+            'title' => 'manga-title',
         ],
         'metaculus' => [
             'categoryQuestions' => 'metaculus-category-questions',
@@ -28103,7 +28545,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 685;
+    public const OPERATION_COUNT = 697;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -28117,6 +28559,15 @@ final class Operations
         'amazon-product',
         'amazon-search',
         'amazon-suggest',
+        'anime-airing-schedule',
+        'anime-character-search',
+        'anime-character',
+        'anime-rankings',
+        'anime-search',
+        'anime-title',
+        'anime-title-characters',
+        'anime-title-recommendations',
+        'anime-title-staff',
         'apple-podcasts-charts',
         'apple-podcasts-episodes-search',
         'apple-podcasts-search',
@@ -28434,6 +28885,9 @@ final class Operations
         'linkedin-company',
         'linkedin-product',
         'linkedin-showcase',
+        'manga-rankings',
+        'manga-search',
+        'manga-title',
         'metaculus-category-questions',
         'metaculus-comments-feed',
         'metaculus-project-questions',
@@ -28845,6 +29299,15 @@ final class OperationId
     public const AMAZON_PRODUCT = 'amazon-product';
     public const AMAZON_SEARCH = 'amazon-search';
     public const AMAZON_SUGGEST = 'amazon-suggest';
+    public const ANIME_AIRING_SCHEDULE = 'anime-airing-schedule';
+    public const ANIME_CHARACTER = 'anime-character';
+    public const ANIME_CHARACTER_SEARCH = 'anime-character-search';
+    public const ANIME_RANKINGS = 'anime-rankings';
+    public const ANIME_SEARCH = 'anime-search';
+    public const ANIME_TITLE = 'anime-title';
+    public const ANIME_TITLE_CHARACTERS = 'anime-title-characters';
+    public const ANIME_TITLE_RECOMMENDATIONS = 'anime-title-recommendations';
+    public const ANIME_TITLE_STAFF = 'anime-title-staff';
     public const APP_STORE_APP = 'appstore-app';
     public const APP_STORE_DEVELOPER = 'appstore-developer';
     public const APP_STORE_LIST = 'appstore-list';
@@ -29159,6 +29622,9 @@ final class OperationId
     public const LINKED_IN_LINKEDIN_COMPANY = 'linkedin-company';
     public const LINKED_IN_LINKEDIN_PRODUCT = 'linkedin-product';
     public const LINKED_IN_LINKEDIN_SHOWCASE = 'linkedin-showcase';
+    public const MANGA_RANKINGS = 'manga-rankings';
+    public const MANGA_SEARCH = 'manga-search';
+    public const MANGA_TITLE = 'manga-title';
     public const META_PING = 'ping';
     public const META_READY = 'ready';
     public const METACULUS_CATEGORY_QUESTIONS = 'metaculus-category-questions';
