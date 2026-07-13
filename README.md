@@ -11,12 +11,11 @@ plus retries, pagination, middleware hooks, and client-side rate limiting.
 
 ## Install
 
-Published on [Packagist](https://packagist.org/packages/crawlora/sdk). The SDK
-releases from the `main` branch (the shared `-sdk.N` tag scheme is not a valid
-Composer version), so install the aliased dev release:
+Published on [Packagist](https://packagist.org/packages/crawlora/sdk). Composer
+uses a semver-compatible beta tag for the shared SDK beta release:
 
 ```sh
-composer require crawlora/sdk:^1.18@dev
+composer require crawlora/sdk:^1.18@beta
 ```
 
 ## Quick start

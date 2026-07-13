@@ -2,6 +2,9 @@
 
 ## v1.18.0-sdk.1
 
+- Published to Packagist as the Composer-valid `1.18.0-beta.1` tag; PHP users
+  can now install a tagged release instead of relying on `dev-main`.
+
 - Regenerated from the public API contract (697 to 737 operations). Adds
   **Capterra** software discovery and reviews (3), **Metacritic** games, movies,
   TV titles and reviews (10), **Numbeo** cost-of-living and quality indices (8),
