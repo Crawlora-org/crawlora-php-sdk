@@ -35,8 +35,17 @@ $brand = $client->brand->retrieve(['domain' => 'stripe.com']);
 
 ## Software, Reviews, And Market Datasets
 
+Build a Chrome extension competitive-intelligence view without downloading the
+whole catalog: create a high-adoption shortlist, load chart-ready market
+metrics, watch movers, and audit permission changes or one item's history.
+
 ```php
-$extensions = $client->datasets->chromeExtensionsSearch(['q' => 'productivity', 'min_users' => 10000]);
+$extensions = $client->datasets->chromeExtensionsSearch(['q' => 'productivity', 'min_users' => 10000, 'sort' => 'users_desc', 'page_size' => 20]);
+$metrics = $client->datasets->chromeExtensionsMetrics(['days' => 30, 'limit' => 10]);
+$movers = $client->datasets->chromeExtensionsTrending(['item_type' => 'extension', 'page_size' => 20]);
+$permissionChanges = $client->datasets->chromeExtensionsChanges(['change_type' => 'permissions', 'limit' => 25]);
+$history = $client->datasets->chromeExtensionsHistory(['id' => 'fjgncogppolhfdpijihbpfmeohpaadpc', 'limit' => 90]);
+
 $cities = $client->datasets->numbeoCitiesSearch(['country' => 'Portugal', 'sort' => 'quality_of_life_desc']);
 $software = $client->capterra->search(['q' => 'project management']);
 $games = $client->metacritic->browse(['type' => 'game', 'sort' => 'score']);
