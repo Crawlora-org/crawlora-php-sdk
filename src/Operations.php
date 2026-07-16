@@ -5742,6 +5742,11 @@ final class Operations
                     'type' => 'string',
                 ],
                 [
+                    'name' => 'developer_email',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
                     'name' => 'permission',
                     'in' => 'query',
                     'type' => 'string',
@@ -5907,6 +5912,11 @@ final class Operations
                     'type' => 'string',
                 ],
                 [
+                    'name' => 'developer_email',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
                     'name' => 'permission',
                     'in' => 'query',
                     'type' => 'string',
@@ -5997,6 +6007,11 @@ final class Operations
                 ],
                 [
                     'name' => 'developer',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'developer_email',
                     'in' => 'query',
                     'type' => 'string',
                 ],
@@ -7142,6 +7157,184 @@ final class Operations
                     'name' => 'min_homes_sold',
                     'in' => 'query',
                     'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-jobs-companies' => [
+            'id' => 'datasets-jobs-companies',
+            'method' => 'GET',
+            'path' => '/datasets/jobs/companies',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'provider',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_open_roles',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-jobs-facets' => [
+            'id' => 'datasets-jobs-facets',
+            'method' => 'GET',
+            'path' => '/datasets/jobs/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-jobs-item' => [
+            'id' => 'datasets-jobs-item',
+            'method' => 'GET',
+            'path' => '/datasets/jobs/items/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-jobs-search' => [
+            'id' => 'datasets-jobs-search',
+            'method' => 'GET',
+            'path' => '/datasets/jobs/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'company',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'provider',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'department',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'employment_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'remote',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'include_closed',
+                    'in' => 'query',
+                    'type' => 'boolean',
                 ],
                 [
                     'name' => 'sort',
@@ -8368,6 +8561,380 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'datasets-sec-companies-facets' => [
+            'id' => 'datasets-sec-companies-facets',
+            'method' => 'GET',
+            'path' => '/datasets/sec-companies/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'ticker',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sic',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'exchange',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state_of_incorporation',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'entity_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_revenue',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'form_filed',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-sec-companies-financials' => [
+            'id' => 'datasets-sec-companies-financials',
+            'method' => 'GET',
+            'path' => '/datasets/sec-companies/financials/{cik}',
+            'pathParams' => [
+                'cik',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'statement',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'period',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'to',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-sec-companies-insider' => [
+            'id' => 'datasets-sec-companies-insider',
+            'method' => 'GET',
+            'path' => '/datasets/sec-companies/insider/{cik}',
+            'pathParams' => [
+                'cik',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'code',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-sec-companies-item' => [
+            'id' => 'datasets-sec-companies-item',
+            'method' => 'GET',
+            'path' => '/datasets/sec-companies/items/{cik}',
+            'pathParams' => [
+                'cik',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-sec-companies-search' => [
+            'id' => 'datasets-sec-companies-search',
+            'method' => 'GET',
+            'path' => '/datasets/sec-companies/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'ticker',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cik',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sic',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sic_description',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'exchange',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state_of_incorporation',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'entity_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_revenue',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_revenue',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_net_income',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_total_assets',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'form_filed',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_insider_txn_count_90d',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-sec-institutional-positions-facets' => [
+            'id' => 'datasets-sec-institutional-positions-facets',
+            'method' => 'GET',
+            'path' => '/datasets/sec-institutional-positions/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'manager_cik',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'issuer_name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cusip',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-sec-institutional-positions-search' => [
+            'id' => 'datasets-sec-institutional-positions-search',
+            'method' => 'GET',
+            'path' => '/datasets/sec-institutional-positions/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'manager_cik',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'issuer_name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cusip',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'datasets-steam-achievements-search' => [
             'id' => 'datasets-steam-achievements-search',
             'method' => 'GET',
@@ -9500,6 +10067,234 @@ final class Operations
                     'name' => 'min_ahrefs_dr',
                     'in' => 'query',
                     'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-x-users-facets' => [
+            'id' => 'datasets-x-users-facets',
+            'method' => 'GET',
+            'path' => '/datasets/x-users/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'username',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'source_tier',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'is_blue_verified',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_bio',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_external_url',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_followers',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_followers',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_ratio',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_ratio',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'created_after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'created_before',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'crawled_after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'crawled_before',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-x-users-item' => [
+            'id' => 'datasets-x-users-item',
+            'method' => 'GET',
+            'path' => '/datasets/x-users/items/{username}',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-x-users-search' => [
+            'id' => 'datasets-x-users-search',
+            'method' => 'GET',
+            'path' => '/datasets/x-users/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'username',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'source_tier',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'is_blue_verified',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_bio',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_external_url',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_followers',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_followers',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_ratio',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_ratio',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'created_after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'created_before',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'crawled_after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'crawled_before',
+                    'in' => 'query',
+                    'type' => 'string',
                 ],
                 [
                     'name' => 'sort',
@@ -11103,6 +11898,72 @@ final class Operations
             'id' => 'github-user-events',
             'method' => 'GET',
             'path' => '/github/user/{username}/events',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'github-user-followers' => [
+            'id' => 'github-user-followers',
+            'method' => 'GET',
+            'path' => '/github/user/{username}/followers',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'github-user-following' => [
+            'id' => 'github-user-following',
+            'method' => 'GET',
+            'path' => '/github/user/{username}/following',
             'pathParams' => [
                 'username',
             ],
@@ -13833,6 +14694,13 @@ final class Operations
                         'ashby',
                         'workday',
                         'smartrecruiters',
+                        'workable',
+                        'recruitee',
+                        'rippling',
+                        'personio',
+                        'teamtailor',
+                        'oracle',
+                        'ukg',
                     ],
                 ],
                 [
@@ -13862,6 +14730,16 @@ final class Operations
                 ],
                 [
                     'name' => 'site',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'host',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'board',
                     'in' => 'query',
                     'type' => 'string',
                 ],
@@ -13952,6 +14830,279 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'jobs-oracle-board' => [
+            'id' => 'jobs-oracle-board',
+            'method' => 'GET',
+            'path' => '/jobs/oracle/board',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'host',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'site',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'search',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'jobs-oracle-job' => [
+            'id' => 'jobs-oracle-job',
+            'method' => 'GET',
+            'path' => '/jobs/oracle/job',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'host',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'site',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'jobs-personio-feed' => [
+            'id' => 'jobs-personio-feed',
+            'method' => 'GET',
+            'path' => '/jobs/personio/feed',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'company',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'department',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'remote',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'jobs-recruitee-offer' => [
+            'id' => 'jobs-recruitee-offer',
+            'method' => 'GET',
+            'path' => '/jobs/recruitee/offer',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'company',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'jobs-recruitee-offers' => [
+            'id' => 'jobs-recruitee-offers',
+            'method' => 'GET',
+            'path' => '/jobs/recruitee/offers',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'company',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'department',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'remote',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'jobs-rippling-board' => [
+            'id' => 'jobs-rippling-board',
+            'method' => 'GET',
+            'path' => '/jobs/rippling/board',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'company',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'department',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'remote',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'jobs-rippling-job' => [
+            'id' => 'jobs-rippling-job',
+            'method' => 'GET',
+            'path' => '/jobs/rippling/job',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'company',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'jobs-smartrecruiters-posting' => [
             'id' => 'jobs-smartrecruiters-posting',
             'method' => 'GET',
@@ -14020,6 +15171,173 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'jobs-teamtailor-jobs' => [
+            'id' => 'jobs-teamtailor-jobs',
+            'method' => 'GET',
+            'path' => '/jobs/teamtailor/jobs',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'company',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'department',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'remote',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'jobs-ukg-board' => [
+            'id' => 'jobs-ukg-board',
+            'method' => 'GET',
+            'path' => '/jobs/ukg/board',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tenant',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'board',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'search',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'jobs-workable-posting' => [
+            'id' => 'jobs-workable-posting',
+            'method' => 'GET',
+            'path' => '/jobs/workable/posting',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'company',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'jobs-workable-postings' => [
+            'id' => 'jobs-workable-postings',
+            'method' => 'GET',
+            'path' => '/jobs/workable/postings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'company',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'search',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'department',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'remote',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'jobs-workday-board' => [
             'id' => 'jobs-workday-board',
@@ -25620,6 +26938,463 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'tcdb-birthdays' => [
+            'id' => 'tcdb-birthdays',
+            'method' => 'GET',
+            'path' => '/tcdb/birthdays',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'month',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'day',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [],
+        ],
+        'tcdb-card' => [
+            'id' => 'tcdb-card',
+            'method' => 'GET',
+            'path' => '/tcdb/card',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'set_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'card_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [],
+        ],
+        'tcdb-card-of-the-day' => [
+            'id' => 'tcdb-card-of-the-day',
+            'method' => 'GET',
+            'path' => '/tcdb/card-of-the-day',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [],
+            'paginatable' => true,
+        ],
+        'tcdb-companies' => [
+            'id' => 'tcdb-companies',
+            'method' => 'GET',
+            'path' => '/tcdb/companies',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [],
+        ],
+        'tcdb-person' => [
+            'id' => 'tcdb-person',
+            'method' => 'GET',
+            'path' => '/tcdb/person',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [],
+        ],
+        'tcdb-releases' => [
+            'id' => 'tcdb-releases',
+            'method' => 'GET',
+            'path' => '/tcdb/releases',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [],
+        ],
+        'tcdb-search' => [
+            'id' => 'tcdb-search',
+            'method' => 'GET',
+            'path' => '/tcdb/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Baseball',
+                        'Basketball',
+                        'Boxing',
+                        'Cricket',
+                        'Football',
+                        'Gaming',
+                        'Golf',
+                        'Hockey',
+                        'Misc Sports',
+                        'MMA',
+                        'Multi-Sport',
+                        'Non-Sport',
+                        'Racing',
+                        'Soccer',
+                        'Tennis',
+                        'Wrestling',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [],
+        ],
+        'tcdb-set' => [
+            'id' => 'tcdb-set',
+            'method' => 'GET',
+            'path' => '/tcdb/set',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [],
+        ],
+        'tcdb-sets' => [
+            'id' => 'tcdb-sets',
+            'method' => 'GET',
+            'path' => '/tcdb/sets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'Baseball',
+                        'Basketball',
+                        'Boxing',
+                        'Cricket',
+                        'Football',
+                        'Gaming',
+                        'Golf',
+                        'Hockey',
+                        'Misc Sports',
+                        'MMA',
+                        'Multi-Sport',
+                        'Non-Sport',
+                        'Racing',
+                        'Soccer',
+                        'Tennis',
+                        'Wrestling',
+                    ],
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [],
+        ],
+        'tcdb-tagged' => [
+            'id' => 'tcdb-tagged',
+            'method' => 'GET',
+            'path' => '/tcdb/tagged',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Baseball',
+                        'Basketball',
+                        'Boxing',
+                        'Cricket',
+                        'Football',
+                        'Gaming',
+                        'Golf',
+                        'Hockey',
+                        'Misc Sports',
+                        'MMA',
+                        'Multi-Sport',
+                        'Non-Sport',
+                        'Racing',
+                        'Soccer',
+                        'Tennis',
+                        'Wrestling',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [],
+            'paginatable' => true,
+        ],
+        'tcdb-team' => [
+            'id' => 'tcdb-team',
+            'method' => 'GET',
+            'path' => '/tcdb/team',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [],
+        ],
+        'tcdb-top-sets' => [
+            'id' => 'tcdb-top-sets',
+            'method' => 'GET',
+            'path' => '/tcdb/top-sets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [],
+        ],
         'tiktok-category' => [
             'id' => 'tiktok-category',
             'method' => 'GET',
@@ -29572,6 +31347,10 @@ final class Operations
             'housingMarketsFacets' => 'datasets-housing-markets-facets',
             'housingMarketsItem' => 'datasets-housing-markets-item',
             'housingMarketsSearch' => 'datasets-housing-markets-search',
+            'jobsCompanies' => 'datasets-jobs-companies',
+            'jobsFacets' => 'datasets-jobs-facets',
+            'jobsItem' => 'datasets-jobs-item',
+            'jobsSearch' => 'datasets-jobs-search',
             'journalistsFacets' => 'datasets-journalists-facets',
             'journalistsItem' => 'datasets-journalists-item',
             'journalistsSearch' => 'datasets-journalists-search',
@@ -29591,6 +31370,13 @@ final class Operations
             'producthuntProductsSearch' => 'datasets-producthunt-products-search',
             'producthuntTrendsFacets' => 'datasets-producthunt-trends-facets',
             'producthuntTrendsSearch' => 'datasets-producthunt-trends-search',
+            'secCompaniesFacets' => 'datasets-sec-companies-facets',
+            'secCompaniesFinancials' => 'datasets-sec-companies-financials',
+            'secCompaniesInsider' => 'datasets-sec-companies-insider',
+            'secCompaniesItem' => 'datasets-sec-companies-item',
+            'secCompaniesSearch' => 'datasets-sec-companies-search',
+            'secInstitutionalPositionsFacets' => 'datasets-sec-institutional-positions-facets',
+            'secInstitutionalPositionsSearch' => 'datasets-sec-institutional-positions-search',
             'steamAchievementsSearch' => 'datasets-steam-achievements-search',
             'steamChartsSearch' => 'datasets-steam-charts-search',
             'steamGamesFacets' => 'datasets-steam-games-facets',
@@ -29607,6 +31393,9 @@ final class Operations
             'trustmrrHistory' => 'datasets-trustmrr-history',
             'trustmrrItem' => 'datasets-trustmrr-item',
             'trustmrrSearch' => 'datasets-trustmrr-search',
+            'xUsersFacets' => 'datasets-x-users-facets',
+            'xUsersItem' => 'datasets-x-users-item',
+            'xUsersSearch' => 'datasets-x-users-search',
         ],
         'discogs' => [
             'artist' => 'discogs-artist',
@@ -29655,6 +31444,8 @@ final class Operations
             'githubTrendingDevelopers' => 'github-trending-developers',
             'githubUser' => 'github-user',
             'githubUserEvents' => 'github-user-events',
+            'githubUserFollowers' => 'github-user-followers',
+            'githubUserFollowing' => 'github-user-following',
             'githubUserPinned' => 'github-user-pinned',
             'githubUserRepos' => 'github-user-repos',
         ],
@@ -29752,8 +31543,19 @@ final class Operations
             'hiringSignals' => 'jobs-hiring-signals',
             'leverPosting' => 'jobs-lever-posting',
             'leverPostings' => 'jobs-lever-postings',
+            'oracleBoard' => 'jobs-oracle-board',
+            'oracleJob' => 'jobs-oracle-job',
+            'personioFeed' => 'jobs-personio-feed',
+            'recruiteeOffer' => 'jobs-recruitee-offer',
+            'recruiteeOffers' => 'jobs-recruitee-offers',
+            'ripplingBoard' => 'jobs-rippling-board',
+            'ripplingJob' => 'jobs-rippling-job',
             'smartrecruitersPosting' => 'jobs-smartrecruiters-posting',
             'smartrecruitersPostings' => 'jobs-smartrecruiters-postings',
+            'teamtailorJobs' => 'jobs-teamtailor-jobs',
+            'ukgBoard' => 'jobs-ukg-board',
+            'workablePosting' => 'jobs-workable-posting',
+            'workablePostings' => 'jobs-workable-postings',
             'workdayBoard' => 'jobs-workday-board',
             'workdayJob' => 'jobs-workday-job',
         ],
@@ -30122,6 +31924,20 @@ final class Operations
             'tagsList' => 'steam-tags-list',
             'topSellers' => 'steam-top-sellers',
         ],
+        'tcdb' => [
+            'birthdays' => 'tcdb-birthdays',
+            'card' => 'tcdb-card',
+            'cardOfTheDay' => 'tcdb-card-of-the-day',
+            'companies' => 'tcdb-companies',
+            'person' => 'tcdb-person',
+            'releases' => 'tcdb-releases',
+            'search' => 'tcdb-search',
+            'set' => 'tcdb-set',
+            'sets' => 'tcdb-sets',
+            'tagged' => 'tcdb-tagged',
+            'team' => 'tcdb-team',
+            'topSets' => 'tcdb-top-sets',
+        ],
         'tiktok' => [
             'category' => 'tiktok-category',
             'videoComments' => 'tiktok-video-comments',
@@ -30266,7 +32082,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 737;
+    public const OPERATION_COUNT = 776;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -30408,6 +32224,10 @@ final class Operations
         'datasets-housing-markets-facets',
         'datasets-housing-markets-item',
         'datasets-housing-markets-search',
+        'datasets-jobs-companies',
+        'datasets-jobs-facets',
+        'datasets-jobs-item',
+        'datasets-jobs-search',
         'datasets-journalists-facets',
         'datasets-journalists-item',
         'datasets-journalists-search',
@@ -30427,6 +32247,13 @@ final class Operations
         'datasets-producthunt-products-search',
         'datasets-producthunt-trends-facets',
         'datasets-producthunt-trends-search',
+        'datasets-sec-companies-facets',
+        'datasets-sec-companies-financials',
+        'datasets-sec-companies-insider',
+        'datasets-sec-companies-item',
+        'datasets-sec-companies-search',
+        'datasets-sec-institutional-positions-facets',
+        'datasets-sec-institutional-positions-search',
         'datasets-steam-achievements-search',
         'datasets-steam-charts-search',
         'datasets-steam-games-facets',
@@ -30443,6 +32270,9 @@ final class Operations
         'datasets-trustmrr-history',
         'datasets-trustmrr-item',
         'datasets-trustmrr-search',
+        'datasets-x-users-facets',
+        'datasets-x-users-item',
+        'datasets-x-users-search',
         'antibot-check',
         'discogs-artist',
         'discogs-artist-releases',
@@ -30483,6 +32313,8 @@ final class Operations
         'github-trending-developers',
         'github-user',
         'github-user-events',
+        'github-user-followers',
+        'github-user-following',
         'github-user-pinned',
         'github-user-repos',
         'goodreads-author',
@@ -30568,8 +32400,19 @@ final class Operations
         'jobs-hiring-signals',
         'jobs-lever-posting',
         'jobs-lever-postings',
+        'jobs-oracle-board',
+        'jobs-oracle-job',
+        'jobs-personio-feed',
+        'jobs-recruitee-offer',
+        'jobs-recruitee-offers',
+        'jobs-rippling-board',
+        'jobs-rippling-job',
         'jobs-smartrecruiters-posting',
         'jobs-smartrecruiters-postings',
+        'jobs-teamtailor-jobs',
+        'jobs-ukg-board',
+        'jobs-workable-posting',
+        'jobs-workable-postings',
         'jobs-workday-board',
         'jobs-workday-job',
         'justwatch-age-certifications',
@@ -30887,6 +32730,18 @@ final class Operations
         'steam-tags',
         'steam-tags-list',
         'steam-top-sellers',
+        'tcdb-birthdays',
+        'tcdb-card',
+        'tcdb-card-of-the-day',
+        'tcdb-companies',
+        'tcdb-person',
+        'tcdb-releases',
+        'tcdb-search',
+        'tcdb-set',
+        'tcdb-sets',
+        'tcdb-tagged',
+        'tcdb-team',
+        'tcdb-top-sets',
         'tiktok-category',
         'tiktok-video-comments',
         'tiktok-explore',
@@ -31186,6 +33041,10 @@ final class OperationId
     public const DATASETS_HOUSING_MARKETS_FACETS = 'datasets-housing-markets-facets';
     public const DATASETS_HOUSING_MARKETS_ITEM = 'datasets-housing-markets-item';
     public const DATASETS_HOUSING_MARKETS_SEARCH = 'datasets-housing-markets-search';
+    public const DATASETS_JOBS_COMPANIES = 'datasets-jobs-companies';
+    public const DATASETS_JOBS_FACETS = 'datasets-jobs-facets';
+    public const DATASETS_JOBS_ITEM = 'datasets-jobs-item';
+    public const DATASETS_JOBS_SEARCH = 'datasets-jobs-search';
     public const DATASETS_JOURNALISTS_FACETS = 'datasets-journalists-facets';
     public const DATASETS_JOURNALISTS_ITEM = 'datasets-journalists-item';
     public const DATASETS_JOURNALISTS_SEARCH = 'datasets-journalists-search';
@@ -31206,6 +33065,13 @@ final class OperationId
     public const DATASETS_PRODUCTHUNT_PRODUCTS_SEARCH = 'datasets-producthunt-products-search';
     public const DATASETS_PRODUCTHUNT_TRENDS_FACETS = 'datasets-producthunt-trends-facets';
     public const DATASETS_PRODUCTHUNT_TRENDS_SEARCH = 'datasets-producthunt-trends-search';
+    public const DATASETS_SEC_COMPANIES_FACETS = 'datasets-sec-companies-facets';
+    public const DATASETS_SEC_COMPANIES_FINANCIALS = 'datasets-sec-companies-financials';
+    public const DATASETS_SEC_COMPANIES_INSIDER = 'datasets-sec-companies-insider';
+    public const DATASETS_SEC_COMPANIES_ITEM = 'datasets-sec-companies-item';
+    public const DATASETS_SEC_COMPANIES_SEARCH = 'datasets-sec-companies-search';
+    public const DATASETS_SEC_INSTITUTIONAL_POSITIONS_FACETS = 'datasets-sec-institutional-positions-facets';
+    public const DATASETS_SEC_INSTITUTIONAL_POSITIONS_SEARCH = 'datasets-sec-institutional-positions-search';
     public const DATASETS_STEAM_ACHIEVEMENTS_SEARCH = 'datasets-steam-achievements-search';
     public const DATASETS_STEAM_CHARTS_SEARCH = 'datasets-steam-charts-search';
     public const DATASETS_STEAM_GAMES_FACETS = 'datasets-steam-games-facets';
@@ -31222,6 +33088,9 @@ final class OperationId
     public const DATASETS_TRUSTMRR_HISTORY = 'datasets-trustmrr-history';
     public const DATASETS_TRUSTMRR_ITEM = 'datasets-trustmrr-item';
     public const DATASETS_TRUSTMRR_SEARCH = 'datasets-trustmrr-search';
+    public const DATASETS_XUSERS_FACETS = 'datasets-x-users-facets';
+    public const DATASETS_XUSERS_ITEM = 'datasets-x-users-item';
+    public const DATASETS_XUSERS_SEARCH = 'datasets-x-users-search';
     public const DISCOGS_ARTIST = 'discogs-artist';
     public const DISCOGS_ARTIST_RELEASES = 'discogs-artist-releases';
     public const DISCOGS_LABEL = 'discogs-label';
@@ -31260,6 +33129,8 @@ final class OperationId
     public const GIT_HUB_GITHUB_TRENDING_DEVELOPERS = 'github-trending-developers';
     public const GIT_HUB_GITHUB_USER = 'github-user';
     public const GIT_HUB_GITHUB_USER_EVENTS = 'github-user-events';
+    public const GIT_HUB_GITHUB_USER_FOLLOWERS = 'github-user-followers';
+    public const GIT_HUB_GITHUB_USER_FOLLOWING = 'github-user-following';
     public const GIT_HUB_GITHUB_USER_PINNED = 'github-user-pinned';
     public const GIT_HUB_GITHUB_USER_REPOS = 'github-user-repos';
     public const GOODREADS_AUTHOR = 'goodreads-author';
@@ -31345,8 +33216,19 @@ final class OperationId
     public const JOBS_HIRING_SIGNALS = 'jobs-hiring-signals';
     public const JOBS_LEVER_POSTING = 'jobs-lever-posting';
     public const JOBS_LEVER_POSTINGS = 'jobs-lever-postings';
+    public const JOBS_ORACLE_BOARD = 'jobs-oracle-board';
+    public const JOBS_ORACLE_JOB = 'jobs-oracle-job';
+    public const JOBS_PERSONIO_FEED = 'jobs-personio-feed';
+    public const JOBS_RECRUITEE_OFFER = 'jobs-recruitee-offer';
+    public const JOBS_RECRUITEE_OFFERS = 'jobs-recruitee-offers';
+    public const JOBS_RIPPLING_BOARD = 'jobs-rippling-board';
+    public const JOBS_RIPPLING_JOB = 'jobs-rippling-job';
     public const JOBS_SMARTRECRUITERS_POSTING = 'jobs-smartrecruiters-posting';
     public const JOBS_SMARTRECRUITERS_POSTINGS = 'jobs-smartrecruiters-postings';
+    public const JOBS_TEAMTAILOR_JOBS = 'jobs-teamtailor-jobs';
+    public const JOBS_UKG_BOARD = 'jobs-ukg-board';
+    public const JOBS_WORKABLE_POSTING = 'jobs-workable-posting';
+    public const JOBS_WORKABLE_POSTINGS = 'jobs-workable-postings';
     public const JOBS_WORKDAY_BOARD = 'jobs-workday-board';
     public const JOBS_WORKDAY_JOB = 'jobs-workday-job';
     public const JUST_WATCH_JUSTWATCH_AGE_CERTIFICATIONS = 'justwatch-age-certifications';
@@ -31664,6 +33546,18 @@ final class OperationId
     public const STEAM_TAGS = 'steam-tags';
     public const STEAM_TAGS_LIST = 'steam-tags-list';
     public const STEAM_TOP_SELLERS = 'steam-top-sellers';
+    public const TCDB_BIRTHDAYS = 'tcdb-birthdays';
+    public const TCDB_CARD = 'tcdb-card';
+    public const TCDB_CARD_OF_THE_DAY = 'tcdb-card-of-the-day';
+    public const TCDB_COMPANIES = 'tcdb-companies';
+    public const TCDB_PERSON = 'tcdb-person';
+    public const TCDB_RELEASES = 'tcdb-releases';
+    public const TCDB_SEARCH = 'tcdb-search';
+    public const TCDB_SET = 'tcdb-set';
+    public const TCDB_SETS = 'tcdb-sets';
+    public const TCDB_TAGGED = 'tcdb-tagged';
+    public const TCDB_TEAM = 'tcdb-team';
+    public const TCDB_TOP_SETS = 'tcdb-top-sets';
     public const TIKTOK_CATEGORY = 'tiktok-category';
     public const TIKTOK_CHALLENGE = 'tiktok-challenge';
     public const TIKTOK_CHALLENGE_LIST = 'tiktok-challenge-list';

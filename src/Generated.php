@@ -304,7 +304,7 @@ abstract class WebGroup {}
  * @method mixed chromeExtensionsChanges(array $params = [], array $options = []) datasets-chrome-extensions-changes (GET /datasets/chrome-extensions/changes)
  *   params: string $change_type, int $limit
  * @method mixed chromeExtensionsFacets(array $params = [], array $options = []) datasets-chrome-extensions-facets (GET /datasets/chrome-extensions/facets)
- *   params: string $facet, string $q, string $item_type, string $category, string $developer, string $permission, string $status, int $manifest_version, bool $collects_data, bool $has_broad_host_access, int $min_users, float $min_rating, int $min_rating_count, string $sort
+ *   params: string $facet, string $q, string $item_type, string $category, string $developer, string $developer_email, string $permission, string $status, int $manifest_version, bool $collects_data, bool $has_broad_host_access, int $min_users, float $min_rating, int $min_rating_count, string $sort
  * @method mixed chromeExtensionsHistory(array $params = [], array $options = []) datasets-chrome-extensions-history (GET /datasets/chrome-extensions/history/{id})
  *   params: string $id, string $from, string $to, int $limit
  * @method mixed chromeExtensionsItem(array $params = [], array $options = []) datasets-chrome-extensions-item (GET /datasets/chrome-extensions/items/{id})
@@ -312,9 +312,9 @@ abstract class WebGroup {}
  * @method mixed chromeExtensionsMetrics(array $params = [], array $options = []) datasets-chrome-extensions-metrics (GET /datasets/chrome-extensions/metrics)
  *   params: int $days, int $limit
  * @method mixed chromeExtensionsSearch(array $params = [], array $options = []) datasets-chrome-extensions-search (GET /datasets/chrome-extensions/search)
- *   params: string $q, string $item_type, string $category, string $developer, string $permission, string $status, int $manifest_version, bool $collects_data, bool $has_broad_host_access, int $min_users, float $min_rating, int $min_rating_count, string $sort, int $page, int $page_size
+ *   params: string $q, string $item_type, string $category, string $developer, string $developer_email, string $permission, string $status, int $manifest_version, bool $collects_data, bool $has_broad_host_access, int $min_users, float $min_rating, int $min_rating_count, string $sort, int $page, int $page_size
  * @method mixed chromeExtensionsTrending(array $params = [], array $options = []) datasets-chrome-extensions-trending (GET /datasets/chrome-extensions/trending)
- *   params: string $q, string $item_type, string $category, string $developer, string $permission, string $status, int $manifest_version, bool $collects_data, bool $has_broad_host_access, int $min_users, float $min_rating, int $min_rating_count, int $page, int $page_size
+ *   params: string $q, string $item_type, string $category, string $developer, string $developer_email, string $permission, string $status, int $manifest_version, bool $collects_data, bool $has_broad_host_access, int $min_users, float $min_rating, int $min_rating_count, int $page, int $page_size
  * @method mixed creatorsSearch(array $params = [], array $options = []) datasets-creators-search (GET /datasets/creators/search)
  *   params: string $q, string $handle, string $niche, string $country, bool $verified, int $min_followers, bool $has_email, bool $include_inactive, string $sort, int $page, int $page_size
  * @method mixed githubUsersFacets(array $params = [], array $options = []) datasets-github-users-facets (GET /datasets/github-users/facets)
@@ -339,6 +339,14 @@ abstract class WebGroup {}
  *   params: string $region_type, int $table_id, string $period, string $property_type, bool $history
  * @method mixed housingMarketsSearch(array $params = [], array $options = []) datasets-housing-markets-search (GET /datasets/housing-markets/search)
  *   params: string $q, string $region_type, string $state_code, string $property_type, string $parent_metro_code, string $zip_code, string $period, bool $latest, float $min_median_sale_price, float $max_median_sale_price, float $min_median_list_price, float $max_median_list_price, float $min_price_to_income, float $max_price_to_income, int $min_salary_to_buy, int $max_salary_to_buy, float $min_median_dom, float $max_median_dom, int $min_inventory, int $max_inventory, int $min_homes_sold, string $sort, int $page, int $page_size
+ * @method mixed jobsCompanies(array $params = [], array $options = []) datasets-jobs-companies (GET /datasets/jobs/companies)
+ *   params: string $q, string $provider, string $status, int $min_open_roles, string $sort, int $page, int $page_size
+ * @method mixed jobsFacets(array $params = [], array $options = []) datasets-jobs-facets (GET /datasets/jobs/facets)
+ *   params: int $size
+ * @method mixed jobsItem(array $params = [], array $options = []) datasets-jobs-item (GET /datasets/jobs/items/{id})
+ *   params: string $id
+ * @method mixed jobsSearch(array $params = [], array $options = []) datasets-jobs-search (GET /datasets/jobs/search)
+ *   params: string $q, string $company, string $provider, string $department, string $location, string $employment_type, bool $remote, bool $include_closed, string $sort, int $page, int $page_size
  * @method mixed journalistsFacets(array $params = [], array $options = []) datasets-journalists-facets (GET /datasets/journalists/facets)
  *   params: string $facet, string $q, string $outlet, string $vertical, string $topic, string $contact_type
  * @method mixed journalistsItem(array $params = [], array $options = []) datasets-journalists-item (GET /datasets/journalists/items/{outlet}/{slug})
@@ -377,6 +385,20 @@ abstract class WebGroup {}
  *   params: string $facet, string $group_by, string $topic, string $launched_after, string $launched_before, int $min_votes, int $min_launches
  * @method mixed producthuntTrendsSearch(array $params = [], array $options = []) datasets-producthunt-trends-search (GET /datasets/producthunt-trends/search)
  *   params: string $group_by, string $topic, string $launched_after, string $launched_before, int $min_votes, int $min_launches, string $sort, int $page, int $page_size
+ * @method mixed secCompaniesFacets(array $params = [], array $options = []) datasets-sec-companies-facets (GET /datasets/sec-companies/facets)
+ *   params: string $facet, string $q, string $ticker, string $sic, string $exchange, string $state_of_incorporation, string $entity_type, float $min_revenue, string $form_filed
+ * @method mixed secCompaniesFinancials(array $params = [], array $options = []) datasets-sec-companies-financials (GET /datasets/sec-companies/financials/{cik})
+ *   params: string $cik, string $statement, string $period, int $from, int $to, int $limit
+ * @method mixed secCompaniesInsider(array $params = [], array $options = []) datasets-sec-companies-insider (GET /datasets/sec-companies/insider/{cik})
+ *   params: string $cik, string $from, string $to, string $code, int $limit
+ * @method mixed secCompaniesItem(array $params = [], array $options = []) datasets-sec-companies-item (GET /datasets/sec-companies/items/{cik})
+ *   params: string $cik
+ * @method mixed secCompaniesSearch(array $params = [], array $options = []) datasets-sec-companies-search (GET /datasets/sec-companies/search)
+ *   params: string $q, string $ticker, string $cik, string $sic, string $sic_description, string $exchange, string $state_of_incorporation, string $entity_type, float $min_revenue, float $max_revenue, float $min_net_income, float $min_total_assets, string $form_filed, int $min_insider_txn_count_90d, string $sort, int $page, int $page_size
+ * @method mixed secInstitutionalPositionsFacets(array $params = [], array $options = []) datasets-sec-institutional-positions-facets (GET /datasets/sec-institutional-positions/facets)
+ *   params: string $facet, string $manager_cik, string $issuer_name, string $cusip
+ * @method mixed secInstitutionalPositionsSearch(array $params = [], array $options = []) datasets-sec-institutional-positions-search (GET /datasets/sec-institutional-positions/search)
+ *   params: string $manager_cik, string $issuer_name, string $cusip, string $sort, int $page, int $page_size
  * @method mixed steamAchievementsSearch(array $params = [], array $options = []) datasets-steam-achievements-search (GET /datasets/steam-achievements/search)
  *   params: string $app_id, string $sort, int $page, int $page_size
  * @method mixed steamChartsSearch(array $params = [], array $options = []) datasets-steam-charts-search (GET /datasets/steam-charts/search)
@@ -409,6 +431,12 @@ abstract class WebGroup {}
  *   params: string $slug
  * @method mixed trustmrrSearch(array $params = [], array $options = []) datasets-trustmrr-search (GET /datasets/trustmrr/search)
  *   params: string $q, string $slug, string $category, string $country, string $payment_provider, string $target_audience, string $business_type, string $tech, string $channel, string $listing_tier, string $status, bool $on_sale, bool $is_sponsored, float $min_mrr, float $max_mrr, float $min_revenue, float $min_revenue_30d, float $min_traffic, float $min_growth, float $max_multiple, float $min_asking_price, float $max_asking_price, int $min_ahrefs_dr, string $sort, int $page, int $page_size
+ * @method mixed xUsersFacets(array $params = [], array $options = []) datasets-x-users-facets (GET /datasets/x-users/facets)
+ *   params: string $facet, string $q, string $username, string $source_tier, bool $is_blue_verified, bool $has_bio, bool $has_external_url, int $min_followers, int $max_followers, float $min_ratio, float $max_ratio, string $created_after, string $created_before, string $crawled_after, string $crawled_before, string $sort
+ * @method mixed xUsersItem(array $params = [], array $options = []) datasets-x-users-item (GET /datasets/x-users/items/{username})
+ *   params: string $username
+ * @method mixed xUsersSearch(array $params = [], array $options = []) datasets-x-users-search (GET /datasets/x-users/search)
+ *   params: string $q, string $username, string $source_tier, bool $is_blue_verified, bool $has_bio, bool $has_external_url, int $min_followers, int $max_followers, float $min_ratio, float $max_ratio, string $created_after, string $created_before, string $crawled_after, string $crawled_before, string $sort, int $page, int $page_size
  */
 abstract class DatasetsGroup {}
 
@@ -504,6 +532,10 @@ abstract class GeocodingGroup {}
  * @method mixed githubUser(array $params = [], array $options = []) github-user (GET /github/user/{username})
  *   params: string $username
  * @method mixed githubUserEvents(array $params = [], array $options = []) github-user-events (GET /github/user/{username}/events)
+ *   params: string $username, int $page, int $per_page
+ * @method mixed githubUserFollowers(array $params = [], array $options = []) github-user-followers (GET /github/user/{username}/followers)
+ *   params: string $username, int $page, int $per_page
+ * @method mixed githubUserFollowing(array $params = [], array $options = []) github-user-following (GET /github/user/{username}/following)
  *   params: string $username, int $page, int $per_page
  * @method mixed githubUserPinned(array $params = [], array $options = []) github-user-pinned (GET /github/user/{username}/pinned)
  *   params: string $username
@@ -687,15 +719,37 @@ abstract class InstagramGroup {}
  * @method mixed greenhouseJob(array $params = [], array $options = []) jobs-greenhouse-job (GET /jobs/greenhouse/job)
  *   params: string $token, string $id
  * @method mixed hiringSignals(array $params = [], array $options = []) jobs-hiring-signals (GET /jobs/hiring-signals)
- *   params: 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters' $provider, string $token, string $company, string $org, string $tenant, string $datacenter, string $site
+ *   params: 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg' $provider, string $token, string $company, string $org, string $tenant, string $datacenter, string $site, string $host, string $board
  * @method mixed leverPosting(array $params = [], array $options = []) jobs-lever-posting (GET /jobs/lever/posting)
  *   params: string $company, string $id
  * @method mixed leverPostings(array $params = [], array $options = []) jobs-lever-postings (GET /jobs/lever/postings)
  *   params: string $company, string $department, string $location, bool $remote
+ * @method mixed oracleBoard(array $params = [], array $options = []) jobs-oracle-board (GET /jobs/oracle/board)
+ *   params: string $host, string $site, string $search, int $limit, int $offset
+ * @method mixed oracleJob(array $params = [], array $options = []) jobs-oracle-job (GET /jobs/oracle/job)
+ *   params: string $host, string $site, string $id
+ * @method mixed personioFeed(array $params = [], array $options = []) jobs-personio-feed (GET /jobs/personio/feed)
+ *   params: string $company, string $department, string $location, bool $remote
+ * @method mixed recruiteeOffer(array $params = [], array $options = []) jobs-recruitee-offer (GET /jobs/recruitee/offer)
+ *   params: string $company, string $id
+ * @method mixed recruiteeOffers(array $params = [], array $options = []) jobs-recruitee-offers (GET /jobs/recruitee/offers)
+ *   params: string $company, string $department, string $location, bool $remote
+ * @method mixed ripplingBoard(array $params = [], array $options = []) jobs-rippling-board (GET /jobs/rippling/board)
+ *   params: string $company, string $department, string $location, bool $remote
+ * @method mixed ripplingJob(array $params = [], array $options = []) jobs-rippling-job (GET /jobs/rippling/job)
+ *   params: string $company, string $id
  * @method mixed smartrecruitersPosting(array $params = [], array $options = []) jobs-smartrecruiters-posting (GET /jobs/smartrecruiters/posting)
  *   params: string $company, string $id
  * @method mixed smartrecruitersPostings(array $params = [], array $options = []) jobs-smartrecruiters-postings (GET /jobs/smartrecruiters/postings)
  *   params: string $company, int $limit, int $offset
+ * @method mixed teamtailorJobs(array $params = [], array $options = []) jobs-teamtailor-jobs (GET /jobs/teamtailor/jobs)
+ *   params: string $company, string $department, string $location, bool $remote
+ * @method mixed ukgBoard(array $params = [], array $options = []) jobs-ukg-board (GET /jobs/ukg/board)
+ *   params: string $tenant, string $board, string $search, int $limit, int $offset
+ * @method mixed workablePosting(array $params = [], array $options = []) jobs-workable-posting (GET /jobs/workable/posting)
+ *   params: string $company, string $id
+ * @method mixed workablePostings(array $params = [], array $options = []) jobs-workable-postings (GET /jobs/workable/postings)
+ *   params: string $company, string $search, string $department, string $location, bool $remote
  * @method mixed workdayBoard(array $params = [], array $options = []) jobs-workday-board (GET /jobs/workday/board)
  *   params: string $tenant, string $datacenter, string $site, string $search, int $limit, int $offset
  * @method mixed workdayJob(array $params = [], array $options = []) jobs-workday-job (GET /jobs/workday/job)
@@ -1420,6 +1474,34 @@ abstract class SpotifyGroup {}
 abstract class SteamGroup {}
 
 /**
+ * @method mixed birthdays(array $params = [], array $options = []) tcdb-birthdays (GET /tcdb/birthdays)
+ *   params: int $month, int $day, int $limit
+ * @method mixed card(array $params = [], array $options = []) tcdb-card (GET /tcdb/card)
+ *   params: string $set_id, string $card_id, string $path, string $url
+ * @method mixed cardOfTheDay(array $params = [], array $options = []) tcdb-card-of-the-day (GET /tcdb/card-of-the-day)
+ *   params: int $page, int $limit
+ * @method mixed companies(array $params = [], array $options = []) tcdb-companies (GET /tcdb/companies)
+ *   params: int $limit
+ * @method mixed person(array $params = [], array $options = []) tcdb-person (GET /tcdb/person)
+ *   params: string $id, string $path, string $url, int $limit
+ * @method mixed releases(array $params = [], array $options = []) tcdb-releases (GET /tcdb/releases)
+ *   params: int $limit
+ * @method mixed search(array $params = [], array $options = []) tcdb-search (GET /tcdb/search)
+ *   params: string $q, 'Baseball'|'Basketball'|'Boxing'|'Cricket'|'Football'|'Gaming'|'Golf'|'Hockey'|'Misc Sports'|'MMA'|'Multi-Sport'|'Non-Sport'|'Racing'|'Soccer'|'Tennis'|'Wrestling' $category, int $limit
+ * @method mixed set(array $params = [], array $options = []) tcdb-set (GET /tcdb/set)
+ *   params: string $id, string $path, string $url, int $limit
+ * @method mixed sets(array $params = [], array $options = []) tcdb-sets (GET /tcdb/sets)
+ *   params: 'Baseball'|'Basketball'|'Boxing'|'Cricket'|'Football'|'Gaming'|'Golf'|'Hockey'|'Misc Sports'|'MMA'|'Multi-Sport'|'Non-Sport'|'Racing'|'Soccer'|'Tennis'|'Wrestling' $sport, string $year, int $limit
+ * @method mixed tagged(array $params = [], array $options = []) tcdb-tagged (GET /tcdb/tagged)
+ *   params: string $id, string $path, string $url, 'Baseball'|'Basketball'|'Boxing'|'Cricket'|'Football'|'Gaming'|'Golf'|'Hockey'|'Misc Sports'|'MMA'|'Multi-Sport'|'Non-Sport'|'Racing'|'Soccer'|'Tennis'|'Wrestling' $sport, int $page, int $limit
+ * @method mixed team(array $params = [], array $options = []) tcdb-team (GET /tcdb/team)
+ *   params: string $id, string $path, string $url, int $limit
+ * @method mixed topSets(array $params = [], array $options = []) tcdb-top-sets (GET /tcdb/top-sets)
+ *   params: int $limit
+ */
+abstract class TcdbGroup {}
+
+/**
  * @method mixed category(array $params = [], array $options = []) tiktok-category (GET /tiktok/category)
  * @method mixed videoComments(array $params = [], array $options = []) tiktok-video-comments (GET /tiktok/comments)
  *   params: string $aweme_id, int $cursor
@@ -1737,6 +1819,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\SpotifyPodcastsGroup $spotifyPodcasts
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
  * @property-read \Crawlora\Generated\SteamGroup $steam
+ * @property-read \Crawlora\Generated\TcdbGroup $tcdb
  * @property-read \Crawlora\Generated\TiktokGroup $tiktok
  * @property-read \Crawlora\Generated\TmdbGroup $tmdb
  * @property-read \Crawlora\Generated\TripAdvisorGroup $tripAdvisor

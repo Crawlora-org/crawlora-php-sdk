@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.19.0-sdk.1
+
+- Regenerated from the public API contract (737 to 776 operations). Adds **7 more
+  ATS job-board providers** — Workable, Recruitee, Rippling, Personio, Teamtailor,
+  Oracle Recruiting Cloud, and UKG Pro — bringing the `/jobs` family to 12 providers,
+  plus the **jobs dataset** (`/datasets/jobs` search, item, facets, companies) over
+  live postings crawled from every discovered company ATS board.
+
 ## v1.18.0-sdk.1
 
 - Published to Packagist as the Composer-valid `1.18.0-beta.1` tag; PHP users
