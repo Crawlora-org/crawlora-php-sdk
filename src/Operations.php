@@ -7244,6 +7244,27 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'datasets-jobs-company-item' => [
+            'id' => 'datasets-jobs-company-item',
+            'method' => 'GET',
+            'path' => '/datasets/jobs/companies/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'datasets-jobs-facets' => [
             'id' => 'datasets-jobs-facets',
             'method' => 'GET',
@@ -7289,6 +7310,64 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'datasets-jobs-nearby' => [
+            'id' => 'datasets-jobs-nearby',
+            'method' => 'GET',
+            'path' => '/datasets/jobs/nearby',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'lon',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'radius_km',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'provider',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'include_closed',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'datasets-jobs-search' => [
             'id' => 'datasets-jobs-search',
@@ -8604,6 +8683,16 @@ final class Operations
                     'type' => 'string',
                 ],
                 [
+                    'name' => 'reporting_currency',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'has_financials',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
                     'name' => 'min_revenue',
                     'in' => 'query',
                     'type' => 'number',
@@ -8782,6 +8871,16 @@ final class Operations
                     'name' => 'entity_type',
                     'in' => 'query',
                     'type' => 'string',
+                ],
+                [
+                    'name' => 'reporting_currency',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'has_financials',
+                    'in' => 'query',
+                    'type' => 'boolean',
                 ],
                 [
                     'name' => 'min_revenue',
@@ -14614,6 +14713,97 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'jobs-eightfold-board' => [
+            'id' => 'jobs-eightfold-board',
+            'method' => 'GET',
+            'path' => '/jobs/eightfold/board',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tenant',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'domain',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'jobs-eightfold-job' => [
+            'id' => 'jobs-eightfold-job',
+            'method' => 'GET',
+            'path' => '/jobs/eightfold/job',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tenant',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'domain',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'jobs-greenhouse-board' => [
             'id' => 'jobs-greenhouse-board',
             'method' => 'GET',
@@ -14701,6 +14891,8 @@ final class Operations
                         'teamtailor',
                         'oracle',
                         'ukg',
+                        'icims',
+                        'eightfold',
                     ],
                 ],
                 [
@@ -14740,6 +14932,95 @@ final class Operations
                 ],
                 [
                     'name' => 'board',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'domain',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'jobs-icims-board' => [
+            'id' => 'jobs-icims-board',
+            'method' => 'GET',
+            'path' => '/jobs/icims/board',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'domain',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'keywords',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'jobs-icims-job' => [
+            'id' => 'jobs-icims-job',
+            'method' => 'GET',
+            'path' => '/jobs/icims/job',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'domain',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'lang',
                     'in' => 'query',
                     'type' => 'string',
                 ],
@@ -26971,7 +27252,9 @@ final class Operations
             'produces' => [
                 'application/json',
             ],
-            'security' => [],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'tcdb-card' => [
             'id' => 'tcdb-card',
@@ -27009,7 +27292,9 @@ final class Operations
             'produces' => [
                 'application/json',
             ],
-            'security' => [],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'tcdb-card-of-the-day' => [
             'id' => 'tcdb-card-of-the-day',
@@ -27037,7 +27322,9 @@ final class Operations
             'produces' => [
                 'application/json',
             ],
-            'security' => [],
+            'security' => [
+                'ApiKeyAuth',
+            ],
             'paginatable' => true,
         ],
         'tcdb-companies' => [
@@ -27061,7 +27348,9 @@ final class Operations
             'produces' => [
                 'application/json',
             ],
-            'security' => [],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'tcdb-person' => [
             'id' => 'tcdb-person',
@@ -27099,7 +27388,9 @@ final class Operations
             'produces' => [
                 'application/json',
             ],
-            'security' => [],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'tcdb-releases' => [
             'id' => 'tcdb-releases',
@@ -27122,7 +27413,9 @@ final class Operations
             'produces' => [
                 'application/json',
             ],
-            'security' => [],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'tcdb-search' => [
             'id' => 'tcdb-search',
@@ -27174,7 +27467,9 @@ final class Operations
             'produces' => [
                 'application/json',
             ],
-            'security' => [],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'tcdb-set' => [
             'id' => 'tcdb-set',
@@ -27212,7 +27507,9 @@ final class Operations
             'produces' => [
                 'application/json',
             ],
-            'security' => [],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'tcdb-sets' => [
             'id' => 'tcdb-sets',
@@ -27265,7 +27562,9 @@ final class Operations
             'produces' => [
                 'application/json',
             ],
-            'security' => [],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'tcdb-tagged' => [
             'id' => 'tcdb-tagged',
@@ -27331,7 +27630,9 @@ final class Operations
             'produces' => [
                 'application/json',
             ],
-            'security' => [],
+            'security' => [
+                'ApiKeyAuth',
+            ],
             'paginatable' => true,
         ],
         'tcdb-team' => [
@@ -27370,7 +27671,9 @@ final class Operations
             'produces' => [
                 'application/json',
             ],
-            'security' => [],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'tcdb-top-sets' => [
             'id' => 'tcdb-top-sets',
@@ -27393,7 +27696,9 @@ final class Operations
             'produces' => [
                 'application/json',
             ],
-            'security' => [],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'tiktok-category' => [
             'id' => 'tiktok-category',
@@ -31348,8 +31653,10 @@ final class Operations
             'housingMarketsItem' => 'datasets-housing-markets-item',
             'housingMarketsSearch' => 'datasets-housing-markets-search',
             'jobsCompanies' => 'datasets-jobs-companies',
+            'jobsCompanyItem' => 'datasets-jobs-company-item',
             'jobsFacets' => 'datasets-jobs-facets',
             'jobsItem' => 'datasets-jobs-item',
+            'jobsNearby' => 'datasets-jobs-nearby',
             'jobsSearch' => 'datasets-jobs-search',
             'journalistsFacets' => 'datasets-journalists-facets',
             'journalistsItem' => 'datasets-journalists-item',
@@ -31538,9 +31845,13 @@ final class Operations
         'jobs' => [
             'ashbyBoard' => 'jobs-ashby-board',
             'companySearch' => 'jobs-company-search',
+            'eightfoldBoard' => 'jobs-eightfold-board',
+            'eightfoldJob' => 'jobs-eightfold-job',
             'greenhouseBoard' => 'jobs-greenhouse-board',
             'greenhouseJob' => 'jobs-greenhouse-job',
             'hiringSignals' => 'jobs-hiring-signals',
+            'icimsBoard' => 'jobs-icims-board',
+            'icimsJob' => 'jobs-icims-job',
             'leverPosting' => 'jobs-lever-posting',
             'leverPostings' => 'jobs-lever-postings',
             'oracleBoard' => 'jobs-oracle-board',
@@ -32082,7 +32393,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 776;
+    public const OPERATION_COUNT = 782;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -32225,8 +32536,10 @@ final class Operations
         'datasets-housing-markets-item',
         'datasets-housing-markets-search',
         'datasets-jobs-companies',
+        'datasets-jobs-company-item',
         'datasets-jobs-facets',
         'datasets-jobs-item',
+        'datasets-jobs-nearby',
         'datasets-jobs-search',
         'datasets-journalists-facets',
         'datasets-journalists-item',
@@ -32395,9 +32708,13 @@ final class Operations
         'instagram-reels',
         'jobs-ashby-board',
         'jobs-company-search',
+        'jobs-eightfold-board',
+        'jobs-eightfold-job',
         'jobs-greenhouse-board',
         'jobs-greenhouse-job',
         'jobs-hiring-signals',
+        'jobs-icims-board',
+        'jobs-icims-job',
         'jobs-lever-posting',
         'jobs-lever-postings',
         'jobs-oracle-board',
@@ -33042,8 +33359,10 @@ final class OperationId
     public const DATASETS_HOUSING_MARKETS_ITEM = 'datasets-housing-markets-item';
     public const DATASETS_HOUSING_MARKETS_SEARCH = 'datasets-housing-markets-search';
     public const DATASETS_JOBS_COMPANIES = 'datasets-jobs-companies';
+    public const DATASETS_JOBS_COMPANY_ITEM = 'datasets-jobs-company-item';
     public const DATASETS_JOBS_FACETS = 'datasets-jobs-facets';
     public const DATASETS_JOBS_ITEM = 'datasets-jobs-item';
+    public const DATASETS_JOBS_NEARBY = 'datasets-jobs-nearby';
     public const DATASETS_JOBS_SEARCH = 'datasets-jobs-search';
     public const DATASETS_JOURNALISTS_FACETS = 'datasets-journalists-facets';
     public const DATASETS_JOURNALISTS_ITEM = 'datasets-journalists-item';
@@ -33211,9 +33530,13 @@ final class OperationId
     public const INSTAGRAM_REELS = 'instagram-reels';
     public const JOBS_ASHBY_BOARD = 'jobs-ashby-board';
     public const JOBS_COMPANY_SEARCH = 'jobs-company-search';
+    public const JOBS_EIGHTFOLD_BOARD = 'jobs-eightfold-board';
+    public const JOBS_EIGHTFOLD_JOB = 'jobs-eightfold-job';
     public const JOBS_GREENHOUSE_BOARD = 'jobs-greenhouse-board';
     public const JOBS_GREENHOUSE_JOB = 'jobs-greenhouse-job';
     public const JOBS_HIRING_SIGNALS = 'jobs-hiring-signals';
+    public const JOBS_ICIMS_BOARD = 'jobs-icims-board';
+    public const JOBS_ICIMS_JOB = 'jobs-icims-job';
     public const JOBS_LEVER_POSTING = 'jobs-lever-posting';
     public const JOBS_LEVER_POSTINGS = 'jobs-lever-postings';
     public const JOBS_ORACLE_BOARD = 'jobs-oracle-board';
