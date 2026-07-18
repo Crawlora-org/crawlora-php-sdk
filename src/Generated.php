@@ -341,10 +341,14 @@ abstract class WebGroup {}
  *   params: string $q, string $region_type, string $state_code, string $property_type, string $parent_metro_code, string $zip_code, string $period, bool $latest, float $min_median_sale_price, float $max_median_sale_price, float $min_median_list_price, float $max_median_list_price, float $min_price_to_income, float $max_price_to_income, int $min_salary_to_buy, int $max_salary_to_buy, float $min_median_dom, float $max_median_dom, int $min_inventory, int $max_inventory, int $min_homes_sold, string $sort, int $page, int $page_size
  * @method mixed jobsCompanies(array $params = [], array $options = []) datasets-jobs-companies (GET /datasets/jobs/companies)
  *   params: string $q, string $provider, string $status, int $min_open_roles, string $sort, int $page, int $page_size
+ * @method mixed jobsCompanyItem(array $params = [], array $options = []) datasets-jobs-company-item (GET /datasets/jobs/companies/{id})
+ *   params: string $id
  * @method mixed jobsFacets(array $params = [], array $options = []) datasets-jobs-facets (GET /datasets/jobs/facets)
  *   params: int $size
  * @method mixed jobsItem(array $params = [], array $options = []) datasets-jobs-item (GET /datasets/jobs/items/{id})
  *   params: string $id
+ * @method mixed jobsNearby(array $params = [], array $options = []) datasets-jobs-nearby (GET /datasets/jobs/nearby)
+ *   params: float $lat, float $lon, float $radius_km, string $provider, bool $include_closed, int $page, int $page_size
  * @method mixed jobsSearch(array $params = [], array $options = []) datasets-jobs-search (GET /datasets/jobs/search)
  *   params: string $q, string $company, string $provider, string $department, string $location, string $employment_type, bool $remote, bool $include_closed, string $sort, int $page, int $page_size
  * @method mixed journalistsFacets(array $params = [], array $options = []) datasets-journalists-facets (GET /datasets/journalists/facets)
@@ -386,7 +390,7 @@ abstract class WebGroup {}
  * @method mixed producthuntTrendsSearch(array $params = [], array $options = []) datasets-producthunt-trends-search (GET /datasets/producthunt-trends/search)
  *   params: string $group_by, string $topic, string $launched_after, string $launched_before, int $min_votes, int $min_launches, string $sort, int $page, int $page_size
  * @method mixed secCompaniesFacets(array $params = [], array $options = []) datasets-sec-companies-facets (GET /datasets/sec-companies/facets)
- *   params: string $facet, string $q, string $ticker, string $sic, string $exchange, string $state_of_incorporation, string $entity_type, float $min_revenue, string $form_filed
+ *   params: string $facet, string $q, string $ticker, string $sic, string $exchange, string $state_of_incorporation, string $entity_type, string $reporting_currency, bool $has_financials, float $min_revenue, string $form_filed
  * @method mixed secCompaniesFinancials(array $params = [], array $options = []) datasets-sec-companies-financials (GET /datasets/sec-companies/financials/{cik})
  *   params: string $cik, string $statement, string $period, int $from, int $to, int $limit
  * @method mixed secCompaniesInsider(array $params = [], array $options = []) datasets-sec-companies-insider (GET /datasets/sec-companies/insider/{cik})
@@ -394,7 +398,7 @@ abstract class WebGroup {}
  * @method mixed secCompaniesItem(array $params = [], array $options = []) datasets-sec-companies-item (GET /datasets/sec-companies/items/{cik})
  *   params: string $cik
  * @method mixed secCompaniesSearch(array $params = [], array $options = []) datasets-sec-companies-search (GET /datasets/sec-companies/search)
- *   params: string $q, string $ticker, string $cik, string $sic, string $sic_description, string $exchange, string $state_of_incorporation, string $entity_type, float $min_revenue, float $max_revenue, float $min_net_income, float $min_total_assets, string $form_filed, int $min_insider_txn_count_90d, string $sort, int $page, int $page_size
+ *   params: string $q, string $ticker, string $cik, string $sic, string $sic_description, string $exchange, string $state_of_incorporation, string $entity_type, string $reporting_currency, bool $has_financials, float $min_revenue, float $max_revenue, float $min_net_income, float $min_total_assets, string $form_filed, int $min_insider_txn_count_90d, string $sort, int $page, int $page_size
  * @method mixed secInstitutionalPositionsFacets(array $params = [], array $options = []) datasets-sec-institutional-positions-facets (GET /datasets/sec-institutional-positions/facets)
  *   params: string $facet, string $manager_cik, string $issuer_name, string $cusip
  * @method mixed secInstitutionalPositionsSearch(array $params = [], array $options = []) datasets-sec-institutional-positions-search (GET /datasets/sec-institutional-positions/search)
@@ -714,12 +718,20 @@ abstract class InstagramGroup {}
  *   params: string $org, bool $include_compensation
  * @method mixed companySearch(array $params = [], array $options = []) jobs-company-search (GET /jobs/company-search)
  *   params: string $slug
+ * @method mixed eightfoldBoard(array $params = [], array $options = []) jobs-eightfold-board (GET /jobs/eightfold/board)
+ *   params: string $tenant, string $domain, string $query, string $location, int $limit, int $offset
+ * @method mixed eightfoldJob(array $params = [], array $options = []) jobs-eightfold-job (GET /jobs/eightfold/job)
+ *   params: string $tenant, string $domain, string $id
  * @method mixed greenhouseBoard(array $params = [], array $options = []) jobs-greenhouse-board (GET /jobs/greenhouse/board)
  *   params: string $token, bool $content
  * @method mixed greenhouseJob(array $params = [], array $options = []) jobs-greenhouse-job (GET /jobs/greenhouse/job)
  *   params: string $token, string $id
  * @method mixed hiringSignals(array $params = [], array $options = []) jobs-hiring-signals (GET /jobs/hiring-signals)
- *   params: 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg' $provider, string $token, string $company, string $org, string $tenant, string $datacenter, string $site, string $host, string $board
+ *   params: 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold' $provider, string $token, string $company, string $org, string $tenant, string $datacenter, string $site, string $host, string $board, string $domain
+ * @method mixed icimsBoard(array $params = [], array $options = []) jobs-icims-board (GET /jobs/icims/board)
+ *   params: string $domain, string $keywords, string $location, int $page, int $limit
+ * @method mixed icimsJob(array $params = [], array $options = []) jobs-icims-job (GET /jobs/icims/job)
+ *   params: string $domain, string $id, string $lang
  * @method mixed leverPosting(array $params = [], array $options = []) jobs-lever-posting (GET /jobs/lever/posting)
  *   params: string $company, string $id
  * @method mixed leverPostings(array $params = [], array $options = []) jobs-lever-postings (GET /jobs/lever/postings)
