@@ -27720,6 +27720,26 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'threads-post-replies' => [
+            'id' => 'threads-post-replies',
+            'method' => 'GET',
+            'path' => '/threads/post/{username}/{code}/replies',
+            'pathParams' => [
+                'username',
+                'code',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'threads-profile' => [
             'id' => 'threads-profile',
             'method' => 'GET',
@@ -27728,6 +27748,59 @@ final class Operations
                 'username',
             ],
             'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'threads-profile-posts' => [
+            'id' => 'threads-profile-posts',
+            'method' => 'GET',
+            'path' => '/threads/profile/{username}/posts',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'threads-search' => [
+            'id' => 'threads-search',
+            'method' => 'GET',
+            'path' => '/threads/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -32290,7 +32363,10 @@ final class Operations
         ],
         'threads' => [
             'post' => 'threads-post',
+            'postReplies' => 'threads-post-replies',
             'profile' => 'threads-profile',
+            'profilePosts' => 'threads-profile-posts',
+            'search' => 'threads-search',
         ],
         'tiktok' => [
             'category' => 'tiktok-category',
@@ -32436,7 +32512,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 784;
+    public const OPERATION_COUNT = 787;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -33103,7 +33179,10 @@ final class Operations
         'tcdb-team',
         'tcdb-top-sets',
         'threads-post',
+        'threads-post-replies',
         'threads-profile',
+        'threads-profile-posts',
+        'threads-search',
         'tiktok-category',
         'tiktok-video-comments',
         'tiktok-explore',
@@ -33927,7 +34006,10 @@ final class OperationId
     public const TCDB_TEAM = 'tcdb-team';
     public const TCDB_TOP_SETS = 'tcdb-top-sets';
     public const THREADS_POST = 'threads-post';
+    public const THREADS_POST_REPLIES = 'threads-post-replies';
     public const THREADS_PROFILE = 'threads-profile';
+    public const THREADS_PROFILE_POSTS = 'threads-profile-posts';
+    public const THREADS_SEARCH = 'threads-search';
     public const TIKTOK_CATEGORY = 'tiktok-category';
     public const TIKTOK_CHALLENGE = 'tiktok-challenge';
     public const TIKTOK_CHALLENGE_LIST = 'tiktok-challenge-list';

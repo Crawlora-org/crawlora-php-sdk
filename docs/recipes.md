@@ -38,6 +38,9 @@ $brand = $client->brand->retrieve(['domain' => 'stripe.com']);
 ```php
 $profile = $client->threads->profile(['username' => 'zuck']);
 $post = $client->threads->post(['username' => 'zuck', 'code' => 'DakyAavlKLZ']);
+$results = $client->threads->search(['q' => 'openai']);
+$posts = $client->threads->profilePosts(['username' => 'zuck']);
+$replies = $client->threads->postReplies(['username' => 'zuck', 'code' => 'DakyAavlKLZ']);
 ```
 
 ## Software, Reviews, And Market Datasets

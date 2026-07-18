@@ -1516,8 +1516,14 @@ abstract class TcdbGroup {}
 /**
  * @method mixed post(array $params = [], array $options = []) threads-post (GET /threads/post/{username}/{code})
  *   params: string $username, string $code
+ * @method mixed postReplies(array $params = [], array $options = []) threads-post-replies (GET /threads/post/{username}/{code}/replies)
+ *   params: string $username, string $code
  * @method mixed profile(array $params = [], array $options = []) threads-profile (GET /threads/profile/{username})
  *   params: string $username
+ * @method mixed profilePosts(array $params = [], array $options = []) threads-profile-posts (GET /threads/profile/{username}/posts)
+ *   params: string $username, string $cursor
+ * @method mixed search(array $params = [], array $options = []) threads-search (GET /threads/search)
+ *   params: string $q
  */
 abstract class ThreadsGroup {}
 
