@@ -33,6 +33,13 @@ $posts = $client->reddit->search(['q' => 'php', 'subreddit' => 'programming']);
 $brand = $client->brand->retrieve(['domain' => 'stripe.com']);
 ```
 
+## Threads Public Lookups
+
+```php
+$profile = $client->threads->profile(['username' => 'zuck']);
+$post = $client->threads->post(['username' => 'zuck', 'code' => 'DakyAavlKLZ']);
+```
+
 ## Software, Reviews, And Market Datasets
 
 Build a Chrome extension competitive-intelligence view without downloading the

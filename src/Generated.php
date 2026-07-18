@@ -1514,6 +1514,14 @@ abstract class SteamGroup {}
 abstract class TcdbGroup {}
 
 /**
+ * @method mixed post(array $params = [], array $options = []) threads-post (GET /threads/post/{username}/{code})
+ *   params: string $username, string $code
+ * @method mixed profile(array $params = [], array $options = []) threads-profile (GET /threads/profile/{username})
+ *   params: string $username
+ */
+abstract class ThreadsGroup {}
+
+/**
  * @method mixed category(array $params = [], array $options = []) tiktok-category (GET /tiktok/category)
  * @method mixed videoComments(array $params = [], array $options = []) tiktok-video-comments (GET /tiktok/comments)
  *   params: string $aweme_id, int $cursor
@@ -1832,6 +1840,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
  * @property-read \Crawlora\Generated\SteamGroup $steam
  * @property-read \Crawlora\Generated\TcdbGroup $tcdb
+ * @property-read \Crawlora\Generated\ThreadsGroup $threads
  * @property-read \Crawlora\Generated\TiktokGroup $tiktok
  * @property-read \Crawlora\Generated\TmdbGroup $tmdb
  * @property-read \Crawlora\Generated\TripAdvisorGroup $tripAdvisor

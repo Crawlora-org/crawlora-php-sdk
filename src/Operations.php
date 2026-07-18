@@ -27700,6 +27700,45 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'threads-post' => [
+            'id' => 'threads-post',
+            'method' => 'GET',
+            'path' => '/threads/post/{username}/{code}',
+            'pathParams' => [
+                'username',
+                'code',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'threads-profile' => [
+            'id' => 'threads-profile',
+            'method' => 'GET',
+            'path' => '/threads/profile/{username}',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'tiktok-category' => [
             'id' => 'tiktok-category',
             'method' => 'GET',
@@ -32249,6 +32288,10 @@ final class Operations
             'team' => 'tcdb-team',
             'topSets' => 'tcdb-top-sets',
         ],
+        'threads' => [
+            'post' => 'threads-post',
+            'profile' => 'threads-profile',
+        ],
         'tiktok' => [
             'category' => 'tiktok-category',
             'videoComments' => 'tiktok-video-comments',
@@ -32393,7 +32436,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 782;
+    public const OPERATION_COUNT = 784;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -33059,6 +33102,8 @@ final class Operations
         'tcdb-tagged',
         'tcdb-team',
         'tcdb-top-sets',
+        'threads-post',
+        'threads-profile',
         'tiktok-category',
         'tiktok-video-comments',
         'tiktok-explore',
@@ -33881,6 +33926,8 @@ final class OperationId
     public const TCDB_TAGGED = 'tcdb-tagged';
     public const TCDB_TEAM = 'tcdb-team';
     public const TCDB_TOP_SETS = 'tcdb-top-sets';
+    public const THREADS_POST = 'threads-post';
+    public const THREADS_PROFILE = 'threads-profile';
     public const TIKTOK_CATEGORY = 'tiktok-category';
     public const TIKTOK_CHALLENGE = 'tiktok-challenge';
     public const TIKTOK_CHALLENGE_LIST = 'tiktok-challenge-list';
