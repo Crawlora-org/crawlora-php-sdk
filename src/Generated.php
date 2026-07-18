@@ -340,7 +340,7 @@ abstract class WebGroup {}
  * @method mixed housingMarketsSearch(array $params = [], array $options = []) datasets-housing-markets-search (GET /datasets/housing-markets/search)
  *   params: string $q, string $region_type, string $state_code, string $property_type, string $parent_metro_code, string $zip_code, string $period, bool $latest, float $min_median_sale_price, float $max_median_sale_price, float $min_median_list_price, float $max_median_list_price, float $min_price_to_income, float $max_price_to_income, int $min_salary_to_buy, int $max_salary_to_buy, float $min_median_dom, float $max_median_dom, int $min_inventory, int $max_inventory, int $min_homes_sold, string $sort, int $page, int $page_size
  * @method mixed jobsCompanies(array $params = [], array $options = []) datasets-jobs-companies (GET /datasets/jobs/companies)
- *   params: string $q, string $provider, string $status, int $min_open_roles, string $sort, int $page, int $page_size
+ *   params: string $q, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold' $provider, string $status, int $min_open_roles, string $sort, int $page, int $page_size
  * @method mixed jobsCompanyItem(array $params = [], array $options = []) datasets-jobs-company-item (GET /datasets/jobs/companies/{id})
  *   params: string $id
  * @method mixed jobsFacets(array $params = [], array $options = []) datasets-jobs-facets (GET /datasets/jobs/facets)
@@ -348,9 +348,9 @@ abstract class WebGroup {}
  * @method mixed jobsItem(array $params = [], array $options = []) datasets-jobs-item (GET /datasets/jobs/items/{id})
  *   params: string $id
  * @method mixed jobsNearby(array $params = [], array $options = []) datasets-jobs-nearby (GET /datasets/jobs/nearby)
- *   params: float $lat, float $lon, float $radius_km, string $provider, bool $include_closed, int $page, int $page_size
+ *   params: float $lat, float $lon, float $radius_km, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold' $provider, bool $include_closed, int $page, int $page_size
  * @method mixed jobsSearch(array $params = [], array $options = []) datasets-jobs-search (GET /datasets/jobs/search)
- *   params: string $q, string $company, string $provider, string $department, string $location, string $employment_type, bool $remote, bool $include_closed, string $sort, int $page, int $page_size
+ *   params: string $q, string $company, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold' $provider, string $department, string $location, string $employment_type, bool $remote, bool $include_closed, string $sort, int $page, int $page_size
  * @method mixed journalistsFacets(array $params = [], array $options = []) datasets-journalists-facets (GET /datasets/journalists/facets)
  *   params: string $facet, string $q, string $outlet, string $vertical, string $topic, string $contact_type
  * @method mixed journalistsItem(array $params = [], array $options = []) datasets-journalists-item (GET /datasets/journalists/items/{outlet}/{slug})
