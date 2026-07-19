@@ -5681,6 +5681,249 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'datasets-boxofficemojo-facets' => [
+            'id' => 'datasets-boxofficemojo-facets',
+            'method' => 'GET',
+            'path' => '/datasets/boxofficemojo/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'title_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'lifetime_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'gross_band',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'franchise',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'brand',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'in_lifetime_top_1000',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_worldwide',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_worldwide',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_domestic',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_foreign_share',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_domestic_share',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'hydrated',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'is_billion_dollar',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-boxofficemojo-item' => [
+            'id' => 'datasets-boxofficemojo-item',
+            'method' => 'GET',
+            'path' => '/datasets/boxofficemojo/items/{title_id}',
+            'pathParams' => [
+                'title_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-boxofficemojo-search' => [
+            'id' => 'datasets-boxofficemojo-search',
+            'method' => 'GET',
+            'path' => '/datasets/boxofficemojo/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'title_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'lifetime_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'gross_band',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'franchise',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'brand',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'in_lifetime_top_1000',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'hydrated',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'is_billion_dollar',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_worldwide',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_worldwide',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_domestic',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_foreign_share',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_domestic_share',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'datasets-chrome-extensions-changes' => [
             'id' => 'datasets-chrome-extensions-changes',
             'method' => 'GET',
@@ -31793,6 +32036,9 @@ final class Operations
             'appsChartsSearch' => 'datasets-apps-charts-search',
             'appsReviewsSearch' => 'datasets-apps-reviews-search',
             'appsSearch' => 'datasets-apps-search',
+            'boxofficemojoFacets' => 'datasets-boxofficemojo-facets',
+            'boxofficemojoItem' => 'datasets-boxofficemojo-item',
+            'boxofficemojoSearch' => 'datasets-boxofficemojo-search',
             'chromeExtensionsChanges' => 'datasets-chrome-extensions-changes',
             'chromeExtensionsFacets' => 'datasets-chrome-extensions-facets',
             'chromeExtensionsHistory' => 'datasets-chrome-extensions-history',
@@ -32560,7 +32806,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 787;
+    public const OPERATION_COUNT = 790;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -32683,6 +32929,9 @@ final class Operations
         'datasets-apps-charts-search',
         'datasets-apps-reviews-search',
         'datasets-apps-search',
+        'datasets-boxofficemojo-facets',
+        'datasets-boxofficemojo-item',
+        'datasets-boxofficemojo-search',
         'datasets-chrome-extensions-changes',
         'datasets-chrome-extensions-facets',
         'datasets-chrome-extensions-history',
@@ -33511,6 +33760,9 @@ final class OperationId
     public const DATASETS_APPS_CHARTS_SEARCH = 'datasets-apps-charts-search';
     public const DATASETS_APPS_REVIEWS_SEARCH = 'datasets-apps-reviews-search';
     public const DATASETS_APPS_SEARCH = 'datasets-apps-search';
+    public const DATASETS_BOXOFFICEMOJO_FACETS = 'datasets-boxofficemojo-facets';
+    public const DATASETS_BOXOFFICEMOJO_ITEM = 'datasets-boxofficemojo-item';
+    public const DATASETS_BOXOFFICEMOJO_SEARCH = 'datasets-boxofficemojo-search';
     public const DATASETS_CHROME_EXTENSIONS_CHANGES = 'datasets-chrome-extensions-changes';
     public const DATASETS_CHROME_EXTENSIONS_FACETS = 'datasets-chrome-extensions-facets';
     public const DATASETS_CHROME_EXTENSIONS_HISTORY = 'datasets-chrome-extensions-history';
