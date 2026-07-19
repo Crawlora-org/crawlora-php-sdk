@@ -43,6 +43,16 @@ $posts = $client->threads->profilePosts(['username' => 'zuck']);
 $replies = $client->threads->postReplies(['username' => 'zuck', 'code' => 'DakyAavlKLZ']);
 ```
 
+## Box Office Mojo Dataset
+
+Search theatrical box-office records, fetch one title, and facet the same filter set.
+
+```php
+$titles = $client->datasets->boxofficemojoSearch(['q' => 'avatar', 'sort' => 'worldwide_desc']);
+$avatar = $client->datasets->boxofficemojoItem(['title_id' => 'tt0499549']);
+$years = $client->datasets->boxofficemojoFacets(['facet' => 'years_active', 'gross_band' => 'over_1b']);
+```
+
 ## Software, Reviews, And Market Datasets
 
 Build a Chrome extension competitive-intelligence view without downloading the
