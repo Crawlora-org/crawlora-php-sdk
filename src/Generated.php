@@ -301,12 +301,6 @@ abstract class WebGroup {}
  *   params: string $q, string $store, string $app_id, string $country, int $min_score, string $sort, int $page, int $page_size
  * @method mixed appsSearch(array $params = [], array $options = []) datasets-apps-search (GET /datasets/apps/search)
  *   params: string $q, string $store, string $category, string $country, string $developer, bool $free, float $min_rating, int $min_reviews, string $sort, int $page, int $page_size
- * @method mixed boxofficemojoFacets(array $params = [], array $options = []) datasets-boxofficemojo-facets (GET /datasets/boxofficemojo/facets)
- *   params: string $facet, string $q, int $year, string $gross_band, int $min_worldwide, bool $hydrated
- * @method mixed boxofficemojoItem(array $params = [], array $options = []) datasets-boxofficemojo-item (GET /datasets/boxofficemojo/items/{title_id})
- *   params: string $title_id
- * @method mixed boxofficemojoSearch(array $params = [], array $options = []) datasets-boxofficemojo-search (GET /datasets/boxofficemojo/search)
- *   params: string $q, string $title_id, int $year, int $lifetime_year, string $gross_band, string $franchise, string $brand, string $genre, bool $in_lifetime_top_1000, bool $hydrated, bool $is_billion_dollar, int $min_worldwide, int $max_worldwide, int $min_domestic, float $min_foreign_share, float $max_domestic_share, string $sort, int $page, int $page_size
  * @method mixed chromeExtensionsChanges(array $params = [], array $options = []) datasets-chrome-extensions-changes (GET /datasets/chrome-extensions/changes)
  *   params: string $change_type, int $limit
  * @method mixed chromeExtensionsFacets(array $params = [], array $options = []) datasets-chrome-extensions-facets (GET /datasets/chrome-extensions/facets)
