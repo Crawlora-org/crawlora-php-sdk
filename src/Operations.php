@@ -653,6 +653,428 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'apple-books-audiobook-series' => [
+            'id' => 'apple-books-audiobook-series',
+            'method' => 'GET',
+            'path' => '/apple-books/audiobook-series/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'apple-books-audiobook-search' => [
+            'id' => 'apple-books-audiobook-search',
+            'method' => 'GET',
+            'path' => '/apple-books/audiobook/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'term',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'apple-books-audiobook' => [
+            'id' => 'apple-books-audiobook',
+            'method' => 'GET',
+            'path' => '/apple-books/audiobook/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'apple-books-audiobook-reviews' => [
+            'id' => 'apple-books-audiobook-reviews',
+            'method' => 'GET',
+            'path' => '/apple-books/audiobook/{id}/reviews',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'apple-books-audiobook-similar' => [
+            'id' => 'apple-books-audiobook-similar',
+            'method' => 'GET',
+            'path' => '/apple-books/audiobook/{id}/similar',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'apple-books-author' => [
+            'id' => 'apple-books-author',
+            'method' => 'GET',
+            'path' => '/apple-books/author/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'apple-books-book' => [
+            'id' => 'apple-books-book',
+            'method' => 'GET',
+            'path' => '/apple-books/book/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'apple-books-book-reviews' => [
+            'id' => 'apple-books-book-reviews',
+            'method' => 'GET',
+            'path' => '/apple-books/book/{id}/reviews',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'apple-books-book-similar' => [
+            'id' => 'apple-books-book-similar',
+            'method' => 'GET',
+            'path' => '/apple-books/book/{id}/similar',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'apple-books-charts' => [
+            'id' => 'apple-books-charts',
+            'method' => 'GET',
+            'path' => '/apple-books/charts',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'collection',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'apple-books-search' => [
+            'id' => 'apple-books-search',
+            'method' => 'GET',
+            'path' => '/apple-books/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'term',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'apple-books-series' => [
+            'id' => 'apple-books-series',
+            'method' => 'GET',
+            'path' => '/apple-books/series/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'apple-podcasts-charts' => [
             'id' => 'apple-podcasts-charts',
             'method' => 'GET',
@@ -1728,6 +2150,32 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                 ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'grossToDate',
+                        'maxNumTheaters',
+                        'openingWeekendGross',
+                        'openingNumTheaters',
+                        'releaseDate',
+                    ],
+                ],
+                [
+                    'name' => 'sortDir',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -1741,13 +2189,34 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+            'paginatable' => true,
         ],
         'boxofficemojo-brands' => [
             'id' => 'boxofficemojo-brands',
             'method' => 'GET',
             'path' => '/boxofficemojo/brands',
             'pathParams' => [],
-            'queryParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'totalGross',
+                        'numReleases',
+                        'grossToDate',
+                    ],
+                ],
+                [
+                    'name' => 'sortDir',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+            ],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -1892,6 +2361,32 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                 ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'grossToDate',
+                        'maxNumTheaters',
+                        'openingWeekendGross',
+                        'openingNumTheaters',
+                        'releaseDate',
+                    ],
+                ],
+                [
+                    'name' => 'sortDir',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -1905,13 +2400,34 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+            'paginatable' => true,
         ],
         'boxofficemojo-franchises' => [
             'id' => 'boxofficemojo-franchises',
             'method' => 'GET',
             'path' => '/boxofficemojo/franchises',
             'pathParams' => [],
-            'queryParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'totalGross',
+                        'numReleases',
+                        'grossToDate',
+                    ],
+                ],
+                [
+                    'name' => 'sortDir',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+            ],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -1946,6 +2462,32 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                 ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'grossToDate',
+                        'maxNumTheaters',
+                        'openingWeekendGross',
+                        'openingNumTheaters',
+                        'releaseDate',
+                    ],
+                ],
+                [
+                    'name' => 'sortDir',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -1959,13 +2501,34 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+            'paginatable' => true,
         ],
         'boxofficemojo-genres' => [
             'id' => 'boxofficemojo-genres',
             'method' => 'GET',
             'path' => '/boxofficemojo/genres',
             'pathParams' => [],
-            'queryParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'totalGross',
+                        'numTitles',
+                        'grossToDate',
+                    ],
+                ],
+                [
+                    'name' => 'sortDir',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+            ],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -6819,6 +7382,402 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'datasets-goodreads-authors-facets' => [
+            'id' => 'datasets-goodreads-authors-facets',
+            'method' => 'GET',
+            'path' => '/datasets/goodreads-authors/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_ratings_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-goodreads-authors-item' => [
+            'id' => 'datasets-goodreads-authors-item',
+            'method' => 'GET',
+            'path' => '/datasets/goodreads-authors/items/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-goodreads-authors-search' => [
+            'id' => 'datasets-goodreads-authors-search',
+            'method' => 'GET',
+            'path' => '/datasets/goodreads-authors/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_ratings_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-goodreads-books-facets' => [
+            'id' => 'datasets-goodreads-books-facets',
+            'method' => 'GET',
+            'path' => '/datasets/goodreads-books/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'publisher',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'author',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'author_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'series',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'isbn',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'isbn13',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_ratings_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_pages',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_pages',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_publication_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_publication_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-goodreads-books-item' => [
+            'id' => 'datasets-goodreads-books-item',
+            'method' => 'GET',
+            'path' => '/datasets/goodreads-books/items/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-goodreads-books-search' => [
+            'id' => 'datasets-goodreads-books-search',
+            'method' => 'GET',
+            'path' => '/datasets/goodreads-books/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'publisher',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'author',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'author_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'series',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'isbn',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'isbn13',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_ratings_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_pages',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_pages',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_publication_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_publication_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'datasets-google-map-businesses-facets' => [
             'id' => 'datasets-google-map-businesses-facets',
             'method' => 'GET',
@@ -7461,6 +8420,8 @@ final class Operations
                         'ukg',
                         'icims',
                         'eightfold',
+                        'gem',
+                        'pinpoint',
                     ],
                 ],
                 [
@@ -7612,6 +8573,8 @@ final class Operations
                         'ukg',
                         'icims',
                         'eightfold',
+                        'gem',
+                        'pinpoint',
                     ],
                 ],
                 [
@@ -7679,6 +8642,8 @@ final class Operations
                         'ukg',
                         'icims',
                         'eightfold',
+                        'gem',
+                        'pinpoint',
                     ],
                 ],
                 [
@@ -7705,6 +8670,21 @@ final class Operations
                     'name' => 'include_closed',
                     'in' => 'query',
                     'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_salary',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_salary',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'salary_currency',
+                    'in' => 'query',
+                    'type' => 'string',
                 ],
                 [
                     'name' => 'sort',
@@ -8139,6 +9119,811 @@ final class Operations
                     'name' => 'max_traffic_index',
                     'in' => 'query',
                     'type' => 'number',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-pitchbook-advisors-facets' => [
+            'id' => 'datasets-pitchbook-advisors-facets',
+            'method' => 'GET',
+            'path' => '/datasets/pitchbook-advisors/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'service_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'hq_country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'hq_state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_year_founded',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_year_founded',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-pitchbook-advisors-item' => [
+            'id' => 'datasets-pitchbook-advisors-item',
+            'method' => 'GET',
+            'path' => '/datasets/pitchbook-advisors/items/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-pitchbook-advisors-search' => [
+            'id' => 'datasets-pitchbook-advisors-search',
+            'method' => 'GET',
+            'path' => '/datasets/pitchbook-advisors/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'service_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'hq_country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'hq_state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_year_founded',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_year_founded',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-pitchbook-companies-facets' => [
+            'id' => 'datasets-pitchbook-companies-facets',
+            'method' => 'GET',
+            'path' => '/datasets/pitchbook-companies/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'primary_industry',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'financing_status',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'ownership_status',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'hq_country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'hq_state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_year_founded',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_year_founded',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_investor_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-pitchbook-companies-item' => [
+            'id' => 'datasets-pitchbook-companies-item',
+            'method' => 'GET',
+            'path' => '/datasets/pitchbook-companies/items/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-pitchbook-companies-search' => [
+            'id' => 'datasets-pitchbook-companies-search',
+            'method' => 'GET',
+            'path' => '/datasets/pitchbook-companies/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'primary_industry',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'financing_status',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'ownership_status',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'hq_country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'hq_state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_year_founded',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_year_founded',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_investor_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-pitchbook-funds-facets' => [
+            'id' => 'datasets-pitchbook-funds-facets',
+            'method' => 'GET',
+            'path' => '/datasets/pitchbook-funds/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'fund_strategy',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'fund_status',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_vintage_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_vintage_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-pitchbook-funds-item' => [
+            'id' => 'datasets-pitchbook-funds-item',
+            'method' => 'GET',
+            'path' => '/datasets/pitchbook-funds/items/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-pitchbook-funds-search' => [
+            'id' => 'datasets-pitchbook-funds-search',
+            'method' => 'GET',
+            'path' => '/datasets/pitchbook-funds/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'fund_strategy',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'fund_status',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_vintage_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_vintage_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-pitchbook-investors-facets' => [
+            'id' => 'datasets-pitchbook-investors-facets',
+            'method' => 'GET',
+            'path' => '/datasets/pitchbook-investors/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'investor_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'hq_country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'hq_state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_portfolio_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_exits_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-pitchbook-investors-item' => [
+            'id' => 'datasets-pitchbook-investors-item',
+            'method' => 'GET',
+            'path' => '/datasets/pitchbook-investors/items/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-pitchbook-investors-search' => [
+            'id' => 'datasets-pitchbook-investors-search',
+            'method' => 'GET',
+            'path' => '/datasets/pitchbook-investors/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'investor_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'hq_country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'hq_state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_portfolio_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_exits_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-pitchbook-limited-partners-facets' => [
+            'id' => 'datasets-pitchbook-limited-partners-facets',
+            'method' => 'GET',
+            'path' => '/datasets/pitchbook-limited-partners/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'institution_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'hq_country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'hq_state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_year_founded',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_year_founded',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-pitchbook-limited-partners-item' => [
+            'id' => 'datasets-pitchbook-limited-partners-item',
+            'method' => 'GET',
+            'path' => '/datasets/pitchbook-limited-partners/items/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-pitchbook-limited-partners-search' => [
+            'id' => 'datasets-pitchbook-limited-partners-search',
+            'method' => 'GET',
+            'path' => '/datasets/pitchbook-limited-partners/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'institution_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'hq_country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'hq_state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_year_founded',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_year_founded',
+                    'in' => 'query',
+                    'type' => 'integer',
                 ],
                 [
                     'name' => 'sort',
@@ -12516,6 +14301,34 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'goodreads-author-quotes' => [
+            'id' => 'goodreads-author-quotes',
+            'method' => 'GET',
+            'path' => '/goodreads/author/{id}/quotes',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'goodreads-book' => [
             'id' => 'goodreads-book',
             'method' => 'GET',
@@ -12537,6 +14350,34 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'goodreads-book-editions' => [
+            'id' => 'goodreads-book-editions',
+            'method' => 'GET',
+            'path' => '/goodreads/book/{id}/editions',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'goodreads-book-reviews' => [
             'id' => 'goodreads-book-reviews',
             'method' => 'GET',
@@ -12551,6 +14392,27 @@ final class Operations
                     'type' => 'integer',
                 ],
             ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'goodreads-genre' => [
+            'id' => 'goodreads-genre',
+            'method' => 'GET',
+            'path' => '/goodreads/genre/{name}',
+            'pathParams' => [
+                'name',
+            ],
+            'queryParams' => [],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -12591,6 +14453,25 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'goodreads-lists' => [
+            'id' => 'goodreads-lists',
+            'method' => 'GET',
+            'path' => '/goodreads/lists',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'goodreads-search' => [
             'id' => 'goodreads-search',
@@ -13133,6 +15014,60 @@ final class Operations
                 'place_id',
             ],
             'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'google-map-place-photos' => [
+            'id' => 'google-map-place-photos',
+            'method' => 'GET',
+            'path' => '/google/map/place/{place_id}/photos',
+            'pathParams' => [
+                'place_id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'google-map-place-reviews' => [
+            'id' => 'google-map-place-reviews',
+            'method' => 'GET',
+            'path' => '/google/map/place/{place_id}/reviews',
+            'pathParams' => [
+                'place_id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -15095,6 +17030,32 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'jobs-gem-board' => [
+            'id' => 'jobs-gem-board',
+            'method' => 'GET',
+            'path' => '/jobs/gem/board',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'company',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'jobs-greenhouse-board' => [
             'id' => 'jobs-greenhouse-board',
             'method' => 'GET',
@@ -15184,6 +17145,8 @@ final class Operations
                         'ukg',
                         'icims',
                         'eightfold',
+                        'gem',
+                        'pinpoint',
                     ],
                 ],
                 [
@@ -15514,6 +17477,32 @@ final class Operations
                     'name' => 'remote',
                     'in' => 'query',
                     'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'jobs-pinpoint-board' => [
+            'id' => 'jobs-pinpoint-board',
+            'method' => 'GET',
+            'path' => '/jobs/pinpoint/board',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'company',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
                 ],
             ],
             'formParams' => [],
@@ -18967,6 +20956,36 @@ final class Operations
             ],
             'security' => [],
         ],
+        'pitchbook-advisor' => [
+            'id' => 'pitchbook-advisor',
+            'method' => 'GET',
+            'path' => '/pitchbook/advisor',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'pitchbook-company' => [
             'id' => 'pitchbook-company',
             'method' => 'GET',
@@ -19031,6 +21050,36 @@ final class Operations
             'id' => 'pitchbook-investor',
             'method' => 'GET',
             'path' => '/pitchbook/investor',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pitchbook-limited-partner' => [
+            'id' => 'pitchbook-limited-partner',
+            'method' => 'GET',
+            'path' => '/pitchbook/limited-partner',
             'pathParams' => [],
             'queryParams' => [
                 [
@@ -29821,6 +31870,104 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'ubereats-search' => [
+            'id' => 'ubereats-search',
+            'method' => 'GET',
+            'path' => '/ubereats/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'ubereats-store' => [
+            'id' => 'ubereats-store',
+            'method' => 'GET',
+            'path' => '/ubereats/store/{store_id}',
+            'pathParams' => [
+                'store_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'ubereats-store-reviews' => [
+            'id' => 'ubereats-store-reviews',
+            'method' => 'GET',
+            'path' => '/ubereats/store/{store_id}/reviews',
+            'pathParams' => [
+                'store_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'usage-me-endpoints' => [
             'id' => 'usage-me-endpoints',
             'method' => 'GET',
@@ -31909,6 +34056,20 @@ final class Operations
             'titleRecommendations' => 'anime-title-recommendations',
             'titleStaff' => 'anime-title-staff',
         ],
+        'appleBooks' => [
+            'audiobookSeries' => 'apple-books-audiobook-series',
+            'audiobookSearch' => 'apple-books-audiobook-search',
+            'audiobook' => 'apple-books-audiobook',
+            'audiobookReviews' => 'apple-books-audiobook-reviews',
+            'audiobookSimilar' => 'apple-books-audiobook-similar',
+            'author' => 'apple-books-author',
+            'book' => 'apple-books-book',
+            'bookReviews' => 'apple-books-book-reviews',
+            'bookSimilar' => 'apple-books-book-similar',
+            'charts' => 'apple-books-charts',
+            'search' => 'apple-books-search',
+            'series' => 'apple-books-series',
+        ],
         'applePodcasts' => [
             'charts' => 'apple-podcasts-charts',
             'episodesSearch' => 'apple-podcasts-episodes-search',
@@ -32051,6 +34212,12 @@ final class Operations
             'githubUsersItem' => 'datasets-github-users-item',
             'githubUsersNearby' => 'datasets-github-users-nearby',
             'githubUsersSearch' => 'datasets-github-users-search',
+            'goodreadsAuthorsFacets' => 'datasets-goodreads-authors-facets',
+            'goodreadsAuthorsItem' => 'datasets-goodreads-authors-item',
+            'goodreadsAuthorsSearch' => 'datasets-goodreads-authors-search',
+            'goodreadsBooksFacets' => 'datasets-goodreads-books-facets',
+            'goodreadsBooksItem' => 'datasets-goodreads-books-item',
+            'goodreadsBooksSearch' => 'datasets-goodreads-books-search',
             'googleMapBusinessesFacets' => 'datasets-google-map-businesses-facets',
             'googleMapBusinessesItem' => 'datasets-google-map-businesses-item',
             'googleMapBusinessesNearby' => 'datasets-google-map-businesses-nearby',
@@ -32072,6 +34239,21 @@ final class Operations
             'numbeoCitiesSearch' => 'datasets-numbeo-cities-search',
             'numbeoCountriesItem' => 'datasets-numbeo-countries-item',
             'numbeoCountriesSearch' => 'datasets-numbeo-countries-search',
+            'pitchbookAdvisorsFacets' => 'datasets-pitchbook-advisors-facets',
+            'pitchbookAdvisorsItem' => 'datasets-pitchbook-advisors-item',
+            'pitchbookAdvisorsSearch' => 'datasets-pitchbook-advisors-search',
+            'pitchbookCompaniesFacets' => 'datasets-pitchbook-companies-facets',
+            'pitchbookCompaniesItem' => 'datasets-pitchbook-companies-item',
+            'pitchbookCompaniesSearch' => 'datasets-pitchbook-companies-search',
+            'pitchbookFundsFacets' => 'datasets-pitchbook-funds-facets',
+            'pitchbookFundsItem' => 'datasets-pitchbook-funds-item',
+            'pitchbookFundsSearch' => 'datasets-pitchbook-funds-search',
+            'pitchbookInvestorsFacets' => 'datasets-pitchbook-investors-facets',
+            'pitchbookInvestorsItem' => 'datasets-pitchbook-investors-item',
+            'pitchbookInvestorsSearch' => 'datasets-pitchbook-investors-search',
+            'pitchbookLimitedPartnersFacets' => 'datasets-pitchbook-limited-partners-facets',
+            'pitchbookLimitedPartnersItem' => 'datasets-pitchbook-limited-partners-item',
+            'pitchbookLimitedPartnersSearch' => 'datasets-pitchbook-limited-partners-search',
             'playstationGamesFacets' => 'datasets-playstation-games-facets',
             'playstationGamesItem' => 'datasets-playstation-games-item',
             'playstationGamesSearch' => 'datasets-playstation-games-search',
@@ -32165,9 +34347,13 @@ final class Operations
         'goodreads' => [
             'author' => 'goodreads-author',
             'authorBooks' => 'goodreads-author-books',
+            'authorQuotes' => 'goodreads-author-quotes',
             'book' => 'goodreads-book',
+            'bookEditions' => 'goodreads-book-editions',
             'bookReviews' => 'goodreads-book-reviews',
+            'genre' => 'goodreads-genre',
             'list_' => 'goodreads-list',
+            'lists' => 'goodreads-lists',
             'search' => 'goodreads-search',
         ],
         'google' => [
@@ -32193,6 +34379,8 @@ final class Operations
             'financeTicker' => 'google-finance-ticker',
             'jobs' => 'google-jobs',
             'mapPlace' => 'google-map-place',
+            'mapPlacePhotos' => 'google-map-place-photos',
+            'mapPlaceReviews' => 'google-map-place-reviews',
             'mapSearch' => 'google-map-search',
             'news' => 'google-news',
             'search' => 'google-search',
@@ -32253,6 +34441,7 @@ final class Operations
             'companySearch' => 'jobs-company-search',
             'eightfoldBoard' => 'jobs-eightfold-board',
             'eightfoldJob' => 'jobs-eightfold-job',
+            'gemBoard' => 'jobs-gem-board',
             'greenhouseBoard' => 'jobs-greenhouse-board',
             'greenhouseJob' => 'jobs-greenhouse-job',
             'hiringSignals' => 'jobs-hiring-signals',
@@ -32263,6 +34452,7 @@ final class Operations
             'oracleBoard' => 'jobs-oracle-board',
             'oracleJob' => 'jobs-oracle-job',
             'personioFeed' => 'jobs-personio-feed',
+            'pinpointBoard' => 'jobs-pinpoint-board',
             'recruiteeOffer' => 'jobs-recruitee-offer',
             'recruiteeOffers' => 'jobs-recruitee-offers',
             'ripplingBoard' => 'jobs-rippling-board',
@@ -32382,9 +34572,11 @@ final class Operations
             'ready' => 'ready',
         ],
         'pitchBook' => [
+            'pitchbookAdvisor' => 'pitchbook-advisor',
             'pitchbookCompany' => 'pitchbook-company',
             'pitchbookFund' => 'pitchbook-fund',
             'pitchbookInvestor' => 'pitchbook-investor',
+            'pitchbookLimitedPartner' => 'pitchbook-limited-partner',
         ],
         'playStation' => [
             'playstationBrowse' => 'playstation-browse',
@@ -32721,6 +34913,11 @@ final class Operations
             'categorySearch' => 'trustpilot-category-search',
             'category' => 'trustpilot-category',
         ],
+        'uberEats' => [
+            'ubereatsSearch' => 'ubereats-search',
+            'ubereatsStore' => 'ubereats-store',
+            'ubereatsStoreReviews' => 'ubereats-store-reviews',
+        ],
         'usage' => [
             'meEndpoints' => 'usage-me-endpoints',
             'meOverview' => 'usage-me-overview',
@@ -32806,7 +35003,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 790;
+    public const OPERATION_COUNT = 836;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -32829,6 +35026,18 @@ final class Operations
         'anime-title-characters',
         'anime-title-recommendations',
         'anime-title-staff',
+        'apple-books-audiobook-series',
+        'apple-books-audiobook-search',
+        'apple-books-audiobook',
+        'apple-books-audiobook-reviews',
+        'apple-books-audiobook-similar',
+        'apple-books-author',
+        'apple-books-book',
+        'apple-books-book-reviews',
+        'apple-books-book-similar',
+        'apple-books-charts',
+        'apple-books-search',
+        'apple-books-series',
         'apple-podcasts-charts',
         'apple-podcasts-episodes-search',
         'apple-podcasts-search',
@@ -32944,6 +35153,12 @@ final class Operations
         'datasets-github-users-item',
         'datasets-github-users-nearby',
         'datasets-github-users-search',
+        'datasets-goodreads-authors-facets',
+        'datasets-goodreads-authors-item',
+        'datasets-goodreads-authors-search',
+        'datasets-goodreads-books-facets',
+        'datasets-goodreads-books-item',
+        'datasets-goodreads-books-search',
         'datasets-google-map-businesses-facets',
         'datasets-google-map-businesses-item',
         'datasets-google-map-businesses-nearby',
@@ -32965,6 +35180,21 @@ final class Operations
         'datasets-numbeo-cities-search',
         'datasets-numbeo-countries-item',
         'datasets-numbeo-countries-search',
+        'datasets-pitchbook-advisors-facets',
+        'datasets-pitchbook-advisors-item',
+        'datasets-pitchbook-advisors-search',
+        'datasets-pitchbook-companies-facets',
+        'datasets-pitchbook-companies-item',
+        'datasets-pitchbook-companies-search',
+        'datasets-pitchbook-funds-facets',
+        'datasets-pitchbook-funds-item',
+        'datasets-pitchbook-funds-search',
+        'datasets-pitchbook-investors-facets',
+        'datasets-pitchbook-investors-item',
+        'datasets-pitchbook-investors-search',
+        'datasets-pitchbook-limited-partners-facets',
+        'datasets-pitchbook-limited-partners-item',
+        'datasets-pitchbook-limited-partners-search',
         'datasets-playstation-games-facets',
         'datasets-playstation-games-item',
         'datasets-playstation-games-search',
@@ -33048,9 +35278,13 @@ final class Operations
         'github-user-repos',
         'goodreads-author',
         'goodreads-author-books',
+        'goodreads-author-quotes',
         'goodreads-book',
+        'goodreads-book-editions',
         'goodreads-book-reviews',
+        'goodreads-genre',
         'goodreads-list',
+        'goodreads-lists',
         'goodreads-search',
         'google-finance-analyst-articles',
         'google-finance-chart',
@@ -33074,6 +35308,8 @@ final class Operations
         'google-finance-ticker',
         'google-jobs',
         'google-map-place',
+        'google-map-place-photos',
+        'google-map-place-reviews',
         'google-map-search',
         'google-news',
         'google-search',
@@ -33126,6 +35362,7 @@ final class Operations
         'jobs-company-search',
         'jobs-eightfold-board',
         'jobs-eightfold-job',
+        'jobs-gem-board',
         'jobs-greenhouse-board',
         'jobs-greenhouse-job',
         'jobs-hiring-signals',
@@ -33136,6 +35373,7 @@ final class Operations
         'jobs-oracle-board',
         'jobs-oracle-job',
         'jobs-personio-feed',
+        'jobs-pinpoint-board',
         'jobs-recruitee-offer',
         'jobs-recruitee-offers',
         'jobs-rippling-board',
@@ -33234,9 +35472,11 @@ final class Operations
         'numbeo-indices-rankings',
         'numbeo-indices-rankings-by-country',
         'ping',
+        'pitchbook-advisor',
         'pitchbook-company',
         'pitchbook-fund',
         'pitchbook-investor',
+        'pitchbook-limited-partner',
         'playstation-browse',
         'playstation-category',
         'playstation-concept',
@@ -33529,6 +35769,9 @@ final class Operations
         'trustpilot-categories',
         'trustpilot-category-search',
         'trustpilot-category',
+        'ubereats-search',
+        'ubereats-store',
+        'ubereats-store-reviews',
         'usage-me-endpoints',
         'usage-me-overview',
         'usage-me-recent-ips',
@@ -33672,6 +35915,18 @@ final class OperationId
     public const APP_STORE_SIMILAR = 'appstore-similar';
     public const APP_STORE_SUGGEST = 'appstore-suggest';
     public const APP_STORE_VERSION_HISTORY = 'appstore-version-history';
+    public const APPLE_BOOKS_AUDIOBOOK = 'apple-books-audiobook';
+    public const APPLE_BOOKS_AUDIOBOOK_REVIEWS = 'apple-books-audiobook-reviews';
+    public const APPLE_BOOKS_AUDIOBOOK_SEARCH = 'apple-books-audiobook-search';
+    public const APPLE_BOOKS_AUDIOBOOK_SERIES = 'apple-books-audiobook-series';
+    public const APPLE_BOOKS_AUDIOBOOK_SIMILAR = 'apple-books-audiobook-similar';
+    public const APPLE_BOOKS_AUTHOR = 'apple-books-author';
+    public const APPLE_BOOKS_BOOK = 'apple-books-book';
+    public const APPLE_BOOKS_BOOK_REVIEWS = 'apple-books-book-reviews';
+    public const APPLE_BOOKS_BOOK_SIMILAR = 'apple-books-book-similar';
+    public const APPLE_BOOKS_CHARTS = 'apple-books-charts';
+    public const APPLE_BOOKS_SEARCH = 'apple-books-search';
+    public const APPLE_BOOKS_SERIES = 'apple-books-series';
     public const APPLE_PODCASTS_CHARTS = 'apple-podcasts-charts';
     public const APPLE_PODCASTS_EPISODES_SEARCH = 'apple-podcasts-episodes-search';
     public const APPLE_PODCASTS_SEARCH = 'apple-podcasts-search';
@@ -33775,6 +36030,12 @@ final class OperationId
     public const DATASETS_GITHUB_USERS_ITEM = 'datasets-github-users-item';
     public const DATASETS_GITHUB_USERS_NEARBY = 'datasets-github-users-nearby';
     public const DATASETS_GITHUB_USERS_SEARCH = 'datasets-github-users-search';
+    public const DATASETS_GOODREADS_AUTHORS_FACETS = 'datasets-goodreads-authors-facets';
+    public const DATASETS_GOODREADS_AUTHORS_ITEM = 'datasets-goodreads-authors-item';
+    public const DATASETS_GOODREADS_AUTHORS_SEARCH = 'datasets-goodreads-authors-search';
+    public const DATASETS_GOODREADS_BOOKS_FACETS = 'datasets-goodreads-books-facets';
+    public const DATASETS_GOODREADS_BOOKS_ITEM = 'datasets-goodreads-books-item';
+    public const DATASETS_GOODREADS_BOOKS_SEARCH = 'datasets-goodreads-books-search';
     public const DATASETS_GOOGLE_MAP_BUSINESSES_FACETS = 'datasets-google-map-businesses-facets';
     public const DATASETS_GOOGLE_MAP_BUSINESSES_ITEM = 'datasets-google-map-businesses-item';
     public const DATASETS_GOOGLE_MAP_BUSINESSES_NEARBY = 'datasets-google-map-businesses-nearby';
@@ -33797,6 +36058,21 @@ final class OperationId
     public const DATASETS_NUMBEO_CITIES_SEARCH = 'datasets-numbeo-cities-search';
     public const DATASETS_NUMBEO_COUNTRIES_ITEM = 'datasets-numbeo-countries-item';
     public const DATASETS_NUMBEO_COUNTRIES_SEARCH = 'datasets-numbeo-countries-search';
+    public const DATASETS_PITCHBOOK_ADVISORS_FACETS = 'datasets-pitchbook-advisors-facets';
+    public const DATASETS_PITCHBOOK_ADVISORS_ITEM = 'datasets-pitchbook-advisors-item';
+    public const DATASETS_PITCHBOOK_ADVISORS_SEARCH = 'datasets-pitchbook-advisors-search';
+    public const DATASETS_PITCHBOOK_COMPANIES_FACETS = 'datasets-pitchbook-companies-facets';
+    public const DATASETS_PITCHBOOK_COMPANIES_ITEM = 'datasets-pitchbook-companies-item';
+    public const DATASETS_PITCHBOOK_COMPANIES_SEARCH = 'datasets-pitchbook-companies-search';
+    public const DATASETS_PITCHBOOK_FUNDS_FACETS = 'datasets-pitchbook-funds-facets';
+    public const DATASETS_PITCHBOOK_FUNDS_ITEM = 'datasets-pitchbook-funds-item';
+    public const DATASETS_PITCHBOOK_FUNDS_SEARCH = 'datasets-pitchbook-funds-search';
+    public const DATASETS_PITCHBOOK_INVESTORS_FACETS = 'datasets-pitchbook-investors-facets';
+    public const DATASETS_PITCHBOOK_INVESTORS_ITEM = 'datasets-pitchbook-investors-item';
+    public const DATASETS_PITCHBOOK_INVESTORS_SEARCH = 'datasets-pitchbook-investors-search';
+    public const DATASETS_PITCHBOOK_LIMITED_PARTNERS_FACETS = 'datasets-pitchbook-limited-partners-facets';
+    public const DATASETS_PITCHBOOK_LIMITED_PARTNERS_ITEM = 'datasets-pitchbook-limited-partners-item';
+    public const DATASETS_PITCHBOOK_LIMITED_PARTNERS_SEARCH = 'datasets-pitchbook-limited-partners-search';
     public const DATASETS_PLAYSTATION_GAMES_FACETS = 'datasets-playstation-games-facets';
     public const DATASETS_PLAYSTATION_GAMES_ITEM = 'datasets-playstation-games-item';
     public const DATASETS_PLAYSTATION_GAMES_SEARCH = 'datasets-playstation-games-search';
@@ -33878,9 +36154,13 @@ final class OperationId
     public const GIT_HUB_GITHUB_USER_REPOS = 'github-user-repos';
     public const GOODREADS_AUTHOR = 'goodreads-author';
     public const GOODREADS_AUTHOR_BOOKS = 'goodreads-author-books';
+    public const GOODREADS_AUTHOR_QUOTES = 'goodreads-author-quotes';
     public const GOODREADS_BOOK = 'goodreads-book';
+    public const GOODREADS_BOOK_EDITIONS = 'goodreads-book-editions';
     public const GOODREADS_BOOK_REVIEWS = 'goodreads-book-reviews';
+    public const GOODREADS_GENRE = 'goodreads-genre';
     public const GOODREADS_LIST = 'goodreads-list';
+    public const GOODREADS_LISTS = 'goodreads-lists';
     public const GOODREADS_SEARCH = 'goodreads-search';
     public const GOOGLE_FINANCE_ANALYST_ARTICLES = 'google-finance-analyst-articles';
     public const GOOGLE_FINANCE_CHART = 'google-finance-chart';
@@ -33904,6 +36184,8 @@ final class OperationId
     public const GOOGLE_FINANCE_TICKER = 'google-finance-ticker';
     public const GOOGLE_JOBS = 'google-jobs';
     public const GOOGLE_MAP_PLACE = 'google-map-place';
+    public const GOOGLE_MAP_PLACE_PHOTOS = 'google-map-place-photos';
+    public const GOOGLE_MAP_PLACE_REVIEWS = 'google-map-place-reviews';
     public const GOOGLE_MAP_SEARCH = 'google-map-search';
     public const GOOGLE_NEWS = 'google-news';
     public const GOOGLE_PLAY_APP = 'googleplay-app';
@@ -33956,6 +36238,7 @@ final class OperationId
     public const JOBS_COMPANY_SEARCH = 'jobs-company-search';
     public const JOBS_EIGHTFOLD_BOARD = 'jobs-eightfold-board';
     public const JOBS_EIGHTFOLD_JOB = 'jobs-eightfold-job';
+    public const JOBS_GEM_BOARD = 'jobs-gem-board';
     public const JOBS_GREENHOUSE_BOARD = 'jobs-greenhouse-board';
     public const JOBS_GREENHOUSE_JOB = 'jobs-greenhouse-job';
     public const JOBS_HIRING_SIGNALS = 'jobs-hiring-signals';
@@ -33966,6 +36249,7 @@ final class OperationId
     public const JOBS_ORACLE_BOARD = 'jobs-oracle-board';
     public const JOBS_ORACLE_JOB = 'jobs-oracle-job';
     public const JOBS_PERSONIO_FEED = 'jobs-personio-feed';
+    public const JOBS_PINPOINT_BOARD = 'jobs-pinpoint-board';
     public const JOBS_RECRUITEE_OFFER = 'jobs-recruitee-offer';
     public const JOBS_RECRUITEE_OFFERS = 'jobs-recruitee-offers';
     public const JOBS_RIPPLING_BOARD = 'jobs-rippling-board';
@@ -34065,9 +36349,11 @@ final class OperationId
     public const NUMBEO_INDICES_COUNTRY = 'numbeo-indices-country';
     public const NUMBEO_INDICES_RANKINGS = 'numbeo-indices-rankings';
     public const NUMBEO_INDICES_RANKINGS_BY_COUNTRY = 'numbeo-indices-rankings-by-country';
+    public const PITCH_BOOK_PITCHBOOK_ADVISOR = 'pitchbook-advisor';
     public const PITCH_BOOK_PITCHBOOK_COMPANY = 'pitchbook-company';
     public const PITCH_BOOK_PITCHBOOK_FUND = 'pitchbook-fund';
     public const PITCH_BOOK_PITCHBOOK_INVESTOR = 'pitchbook-investor';
+    public const PITCH_BOOK_PITCHBOOK_LIMITED_PARTNER = 'pitchbook-limited-partner';
     public const PLAY_STATION_PLAYSTATION_BROWSE = 'playstation-browse';
     public const PLAY_STATION_PLAYSTATION_CATEGORY = 'playstation-category';
     public const PLAY_STATION_PLAYSTATION_CONCEPT = 'playstation-concept';
@@ -34359,6 +36645,9 @@ final class OperationId
     public const TRUSTPILOT_CATEGORIES = 'trustpilot-categories';
     public const TRUSTPILOT_CATEGORY = 'trustpilot-category';
     public const TRUSTPILOT_CATEGORY_SEARCH = 'trustpilot-category-search';
+    public const UBER_EATS_UBEREATS_SEARCH = 'ubereats-search';
+    public const UBER_EATS_UBEREATS_STORE = 'ubereats-store';
+    public const UBER_EATS_UBEREATS_STORE_REVIEWS = 'ubereats-store-reviews';
     public const USAGE_ME_ENDPOINTS = 'usage-me-endpoints';
     public const USAGE_ME_OVERVIEW = 'usage-me-overview';
     public const USAGE_ME_RECENT_IPS = 'usage-me-recent-ips';

@@ -57,6 +57,34 @@ abstract class AmazonGroup {}
 abstract class AnimeGroup {}
 
 /**
+ * @method mixed audiobookSeries(array $params = [], array $options = []) apple-books-audiobook-series (GET /apple-books/audiobook-series/{id})
+ *   params: string $id, string $country, string $lang
+ * @method mixed audiobookSearch(array $params = [], array $options = []) apple-books-audiobook-search (GET /apple-books/audiobook/search)
+ *   params: string $term, string $country, string $lang, int $limit, int $page
+ * @method mixed audiobook(array $params = [], array $options = []) apple-books-audiobook (GET /apple-books/audiobook/{id})
+ *   params: string $id, string $country, string $lang
+ * @method mixed audiobookReviews(array $params = [], array $options = []) apple-books-audiobook-reviews (GET /apple-books/audiobook/{id}/reviews)
+ *   params: string $id, string $country, string $lang
+ * @method mixed audiobookSimilar(array $params = [], array $options = []) apple-books-audiobook-similar (GET /apple-books/audiobook/{id}/similar)
+ *   params: string $id, string $country, string $lang
+ * @method mixed author(array $params = [], array $options = []) apple-books-author (GET /apple-books/author/{id})
+ *   params: string $id, string $country, string $lang
+ * @method mixed book(array $params = [], array $options = []) apple-books-book (GET /apple-books/book/{id})
+ *   params: string $id, string $country, string $lang
+ * @method mixed bookReviews(array $params = [], array $options = []) apple-books-book-reviews (GET /apple-books/book/{id}/reviews)
+ *   params: string $id, string $country, string $lang
+ * @method mixed bookSimilar(array $params = [], array $options = []) apple-books-book-similar (GET /apple-books/book/{id}/similar)
+ *   params: string $id, string $country, string $lang
+ * @method mixed charts(array $params = [], array $options = []) apple-books-charts (GET /apple-books/charts)
+ *   params: string $collection, int $genre, string $country, int $limit
+ * @method mixed search(array $params = [], array $options = []) apple-books-search (GET /apple-books/search)
+ *   params: string $term, string $country, string $lang, int $limit, int $page
+ * @method mixed series(array $params = [], array $options = []) apple-books-series (GET /apple-books/series/{id})
+ *   params: string $id, string $country, string $lang
+ */
+abstract class AppleBooksGroup {}
+
+/**
  * @method mixed charts(array $params = [], array $options = []) apple-podcasts-charts (GET /apple-podcasts/charts)
  *   params: string $collection, int $category, string $country, int $limit
  * @method mixed episodesSearch(array $params = [], array $options = []) apple-podcasts-episodes-search (GET /apple-podcasts/episodes/search)
@@ -129,8 +157,9 @@ abstract class BingGroup {}
 
 /**
  * @method mixed boxofficemojoBrand(array $params = [], array $options = []) boxofficemojo-brand (GET /boxofficemojo/brand)
- *   params: string $id, string $path, string $url
+ *   params: string $id, string $path, string $url, 'grossToDate'|'maxNumTheaters'|'openingWeekendGross'|'openingNumTheaters'|'releaseDate' $sort, 'asc'|'desc' $sortDir, int $offset
  * @method mixed boxofficemojoBrands(array $params = [], array $options = []) boxofficemojo-brands (GET /boxofficemojo/brands)
+ *   params: 'totalGross'|'numReleases'|'grossToDate' $sort, 'asc'|'desc' $sortDir
  * @method mixed boxofficemojoCalendar(array $params = [], array $options = []) boxofficemojo-calendar (GET /boxofficemojo/calendar)
  *   params: int $year, int $month
  * @method mixed boxofficemojoCalendarChanges(array $params = [], array $options = []) boxofficemojo-calendar-changes (GET /boxofficemojo/calendar/changes)
@@ -140,11 +169,13 @@ abstract class BingGroup {}
  * @method mixed boxofficemojoDateDomestic(array $params = [], array $options = []) boxofficemojo-date-domestic (GET /boxofficemojo/date/domestic)
  *   params: string $date
  * @method mixed boxofficemojoFranchise(array $params = [], array $options = []) boxofficemojo-franchise (GET /boxofficemojo/franchise)
- *   params: string $id, string $path, string $url
+ *   params: string $id, string $path, string $url, 'grossToDate'|'maxNumTheaters'|'openingWeekendGross'|'openingNumTheaters'|'releaseDate' $sort, 'asc'|'desc' $sortDir, int $offset
  * @method mixed boxofficemojoFranchises(array $params = [], array $options = []) boxofficemojo-franchises (GET /boxofficemojo/franchises)
+ *   params: 'totalGross'|'numReleases'|'grossToDate' $sort, 'asc'|'desc' $sortDir
  * @method mixed boxofficemojoGenre(array $params = [], array $options = []) boxofficemojo-genre (GET /boxofficemojo/genre)
- *   params: string $id, string $path, string $url
+ *   params: string $id, string $path, string $url, 'grossToDate'|'maxNumTheaters'|'openingWeekendGross'|'openingNumTheaters'|'releaseDate' $sort, 'asc'|'desc' $sortDir, int $offset
  * @method mixed boxofficemojoGenres(array $params = [], array $options = []) boxofficemojo-genres (GET /boxofficemojo/genres)
+ *   params: 'totalGross'|'numTitles'|'grossToDate' $sort, 'asc'|'desc' $sortDir
  * @method mixed boxofficemojoLifetimeGrosses(array $params = [], array $options = []) boxofficemojo-lifetime-grosses (GET /boxofficemojo/lifetime-grosses)
  *   params: 'worldwide'|'domestic' $area, int $offset
  * @method mixed boxofficemojoRelease(array $params = [], array $options = []) boxofficemojo-release (GET /boxofficemojo/release)
@@ -331,6 +362,18 @@ abstract class WebGroup {}
  *   params: float $lat, float $lon, int $radius_m, string $influence_tier, bool $reachable, int $min_followers, int $page, int $page_size
  * @method mixed githubUsersSearch(array $params = [], array $options = []) datasets-github-users-search (GET /datasets/github-users/search)
  *   params: string $q, string $login, string $company, string $influence_tier, string $country, string $country_code, string $state, string $city, string $domain, bool $has_email, bool $has_twitter, bool $has_blog, bool $reachable, bool $active_90d, bool $hireable, bool $is_org, bool $is_bot, bool $is_suspected_automation, int $min_followers, int $max_followers, int $min_repos, int $min_rank_score, float $min_account_age_years, float $max_account_age_years, float $lat, float $lon, int $radius_m, string $sort, int $page, int $page_size
+ * @method mixed goodreadsAuthorsFacets(array $params = [], array $options = []) datasets-goodreads-authors-facets (GET /datasets/goodreads-authors/facets)
+ *   params: string $facet, string $q, string $name, string $genre, string $run_id, float $min_rating, int $min_ratings_count
+ * @method mixed goodreadsAuthorsItem(array $params = [], array $options = []) datasets-goodreads-authors-item (GET /datasets/goodreads-authors/items/{id})
+ *   params: string $id
+ * @method mixed goodreadsAuthorsSearch(array $params = [], array $options = []) datasets-goodreads-authors-search (GET /datasets/goodreads-authors/search)
+ *   params: string $q, string $name, string $genre, string $run_id, float $min_rating, int $min_ratings_count, string $sort, int $page, int $page_size
+ * @method mixed goodreadsBooksFacets(array $params = [], array $options = []) datasets-goodreads-books-facets (GET /datasets/goodreads-books/facets)
+ *   params: string $facet, string $q, string $genre, string $format, string $language, string $publisher, string $author, string $author_id, string $series, string $isbn, string $isbn13, string $run_id, float $min_rating, int $min_ratings_count, int $min_pages, int $max_pages, int $min_publication_year, int $max_publication_year
+ * @method mixed goodreadsBooksItem(array $params = [], array $options = []) datasets-goodreads-books-item (GET /datasets/goodreads-books/items/{id})
+ *   params: string $id
+ * @method mixed goodreadsBooksSearch(array $params = [], array $options = []) datasets-goodreads-books-search (GET /datasets/goodreads-books/search)
+ *   params: string $q, string $genre, string $format, string $language, string $publisher, string $author, string $author_id, string $series, string $isbn, string $isbn13, string $run_id, float $min_rating, int $min_ratings_count, int $min_pages, int $max_pages, int $min_publication_year, int $max_publication_year, string $sort, int $page, int $page_size
  * @method mixed googleMapBusinessesFacets(array $params = [], array $options = []) datasets-google-map-businesses-facets (GET /datasets/google-map-businesses/facets)
  *   params: string $facet, string $q, string $category, string $country, string $state, string $county, string $city, string $town, float $min_rating, int $min_review_count, bool $has_website, bool $has_phone, bool $has_geo, float $lat, float $lon, int $radius_m, string $sort
  * @method mixed googleMapBusinessesItem(array $params = [], array $options = []) datasets-google-map-businesses-item (GET /datasets/google-map-businesses/items/{place_id})
@@ -346,7 +389,7 @@ abstract class WebGroup {}
  * @method mixed housingMarketsSearch(array $params = [], array $options = []) datasets-housing-markets-search (GET /datasets/housing-markets/search)
  *   params: string $q, string $region_type, string $state_code, string $property_type, string $parent_metro_code, string $zip_code, string $period, bool $latest, float $min_median_sale_price, float $max_median_sale_price, float $min_median_list_price, float $max_median_list_price, float $min_price_to_income, float $max_price_to_income, int $min_salary_to_buy, int $max_salary_to_buy, float $min_median_dom, float $max_median_dom, int $min_inventory, int $max_inventory, int $min_homes_sold, string $sort, int $page, int $page_size
  * @method mixed jobsCompanies(array $params = [], array $options = []) datasets-jobs-companies (GET /datasets/jobs/companies)
- *   params: string $q, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold' $provider, string $status, int $min_open_roles, string $sort, int $page, int $page_size
+ *   params: string $q, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint' $provider, string $status, int $min_open_roles, string $sort, int $page, int $page_size
  * @method mixed jobsCompanyItem(array $params = [], array $options = []) datasets-jobs-company-item (GET /datasets/jobs/companies/{id})
  *   params: string $id
  * @method mixed jobsFacets(array $params = [], array $options = []) datasets-jobs-facets (GET /datasets/jobs/facets)
@@ -354,9 +397,9 @@ abstract class WebGroup {}
  * @method mixed jobsItem(array $params = [], array $options = []) datasets-jobs-item (GET /datasets/jobs/items/{id})
  *   params: string $id
  * @method mixed jobsNearby(array $params = [], array $options = []) datasets-jobs-nearby (GET /datasets/jobs/nearby)
- *   params: float $lat, float $lon, float $radius_km, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold' $provider, bool $include_closed, int $page, int $page_size
+ *   params: float $lat, float $lon, float $radius_km, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint' $provider, bool $include_closed, int $page, int $page_size
  * @method mixed jobsSearch(array $params = [], array $options = []) datasets-jobs-search (GET /datasets/jobs/search)
- *   params: string $q, string $company, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold' $provider, string $department, string $location, string $employment_type, bool $remote, bool $include_closed, string $sort, int $page, int $page_size
+ *   params: string $q, string $company, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint' $provider, string $department, string $location, string $employment_type, bool $remote, bool $include_closed, float $min_salary, float $max_salary, string $salary_currency, string $sort, int $page, int $page_size
  * @method mixed journalistsFacets(array $params = [], array $options = []) datasets-journalists-facets (GET /datasets/journalists/facets)
  *   params: string $facet, string $q, string $outlet, string $vertical, string $topic, string $contact_type
  * @method mixed journalistsItem(array $params = [], array $options = []) datasets-journalists-item (GET /datasets/journalists/items/{outlet}/{slug})
@@ -373,6 +416,36 @@ abstract class WebGroup {}
  *   params: string $country
  * @method mixed numbeoCountriesSearch(array $params = [], array $options = []) datasets-numbeo-countries-search (GET /datasets/numbeo-countries/search)
  *   params: string $q, float $min_cost_of_living_index, float $max_cost_of_living_index, float $min_quality_of_life_index, float $min_crime_index, float $max_crime_index, float $min_safety_index, float $min_health_care_index, float $max_pollution_index, float $max_traffic_index, string $sort, int $page, int $page_size
+ * @method mixed pitchbookAdvisorsFacets(array $params = [], array $options = []) datasets-pitchbook-advisors-facets (GET /datasets/pitchbook-advisors/facets)
+ *   params: string $facet, string $q, string $service_type, string $hq_country, string $hq_state, string $run_id, int $min_year_founded, int $max_year_founded
+ * @method mixed pitchbookAdvisorsItem(array $params = [], array $options = []) datasets-pitchbook-advisors-item (GET /datasets/pitchbook-advisors/items/{id})
+ *   params: string $id
+ * @method mixed pitchbookAdvisorsSearch(array $params = [], array $options = []) datasets-pitchbook-advisors-search (GET /datasets/pitchbook-advisors/search)
+ *   params: string $q, string $service_type, string $hq_country, string $hq_state, string $run_id, int $min_year_founded, int $max_year_founded, string $sort, int $page, int $page_size
+ * @method mixed pitchbookCompaniesFacets(array $params = [], array $options = []) datasets-pitchbook-companies-facets (GET /datasets/pitchbook-companies/facets)
+ *   params: string $facet, string $q, string $status, string $primary_industry, string $financing_status, string $ownership_status, string $hq_country, string $hq_state, string $run_id, int $min_year_founded, int $max_year_founded, int $min_investor_count
+ * @method mixed pitchbookCompaniesItem(array $params = [], array $options = []) datasets-pitchbook-companies-item (GET /datasets/pitchbook-companies/items/{id})
+ *   params: string $id
+ * @method mixed pitchbookCompaniesSearch(array $params = [], array $options = []) datasets-pitchbook-companies-search (GET /datasets/pitchbook-companies/search)
+ *   params: string $q, string $status, string $primary_industry, string $financing_status, string $ownership_status, string $hq_country, string $hq_state, string $run_id, int $min_year_founded, int $max_year_founded, int $min_investor_count, string $sort, int $page, int $page_size
+ * @method mixed pitchbookFundsFacets(array $params = [], array $options = []) datasets-pitchbook-funds-facets (GET /datasets/pitchbook-funds/facets)
+ *   params: string $facet, string $q, string $fund_strategy, string $fund_status, string $run_id, int $min_vintage_year, int $max_vintage_year
+ * @method mixed pitchbookFundsItem(array $params = [], array $options = []) datasets-pitchbook-funds-item (GET /datasets/pitchbook-funds/items/{id})
+ *   params: string $id
+ * @method mixed pitchbookFundsSearch(array $params = [], array $options = []) datasets-pitchbook-funds-search (GET /datasets/pitchbook-funds/search)
+ *   params: string $q, string $fund_strategy, string $fund_status, string $run_id, int $min_vintage_year, int $max_vintage_year, string $sort, int $page, int $page_size
+ * @method mixed pitchbookInvestorsFacets(array $params = [], array $options = []) datasets-pitchbook-investors-facets (GET /datasets/pitchbook-investors/facets)
+ *   params: string $facet, string $q, string $status, string $investor_type, string $hq_country, string $hq_state, string $run_id, int $min_portfolio_count, int $min_exits_count
+ * @method mixed pitchbookInvestorsItem(array $params = [], array $options = []) datasets-pitchbook-investors-item (GET /datasets/pitchbook-investors/items/{id})
+ *   params: string $id
+ * @method mixed pitchbookInvestorsSearch(array $params = [], array $options = []) datasets-pitchbook-investors-search (GET /datasets/pitchbook-investors/search)
+ *   params: string $q, string $status, string $investor_type, string $hq_country, string $hq_state, string $run_id, int $min_portfolio_count, int $min_exits_count, string $sort, int $page, int $page_size
+ * @method mixed pitchbookLimitedPartnersFacets(array $params = [], array $options = []) datasets-pitchbook-limited-partners-facets (GET /datasets/pitchbook-limited-partners/facets)
+ *   params: string $facet, string $q, string $institution_type, string $hq_country, string $hq_state, string $run_id, int $min_year_founded, int $max_year_founded
+ * @method mixed pitchbookLimitedPartnersItem(array $params = [], array $options = []) datasets-pitchbook-limited-partners-item (GET /datasets/pitchbook-limited-partners/items/{id})
+ *   params: string $id
+ * @method mixed pitchbookLimitedPartnersSearch(array $params = [], array $options = []) datasets-pitchbook-limited-partners-search (GET /datasets/pitchbook-limited-partners/search)
+ *   params: string $q, string $institution_type, string $hq_country, string $hq_state, string $run_id, int $min_year_founded, int $max_year_founded, string $sort, int $page, int $page_size
  * @method mixed playstationGamesFacets(array $params = [], array $options = []) datasets-playstation-games-facets (GET /datasets/playstation-games/facets)
  *   params: string $facet, string $q, string $publisher, string $classification, string $genre, string $platform, string $content_rating, string $content_descriptor, string $price_tier, string $branding, string $region, string $concept_id, string $np_title_id, string $run_id, bool $is_free, bool $is_addon, bool $is_tied_to_subscription, bool $coming_soon, bool $on_sale, int $min_price_value, int $max_price_value, float $min_star_rating, int $min_star_count, int $min_discount_pct, int $min_release_year, int $max_release_year
  * @method mixed playstationGamesItem(array $params = [], array $options = []) datasets-playstation-games-item (GET /datasets/playstation-games/items/{product_id})
@@ -559,12 +632,19 @@ abstract class GitHubGroup {}
  *   params: string $id
  * @method mixed authorBooks(array $params = [], array $options = []) goodreads-author-books (GET /goodreads/author/{id}/books)
  *   params: string $id, int $page
+ * @method mixed authorQuotes(array $params = [], array $options = []) goodreads-author-quotes (GET /goodreads/author/{id}/quotes)
+ *   params: string $id, int $page
  * @method mixed book(array $params = [], array $options = []) goodreads-book (GET /goodreads/book/{id})
  *   params: string $id
+ * @method mixed bookEditions(array $params = [], array $options = []) goodreads-book-editions (GET /goodreads/book/{id}/editions)
+ *   params: string $id, int $page
  * @method mixed bookReviews(array $params = [], array $options = []) goodreads-book-reviews (GET /goodreads/book/{id}/reviews)
  *   params: string $id, int $limit
+ * @method mixed genre(array $params = [], array $options = []) goodreads-genre (GET /goodreads/genre/{name})
+ *   params: string $name
  * @method mixed list_(array $params = [], array $options = []) goodreads-list (GET /goodreads/list/{id})
  *   params: string $id, int $page
+ * @method mixed lists(array $params = [], array $options = []) goodreads-lists (GET /goodreads/lists)
  * @method mixed search(array $params = [], array $options = []) goodreads-search (GET /goodreads/search)
  *   params: string $q, int $limit
  */
@@ -611,6 +691,10 @@ abstract class GoodreadsGroup {}
  *   params: array $option
  * @method mixed mapPlace(array $params = [], array $options = []) google-map-place (GET /google/map/place/{place_id})
  *   params: string $place_id
+ * @method mixed mapPlacePhotos(array $params = [], array $options = []) google-map-place-photos (GET /google/map/place/{place_id}/photos)
+ *   params: string $place_id, int $limit
+ * @method mixed mapPlaceReviews(array $params = [], array $options = []) google-map-place-reviews (GET /google/map/place/{place_id}/reviews)
+ *   params: string $place_id, int $limit
  * @method mixed mapSearch(array $params = [], array $options = []) google-map-search (POST /google/map/search)
  *   params: array $mapSearchOption
  * @method mixed news(array $params = [], array $options = []) google-news (GET /google/news)
@@ -728,12 +812,14 @@ abstract class InstagramGroup {}
  *   params: string $tenant, string $domain, string $query, string $location, int $limit, int $offset
  * @method mixed eightfoldJob(array $params = [], array $options = []) jobs-eightfold-job (GET /jobs/eightfold/job)
  *   params: string $tenant, string $domain, string $id
+ * @method mixed gemBoard(array $params = [], array $options = []) jobs-gem-board (GET /jobs/gem/board)
+ *   params: string $company
  * @method mixed greenhouseBoard(array $params = [], array $options = []) jobs-greenhouse-board (GET /jobs/greenhouse/board)
  *   params: string $token, bool $content
  * @method mixed greenhouseJob(array $params = [], array $options = []) jobs-greenhouse-job (GET /jobs/greenhouse/job)
  *   params: string $token, string $id
  * @method mixed hiringSignals(array $params = [], array $options = []) jobs-hiring-signals (GET /jobs/hiring-signals)
- *   params: 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold' $provider, string $token, string $company, string $org, string $tenant, string $datacenter, string $site, string $host, string $board, string $domain
+ *   params: 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint' $provider, string $token, string $company, string $org, string $tenant, string $datacenter, string $site, string $host, string $board, string $domain
  * @method mixed icimsBoard(array $params = [], array $options = []) jobs-icims-board (GET /jobs/icims/board)
  *   params: string $domain, string $keywords, string $location, int $page, int $limit
  * @method mixed icimsJob(array $params = [], array $options = []) jobs-icims-job (GET /jobs/icims/job)
@@ -748,6 +834,8 @@ abstract class InstagramGroup {}
  *   params: string $host, string $site, string $id
  * @method mixed personioFeed(array $params = [], array $options = []) jobs-personio-feed (GET /jobs/personio/feed)
  *   params: string $company, string $department, string $location, bool $remote
+ * @method mixed pinpointBoard(array $params = [], array $options = []) jobs-pinpoint-board (GET /jobs/pinpoint/board)
+ *   params: string $company
  * @method mixed recruiteeOffer(array $params = [], array $options = []) jobs-recruitee-offer (GET /jobs/recruitee/offer)
  *   params: string $company, string $id
  * @method mixed recruiteeOffers(array $params = [], array $options = []) jobs-recruitee-offers (GET /jobs/recruitee/offers)
@@ -980,11 +1068,15 @@ abstract class NumbeoGroup {}
 abstract class MetaGroup {}
 
 /**
+ * @method mixed pitchbookAdvisor(array $params = [], array $options = []) pitchbook-advisor (GET /pitchbook/advisor)
+ *   params: string $id, string $url
  * @method mixed pitchbookCompany(array $params = [], array $options = []) pitchbook-company (GET /pitchbook/company)
  *   params: string $id, string $url
  * @method mixed pitchbookFund(array $params = [], array $options = []) pitchbook-fund (GET /pitchbook/fund)
  *   params: string $id, string $url
  * @method mixed pitchbookInvestor(array $params = [], array $options = []) pitchbook-investor (GET /pitchbook/investor)
+ *   params: string $id, string $url
+ * @method mixed pitchbookLimitedPartner(array $params = [], array $options = []) pitchbook-limited-partner (GET /pitchbook/limited-partner)
  *   params: string $id, string $url
  */
 abstract class PitchBookGroup {}
@@ -1641,6 +1733,16 @@ abstract class TrustMrrGroup {}
 abstract class TrustpilotGroup {}
 
 /**
+ * @method mixed ubereatsSearch(array $params = [], array $options = []) ubereats-search (GET /ubereats/search)
+ *   params: float $latitude, float $longitude, string $query, int $offset, int $limit, string $cursor
+ * @method mixed ubereatsStore(array $params = [], array $options = []) ubereats-store (GET /ubereats/store/{store_id})
+ *   params: string $store_id
+ * @method mixed ubereatsStoreReviews(array $params = [], array $options = []) ubereats-store-reviews (GET /ubereats/store/{store_id}/reviews)
+ *   params: string $store_id
+ */
+abstract class UberEatsGroup {}
+
+/**
  * @method mixed meEndpoints(array $params = [], array $options = []) usage-me-endpoints (GET /usage/me/endpoints)
  *   params: 'period'|'day'|'week'|'month'|'custom' $range, int $limit, string $from, string $to
  * @method mixed meOverview(array $params = [], array $options = []) usage-me-overview (GET /usage/me/overview)
@@ -1803,6 +1905,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\AirbnbGroup $airbnb
  * @property-read \Crawlora\Generated\AmazonGroup $amazon
  * @property-read \Crawlora\Generated\AnimeGroup $anime
+ * @property-read \Crawlora\Generated\AppleBooksGroup $appleBooks
  * @property-read \Crawlora\Generated\ApplePodcastsGroup $applePodcasts
  * @property-read \Crawlora\Generated\AppStoreGroup $appStore
  * @property-read \Crawlora\Generated\BillingGroup $billing
@@ -1858,6 +1961,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\TripAdvisorGroup $tripAdvisor
  * @property-read \Crawlora\Generated\TrustMrrGroup $trustMrr
  * @property-read \Crawlora\Generated\TrustpilotGroup $trustpilot
+ * @property-read \Crawlora\Generated\UberEatsGroup $uberEats
  * @property-read \Crawlora\Generated\UsageGroup $usage
  * @property-read \Crawlora\Generated\UserGroup $user
  * @property-read \Crawlora\Generated\WalmartGroup $walmart
