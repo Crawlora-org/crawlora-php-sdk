@@ -434,11 +434,25 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'TRENDING_DESC',
+                        'POPULARITY_DESC',
+                        'SCORE_DESC',
+                        'FAVOURITES_DESC',
+                        'START_DATE_DESC',
+                        'UPDATED_AT_DESC',
+                    ],
                 ],
                 [
                     'name' => 'season',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'WINTER',
+                        'SPRING',
+                        'SUMMER',
+                        'FALL',
+                    ],
                 ],
                 [
                     'name' => 'season_year',
@@ -449,6 +463,15 @@ final class Operations
                     'name' => 'format',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'TV',
+                        'TV_SHORT',
+                        'MOVIE',
+                        'SPECIAL',
+                        'OVA',
+                        'ONA',
+                        'MUSIC',
+                    ],
                 ],
                 [
                     'name' => 'genre',
@@ -459,6 +482,13 @@ final class Operations
                     'name' => 'status',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'FINISHED',
+                        'RELEASING',
+                        'NOT_YET_RELEASED',
+                        'CANCELLED',
+                        'HIATUS',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -501,6 +531,14 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'SEARCH_MATCH',
+                        'POPULARITY_DESC',
+                        'SCORE_DESC',
+                        'TRENDING_DESC',
+                        'FAVOURITES_DESC',
+                        'START_DATE_DESC',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -782,6 +820,16 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                 ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -795,6 +843,7 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+            'paginatable' => true,
         ],
         'apple-books-audiobook-similar' => [
             'id' => 'apple-books-audiobook-similar',
@@ -910,6 +959,16 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                 ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -923,6 +982,7 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+            'paginatable' => true,
         ],
         'apple-books-book-similar' => [
             'id' => 'apple-books-book-similar',
@@ -966,6 +1026,10 @@ final class Operations
                     'name' => 'collection',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'top-free',
+                        'top-paid',
+                    ],
                 ],
                 [
                     'name' => 'genre',
@@ -1115,6 +1179,51 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'apple-podcasts-charts-rankings' => [
+            'id' => 'apple-podcasts-charts-rankings',
+            'method' => 'GET',
+            'path' => '/apple-podcasts/charts/rankings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'chart',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'apple-podcasts-episodes-search' => [
             'id' => 'apple-podcasts-episodes-search',
             'method' => 'GET',
@@ -1161,6 +1270,31 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'apple-podcasts-new' => [
+            'id' => 'apple-podcasts-new',
+            'method' => 'GET',
+            'path' => '/apple-podcasts/new',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'apple-podcasts-search' => [
             'id' => 'apple-podcasts-search',
@@ -1278,6 +1412,38 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'apple-podcasts-show-related' => [
+            'id' => 'apple-podcasts-show-related',
+            'method' => 'GET',
+            'path' => '/apple-podcasts/show/{id}/related',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'appstore-app' => [
             'id' => 'appstore-app',
             'method' => 'GET',
@@ -1309,6 +1475,11 @@ final class Operations
                     'in' => 'query',
                     'type' => 'boolean',
                 ],
+                [
+                    'name' => 'platforms',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -1331,6 +1502,109 @@ final class Operations
                 'dev_id',
             ],
             'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'appstore-editorial' => [
+            'id' => 'appstore-editorial',
+            'method' => 'GET',
+            'path' => '/appstore/editorial',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'device',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'iphone',
+                        'ipad',
+                        'mac',
+                        'vision',
+                        'watch',
+                        'tv',
+                    ],
+                ],
+                [
+                    'name' => 'section',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'main',
+                        'arcade',
+                    ],
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'appstore-editorial-category' => [
+            'id' => 'appstore-editorial-category',
+            'method' => 'GET',
+            'path' => '/appstore/editorial/category',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'device',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'iphone',
+                        'ipad',
+                        'mac',
+                        'vision',
+                        'watch',
+                        'tv',
+                    ],
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
                 [
                     'name' => 'country',
                     'in' => 'query',
@@ -1568,6 +1842,16 @@ final class Operations
                     'name' => 'ids_only',
                     'in' => 'query',
                     'type' => 'boolean',
+                ],
+                [
+                    'name' => 'platform',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'phone',
+                        'pad',
+                        'mac',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -5801,11 +6085,33 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'country',
+                        'market',
+                        'currency',
+                        'superhost',
+                        'guest_favorite',
+                        'rating_band',
+                        'review_band',
+                        'admin1',
+                        'locality',
+                        'room_type',
+                        'property_type',
+                        'amenities',
+                    ],
                 ],
                 [
                     'name' => 'group_by',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'country',
+                        'market',
+                        'admin1',
+                        'locality',
+                        'room_type',
+                        'property_type',
+                    ],
                 ],
                 [
                     'name' => 'country',
@@ -5960,6 +6266,14 @@ final class Operations
                     'name' => 'group_by',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'country',
+                        'market',
+                        'admin1',
+                        'locality',
+                        'room_type',
+                        'property_type',
+                    ],
                 ],
                 [
                     'name' => 'country',
@@ -6005,6 +6319,179 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'listings_desc',
+                        'superhost_pct_desc',
+                        'rating_desc',
+                        'key_asc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-apple-podcasts-shows-facets' => [
+            'id' => 'datasets-apple-podcasts-shows-facets',
+            'method' => 'GET',
+            'path' => '/datasets/apple-podcasts-shows/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'genre',
+                        'genre_id',
+                        'country',
+                        'content_advisory_rating',
+                        'run_id',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'explicitness',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_track_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-apple-podcasts-shows-item' => [
+            'id' => 'datasets-apple-podcasts-shows-item',
+            'method' => 'GET',
+            'path' => '/datasets/apple-podcasts-shows/items/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-apple-podcasts-shows-search' => [
+            'id' => 'datasets-apple-podcasts-shows-search',
+            'method' => 'GET',
+            'path' => '/datasets/apple-podcasts-shows/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'explicitness',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_track_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'popularity',
+                        'track_count_desc',
+                        'release_desc',
+                        'title_asc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -6046,9 +6533,24 @@ final class Operations
                     'name' => 'store',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'ios',
+                        'android',
+                    ],
                 ],
                 [
                     'name' => 'chart_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'top_free',
+                        'top_paid',
+                        'top_grossing',
+                        'new',
+                    ],
+                ],
+                [
+                    'name' => 'platform',
                     'in' => 'query',
                     'type' => 'string',
                 ],
@@ -6081,6 +6583,11 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'rank',
+                        'rank_desc',
+                        'date_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -6122,6 +6629,10 @@ final class Operations
                     'name' => 'store',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'ios',
+                        'android',
+                    ],
                 ],
                 [
                     'name' => 'app_id',
@@ -6142,6 +6653,12 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'recent',
+                        'score_desc',
+                        'score_asc',
+                        'helpful_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -6183,6 +6700,17 @@ final class Operations
                     'name' => 'store',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'ios',
+                        'android',
+                        'both',
+                    ],
+                ],
+                [
+                    'name' => 'platforms',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
                 ],
                 [
                     'name' => 'category',
@@ -6218,6 +6746,14 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'rating_desc',
+                        'reviews_desc',
+                        'installs_desc',
+                        'updated_at_desc',
+                        'popularity_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -6255,6 +6791,17 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'gross_band',
+                        'years_active',
+                        'lifetime_year',
+                        'franchise_names',
+                        'brand_names',
+                        'genre_names',
+                        'hydrated',
+                        'is_billion_dollar',
+                        'in_lifetime_top_1000_ww',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -6401,6 +6948,14 @@ final class Operations
                     'name' => 'gross_band',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'under_50m',
+                        '50_100m',
+                        '100_250m',
+                        '250_500m',
+                        '500m_1b',
+                        'over_1b',
+                    ],
                 ],
                 [
                     'name' => 'franchise',
@@ -6461,6 +7016,15 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'worldwide_desc',
+                        'domestic_desc',
+                        'peak_worldwide_desc',
+                        'lifetime_rank_asc',
+                        'year_desc',
+                        'year_asc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -6497,6 +7061,16 @@ final class Operations
                     'name' => 'change_type',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'users',
+                        'rating',
+                        'rating_count',
+                        'version',
+                        'developer',
+                        'permissions',
+                        'privacy',
+                        'status',
+                    ],
                 ],
                 [
                     'name' => 'limit',
@@ -6526,6 +7100,17 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'item_type',
+                        'category',
+                        'developer',
+                        'developer_email',
+                        'manifest_version',
+                        'permission',
+                        'status',
+                        'collects_data',
+                        'has_broad_host_access',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -6536,6 +7121,12 @@ final class Operations
                     'name' => 'item_type',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'extension',
+                        'theme',
+                        'app',
+                        'unknown',
+                    ],
                 ],
                 [
                     'name' => 'category',
@@ -6561,11 +7152,19 @@ final class Operations
                     'name' => 'status',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'active',
+                        'removed',
+                    ],
                 ],
                 [
                     'name' => 'manifest_version',
                     'in' => 'query',
                     'type' => 'integer',
+                    'enum' => [
+                        '2',
+                        '3',
+                    ],
                 ],
                 [
                     'name' => 'collects_data',
@@ -6596,6 +7195,14 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'users_desc',
+                        'rating_desc',
+                        'reviews_desc',
+                        'updated_desc',
+                        'trending_desc',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -6673,6 +7280,11 @@ final class Operations
                     'name' => 'days',
                     'in' => 'query',
                     'type' => 'integer',
+                    'enum' => [
+                        '7',
+                        '30',
+                        '90',
+                    ],
                 ],
                 [
                     'name' => 'limit',
@@ -6706,6 +7318,12 @@ final class Operations
                     'name' => 'item_type',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'extension',
+                        'theme',
+                        'app',
+                        'unknown',
+                    ],
                 ],
                 [
                     'name' => 'category',
@@ -6731,11 +7349,19 @@ final class Operations
                     'name' => 'status',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'active',
+                        'removed',
+                    ],
                 ],
                 [
                     'name' => 'manifest_version',
                     'in' => 'query',
                     'type' => 'integer',
+                    'enum' => [
+                        '2',
+                        '3',
+                    ],
                 ],
                 [
                     'name' => 'collects_data',
@@ -6766,6 +7392,14 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'users_desc',
+                        'rating_desc',
+                        'reviews_desc',
+                        'updated_desc',
+                        'trending_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -6805,6 +7439,12 @@ final class Operations
                     'name' => 'item_type',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'extension',
+                        'theme',
+                        'app',
+                        'unknown',
+                    ],
                 ],
                 [
                     'name' => 'category',
@@ -6830,11 +7470,19 @@ final class Operations
                     'name' => 'status',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'active',
+                        'removed',
+                    ],
                 ],
                 [
                     'name' => 'manifest_version',
                     'in' => 'query',
                     'type' => 'integer',
+                    'enum' => [
+                        '2',
+                        '3',
+                    ],
                 ],
                 [
                     'name' => 'collects_data',
@@ -6934,6 +7582,12 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'followers_desc',
+                        'engagement_desc',
+                        'likes_desc',
+                        'relevance',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -6971,6 +7625,25 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'influence_tier',
+                        'type',
+                        'country',
+                        'country_code',
+                        'state',
+                        'city',
+                        'domains',
+                        'company',
+                        'reachable',
+                        'has_email',
+                        'has_twitter',
+                        'has_blog',
+                        'active_90d',
+                        'hireable',
+                        'is_org',
+                        'is_bot',
+                        'is_suspected_automation',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -6991,6 +7664,13 @@ final class Operations
                     'name' => 'influence_tier',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'nano',
+                        'micro',
+                        'mid',
+                        'macro',
+                        'mega',
+                    ],
                 ],
                 [
                     'name' => 'country',
@@ -7111,6 +7791,14 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'rank_score_desc',
+                        'followers_desc',
+                        'account_age_desc',
+                        'account_age_asc',
+                        'distance_asc',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -7175,6 +7863,13 @@ final class Operations
                     'name' => 'influence_tier',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'nano',
+                        'micro',
+                        'mid',
+                        'macro',
+                        'mega',
+                    ],
                 ],
                 [
                     'name' => 'reachable',
@@ -7236,6 +7931,13 @@ final class Operations
                     'name' => 'influence_tier',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'nano',
+                        'micro',
+                        'mid',
+                        'macro',
+                        'mega',
+                    ],
                 ],
                 [
                     'name' => 'country',
@@ -7356,6 +8058,14 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'rank_score_desc',
+                        'followers_desc',
+                        'account_age_desc',
+                        'account_age_asc',
+                        'distance_asc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -7393,6 +8103,10 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'genres',
+                        'run_id',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -7499,6 +8213,12 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'rating_desc',
+                        'reviews_desc',
+                        'name_asc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -7536,6 +8256,17 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'genres',
+                        'format',
+                        'language',
+                        'publisher',
+                        'primary_author',
+                        'primary_author_id',
+                        'series_name',
+                        'publication_year',
+                        'run_id',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -7752,6 +8483,16 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'rating_desc',
+                        'reviews_desc',
+                        'publication_desc',
+                        'publication_asc',
+                        'pages_desc',
+                        'pages_asc',
+                        'title_asc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -7789,6 +8530,15 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'category',
+                        'country',
+                        'state',
+                        'county',
+                        'city',
+                        'town',
+                        'website_status',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -7869,6 +8619,13 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'updated_at_desc',
+                        'rating_desc',
+                        'review_count_desc',
+                        'distance_asc',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -8054,6 +8811,13 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'updated_at_desc',
+                        'rating_desc',
+                        'review_count_desc',
+                        'distance_asc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -8091,6 +8855,16 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'region_type',
+                        'state_code',
+                        'property_type',
+                        'parent_metro',
+                        'parent_metro_code',
+                        'income_vintage',
+                        'is_latest',
+                        'period_begin',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -8101,6 +8875,13 @@ final class Operations
                     'name' => 'region_type',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'national',
+                        'metro',
+                        'county',
+                        'city',
+                        'zip',
+                    ],
                 ],
                 [
                     'name' => 'state_code',
@@ -8264,6 +9045,13 @@ final class Operations
                     'name' => 'region_type',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'national',
+                        'metro',
+                        'county',
+                        'city',
+                        'zip',
+                    ],
                 ],
                 [
                     'name' => 'state_code',
@@ -8364,6 +9152,22 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'price_desc',
+                        'price_asc',
+                        'list_price_desc',
+                        'list_price_asc',
+                        'price_to_income_desc',
+                        'price_to_income_asc',
+                        'salary_to_buy_desc',
+                        'salary_to_buy_asc',
+                        'dom_asc',
+                        'dom_desc',
+                        'inventory_desc',
+                        'homes_sold_desc',
+                        'period_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -8428,6 +9232,14 @@ final class Operations
                     'name' => 'status',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'active',
+                        'empty',
+                        'gone',
+                        'blocked',
+                        'pending',
+                        'invalid',
+                    ],
                 ],
                 [
                     'name' => 'min_open_roles',
@@ -8438,6 +9250,11 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'open_desc',
+                        'company_asc',
+                        'crawled_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -8657,6 +9474,21 @@ final class Operations
                     'type' => 'string',
                 ],
                 [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
                     'name' => 'employment_type',
                     'in' => 'query',
                     'type' => 'string',
@@ -8665,6 +9497,16 @@ final class Operations
                     'name' => 'remote',
                     'in' => 'query',
                     'type' => 'boolean',
+                ],
+                [
+                    'name' => 'workplace_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'onsite',
+                        'hybrid',
+                        'remote',
+                    ],
                 ],
                 [
                     'name' => 'include_closed',
@@ -8690,6 +9532,11 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'posted_desc',
+                        'company_asc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -8727,6 +9574,12 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'outlet',
+                        'vertical',
+                        'topic',
+                        'contact_type',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -8742,6 +9595,43 @@ final class Operations
                     'name' => 'vertical',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'tech',
+                        'crypto',
+                        'marketing',
+                        'consumer_tech',
+                        'consumer_policy',
+                        'cybersecurity',
+                        'health',
+                        'gaming',
+                        'climate',
+                        'business',
+                        'entertainment',
+                        'sports',
+                        'legal',
+                        'science',
+                        'politics',
+                        'real_estate',
+                        'automotive',
+                        'travel',
+                        'food',
+                        'education',
+                        'design',
+                        'film_tv',
+                        'fashion',
+                        'music',
+                        'personal_finance',
+                        'tech_independent',
+                        'culture_independent',
+                        'local_news',
+                        'construction',
+                        'banking',
+                        'retail',
+                        'aerospace_defense',
+                        'energy',
+                        'agriculture',
+                        'local_business',
+                    ],
                 ],
                 [
                     'name' => 'topic',
@@ -8752,6 +9642,11 @@ final class Operations
                     'name' => 'contact_type',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'email',
+                        'social',
+                        'none',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -8809,6 +9704,43 @@ final class Operations
                     'name' => 'vertical',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'tech',
+                        'crypto',
+                        'marketing',
+                        'consumer_tech',
+                        'consumer_policy',
+                        'cybersecurity',
+                        'health',
+                        'gaming',
+                        'climate',
+                        'business',
+                        'entertainment',
+                        'sports',
+                        'legal',
+                        'science',
+                        'politics',
+                        'real_estate',
+                        'automotive',
+                        'travel',
+                        'food',
+                        'education',
+                        'design',
+                        'film_tv',
+                        'fashion',
+                        'music',
+                        'personal_finance',
+                        'tech_independent',
+                        'culture_independent',
+                        'local_news',
+                        'construction',
+                        'banking',
+                        'retail',
+                        'aerospace_defense',
+                        'energy',
+                        'agriculture',
+                        'local_business',
+                    ],
                 ],
                 [
                     'name' => 'topic',
@@ -8819,11 +9751,22 @@ final class Operations
                     'name' => 'contact_type',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'email',
+                        'social',
+                        'none',
+                    ],
                 ],
                 [
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'name_asc',
+                        'outlet_asc',
+                        'crawled_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -8861,6 +9804,9 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'country',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -9017,6 +9963,17 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'name_asc',
+                        'cost_of_living_asc',
+                        'cost_of_living_desc',
+                        'quality_of_life_desc',
+                        'safety_desc',
+                        'crime_asc',
+                        'health_care_desc',
+                        'pollution_asc',
+                        'traffic_asc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -9124,6 +10081,17 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'name_asc',
+                        'cost_of_living_asc',
+                        'cost_of_living_desc',
+                        'quality_of_life_desc',
+                        'safety_desc',
+                        'crime_asc',
+                        'health_care_desc',
+                        'pollution_asc',
+                        'traffic_asc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -9161,6 +10129,12 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'service_type',
+                        'hq_country',
+                        'hq_state',
+                        'run_id',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -9277,6 +10251,12 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'name_asc',
+                        'year_founded_desc',
+                        'recently_crawled_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -9314,6 +10294,15 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'status',
+                        'primary_industry',
+                        'financing_status',
+                        'ownership_status',
+                        'hq_country',
+                        'hq_state',
+                        'run_id',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -9470,6 +10459,13 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'name_asc',
+                        'year_founded_desc',
+                        'investor_count_desc',
+                        'recently_crawled_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -9507,6 +10503,11 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'fund_strategy',
+                        'fund_status',
+                        'run_id',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -9613,6 +10614,12 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'name_asc',
+                        'vintage_desc',
+                        'recently_crawled_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -9650,6 +10657,13 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'status',
+                        'investor_type',
+                        'hq_country',
+                        'hq_state',
+                        'run_id',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -9776,6 +10790,12 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'name_asc',
+                        'portfolio_count_desc',
+                        'recently_crawled_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -9813,6 +10833,12 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'institution_type',
+                        'hq_country',
+                        'hq_state',
+                        'run_id',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -9929,6 +10955,12 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'name_asc',
+                        'year_founded_desc',
+                        'recently_crawled_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -9966,6 +10998,23 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'publisher',
+                        'classification',
+                        'genres',
+                        'platforms',
+                        'content_rating_authority',
+                        'content_descriptors',
+                        'price_tier',
+                        'service_branding',
+                        'region',
+                        'release_year',
+                        'run_id',
+                        'is_free',
+                        'is_addon',
+                        'is_tied_to_subscription',
+                        'coming_soon',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -10006,6 +11055,15 @@ final class Operations
                     'name' => 'price_tier',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'free',
+                        'under_5',
+                        '5_to_10',
+                        '10_to_20',
+                        '20_to_40',
+                        '40_to_60',
+                        '60_plus',
+                    ],
                 ],
                 [
                     'name' => 'branding',
@@ -10172,6 +11230,15 @@ final class Operations
                     'name' => 'price_tier',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'free',
+                        'under_5',
+                        '5_to_10',
+                        '10_to_20',
+                        '20_to_40',
+                        '40_to_60',
+                        '60_plus',
+                    ],
                 ],
                 [
                     'name' => 'branding',
@@ -10262,6 +11329,16 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'rating_desc',
+                        'reviews_desc',
+                        'price_asc',
+                        'price_desc',
+                        'discount_desc',
+                        'release_desc',
+                        'release_asc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -10299,6 +11376,10 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'topic',
+                        'product_count_band',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -10385,6 +11466,12 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'total_votes_desc',
+                        'product_count_desc',
+                        'followers_desc',
+                        'relevance',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -10422,6 +11509,12 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'topic',
+                        'launch_year',
+                        'pricing_type',
+                        'product_state',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -10568,6 +11661,14 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'votes_desc',
+                        'launched_desc',
+                        'launched_asc',
+                        'rating_desc',
+                        'best_rank_asc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -10605,11 +11706,20 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'topic',
+                        'launch_year',
+                    ],
                 ],
                 [
                     'name' => 'group_by',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'topic_month',
+                        'topic_year',
+                        'topic',
+                    ],
                 ],
                 [
                     'name' => 'topic',
@@ -10660,6 +11770,11 @@ final class Operations
                     'name' => 'group_by',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'topic_month',
+                        'topic_year',
+                        'topic',
+                    ],
                 ],
                 [
                     'name' => 'topic',
@@ -10690,6 +11805,12 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'period_desc',
+                        'period_asc',
+                        'launch_count_desc',
+                        'sum_votes_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -10727,6 +11848,16 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'sic',
+                        'sic_description',
+                        'exchange',
+                        'state_of_incorporation',
+                        'entity_type',
+                        'reporting_currency',
+                        'revenue_band',
+                        'forms_filed',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -10804,11 +11935,20 @@ final class Operations
                     'name' => 'statement',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'income',
+                        'balance',
+                        'cash_flow',
+                    ],
                 ],
                 [
                     'name' => 'period',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'annual',
+                        'quarterly',
+                    ],
                 ],
                 [
                     'name' => 'from',
@@ -10992,6 +12132,14 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'name_asc',
+                        'revenue_desc',
+                        'net_income_desc',
+                        'filing_recent_desc',
+                        'insider_activity_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -11029,6 +12177,10 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'manager',
+                        'issuer',
+                    ],
                 ],
                 [
                     'name' => 'manager_cik',
@@ -11084,6 +12236,11 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'value_desc',
+                        'value_asc',
+                        'shares_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -11125,6 +12282,11 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'percent_desc',
+                        'percent_asc',
+                        'rank_asc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -11166,6 +12328,11 @@ final class Operations
                     'name' => 'chart',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'most_played',
+                        'concurrent',
+                        'top_sellers',
+                    ],
                 ],
                 [
                     'name' => 'country',
@@ -11186,6 +12353,11 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'rank',
+                        'rank_desc',
+                        'date_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -11223,6 +12395,25 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'type',
+                        'developer',
+                        'publisher',
+                        'genres',
+                        'categories',
+                        'tags',
+                        'primary_tag',
+                        'price_tier',
+                        'review_tier',
+                        'owners_bucket',
+                        'release_year',
+                        'run_id',
+                        'is_free',
+                        'coming_soon',
+                        'platform_windows',
+                        'platform_mac',
+                        'platform_linux',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -11263,11 +12454,31 @@ final class Operations
                     'name' => 'price_tier',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'free',
+                        'under5',
+                        '5to15',
+                        '15to30',
+                        '30to60',
+                        'over60',
+                    ],
                 ],
                 [
                     'name' => 'review_tier',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'overwhelmingly_positive',
+                        'very_positive',
+                        'positive',
+                        'mostly_positive',
+                        'mixed',
+                        'mostly_negative',
+                        'negative',
+                        'very_negative',
+                        'overwhelmingly_negative',
+                        'insufficient',
+                    ],
                 ],
                 [
                     'name' => 'owners_bucket',
@@ -11434,11 +12645,31 @@ final class Operations
                     'name' => 'price_tier',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'free',
+                        'under5',
+                        '5to15',
+                        '15to30',
+                        '30to60',
+                        'over60',
+                    ],
                 ],
                 [
                     'name' => 'review_tier',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'overwhelmingly_positive',
+                        'very_positive',
+                        'positive',
+                        'mostly_positive',
+                        'mixed',
+                        'mostly_negative',
+                        'negative',
+                        'very_negative',
+                        'overwhelmingly_negative',
+                        'insufficient',
+                    ],
                 ],
                 [
                     'name' => 'owners_bucket',
@@ -11529,6 +12760,18 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'owners_desc',
+                        'reviews_desc',
+                        'review_score_desc',
+                        'ccu_desc',
+                        'metacritic_desc',
+                        'price_asc',
+                        'price_desc',
+                        'release_desc',
+                        'release_asc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -11575,6 +12818,10 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'date_desc',
+                        'date_asc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -11621,6 +12868,11 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'date_desc',
+                        'date_asc',
+                        'players_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -11667,6 +12919,13 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'date_desc',
+                        'date_asc',
+                        'price_asc',
+                        'price_desc',
+                        'discount_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -11723,6 +12982,11 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'votes_desc',
+                        'weighted_desc',
+                        'date_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -11760,6 +13024,19 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'technology',
+                        'category',
+                        'cms',
+                        'ecommerce',
+                        'cdn',
+                        'web_server',
+                        'server_language',
+                        'analytics',
+                        'tld',
+                        'render_tier',
+                        'seed_source',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -11823,6 +13100,10 @@ final class Operations
                     'name' => 'render_tier',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'http',
+                        'browser',
+                    ],
                 ],
                 [
                     'name' => 'seed_source',
@@ -11952,6 +13233,10 @@ final class Operations
                     'name' => 'render_tier',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'http',
+                        'browser',
+                    ],
                 ],
                 [
                     'name' => 'seed_source',
@@ -11982,6 +13267,13 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'rank_asc',
+                        'tech_count_desc',
+                        'domain_asc',
+                        'crawled_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -12019,6 +13311,20 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'category',
+                        'country',
+                        'payment_provider',
+                        'target_audience',
+                        'business_type',
+                        'tech',
+                        'channels',
+                        'listing_tier',
+                        'status',
+                        'on_sale',
+                        'is_sponsored',
+                        'tags',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -12182,6 +13488,10 @@ final class Operations
                     'name' => 'status',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'active',
+                        'removed',
+                    ],
                 ],
                 [
                     'name' => 'on_sale',
@@ -12247,6 +13557,19 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'mrr_desc',
+                        'revenue_desc',
+                        'revenue_30d_desc',
+                        'traffic_desc',
+                        'growth_desc',
+                        'deal_score_desc',
+                        'price_asc',
+                        'price_desc',
+                        'multiple_asc',
+                        'founded_desc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -12284,6 +13607,12 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                    'enum' => [
+                        'is_blue_verified',
+                        'has_bio',
+                        'has_external_url',
+                        'source_tier',
+                    ],
                 ],
                 [
                     'name' => 'q',
@@ -12359,6 +13688,15 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'followers_desc',
+                        'followers_asc',
+                        'crawled_at_desc',
+                        'crawled_at_asc',
+                        'created_at_desc',
+                        'created_at_asc',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -12475,6 +13813,15 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'followers_desc',
+                        'followers_asc',
+                        'crawled_at_desc',
+                        'crawled_at_asc',
+                        'created_at_desc',
+                        'created_at_asc',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -15955,6 +17302,13 @@ final class Operations
                     'name' => 'collection',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'TOP_FREE',
+                        'TOP_PAID',
+                        'GROSSING',
+                        'NEW_FREE',
+                        'NEW_PAID',
+                    ],
                 ],
                 [
                     'name' => 'category',
@@ -16057,6 +17411,11 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'helpfulness',
+                        'newest',
+                        'rating',
+                    ],
                 ],
                 [
                     'name' => 'num',
@@ -16133,6 +17492,11 @@ final class Operations
                     'name' => 'price',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'free',
+                        'paid',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -19889,11 +21253,24 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'TRENDING_DESC',
+                        'POPULARITY_DESC',
+                        'SCORE_DESC',
+                        'FAVOURITES_DESC',
+                        'START_DATE_DESC',
+                        'UPDATED_AT_DESC',
+                    ],
                 ],
                 [
                     'name' => 'format',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'MANGA',
+                        'NOVEL',
+                        'ONE_SHOT',
+                    ],
                 ],
                 [
                     'name' => 'genre',
@@ -19904,6 +21281,13 @@ final class Operations
                     'name' => 'status',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'FINISHED',
+                        'RELEASING',
+                        'NOT_YET_RELEASED',
+                        'CANCELLED',
+                        'HIATUS',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -19946,6 +21330,14 @@ final class Operations
                     'name' => 'sort',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'SEARCH_MATCH',
+                        'POPULARITY_DESC',
+                        'SCORE_DESC',
+                        'TRENDING_DESC',
+                        'FAVOURITES_DESC',
+                        'START_DATE_DESC',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -24731,6 +26123,10 @@ final class Operations
                     'name' => 'status',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'for_sale',
+                        'sold',
+                    ],
                 ],
                 [
                     'name' => 'min_price',
@@ -27060,11 +28456,61 @@ final class Operations
                     'name' => 'chart',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'top-podcasts',
+                        'top-episodes',
+                        'trending',
+                        'arts',
+                        'business',
+                        'comedy',
+                        'education',
+                        'fiction',
+                        'health-fitness',
+                        'history',
+                        'leisure',
+                        'music',
+                        'news',
+                        'religion-spirituality',
+                        'science',
+                        'society-culture',
+                        'sports',
+                        'technology',
+                        'true-crime',
+                        'tv-film',
+                    ],
                 ],
                 [
                     'name' => 'region',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'ar',
+                        'au',
+                        'at',
+                        'br',
+                        'ca',
+                        'cl',
+                        'co',
+                        'dk',
+                        'fi',
+                        'fr',
+                        'de',
+                        'in',
+                        'id',
+                        'ie',
+                        'it',
+                        'jp',
+                        'mx',
+                        'nz',
+                        'no',
+                        'ph',
+                        'pl',
+                        'es',
+                        'se',
+                        'nl',
+                        'gb',
+                        'us',
+                    ],
                 ],
                 [
                     'name' => 'limit',
@@ -27532,11 +28978,24 @@ final class Operations
                     'name' => 'type',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'album',
+                        'single',
+                        'compilation',
+                        'appears_on',
+                        'all',
+                    ],
                 ],
                 [
                     'name' => 'order',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'date_desc',
+                        'date_asc',
+                        'name_asc',
+                        'name_desc',
+                    ],
                 ],
                 [
                     'name' => 'offset',
@@ -27880,6 +29339,12 @@ final class Operations
                     'name' => 'content_id',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'CHARTS',
+                        'POPULAR_ALBUMS',
+                        'POPULAR_ARTISTS',
+                        'TRENDING_SONGS',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -29544,487 +31009,6 @@ final class Operations
                     'name' => 'l',
                     'in' => 'query',
                     'type' => 'string',
-                ],
-            ],
-            'formParams' => [],
-            'bodyParam' => null,
-            'bodyRequired' => false,
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'security' => [
-                'ApiKeyAuth',
-            ],
-        ],
-        'tcdb-birthdays' => [
-            'id' => 'tcdb-birthdays',
-            'method' => 'GET',
-            'path' => '/tcdb/birthdays',
-            'pathParams' => [],
-            'queryParams' => [
-                [
-                    'name' => 'month',
-                    'in' => 'query',
-                    'type' => 'integer',
-                    'required' => true,
-                ],
-                [
-                    'name' => 'day',
-                    'in' => 'query',
-                    'type' => 'integer',
-                    'required' => true,
-                ],
-                [
-                    'name' => 'limit',
-                    'in' => 'query',
-                    'type' => 'integer',
-                ],
-            ],
-            'formParams' => [],
-            'bodyParam' => null,
-            'bodyRequired' => false,
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'security' => [
-                'ApiKeyAuth',
-            ],
-        ],
-        'tcdb-card' => [
-            'id' => 'tcdb-card',
-            'method' => 'GET',
-            'path' => '/tcdb/card',
-            'pathParams' => [],
-            'queryParams' => [
-                [
-                    'name' => 'set_id',
-                    'in' => 'query',
-                    'type' => 'string',
-                ],
-                [
-                    'name' => 'card_id',
-                    'in' => 'query',
-                    'type' => 'string',
-                ],
-                [
-                    'name' => 'path',
-                    'in' => 'query',
-                    'type' => 'string',
-                ],
-                [
-                    'name' => 'url',
-                    'in' => 'query',
-                    'type' => 'string',
-                ],
-            ],
-            'formParams' => [],
-            'bodyParam' => null,
-            'bodyRequired' => false,
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'security' => [
-                'ApiKeyAuth',
-            ],
-        ],
-        'tcdb-card-of-the-day' => [
-            'id' => 'tcdb-card-of-the-day',
-            'method' => 'GET',
-            'path' => '/tcdb/card-of-the-day',
-            'pathParams' => [],
-            'queryParams' => [
-                [
-                    'name' => 'page',
-                    'in' => 'query',
-                    'type' => 'integer',
-                ],
-                [
-                    'name' => 'limit',
-                    'in' => 'query',
-                    'type' => 'integer',
-                ],
-            ],
-            'formParams' => [],
-            'bodyParam' => null,
-            'bodyRequired' => false,
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'security' => [
-                'ApiKeyAuth',
-            ],
-            'paginatable' => true,
-        ],
-        'tcdb-companies' => [
-            'id' => 'tcdb-companies',
-            'method' => 'GET',
-            'path' => '/tcdb/companies',
-            'pathParams' => [],
-            'queryParams' => [
-                [
-                    'name' => 'limit',
-                    'in' => 'query',
-                    'type' => 'integer',
-                ],
-            ],
-            'formParams' => [],
-            'bodyParam' => null,
-            'bodyRequired' => false,
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'security' => [
-                'ApiKeyAuth',
-            ],
-        ],
-        'tcdb-person' => [
-            'id' => 'tcdb-person',
-            'method' => 'GET',
-            'path' => '/tcdb/person',
-            'pathParams' => [],
-            'queryParams' => [
-                [
-                    'name' => 'id',
-                    'in' => 'query',
-                    'type' => 'string',
-                ],
-                [
-                    'name' => 'path',
-                    'in' => 'query',
-                    'type' => 'string',
-                ],
-                [
-                    'name' => 'url',
-                    'in' => 'query',
-                    'type' => 'string',
-                ],
-                [
-                    'name' => 'limit',
-                    'in' => 'query',
-                    'type' => 'integer',
-                ],
-            ],
-            'formParams' => [],
-            'bodyParam' => null,
-            'bodyRequired' => false,
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'security' => [
-                'ApiKeyAuth',
-            ],
-        ],
-        'tcdb-releases' => [
-            'id' => 'tcdb-releases',
-            'method' => 'GET',
-            'path' => '/tcdb/releases',
-            'pathParams' => [],
-            'queryParams' => [
-                [
-                    'name' => 'limit',
-                    'in' => 'query',
-                    'type' => 'integer',
-                ],
-            ],
-            'formParams' => [],
-            'bodyParam' => null,
-            'bodyRequired' => false,
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'security' => [
-                'ApiKeyAuth',
-            ],
-        ],
-        'tcdb-search' => [
-            'id' => 'tcdb-search',
-            'method' => 'GET',
-            'path' => '/tcdb/search',
-            'pathParams' => [],
-            'queryParams' => [
-                [
-                    'name' => 'q',
-                    'in' => 'query',
-                    'type' => 'string',
-                    'required' => true,
-                ],
-                [
-                    'name' => 'category',
-                    'in' => 'query',
-                    'type' => 'string',
-                    'enum' => [
-                        'Baseball',
-                        'Basketball',
-                        'Boxing',
-                        'Cricket',
-                        'Football',
-                        'Gaming',
-                        'Golf',
-                        'Hockey',
-                        'Misc Sports',
-                        'MMA',
-                        'Multi-Sport',
-                        'Non-Sport',
-                        'Racing',
-                        'Soccer',
-                        'Tennis',
-                        'Wrestling',
-                    ],
-                ],
-                [
-                    'name' => 'limit',
-                    'in' => 'query',
-                    'type' => 'integer',
-                ],
-            ],
-            'formParams' => [],
-            'bodyParam' => null,
-            'bodyRequired' => false,
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'security' => [
-                'ApiKeyAuth',
-            ],
-        ],
-        'tcdb-set' => [
-            'id' => 'tcdb-set',
-            'method' => 'GET',
-            'path' => '/tcdb/set',
-            'pathParams' => [],
-            'queryParams' => [
-                [
-                    'name' => 'id',
-                    'in' => 'query',
-                    'type' => 'string',
-                ],
-                [
-                    'name' => 'path',
-                    'in' => 'query',
-                    'type' => 'string',
-                ],
-                [
-                    'name' => 'url',
-                    'in' => 'query',
-                    'type' => 'string',
-                ],
-                [
-                    'name' => 'limit',
-                    'in' => 'query',
-                    'type' => 'integer',
-                ],
-            ],
-            'formParams' => [],
-            'bodyParam' => null,
-            'bodyRequired' => false,
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'security' => [
-                'ApiKeyAuth',
-            ],
-        ],
-        'tcdb-sets' => [
-            'id' => 'tcdb-sets',
-            'method' => 'GET',
-            'path' => '/tcdb/sets',
-            'pathParams' => [],
-            'queryParams' => [
-                [
-                    'name' => 'sport',
-                    'in' => 'query',
-                    'type' => 'string',
-                    'required' => true,
-                    'enum' => [
-                        'Baseball',
-                        'Basketball',
-                        'Boxing',
-                        'Cricket',
-                        'Football',
-                        'Gaming',
-                        'Golf',
-                        'Hockey',
-                        'Misc Sports',
-                        'MMA',
-                        'Multi-Sport',
-                        'Non-Sport',
-                        'Racing',
-                        'Soccer',
-                        'Tennis',
-                        'Wrestling',
-                    ],
-                ],
-                [
-                    'name' => 'year',
-                    'in' => 'query',
-                    'type' => 'string',
-                    'required' => true,
-                ],
-                [
-                    'name' => 'limit',
-                    'in' => 'query',
-                    'type' => 'integer',
-                ],
-            ],
-            'formParams' => [],
-            'bodyParam' => null,
-            'bodyRequired' => false,
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'security' => [
-                'ApiKeyAuth',
-            ],
-        ],
-        'tcdb-tagged' => [
-            'id' => 'tcdb-tagged',
-            'method' => 'GET',
-            'path' => '/tcdb/tagged',
-            'pathParams' => [],
-            'queryParams' => [
-                [
-                    'name' => 'id',
-                    'in' => 'query',
-                    'type' => 'string',
-                ],
-                [
-                    'name' => 'path',
-                    'in' => 'query',
-                    'type' => 'string',
-                ],
-                [
-                    'name' => 'url',
-                    'in' => 'query',
-                    'type' => 'string',
-                ],
-                [
-                    'name' => 'sport',
-                    'in' => 'query',
-                    'type' => 'string',
-                    'enum' => [
-                        'Baseball',
-                        'Basketball',
-                        'Boxing',
-                        'Cricket',
-                        'Football',
-                        'Gaming',
-                        'Golf',
-                        'Hockey',
-                        'Misc Sports',
-                        'MMA',
-                        'Multi-Sport',
-                        'Non-Sport',
-                        'Racing',
-                        'Soccer',
-                        'Tennis',
-                        'Wrestling',
-                    ],
-                ],
-                [
-                    'name' => 'page',
-                    'in' => 'query',
-                    'type' => 'integer',
-                ],
-                [
-                    'name' => 'limit',
-                    'in' => 'query',
-                    'type' => 'integer',
-                ],
-            ],
-            'formParams' => [],
-            'bodyParam' => null,
-            'bodyRequired' => false,
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'security' => [
-                'ApiKeyAuth',
-            ],
-            'paginatable' => true,
-        ],
-        'tcdb-team' => [
-            'id' => 'tcdb-team',
-            'method' => 'GET',
-            'path' => '/tcdb/team',
-            'pathParams' => [],
-            'queryParams' => [
-                [
-                    'name' => 'id',
-                    'in' => 'query',
-                    'type' => 'string',
-                ],
-                [
-                    'name' => 'path',
-                    'in' => 'query',
-                    'type' => 'string',
-                ],
-                [
-                    'name' => 'url',
-                    'in' => 'query',
-                    'type' => 'string',
-                ],
-                [
-                    'name' => 'limit',
-                    'in' => 'query',
-                    'type' => 'integer',
-                ],
-            ],
-            'formParams' => [],
-            'bodyParam' => null,
-            'bodyRequired' => false,
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'security' => [
-                'ApiKeyAuth',
-            ],
-        ],
-        'tcdb-top-sets' => [
-            'id' => 'tcdb-top-sets',
-            'method' => 'GET',
-            'path' => '/tcdb/top-sets',
-            'pathParams' => [],
-            'queryParams' => [
-                [
-                    'name' => 'limit',
-                    'in' => 'query',
-                    'type' => 'integer',
                 ],
             ],
             'formParams' => [],
@@ -33012,11 +33996,24 @@ final class Operations
                     'name' => 'statement',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'income',
+                        'income-statement',
+                        'balance-sheet',
+                        'balance',
+                        'cash-flow',
+                        'cashflow',
+                    ],
                 ],
                 [
                     'name' => 'period',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'annual',
+                        'quarterly',
+                        'trailing',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -33924,6 +34921,15 @@ final class Operations
                     'name' => 'status',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'for_sale',
+                        'sale',
+                        'for-sale',
+                        'for_rent',
+                        'rent',
+                        'for-rent',
+                        'sold',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -33981,6 +34987,15 @@ final class Operations
                     'name' => 'status',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'for_sale',
+                        'sale',
+                        'for-sale',
+                        'for_rent',
+                        'rent',
+                        'for-rent',
+                        'sold',
+                    ],
                 ],
                 [
                     'name' => 'region_id',
@@ -34072,14 +35087,19 @@ final class Operations
         ],
         'applePodcasts' => [
             'charts' => 'apple-podcasts-charts',
+            'chartsRankings' => 'apple-podcasts-charts-rankings',
             'episodesSearch' => 'apple-podcasts-episodes-search',
+            'new_' => 'apple-podcasts-new',
             'search' => 'apple-podcasts-search',
             'show' => 'apple-podcasts-show',
             'showEpisodes' => 'apple-podcasts-show-episodes',
+            'showRelated' => 'apple-podcasts-show-related',
         ],
         'appStore' => [
             'app' => 'appstore-app',
             'developer' => 'appstore-developer',
+            'editorial' => 'appstore-editorial',
+            'editorialCategory' => 'appstore-editorial-category',
             'list_' => 'appstore-list',
             'privacy' => 'appstore-privacy',
             'ratings' => 'appstore-ratings',
@@ -34194,6 +35214,9 @@ final class Operations
             'airbnbMarketsItem' => 'datasets-airbnb-markets-item',
             'airbnbMarketsNearby' => 'datasets-airbnb-markets-nearby',
             'airbnbMarketsSearch' => 'datasets-airbnb-markets-search',
+            'applePodcastsShowsFacets' => 'datasets-apple-podcasts-shows-facets',
+            'applePodcastsShowsItem' => 'datasets-apple-podcasts-shows-item',
+            'applePodcastsShowsSearch' => 'datasets-apple-podcasts-shows-search',
             'appsChartsSearch' => 'datasets-apps-charts-search',
             'appsReviewsSearch' => 'datasets-apps-reviews-search',
             'appsSearch' => 'datasets-apps-search',
@@ -34833,20 +35856,6 @@ final class Operations
             'tagsList' => 'steam-tags-list',
             'topSellers' => 'steam-top-sellers',
         ],
-        'tcdb' => [
-            'birthdays' => 'tcdb-birthdays',
-            'card' => 'tcdb-card',
-            'cardOfTheDay' => 'tcdb-card-of-the-day',
-            'companies' => 'tcdb-companies',
-            'person' => 'tcdb-person',
-            'releases' => 'tcdb-releases',
-            'search' => 'tcdb-search',
-            'set' => 'tcdb-set',
-            'sets' => 'tcdb-sets',
-            'tagged' => 'tcdb-tagged',
-            'team' => 'tcdb-team',
-            'topSets' => 'tcdb-top-sets',
-        ],
         'threads' => [
             'post' => 'threads-post',
             'postReplies' => 'threads-post-replies',
@@ -35003,7 +36012,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 836;
+    public const OPERATION_COUNT = 832;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -35039,12 +36048,17 @@ final class Operations
         'apple-books-search',
         'apple-books-series',
         'apple-podcasts-charts',
+        'apple-podcasts-charts-rankings',
         'apple-podcasts-episodes-search',
+        'apple-podcasts-new',
         'apple-podcasts-search',
         'apple-podcasts-show',
         'apple-podcasts-show-episodes',
+        'apple-podcasts-show-related',
         'appstore-app',
         'appstore-developer',
+        'appstore-editorial',
+        'appstore-editorial-category',
         'appstore-list',
         'appstore-privacy',
         'appstore-ratings',
@@ -35135,6 +36149,9 @@ final class Operations
         'datasets-airbnb-markets-item',
         'datasets-airbnb-markets-nearby',
         'datasets-airbnb-markets-search',
+        'datasets-apple-podcasts-shows-facets',
+        'datasets-apple-podcasts-shows-item',
+        'datasets-apple-podcasts-shows-search',
         'datasets-apps-charts-search',
         'datasets-apps-reviews-search',
         'datasets-apps-search',
@@ -35703,18 +36720,6 @@ final class Operations
         'steam-tags',
         'steam-tags-list',
         'steam-top-sellers',
-        'tcdb-birthdays',
-        'tcdb-card',
-        'tcdb-card-of-the-day',
-        'tcdb-companies',
-        'tcdb-person',
-        'tcdb-releases',
-        'tcdb-search',
-        'tcdb-set',
-        'tcdb-sets',
-        'tcdb-tagged',
-        'tcdb-team',
-        'tcdb-top-sets',
         'threads-post',
         'threads-post-replies',
         'threads-profile',
@@ -35907,6 +36912,8 @@ final class OperationId
     public const ANIME_TITLE_STAFF = 'anime-title-staff';
     public const APP_STORE_APP = 'appstore-app';
     public const APP_STORE_DEVELOPER = 'appstore-developer';
+    public const APP_STORE_EDITORIAL = 'appstore-editorial';
+    public const APP_STORE_EDITORIAL_CATEGORY = 'appstore-editorial-category';
     public const APP_STORE_LIST = 'appstore-list';
     public const APP_STORE_PRIVACY = 'appstore-privacy';
     public const APP_STORE_RATINGS = 'appstore-ratings';
@@ -35928,10 +36935,13 @@ final class OperationId
     public const APPLE_BOOKS_SEARCH = 'apple-books-search';
     public const APPLE_BOOKS_SERIES = 'apple-books-series';
     public const APPLE_PODCASTS_CHARTS = 'apple-podcasts-charts';
+    public const APPLE_PODCASTS_CHARTS_RANKINGS = 'apple-podcasts-charts-rankings';
     public const APPLE_PODCASTS_EPISODES_SEARCH = 'apple-podcasts-episodes-search';
+    public const APPLE_PODCASTS_NEW = 'apple-podcasts-new';
     public const APPLE_PODCASTS_SEARCH = 'apple-podcasts-search';
     public const APPLE_PODCASTS_SHOW = 'apple-podcasts-show';
     public const APPLE_PODCASTS_SHOW_EPISODES = 'apple-podcasts-show-episodes';
+    public const APPLE_PODCASTS_SHOW_RELATED = 'apple-podcasts-show-related';
     public const BILLING_ME = 'billing-me';
     public const BILLING_ME_CHECKOUT = 'billing-me-checkout';
     public const BILLING_ME_EVENTS = 'billing-me-events';
@@ -36012,6 +37022,9 @@ final class OperationId
     public const DATASETS_AIRBNB_MARKETS_ITEM = 'datasets-airbnb-markets-item';
     public const DATASETS_AIRBNB_MARKETS_NEARBY = 'datasets-airbnb-markets-nearby';
     public const DATASETS_AIRBNB_MARKETS_SEARCH = 'datasets-airbnb-markets-search';
+    public const DATASETS_APPLE_PODCASTS_SHOWS_FACETS = 'datasets-apple-podcasts-shows-facets';
+    public const DATASETS_APPLE_PODCASTS_SHOWS_ITEM = 'datasets-apple-podcasts-shows-item';
+    public const DATASETS_APPLE_PODCASTS_SHOWS_SEARCH = 'datasets-apple-podcasts-shows-search';
     public const DATASETS_APPS_CHARTS_SEARCH = 'datasets-apps-charts-search';
     public const DATASETS_APPS_REVIEWS_SEARCH = 'datasets-apps-reviews-search';
     public const DATASETS_APPS_SEARCH = 'datasets-apps-search';
@@ -36579,18 +37592,6 @@ final class OperationId
     public const STEAM_TAGS = 'steam-tags';
     public const STEAM_TAGS_LIST = 'steam-tags-list';
     public const STEAM_TOP_SELLERS = 'steam-top-sellers';
-    public const TCDB_BIRTHDAYS = 'tcdb-birthdays';
-    public const TCDB_CARD = 'tcdb-card';
-    public const TCDB_CARD_OF_THE_DAY = 'tcdb-card-of-the-day';
-    public const TCDB_COMPANIES = 'tcdb-companies';
-    public const TCDB_PERSON = 'tcdb-person';
-    public const TCDB_RELEASES = 'tcdb-releases';
-    public const TCDB_SEARCH = 'tcdb-search';
-    public const TCDB_SET = 'tcdb-set';
-    public const TCDB_SETS = 'tcdb-sets';
-    public const TCDB_TAGGED = 'tcdb-tagged';
-    public const TCDB_TEAM = 'tcdb-team';
-    public const TCDB_TOP_SETS = 'tcdb-top-sets';
     public const THREADS_POST = 'threads-post';
     public const THREADS_POST_REPLIES = 'threads-post-replies';
     public const THREADS_PROFILE = 'threads-profile';

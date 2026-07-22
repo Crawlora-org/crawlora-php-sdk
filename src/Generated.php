@@ -42,9 +42,9 @@ abstract class AmazonGroup {}
  * @method mixed character(array $params = [], array $options = []) anime-character (GET /anime/character/{id})
  *   params: string $id
  * @method mixed rankings(array $params = [], array $options = []) anime-rankings (GET /anime/rankings)
- *   params: string $sort, string $season, int $season_year, string $format, string $genre, string $status, int $page, int $per_page
+ *   params: 'TRENDING_DESC'|'POPULARITY_DESC'|'SCORE_DESC'|'FAVOURITES_DESC'|'START_DATE_DESC'|'UPDATED_AT_DESC' $sort, 'WINTER'|'SPRING'|'SUMMER'|'FALL' $season, int $season_year, 'TV'|'TV_SHORT'|'MOVIE'|'SPECIAL'|'OVA'|'ONA'|'MUSIC' $format, string $genre, 'FINISHED'|'RELEASING'|'NOT_YET_RELEASED'|'CANCELLED'|'HIATUS' $status, int $page, int $per_page
  * @method mixed search(array $params = [], array $options = []) anime-search (GET /anime/search)
- *   params: string $query, string $sort, int $page, int $per_page
+ *   params: string $query, 'SEARCH_MATCH'|'POPULARITY_DESC'|'SCORE_DESC'|'TRENDING_DESC'|'FAVOURITES_DESC'|'START_DATE_DESC' $sort, int $page, int $per_page
  * @method mixed title(array $params = [], array $options = []) anime-title (GET /anime/title/{id})
  *   params: string $id, bool $mal
  * @method mixed titleCharacters(array $params = [], array $options = []) anime-title-characters (GET /anime/title/{id}/characters)
@@ -64,7 +64,7 @@ abstract class AnimeGroup {}
  * @method mixed audiobook(array $params = [], array $options = []) apple-books-audiobook (GET /apple-books/audiobook/{id})
  *   params: string $id, string $country, string $lang
  * @method mixed audiobookReviews(array $params = [], array $options = []) apple-books-audiobook-reviews (GET /apple-books/audiobook/{id}/reviews)
- *   params: string $id, string $country, string $lang
+ *   params: string $id, string $country, string $lang, int $page, int $limit
  * @method mixed audiobookSimilar(array $params = [], array $options = []) apple-books-audiobook-similar (GET /apple-books/audiobook/{id}/similar)
  *   params: string $id, string $country, string $lang
  * @method mixed author(array $params = [], array $options = []) apple-books-author (GET /apple-books/author/{id})
@@ -72,11 +72,11 @@ abstract class AnimeGroup {}
  * @method mixed book(array $params = [], array $options = []) apple-books-book (GET /apple-books/book/{id})
  *   params: string $id, string $country, string $lang
  * @method mixed bookReviews(array $params = [], array $options = []) apple-books-book-reviews (GET /apple-books/book/{id}/reviews)
- *   params: string $id, string $country, string $lang
+ *   params: string $id, string $country, string $lang, int $page, int $limit
  * @method mixed bookSimilar(array $params = [], array $options = []) apple-books-book-similar (GET /apple-books/book/{id}/similar)
  *   params: string $id, string $country, string $lang
  * @method mixed charts(array $params = [], array $options = []) apple-books-charts (GET /apple-books/charts)
- *   params: string $collection, int $genre, string $country, int $limit
+ *   params: 'top-free'|'top-paid' $collection, int $genre, string $country, int $limit
  * @method mixed search(array $params = [], array $options = []) apple-books-search (GET /apple-books/search)
  *   params: string $term, string $country, string $lang, int $limit, int $page
  * @method mixed series(array $params = [], array $options = []) apple-books-series (GET /apple-books/series/{id})
@@ -87,22 +87,32 @@ abstract class AppleBooksGroup {}
 /**
  * @method mixed charts(array $params = [], array $options = []) apple-podcasts-charts (GET /apple-podcasts/charts)
  *   params: string $collection, int $category, string $country, int $limit
+ * @method mixed chartsRankings(array $params = [], array $options = []) apple-podcasts-charts-rankings (GET /apple-podcasts/charts/rankings)
+ *   params: string $chart, string $type, int $genre, string $country, int $limit
  * @method mixed episodesSearch(array $params = [], array $options = []) apple-podcasts-episodes-search (GET /apple-podcasts/episodes/search)
  *   params: string $term, string $country, string $lang, int $limit, int $page
+ * @method mixed new_(array $params = [], array $options = []) apple-podcasts-new (GET /apple-podcasts/new)
+ *   params: string $country
  * @method mixed search(array $params = [], array $options = []) apple-podcasts-search (GET /apple-podcasts/search)
  *   params: string $term, string $country, string $lang, int $limit, int $page
  * @method mixed show(array $params = [], array $options = []) apple-podcasts-show (GET /apple-podcasts/show/{id})
  *   params: string $id, string $country, string $lang
  * @method mixed showEpisodes(array $params = [], array $options = []) apple-podcasts-show-episodes (GET /apple-podcasts/show/{id}/episodes)
  *   params: string $id, string $country, string $lang, int $limit
+ * @method mixed showRelated(array $params = [], array $options = []) apple-podcasts-show-related (GET /apple-podcasts/show/{id}/related)
+ *   params: string $id, string $country, int $limit
  */
 abstract class ApplePodcastsGroup {}
 
 /**
  * @method mixed app(array $params = [], array $options = []) appstore-app (GET /appstore/app)
- *   params: string $id, string $app_id, string $country, string $lang, bool $ratings
+ *   params: string $id, string $app_id, string $country, string $lang, bool $ratings, bool $platforms
  * @method mixed developer(array $params = [], array $options = []) appstore-developer (GET /appstore/developer/{dev_id})
  *   params: string $dev_id, string $country, string $lang
+ * @method mixed editorial(array $params = [], array $options = []) appstore-editorial (GET /appstore/editorial)
+ *   params: 'iphone'|'ipad'|'mac'|'vision'|'watch'|'tv' $device, 'main'|'arcade' $section, string $country, string $lang
+ * @method mixed editorialCategory(array $params = [], array $options = []) appstore-editorial-category (GET /appstore/editorial/category)
+ *   params: 'iphone'|'ipad'|'mac'|'vision'|'watch'|'tv' $device, string $category_id, string $country, string $lang
  * @method mixed list_(array $params = [], array $options = []) appstore-list (GET /appstore/list)
  *   params: string $collection, int $category, string $country, string $lang, int $num, bool $full_detail
  * @method mixed privacy(array $params = [], array $options = []) appstore-privacy (GET /appstore/privacy/{id})
@@ -112,7 +122,7 @@ abstract class ApplePodcastsGroup {}
  * @method mixed reviews(array $params = [], array $options = []) appstore-reviews (GET /appstore/reviews)
  *   params: string $id, string $app_id, string $country, int $page, 'mostRecent'|'mostHelpful' $sort, string $lang
  * @method mixed search(array $params = [], array $options = []) appstore-search (GET /appstore/search)
- *   params: string $term, int $num, int $page, string $country, string $lang, bool $ids_only
+ *   params: string $term, int $num, int $page, string $country, string $lang, bool $ids_only, 'phone'|'pad'|'mac' $platform
  * @method mixed similar(array $params = [], array $options = []) appstore-similar (GET /appstore/similar)
  *   params: string $id, string $app_id, string $country, string $lang
  * @method mixed suggest(array $params = [], array $options = []) appstore-suggest (GET /appstore/suggest/{term})
@@ -319,77 +329,83 @@ abstract class WebGroup {}
 /**
  * @method mixed list_(array $params = [], array $options = []) datasets-list (GET /datasets)
  * @method mixed airbnbMarketsFacets(array $params = [], array $options = []) datasets-airbnb-markets-facets (GET /datasets/airbnb-markets/facets)
- *   params: string $facet, string $group_by, string $country, string $market, bool $superhost, bool $guest_favorite, float $min_rating, int $min_review_count, string $active_since, int $min_listings
+ *   params: 'country'|'market'|'currency'|'superhost'|'guest_favorite'|'rating_band'|'review_band'|'admin1'|'locality'|'room_type'|'property_type'|'amenities' $facet, 'country'|'market'|'admin1'|'locality'|'room_type'|'property_type' $group_by, string $country, string $market, bool $superhost, bool $guest_favorite, float $min_rating, int $min_review_count, string $active_since, int $min_listings
  * @method mixed airbnbMarketsItem(array $params = [], array $options = []) datasets-airbnb-markets-item (GET /datasets/airbnb-markets/items/{country})
  *   params: string $country
  * @method mixed airbnbMarketsNearby(array $params = [], array $options = []) datasets-airbnb-markets-nearby (GET /datasets/airbnb-markets/nearby)
  *   params: float $lat, float $lon, int $radius_m, int $precision, int $min_listings, string $country, bool $superhost, float $min_rating, string $active_since
  * @method mixed airbnbMarketsSearch(array $params = [], array $options = []) datasets-airbnb-markets-search (GET /datasets/airbnb-markets/search)
- *   params: string $group_by, string $country, string $market, bool $superhost, bool $guest_favorite, float $min_rating, int $min_review_count, string $active_since, int $min_listings, string $sort, int $page, int $page_size
+ *   params: 'country'|'market'|'admin1'|'locality'|'room_type'|'property_type' $group_by, string $country, string $market, bool $superhost, bool $guest_favorite, float $min_rating, int $min_review_count, string $active_since, int $min_listings, 'listings_desc'|'superhost_pct_desc'|'rating_desc'|'key_asc' $sort, int $page, int $page_size
+ * @method mixed applePodcastsShowsFacets(array $params = [], array $options = []) datasets-apple-podcasts-shows-facets (GET /datasets/apple-podcasts-shows/facets)
+ *   params: 'genre'|'genre_id'|'country'|'content_advisory_rating'|'run_id' $facet, string $q, string $genre, string $genre_id, string $country, string $explicitness, string $run_id, int $min_track_count
+ * @method mixed applePodcastsShowsItem(array $params = [], array $options = []) datasets-apple-podcasts-shows-item (GET /datasets/apple-podcasts-shows/items/{id})
+ *   params: string $id
+ * @method mixed applePodcastsShowsSearch(array $params = [], array $options = []) datasets-apple-podcasts-shows-search (GET /datasets/apple-podcasts-shows/search)
+ *   params: string $q, string $genre, string $genre_id, string $country, string $explicitness, string $run_id, int $min_track_count, 'relevance'|'popularity'|'track_count_desc'|'release_desc'|'title_asc' $sort, int $page, int $page_size
  * @method mixed appsChartsSearch(array $params = [], array $options = []) datasets-apps-charts-search (GET /datasets/apps-charts/search)
- *   params: string $q, string $store, string $chart_type, string $collection, string $category, string $country, string $app_id, string $date, string $sort, int $page, int $page_size
+ *   params: string $q, 'ios'|'android' $store, 'top_free'|'top_paid'|'top_grossing'|'new' $chart_type, string $platform, string $collection, string $category, string $country, string $app_id, string $date, 'rank'|'rank_desc'|'date_desc' $sort, int $page, int $page_size
  * @method mixed appsReviewsSearch(array $params = [], array $options = []) datasets-apps-reviews-search (GET /datasets/apps-reviews/search)
- *   params: string $q, string $store, string $app_id, string $country, int $min_score, string $sort, int $page, int $page_size
+ *   params: string $q, 'ios'|'android' $store, string $app_id, string $country, int $min_score, 'recent'|'score_desc'|'score_asc'|'helpful_desc' $sort, int $page, int $page_size
  * @method mixed appsSearch(array $params = [], array $options = []) datasets-apps-search (GET /datasets/apps/search)
- *   params: string $q, string $store, string $category, string $country, string $developer, bool $free, float $min_rating, int $min_reviews, string $sort, int $page, int $page_size
+ *   params: string $q, 'ios'|'android'|'both' $store, array<string> $platforms, string $category, string $country, string $developer, bool $free, float $min_rating, int $min_reviews, 'relevance'|'rating_desc'|'reviews_desc'|'installs_desc'|'updated_at_desc'|'popularity_desc' $sort, int $page, int $page_size
  * @method mixed boxofficemojoFacets(array $params = [], array $options = []) datasets-boxofficemojo-facets (GET /datasets/boxofficemojo/facets)
- *   params: string $facet, string $q, string $title_id, int $year, int $lifetime_year, string $gross_band, string $franchise, string $brand, string $genre, bool $in_lifetime_top_1000, int $min_worldwide, int $max_worldwide, int $min_domestic, float $min_foreign_share, float $max_domestic_share, bool $hydrated, bool $is_billion_dollar
+ *   params: 'gross_band'|'years_active'|'lifetime_year'|'franchise_names'|'brand_names'|'genre_names'|'hydrated'|'is_billion_dollar'|'in_lifetime_top_1000_ww' $facet, string $q, string $title_id, int $year, int $lifetime_year, string $gross_band, string $franchise, string $brand, string $genre, bool $in_lifetime_top_1000, int $min_worldwide, int $max_worldwide, int $min_domestic, float $min_foreign_share, float $max_domestic_share, bool $hydrated, bool $is_billion_dollar
  * @method mixed boxofficemojoItem(array $params = [], array $options = []) datasets-boxofficemojo-item (GET /datasets/boxofficemojo/items/{title_id})
  *   params: string $title_id
  * @method mixed boxofficemojoSearch(array $params = [], array $options = []) datasets-boxofficemojo-search (GET /datasets/boxofficemojo/search)
- *   params: string $q, string $title_id, int $year, int $lifetime_year, string $gross_band, string $franchise, string $brand, string $genre, bool $in_lifetime_top_1000, bool $hydrated, bool $is_billion_dollar, int $min_worldwide, int $max_worldwide, int $min_domestic, float $min_foreign_share, float $max_domestic_share, string $sort, int $page, int $page_size
+ *   params: string $q, string $title_id, int $year, int $lifetime_year, 'under_50m'|'50_100m'|'100_250m'|'250_500m'|'500m_1b'|'over_1b' $gross_band, string $franchise, string $brand, string $genre, bool $in_lifetime_top_1000, bool $hydrated, bool $is_billion_dollar, int $min_worldwide, int $max_worldwide, int $min_domestic, float $min_foreign_share, float $max_domestic_share, 'relevance'|'worldwide_desc'|'domestic_desc'|'peak_worldwide_desc'|'lifetime_rank_asc'|'year_desc'|'year_asc' $sort, int $page, int $page_size
  * @method mixed chromeExtensionsChanges(array $params = [], array $options = []) datasets-chrome-extensions-changes (GET /datasets/chrome-extensions/changes)
- *   params: string $change_type, int $limit
+ *   params: 'users'|'rating'|'rating_count'|'version'|'developer'|'permissions'|'privacy'|'status' $change_type, int $limit
  * @method mixed chromeExtensionsFacets(array $params = [], array $options = []) datasets-chrome-extensions-facets (GET /datasets/chrome-extensions/facets)
- *   params: string $facet, string $q, string $item_type, string $category, string $developer, string $developer_email, string $permission, string $status, int $manifest_version, bool $collects_data, bool $has_broad_host_access, int $min_users, float $min_rating, int $min_rating_count, string $sort
+ *   params: 'item_type'|'category'|'developer'|'developer_email'|'manifest_version'|'permission'|'status'|'collects_data'|'has_broad_host_access' $facet, string $q, 'extension'|'theme'|'app'|'unknown' $item_type, string $category, string $developer, string $developer_email, string $permission, 'active'|'removed' $status, '2'|'3' $manifest_version, bool $collects_data, bool $has_broad_host_access, int $min_users, float $min_rating, int $min_rating_count, 'relevance'|'users_desc'|'rating_desc'|'reviews_desc'|'updated_desc'|'trending_desc' $sort
  * @method mixed chromeExtensionsHistory(array $params = [], array $options = []) datasets-chrome-extensions-history (GET /datasets/chrome-extensions/history/{id})
  *   params: string $id, string $from, string $to, int $limit
  * @method mixed chromeExtensionsItem(array $params = [], array $options = []) datasets-chrome-extensions-item (GET /datasets/chrome-extensions/items/{id})
  *   params: string $id
  * @method mixed chromeExtensionsMetrics(array $params = [], array $options = []) datasets-chrome-extensions-metrics (GET /datasets/chrome-extensions/metrics)
- *   params: int $days, int $limit
+ *   params: '7'|'30'|'90' $days, int $limit
  * @method mixed chromeExtensionsSearch(array $params = [], array $options = []) datasets-chrome-extensions-search (GET /datasets/chrome-extensions/search)
- *   params: string $q, string $item_type, string $category, string $developer, string $developer_email, string $permission, string $status, int $manifest_version, bool $collects_data, bool $has_broad_host_access, int $min_users, float $min_rating, int $min_rating_count, string $sort, int $page, int $page_size
+ *   params: string $q, 'extension'|'theme'|'app'|'unknown' $item_type, string $category, string $developer, string $developer_email, string $permission, 'active'|'removed' $status, '2'|'3' $manifest_version, bool $collects_data, bool $has_broad_host_access, int $min_users, float $min_rating, int $min_rating_count, 'relevance'|'users_desc'|'rating_desc'|'reviews_desc'|'updated_desc'|'trending_desc' $sort, int $page, int $page_size
  * @method mixed chromeExtensionsTrending(array $params = [], array $options = []) datasets-chrome-extensions-trending (GET /datasets/chrome-extensions/trending)
- *   params: string $q, string $item_type, string $category, string $developer, string $developer_email, string $permission, string $status, int $manifest_version, bool $collects_data, bool $has_broad_host_access, int $min_users, float $min_rating, int $min_rating_count, int $page, int $page_size
+ *   params: string $q, 'extension'|'theme'|'app'|'unknown' $item_type, string $category, string $developer, string $developer_email, string $permission, 'active'|'removed' $status, '2'|'3' $manifest_version, bool $collects_data, bool $has_broad_host_access, int $min_users, float $min_rating, int $min_rating_count, int $page, int $page_size
  * @method mixed creatorsSearch(array $params = [], array $options = []) datasets-creators-search (GET /datasets/creators/search)
- *   params: string $q, string $handle, string $niche, string $country, bool $verified, int $min_followers, bool $has_email, bool $include_inactive, string $sort, int $page, int $page_size
+ *   params: string $q, string $handle, string $niche, string $country, bool $verified, int $min_followers, bool $has_email, bool $include_inactive, 'followers_desc'|'engagement_desc'|'likes_desc'|'relevance' $sort, int $page, int $page_size
  * @method mixed githubUsersFacets(array $params = [], array $options = []) datasets-github-users-facets (GET /datasets/github-users/facets)
- *   params: string $facet, string $q, string $login, string $company, string $influence_tier, string $country, string $country_code, string $state, string $city, string $domain, bool $has_email, bool $has_twitter, bool $has_blog, bool $reachable, bool $active_90d, bool $hireable, bool $is_org, bool $is_bot, bool $is_suspected_automation, int $min_followers, int $max_followers, int $min_repos, int $min_rank_score, float $min_account_age_years, float $max_account_age_years, float $lat, float $lon, int $radius_m, string $sort
+ *   params: 'influence_tier'|'type'|'country'|'country_code'|'state'|'city'|'domains'|'company'|'reachable'|'has_email'|'has_twitter'|'has_blog'|'active_90d'|'hireable'|'is_org'|'is_bot'|'is_suspected_automation' $facet, string $q, string $login, string $company, 'nano'|'micro'|'mid'|'macro'|'mega' $influence_tier, string $country, string $country_code, string $state, string $city, string $domain, bool $has_email, bool $has_twitter, bool $has_blog, bool $reachable, bool $active_90d, bool $hireable, bool $is_org, bool $is_bot, bool $is_suspected_automation, int $min_followers, int $max_followers, int $min_repos, int $min_rank_score, float $min_account_age_years, float $max_account_age_years, float $lat, float $lon, int $radius_m, 'relevance'|'rank_score_desc'|'followers_desc'|'account_age_desc'|'account_age_asc'|'distance_asc' $sort
  * @method mixed githubUsersItem(array $params = [], array $options = []) datasets-github-users-item (GET /datasets/github-users/items/{login})
  *   params: string $login
  * @method mixed githubUsersNearby(array $params = [], array $options = []) datasets-github-users-nearby (GET /datasets/github-users/nearby)
- *   params: float $lat, float $lon, int $radius_m, string $influence_tier, bool $reachable, int $min_followers, int $page, int $page_size
+ *   params: float $lat, float $lon, int $radius_m, 'nano'|'micro'|'mid'|'macro'|'mega' $influence_tier, bool $reachable, int $min_followers, int $page, int $page_size
  * @method mixed githubUsersSearch(array $params = [], array $options = []) datasets-github-users-search (GET /datasets/github-users/search)
- *   params: string $q, string $login, string $company, string $influence_tier, string $country, string $country_code, string $state, string $city, string $domain, bool $has_email, bool $has_twitter, bool $has_blog, bool $reachable, bool $active_90d, bool $hireable, bool $is_org, bool $is_bot, bool $is_suspected_automation, int $min_followers, int $max_followers, int $min_repos, int $min_rank_score, float $min_account_age_years, float $max_account_age_years, float $lat, float $lon, int $radius_m, string $sort, int $page, int $page_size
+ *   params: string $q, string $login, string $company, 'nano'|'micro'|'mid'|'macro'|'mega' $influence_tier, string $country, string $country_code, string $state, string $city, string $domain, bool $has_email, bool $has_twitter, bool $has_blog, bool $reachable, bool $active_90d, bool $hireable, bool $is_org, bool $is_bot, bool $is_suspected_automation, int $min_followers, int $max_followers, int $min_repos, int $min_rank_score, float $min_account_age_years, float $max_account_age_years, float $lat, float $lon, int $radius_m, 'relevance'|'rank_score_desc'|'followers_desc'|'account_age_desc'|'account_age_asc'|'distance_asc' $sort, int $page, int $page_size
  * @method mixed goodreadsAuthorsFacets(array $params = [], array $options = []) datasets-goodreads-authors-facets (GET /datasets/goodreads-authors/facets)
- *   params: string $facet, string $q, string $name, string $genre, string $run_id, float $min_rating, int $min_ratings_count
+ *   params: 'genres'|'run_id' $facet, string $q, string $name, string $genre, string $run_id, float $min_rating, int $min_ratings_count
  * @method mixed goodreadsAuthorsItem(array $params = [], array $options = []) datasets-goodreads-authors-item (GET /datasets/goodreads-authors/items/{id})
  *   params: string $id
  * @method mixed goodreadsAuthorsSearch(array $params = [], array $options = []) datasets-goodreads-authors-search (GET /datasets/goodreads-authors/search)
- *   params: string $q, string $name, string $genre, string $run_id, float $min_rating, int $min_ratings_count, string $sort, int $page, int $page_size
+ *   params: string $q, string $name, string $genre, string $run_id, float $min_rating, int $min_ratings_count, 'relevance'|'rating_desc'|'reviews_desc'|'name_asc' $sort, int $page, int $page_size
  * @method mixed goodreadsBooksFacets(array $params = [], array $options = []) datasets-goodreads-books-facets (GET /datasets/goodreads-books/facets)
- *   params: string $facet, string $q, string $genre, string $format, string $language, string $publisher, string $author, string $author_id, string $series, string $isbn, string $isbn13, string $run_id, float $min_rating, int $min_ratings_count, int $min_pages, int $max_pages, int $min_publication_year, int $max_publication_year
+ *   params: 'genres'|'format'|'language'|'publisher'|'primary_author'|'primary_author_id'|'series_name'|'publication_year'|'run_id' $facet, string $q, string $genre, string $format, string $language, string $publisher, string $author, string $author_id, string $series, string $isbn, string $isbn13, string $run_id, float $min_rating, int $min_ratings_count, int $min_pages, int $max_pages, int $min_publication_year, int $max_publication_year
  * @method mixed goodreadsBooksItem(array $params = [], array $options = []) datasets-goodreads-books-item (GET /datasets/goodreads-books/items/{id})
  *   params: string $id
  * @method mixed goodreadsBooksSearch(array $params = [], array $options = []) datasets-goodreads-books-search (GET /datasets/goodreads-books/search)
- *   params: string $q, string $genre, string $format, string $language, string $publisher, string $author, string $author_id, string $series, string $isbn, string $isbn13, string $run_id, float $min_rating, int $min_ratings_count, int $min_pages, int $max_pages, int $min_publication_year, int $max_publication_year, string $sort, int $page, int $page_size
+ *   params: string $q, string $genre, string $format, string $language, string $publisher, string $author, string $author_id, string $series, string $isbn, string $isbn13, string $run_id, float $min_rating, int $min_ratings_count, int $min_pages, int $max_pages, int $min_publication_year, int $max_publication_year, 'relevance'|'rating_desc'|'reviews_desc'|'publication_desc'|'publication_asc'|'pages_desc'|'pages_asc'|'title_asc' $sort, int $page, int $page_size
  * @method mixed googleMapBusinessesFacets(array $params = [], array $options = []) datasets-google-map-businesses-facets (GET /datasets/google-map-businesses/facets)
- *   params: string $facet, string $q, string $category, string $country, string $state, string $county, string $city, string $town, float $min_rating, int $min_review_count, bool $has_website, bool $has_phone, bool $has_geo, float $lat, float $lon, int $radius_m, string $sort
+ *   params: 'category'|'country'|'state'|'county'|'city'|'town'|'website_status' $facet, string $q, string $category, string $country, string $state, string $county, string $city, string $town, float $min_rating, int $min_review_count, bool $has_website, bool $has_phone, bool $has_geo, float $lat, float $lon, int $radius_m, 'relevance'|'updated_at_desc'|'rating_desc'|'review_count_desc'|'distance_asc' $sort
  * @method mixed googleMapBusinessesItem(array $params = [], array $options = []) datasets-google-map-businesses-item (GET /datasets/google-map-businesses/items/{place_id})
  *   params: string $place_id
  * @method mixed googleMapBusinessesNearby(array $params = [], array $options = []) datasets-google-map-businesses-nearby (GET /datasets/google-map-businesses/nearby)
  *   params: float $lat, float $lon, int $radius_m, string $category, float $min_rating, int $min_review_count, int $page, int $page_size
  * @method mixed googleMapBusinessesSearch(array $params = [], array $options = []) datasets-google-map-businesses-search (GET /datasets/google-map-businesses/search)
- *   params: string $q, string $category, string $country, string $state, string $county, string $city, string $town, float $min_rating, int $min_review_count, bool $has_website, bool $has_phone, bool $has_geo, float $lat, float $lon, int $radius_m, string $sort, int $page, int $page_size
+ *   params: string $q, string $category, string $country, string $state, string $county, string $city, string $town, float $min_rating, int $min_review_count, bool $has_website, bool $has_phone, bool $has_geo, float $lat, float $lon, int $radius_m, 'relevance'|'updated_at_desc'|'rating_desc'|'review_count_desc'|'distance_asc' $sort, int $page, int $page_size
  * @method mixed housingMarketsFacets(array $params = [], array $options = []) datasets-housing-markets-facets (GET /datasets/housing-markets/facets)
- *   params: string $facet, string $q, string $region_type, string $state_code, string $property_type, string $parent_metro_code, string $zip_code, string $period, bool $latest, float $min_median_sale_price, float $max_median_sale_price, float $min_median_list_price, float $max_median_list_price, float $min_price_to_income, float $max_price_to_income, int $min_salary_to_buy, int $max_salary_to_buy, float $min_median_dom, float $max_median_dom, int $min_inventory, int $max_inventory, int $min_homes_sold
+ *   params: 'region_type'|'state_code'|'property_type'|'parent_metro'|'parent_metro_code'|'income_vintage'|'is_latest'|'period_begin' $facet, string $q, 'national'|'metro'|'county'|'city'|'zip' $region_type, string $state_code, string $property_type, string $parent_metro_code, string $zip_code, string $period, bool $latest, float $min_median_sale_price, float $max_median_sale_price, float $min_median_list_price, float $max_median_list_price, float $min_price_to_income, float $max_price_to_income, int $min_salary_to_buy, int $max_salary_to_buy, float $min_median_dom, float $max_median_dom, int $min_inventory, int $max_inventory, int $min_homes_sold
  * @method mixed housingMarketsItem(array $params = [], array $options = []) datasets-housing-markets-item (GET /datasets/housing-markets/items/{region_type}/{table_id})
- *   params: string $region_type, int $table_id, string $period, string $property_type, bool $history
+ *   params: 'national'|'metro'|'county'|'city'|'zip' $region_type, int $table_id, string $period, string $property_type, bool $history
  * @method mixed housingMarketsSearch(array $params = [], array $options = []) datasets-housing-markets-search (GET /datasets/housing-markets/search)
- *   params: string $q, string $region_type, string $state_code, string $property_type, string $parent_metro_code, string $zip_code, string $period, bool $latest, float $min_median_sale_price, float $max_median_sale_price, float $min_median_list_price, float $max_median_list_price, float $min_price_to_income, float $max_price_to_income, int $min_salary_to_buy, int $max_salary_to_buy, float $min_median_dom, float $max_median_dom, int $min_inventory, int $max_inventory, int $min_homes_sold, string $sort, int $page, int $page_size
+ *   params: string $q, 'national'|'metro'|'county'|'city'|'zip' $region_type, string $state_code, string $property_type, string $parent_metro_code, string $zip_code, string $period, bool $latest, float $min_median_sale_price, float $max_median_sale_price, float $min_median_list_price, float $max_median_list_price, float $min_price_to_income, float $max_price_to_income, int $min_salary_to_buy, int $max_salary_to_buy, float $min_median_dom, float $max_median_dom, int $min_inventory, int $max_inventory, int $min_homes_sold, 'relevance'|'price_desc'|'price_asc'|'list_price_desc'|'list_price_asc'|'price_to_income_desc'|'price_to_income_asc'|'salary_to_buy_desc'|'salary_to_buy_asc'|'dom_asc'|'dom_desc'|'inventory_desc'|'homes_sold_desc'|'period_desc' $sort, int $page, int $page_size
  * @method mixed jobsCompanies(array $params = [], array $options = []) datasets-jobs-companies (GET /datasets/jobs/companies)
- *   params: string $q, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint' $provider, string $status, int $min_open_roles, string $sort, int $page, int $page_size
+ *   params: string $q, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint' $provider, 'active'|'empty'|'gone'|'blocked'|'pending'|'invalid' $status, int $min_open_roles, 'open_desc'|'company_asc'|'crawled_desc' $sort, int $page, int $page_size
  * @method mixed jobsCompanyItem(array $params = [], array $options = []) datasets-jobs-company-item (GET /datasets/jobs/companies/{id})
  *   params: string $id
  * @method mixed jobsFacets(array $params = [], array $options = []) datasets-jobs-facets (GET /datasets/jobs/facets)
@@ -399,127 +415,127 @@ abstract class WebGroup {}
  * @method mixed jobsNearby(array $params = [], array $options = []) datasets-jobs-nearby (GET /datasets/jobs/nearby)
  *   params: float $lat, float $lon, float $radius_km, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint' $provider, bool $include_closed, int $page, int $page_size
  * @method mixed jobsSearch(array $params = [], array $options = []) datasets-jobs-search (GET /datasets/jobs/search)
- *   params: string $q, string $company, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint' $provider, string $department, string $location, string $employment_type, bool $remote, bool $include_closed, float $min_salary, float $max_salary, string $salary_currency, string $sort, int $page, int $page_size
+ *   params: string $q, string $company, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint' $provider, string $department, string $location, string $city, string $state, string $country, string $employment_type, bool $remote, 'onsite'|'hybrid'|'remote' $workplace_type, bool $include_closed, float $min_salary, float $max_salary, string $salary_currency, 'relevance'|'posted_desc'|'company_asc' $sort, int $page, int $page_size
  * @method mixed journalistsFacets(array $params = [], array $options = []) datasets-journalists-facets (GET /datasets/journalists/facets)
- *   params: string $facet, string $q, string $outlet, string $vertical, string $topic, string $contact_type
+ *   params: 'outlet'|'vertical'|'topic'|'contact_type' $facet, string $q, string $outlet, 'tech'|'crypto'|'marketing'|'consumer_tech'|'consumer_policy'|'cybersecurity'|'health'|'gaming'|'climate'|'business'|'entertainment'|'sports'|'legal'|'science'|'politics'|'real_estate'|'automotive'|'travel'|'food'|'education'|'design'|'film_tv'|'fashion'|'music'|'personal_finance'|'tech_independent'|'culture_independent'|'local_news'|'construction'|'banking'|'retail'|'aerospace_defense'|'energy'|'agriculture'|'local_business' $vertical, string $topic, 'email'|'social'|'none' $contact_type
  * @method mixed journalistsItem(array $params = [], array $options = []) datasets-journalists-item (GET /datasets/journalists/items/{outlet}/{slug})
  *   params: string $outlet, string $slug
  * @method mixed journalistsSearch(array $params = [], array $options = []) datasets-journalists-search (GET /datasets/journalists/search)
- *   params: string $q, string $outlet, string $vertical, string $topic, string $contact_type, string $sort, int $page, int $page_size
+ *   params: string $q, string $outlet, 'tech'|'crypto'|'marketing'|'consumer_tech'|'consumer_policy'|'cybersecurity'|'health'|'gaming'|'climate'|'business'|'entertainment'|'sports'|'legal'|'science'|'politics'|'real_estate'|'automotive'|'travel'|'food'|'education'|'design'|'film_tv'|'fashion'|'music'|'personal_finance'|'tech_independent'|'culture_independent'|'local_news'|'construction'|'banking'|'retail'|'aerospace_defense'|'energy'|'agriculture'|'local_business' $vertical, string $topic, 'email'|'social'|'none' $contact_type, 'relevance'|'name_asc'|'outlet_asc'|'crawled_desc' $sort, int $page, int $page_size
  * @method mixed numbeoCitiesFacets(array $params = [], array $options = []) datasets-numbeo-cities-facets (GET /datasets/numbeo-cities/facets)
- *   params: string $facet, string $q, string $country, float $min_cost_of_living_index, float $max_cost_of_living_index, float $min_quality_of_life_index, float $min_crime_index, float $max_crime_index, float $min_safety_index, float $min_health_care_index, float $max_pollution_index, float $max_traffic_index
+ *   params: 'country' $facet, string $q, string $country, float $min_cost_of_living_index, float $max_cost_of_living_index, float $min_quality_of_life_index, float $min_crime_index, float $max_crime_index, float $min_safety_index, float $min_health_care_index, float $max_pollution_index, float $max_traffic_index
  * @method mixed numbeoCitiesItem(array $params = [], array $options = []) datasets-numbeo-cities-item (GET /datasets/numbeo-cities/items/{slug})
  *   params: string $slug
  * @method mixed numbeoCitiesSearch(array $params = [], array $options = []) datasets-numbeo-cities-search (GET /datasets/numbeo-cities/search)
- *   params: string $q, string $country, float $min_cost_of_living_index, float $max_cost_of_living_index, float $min_quality_of_life_index, float $min_crime_index, float $max_crime_index, float $min_safety_index, float $min_health_care_index, float $max_pollution_index, float $max_traffic_index, string $sort, int $page, int $page_size
+ *   params: string $q, string $country, float $min_cost_of_living_index, float $max_cost_of_living_index, float $min_quality_of_life_index, float $min_crime_index, float $max_crime_index, float $min_safety_index, float $min_health_care_index, float $max_pollution_index, float $max_traffic_index, 'name_asc'|'cost_of_living_asc'|'cost_of_living_desc'|'quality_of_life_desc'|'safety_desc'|'crime_asc'|'health_care_desc'|'pollution_asc'|'traffic_asc' $sort, int $page, int $page_size
  * @method mixed numbeoCountriesItem(array $params = [], array $options = []) datasets-numbeo-countries-item (GET /datasets/numbeo-countries/items/{country})
  *   params: string $country
  * @method mixed numbeoCountriesSearch(array $params = [], array $options = []) datasets-numbeo-countries-search (GET /datasets/numbeo-countries/search)
- *   params: string $q, float $min_cost_of_living_index, float $max_cost_of_living_index, float $min_quality_of_life_index, float $min_crime_index, float $max_crime_index, float $min_safety_index, float $min_health_care_index, float $max_pollution_index, float $max_traffic_index, string $sort, int $page, int $page_size
+ *   params: string $q, float $min_cost_of_living_index, float $max_cost_of_living_index, float $min_quality_of_life_index, float $min_crime_index, float $max_crime_index, float $min_safety_index, float $min_health_care_index, float $max_pollution_index, float $max_traffic_index, 'name_asc'|'cost_of_living_asc'|'cost_of_living_desc'|'quality_of_life_desc'|'safety_desc'|'crime_asc'|'health_care_desc'|'pollution_asc'|'traffic_asc' $sort, int $page, int $page_size
  * @method mixed pitchbookAdvisorsFacets(array $params = [], array $options = []) datasets-pitchbook-advisors-facets (GET /datasets/pitchbook-advisors/facets)
- *   params: string $facet, string $q, string $service_type, string $hq_country, string $hq_state, string $run_id, int $min_year_founded, int $max_year_founded
+ *   params: 'service_type'|'hq_country'|'hq_state'|'run_id' $facet, string $q, string $service_type, string $hq_country, string $hq_state, string $run_id, int $min_year_founded, int $max_year_founded
  * @method mixed pitchbookAdvisorsItem(array $params = [], array $options = []) datasets-pitchbook-advisors-item (GET /datasets/pitchbook-advisors/items/{id})
  *   params: string $id
  * @method mixed pitchbookAdvisorsSearch(array $params = [], array $options = []) datasets-pitchbook-advisors-search (GET /datasets/pitchbook-advisors/search)
- *   params: string $q, string $service_type, string $hq_country, string $hq_state, string $run_id, int $min_year_founded, int $max_year_founded, string $sort, int $page, int $page_size
+ *   params: string $q, string $service_type, string $hq_country, string $hq_state, string $run_id, int $min_year_founded, int $max_year_founded, 'relevance'|'name_asc'|'year_founded_desc'|'recently_crawled_desc' $sort, int $page, int $page_size
  * @method mixed pitchbookCompaniesFacets(array $params = [], array $options = []) datasets-pitchbook-companies-facets (GET /datasets/pitchbook-companies/facets)
- *   params: string $facet, string $q, string $status, string $primary_industry, string $financing_status, string $ownership_status, string $hq_country, string $hq_state, string $run_id, int $min_year_founded, int $max_year_founded, int $min_investor_count
+ *   params: 'status'|'primary_industry'|'financing_status'|'ownership_status'|'hq_country'|'hq_state'|'run_id' $facet, string $q, string $status, string $primary_industry, string $financing_status, string $ownership_status, string $hq_country, string $hq_state, string $run_id, int $min_year_founded, int $max_year_founded, int $min_investor_count
  * @method mixed pitchbookCompaniesItem(array $params = [], array $options = []) datasets-pitchbook-companies-item (GET /datasets/pitchbook-companies/items/{id})
  *   params: string $id
  * @method mixed pitchbookCompaniesSearch(array $params = [], array $options = []) datasets-pitchbook-companies-search (GET /datasets/pitchbook-companies/search)
- *   params: string $q, string $status, string $primary_industry, string $financing_status, string $ownership_status, string $hq_country, string $hq_state, string $run_id, int $min_year_founded, int $max_year_founded, int $min_investor_count, string $sort, int $page, int $page_size
+ *   params: string $q, string $status, string $primary_industry, string $financing_status, string $ownership_status, string $hq_country, string $hq_state, string $run_id, int $min_year_founded, int $max_year_founded, int $min_investor_count, 'relevance'|'name_asc'|'year_founded_desc'|'investor_count_desc'|'recently_crawled_desc' $sort, int $page, int $page_size
  * @method mixed pitchbookFundsFacets(array $params = [], array $options = []) datasets-pitchbook-funds-facets (GET /datasets/pitchbook-funds/facets)
- *   params: string $facet, string $q, string $fund_strategy, string $fund_status, string $run_id, int $min_vintage_year, int $max_vintage_year
+ *   params: 'fund_strategy'|'fund_status'|'run_id' $facet, string $q, string $fund_strategy, string $fund_status, string $run_id, int $min_vintage_year, int $max_vintage_year
  * @method mixed pitchbookFundsItem(array $params = [], array $options = []) datasets-pitchbook-funds-item (GET /datasets/pitchbook-funds/items/{id})
  *   params: string $id
  * @method mixed pitchbookFundsSearch(array $params = [], array $options = []) datasets-pitchbook-funds-search (GET /datasets/pitchbook-funds/search)
- *   params: string $q, string $fund_strategy, string $fund_status, string $run_id, int $min_vintage_year, int $max_vintage_year, string $sort, int $page, int $page_size
+ *   params: string $q, string $fund_strategy, string $fund_status, string $run_id, int $min_vintage_year, int $max_vintage_year, 'relevance'|'name_asc'|'vintage_desc'|'recently_crawled_desc' $sort, int $page, int $page_size
  * @method mixed pitchbookInvestorsFacets(array $params = [], array $options = []) datasets-pitchbook-investors-facets (GET /datasets/pitchbook-investors/facets)
- *   params: string $facet, string $q, string $status, string $investor_type, string $hq_country, string $hq_state, string $run_id, int $min_portfolio_count, int $min_exits_count
+ *   params: 'status'|'investor_type'|'hq_country'|'hq_state'|'run_id' $facet, string $q, string $status, string $investor_type, string $hq_country, string $hq_state, string $run_id, int $min_portfolio_count, int $min_exits_count
  * @method mixed pitchbookInvestorsItem(array $params = [], array $options = []) datasets-pitchbook-investors-item (GET /datasets/pitchbook-investors/items/{id})
  *   params: string $id
  * @method mixed pitchbookInvestorsSearch(array $params = [], array $options = []) datasets-pitchbook-investors-search (GET /datasets/pitchbook-investors/search)
- *   params: string $q, string $status, string $investor_type, string $hq_country, string $hq_state, string $run_id, int $min_portfolio_count, int $min_exits_count, string $sort, int $page, int $page_size
+ *   params: string $q, string $status, string $investor_type, string $hq_country, string $hq_state, string $run_id, int $min_portfolio_count, int $min_exits_count, 'relevance'|'name_asc'|'portfolio_count_desc'|'recently_crawled_desc' $sort, int $page, int $page_size
  * @method mixed pitchbookLimitedPartnersFacets(array $params = [], array $options = []) datasets-pitchbook-limited-partners-facets (GET /datasets/pitchbook-limited-partners/facets)
- *   params: string $facet, string $q, string $institution_type, string $hq_country, string $hq_state, string $run_id, int $min_year_founded, int $max_year_founded
+ *   params: 'institution_type'|'hq_country'|'hq_state'|'run_id' $facet, string $q, string $institution_type, string $hq_country, string $hq_state, string $run_id, int $min_year_founded, int $max_year_founded
  * @method mixed pitchbookLimitedPartnersItem(array $params = [], array $options = []) datasets-pitchbook-limited-partners-item (GET /datasets/pitchbook-limited-partners/items/{id})
  *   params: string $id
  * @method mixed pitchbookLimitedPartnersSearch(array $params = [], array $options = []) datasets-pitchbook-limited-partners-search (GET /datasets/pitchbook-limited-partners/search)
- *   params: string $q, string $institution_type, string $hq_country, string $hq_state, string $run_id, int $min_year_founded, int $max_year_founded, string $sort, int $page, int $page_size
+ *   params: string $q, string $institution_type, string $hq_country, string $hq_state, string $run_id, int $min_year_founded, int $max_year_founded, 'relevance'|'name_asc'|'year_founded_desc'|'recently_crawled_desc' $sort, int $page, int $page_size
  * @method mixed playstationGamesFacets(array $params = [], array $options = []) datasets-playstation-games-facets (GET /datasets/playstation-games/facets)
- *   params: string $facet, string $q, string $publisher, string $classification, string $genre, string $platform, string $content_rating, string $content_descriptor, string $price_tier, string $branding, string $region, string $concept_id, string $np_title_id, string $run_id, bool $is_free, bool $is_addon, bool $is_tied_to_subscription, bool $coming_soon, bool $on_sale, int $min_price_value, int $max_price_value, float $min_star_rating, int $min_star_count, int $min_discount_pct, int $min_release_year, int $max_release_year
+ *   params: 'publisher'|'classification'|'genres'|'platforms'|'content_rating_authority'|'content_descriptors'|'price_tier'|'service_branding'|'region'|'release_year'|'run_id'|'is_free'|'is_addon'|'is_tied_to_subscription'|'coming_soon' $facet, string $q, string $publisher, string $classification, string $genre, string $platform, string $content_rating, string $content_descriptor, 'free'|'under_5'|'5_to_10'|'10_to_20'|'20_to_40'|'40_to_60'|'60_plus' $price_tier, string $branding, string $region, string $concept_id, string $np_title_id, string $run_id, bool $is_free, bool $is_addon, bool $is_tied_to_subscription, bool $coming_soon, bool $on_sale, int $min_price_value, int $max_price_value, float $min_star_rating, int $min_star_count, int $min_discount_pct, int $min_release_year, int $max_release_year
  * @method mixed playstationGamesItem(array $params = [], array $options = []) datasets-playstation-games-item (GET /datasets/playstation-games/items/{product_id})
  *   params: string $product_id
  * @method mixed playstationGamesSearch(array $params = [], array $options = []) datasets-playstation-games-search (GET /datasets/playstation-games/search)
- *   params: string $q, string $publisher, string $classification, string $genre, string $platform, string $content_rating, string $content_descriptor, string $price_tier, string $branding, string $region, string $concept_id, string $np_title_id, string $run_id, bool $is_free, bool $is_addon, bool $is_tied_to_subscription, bool $coming_soon, bool $on_sale, int $min_price_value, int $max_price_value, float $min_star_rating, int $min_star_count, int $min_discount_pct, int $min_release_year, int $max_release_year, string $sort, int $page, int $page_size
+ *   params: string $q, string $publisher, string $classification, string $genre, string $platform, string $content_rating, string $content_descriptor, 'free'|'under_5'|'5_to_10'|'10_to_20'|'20_to_40'|'40_to_60'|'60_plus' $price_tier, string $branding, string $region, string $concept_id, string $np_title_id, string $run_id, bool $is_free, bool $is_addon, bool $is_tied_to_subscription, bool $coming_soon, bool $on_sale, int $min_price_value, int $max_price_value, float $min_star_rating, int $min_star_count, int $min_discount_pct, int $min_release_year, int $max_release_year, 'relevance'|'rating_desc'|'reviews_desc'|'price_asc'|'price_desc'|'discount_desc'|'release_desc'|'release_asc' $sort, int $page, int $page_size
  * @method mixed producthuntMakersFacets(array $params = [], array $options = []) datasets-producthunt-makers-facets (GET /datasets/producthunt-makers/facets)
- *   params: string $facet, string $q, string $topic, int $min_products, int $min_total_votes
+ *   params: 'topic'|'product_count_band' $facet, string $q, string $topic, int $min_products, int $min_total_votes
  * @method mixed producthuntMakersItem(array $params = [], array $options = []) datasets-producthunt-makers-item (GET /datasets/producthunt-makers/items/{username})
  *   params: string $username
  * @method mixed producthuntMakersSearch(array $params = [], array $options = []) datasets-producthunt-makers-search (GET /datasets/producthunt-makers/search)
- *   params: string $q, string $topic, int $min_products, int $min_total_votes, string $sort, int $page, int $page_size
+ *   params: string $q, string $topic, int $min_products, int $min_total_votes, 'total_votes_desc'|'product_count_desc'|'followers_desc'|'relevance' $sort, int $page, int $page_size
  * @method mixed producthuntProductsFacets(array $params = [], array $options = []) datasets-producthunt-products-facets (GET /datasets/producthunt-products/facets)
- *   params: string $facet, string $q, string $topic, string $maker, string $launched_after, string $launched_before, int $min_votes, float $min_rating, string $pricing_type, bool $has_website, bool $is_online
+ *   params: 'topic'|'launch_year'|'pricing_type'|'product_state' $facet, string $q, string $topic, string $maker, string $launched_after, string $launched_before, int $min_votes, float $min_rating, string $pricing_type, bool $has_website, bool $is_online
  * @method mixed producthuntProductsItem(array $params = [], array $options = []) datasets-producthunt-products-item (GET /datasets/producthunt-products/items/{slug})
  *   params: string $slug
  * @method mixed producthuntProductsSearch(array $params = [], array $options = []) datasets-producthunt-products-search (GET /datasets/producthunt-products/search)
- *   params: string $q, string $topic, string $maker, string $launched_after, string $launched_before, int $min_votes, float $min_rating, string $pricing_type, bool $has_website, bool $is_online, string $sort, int $page, int $page_size
+ *   params: string $q, string $topic, string $maker, string $launched_after, string $launched_before, int $min_votes, float $min_rating, string $pricing_type, bool $has_website, bool $is_online, 'relevance'|'votes_desc'|'launched_desc'|'launched_asc'|'rating_desc'|'best_rank_asc' $sort, int $page, int $page_size
  * @method mixed producthuntTrendsFacets(array $params = [], array $options = []) datasets-producthunt-trends-facets (GET /datasets/producthunt-trends/facets)
- *   params: string $facet, string $group_by, string $topic, string $launched_after, string $launched_before, int $min_votes, int $min_launches
+ *   params: 'topic'|'launch_year' $facet, 'topic_month'|'topic_year'|'topic' $group_by, string $topic, string $launched_after, string $launched_before, int $min_votes, int $min_launches
  * @method mixed producthuntTrendsSearch(array $params = [], array $options = []) datasets-producthunt-trends-search (GET /datasets/producthunt-trends/search)
- *   params: string $group_by, string $topic, string $launched_after, string $launched_before, int $min_votes, int $min_launches, string $sort, int $page, int $page_size
+ *   params: 'topic_month'|'topic_year'|'topic' $group_by, string $topic, string $launched_after, string $launched_before, int $min_votes, int $min_launches, 'period_desc'|'period_asc'|'launch_count_desc'|'sum_votes_desc' $sort, int $page, int $page_size
  * @method mixed secCompaniesFacets(array $params = [], array $options = []) datasets-sec-companies-facets (GET /datasets/sec-companies/facets)
- *   params: string $facet, string $q, string $ticker, string $sic, string $exchange, string $state_of_incorporation, string $entity_type, string $reporting_currency, bool $has_financials, float $min_revenue, string $form_filed
+ *   params: 'sic'|'sic_description'|'exchange'|'state_of_incorporation'|'entity_type'|'reporting_currency'|'revenue_band'|'forms_filed' $facet, string $q, string $ticker, string $sic, string $exchange, string $state_of_incorporation, string $entity_type, string $reporting_currency, bool $has_financials, float $min_revenue, string $form_filed
  * @method mixed secCompaniesFinancials(array $params = [], array $options = []) datasets-sec-companies-financials (GET /datasets/sec-companies/financials/{cik})
- *   params: string $cik, string $statement, string $period, int $from, int $to, int $limit
+ *   params: string $cik, 'income'|'balance'|'cash_flow' $statement, 'annual'|'quarterly' $period, int $from, int $to, int $limit
  * @method mixed secCompaniesInsider(array $params = [], array $options = []) datasets-sec-companies-insider (GET /datasets/sec-companies/insider/{cik})
  *   params: string $cik, string $from, string $to, string $code, int $limit
  * @method mixed secCompaniesItem(array $params = [], array $options = []) datasets-sec-companies-item (GET /datasets/sec-companies/items/{cik})
  *   params: string $cik
  * @method mixed secCompaniesSearch(array $params = [], array $options = []) datasets-sec-companies-search (GET /datasets/sec-companies/search)
- *   params: string $q, string $ticker, string $cik, string $sic, string $sic_description, string $exchange, string $state_of_incorporation, string $entity_type, string $reporting_currency, bool $has_financials, float $min_revenue, float $max_revenue, float $min_net_income, float $min_total_assets, string $form_filed, int $min_insider_txn_count_90d, string $sort, int $page, int $page_size
+ *   params: string $q, string $ticker, string $cik, string $sic, string $sic_description, string $exchange, string $state_of_incorporation, string $entity_type, string $reporting_currency, bool $has_financials, float $min_revenue, float $max_revenue, float $min_net_income, float $min_total_assets, string $form_filed, int $min_insider_txn_count_90d, 'relevance'|'name_asc'|'revenue_desc'|'net_income_desc'|'filing_recent_desc'|'insider_activity_desc' $sort, int $page, int $page_size
  * @method mixed secInstitutionalPositionsFacets(array $params = [], array $options = []) datasets-sec-institutional-positions-facets (GET /datasets/sec-institutional-positions/facets)
- *   params: string $facet, string $manager_cik, string $issuer_name, string $cusip
+ *   params: 'manager'|'issuer' $facet, string $manager_cik, string $issuer_name, string $cusip
  * @method mixed secInstitutionalPositionsSearch(array $params = [], array $options = []) datasets-sec-institutional-positions-search (GET /datasets/sec-institutional-positions/search)
- *   params: string $manager_cik, string $issuer_name, string $cusip, string $sort, int $page, int $page_size
+ *   params: string $manager_cik, string $issuer_name, string $cusip, 'value_desc'|'value_asc'|'shares_desc' $sort, int $page, int $page_size
  * @method mixed steamAchievementsSearch(array $params = [], array $options = []) datasets-steam-achievements-search (GET /datasets/steam-achievements/search)
- *   params: string $app_id, string $sort, int $page, int $page_size
+ *   params: string $app_id, 'percent_desc'|'percent_asc'|'rank_asc' $sort, int $page, int $page_size
  * @method mixed steamChartsSearch(array $params = [], array $options = []) datasets-steam-charts-search (GET /datasets/steam-charts/search)
- *   params: string $q, string $chart, string $country, string $app_id, string $date, string $sort, int $page, int $page_size
+ *   params: string $q, 'most_played'|'concurrent'|'top_sellers' $chart, string $country, string $app_id, string $date, 'rank'|'rank_desc'|'date_desc' $sort, int $page, int $page_size
  * @method mixed steamGamesFacets(array $params = [], array $options = []) datasets-steam-games-facets (GET /datasets/steam-games/facets)
- *   params: string $facet, string $q, string $type, string $developer, string $publisher, string $genre, string $category, string $tag, string $price_tier, string $review_tier, string $owners_bucket, string $run_id, bool $is_free, bool $windows, bool $mac, bool $linux, bool $on_sale, int $min_price_cents, int $max_price_cents, int $min_owners, int $min_positive, int $min_total_reviews, float $min_review_score, int $min_metacritic, int $min_ccu, int $min_release_year, int $max_release_year
+ *   params: 'type'|'developer'|'publisher'|'genres'|'categories'|'tags'|'primary_tag'|'price_tier'|'review_tier'|'owners_bucket'|'release_year'|'run_id'|'is_free'|'coming_soon'|'platform_windows'|'platform_mac'|'platform_linux' $facet, string $q, string $type, string $developer, string $publisher, string $genre, string $category, string $tag, 'free'|'under5'|'5to15'|'15to30'|'30to60'|'over60' $price_tier, 'overwhelmingly_positive'|'very_positive'|'positive'|'mostly_positive'|'mixed'|'mostly_negative'|'negative'|'very_negative'|'overwhelmingly_negative'|'insufficient' $review_tier, string $owners_bucket, string $run_id, bool $is_free, bool $windows, bool $mac, bool $linux, bool $on_sale, int $min_price_cents, int $max_price_cents, int $min_owners, int $min_positive, int $min_total_reviews, float $min_review_score, int $min_metacritic, int $min_ccu, int $min_release_year, int $max_release_year
  * @method mixed steamGamesItem(array $params = [], array $options = []) datasets-steam-games-item (GET /datasets/steam-games/items/{appid})
  *   params: int $appid
  * @method mixed steamGamesSearch(array $params = [], array $options = []) datasets-steam-games-search (GET /datasets/steam-games/search)
- *   params: string $q, string $type, string $developer, string $publisher, string $genre, string $category, string $tag, string $price_tier, string $review_tier, string $owners_bucket, string $run_id, bool $is_free, bool $windows, bool $mac, bool $linux, bool $on_sale, int $min_price_cents, int $max_price_cents, int $min_owners, int $min_positive, int $min_total_reviews, float $min_review_score, int $min_metacritic, int $min_ccu, int $min_release_year, int $max_release_year, string $sort, int $page, int $page_size
+ *   params: string $q, string $type, string $developer, string $publisher, string $genre, string $category, string $tag, 'free'|'under5'|'5to15'|'15to30'|'30to60'|'over60' $price_tier, 'overwhelmingly_positive'|'very_positive'|'positive'|'mostly_positive'|'mixed'|'mostly_negative'|'negative'|'very_negative'|'overwhelmingly_negative'|'insufficient' $review_tier, string $owners_bucket, string $run_id, bool $is_free, bool $windows, bool $mac, bool $linux, bool $on_sale, int $min_price_cents, int $max_price_cents, int $min_owners, int $min_positive, int $min_total_reviews, float $min_review_score, int $min_metacritic, int $min_ccu, int $min_release_year, int $max_release_year, 'relevance'|'owners_desc'|'reviews_desc'|'review_score_desc'|'ccu_desc'|'metacritic_desc'|'price_asc'|'price_desc'|'release_desc'|'release_asc' $sort, int $page, int $page_size
  * @method mixed steamNewsSearch(array $params = [], array $options = []) datasets-steam-news-search (GET /datasets/steam-news/search)
- *   params: string $q, string $app_id, string $sort, int $page, int $page_size
+ *   params: string $q, string $app_id, 'date_desc'|'date_asc' $sort, int $page, int $page_size
  * @method mixed steamPlayercountsSearch(array $params = [], array $options = []) datasets-steam-playercounts-search (GET /datasets/steam-playercounts/search)
- *   params: string $app_id, string $date, string $sort, int $page, int $page_size
+ *   params: string $app_id, string $date, 'date_desc'|'date_asc'|'players_desc' $sort, int $page, int $page_size
  * @method mixed steamPricesSearch(array $params = [], array $options = []) datasets-steam-prices-search (GET /datasets/steam-prices/search)
- *   params: string $app_id, string $date, string $sort, int $page, int $page_size
+ *   params: string $app_id, string $date, 'date_desc'|'date_asc'|'price_asc'|'price_desc'|'discount_desc' $sort, int $page, int $page_size
  * @method mixed steamReviewsSearch(array $params = [], array $options = []) datasets-steam-reviews-search (GET /datasets/steam-reviews/search)
- *   params: string $q, string $app_id, string $language, string $voted_up, string $sort, int $page, int $page_size
+ *   params: string $q, string $app_id, string $language, string $voted_up, 'votes_desc'|'weighted_desc'|'date_desc' $sort, int $page, int $page_size
  * @method mixed techstackFacets(array $params = [], array $options = []) datasets-techstack-facets (GET /datasets/techstack/facets)
- *   params: string $facet, string $q, array<string> $technology, array<string> $any_of, array<string> $not, string $category, string $cms, string $ecommerce, string $cdn, string $web_server, string $server_language, string $tld, string $render_tier, string $seed_source, bool $has_captcha, bool $reachable, int $min_tech_count, string $run_id
+ *   params: 'technology'|'category'|'cms'|'ecommerce'|'cdn'|'web_server'|'server_language'|'analytics'|'tld'|'render_tier'|'seed_source' $facet, string $q, array<string> $technology, array<string> $any_of, array<string> $not, string $category, string $cms, string $ecommerce, string $cdn, string $web_server, string $server_language, string $tld, 'http'|'browser' $render_tier, string $seed_source, bool $has_captcha, bool $reachable, int $min_tech_count, string $run_id
  * @method mixed techstackItem(array $params = [], array $options = []) datasets-techstack-item (GET /datasets/techstack/items/{domain})
  *   params: string $domain
  * @method mixed techstackSearch(array $params = [], array $options = []) datasets-techstack-search (GET /datasets/techstack/search)
- *   params: string $q, array<string> $technology, array<string> $any_of, array<string> $not, string $category, string $cms, string $ecommerce, string $cdn, string $web_server, string $server_language, string $tld, string $render_tier, string $seed_source, bool $has_captcha, bool $reachable, int $min_tech_count, string $run_id, string $sort, int $page, int $page_size
+ *   params: string $q, array<string> $technology, array<string> $any_of, array<string> $not, string $category, string $cms, string $ecommerce, string $cdn, string $web_server, string $server_language, string $tld, 'http'|'browser' $render_tier, string $seed_source, bool $has_captcha, bool $reachable, int $min_tech_count, string $run_id, 'relevance'|'rank_asc'|'tech_count_desc'|'domain_asc'|'crawled_desc' $sort, int $page, int $page_size
  * @method mixed trustmrrFacets(array $params = [], array $options = []) datasets-trustmrr-facets (GET /datasets/trustmrr/facets)
- *   params: string $facet, string $q, string $category, string $country, string $payment_provider, bool $on_sale, float $min_mrr
+ *   params: 'category'|'country'|'payment_provider'|'target_audience'|'business_type'|'tech'|'channels'|'listing_tier'|'status'|'on_sale'|'is_sponsored'|'tags' $facet, string $q, string $category, string $country, string $payment_provider, bool $on_sale, float $min_mrr
  * @method mixed trustmrrHistory(array $params = [], array $options = []) datasets-trustmrr-history (GET /datasets/trustmrr/history/{slug})
  *   params: string $slug, string $from, string $to, int $limit
  * @method mixed trustmrrItem(array $params = [], array $options = []) datasets-trustmrr-item (GET /datasets/trustmrr/items/{slug})
  *   params: string $slug
  * @method mixed trustmrrSearch(array $params = [], array $options = []) datasets-trustmrr-search (GET /datasets/trustmrr/search)
- *   params: string $q, string $slug, string $category, string $country, string $payment_provider, string $target_audience, string $business_type, string $tech, string $channel, string $listing_tier, string $status, bool $on_sale, bool $is_sponsored, float $min_mrr, float $max_mrr, float $min_revenue, float $min_revenue_30d, float $min_traffic, float $min_growth, float $max_multiple, float $min_asking_price, float $max_asking_price, int $min_ahrefs_dr, string $sort, int $page, int $page_size
+ *   params: string $q, string $slug, string $category, string $country, string $payment_provider, string $target_audience, string $business_type, string $tech, string $channel, string $listing_tier, 'active'|'removed' $status, bool $on_sale, bool $is_sponsored, float $min_mrr, float $max_mrr, float $min_revenue, float $min_revenue_30d, float $min_traffic, float $min_growth, float $max_multiple, float $min_asking_price, float $max_asking_price, int $min_ahrefs_dr, 'relevance'|'mrr_desc'|'revenue_desc'|'revenue_30d_desc'|'traffic_desc'|'growth_desc'|'deal_score_desc'|'price_asc'|'price_desc'|'multiple_asc'|'founded_desc' $sort, int $page, int $page_size
  * @method mixed xUsersFacets(array $params = [], array $options = []) datasets-x-users-facets (GET /datasets/x-users/facets)
- *   params: string $facet, string $q, string $username, string $source_tier, bool $is_blue_verified, bool $has_bio, bool $has_external_url, int $min_followers, int $max_followers, float $min_ratio, float $max_ratio, string $created_after, string $created_before, string $crawled_after, string $crawled_before, string $sort
+ *   params: 'is_blue_verified'|'has_bio'|'has_external_url'|'source_tier' $facet, string $q, string $username, string $source_tier, bool $is_blue_verified, bool $has_bio, bool $has_external_url, int $min_followers, int $max_followers, float $min_ratio, float $max_ratio, string $created_after, string $created_before, string $crawled_after, string $crawled_before, 'relevance'|'followers_desc'|'followers_asc'|'crawled_at_desc'|'crawled_at_asc'|'created_at_desc'|'created_at_asc' $sort
  * @method mixed xUsersItem(array $params = [], array $options = []) datasets-x-users-item (GET /datasets/x-users/items/{username})
  *   params: string $username
  * @method mixed xUsersSearch(array $params = [], array $options = []) datasets-x-users-search (GET /datasets/x-users/search)
- *   params: string $q, string $username, string $source_tier, bool $is_blue_verified, bool $has_bio, bool $has_external_url, int $min_followers, int $max_followers, float $min_ratio, float $max_ratio, string $created_after, string $created_before, string $crawled_after, string $crawled_before, string $sort, int $page, int $page_size
+ *   params: string $q, string $username, string $source_tier, bool $is_blue_verified, bool $has_bio, bool $has_external_url, int $min_followers, int $max_followers, float $min_ratio, float $max_ratio, string $created_after, string $created_before, string $crawled_after, string $crawled_before, 'relevance'|'followers_desc'|'followers_asc'|'crawled_at_desc'|'crawled_at_asc'|'created_at_desc'|'created_at_asc' $sort, int $page, int $page_size
  */
 abstract class DatasetsGroup {}
 
@@ -737,13 +753,13 @@ abstract class GoogleGroup {}
  * @method mixed developer(array $params = [], array $options = []) googleplay-developer (GET /googleplay/developer/{dev_id})
  *   params: string $dev_id, int $num, string $country, string $lang, bool $full_detail
  * @method mixed list_(array $params = [], array $options = []) googleplay-list (GET /googleplay/list)
- *   params: string $collection, string $category, string $age, int $num, string $country, string $lang, bool $full_detail
+ *   params: 'TOP_FREE'|'TOP_PAID'|'GROSSING'|'NEW_FREE'|'NEW_PAID' $collection, string $category, string $age, int $num, string $country, string $lang, bool $full_detail
  * @method mixed permissions(array $params = [], array $options = []) googleplay-permissions (GET /googleplay/permissions)
  *   params: string $app_id, string $country, string $lang, bool $short
  * @method mixed reviews(array $params = [], array $options = []) googleplay-reviews (GET /googleplay/reviews)
- *   params: string $app_id, string $sort, int $num, string $country, string $lang, bool $paginate, string $next_pagination_token
+ *   params: string $app_id, 'helpfulness'|'newest'|'rating' $sort, int $num, string $country, string $lang, bool $paginate, string $next_pagination_token
  * @method mixed search(array $params = [], array $options = []) googleplay-search (GET /googleplay/search)
- *   params: string $term, int $num, string $country, string $lang, bool $full_detail, string $price
+ *   params: string $term, int $num, string $country, string $lang, bool $full_detail, 'all'|'free'|'paid' $price
  * @method mixed similar(array $params = [], array $options = []) googleplay-similar (GET /googleplay/similar)
  *   params: string $app_id, int $num, string $country, string $lang, bool $full_detail
  * @method mixed suggest(array $params = [], array $options = []) googleplay-suggest (GET /googleplay/suggest/{term})
@@ -984,9 +1000,9 @@ abstract class LinkedInGroup {}
 
 /**
  * @method mixed rankings(array $params = [], array $options = []) manga-rankings (GET /manga/rankings)
- *   params: string $sort, string $format, string $genre, string $status, int $page, int $per_page
+ *   params: 'TRENDING_DESC'|'POPULARITY_DESC'|'SCORE_DESC'|'FAVOURITES_DESC'|'START_DATE_DESC'|'UPDATED_AT_DESC' $sort, 'MANGA'|'NOVEL'|'ONE_SHOT' $format, string $genre, 'FINISHED'|'RELEASING'|'NOT_YET_RELEASED'|'CANCELLED'|'HIATUS' $status, int $page, int $per_page
  * @method mixed search(array $params = [], array $options = []) manga-search (GET /manga/search)
- *   params: string $query, string $sort, int $page, int $per_page
+ *   params: string $query, 'SEARCH_MATCH'|'POPULARITY_DESC'|'SCORE_DESC'|'TRENDING_DESC'|'FAVOURITES_DESC'|'START_DATE_DESC' $sort, int $page, int $per_page
  * @method mixed title(array $params = [], array $options = []) manga-title (GET /manga/title/{id})
  *   params: string $id, bool $mal
  */
@@ -1290,7 +1306,7 @@ abstract class RedditGroup {}
  * @method mixed regionTrends(array $params = [], array $options = []) redfin-region-trends (GET /redfin/region-trends)
  *   params: int $region_id, int $region_type
  * @method mixed search(array $params = [], array $options = []) redfin-search (GET /redfin/search)
- *   params: string $location, int $page, int $region_id, int $region_type, string $status, int $min_price, int $max_price, int $min_beds, float $min_baths
+ *   params: string $location, int $page, int $region_id, int $region_type, 'for_sale'|'sold' $status, int $min_price, int $max_price, int $min_beds, float $min_baths
  * @method mixed similar(array $params = [], array $options = []) redfin-similar (GET /redfin/similar)
  *   params: string $property_id
  */
@@ -1458,7 +1474,7 @@ abstract class SofaScoreGroup {}
  * @method mixed categories(array $params = [], array $options = []) spotify-podcasts-categories (GET /spotify-podcasts/categories)
  *   params: string $uri, int $page_offset, int $page_limit, int $section_offset, int $section_limit, bool $include_episode_content_ratings_v2
  * @method mixed charts(array $params = [], array $options = []) spotify-podcasts-charts (GET /spotify-podcasts/charts)
- *   params: string $chart, string $region, int $limit
+ *   params: 'top-podcasts'|'top-episodes'|'trending'|'arts'|'business'|'comedy'|'education'|'fiction'|'health-fitness'|'history'|'leisure'|'music'|'news'|'religion-spirituality'|'science'|'society-culture'|'sports'|'technology'|'true-crime'|'tv-film' $chart, 'ar'|'au'|'at'|'br'|'ca'|'cl'|'co'|'dk'|'fi'|'fr'|'de'|'in'|'id'|'ie'|'it'|'jp'|'mx'|'nz'|'no'|'ph'|'pl'|'es'|'se'|'nl'|'gb'|'us' $region, int $limit
  * @method mixed episode(array $params = [], array $options = []) spotify-podcasts-episode (GET /spotify-podcasts/episode)
  *   params: string $uri, string $id
  * @method mixed home(array $params = [], array $options = []) spotify-podcasts-home (GET /spotify-podcasts/home)
@@ -1484,7 +1500,7 @@ abstract class SpotifyPodcastsGroup {}
  * @method mixed artist(array $params = [], array $options = []) spotify-artist (GET /spotify/artist)
  *   params: string $uri, string $id
  * @method mixed artistAlbums(array $params = [], array $options = []) spotify-artist-albums (GET /spotify/artist/albums)
- *   params: string $uri, string $id, string $type, string $order, int $offset, int $limit
+ *   params: string $uri, string $id, 'album'|'single'|'compilation'|'appears_on'|'all' $type, 'date_desc'|'date_asc'|'name_asc'|'name_desc' $order, int $offset, int $limit
  * @method mixed artistPlaylists(array $params = [], array $options = []) spotify-artist-playlists (GET /spotify/artist/playlists)
  *   params: string $uri, string $id
  * @method mixed artistRelated(array $params = [], array $options = []) spotify-artist-related (GET /spotify/artist/related)
@@ -1502,7 +1518,7 @@ abstract class SpotifyPodcastsGroup {}
  * @method mixed episodesSearch(array $params = [], array $options = []) spotify-episodes-search (GET /spotify/episodes/search)
  *   params: string $q, int $offset, int $limit
  * @method mixed featuredChartsByCountry(array $params = [], array $options = []) spotify-featured-charts-by-country (GET /spotify/featured-charts-by-country)
- *   params: string $country_code, string $content_id
+ *   params: string $country_code, 'CHARTS'|'POPULAR_ALBUMS'|'POPULAR_ARTISTS'|'TRENDING_SONGS' $content_id
  * @method mixed genre(array $params = [], array $options = []) spotify-genre (GET /spotify/genre)
  *   params: string $uri, int $page_offset, int $page_limit, int $section_offset, int $section_limit, bool $include_episode_content_ratings_v2
  * @method mixed home(array $params = [], array $options = []) spotify-home (GET /spotify/home)
@@ -1582,34 +1598,6 @@ abstract class SpotifyGroup {}
  *   params: string $cc, string $l
  */
 abstract class SteamGroup {}
-
-/**
- * @method mixed birthdays(array $params = [], array $options = []) tcdb-birthdays (GET /tcdb/birthdays)
- *   params: int $month, int $day, int $limit
- * @method mixed card(array $params = [], array $options = []) tcdb-card (GET /tcdb/card)
- *   params: string $set_id, string $card_id, string $path, string $url
- * @method mixed cardOfTheDay(array $params = [], array $options = []) tcdb-card-of-the-day (GET /tcdb/card-of-the-day)
- *   params: int $page, int $limit
- * @method mixed companies(array $params = [], array $options = []) tcdb-companies (GET /tcdb/companies)
- *   params: int $limit
- * @method mixed person(array $params = [], array $options = []) tcdb-person (GET /tcdb/person)
- *   params: string $id, string $path, string $url, int $limit
- * @method mixed releases(array $params = [], array $options = []) tcdb-releases (GET /tcdb/releases)
- *   params: int $limit
- * @method mixed search(array $params = [], array $options = []) tcdb-search (GET /tcdb/search)
- *   params: string $q, 'Baseball'|'Basketball'|'Boxing'|'Cricket'|'Football'|'Gaming'|'Golf'|'Hockey'|'Misc Sports'|'MMA'|'Multi-Sport'|'Non-Sport'|'Racing'|'Soccer'|'Tennis'|'Wrestling' $category, int $limit
- * @method mixed set(array $params = [], array $options = []) tcdb-set (GET /tcdb/set)
- *   params: string $id, string $path, string $url, int $limit
- * @method mixed sets(array $params = [], array $options = []) tcdb-sets (GET /tcdb/sets)
- *   params: 'Baseball'|'Basketball'|'Boxing'|'Cricket'|'Football'|'Gaming'|'Golf'|'Hockey'|'Misc Sports'|'MMA'|'Multi-Sport'|'Non-Sport'|'Racing'|'Soccer'|'Tennis'|'Wrestling' $sport, string $year, int $limit
- * @method mixed tagged(array $params = [], array $options = []) tcdb-tagged (GET /tcdb/tagged)
- *   params: string $id, string $path, string $url, 'Baseball'|'Basketball'|'Boxing'|'Cricket'|'Football'|'Gaming'|'Golf'|'Hockey'|'Misc Sports'|'MMA'|'Multi-Sport'|'Non-Sport'|'Racing'|'Soccer'|'Tennis'|'Wrestling' $sport, int $page, int $limit
- * @method mixed team(array $params = [], array $options = []) tcdb-team (GET /tcdb/team)
- *   params: string $id, string $path, string $url, int $limit
- * @method mixed topSets(array $params = [], array $options = []) tcdb-top-sets (GET /tcdb/top-sets)
- *   params: int $limit
- */
-abstract class TcdbGroup {}
 
 /**
  * @method mixed post(array $params = [], array $options = []) threads-post (GET /threads/post/{username}/{code})
@@ -1786,7 +1774,7 @@ abstract class XGroup {}
 /**
  * @method mixed calendars(array $params = [], array $options = []) yahoo-finance-calendars (GET /yahoo-finance/calendars)
  * @method mixed calendar(array $params = [], array $options = []) yahoo-finance-calendar (GET /yahoo-finance/calendars/{type})
- *   params: string $type, string $start, string $end, int $limit, int $offset, float $market_cap, bool $filter_most_active
+ *   params: 'earnings'|'ipo'|'economic-events'|'splits' $type, string $start, string $end, int $limit, int $offset, float $market_cap, bool $filter_most_active
  * @method mixed download(array $params = [], array $options = []) yahoo-finance-download (POST /yahoo-finance/download)
  *   params: array $request
  * @method mixed industries(array $params = [], array $options = []) yahoo-finance-industries (GET /yahoo-finance/industries)
@@ -1823,7 +1811,7 @@ abstract class XGroup {}
  * @method mixed tickerEarningsDates(array $params = [], array $options = []) yahoo-finance-ticker-earnings-dates (GET /yahoo-finance/ticker/{symbol}/earnings-dates)
  *   params: string $symbol, int $limit, int $offset
  * @method mixed tickerFinancials(array $params = [], array $options = []) yahoo-finance-ticker-financials (GET /yahoo-finance/ticker/{symbol}/financials)
- *   params: string $symbol, string $statement, string $period
+ *   params: string $symbol, 'income'|'income-statement'|'balance-sheet'|'balance'|'cash-flow'|'cashflow' $statement, 'annual'|'quarterly'|'trailing' $period
  * @method mixed tickerFunds(array $params = [], array $options = []) yahoo-finance-ticker-funds (GET /yahoo-finance/ticker/{symbol}/funds)
  *   params: string $symbol
  * @method mixed tickerHistory(array $params = [], array $options = []) yahoo-finance-ticker-history (GET /yahoo-finance/ticker/{symbol}/history)
@@ -1893,11 +1881,11 @@ abstract class YoutubeGroup {}
 
 /**
  * @method mixed autocomplete(array $params = [], array $options = []) zillow-autocomplete (GET /zillow/autocomplete)
- *   params: string $query, int $limit, string $status
+ *   params: string $query, int $limit, 'for_sale'|'sale'|'for-sale'|'for_rent'|'rent'|'for-rent'|'sold' $status
  * @method mixed property(array $params = [], array $options = []) zillow-property (GET /zillow/property/{zpid})
  *   params: string $zpid
  * @method mixed search(array $params = [], array $options = []) zillow-search (GET /zillow/search)
- *   params: string $location, int $page, string $status, int $region_id, int $region_type, float $west, float $east, float $south, float $north
+ *   params: string $location, int $page, 'for_sale'|'sale'|'for-sale'|'for_rent'|'rent'|'for-rent'|'sold' $status, int $region_id, int $region_type, float $west, float $east, float $south, float $north
  */
 abstract class ZillowGroup {}
 
@@ -1954,7 +1942,6 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\SpotifyPodcastsGroup $spotifyPodcasts
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
  * @property-read \Crawlora\Generated\SteamGroup $steam
- * @property-read \Crawlora\Generated\TcdbGroup $tcdb
  * @property-read \Crawlora\Generated\ThreadsGroup $threads
  * @property-read \Crawlora\Generated\TiktokGroup $tiktok
  * @property-read \Crawlora\Generated\TmdbGroup $tmdb
