@@ -4,7 +4,7 @@
     "type": "library",
     "license": "MIT",
     "keywords": ["crawlora", "web-scraping", "scraping", "api", "sdk", "client"],
-    "homepage": "https://crawlora.net/",
+    "homepage": "https://crawlora.net/?utm_source=packagist&utm_medium=referral&utm_campaign=crawlora-php-sdk",
     "support": {
         "issues": "https://github.com/Crawlora-org/crawlora-php-sdk/issues",
         "source": "https://github.com/Crawlora-org/crawlora-php-sdk"
