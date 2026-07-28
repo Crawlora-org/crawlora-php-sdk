@@ -30,8 +30,13 @@ Newer platforms are grouped like every other endpoint:
 
 ```php
 $posts = $client->reddit->search(['q' => 'php', 'subreddit' => 'programming']);
+$postWithMetrics = $client->reddit->post(['id' => '1v8hy3q', 'include_metrics' => true]);
+$commentsWithMetrics = $client->reddit->comments(['id' => '1v8hy3q', 'include_metrics' => true, 'limit' => 25]);
 $brand = $client->brand->retrieve(['domain' => 'stripe.com']);
 ```
+
+Omit `include_metrics` for the 1-credit feed mode. Set it to `true` for the
+3-credit anonymous HTML mode with public post and comment engagement metrics.
 
 ## Threads Public Lookups
 

@@ -404,6 +404,12 @@ abstract class WebGroup {}
  *   params: 'national'|'metro'|'county'|'city'|'zip' $region_type, int $table_id, string $period, string $property_type, bool $history
  * @method mixed housingMarketsSearch(array $params = [], array $options = []) datasets-housing-markets-search (GET /datasets/housing-markets/search)
  *   params: string $q, 'national'|'metro'|'county'|'city'|'zip' $region_type, string $state_code, string $property_type, string $parent_metro_code, string $zip_code, string $period, bool $latest, float $min_median_sale_price, float $max_median_sale_price, float $min_median_list_price, float $max_median_list_price, float $min_price_to_income, float $max_price_to_income, int $min_salary_to_buy, int $max_salary_to_buy, float $min_median_dom, float $max_median_dom, int $min_inventory, int $max_inventory, int $min_homes_sold, 'relevance'|'price_desc'|'price_asc'|'list_price_desc'|'list_price_asc'|'price_to_income_desc'|'price_to_income_asc'|'salary_to_buy_desc'|'salary_to_buy_asc'|'dom_asc'|'dom_desc'|'inventory_desc'|'homes_sold_desc'|'period_desc' $sort, int $page, int $page_size
+ * @method mixed instagramUsersFacets(array $params = [], array $options = []) datasets-instagram-users-facets (GET /datasets/instagram-users/facets)
+ *   params: 'is_verified'|'is_business_account'|'has_bio'|'has_external_url'|'category_name'|'source_tier' $facet, string $q, string $username, string $category_name, string $source_tier, bool $is_verified, bool $is_business_account, bool $has_bio, bool $has_external_url, int $min_followers, int $max_followers, float $min_ratio, float $max_ratio, string $created_after, string $created_before, string $crawled_after, string $crawled_before, 'relevance'|'followers_desc'|'followers_asc'|'crawled_at_desc'|'crawled_at_asc'|'created_at_desc'|'created_at_asc' $sort, int $page, int $page_size
+ * @method mixed instagramUsersItem(array $params = [], array $options = []) datasets-instagram-users-item (GET /datasets/instagram-users/items/{username})
+ *   params: string $username
+ * @method mixed instagramUsersSearch(array $params = [], array $options = []) datasets-instagram-users-search (GET /datasets/instagram-users/search)
+ *   params: string $q, string $username, string $category_name, string $source_tier, bool $is_verified, bool $is_business_account, bool $has_bio, bool $has_external_url, int $min_followers, int $max_followers, float $min_ratio, float $max_ratio, string $created_after, string $created_before, string $crawled_after, string $crawled_before, 'relevance'|'followers_desc'|'followers_asc'|'crawled_at_desc'|'crawled_at_asc'|'created_at_desc'|'created_at_asc' $sort, int $page, int $page_size
  * @method mixed jobsCompanies(array $params = [], array $options = []) datasets-jobs-companies (GET /datasets/jobs/companies)
  *   params: string $q, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint' $provider, 'active'|'empty'|'gone'|'blocked'|'pending'|'invalid' $status, int $min_open_roles, 'open_desc'|'company_asc'|'crawled_desc' $sort, int $page, int $page_size
  * @method mixed jobsCompanyItem(array $params = [], array $options = []) datasets-jobs-company-item (GET /datasets/jobs/companies/{id})
@@ -484,6 +490,8 @@ abstract class WebGroup {}
  *   params: 'topic'|'launch_year' $facet, 'topic_month'|'topic_year'|'topic' $group_by, string $topic, string $launched_after, string $launched_before, int $min_votes, int $min_launches
  * @method mixed producthuntTrendsSearch(array $params = [], array $options = []) datasets-producthunt-trends-search (GET /datasets/producthunt-trends/search)
  *   params: 'topic_month'|'topic_year'|'topic' $group_by, string $topic, string $launched_after, string $launched_before, int $min_votes, int $min_launches, 'period_desc'|'period_asc'|'launch_count_desc'|'sum_votes_desc' $sort, int $page, int $page_size
+ * @method mixed redditTrendingSearch(array $params = [], array $options = []) datasets-reddit-trending-search (GET /datasets/reddit-trending/search)
+ *   params: string $q, string $subreddit, string $date, 'rank'|'date_desc' $sort, int $page, int $page_size
  * @method mixed secCompaniesFacets(array $params = [], array $options = []) datasets-sec-companies-facets (GET /datasets/sec-companies/facets)
  *   params: 'sic'|'sic_description'|'exchange'|'state_of_incorporation'|'entity_type'|'reporting_currency'|'revenue_band'|'forms_filed' $facet, string $q, string $ticker, string $sic, string $exchange, string $state_of_incorporation, string $entity_type, string $reporting_currency, bool $has_financials, float $min_revenue, string $form_filed
  * @method mixed secCompaniesFinancials(array $params = [], array $options = []) datasets-sec-companies-financials (GET /datasets/sec-companies/financials/{cik})
@@ -753,9 +761,11 @@ abstract class GoogleGroup {}
  * @method mixed developer(array $params = [], array $options = []) googleplay-developer (GET /googleplay/developer/{dev_id})
  *   params: string $dev_id, int $num, string $country, string $lang, bool $full_detail
  * @method mixed list_(array $params = [], array $options = []) googleplay-list (GET /googleplay/list)
- *   params: 'TOP_FREE'|'TOP_PAID'|'GROSSING'|'NEW_FREE'|'NEW_PAID' $collection, string $category, string $age, int $num, string $country, string $lang, bool $full_detail
+ *   params: 'TOP_FREE'|'TOP_PAID'|'GROSSING'|'NEW_FREE'|'NEW_PAID' $collection, string $category, 'phone'|'tablet'|'tv'|'chromebook'|'watch'|'xr'|'car' $device, string $age, int $num, string $country, string $lang, bool $full_detail
  * @method mixed permissions(array $params = [], array $options = []) googleplay-permissions (GET /googleplay/permissions)
  *   params: string $app_id, string $country, string $lang, bool $short
+ * @method mixed ratings(array $params = [], array $options = []) googleplay-ratings (GET /googleplay/ratings)
+ *   params: string $app_id, string $country, string $lang
  * @method mixed reviews(array $params = [], array $options = []) googleplay-reviews (GET /googleplay/reviews)
  *   params: string $app_id, 'helpfulness'|'newest'|'rating' $sort, int $num, string $country, string $lang, bool $paginate, string $next_pagination_token
  * @method mixed search(array $params = [], array $options = []) googleplay-search (GET /googleplay/search)
@@ -1274,11 +1284,11 @@ abstract class ProductHuntGroup {}
 
 /**
  * @method mixed comments(array $params = [], array $options = []) reddit-comments (GET /reddit/comments/{id})
- *   params: string $id, 'confidence'|'top'|'new'|'controversial'|'old'|'qa' $sort, int $limit, int $depth
+ *   params: string $id, 'confidence'|'top'|'new'|'controversial'|'old'|'qa' $sort, int $limit, int $depth, bool $include_metrics
  * @method mixed domainPosts(array $params = [], array $options = []) reddit-domain-posts (GET /reddit/domain/{domain}/posts)
  *   params: string $domain, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
  * @method mixed post(array $params = [], array $options = []) reddit-post (GET /reddit/post/{id})
- *   params: string $id
+ *   params: string $id, bool $include_metrics
  * @method mixed search(array $params = [], array $options = []) reddit-search (GET /reddit/search)
  *   params: string $q, string $subreddit, 'relevance'|'hot'|'new'|'top'|'comments' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
  * @method mixed subredditAbout(array $params = [], array $options = []) reddit-subreddit-about (GET /reddit/subreddit/{subreddit}/about)

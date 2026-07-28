@@ -9194,6 +9194,291 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'datasets-instagram-users-facets' => [
+            'id' => 'datasets-instagram-users-facets',
+            'method' => 'GET',
+            'path' => '/datasets/instagram-users/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'is_verified',
+                        'is_business_account',
+                        'has_bio',
+                        'has_external_url',
+                        'category_name',
+                        'source_tier',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'username',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category_name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'source_tier',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'is_verified',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'is_business_account',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_bio',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_external_url',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_followers',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_followers',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_ratio',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_ratio',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'created_after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'created_before',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'crawled_after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'crawled_before',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'followers_desc',
+                        'followers_asc',
+                        'crawled_at_desc',
+                        'crawled_at_asc',
+                        'created_at_desc',
+                        'created_at_asc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-instagram-users-item' => [
+            'id' => 'datasets-instagram-users-item',
+            'method' => 'GET',
+            'path' => '/datasets/instagram-users/items/{username}',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-instagram-users-search' => [
+            'id' => 'datasets-instagram-users-search',
+            'method' => 'GET',
+            'path' => '/datasets/instagram-users/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'username',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category_name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'source_tier',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'is_verified',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'is_business_account',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_bio',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_external_url',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_followers',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_followers',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_ratio',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_ratio',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'created_after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'created_before',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'crawled_after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'crawled_before',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'followers_desc',
+                        'followers_asc',
+                        'crawled_at_desc',
+                        'crawled_at_asc',
+                        'created_at_desc',
+                        'created_at_asc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'datasets-jobs-companies' => [
             'id' => 'datasets-jobs-companies',
             'method' => 'GET',
@@ -11810,6 +12095,61 @@ final class Operations
                         'period_asc',
                         'launch_count_desc',
                         'sum_votes_desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-reddit-trending-search' => [
+            'id' => 'datasets-reddit-trending-search',
+            'method' => 'GET',
+            'path' => '/datasets/reddit-trending/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'subreddit',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'rank',
+                        'date_desc',
                     ],
                 ],
                 [
@@ -17316,6 +17656,20 @@ final class Operations
                     'type' => 'string',
                 ],
                 [
+                    'name' => 'device',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'phone',
+                        'tablet',
+                        'tv',
+                        'chromebook',
+                        'watch',
+                        'xr',
+                        'car',
+                    ],
+                ],
+                [
                     'name' => 'age',
                     'in' => 'query',
                     'type' => 'string',
@@ -17380,6 +17734,42 @@ final class Operations
                     'name' => 'short',
                     'in' => 'query',
                     'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'googleplay-ratings' => [
+            'id' => 'googleplay-ratings',
+            'method' => 'GET',
+            'path' => '/googleplay/ratings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'app_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
                 ],
             ],
             'formParams' => [],
@@ -25551,6 +25941,11 @@ final class Operations
                     'in' => 'query',
                     'type' => 'integer',
                 ],
+                [
+                    'name' => 'include_metrics',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -25628,7 +26023,13 @@ final class Operations
             'pathParams' => [
                 'id',
             ],
-            'queryParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'include_metrics',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -35248,6 +35649,9 @@ final class Operations
             'housingMarketsFacets' => 'datasets-housing-markets-facets',
             'housingMarketsItem' => 'datasets-housing-markets-item',
             'housingMarketsSearch' => 'datasets-housing-markets-search',
+            'instagramUsersFacets' => 'datasets-instagram-users-facets',
+            'instagramUsersItem' => 'datasets-instagram-users-item',
+            'instagramUsersSearch' => 'datasets-instagram-users-search',
             'jobsCompanies' => 'datasets-jobs-companies',
             'jobsCompanyItem' => 'datasets-jobs-company-item',
             'jobsFacets' => 'datasets-jobs-facets',
@@ -35288,6 +35692,7 @@ final class Operations
             'producthuntProductsSearch' => 'datasets-producthunt-products-search',
             'producthuntTrendsFacets' => 'datasets-producthunt-trends-facets',
             'producthuntTrendsSearch' => 'datasets-producthunt-trends-search',
+            'redditTrendingSearch' => 'datasets-reddit-trending-search',
             'secCompaniesFacets' => 'datasets-sec-companies-facets',
             'secCompaniesFinancials' => 'datasets-sec-companies-financials',
             'secCompaniesInsider' => 'datasets-sec-companies-insider',
@@ -35428,6 +35833,7 @@ final class Operations
             'developer' => 'googleplay-developer',
             'list_' => 'googleplay-list',
             'permissions' => 'googleplay-permissions',
+            'ratings' => 'googleplay-ratings',
             'reviews' => 'googleplay-reviews',
             'search' => 'googleplay-search',
             'similar' => 'googleplay-similar',
@@ -36012,7 +36418,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 832;
+    public const OPERATION_COUNT = 837;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -36183,6 +36589,9 @@ final class Operations
         'datasets-housing-markets-facets',
         'datasets-housing-markets-item',
         'datasets-housing-markets-search',
+        'datasets-instagram-users-facets',
+        'datasets-instagram-users-item',
+        'datasets-instagram-users-search',
         'datasets-jobs-companies',
         'datasets-jobs-company-item',
         'datasets-jobs-facets',
@@ -36223,6 +36632,7 @@ final class Operations
         'datasets-producthunt-products-search',
         'datasets-producthunt-trends-facets',
         'datasets-producthunt-trends-search',
+        'datasets-reddit-trending-search',
         'datasets-sec-companies-facets',
         'datasets-sec-companies-financials',
         'datasets-sec-companies-insider',
@@ -36349,6 +36759,7 @@ final class Operations
         'googleplay-developer',
         'googleplay-list',
         'googleplay-permissions',
+        'googleplay-ratings',
         'googleplay-reviews',
         'googleplay-search',
         'googleplay-similar',
@@ -37056,6 +37467,9 @@ final class OperationId
     public const DATASETS_HOUSING_MARKETS_FACETS = 'datasets-housing-markets-facets';
     public const DATASETS_HOUSING_MARKETS_ITEM = 'datasets-housing-markets-item';
     public const DATASETS_HOUSING_MARKETS_SEARCH = 'datasets-housing-markets-search';
+    public const DATASETS_INSTAGRAM_USERS_FACETS = 'datasets-instagram-users-facets';
+    public const DATASETS_INSTAGRAM_USERS_ITEM = 'datasets-instagram-users-item';
+    public const DATASETS_INSTAGRAM_USERS_SEARCH = 'datasets-instagram-users-search';
     public const DATASETS_JOBS_COMPANIES = 'datasets-jobs-companies';
     public const DATASETS_JOBS_COMPANY_ITEM = 'datasets-jobs-company-item';
     public const DATASETS_JOBS_FACETS = 'datasets-jobs-facets';
@@ -37097,6 +37511,7 @@ final class OperationId
     public const DATASETS_PRODUCTHUNT_PRODUCTS_SEARCH = 'datasets-producthunt-products-search';
     public const DATASETS_PRODUCTHUNT_TRENDS_FACETS = 'datasets-producthunt-trends-facets';
     public const DATASETS_PRODUCTHUNT_TRENDS_SEARCH = 'datasets-producthunt-trends-search';
+    public const DATASETS_REDDIT_TRENDING_SEARCH = 'datasets-reddit-trending-search';
     public const DATASETS_SEC_COMPANIES_FACETS = 'datasets-sec-companies-facets';
     public const DATASETS_SEC_COMPANIES_FINANCIALS = 'datasets-sec-companies-financials';
     public const DATASETS_SEC_COMPANIES_INSIDER = 'datasets-sec-companies-insider';
@@ -37207,6 +37622,7 @@ final class OperationId
     public const GOOGLE_PLAY_DEVELOPER = 'googleplay-developer';
     public const GOOGLE_PLAY_LIST = 'googleplay-list';
     public const GOOGLE_PLAY_PERMISSIONS = 'googleplay-permissions';
+    public const GOOGLE_PLAY_RATINGS = 'googleplay-ratings';
     public const GOOGLE_PLAY_REVIEWS = 'googleplay-reviews';
     public const GOOGLE_PLAY_SEARCH = 'googleplay-search';
     public const GOOGLE_PLAY_SIMILAR = 'googleplay-similar';
