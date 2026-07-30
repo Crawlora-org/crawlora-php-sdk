@@ -6,9 +6,11 @@ namespace Crawlora;
 
 /**
  * @property-read \Crawlora\Generated\AirbnbGroup $airbnb
+ * @property-read \Crawlora\Generated\AmazonJobsGroup $amazonJobs
  * @property-read \Crawlora\Generated\AmazonGroup $amazon
  * @property-read \Crawlora\Generated\AnimeGroup $anime
  * @property-read \Crawlora\Generated\AppleBooksGroup $appleBooks
+ * @property-read \Crawlora\Generated\AppleJobsGroup $appleJobs
  * @property-read \Crawlora\Generated\ApplePodcastsGroup $applePodcasts
  * @property-read \Crawlora\Generated\AppStoreGroup $appStore
  * @property-read \Crawlora\Generated\BillingGroup $billing
@@ -27,6 +29,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
  * @property-read \Crawlora\Generated\GitHubGroup $gitHub
  * @property-read \Crawlora\Generated\GoodreadsGroup $goodreads
+ * @property-read \Crawlora\Generated\GoogleJobsGroup $googleJobs
  * @property-read \Crawlora\Generated\GoogleGroup $google
  * @property-read \Crawlora\Generated\GooglePlayGroup $googlePlay
  * @property-read \Crawlora\Generated\ImdbGroup $imdb
@@ -37,6 +40,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\LetterboxdGroup $letterboxd
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
  * @property-read \Crawlora\Generated\MangaGroup $manga
+ * @property-read \Crawlora\Generated\MetaJobsGroup $metaJobs
  * @property-read \Crawlora\Generated\MetacriticGroup $metacritic
  * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
  * @property-read \Crawlora\Generated\NumbeoGroup $numbeo
@@ -57,6 +61,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\SpotifyPodcastsGroup $spotifyPodcasts
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
  * @property-read \Crawlora\Generated\SteamGroup $steam
+ * @property-read \Crawlora\Generated\TeslaJobsGroup $teslaJobs
  * @property-read \Crawlora\Generated\ThreadsGroup $threads
  * @property-read \Crawlora\Generated\TiktokGroup $tiktok
  * @property-read \Crawlora\Generated\TmdbGroup $tmdb
