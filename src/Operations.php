@@ -9691,6 +9691,11 @@ final class Operations
                         'eightfold',
                         'gem',
                         'pinpoint',
+                        'amazon-jobs',
+                        'apple-jobs',
+                        'google-jobs',
+                        'meta-jobs',
+                        'tesla-jobs',
                     ],
                 ],
                 [
@@ -9710,6 +9715,11 @@ final class Operations
                     'name' => 'min_open_roles',
                     'in' => 'query',
                     'type' => 'integer',
+                ],
+                [
+                    'name' => 'sponsors_visa',
+                    'in' => 'query',
+                    'type' => 'boolean',
                 ],
                 [
                     'name' => 'sort',
@@ -9857,6 +9867,11 @@ final class Operations
                         'eightfold',
                         'gem',
                         'pinpoint',
+                        'amazon-jobs',
+                        'apple-jobs',
+                        'google-jobs',
+                        'meta-jobs',
+                        'tesla-jobs',
                     ],
                 ],
                 [
@@ -9926,6 +9941,11 @@ final class Operations
                         'eightfold',
                         'gem',
                         'pinpoint',
+                        'amazon-jobs',
+                        'apple-jobs',
+                        'google-jobs',
+                        'meta-jobs',
+                        'tesla-jobs',
                     ],
                 ],
                 [
@@ -15291,6 +15311,27 @@ final class Operations
             'formParams' => [],
             'bodyParam' => 'extractOption',
             'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'facebook-page' => [
+            'id' => 'facebook-page',
+            'method' => 'GET',
+            'path' => '/facebook/{page}',
+            'pathParams' => [
+                'page',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
             'consumes' => [
                 'application/json',
             ],
@@ -36186,6 +36227,9 @@ final class Operations
             'teamRoster' => 'espn-team-roster',
             'teams' => 'espn-teams',
         ],
+        'facebook' => [
+            'page' => 'facebook-page',
+        ],
         'geocoding' => [
             'lookup' => 'geocoding-lookup',
             'reverse' => 'geocoding-reverse',
@@ -36869,7 +36913,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 848;
+    public const OPERATION_COUNT = 849;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -37138,6 +37182,7 @@ final class Operations
         'espn-team-roster',
         'espn-teams',
         'extract',
+        'facebook-page',
         'geocoding-lookup',
         'geocoding-reverse',
         'geocoding-search',
@@ -38026,6 +38071,7 @@ final class OperationId
     public const ESPN_TEAM = 'espn-team';
     public const ESPN_TEAM_ROSTER = 'espn-team-roster';
     public const ESPN_TEAMS = 'espn-teams';
+    public const FACEBOOK_PAGE = 'facebook-page';
     public const GEOCODING_LOOKUP = 'geocoding-lookup';
     public const GEOCODING_REVERSE = 'geocoding-reverse';
     public const GEOCODING_SEARCH = 'geocoding-search';
