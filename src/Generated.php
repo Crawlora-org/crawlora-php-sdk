@@ -427,7 +427,7 @@ abstract class WebGroup {}
  * @method mixed instagramUsersSearch(array $params = [], array $options = []) datasets-instagram-users-search (GET /datasets/instagram-users/search)
  *   params: string $q, string $username, string $category_name, string $source_tier, bool $is_verified, bool $is_business_account, bool $has_bio, bool $has_external_url, int $min_followers, int $max_followers, float $min_ratio, float $max_ratio, string $created_after, string $created_before, string $crawled_after, string $crawled_before, 'relevance'|'followers_desc'|'followers_asc'|'crawled_at_desc'|'crawled_at_asc'|'created_at_desc'|'created_at_asc' $sort, int $page, int $page_size
  * @method mixed jobsCompanies(array $params = [], array $options = []) datasets-jobs-companies (GET /datasets/jobs/companies)
- *   params: string $q, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint' $provider, 'active'|'empty'|'gone'|'blocked'|'pending'|'invalid' $status, int $min_open_roles, 'open_desc'|'company_asc'|'crawled_desc' $sort, int $page, int $page_size
+ *   params: string $q, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint'|'amazon-jobs'|'apple-jobs'|'google-jobs'|'meta-jobs'|'tesla-jobs' $provider, 'active'|'empty'|'gone'|'blocked'|'pending'|'invalid' $status, int $min_open_roles, bool $sponsors_visa, 'open_desc'|'company_asc'|'crawled_desc' $sort, int $page, int $page_size
  * @method mixed jobsCompanyItem(array $params = [], array $options = []) datasets-jobs-company-item (GET /datasets/jobs/companies/{id})
  *   params: string $id
  * @method mixed jobsFacets(array $params = [], array $options = []) datasets-jobs-facets (GET /datasets/jobs/facets)
@@ -435,9 +435,9 @@ abstract class WebGroup {}
  * @method mixed jobsItem(array $params = [], array $options = []) datasets-jobs-item (GET /datasets/jobs/items/{id})
  *   params: string $id
  * @method mixed jobsNearby(array $params = [], array $options = []) datasets-jobs-nearby (GET /datasets/jobs/nearby)
- *   params: float $lat, float $lon, float $radius_km, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint' $provider, bool $include_closed, int $page, int $page_size
+ *   params: float $lat, float $lon, float $radius_km, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint'|'amazon-jobs'|'apple-jobs'|'google-jobs'|'meta-jobs'|'tesla-jobs' $provider, bool $include_closed, int $page, int $page_size
  * @method mixed jobsSearch(array $params = [], array $options = []) datasets-jobs-search (GET /datasets/jobs/search)
- *   params: string $q, string $company, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint' $provider, string $department, string $location, string $city, string $state, string $country, string $employment_type, bool $remote, 'onsite'|'hybrid'|'remote' $workplace_type, bool $include_closed, float $min_salary, float $max_salary, string $salary_currency, 'relevance'|'posted_desc'|'company_asc' $sort, int $page, int $page_size
+ *   params: string $q, string $company, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint'|'amazon-jobs'|'apple-jobs'|'google-jobs'|'meta-jobs'|'tesla-jobs' $provider, string $department, string $location, string $city, string $state, string $country, string $employment_type, bool $remote, 'onsite'|'hybrid'|'remote' $workplace_type, bool $include_closed, float $min_salary, float $max_salary, string $salary_currency, 'relevance'|'posted_desc'|'company_asc' $sort, int $page, int $page_size
  * @method mixed journalistsFacets(array $params = [], array $options = []) datasets-journalists-facets (GET /datasets/journalists/facets)
  *   params: 'outlet'|'vertical'|'topic'|'contact_type' $facet, string $q, string $outlet, 'tech'|'crypto'|'marketing'|'consumer_tech'|'consumer_policy'|'cybersecurity'|'health'|'gaming'|'climate'|'business'|'entertainment'|'sports'|'legal'|'science'|'politics'|'real_estate'|'automotive'|'travel'|'food'|'education'|'design'|'film_tv'|'fashion'|'music'|'personal_finance'|'tech_independent'|'culture_independent'|'local_news'|'construction'|'banking'|'retail'|'aerospace_defense'|'energy'|'agriculture'|'local_business' $vertical, string $topic, 'email'|'social'|'none' $contact_type
  * @method mixed journalistsItem(array $params = [], array $options = []) datasets-journalists-item (GET /datasets/journalists/items/{outlet}/{slug})
@@ -618,6 +618,12 @@ abstract class EBayGroup {}
  *   params: 'football'|'basketball'|'baseball'|'hockey'|'soccer' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl'|'eng.1'|'esp.1'|'ita.1'|'ger.1'|'fra.1'|'usa.1'|'uefa.champions' $league
  */
 abstract class EspnGroup {}
+
+/**
+ * @method mixed page(array $params = [], array $options = []) facebook-page (GET /facebook/{page})
+ *   params: string $page
+ */
+abstract class FacebookGroup {}
 
 /**
  * @method mixed lookup(array $params = [], array $options = []) geocoding-lookup (GET /geocoding/lookup)
@@ -1963,6 +1969,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\DiscogsGroup $discogs
  * @property-read \Crawlora\Generated\EBayGroup $eBay
  * @property-read \Crawlora\Generated\EspnGroup $espn
+ * @property-read \Crawlora\Generated\FacebookGroup $facebook
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
  * @property-read \Crawlora\Generated\GitHubGroup $gitHub
  * @property-read \Crawlora\Generated\GoodreadsGroup $goodreads
