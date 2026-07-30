@@ -239,6 +239,123 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'amazon-jobs-job' => [
+            'id' => 'amazon-jobs-job',
+            'method' => 'GET',
+            'path' => '/amazon-jobs/job',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'amazon-jobs-search' => [
+            'id' => 'amazon-jobs-search',
+            'method' => 'GET',
+            'path' => '/amazon-jobs/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'administrative-support',
+                        'applied-science',
+                        'audio-video-photography-production',
+                        'business-intelligence-data-engineering',
+                        'business-merchant-development',
+                        'buying-planning-instock-management',
+                        'customer-service',
+                        'data-science',
+                        'database-administration',
+                        'design',
+                        'economics',
+                        'editorial-writing-content-management',
+                        'facilities-maintenance-real-estate',
+                        'fgbs',
+                        'fulfillment-center-warehouse-associate',
+                        'fulfillment-operations-management',
+                        'hardware-development',
+                        'human-resources',
+                        'investigation-loss-prevention',
+                        'leadership-development-training',
+                        'legal',
+                        'marketing',
+                        'medical-health-safety',
+                        'operations-it-support-engineering',
+                        'project-program-product-management-non-tech',
+                        'project-program-product-management-technical',
+                        'public-policy',
+                        'public-relations-communications',
+                        'research-science',
+                        'sales-advertising-account-management',
+                        'software-development',
+                        'solutions-architecture',
+                        'supply-chain-transportation-management',
+                        'systems-quality-security-engineering',
+                    ],
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevant',
+                        'recent',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'amazon-product' => [
             'id' => 'amazon-product',
             'method' => 'GET',
@@ -1138,6 +1255,69 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'apple-jobs-job' => [
+            'id' => 'apple-jobs-job',
+            'method' => 'GET',
+            'path' => '/apple-jobs/job',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'apple-jobs-search' => [
+            'id' => 'apple-jobs-search',
+            'method' => 'GET',
+            'path' => '/apple-jobs/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'apple-podcasts-charts' => [
             'id' => 'apple-podcasts-charts',
@@ -16191,6 +16371,69 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'google-jobs-job' => [
+            'id' => 'google-jobs-job',
+            'method' => 'GET',
+            'path' => '/google-jobs/job',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'google-jobs-search' => [
+            'id' => 'google-jobs-search',
+            'method' => 'GET',
+            'path' => '/google-jobs/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'google-finance-analyst-articles' => [
             'id' => 'google-finance-analyst-articles',
             'method' => 'GET',
@@ -21766,6 +22009,126 @@ final class Operations
                     'name' => 'mal',
                     'in' => 'query',
                     'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'meta-jobs-job' => [
+            'id' => 'meta-jobs-job',
+            'method' => 'GET',
+            'path' => '/meta-jobs/job',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'meta-jobs-list' => [
+            'id' => 'meta-jobs-list',
+            'method' => 'GET',
+            'path' => '/meta-jobs/list',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'meta-jobs-search' => [
+            'id' => 'meta-jobs-search',
+            'method' => 'GET',
+            'path' => '/meta-jobs/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'teams',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'roles',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'offices',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'is_remote_only',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'sort_by_new',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'results_per_page',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'five',
+                        'ten',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -31425,6 +31788,73 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'tesla-jobs-job' => [
+            'id' => 'tesla-jobs-job',
+            'method' => 'GET',
+            'path' => '/tesla-jobs/job',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'tesla-jobs-list' => [
+            'id' => 'tesla-jobs-list',
+            'method' => 'GET',
+            'path' => '/tesla-jobs/list',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'threads-post' => [
             'id' => 'threads-post',
             'method' => 'GET',
@@ -35456,6 +35886,10 @@ final class Operations
             'roomReviews' => 'airbnb-room-reviews',
             'search' => 'airbnb-search',
         ],
+        'amazonJobs' => [
+            'job' => 'amazon-jobs-job',
+            'search' => 'amazon-jobs-search',
+        ],
         'amazon' => [
             'product' => 'amazon-product',
             'search' => 'amazon-search',
@@ -35485,6 +35919,10 @@ final class Operations
             'charts' => 'apple-books-charts',
             'search' => 'apple-books-search',
             'series' => 'apple-books-series',
+        ],
+        'appleJobs' => [
+            'job' => 'apple-jobs-job',
+            'search' => 'apple-jobs-search',
         ],
         'applePodcasts' => [
             'charts' => 'apple-podcasts-charts',
@@ -35784,6 +36222,10 @@ final class Operations
             'lists' => 'goodreads-lists',
             'search' => 'goodreads-search',
         ],
+        'googleJobs' => [
+            'job' => 'google-jobs-job',
+            'search' => 'google-jobs-search',
+        ],
         'google' => [
             'financeAnalystArticles' => 'google-finance-analyst-articles',
             'financeChart' => 'google-finance-chart',
@@ -35960,6 +36402,11 @@ final class Operations
             'rankings' => 'manga-rankings',
             'search' => 'manga-search',
             'title' => 'manga-title',
+        ],
+        'metaJobs' => [
+            'job' => 'meta-jobs-job',
+            'list_' => 'meta-jobs-list',
+            'search' => 'meta-jobs-search',
         ],
         'metacritic' => [
             'browse' => 'metacritic-browse',
@@ -36262,6 +36709,10 @@ final class Operations
             'tagsList' => 'steam-tags-list',
             'topSellers' => 'steam-top-sellers',
         ],
+        'teslaJobs' => [
+            'job' => 'tesla-jobs-job',
+            'list_' => 'tesla-jobs-list',
+        ],
         'threads' => [
             'post' => 'threads-post',
             'postReplies' => 'threads-post-replies',
@@ -36418,7 +36869,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 837;
+    public const OPERATION_COUNT = 848;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -36429,6 +36880,8 @@ final class Operations
         'airbnb-room-calendar',
         'airbnb-room-reviews',
         'airbnb-search',
+        'amazon-jobs-job',
+        'amazon-jobs-search',
         'amazon-product',
         'amazon-search',
         'amazon-suggest',
@@ -36453,6 +36906,8 @@ final class Operations
         'apple-books-charts',
         'apple-books-search',
         'apple-books-series',
+        'apple-jobs-job',
+        'apple-jobs-search',
         'apple-podcasts-charts',
         'apple-podcasts-charts-rankings',
         'apple-podcasts-episodes-search',
@@ -36713,6 +37168,8 @@ final class Operations
         'goodreads-list',
         'goodreads-lists',
         'goodreads-search',
+        'google-jobs-job',
+        'google-jobs-search',
         'google-finance-analyst-articles',
         'google-finance-chart',
         'google-finance-classification',
@@ -36870,6 +37327,9 @@ final class Operations
         'manga-rankings',
         'manga-search',
         'manga-title',
+        'meta-jobs-job',
+        'meta-jobs-list',
+        'meta-jobs-search',
         'metacritic-browse',
         'metacritic-game',
         'metacritic-game-critic-reviews',
@@ -37131,6 +37591,8 @@ final class Operations
         'steam-tags',
         'steam-tags-list',
         'steam-top-sellers',
+        'tesla-jobs-job',
+        'tesla-jobs-list',
         'threads-post',
         'threads-post-replies',
         'threads-profile',
@@ -37309,6 +37771,8 @@ final class OperationId
     public const AIRBNB_ROOM_CALENDAR = 'airbnb-room-calendar';
     public const AIRBNB_ROOM_REVIEWS = 'airbnb-room-reviews';
     public const AIRBNB_SEARCH = 'airbnb-search';
+    public const AMAZON_JOBS_JOB = 'amazon-jobs-job';
+    public const AMAZON_JOBS_SEARCH = 'amazon-jobs-search';
     public const AMAZON_PRODUCT = 'amazon-product';
     public const AMAZON_SEARCH = 'amazon-search';
     public const AMAZON_SUGGEST = 'amazon-suggest';
@@ -37345,6 +37809,8 @@ final class OperationId
     public const APPLE_BOOKS_CHARTS = 'apple-books-charts';
     public const APPLE_BOOKS_SEARCH = 'apple-books-search';
     public const APPLE_BOOKS_SERIES = 'apple-books-series';
+    public const APPLE_JOBS_JOB = 'apple-jobs-job';
+    public const APPLE_JOBS_SEARCH = 'apple-jobs-search';
     public const APPLE_PODCASTS_CHARTS = 'apple-podcasts-charts';
     public const APPLE_PODCASTS_CHARTS_RANKINGS = 'apple-podcasts-charts-rankings';
     public const APPLE_PODCASTS_EPISODES_SEARCH = 'apple-podcasts-episodes-search';
@@ -37611,6 +38077,8 @@ final class OperationId
     public const GOOGLE_FINANCE_SEARCH = 'google-finance-search';
     public const GOOGLE_FINANCE_TICKER = 'google-finance-ticker';
     public const GOOGLE_JOBS = 'google-jobs';
+    public const GOOGLE_JOBS_JOB = 'google-jobs-job';
+    public const GOOGLE_JOBS_SEARCH = 'google-jobs-search';
     public const GOOGLE_MAP_PLACE = 'google-map-place';
     public const GOOGLE_MAP_PLACE_PHOTOS = 'google-map-place-photos';
     public const GOOGLE_MAP_PLACE_REVIEWS = 'google-map-place-reviews';
@@ -37747,6 +38215,9 @@ final class OperationId
     public const MANGA_RANKINGS = 'manga-rankings';
     public const MANGA_SEARCH = 'manga-search';
     public const MANGA_TITLE = 'manga-title';
+    public const META_JOBS_JOB = 'meta-jobs-job';
+    public const META_JOBS_LIST = 'meta-jobs-list';
+    public const META_JOBS_SEARCH = 'meta-jobs-search';
     public const META_PING = 'ping';
     public const META_READY = 'ready';
     public const METACRITIC_BROWSE = 'metacritic-browse';
@@ -38008,6 +38479,8 @@ final class OperationId
     public const STEAM_TAGS = 'steam-tags';
     public const STEAM_TAGS_LIST = 'steam-tags-list';
     public const STEAM_TOP_SELLERS = 'steam-top-sellers';
+    public const TESLA_JOBS_JOB = 'tesla-jobs-job';
+    public const TESLA_JOBS_LIST = 'tesla-jobs-list';
     public const THREADS_POST = 'threads-post';
     public const THREADS_POST_REPLIES = 'threads-post-replies';
     public const THREADS_PROFILE = 'threads-profile';

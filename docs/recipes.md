@@ -38,6 +38,18 @@ $brand = $client->brand->retrieve(['domain' => 'stripe.com']);
 Omit `include_metrics` for the 1-credit feed mode. Set it to `true` for the
 3-credit anonymous HTML mode with public post and comment engagement metrics.
 
+## Company Job Searches
+
+Search public job listings directly from employer career sites:
+
+```php
+$amazon = $client->amazonJobs->search(['q' => 'software engineer', 'country' => 'US']);
+$apple = $client->appleJobs->search(['q' => 'machine learning', 'location' => 'United States']);
+$google = $client->googleJobs->search(['q' => 'data scientist', 'location' => 'Singapore']);
+$meta = $client->metaJobs->search(['q' => 'product manager', 'is_remote_only' => true]);
+$tesla = $client->teslaJobs->list_(['query' => 'manufacturing', 'location' => 'Texas']);
+```
+
 ## Threads Public Lookups
 
 ```php

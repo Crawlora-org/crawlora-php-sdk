@@ -25,6 +25,14 @@ namespace Crawlora\Generated;
 abstract class AirbnbGroup {}
 
 /**
+ * @method mixed job(array $params = [], array $options = []) amazon-jobs-job (GET /amazon-jobs/job)
+ *   params: string $id
+ * @method mixed search(array $params = [], array $options = []) amazon-jobs-search (GET /amazon-jobs/search)
+ *   params: string $q, 'administrative-support'|'applied-science'|'audio-video-photography-production'|'business-intelligence-data-engineering'|'business-merchant-development'|'buying-planning-instock-management'|'customer-service'|'data-science'|'database-administration'|'design'|'economics'|'editorial-writing-content-management'|'facilities-maintenance-real-estate'|'fgbs'|'fulfillment-center-warehouse-associate'|'fulfillment-operations-management'|'hardware-development'|'human-resources'|'investigation-loss-prevention'|'leadership-development-training'|'legal'|'marketing'|'medical-health-safety'|'operations-it-support-engineering'|'project-program-product-management-non-tech'|'project-program-product-management-technical'|'public-policy'|'public-relations-communications'|'research-science'|'sales-advertising-account-management'|'software-development'|'solutions-architecture'|'supply-chain-transportation-management'|'systems-quality-security-engineering' $category, string $country, int $page, int $limit, 'relevant'|'recent' $sort
+ */
+abstract class AmazonJobsGroup {}
+
+/**
  * @method mixed product(array $params = [], array $options = []) amazon-product (GET /amazon/product/{asin})
  *   params: string $asin, 'en_US' $language, 'USD' $currency
  * @method mixed search(array $params = [], array $options = []) amazon-search (GET /amazon/search)
@@ -83,6 +91,14 @@ abstract class AnimeGroup {}
  *   params: string $id, string $country, string $lang
  */
 abstract class AppleBooksGroup {}
+
+/**
+ * @method mixed job(array $params = [], array $options = []) apple-jobs-job (GET /apple-jobs/job)
+ *   params: string $id
+ * @method mixed search(array $params = [], array $options = []) apple-jobs-search (GET /apple-jobs/search)
+ *   params: string $q, string $location, int $page
+ */
+abstract class AppleJobsGroup {}
 
 /**
  * @method mixed charts(array $params = [], array $options = []) apple-podcasts-charts (GET /apple-podcasts/charts)
@@ -675,6 +691,14 @@ abstract class GitHubGroup {}
 abstract class GoodreadsGroup {}
 
 /**
+ * @method mixed job(array $params = [], array $options = []) google-jobs-job (GET /google-jobs/job)
+ *   params: string $id
+ * @method mixed search(array $params = [], array $options = []) google-jobs-search (GET /google-jobs/search)
+ *   params: string $q, string $location, int $page
+ */
+abstract class GoogleJobsGroup {}
+
+/**
  * @method mixed financeAnalystArticles(array $params = [], array $options = []) google-finance-analyst-articles (GET /google/finance/analyst-articles/{quote})
  *   params: string $quote
  * @method mixed financeChart(array $params = [], array $options = []) google-finance-chart (GET /google/finance/chart/{quote})
@@ -1017,6 +1041,16 @@ abstract class LinkedInGroup {}
  *   params: string $id, bool $mal
  */
 abstract class MangaGroup {}
+
+/**
+ * @method mixed job(array $params = [], array $options = []) meta-jobs-job (GET /meta-jobs/job)
+ *   params: string $id
+ * @method mixed list_(array $params = [], array $options = []) meta-jobs-list (GET /meta-jobs/list)
+ *   params: int $page, int $page_size
+ * @method mixed search(array $params = [], array $options = []) meta-jobs-search (GET /meta-jobs/search)
+ *   params: string $q, array<string> $teams, array<string> $roles, array<string> $offices, bool $is_remote_only, bool $sort_by_new, 'all'|'five'|'ten' $results_per_page
+ */
+abstract class MetaJobsGroup {}
 
 /**
  * @method mixed browse(array $params = [], array $options = []) metacritic-browse (GET /metacritic/browse)
@@ -1610,6 +1644,14 @@ abstract class SpotifyGroup {}
 abstract class SteamGroup {}
 
 /**
+ * @method mixed job(array $params = [], array $options = []) tesla-jobs-job (GET /tesla-jobs/job)
+ *   params: string $id
+ * @method mixed list_(array $params = [], array $options = []) tesla-jobs-list (GET /tesla-jobs/list)
+ *   params: string $query, string $location, int $page, int $page_size
+ */
+abstract class TeslaJobsGroup {}
+
+/**
  * @method mixed post(array $params = [], array $options = []) threads-post (GET /threads/post/{username}/{code})
  *   params: string $username, string $code
  * @method mixed postReplies(array $params = [], array $options = []) threads-post-replies (GET /threads/post/{username}/{code}/replies)
@@ -1901,9 +1943,11 @@ abstract class ZillowGroup {}
 
 /**
  * @property-read \Crawlora\Generated\AirbnbGroup $airbnb
+ * @property-read \Crawlora\Generated\AmazonJobsGroup $amazonJobs
  * @property-read \Crawlora\Generated\AmazonGroup $amazon
  * @property-read \Crawlora\Generated\AnimeGroup $anime
  * @property-read \Crawlora\Generated\AppleBooksGroup $appleBooks
+ * @property-read \Crawlora\Generated\AppleJobsGroup $appleJobs
  * @property-read \Crawlora\Generated\ApplePodcastsGroup $applePodcasts
  * @property-read \Crawlora\Generated\AppStoreGroup $appStore
  * @property-read \Crawlora\Generated\BillingGroup $billing
@@ -1922,6 +1966,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
  * @property-read \Crawlora\Generated\GitHubGroup $gitHub
  * @property-read \Crawlora\Generated\GoodreadsGroup $goodreads
+ * @property-read \Crawlora\Generated\GoogleJobsGroup $googleJobs
  * @property-read \Crawlora\Generated\GoogleGroup $google
  * @property-read \Crawlora\Generated\GooglePlayGroup $googlePlay
  * @property-read \Crawlora\Generated\ImdbGroup $imdb
@@ -1932,6 +1977,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\LetterboxdGroup $letterboxd
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
  * @property-read \Crawlora\Generated\MangaGroup $manga
+ * @property-read \Crawlora\Generated\MetaJobsGroup $metaJobs
  * @property-read \Crawlora\Generated\MetacriticGroup $metacritic
  * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
  * @property-read \Crawlora\Generated\NumbeoGroup $numbeo
@@ -1952,6 +1998,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\SpotifyPodcastsGroup $spotifyPodcasts
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
  * @property-read \Crawlora\Generated\SteamGroup $steam
+ * @property-read \Crawlora\Generated\TeslaJobsGroup $teslaJobs
  * @property-read \Crawlora\Generated\ThreadsGroup $threads
  * @property-read \Crawlora\Generated\TiktokGroup $tiktok
  * @property-read \Crawlora\Generated\TmdbGroup $tmdb
