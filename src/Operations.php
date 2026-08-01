@@ -33900,6 +33900,76 @@ final class Operations
                     ],
                 ],
                 [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort_by',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'popularity.desc',
+                        'popularity.asc',
+                        'vote_average.desc',
+                        'vote_average.asc',
+                        'primary_release_date.desc',
+                        'primary_release_date.asc',
+                        'title.asc',
+                        'title.desc',
+                    ],
+                ],
+                [
+                    'name' => 'with_genres',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'original_language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_votes',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_runtime',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_runtime',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'include_adult',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
                     'name' => 'limit',
                     'in' => 'query',
                     'type' => 'integer',
@@ -33917,6 +33987,7 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+            'paginatable' => true,
         ],
         'tmdb-movie' => [
             'id' => 'tmdb-movie',
@@ -33938,6 +34009,37 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'tmdb-person-list' => [
+            'id' => 'tmdb-person-list',
+            'method' => 'GET',
+            'path' => '/tmdb/person/list',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'tmdb-person' => [
             'id' => 'tmdb-person',
@@ -33989,6 +34091,11 @@ final class Operations
                     ],
                 ],
                 [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
                     'name' => 'limit',
                     'in' => 'query',
                     'type' => 'integer',
@@ -34006,6 +34113,7 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+            'paginatable' => true,
         ],
         'tmdb-tv-list' => [
             'id' => 'tmdb-tv-list',
@@ -34025,6 +34133,76 @@ final class Operations
                     ],
                 ],
                 [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort_by',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'popularity.desc',
+                        'popularity.asc',
+                        'vote_average.desc',
+                        'vote_average.asc',
+                        'first_air_date.desc',
+                        'first_air_date.asc',
+                        'name.asc',
+                        'name.desc',
+                    ],
+                ],
+                [
+                    'name' => 'with_genres',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'original_language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_votes',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_runtime',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_runtime',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'include_adult',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
                     'name' => 'limit',
                     'in' => 'query',
                     'type' => 'integer',
@@ -34042,6 +34220,7 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+            'paginatable' => true,
         ],
         'tmdb-tv' => [
             'id' => 'tmdb-tv',
@@ -37960,6 +38139,7 @@ final class Operations
         'tmdb' => [
             'movieList' => 'tmdb-movie-list',
             'movie' => 'tmdb-movie',
+            'personList' => 'tmdb-person-list',
             'person' => 'tmdb-person',
             'search' => 'tmdb-search',
             'tvList' => 'tmdb-tv-list',
@@ -38081,7 +38261,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 881;
+    public const OPERATION_COUNT = 882;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -38868,6 +39048,7 @@ final class Operations
         'tiktok-trending',
         'tmdb-movie-list',
         'tmdb-movie',
+        'tmdb-person-list',
         'tmdb-person',
         'tmdb-search',
         'tmdb-tv-list',
@@ -39790,6 +39971,7 @@ final class OperationId
     public const TMDB_MOVIE = 'tmdb-movie';
     public const TMDB_MOVIE_LIST = 'tmdb-movie-list';
     public const TMDB_PERSON = 'tmdb-person';
+    public const TMDB_PERSON_LIST = 'tmdb-person-list';
     public const TMDB_SEARCH = 'tmdb-search';
     public const TMDB_TV = 'tmdb-tv';
     public const TMDB_TV_LIST = 'tmdb-tv-list';

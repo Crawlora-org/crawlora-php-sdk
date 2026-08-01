@@ -1792,15 +1792,17 @@ abstract class TiktokGroup {}
 
 /**
  * @method mixed movieList(array $params = [], array $options = []) tmdb-movie-list (GET /tmdb/movie/list)
- *   params: 'popular'|'top_rated'|'now_playing'|'upcoming' $category, int $limit
+ *   params: 'popular'|'top_rated'|'now_playing'|'upcoming' $category, int $page, 'popularity.desc'|'popularity.asc'|'vote_average.desc'|'vote_average.asc'|'primary_release_date.desc'|'primary_release_date.asc'|'title.asc'|'title.desc' $sort_by, string $with_genres, string $original_language, string $date_from, string $date_to, float $min_rating, float $max_rating, int $min_votes, int $min_runtime, int $max_runtime, bool $include_adult, int $limit
  * @method mixed movie(array $params = [], array $options = []) tmdb-movie (GET /tmdb/movie/{id})
  *   params: string $id
+ * @method mixed personList(array $params = [], array $options = []) tmdb-person-list (GET /tmdb/person/list)
+ *   params: int $page, int $limit
  * @method mixed person(array $params = [], array $options = []) tmdb-person (GET /tmdb/person/{id})
  *   params: string $id, int $limit
  * @method mixed search(array $params = [], array $options = []) tmdb-search (GET /tmdb/search)
- *   params: string $query, 'movie'|'tv'|'person' $type, int $limit
+ *   params: string $query, 'movie'|'tv'|'person' $type, int $page, int $limit
  * @method mixed tvList(array $params = [], array $options = []) tmdb-tv-list (GET /tmdb/tv/list)
- *   params: 'popular'|'top_rated'|'airing_today'|'on_the_air' $category, int $limit
+ *   params: 'popular'|'top_rated'|'airing_today'|'on_the_air' $category, int $page, 'popularity.desc'|'popularity.asc'|'vote_average.desc'|'vote_average.asc'|'first_air_date.desc'|'first_air_date.asc'|'name.asc'|'name.desc' $sort_by, string $with_genres, string $original_language, string $date_from, string $date_to, float $min_rating, float $max_rating, int $min_votes, int $min_runtime, int $max_runtime, bool $include_adult, int $limit
  * @method mixed tv(array $params = [], array $options = []) tmdb-tv (GET /tmdb/tv/{id})
  *   params: string $id
  */
