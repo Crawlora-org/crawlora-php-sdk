@@ -437,7 +437,7 @@ abstract class WebGroup {}
  * @method mixed jobsNearby(array $params = [], array $options = []) datasets-jobs-nearby (GET /datasets/jobs/nearby)
  *   params: float $lat, float $lon, float $radius_km, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint'|'amazon-jobs'|'apple-jobs'|'google-jobs'|'meta-jobs'|'tesla-jobs' $provider, bool $include_closed, int $page, int $page_size
  * @method mixed jobsSearch(array $params = [], array $options = []) datasets-jobs-search (GET /datasets/jobs/search)
- *   params: string $q, string $company, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint'|'amazon-jobs'|'apple-jobs'|'google-jobs'|'meta-jobs'|'tesla-jobs' $provider, string $department, string $location, string $city, string $state, string $country, string $employment_type, bool $remote, 'onsite'|'hybrid'|'remote' $workplace_type, bool $include_closed, float $min_salary, float $max_salary, string $salary_currency, 'relevance'|'posted_desc'|'company_asc' $sort, int $page, int $page_size
+ *   params: string $q, string $company, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint'|'amazon-jobs'|'apple-jobs'|'google-jobs'|'meta-jobs'|'tesla-jobs' $provider, string $department, string $location, string $city, string $state, string $country, string $employment_type, string $job_family, bool $remote, 'onsite'|'hybrid'|'remote' $workplace_type, bool $include_closed, float $min_salary, float $max_salary, string $salary_currency, 'relevance'|'posted_desc'|'company_asc' $sort, int $page, int $page_size
  * @method mixed journalistsFacets(array $params = [], array $options = []) datasets-journalists-facets (GET /datasets/journalists/facets)
  *   params: 'outlet'|'vertical'|'topic'|'contact_type' $facet, string $q, string $outlet, 'tech'|'crypto'|'marketing'|'consumer_tech'|'consumer_policy'|'cybersecurity'|'health'|'gaming'|'climate'|'business'|'entertainment'|'sports'|'legal'|'science'|'politics'|'real_estate'|'automotive'|'travel'|'food'|'education'|'design'|'film_tv'|'fashion'|'music'|'personal_finance'|'tech_independent'|'culture_independent'|'local_news'|'construction'|'banking'|'retail'|'aerospace_defense'|'energy'|'agriculture'|'local_business' $vertical, string $topic, 'email'|'social'|'none' $contact_type
  * @method mixed journalistsItem(array $params = [], array $options = []) datasets-journalists-item (GET /datasets/journalists/items/{outlet}/{slug})
@@ -1109,6 +1109,34 @@ abstract class MetacriticGroup {}
 abstract class MetaculusGroup {}
 
 /**
+ * @method mixed game(array $params = [], array $options = []) mlb-game (GET /mlb/game)
+ *   params: string $id
+ * @method mixed gameBoxscore(array $params = [], array $options = []) mlb-game-boxscore (GET /mlb/game-boxscore)
+ *   params: string $id
+ * @method mixed gamePlayByPlay(array $params = [], array $options = []) mlb-game-play-by-play (GET /mlb/game-play-by-play)
+ *   params: string $id
+ * @method mixed leagueStats(array $params = [], array $options = []) mlb-league-stats (GET /mlb/league-stats)
+ *   params: int $season, 'hitting'|'pitching'|'fielding' $group, int $limit
+ * @method mixed player(array $params = [], array $options = []) mlb-player (GET /mlb/player)
+ *   params: string $id
+ * @method mixed playerStats(array $params = [], array $options = []) mlb-player-stats (GET /mlb/player-stats)
+ *   params: string $id, int $season, 'hitting'|'pitching'|'fielding' $group
+ * @method mixed schedule(array $params = [], array $options = []) mlb-schedule (GET /mlb/schedule)
+ *   params: string $date, string $start_date, string $end_date, string $team_id
+ * @method mixed standings(array $params = [], array $options = []) mlb-standings (GET /mlb/standings)
+ *   params: int $season, 'regularSeason'|'wildCard'|'springTraining' $type
+ * @method mixed teamRoster(array $params = [], array $options = []) mlb-team-roster (GET /mlb/team-roster)
+ *   params: string $team_id, int $season, 'active'|'40Man'|'fullSeason' $roster_type
+ * @method mixed teamStats(array $params = [], array $options = []) mlb-team-stats (GET /mlb/team-stats)
+ *   params: string $team_id, int $season, 'hitting'|'pitching'|'fielding' $group
+ * @method mixed teams(array $params = [], array $options = []) mlb-teams (GET /mlb/teams)
+ *   params: int $season
+ * @method mixed transactions(array $params = [], array $options = []) mlb-transactions (GET /mlb/transactions)
+ *   params: string $start_date, string $end_date, string $team_id, string $player_id
+ */
+abstract class MlbGroup {}
+
+/**
  * @method mixed costOfLivingCity(array $params = [], array $options = []) numbeo-cost-of-living-city (GET /numbeo/cost-of-living/city/{slug})
  *   params: string $slug
  * @method mixed costOfLivingCountry(array $params = [], array $options = []) numbeo-cost-of-living-country (GET /numbeo/cost-of-living/country)
@@ -1650,6 +1678,23 @@ abstract class SpotifyGroup {}
 abstract class SteamGroup {}
 
 /**
+ * @method mixed categories(array $params = [], array $options = []) target-categories (GET /target/categories)
+ * @method mixed categoryProducts(array $params = [], array $options = []) target-category-products (GET /target/category-products)
+ *   params: string $category_id, int $page, 'relevance'|'featured'|'price-low'|'price-high'|'rating'|'bestselling'|'newest' $sort, int $store_id, string $filter_ids
+ * @method mixed filterOptions(array $params = [], array $options = []) target-filter-options (GET /target/filter-options)
+ *   params: string $q, string $category_id, int $store_id, string $filter_ids
+ * @method mixed product(array $params = [], array $options = []) target-product (GET /target/product)
+ *   params: string $tcin, int $store_id
+ * @method mixed questions(array $params = [], array $options = []) target-questions (GET /target/questions)
+ *   params: string $tcin, int $page, int $per_page
+ * @method mixed reviews(array $params = [], array $options = []) target-reviews (GET /target/reviews)
+ *   params: string $tcin, int $page, int $per_page
+ * @method mixed search(array $params = [], array $options = []) target-search (GET /target/search)
+ *   params: string $q, int $page, 'relevance'|'featured'|'price-low'|'price-high'|'rating'|'bestselling'|'newest' $sort, int $store_id, string $filter_ids
+ */
+abstract class TargetGroup {}
+
+/**
  * @method mixed job(array $params = [], array $options = []) tesla-jobs-job (GET /tesla-jobs/job)
  *   params: string $id
  * @method mixed list_(array $params = [], array $options = []) tesla-jobs-list (GET /tesla-jobs/list)
@@ -1672,9 +1717,39 @@ abstract class TeslaJobsGroup {}
 abstract class ThreadsGroup {}
 
 /**
+ * @method mixed attraction(array $params = [], array $options = []) ticketmaster-attraction (GET /ticketmaster/attraction)
+ *   params: string $id
+ * @method mixed attractionEvents(array $params = [], array $options = []) ticketmaster-attraction-events (GET /ticketmaster/attraction-events)
+ *   params: string $id, int $page, 'relevance'|'date' $sort
+ * @method mixed discoverCategories(array $params = [], array $options = []) ticketmaster-discover-categories (GET /ticketmaster/discover-categories)
+ *   params: 'all'|'concerts'|'sports'|'arts-theater'|'family' $section, int $page, int $per_page
+ * @method mixed discoverCategoryEvents(array $params = [], array $options = []) ticketmaster-discover-category-events (GET /ticketmaster/discover-category-events)
+ *   params: string $category_id, int $page
+ * @method mixed discoverCities(array $params = [], array $options = []) ticketmaster-discover-cities (GET /ticketmaster/discover-cities)
+ *   params: string $country, int $page, int $per_page
+ * @method mixed discoverCityEvents(array $params = [], array $options = []) ticketmaster-discover-city-events (GET /ticketmaster/discover-city-events)
+ *   params: string $city, string $country, int $page
+ * @method mixed event(array $params = [], array $options = []) ticketmaster-event (GET /ticketmaster/event)
+ *   params: string $id
+ * @method mixed searchEvents(array $params = [], array $options = []) ticketmaster-search-events (GET /ticketmaster/search-events)
+ *   params: string $q, int $page, 'relevance'|'date' $sort
+ * @method mixed suggest(array $params = [], array $options = []) ticketmaster-suggest (GET /ticketmaster/suggest)
+ *   params: string $q
+ * @method mixed venue(array $params = [], array $options = []) ticketmaster-venue (GET /ticketmaster/venue)
+ *   params: string $id
+ * @method mixed venueEvents(array $params = [], array $options = []) ticketmaster-venue-events (GET /ticketmaster/venue-events)
+ *   params: string $id, int $page, 'relevance'|'date' $sort
+ */
+abstract class TicketmasterGroup {}
+
+/**
  * @method mixed category(array $params = [], array $options = []) tiktok-category (GET /tiktok/category)
  * @method mixed videoComments(array $params = [], array $options = []) tiktok-video-comments (GET /tiktok/comments)
  *   params: string $aweme_id, int $cursor
+ * @method mixed creativeCenterHashtags(array $params = [], array $options = []) tiktok-creative-center-hashtags (GET /tiktok/creative-center/hashtags)
+ *   params: string $country_code, '7'|'30' $period
+ * @method mixed creativeCenterVideos(array $params = [], array $options = []) tiktok-creative-center-videos (GET /tiktok/creative-center/videos)
+ *   params: string $country_code, '7'|'30' $period, 'views'|'engagement'|'six_second_views' $sort_by, string $content_label_id, bool $organic_only
  * @method mixed explore(array $params = [], array $options = []) tiktok-explore (GET /tiktok/explore/{id})
  *   params: int $id
  * @method mixed challenge(array $params = [], array $options = []) tiktok-challenge (GET /tiktok/hashtag/{name})
@@ -1987,6 +2062,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\MetaJobsGroup $metaJobs
  * @property-read \Crawlora\Generated\MetacriticGroup $metacritic
  * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
+ * @property-read \Crawlora\Generated\MlbGroup $mlb
  * @property-read \Crawlora\Generated\NumbeoGroup $numbeo
  * @property-read \Crawlora\Generated\MetaGroup $meta
  * @property-read \Crawlora\Generated\PitchBookGroup $pitchBook
@@ -2005,8 +2081,10 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\SpotifyPodcastsGroup $spotifyPodcasts
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
  * @property-read \Crawlora\Generated\SteamGroup $steam
+ * @property-read \Crawlora\Generated\TargetGroup $target
  * @property-read \Crawlora\Generated\TeslaJobsGroup $teslaJobs
  * @property-read \Crawlora\Generated\ThreadsGroup $threads
+ * @property-read \Crawlora\Generated\TicketmasterGroup $ticketmaster
  * @property-read \Crawlora\Generated\TiktokGroup $tiktok
  * @property-read \Crawlora\Generated\TmdbGroup $tmdb
  * @property-read \Crawlora\Generated\TripAdvisorGroup $tripAdvisor

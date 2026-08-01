@@ -191,6 +191,14 @@ $client = new Client(['apiKey' => '...', 'idempotencyKeys' => true]);
 // POST/PATCH operations get a generated Idempotency-Key header automatically.
 ```
 
+## Ticketmaster, MLB, And Target
+
+```php
+$events = $client->request('ticketmaster-search-events', ['keyword' => 'jazz', 'page' => 1]);
+$schedule = $client->request('mlb-schedule', ['date' => '2026-08-01']);
+$filters = $client->request('target-filter-options', ['category_id' => '5xt1a']);
+```
+
 ## TrustMRR Verified Startup Revenues
 
 Browse verified startup revenues and the acquisition marketplace on TrustMRR: the marketplace snapshot, the revenue leaderboard, startup detail, and categories.
