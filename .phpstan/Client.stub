@@ -24,6 +24,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\WebGroup $web
  * @property-read \Crawlora\Generated\DatasetsGroup $datasets
  * @property-read \Crawlora\Generated\DiscogsGroup $discogs
+ * @property-read \Crawlora\Generated\DoorDashGroup $doorDash
  * @property-read \Crawlora\Generated\EBayGroup $eBay
  * @property-read \Crawlora\Generated\EspnGroup $espn
  * @property-read \Crawlora\Generated\FacebookGroup $facebook

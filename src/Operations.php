@@ -14610,6 +14610,207 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'doordash-search' => [
+            'id' => 'doordash-search',
+            'method' => 'GET',
+            'path' => '/doordash/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'tag',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'dashPassOnly',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'asapOnly',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'pickupOnly',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'maxDistanceMiles',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'doordash-search-autocomplete' => [
+            'id' => 'doordash-search-autocomplete',
+            'method' => 'GET',
+            'path' => '/doordash/search/autocomplete',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'doordash-search-filters' => [
+            'id' => 'doordash-search-filters',
+            'method' => 'GET',
+            'path' => '/doordash/search/filters',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'doordash-store' => [
+            'id' => 'doordash-store',
+            'method' => 'GET',
+            'path' => '/doordash/store/{store_id}',
+            'pathParams' => [
+                'store_id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'doordash-store-menu' => [
+            'id' => 'doordash-store-menu',
+            'method' => 'GET',
+            'path' => '/doordash/store/{store_id}/menu',
+            'pathParams' => [
+                'store_id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'ebay-item' => [
             'id' => 'ebay-item',
             'method' => 'GET',
@@ -18370,6 +18571,166 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'imdb-search-title' => [
+            'id' => 'imdb-search-title',
+            'method' => 'GET',
+            'path' => '/imdb/search/title',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'title',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'title_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genres',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'release_date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'release_date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_user_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_user_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_votes',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_votes',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_popularity',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_popularity',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_runtime',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_runtime',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'groups',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'keywords',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'companies',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'certificates',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'colors',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'countries',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'languages',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sound_mixes',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'role',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'characters',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'plot',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'include_adult',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort_order',
+                    'in' => 'query',
+                    'type' => 'string',
                 ],
                 [
                     'name' => 'limit',
@@ -35035,6 +35396,49 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'ubereats-feed' => [
+            'id' => 'ubereats-feed',
+            'method' => 'GET',
+            'path' => '/ubereats/feed',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'ubereats-search' => [
             'id' => 'ubereats-search',
             'method' => 'GET',
@@ -35095,6 +35499,27 @@ final class Operations
             'id' => 'ubereats-store',
             'method' => 'GET',
             'path' => '/ubereats/store/{store_id}',
+            'pathParams' => [
+                'store_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'ubereats-store-menu' => [
+            'id' => 'ubereats-store-menu',
+            'method' => 'GET',
+            'path' => '/ubereats/store/{store_id}/menu',
             'pathParams' => [
                 'store_id',
             ],
@@ -37517,6 +37942,13 @@ final class Operations
             'release' => 'discogs-release',
             'search' => 'discogs-search',
         ],
+        'doorDash' => [
+            'doordashSearch' => 'doordash-search',
+            'doordashSearchAutocomplete' => 'doordash-search-autocomplete',
+            'doordashSearchFilters' => 'doordash-search-filters',
+            'doordashStore' => 'doordash-store',
+            'doordashStoreMenu' => 'doordash-store-menu',
+        ],
         'eBay' => [
             'ebayItem' => 'ebay-item',
             'ebaySearch' => 'ebay-search',
@@ -37639,6 +38071,7 @@ final class Operations
             'nameAwards' => 'imdb-name-awards',
             'nameCredits' => 'imdb-name-credits',
             'search' => 'imdb-search',
+            'searchTitle' => 'imdb-search-title',
             'title' => 'imdb-title',
             'titleAwards' => 'imdb-title-awards',
             'titleCompanyCredits' => 'imdb-title-company-credits',
@@ -38172,8 +38605,10 @@ final class Operations
             'category' => 'trustpilot-category',
         ],
         'uberEats' => [
+            'ubereatsFeed' => 'ubereats-feed',
             'ubereatsSearch' => 'ubereats-search',
             'ubereatsStore' => 'ubereats-store',
+            'ubereatsStoreMenu' => 'ubereats-store-menu',
             'ubereatsStoreReviews' => 'ubereats-store-reviews',
         ],
         'usage' => [
@@ -38261,7 +38696,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 882;
+    public const OPERATION_COUNT = 890;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -38514,6 +38949,11 @@ final class Operations
         'discogs-master',
         'discogs-release',
         'discogs-search',
+        'doordash-search',
+        'doordash-search-autocomplete',
+        'doordash-search-filters',
+        'doordash-store',
+        'doordash-store-menu',
         'ebay-item',
         'ebay-search',
         'ebay-seller',
@@ -38618,6 +39058,7 @@ final class Operations
         'imdb-name-awards',
         'imdb-name-credits',
         'imdb-search',
+        'imdb-search-title',
         'imdb-title',
         'imdb-title-awards',
         'imdb-title-company-credits',
@@ -39073,8 +39514,10 @@ final class Operations
         'trustpilot-categories',
         'trustpilot-category-search',
         'trustpilot-category',
+        'ubereats-feed',
         'ubereats-search',
         'ubereats-store',
+        'ubereats-store-menu',
         'ubereats-store-reviews',
         'usage-me-endpoints',
         'usage-me-overview',
@@ -39437,6 +39880,11 @@ final class OperationId
     public const DISCOGS_MASTER = 'discogs-master';
     public const DISCOGS_RELEASE = 'discogs-release';
     public const DISCOGS_SEARCH = 'discogs-search';
+    public const DOOR_DASH_DOORDASH_SEARCH = 'doordash-search';
+    public const DOOR_DASH_DOORDASH_SEARCH_AUTOCOMPLETE = 'doordash-search-autocomplete';
+    public const DOOR_DASH_DOORDASH_SEARCH_FILTERS = 'doordash-search-filters';
+    public const DOOR_DASH_DOORDASH_STORE = 'doordash-store';
+    public const DOOR_DASH_DOORDASH_STORE_MENU = 'doordash-store-menu';
     public const EBAY_EBAY_ITEM = 'ebay-item';
     public const EBAY_EBAY_SEARCH = 'ebay-search';
     public const EBAY_EBAY_SELLER = 'ebay-seller';
@@ -39540,6 +39988,7 @@ final class OperationId
     public const IMDB_NAME_AWARDS = 'imdb-name-awards';
     public const IMDB_NAME_CREDITS = 'imdb-name-credits';
     public const IMDB_SEARCH = 'imdb-search';
+    public const IMDB_SEARCH_TITLE = 'imdb-search-title';
     public const IMDB_TITLE = 'imdb-title';
     public const IMDB_TITLE_AWARDS = 'imdb-title-awards';
     public const IMDB_TITLE_COMPANY_CREDITS = 'imdb-title-company-credits';
@@ -39995,8 +40444,10 @@ final class OperationId
     public const TRUSTPILOT_CATEGORIES = 'trustpilot-categories';
     public const TRUSTPILOT_CATEGORY = 'trustpilot-category';
     public const TRUSTPILOT_CATEGORY_SEARCH = 'trustpilot-category-search';
+    public const UBER_EATS_UBEREATS_FEED = 'ubereats-feed';
     public const UBER_EATS_UBEREATS_SEARCH = 'ubereats-search';
     public const UBER_EATS_UBEREATS_STORE = 'ubereats-store';
+    public const UBER_EATS_UBEREATS_STORE_MENU = 'ubereats-store-menu';
     public const UBER_EATS_UBEREATS_STORE_REVIEWS = 'ubereats-store-reviews';
     public const USAGE_ME_ENDPOINTS = 'usage-me-endpoints';
     public const USAGE_ME_OVERVIEW = 'usage-me-overview';

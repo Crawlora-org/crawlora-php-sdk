@@ -582,6 +582,20 @@ abstract class DatasetsGroup {}
 abstract class DiscogsGroup {}
 
 /**
+ * @method mixed doordashSearch(array $params = [], array $options = []) doordash-search (GET /doordash/search)
+ *   params: string $query, float $latitude, float $longitude, string $tag, bool $dashPassOnly, bool $asapOnly, bool $pickupOnly, float $maxDistanceMiles
+ * @method mixed doordashSearchAutocomplete(array $params = [], array $options = []) doordash-search-autocomplete (GET /doordash/search/autocomplete)
+ *   params: string $query, float $latitude, float $longitude
+ * @method mixed doordashSearchFilters(array $params = [], array $options = []) doordash-search-filters (GET /doordash/search/filters)
+ *   params: float $latitude, float $longitude
+ * @method mixed doordashStore(array $params = [], array $options = []) doordash-store (GET /doordash/store/{store_id})
+ *   params: string $store_id, float $latitude, float $longitude
+ * @method mixed doordashStoreMenu(array $params = [], array $options = []) doordash-store-menu (GET /doordash/store/{store_id}/menu)
+ *   params: string $store_id, float $latitude, float $longitude
+ */
+abstract class DoorDashGroup {}
+
+/**
  * @method mixed ebayItem(array $params = [], array $options = []) ebay-item (GET /ebay/item/{item_id})
  *   params: string $item_id
  * @method mixed ebaySearch(array $params = [], array $options = []) ebay-search (POST /ebay/search)
@@ -816,6 +830,8 @@ abstract class GooglePlayGroup {}
  *   params: string $id, string $url
  * @method mixed search(array $params = [], array $options = []) imdb-search (GET /imdb/search)
  *   params: string $query, int $limit
+ * @method mixed searchTitle(array $params = [], array $options = []) imdb-search-title (GET /imdb/search/title)
+ *   params: string $title, string $title_type, string $genres, string $release_date_from, string $release_date_to, float $min_user_rating, float $max_user_rating, int $min_votes, int $max_votes, int $min_popularity, int $max_popularity, int $min_runtime, int $max_runtime, string $groups, string $keywords, string $companies, string $certificates, string $colors, string $countries, string $languages, string $sound_mixes, string $role, string $characters, string $plot, bool $include_adult, string $sort, string $sort_order, int $limit
  * @method mixed title(array $params = [], array $options = []) imdb-title (GET /imdb/title)
  *   params: string $id, string $url
  * @method mixed titleAwards(array $params = [], array $options = []) imdb-title-awards (GET /imdb/title/awards)
@@ -1856,9 +1872,13 @@ abstract class TrustMrrGroup {}
 abstract class TrustpilotGroup {}
 
 /**
+ * @method mixed ubereatsFeed(array $params = [], array $options = []) ubereats-feed (GET /ubereats/feed)
+ *   params: float $latitude, float $longitude, int $offset, int $limit
  * @method mixed ubereatsSearch(array $params = [], array $options = []) ubereats-search (GET /ubereats/search)
  *   params: float $latitude, float $longitude, string $query, int $offset, int $limit, string $cursor
  * @method mixed ubereatsStore(array $params = [], array $options = []) ubereats-store (GET /ubereats/store/{store_id})
+ *   params: string $store_id
+ * @method mixed ubereatsStoreMenu(array $params = [], array $options = []) ubereats-store-menu (GET /ubereats/store/{store_id}/menu)
  *   params: string $store_id
  * @method mixed ubereatsStoreReviews(array $params = [], array $options = []) ubereats-store-reviews (GET /ubereats/store/{store_id}/reviews)
  *   params: string $store_id
@@ -2044,6 +2064,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\WebGroup $web
  * @property-read \Crawlora\Generated\DatasetsGroup $datasets
  * @property-read \Crawlora\Generated\DiscogsGroup $discogs
+ * @property-read \Crawlora\Generated\DoorDashGroup $doorDash
  * @property-read \Crawlora\Generated\EBayGroup $eBay
  * @property-read \Crawlora\Generated\EspnGroup $espn
  * @property-read \Crawlora\Generated\FacebookGroup $facebook
