@@ -582,15 +582,25 @@ abstract class DatasetsGroup {}
 abstract class DiscogsGroup {}
 
 /**
+ * @method mixed doordashFeed(array $params = [], array $options = []) doordash-feed (GET /doordash/feed)
+ *   params: float $latitude, float $longitude, int $offset, int $limit
  * @method mixed doordashSearch(array $params = [], array $options = []) doordash-search (GET /doordash/search)
  *   params: string $query, float $latitude, float $longitude, string $tag, bool $dashPassOnly, bool $asapOnly, bool $pickupOnly, float $maxDistanceMiles
  * @method mixed doordashSearchAutocomplete(array $params = [], array $options = []) doordash-search-autocomplete (GET /doordash/search/autocomplete)
  *   params: string $query, float $latitude, float $longitude
  * @method mixed doordashSearchFilters(array $params = [], array $options = []) doordash-search-filters (GET /doordash/search/filters)
  *   params: float $latitude, float $longitude
+ * @method mixed doordashSearchItems(array $params = [], array $options = []) doordash-search-items (GET /doordash/search/items)
+ *   params: string $query, float $latitude, float $longitude
  * @method mixed doordashStore(array $params = [], array $options = []) doordash-store (GET /doordash/store/{store_id})
  *   params: string $store_id, float $latitude, float $longitude
+ * @method mixed doordashStoreFulfillment(array $params = [], array $options = []) doordash-store-fulfillment (GET /doordash/store/{store_id}/fulfillment)
+ *   params: string $store_id, float $latitude, float $longitude
+ * @method mixed doordashStoreItem(array $params = [], array $options = []) doordash-store-item (GET /doordash/store/{store_id}/item/{item_id})
+ *   params: string $store_id, string $item_id, float $latitude, float $longitude
  * @method mixed doordashStoreMenu(array $params = [], array $options = []) doordash-store-menu (GET /doordash/store/{store_id}/menu)
+ *   params: string $store_id, float $latitude, float $longitude
+ * @method mixed doordashStoreReviews(array $params = [], array $options = []) doordash-store-reviews (GET /doordash/store/{store_id}/reviews)
  *   params: string $store_id, float $latitude, float $longitude
  */
 abstract class DoorDashGroup {}

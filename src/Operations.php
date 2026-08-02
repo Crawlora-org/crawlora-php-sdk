@@ -14610,6 +14610,49 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'doordash-feed' => [
+            'id' => 'doordash-feed',
+            'method' => 'GET',
+            'path' => '/doordash/feed',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'doordash-search' => [
             'id' => 'doordash-search',
             'method' => 'GET',
@@ -14743,6 +14786,44 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'doordash-search-items' => [
+            'id' => 'doordash-search-items',
+            'method' => 'GET',
+            'path' => '/doordash/search/items',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'doordash-store' => [
             'id' => 'doordash-store',
             'method' => 'GET',
@@ -14777,10 +14858,113 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'doordash-store-fulfillment' => [
+            'id' => 'doordash-store-fulfillment',
+            'method' => 'GET',
+            'path' => '/doordash/store/{store_id}/fulfillment',
+            'pathParams' => [
+                'store_id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'doordash-store-item' => [
+            'id' => 'doordash-store-item',
+            'method' => 'GET',
+            'path' => '/doordash/store/{store_id}/item/{item_id}',
+            'pathParams' => [
+                'store_id',
+                'item_id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'doordash-store-menu' => [
             'id' => 'doordash-store-menu',
             'method' => 'GET',
             'path' => '/doordash/store/{store_id}/menu',
+            'pathParams' => [
+                'store_id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'doordash-store-reviews' => [
+            'id' => 'doordash-store-reviews',
+            'method' => 'GET',
+            'path' => '/doordash/store/{store_id}/reviews',
             'pathParams' => [
                 'store_id',
             ],
@@ -37943,11 +38127,16 @@ final class Operations
             'search' => 'discogs-search',
         ],
         'doorDash' => [
+            'doordashFeed' => 'doordash-feed',
             'doordashSearch' => 'doordash-search',
             'doordashSearchAutocomplete' => 'doordash-search-autocomplete',
             'doordashSearchFilters' => 'doordash-search-filters',
+            'doordashSearchItems' => 'doordash-search-items',
             'doordashStore' => 'doordash-store',
+            'doordashStoreFulfillment' => 'doordash-store-fulfillment',
+            'doordashStoreItem' => 'doordash-store-item',
             'doordashStoreMenu' => 'doordash-store-menu',
+            'doordashStoreReviews' => 'doordash-store-reviews',
         ],
         'eBay' => [
             'ebayItem' => 'ebay-item',
@@ -38696,7 +38885,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 890;
+    public const OPERATION_COUNT = 895;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -38949,11 +39138,16 @@ final class Operations
         'discogs-master',
         'discogs-release',
         'discogs-search',
+        'doordash-feed',
         'doordash-search',
         'doordash-search-autocomplete',
         'doordash-search-filters',
+        'doordash-search-items',
         'doordash-store',
+        'doordash-store-fulfillment',
+        'doordash-store-item',
         'doordash-store-menu',
+        'doordash-store-reviews',
         'ebay-item',
         'ebay-search',
         'ebay-seller',
@@ -39880,11 +40074,16 @@ final class OperationId
     public const DISCOGS_MASTER = 'discogs-master';
     public const DISCOGS_RELEASE = 'discogs-release';
     public const DISCOGS_SEARCH = 'discogs-search';
+    public const DOOR_DASH_DOORDASH_FEED = 'doordash-feed';
     public const DOOR_DASH_DOORDASH_SEARCH = 'doordash-search';
     public const DOOR_DASH_DOORDASH_SEARCH_AUTOCOMPLETE = 'doordash-search-autocomplete';
     public const DOOR_DASH_DOORDASH_SEARCH_FILTERS = 'doordash-search-filters';
+    public const DOOR_DASH_DOORDASH_SEARCH_ITEMS = 'doordash-search-items';
     public const DOOR_DASH_DOORDASH_STORE = 'doordash-store';
+    public const DOOR_DASH_DOORDASH_STORE_FULFILLMENT = 'doordash-store-fulfillment';
+    public const DOOR_DASH_DOORDASH_STORE_ITEM = 'doordash-store-item';
     public const DOOR_DASH_DOORDASH_STORE_MENU = 'doordash-store-menu';
+    public const DOOR_DASH_DOORDASH_STORE_REVIEWS = 'doordash-store-reviews';
     public const EBAY_EBAY_ITEM = 'ebay-item';
     public const EBAY_EBAY_SEARCH = 'ebay-search';
     public const EBAY_EBAY_SELLER = 'ebay-seller';
