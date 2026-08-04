@@ -2147,6 +2147,164 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'autotrader-dealer' => [
+            'id' => 'autotrader-dealer',
+            'method' => 'GET',
+            'path' => '/autotrader/dealer/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'autotrader-search' => [
+            'id' => 'autotrader-search',
+            'method' => 'GET',
+            'path' => '/autotrader/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'zip',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'radius',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'make',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'model',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'trim',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'condition',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'new',
+                        'used',
+                        'certified',
+                        '3p_cert',
+                    ],
+                ],
+                [
+                    'name' => 'body_style',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'convertible',
+                        'coupe',
+                        'hatchback',
+                        'sedan',
+                        'suv',
+                        'truck',
+                        'van',
+                        'wagon',
+                    ],
+                ],
+                [
+                    'name' => 'seller_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'dealer',
+                        'private',
+                    ],
+                ],
+                [
+                    'name' => 'min_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_price',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_price',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_mileage',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'autotrader-vehicle' => [
+            'id' => 'autotrader-vehicle',
+            'method' => 'GET',
+            'path' => '/autotrader/vehicle/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'billing-me' => [
             'id' => 'billing-me',
             'method' => 'GET',
@@ -2577,6 +2735,397 @@ final class Operations
                     'name' => 'lang',
                     'in' => 'query',
                     'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'booking-attractions-detail' => [
+            'id' => 'booking-attractions-detail',
+            'method' => 'GET',
+            'path' => '/booking-attractions/detail',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'booking-attractions-reviews' => [
+            'id' => 'booking-attractions-reviews',
+            'method' => 'GET',
+            'path' => '/booking-attractions/reviews',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'product_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'booking-attractions-search' => [
+            'id' => 'booking-attractions-search',
+            'method' => 'GET',
+            'path' => '/booking-attractions/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'start_date',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'end_date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'subcategory',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'booking-flights-autocomplete' => [
+            'id' => 'booking-flights-autocomplete',
+            'method' => 'GET',
+            'path' => '/booking-flights/autocomplete',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'to',
+                        'from',
+                    ],
+                ],
+                [
+                    'name' => 'origin',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'origin_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'booking-flights-search' => [
+            'id' => 'booking-flights-search',
+            'method' => 'GET',
+            'path' => '/booking-flights/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ROUNDTRIP',
+                        'ONEWAY',
+                    ],
+                ],
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'to',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'from_country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'to_country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'depart',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'return',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'adults',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'children',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'cabin_class',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'booking-hotel-detail' => [
+            'id' => 'booking-hotel-detail',
+            'method' => 'GET',
+            'path' => '/booking/hotel-detail',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'hotel_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'booking-reviews' => [
+            'id' => 'booking-reviews',
+            'method' => 'GET',
+            'path' => '/booking/reviews',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'hotel_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'destination_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'hotel_country_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'hotel_score',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'search_text',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'booking-search' => [
+            'id' => 'booking-search',
+            'method' => 'GET',
+            'path' => '/booking/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'checkin',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'checkout',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'adults',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'rooms',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'children',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
                 ],
             ],
             'formParams' => [],
@@ -14610,6 +15159,38 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'doordash-explore' => [
+            'id' => 'doordash-explore',
+            'method' => 'GET',
+            'path' => '/doordash/explore',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'doordash-feed' => [
             'id' => 'doordash-feed',
             'method' => 'GET',
@@ -14862,6 +15443,40 @@ final class Operations
             'id' => 'doordash-store-fulfillment',
             'method' => 'GET',
             'path' => '/doordash/store/{store_id}/fulfillment',
+            'pathParams' => [
+                'store_id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'doordash-store-info' => [
+            'id' => 'doordash-store-info',
+            'method' => 'GET',
+            'path' => '/doordash/store/{store_id}/info',
             'pathParams' => [
                 'store_id',
             ],
@@ -15692,6 +16307,360 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'etsy-listing' => [
+            'id' => 'etsy-listing',
+            'method' => 'GET',
+            'path' => '/etsy/listing/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'etsy-listing-reviews' => [
+            'id' => 'etsy-listing-reviews',
+            'method' => 'GET',
+            'path' => '/etsy/listing/{id}/reviews',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'newest',
+                        'oldest',
+                        'highest_rating',
+                        'lowest_rating',
+                        'most_relevant',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'etsy-search' => [
+            'id' => 'etsy-search',
+            'method' => 'GET',
+            'path' => '/etsy/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'etsy-shop-search' => [
+            'id' => 'etsy-shop-search',
+            'method' => 'GET',
+            'path' => '/etsy/shop/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'etsy-shop' => [
+            'id' => 'etsy-shop',
+            'method' => 'GET',
+            'path' => '/etsy/shop/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'etsy-shop-listings' => [
+            'id' => 'etsy-shop-listings',
+            'method' => 'GET',
+            'path' => '/etsy/shop/{id}/listings',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'etsy-shop-reviews' => [
+            'id' => 'etsy-shop-reviews',
+            'method' => 'GET',
+            'path' => '/etsy/shop/{id}/reviews',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'expedia-activities-search' => [
+            'id' => 'expedia-activities-search',
+            'method' => 'POST',
+            'path' => '/expedia/activities/search',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'option',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'expedia-flights-search' => [
+            'id' => 'expedia-flights-search',
+            'method' => 'POST',
+            'path' => '/expedia/flights/search',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'option',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'expedia-locations-search' => [
+            'id' => 'expedia-locations-search',
+            'method' => 'POST',
+            'path' => '/expedia/locations/search',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'option',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'expedia-properties-detail' => [
+            'id' => 'expedia-properties-detail',
+            'method' => 'POST',
+            'path' => '/expedia/properties/detail',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'option',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'expedia-properties-filters' => [
+            'id' => 'expedia-properties-filters',
+            'method' => 'POST',
+            'path' => '/expedia/properties/filters',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'option',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'expedia-properties-reviews' => [
+            'id' => 'expedia-properties-reviews',
+            'method' => 'POST',
+            'path' => '/expedia/properties/reviews',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'option',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'expedia-properties-search' => [
+            'id' => 'expedia-properties-search',
+            'method' => 'POST',
+            'path' => '/expedia/properties/search',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'option',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'extract' => [
             'id' => 'extract',
             'method' => 'POST',
@@ -15701,6 +16670,147 @@ final class Operations
             'formParams' => [],
             'bodyParam' => 'extractOption',
             'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'facebook-group' => [
+            'id' => 'facebook-group',
+            'method' => 'GET',
+            'path' => '/facebook/groups/{group}',
+            'pathParams' => [
+                'group',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'facebook-marketplace-item' => [
+            'id' => 'facebook-marketplace-item',
+            'method' => 'GET',
+            'path' => '/facebook/marketplace/item/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'facebook-marketplace-search' => [
+            'id' => 'facebook-marketplace-search',
+            'method' => 'GET',
+            'path' => '/facebook/marketplace/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'vehicles',
+                        'property_rentals',
+                        'classifieds',
+                        'apparel',
+                        'electronics',
+                        'entertainment',
+                        'family',
+                        'free',
+                        'garden_outdoors',
+                        'hobbies',
+                        'home_goods',
+                        'home_improvement',
+                        'musical_instruments',
+                        'office_supplies',
+                        'pet_supplies',
+                        'property_sale',
+                        'sporting_goods',
+                        'toys_games',
+                    ],
+                ],
+                [
+                    'name' => 'min_price',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_price',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort_by',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'best_match',
+                        'distance_ascend',
+                        'creation_time_descend',
+                        'price_ascend',
+                        'price_descend',
+                    ],
+                ],
+                [
+                    'name' => 'days_since_listed',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '1',
+                        '7',
+                        '30',
+                    ],
+                ],
+                [
+                    'name' => 'condition',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'new',
+                        'used_like_new',
+                        'used_good',
+                        'used_fair',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
             'consumes' => [
                 'application/json',
             ],
@@ -19399,6 +20509,177 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'importyeti-company' => [
+            'id' => 'importyeti-company',
+            'method' => 'GET',
+            'path' => '/importyeti/company',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'importyeti-search' => [
+            'id' => 'importyeti-search',
+            'method' => 'GET',
+            'path' => '/importyeti/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'indeed-job' => [
+            'id' => 'indeed-job',
+            'method' => 'GET',
+            'path' => '/indeed/job',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'jk',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'indeed-locations-suggest' => [
+            'id' => 'indeed-locations-suggest',
+            'method' => 'GET',
+            'path' => '/indeed/locations/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'indeed-search' => [
+            'id' => 'indeed-search',
+            'method' => 'GET',
+            'path' => '/indeed/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'l',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'date',
+                    ],
+                ],
+                [
+                    'name' => 'radius',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'fromage',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'instagram-post' => [
             'id' => 'instagram-post',
@@ -24064,6 +25345,158 @@ final class Operations
                         'traffic',
                         'property-investment',
                     ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'opentable-restaurant' => [
+            'id' => 'opentable-restaurant',
+            'method' => 'GET',
+            'path' => '/opentable/restaurant',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'restaurant_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'date_time',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'party_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'opentable-restaurant-menus' => [
+            'id' => 'opentable-restaurant-menus',
+            'method' => 'GET',
+            'path' => '/opentable/restaurant/menus',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'restaurant_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'opentable-restaurant-reviews' => [
+            'id' => 'opentable-restaurant-reviews',
+            'method' => 'GET',
+            'path' => '/opentable/restaurant/reviews',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'restaurant_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'opentable-search' => [
+            'id' => 'opentable-search',
+            'method' => 'GET',
+            'path' => '/opentable/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'term',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'date_time',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'party_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
                 ],
             ],
             'formParams' => [],
@@ -37264,6 +38697,232 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'yelp-business' => [
+            'id' => 'yelp-business',
+            'method' => 'GET',
+            'path' => '/yelp/business/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yelp-business-menu' => [
+            'id' => 'yelp-business-menu',
+            'method' => 'GET',
+            'path' => '/yelp/business/{id}/menu',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yelp-business-photos' => [
+            'id' => 'yelp-business-photos',
+            'method' => 'GET',
+            'path' => '/yelp/business/{id}/photos',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'yelp-business-reviews' => [
+            'id' => 'yelp-business-reviews',
+            'method' => 'GET',
+            'path' => '/yelp/business/{id}/reviews',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'yelp-business-review-highlights' => [
+            'id' => 'yelp-business-review-highlights',
+            'method' => 'GET',
+            'path' => '/yelp/business/{id}/reviews/highlights',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yelp-business-reviews-search' => [
+            'id' => 'yelp-business-reviews-search',
+            'method' => 'GET',
+            'path' => '/yelp/business/{id}/reviews/search',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'term',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yelp-geocode' => [
+            'id' => 'yelp-geocode',
+            'method' => 'GET',
+            'path' => '/yelp/geocode',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'address',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yelp-search' => [
+            'id' => 'yelp-search',
+            'method' => 'GET',
+            'path' => '/yelp/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'term',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'youtube-captions' => [
             'id' => 'youtube-captions',
             'method' => 'GET',
@@ -37690,6 +39349,251 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'zalando-category' => [
+            'id' => 'zalando-category',
+            'method' => 'GET',
+            'path' => '/zalando/category',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'market',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'at',
+                        'be',
+                        'ch',
+                        'cz',
+                        'de',
+                        'dk',
+                        'ee',
+                        'es',
+                        'fi',
+                        'fr',
+                        'gb',
+                        'hr',
+                        'hu',
+                        'ie',
+                        'it',
+                        'lt',
+                        'lu',
+                        'lv',
+                        'nl',
+                        'no',
+                        'pl',
+                        'ro',
+                        'se',
+                        'si',
+                        'sk',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'zalando-markets' => [
+            'id' => 'zalando-markets',
+            'method' => 'GET',
+            'path' => '/zalando/markets',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'zalando-product' => [
+            'id' => 'zalando-product',
+            'method' => 'GET',
+            'path' => '/zalando/product',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sku',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'market',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'at',
+                        'be',
+                        'ch',
+                        'cz',
+                        'de',
+                        'dk',
+                        'ee',
+                        'es',
+                        'fi',
+                        'fr',
+                        'gb',
+                        'hr',
+                        'hu',
+                        'ie',
+                        'it',
+                        'lt',
+                        'lu',
+                        'lv',
+                        'nl',
+                        'no',
+                        'pl',
+                        'ro',
+                        'se',
+                        'si',
+                        'sk',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'zalando-search' => [
+            'id' => 'zalando-search',
+            'method' => 'GET',
+            'path' => '/zalando/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'market',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'at',
+                        'be',
+                        'ch',
+                        'cz',
+                        'de',
+                        'dk',
+                        'ee',
+                        'es',
+                        'fi',
+                        'fr',
+                        'gb',
+                        'hr',
+                        'hu',
+                        'ie',
+                        'it',
+                        'lt',
+                        'lu',
+                        'lv',
+                        'nl',
+                        'no',
+                        'pl',
+                        'ro',
+                        'se',
+                        'si',
+                        'sk',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'zalando-suggest' => [
+            'id' => 'zalando-suggest',
+            'method' => 'GET',
+            'path' => '/zalando/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'market',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'at',
+                        'be',
+                        'ch',
+                        'cz',
+                        'de',
+                        'dk',
+                        'ee',
+                        'es',
+                        'fi',
+                        'fr',
+                        'gb',
+                        'hr',
+                        'hu',
+                        'ie',
+                        'it',
+                        'lt',
+                        'lu',
+                        'lv',
+                        'nl',
+                        'no',
+                        'pl',
+                        'ro',
+                        'se',
+                        'si',
+                        'sk',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'zillow-autocomplete' => [
             'id' => 'zillow-autocomplete',
             'method' => 'GET',
@@ -37907,6 +39811,11 @@ final class Operations
             'suggest' => 'appstore-suggest',
             'versionHistory' => 'appstore-version-history',
         ],
+        'autotrader' => [
+            'dealer' => 'autotrader-dealer',
+            'search' => 'autotrader-search',
+            'vehicle' => 'autotrader-vehicle',
+        ],
         'billing' => [
             'me' => 'billing-me',
             'meCheckout' => 'billing-me-checkout',
@@ -37923,6 +39832,16 @@ final class Operations
             'search' => 'bing-search',
             'suggest' => 'bing-suggest',
             'videos' => 'bing-videos',
+        ],
+        'booking' => [
+            'attractionsDetail' => 'booking-attractions-detail',
+            'attractionsReviews' => 'booking-attractions-reviews',
+            'attractionsSearch' => 'booking-attractions-search',
+            'flightsAutocomplete' => 'booking-flights-autocomplete',
+            'flightsSearch' => 'booking-flights-search',
+            'hotelDetail' => 'booking-hotel-detail',
+            'reviews' => 'booking-reviews',
+            'search' => 'booking-search',
         ],
         'boxOfficeMojo' => [
             'boxofficemojoBrand' => 'boxofficemojo-brand',
@@ -38127,6 +40046,7 @@ final class Operations
             'search' => 'discogs-search',
         ],
         'doorDash' => [
+            'doordashExplore' => 'doordash-explore',
             'doordashFeed' => 'doordash-feed',
             'doordashSearch' => 'doordash-search',
             'doordashSearchAutocomplete' => 'doordash-search-autocomplete',
@@ -38134,6 +40054,7 @@ final class Operations
             'doordashSearchItems' => 'doordash-search-items',
             'doordashStore' => 'doordash-store',
             'doordashStoreFulfillment' => 'doordash-store-fulfillment',
+            'doordashStoreInfo' => 'doordash-store-info',
             'doordashStoreItem' => 'doordash-store-item',
             'doordashStoreMenu' => 'doordash-store-menu',
             'doordashStoreReviews' => 'doordash-store-reviews',
@@ -38157,7 +40078,28 @@ final class Operations
             'teamRoster' => 'espn-team-roster',
             'teams' => 'espn-teams',
         ],
+        'etsy' => [
+            'listing' => 'etsy-listing',
+            'listingReviews' => 'etsy-listing-reviews',
+            'search' => 'etsy-search',
+            'shopSearch' => 'etsy-shop-search',
+            'shop' => 'etsy-shop',
+            'shopListings' => 'etsy-shop-listings',
+            'shopReviews' => 'etsy-shop-reviews',
+        ],
+        'expedia' => [
+            'activitiesSearch' => 'expedia-activities-search',
+            'flightsSearch' => 'expedia-flights-search',
+            'locationsSearch' => 'expedia-locations-search',
+            'propertiesDetail' => 'expedia-properties-detail',
+            'propertiesFilters' => 'expedia-properties-filters',
+            'propertiesReviews' => 'expedia-properties-reviews',
+            'propertiesSearch' => 'expedia-properties-search',
+        ],
         'facebook' => [
+            'group' => 'facebook-group',
+            'marketplaceItem' => 'facebook-marketplace-item',
+            'marketplaceSearch' => 'facebook-marketplace-search',
             'page' => 'facebook-page',
         ],
         'geocoding' => [
@@ -38276,6 +40218,15 @@ final class Operations
             'titleReviews' => 'imdb-title-reviews',
             'titleTechnicalSpecs' => 'imdb-title-technical-specs',
             'titleTrivia' => 'imdb-title-trivia',
+        ],
+        'importYeti' => [
+            'importyetiCompany' => 'importyeti-company',
+            'importyetiSearch' => 'importyeti-search',
+        ],
+        'indeed' => [
+            'job' => 'indeed-job',
+            'locationsSuggest' => 'indeed-locations-suggest',
+            'search' => 'indeed-search',
         ],
         'instagram' => [
             'post' => 'instagram-post',
@@ -38431,6 +40382,12 @@ final class Operations
             'indicesCountry' => 'numbeo-indices-country',
             'indicesRankings' => 'numbeo-indices-rankings',
             'indicesRankingsByCountry' => 'numbeo-indices-rankings-by-country',
+        ],
+        'openTable' => [
+            'opentableRestaurant' => 'opentable-restaurant',
+            'opentableRestaurantMenus' => 'opentable-restaurant-menus',
+            'opentableRestaurantReviews' => 'opentable-restaurant-reviews',
+            'opentableSearch' => 'opentable-search',
         ],
         'meta' => [
             'ping' => 'ping',
@@ -38863,6 +40820,16 @@ final class Operations
             'tickerValuation' => 'yahoo-finance-ticker-valuation',
             'trending' => 'yahoo-finance-trending',
         ],
+        'yelp' => [
+            'business' => 'yelp-business',
+            'businessMenu' => 'yelp-business-menu',
+            'businessPhotos' => 'yelp-business-photos',
+            'businessReviews' => 'yelp-business-reviews',
+            'businessReviewHighlights' => 'yelp-business-review-highlights',
+            'businessReviewsSearch' => 'yelp-business-reviews-search',
+            'geocode' => 'yelp-geocode',
+            'search' => 'yelp-search',
+        ],
         'youtube' => [
             'captions' => 'youtube-captions',
             'channelPlaylists' => 'youtube-channel-playlists',
@@ -38878,6 +40845,13 @@ final class Operations
             'transcriptLanguages' => 'youtube-transcript-languages',
             'video' => 'youtube-video',
         ],
+        'zalando' => [
+            'category' => 'zalando-category',
+            'markets' => 'zalando-markets',
+            'product' => 'zalando-product',
+            'search' => 'zalando-search',
+            'suggest' => 'zalando-suggest',
+        ],
         'zillow' => [
             'autocomplete' => 'zillow-autocomplete',
             'property' => 'zillow-property',
@@ -38885,7 +40859,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 895;
+    public const OPERATION_COUNT = 947;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -38944,6 +40918,9 @@ final class Operations
         'appstore-similar',
         'appstore-suggest',
         'appstore-version-history',
+        'autotrader-dealer',
+        'autotrader-search',
+        'autotrader-vehicle',
         'billing-me',
         'billing-me-checkout',
         'billing-me-events',
@@ -38957,6 +40934,14 @@ final class Operations
         'bing-search',
         'bing-suggest',
         'bing-videos',
+        'booking-attractions-detail',
+        'booking-attractions-reviews',
+        'booking-attractions-search',
+        'booking-flights-autocomplete',
+        'booking-flights-search',
+        'booking-hotel-detail',
+        'booking-reviews',
+        'booking-search',
         'boxofficemojo-brand',
         'boxofficemojo-brands',
         'boxofficemojo-calendar',
@@ -39138,6 +41123,7 @@ final class Operations
         'discogs-master',
         'discogs-release',
         'discogs-search',
+        'doordash-explore',
         'doordash-feed',
         'doordash-search',
         'doordash-search-autocomplete',
@@ -39145,6 +41131,7 @@ final class Operations
         'doordash-search-items',
         'doordash-store',
         'doordash-store-fulfillment',
+        'doordash-store-info',
         'doordash-store-item',
         'doordash-store-menu',
         'doordash-store-reviews',
@@ -39163,7 +41150,24 @@ final class Operations
         'espn-team',
         'espn-team-roster',
         'espn-teams',
+        'etsy-listing',
+        'etsy-listing-reviews',
+        'etsy-search',
+        'etsy-shop-search',
+        'etsy-shop',
+        'etsy-shop-listings',
+        'etsy-shop-reviews',
+        'expedia-activities-search',
+        'expedia-flights-search',
+        'expedia-locations-search',
+        'expedia-properties-detail',
+        'expedia-properties-filters',
+        'expedia-properties-reviews',
+        'expedia-properties-search',
         'extract',
+        'facebook-group',
+        'facebook-marketplace-item',
+        'facebook-marketplace-search',
         'facebook-page',
         'geocoding-lookup',
         'geocoding-reverse',
@@ -39268,6 +41272,11 @@ final class Operations
         'imdb-title-reviews',
         'imdb-title-technical-specs',
         'imdb-title-trivia',
+        'importyeti-company',
+        'importyeti-search',
+        'indeed-job',
+        'indeed-locations-suggest',
+        'indeed-search',
         'instagram-post',
         'instagram-profile',
         'instagram-reels',
@@ -39399,6 +41408,10 @@ final class Operations
         'numbeo-indices-country',
         'numbeo-indices-rankings',
         'numbeo-indices-rankings-by-country',
+        'opentable-restaurant',
+        'opentable-restaurant-menus',
+        'opentable-restaurant-reviews',
+        'opentable-search',
         'ping',
         'pitchbook-advisor',
         'pitchbook-company',
@@ -39768,6 +41781,14 @@ final class Operations
         'yahoo-finance-ticker-sustainability',
         'yahoo-finance-ticker-valuation',
         'yahoo-finance-trending',
+        'yelp-business',
+        'yelp-business-menu',
+        'yelp-business-photos',
+        'yelp-business-reviews',
+        'yelp-business-review-highlights',
+        'yelp-business-reviews-search',
+        'yelp-geocode',
+        'yelp-search',
         'youtube-captions',
         'youtube-channel-playlists',
         'youtube-channel-search',
@@ -39781,6 +41802,11 @@ final class Operations
         'youtube-transcript',
         'youtube-transcript-languages',
         'youtube-video',
+        'zalando-category',
+        'zalando-markets',
+        'zalando-product',
+        'zalando-search',
+        'zalando-suggest',
         'zillow-autocomplete',
         'zillow-property',
         'zillow-search',
@@ -39882,6 +41908,9 @@ final class OperationId
     public const APPLE_PODCASTS_SHOW = 'apple-podcasts-show';
     public const APPLE_PODCASTS_SHOW_EPISODES = 'apple-podcasts-show-episodes';
     public const APPLE_PODCASTS_SHOW_RELATED = 'apple-podcasts-show-related';
+    public const AUTOTRADER_DEALER = 'autotrader-dealer';
+    public const AUTOTRADER_SEARCH = 'autotrader-search';
+    public const AUTOTRADER_VEHICLE = 'autotrader-vehicle';
     public const BILLING_ME = 'billing-me';
     public const BILLING_ME_CHECKOUT = 'billing-me-checkout';
     public const BILLING_ME_EVENTS = 'billing-me-events';
@@ -39895,6 +41924,14 @@ final class OperationId
     public const BING_SEARCH = 'bing-search';
     public const BING_SUGGEST = 'bing-suggest';
     public const BING_VIDEOS = 'bing-videos';
+    public const BOOKING_ATTRACTIONS_DETAIL = 'booking-attractions-detail';
+    public const BOOKING_ATTRACTIONS_REVIEWS = 'booking-attractions-reviews';
+    public const BOOKING_ATTRACTIONS_SEARCH = 'booking-attractions-search';
+    public const BOOKING_FLIGHTS_AUTOCOMPLETE = 'booking-flights-autocomplete';
+    public const BOOKING_FLIGHTS_SEARCH = 'booking-flights-search';
+    public const BOOKING_HOTEL_DETAIL = 'booking-hotel-detail';
+    public const BOOKING_REVIEWS = 'booking-reviews';
+    public const BOOKING_SEARCH = 'booking-search';
     public const BOX_OFFICE_MOJO_BOXOFFICEMOJO_BRAND = 'boxofficemojo-brand';
     public const BOX_OFFICE_MOJO_BOXOFFICEMOJO_BRANDS = 'boxofficemojo-brands';
     public const BOX_OFFICE_MOJO_BOXOFFICEMOJO_CALENDAR = 'boxofficemojo-calendar';
@@ -40074,6 +42111,7 @@ final class OperationId
     public const DISCOGS_MASTER = 'discogs-master';
     public const DISCOGS_RELEASE = 'discogs-release';
     public const DISCOGS_SEARCH = 'discogs-search';
+    public const DOOR_DASH_DOORDASH_EXPLORE = 'doordash-explore';
     public const DOOR_DASH_DOORDASH_FEED = 'doordash-feed';
     public const DOOR_DASH_DOORDASH_SEARCH = 'doordash-search';
     public const DOOR_DASH_DOORDASH_SEARCH_AUTOCOMPLETE = 'doordash-search-autocomplete';
@@ -40081,6 +42119,7 @@ final class OperationId
     public const DOOR_DASH_DOORDASH_SEARCH_ITEMS = 'doordash-search-items';
     public const DOOR_DASH_DOORDASH_STORE = 'doordash-store';
     public const DOOR_DASH_DOORDASH_STORE_FULFILLMENT = 'doordash-store-fulfillment';
+    public const DOOR_DASH_DOORDASH_STORE_INFO = 'doordash-store-info';
     public const DOOR_DASH_DOORDASH_STORE_ITEM = 'doordash-store-item';
     public const DOOR_DASH_DOORDASH_STORE_MENU = 'doordash-store-menu';
     public const DOOR_DASH_DOORDASH_STORE_REVIEWS = 'doordash-store-reviews';
@@ -40099,6 +42138,23 @@ final class OperationId
     public const ESPN_TEAM = 'espn-team';
     public const ESPN_TEAM_ROSTER = 'espn-team-roster';
     public const ESPN_TEAMS = 'espn-teams';
+    public const ETSY_LISTING = 'etsy-listing';
+    public const ETSY_LISTING_REVIEWS = 'etsy-listing-reviews';
+    public const ETSY_SEARCH = 'etsy-search';
+    public const ETSY_SHOP = 'etsy-shop';
+    public const ETSY_SHOP_LISTINGS = 'etsy-shop-listings';
+    public const ETSY_SHOP_REVIEWS = 'etsy-shop-reviews';
+    public const ETSY_SHOP_SEARCH = 'etsy-shop-search';
+    public const EXPEDIA_ACTIVITIES_SEARCH = 'expedia-activities-search';
+    public const EXPEDIA_FLIGHTS_SEARCH = 'expedia-flights-search';
+    public const EXPEDIA_LOCATIONS_SEARCH = 'expedia-locations-search';
+    public const EXPEDIA_PROPERTIES_DETAIL = 'expedia-properties-detail';
+    public const EXPEDIA_PROPERTIES_FILTERS = 'expedia-properties-filters';
+    public const EXPEDIA_PROPERTIES_REVIEWS = 'expedia-properties-reviews';
+    public const EXPEDIA_PROPERTIES_SEARCH = 'expedia-properties-search';
+    public const FACEBOOK_GROUP = 'facebook-group';
+    public const FACEBOOK_MARKETPLACE_ITEM = 'facebook-marketplace-item';
+    public const FACEBOOK_MARKETPLACE_SEARCH = 'facebook-marketplace-search';
     public const FACEBOOK_PAGE = 'facebook-page';
     public const GEOCODING_LOOKUP = 'geocoding-lookup';
     public const GEOCODING_REVERSE = 'geocoding-reverse';
@@ -40203,6 +42259,11 @@ final class OperationId
     public const IMDB_TITLE_REVIEWS = 'imdb-title-reviews';
     public const IMDB_TITLE_TECHNICAL_SPECS = 'imdb-title-technical-specs';
     public const IMDB_TITLE_TRIVIA = 'imdb-title-trivia';
+    public const IMPORT_YETI_IMPORTYETI_COMPANY = 'importyeti-company';
+    public const IMPORT_YETI_IMPORTYETI_SEARCH = 'importyeti-search';
+    public const INDEED_JOB = 'indeed-job';
+    public const INDEED_LOCATIONS_SUGGEST = 'indeed-locations-suggest';
+    public const INDEED_SEARCH = 'indeed-search';
     public const INSTAGRAM_POST = 'instagram-post';
     public const INSTAGRAM_PROFILE = 'instagram-profile';
     public const INSTAGRAM_REELS = 'instagram-reels';
@@ -40336,6 +42397,10 @@ final class OperationId
     public const NUMBEO_INDICES_COUNTRY = 'numbeo-indices-country';
     public const NUMBEO_INDICES_RANKINGS = 'numbeo-indices-rankings';
     public const NUMBEO_INDICES_RANKINGS_BY_COUNTRY = 'numbeo-indices-rankings-by-country';
+    public const OPEN_TABLE_OPENTABLE_RESTAURANT = 'opentable-restaurant';
+    public const OPEN_TABLE_OPENTABLE_RESTAURANT_MENUS = 'opentable-restaurant-menus';
+    public const OPEN_TABLE_OPENTABLE_RESTAURANT_REVIEWS = 'opentable-restaurant-reviews';
+    public const OPEN_TABLE_OPENTABLE_SEARCH = 'opentable-search';
     public const PITCH_BOOK_PITCHBOOK_ADVISOR = 'pitchbook-advisor';
     public const PITCH_BOOK_PITCHBOOK_COMPANY = 'pitchbook-company';
     public const PITCH_BOOK_PITCHBOOK_FUND = 'pitchbook-fund';
@@ -40706,6 +42771,14 @@ final class OperationId
     public const YAHOO_FINANCE_TICKER_SUSTAINABILITY = 'yahoo-finance-ticker-sustainability';
     public const YAHOO_FINANCE_TICKER_VALUATION = 'yahoo-finance-ticker-valuation';
     public const YAHOO_FINANCE_TRENDING = 'yahoo-finance-trending';
+    public const YELP_BUSINESS = 'yelp-business';
+    public const YELP_BUSINESS_MENU = 'yelp-business-menu';
+    public const YELP_BUSINESS_PHOTOS = 'yelp-business-photos';
+    public const YELP_BUSINESS_REVIEW_HIGHLIGHTS = 'yelp-business-review-highlights';
+    public const YELP_BUSINESS_REVIEWS = 'yelp-business-reviews';
+    public const YELP_BUSINESS_REVIEWS_SEARCH = 'yelp-business-reviews-search';
+    public const YELP_GEOCODE = 'yelp-geocode';
+    public const YELP_SEARCH = 'yelp-search';
     public const YOUTUBE_CAPTIONS = 'youtube-captions';
     public const YOUTUBE_CHANNEL_PLAYLISTS = 'youtube-channel-playlists';
     public const YOUTUBE_CHANNEL_SEARCH = 'youtube-channel-search';
@@ -40719,6 +42792,11 @@ final class OperationId
     public const YOUTUBE_TRANSCRIPT = 'youtube-transcript';
     public const YOUTUBE_TRANSCRIPT_LANGUAGES = 'youtube-transcript-languages';
     public const YOUTUBE_VIDEO = 'youtube-video';
+    public const ZALANDO_CATEGORY = 'zalando-category';
+    public const ZALANDO_MARKETS = 'zalando-markets';
+    public const ZALANDO_PRODUCT = 'zalando-product';
+    public const ZALANDO_SEARCH = 'zalando-search';
+    public const ZALANDO_SUGGEST = 'zalando-suggest';
     public const ZILLOW_AUTOCOMPLETE = 'zillow-autocomplete';
     public const ZILLOW_PROPERTY = 'zillow-property';
     public const ZILLOW_SEARCH = 'zillow-search';

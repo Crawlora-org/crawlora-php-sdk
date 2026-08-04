@@ -13,8 +13,10 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\AppleJobsGroup $appleJobs
  * @property-read \Crawlora\Generated\ApplePodcastsGroup $applePodcasts
  * @property-read \Crawlora\Generated\AppStoreGroup $appStore
+ * @property-read \Crawlora\Generated\AutotraderGroup $autotrader
  * @property-read \Crawlora\Generated\BillingGroup $billing
  * @property-read \Crawlora\Generated\BingGroup $bing
+ * @property-read \Crawlora\Generated\BookingGroup $booking
  * @property-read \Crawlora\Generated\BoxOfficeMojoGroup $boxOfficeMojo
  * @property-read \Crawlora\Generated\BrandGroup $brand
  * @property-read \Crawlora\Generated\BraveGroup $brave
@@ -27,6 +29,8 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\DoorDashGroup $doorDash
  * @property-read \Crawlora\Generated\EBayGroup $eBay
  * @property-read \Crawlora\Generated\EspnGroup $espn
+ * @property-read \Crawlora\Generated\EtsyGroup $etsy
+ * @property-read \Crawlora\Generated\ExpediaGroup $expedia
  * @property-read \Crawlora\Generated\FacebookGroup $facebook
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
  * @property-read \Crawlora\Generated\GitHubGroup $gitHub
@@ -35,6 +39,8 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\GoogleGroup $google
  * @property-read \Crawlora\Generated\GooglePlayGroup $googlePlay
  * @property-read \Crawlora\Generated\ImdbGroup $imdb
+ * @property-read \Crawlora\Generated\ImportYetiGroup $importYeti
+ * @property-read \Crawlora\Generated\IndeedGroup $indeed
  * @property-read \Crawlora\Generated\InstagramGroup $instagram
  * @property-read \Crawlora\Generated\JobsGroup $jobs
  * @property-read \Crawlora\Generated\JustWatchGroup $justWatch
@@ -47,6 +53,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
  * @property-read \Crawlora\Generated\MlbGroup $mlb
  * @property-read \Crawlora\Generated\NumbeoGroup $numbeo
+ * @property-read \Crawlora\Generated\OpenTableGroup $openTable
  * @property-read \Crawlora\Generated\MetaGroup $meta
  * @property-read \Crawlora\Generated\PitchBookGroup $pitchBook
  * @property-read \Crawlora\Generated\PlayStationGroup $playStation
@@ -79,7 +86,9 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\WalmartGroup $walmart
  * @property-read \Crawlora\Generated\XGroup $x
  * @property-read \Crawlora\Generated\YahooFinanceGroup $yahooFinance
+ * @property-read \Crawlora\Generated\YelpGroup $yelp
  * @property-read \Crawlora\Generated\YoutubeGroup $youtube
+ * @property-read \Crawlora\Generated\ZalandoGroup $zalando
  * @property-read \Crawlora\Generated\ZillowGroup $zillow
  */
 final class Client {}

@@ -210,3 +210,11 @@ $startup = $client->trustMrr->trustmrrStartup(['slug' => 'stan']);
 $cats = $client->trustMrr->trustmrrCategories();
 $saas = $client->trustMrr->trustmrrCategory(['slug' => 'saas']);
 ```
+
+## Etsy
+
+```php
+$results = $client->etsy->search(['q' => 'handmade mug']);
+$listing = $client->etsy->listing(['id' => '4474501681']);
+$shop = $client->etsy->shop(['id' => 'gaguatelier']);
+```

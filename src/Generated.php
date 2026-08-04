@@ -149,6 +149,16 @@ abstract class ApplePodcastsGroup {}
 abstract class AppStoreGroup {}
 
 /**
+ * @method mixed dealer(array $params = [], array $options = []) autotrader-dealer (GET /autotrader/dealer/{id})
+ *   params: string $id
+ * @method mixed search(array $params = [], array $options = []) autotrader-search (GET /autotrader/search)
+ *   params: string $query, string $zip, int $radius, string $make, string $model, string $trim, 'new'|'used'|'certified'|'3p_cert' $condition, 'convertible'|'coupe'|'hatchback'|'sedan'|'suv'|'truck'|'van'|'wagon' $body_style, 'dealer'|'private' $seller_type, int $min_year, int $max_year, int $min_price, int $max_price, int $max_mileage, int $page
+ * @method mixed vehicle(array $params = [], array $options = []) autotrader-vehicle (GET /autotrader/vehicle/{id})
+ *   params: string $id
+ */
+abstract class AutotraderGroup {}
+
+/**
  * @method mixed me(array $params = [], array $options = []) billing-me (GET /billing/me)
  * @method mixed meCheckout(array $params = [], array $options = []) billing-me-checkout (POST /billing/me/checkout)
  *   params: array $request
@@ -180,6 +190,26 @@ abstract class BillingGroup {}
  *   params: string $q, int $page, int $count, string $country, string $lang
  */
 abstract class BingGroup {}
+
+/**
+ * @method mixed attractionsDetail(array $params = [], array $options = []) booking-attractions-detail (GET /booking-attractions/detail)
+ *   params: string $slug
+ * @method mixed attractionsReviews(array $params = [], array $options = []) booking-attractions-reviews (GET /booking-attractions/reviews)
+ *   params: string $product_id, int $page, int $limit
+ * @method mixed attractionsSearch(array $params = [], array $options = []) booking-attractions-search (GET /booking-attractions/search)
+ *   params: string $query, string $start_date, string $end_date, int $page, int $limit, string $category, string $subcategory
+ * @method mixed flightsAutocomplete(array $params = [], array $options = []) booking-flights-autocomplete (GET /booking-flights/autocomplete)
+ *   params: string $query, 'to'|'from' $type, string $origin, string $origin_type
+ * @method mixed flightsSearch(array $params = [], array $options = []) booking-flights-search (GET /booking-flights/search)
+ *   params: 'ROUNDTRIP'|'ONEWAY' $type, string $from, string $to, string $from_country, string $to_country, string $depart, string $return, int $adults, int $children, string $cabin_class, string $sort
+ * @method mixed hotelDetail(array $params = [], array $options = []) booking-hotel-detail (GET /booking/hotel-detail)
+ *   params: int $hotel_id
+ * @method mixed reviews(array $params = [], array $options = []) booking-reviews (GET /booking/reviews)
+ *   params: int $hotel_id, int $destination_id, string $hotel_country_code, float $hotel_score, string $search_text, int $page, int $limit
+ * @method mixed search(array $params = [], array $options = []) booking-search (GET /booking/search)
+ *   params: string $query, string $checkin, string $checkout, int $adults, int $rooms, int $children, int $page
+ */
+abstract class BookingGroup {}
 
 /**
  * @method mixed boxofficemojoBrand(array $params = [], array $options = []) boxofficemojo-brand (GET /boxofficemojo/brand)
@@ -582,6 +612,8 @@ abstract class DatasetsGroup {}
 abstract class DiscogsGroup {}
 
 /**
+ * @method mixed doordashExplore(array $params = [], array $options = []) doordash-explore (GET /doordash/explore)
+ *   params: float $latitude, float $longitude
  * @method mixed doordashFeed(array $params = [], array $options = []) doordash-feed (GET /doordash/feed)
  *   params: float $latitude, float $longitude, int $offset, int $limit
  * @method mixed doordashSearch(array $params = [], array $options = []) doordash-search (GET /doordash/search)
@@ -595,6 +627,8 @@ abstract class DiscogsGroup {}
  * @method mixed doordashStore(array $params = [], array $options = []) doordash-store (GET /doordash/store/{store_id})
  *   params: string $store_id, float $latitude, float $longitude
  * @method mixed doordashStoreFulfillment(array $params = [], array $options = []) doordash-store-fulfillment (GET /doordash/store/{store_id}/fulfillment)
+ *   params: string $store_id, float $latitude, float $longitude
+ * @method mixed doordashStoreInfo(array $params = [], array $options = []) doordash-store-info (GET /doordash/store/{store_id}/info)
  *   params: string $store_id, float $latitude, float $longitude
  * @method mixed doordashStoreItem(array $params = [], array $options = []) doordash-store-item (GET /doordash/store/{store_id}/item/{item_id})
  *   params: string $store_id, string $item_id, float $latitude, float $longitude
@@ -644,6 +678,48 @@ abstract class EBayGroup {}
 abstract class EspnGroup {}
 
 /**
+ * @method mixed listing(array $params = [], array $options = []) etsy-listing (GET /etsy/listing/{id})
+ *   params: string $id
+ * @method mixed listingReviews(array $params = [], array $options = []) etsy-listing-reviews (GET /etsy/listing/{id}/reviews)
+ *   params: string $id, int $offset, 'newest'|'oldest'|'highest_rating'|'lowest_rating'|'most_relevant' $sort
+ * @method mixed search(array $params = [], array $options = []) etsy-search (GET /etsy/search)
+ *   params: string $q, int $offset, int $limit
+ * @method mixed shopSearch(array $params = [], array $options = []) etsy-shop-search (GET /etsy/shop/search)
+ *   params: string $q, int $limit
+ * @method mixed shop(array $params = [], array $options = []) etsy-shop (GET /etsy/shop/{id})
+ *   params: string $id
+ * @method mixed shopListings(array $params = [], array $options = []) etsy-shop-listings (GET /etsy/shop/{id}/listings)
+ *   params: string $id, string $q, int $offset, int $limit
+ * @method mixed shopReviews(array $params = [], array $options = []) etsy-shop-reviews (GET /etsy/shop/{id}/reviews)
+ *   params: string $id, int $offset, int $limit
+ */
+abstract class EtsyGroup {}
+
+/**
+ * @method mixed activitiesSearch(array $params = [], array $options = []) expedia-activities-search (POST /expedia/activities/search)
+ *   params: array $option
+ * @method mixed flightsSearch(array $params = [], array $options = []) expedia-flights-search (POST /expedia/flights/search)
+ *   params: array $option
+ * @method mixed locationsSearch(array $params = [], array $options = []) expedia-locations-search (POST /expedia/locations/search)
+ *   params: array $option
+ * @method mixed propertiesDetail(array $params = [], array $options = []) expedia-properties-detail (POST /expedia/properties/detail)
+ *   params: array $option
+ * @method mixed propertiesFilters(array $params = [], array $options = []) expedia-properties-filters (POST /expedia/properties/filters)
+ *   params: array $option
+ * @method mixed propertiesReviews(array $params = [], array $options = []) expedia-properties-reviews (POST /expedia/properties/reviews)
+ *   params: array $option
+ * @method mixed propertiesSearch(array $params = [], array $options = []) expedia-properties-search (POST /expedia/properties/search)
+ *   params: array $option
+ */
+abstract class ExpediaGroup {}
+
+/**
+ * @method mixed group(array $params = [], array $options = []) facebook-group (GET /facebook/groups/{group})
+ *   params: string $group
+ * @method mixed marketplaceItem(array $params = [], array $options = []) facebook-marketplace-item (GET /facebook/marketplace/item/{id})
+ *   params: string $id
+ * @method mixed marketplaceSearch(array $params = [], array $options = []) facebook-marketplace-search (GET /facebook/marketplace/search)
+ *   params: string $location, string $query, 'vehicles'|'property_rentals'|'classifieds'|'apparel'|'electronics'|'entertainment'|'family'|'free'|'garden_outdoors'|'hobbies'|'home_goods'|'home_improvement'|'musical_instruments'|'office_supplies'|'pet_supplies'|'property_sale'|'sporting_goods'|'toys_games' $category, int $min_price, int $max_price, 'best_match'|'distance_ascend'|'creation_time_descend'|'price_ascend'|'price_descend' $sort_by, '1'|'7'|'30' $days_since_listed, 'new'|'used_like_new'|'used_good'|'used_fair' $condition
  * @method mixed page(array $params = [], array $options = []) facebook-page (GET /facebook/{page})
  *   params: string $page
  */
@@ -874,6 +950,24 @@ abstract class GooglePlayGroup {}
  *   params: string $id, string $url
  */
 abstract class ImdbGroup {}
+
+/**
+ * @method mixed importyetiCompany(array $params = [], array $options = []) importyeti-company (GET /importyeti/company)
+ *   params: string $slug
+ * @method mixed importyetiSearch(array $params = [], array $options = []) importyeti-search (GET /importyeti/search)
+ *   params: string $q, int $page
+ */
+abstract class ImportYetiGroup {}
+
+/**
+ * @method mixed job(array $params = [], array $options = []) indeed-job (GET /indeed/job)
+ *   params: string $jk
+ * @method mixed locationsSuggest(array $params = [], array $options = []) indeed-locations-suggest (GET /indeed/locations/suggest)
+ *   params: string $q, int $limit
+ * @method mixed search(array $params = [], array $options = []) indeed-search (GET /indeed/search)
+ *   params: string $q, string $l, int $page, 'relevance'|'date' $sort, int $radius, int $fromage
+ */
+abstract class IndeedGroup {}
 
 /**
  * @method mixed post(array $params = [], array $options = []) instagram-post (GET /instagram/post/{id}/{post_id})
@@ -1180,6 +1274,18 @@ abstract class MlbGroup {}
  *   params: 'quality-of-life'|'crime'|'health-care'|'pollution'|'traffic'|'property-investment' $index
  */
 abstract class NumbeoGroup {}
+
+/**
+ * @method mixed opentableRestaurant(array $params = [], array $options = []) opentable-restaurant (GET /opentable/restaurant)
+ *   params: string $restaurant_id, string $date_time, int $party_size
+ * @method mixed opentableRestaurantMenus(array $params = [], array $options = []) opentable-restaurant-menus (GET /opentable/restaurant/menus)
+ *   params: string $restaurant_id
+ * @method mixed opentableRestaurantReviews(array $params = [], array $options = []) opentable-restaurant-reviews (GET /opentable/restaurant/reviews)
+ *   params: string $restaurant_id, int $page, int $size
+ * @method mixed opentableSearch(array $params = [], array $options = []) opentable-search (GET /opentable/search)
+ *   params: string $term, float $latitude, float $longitude, string $date_time, int $party_size, int $size
+ */
+abstract class OpenTableGroup {}
 
 /**
  * @method mixed ping(array $params = [], array $options = []) ping (GET /ping)
@@ -2015,6 +2121,26 @@ abstract class XGroup {}
 abstract class YahooFinanceGroup {}
 
 /**
+ * @method mixed business(array $params = [], array $options = []) yelp-business (GET /yelp/business/{id})
+ *   params: string $id
+ * @method mixed businessMenu(array $params = [], array $options = []) yelp-business-menu (GET /yelp/business/{id}/menu)
+ *   params: string $id
+ * @method mixed businessPhotos(array $params = [], array $options = []) yelp-business-photos (GET /yelp/business/{id}/photos)
+ *   params: string $id, int $limit, int $offset
+ * @method mixed businessReviews(array $params = [], array $options = []) yelp-business-reviews (GET /yelp/business/{id}/reviews)
+ *   params: string $id, int $limit, int $offset
+ * @method mixed businessReviewHighlights(array $params = [], array $options = []) yelp-business-review-highlights (GET /yelp/business/{id}/reviews/highlights)
+ *   params: string $id
+ * @method mixed businessReviewsSearch(array $params = [], array $options = []) yelp-business-reviews-search (GET /yelp/business/{id}/reviews/search)
+ *   params: string $id, string $term
+ * @method mixed geocode(array $params = [], array $options = []) yelp-geocode (GET /yelp/geocode)
+ *   params: string $address
+ * @method mixed search(array $params = [], array $options = []) yelp-search (GET /yelp/search)
+ *   params: string $term, string $location, int $limit, int $offset
+ */
+abstract class YelpGroup {}
+
+/**
  * @method mixed captions(array $params = [], array $options = []) youtube-captions (GET /youtube/captions/{id})
  *   params: string $id, string $lang
  * @method mixed channelPlaylists(array $params = [], array $options = []) youtube-channel-playlists (GET /youtube/channel/{id}/playlists)
@@ -2045,6 +2171,19 @@ abstract class YahooFinanceGroup {}
 abstract class YoutubeGroup {}
 
 /**
+ * @method mixed category(array $params = [], array $options = []) zalando-category (GET /zalando/category)
+ *   params: string $category, 'at'|'be'|'ch'|'cz'|'de'|'dk'|'ee'|'es'|'fi'|'fr'|'gb'|'hr'|'hu'|'ie'|'it'|'lt'|'lu'|'lv'|'nl'|'no'|'pl'|'ro'|'se'|'si'|'sk' $market
+ * @method mixed markets(array $params = [], array $options = []) zalando-markets (GET /zalando/markets)
+ * @method mixed product(array $params = [], array $options = []) zalando-product (GET /zalando/product)
+ *   params: string $sku, 'at'|'be'|'ch'|'cz'|'de'|'dk'|'ee'|'es'|'fi'|'fr'|'gb'|'hr'|'hu'|'ie'|'it'|'lt'|'lu'|'lv'|'nl'|'no'|'pl'|'ro'|'se'|'si'|'sk' $market
+ * @method mixed search(array $params = [], array $options = []) zalando-search (GET /zalando/search)
+ *   params: string $q, 'at'|'be'|'ch'|'cz'|'de'|'dk'|'ee'|'es'|'fi'|'fr'|'gb'|'hr'|'hu'|'ie'|'it'|'lt'|'lu'|'lv'|'nl'|'no'|'pl'|'ro'|'se'|'si'|'sk' $market
+ * @method mixed suggest(array $params = [], array $options = []) zalando-suggest (GET /zalando/suggest)
+ *   params: string $q, 'at'|'be'|'ch'|'cz'|'de'|'dk'|'ee'|'es'|'fi'|'fr'|'gb'|'hr'|'hu'|'ie'|'it'|'lt'|'lu'|'lv'|'nl'|'no'|'pl'|'ro'|'se'|'si'|'sk' $market
+ */
+abstract class ZalandoGroup {}
+
+/**
  * @method mixed autocomplete(array $params = [], array $options = []) zillow-autocomplete (GET /zillow/autocomplete)
  *   params: string $query, int $limit, 'for_sale'|'sale'|'for-sale'|'for_rent'|'rent'|'for-rent'|'sold' $status
  * @method mixed property(array $params = [], array $options = []) zillow-property (GET /zillow/property/{zpid})
@@ -2063,8 +2202,10 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\AppleJobsGroup $appleJobs
  * @property-read \Crawlora\Generated\ApplePodcastsGroup $applePodcasts
  * @property-read \Crawlora\Generated\AppStoreGroup $appStore
+ * @property-read \Crawlora\Generated\AutotraderGroup $autotrader
  * @property-read \Crawlora\Generated\BillingGroup $billing
  * @property-read \Crawlora\Generated\BingGroup $bing
+ * @property-read \Crawlora\Generated\BookingGroup $booking
  * @property-read \Crawlora\Generated\BoxOfficeMojoGroup $boxOfficeMojo
  * @property-read \Crawlora\Generated\BrandGroup $brand
  * @property-read \Crawlora\Generated\BraveGroup $brave
@@ -2077,6 +2218,8 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\DoorDashGroup $doorDash
  * @property-read \Crawlora\Generated\EBayGroup $eBay
  * @property-read \Crawlora\Generated\EspnGroup $espn
+ * @property-read \Crawlora\Generated\EtsyGroup $etsy
+ * @property-read \Crawlora\Generated\ExpediaGroup $expedia
  * @property-read \Crawlora\Generated\FacebookGroup $facebook
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
  * @property-read \Crawlora\Generated\GitHubGroup $gitHub
@@ -2085,6 +2228,8 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\GoogleGroup $google
  * @property-read \Crawlora\Generated\GooglePlayGroup $googlePlay
  * @property-read \Crawlora\Generated\ImdbGroup $imdb
+ * @property-read \Crawlora\Generated\ImportYetiGroup $importYeti
+ * @property-read \Crawlora\Generated\IndeedGroup $indeed
  * @property-read \Crawlora\Generated\InstagramGroup $instagram
  * @property-read \Crawlora\Generated\JobsGroup $jobs
  * @property-read \Crawlora\Generated\JustWatchGroup $justWatch
@@ -2097,6 +2242,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
  * @property-read \Crawlora\Generated\MlbGroup $mlb
  * @property-read \Crawlora\Generated\NumbeoGroup $numbeo
+ * @property-read \Crawlora\Generated\OpenTableGroup $openTable
  * @property-read \Crawlora\Generated\MetaGroup $meta
  * @property-read \Crawlora\Generated\PitchBookGroup $pitchBook
  * @property-read \Crawlora\Generated\PlayStationGroup $playStation
@@ -2129,7 +2275,9 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\WalmartGroup $walmart
  * @property-read \Crawlora\Generated\XGroup $x
  * @property-read \Crawlora\Generated\YahooFinanceGroup $yahooFinance
+ * @property-read \Crawlora\Generated\YelpGroup $yelp
  * @property-read \Crawlora\Generated\YoutubeGroup $youtube
+ * @property-read \Crawlora\Generated\ZalandoGroup $zalando
  * @property-read \Crawlora\Generated\ZillowGroup $zillow
  */
 abstract class ClientGroups {}
