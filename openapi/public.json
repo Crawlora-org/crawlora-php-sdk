@@ -15647,6 +15647,14 @@
           "example": "2018",
           "type": "string"
         },
+        "limit": {
+          "example": 50,
+          "type": "integer"
+        },
+        "page": {
+          "example": 1,
+          "type": "integer"
+        },
         "query": {
           "example": "Pelosi",
           "type": "string"
@@ -93669,7 +93677,7 @@
             "x-example": "annual,periodic_transaction"
           },
           {
-            "description": "Minimum filing year (YYYY).",
+            "description": "Minimum filing year (YYYY). Senate searches default to 2012 when omitted.",
             "in": "query",
             "name": "from",
             "type": "string",
@@ -93696,6 +93704,15 @@
             "name": "sort",
             "type": "string",
             "x-example": "filing_year_desc"
+          },
+          {
+            "default": 1,
+            "description": "1-based result page (1-1000).",
+            "in": "query",
+            "maximum": 1000,
+            "minimum": 1,
+            "name": "page",
+            "type": "integer"
           },
           {
             "description": "Max results (1-500).",

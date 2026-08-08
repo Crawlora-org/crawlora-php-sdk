@@ -7675,6 +7675,11 @@ final class Operations
                     ],
                 ],
                 [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
                     'name' => 'limit',
                     'in' => 'query',
                     'type' => 'integer',
@@ -7692,6 +7697,7 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+            'paginatable' => true,
         ],
         'contact' => [
             'id' => 'contact',
