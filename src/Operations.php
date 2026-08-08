@@ -15,6 +15,280 @@ final class Operations
 {
     /** @var array<string,array<string,mixed>> */
     public const OPERATIONS = [
+        'agoda-activities-search' => [
+            'id' => 'agoda-activities-search',
+            'method' => 'GET',
+            'path' => '/agoda/activities/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'keyword',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'city_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'agoda-activity-detail' => [
+            'id' => 'agoda-activity-detail',
+            'method' => 'GET',
+            'path' => '/agoda/activities/{activity_id}',
+            'pathParams' => [
+                'activity_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'agoda-flights-itinerary-amenities' => [
+            'id' => 'agoda-flights-itinerary-amenities',
+            'method' => 'POST',
+            'path' => '/agoda/flights/itinerary-amenities',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'body',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'agoda-flights-search' => [
+            'id' => 'agoda-flights-search',
+            'method' => 'GET',
+            'path' => '/agoda/flights/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'origin',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'destination',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'departure_date',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'adults',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'children',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'infants',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'cabin_class',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Economy',
+                        'PremiumEconomy',
+                        'Business',
+                        'First',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'agoda-flights-search-locations' => [
+            'id' => 'agoda-flights-search-locations',
+            'method' => 'GET',
+            'path' => '/agoda/flights/search-locations',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'keyword',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'agoda-homes-search' => [
+            'id' => 'agoda-homes-search',
+            'method' => 'GET',
+            'path' => '/agoda/homes/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'city_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'agoda-hotels-search' => [
+            'id' => 'agoda-hotels-search',
+            'method' => 'GET',
+            'path' => '/agoda/hotels/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'city_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'agoda-hotel-detail' => [
+            'id' => 'agoda-hotel-detail',
+            'method' => 'GET',
+            'path' => '/agoda/hotels/{property_id}',
+            'pathParams' => [
+                'property_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'airbnb-host' => [
             'id' => 'airbnb-host',
             'method' => 'GET',
@@ -2751,6 +3025,242 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'bluesky-author-feed' => [
+            'id' => 'bluesky-author-feed',
+            'method' => 'GET',
+            'path' => '/bluesky/author-feed',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'actor',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'bluesky-followers' => [
+            'id' => 'bluesky-followers',
+            'method' => 'GET',
+            'path' => '/bluesky/followers',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'actor',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'bluesky-follows' => [
+            'id' => 'bluesky-follows',
+            'method' => 'GET',
+            'path' => '/bluesky/follows',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'actor',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'bluesky-post-thread' => [
+            'id' => 'bluesky-post-thread',
+            'method' => 'GET',
+            'path' => '/bluesky/post-thread',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'uri',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'depth',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'bluesky-profile' => [
+            'id' => 'bluesky-profile',
+            'method' => 'GET',
+            'path' => '/bluesky/profile',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'actor',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'bluesky-search-actors' => [
+            'id' => 'bluesky-search-actors',
+            'method' => 'GET',
+            'path' => '/bluesky/search-actors',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'bluesky-trending-topics' => [
+            'id' => 'bluesky-trending-topics',
+            'method' => 'GET',
+            'path' => '/bluesky/trending-topics',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'booking-attractions-detail' => [
             'id' => 'booking-attractions-detail',
             'method' => 'GET',
@@ -4587,6 +5097,306 @@ final class Operations
                     'required' => true,
                 ],
             ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'carmax-search' => [
+            'id' => 'carmax-search',
+            'method' => 'GET',
+            'path' => '/carmax/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'make',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'model',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'zip',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_price',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_price',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_mileage',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'carmax-search-suggestions' => [
+            'id' => 'carmax-search-suggestions',
+            'method' => 'GET',
+            'path' => '/carmax/search/suggestions',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'search',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'exact_match',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'carmax-shop-by-brand' => [
+            'id' => 'carmax-shop-by-brand',
+            'method' => 'GET',
+            'path' => '/carmax/shop-by-brand',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'carmax-store' => [
+            'id' => 'carmax-store',
+            'method' => 'GET',
+            'path' => '/carmax/store/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'carmax-stores' => [
+            'id' => 'carmax-stores',
+            'method' => 'GET',
+            'path' => '/carmax/stores',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'zip',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'keyword',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'take',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'carmax-vehicle' => [
+            'id' => 'carmax-vehicle',
+            'method' => 'GET',
+            'path' => '/carmax/vehicle/{stock_number}',
+            'pathParams' => [
+                'stock_number',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'store_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'carmax-vehicle-recommendations' => [
+            'id' => 'carmax-vehicle-recommendations',
+            'method' => 'GET',
+            'path' => '/carmax/vehicle/{stock_number}/recommendations',
+            'pathParams' => [
+                'stock_number',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'store_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'carsdotcom-search' => [
+            'id' => 'carsdotcom-search',
+            'method' => 'GET',
+            'path' => '/carsdotcom/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'zip',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'radius',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'stock_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'new',
+                        'used',
+                        'cpo',
+                        'all',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'carsdotcom-vehicle' => [
+            'id' => 'carsdotcom-vehicle',
+            'method' => 'GET',
+            'path' => '/carsdotcom/vehicle/{listing_id}',
+            'pathParams' => [
+                'listing_id',
+            ],
+            'queryParams' => [],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -6765,6 +7575,124 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'congress-report' => [
+            'id' => 'congress-report',
+            'method' => 'GET',
+            'path' => '/congress/report',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'congress-stock-disclosures' => [
+            'id' => 'congress-stock-disclosures',
+            'method' => 'GET',
+            'path' => '/congress/stock-disclosures',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'chamber',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'house',
+                        'senate',
+                    ],
+                ],
+                [
+                    'name' => 'member',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'ticker',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'district',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'filer_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'election_year',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'report_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'name_asc',
+                        'name_desc',
+                        'office_asc',
+                        'office_desc',
+                        'filing_year_asc',
+                        'filing_year_desc',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'contact' => [
             'id' => 'contact',
             'method' => 'POST',
@@ -6774,6 +7702,169 @@ final class Operations
             'formParams' => [],
             'bodyParam' => 'option',
             'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'costco-categories' => [
+            'id' => 'costco-categories',
+            'method' => 'GET',
+            'path' => '/costco/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'costco-product' => [
+            'id' => 'costco-product',
+            'method' => 'GET',
+            'path' => '/costco/product/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'costco-product-availability' => [
+            'id' => 'costco-product-availability',
+            'method' => 'GET',
+            'path' => '/costco/product/{id}/availability',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'postal_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'costco-product-reviews' => [
+            'id' => 'costco-product-reviews',
+            'method' => 'GET',
+            'path' => '/costco/product/{id}/reviews',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'costco-search' => [
+            'id' => 'costco-search',
+            'method' => 'GET',
+            'path' => '/costco/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'costco-warehouses' => [
+            'id' => 'costco-warehouses',
+            'method' => 'GET',
+            'path' => '/costco/warehouses',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
             'consumes' => [
                 'application/json',
             ],
@@ -14942,6 +16033,194 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'depop-categories' => [
+            'id' => 'depop-categories',
+            'method' => 'GET',
+            'path' => '/depop/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'depop-item' => [
+            'id' => 'depop-item',
+            'method' => 'GET',
+            'path' => '/depop/item/{slug}',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'depop-search' => [
+            'id' => 'depop-search',
+            'method' => 'GET',
+            'path' => '/depop/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'price_min',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'price_max',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'condition',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'colours',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'on_sale',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'subcategory',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'gender',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'brand_ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'depop-shop' => [
+            'id' => 'depop-shop',
+            'method' => 'GET',
+            'path' => '/depop/shop/{username}',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'price_min',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'price_max',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'condition',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'colours',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'on_sale',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'subcategory',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'gender',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'antibot-check' => [
             'id' => 'antibot-check',
             'method' => 'POST',
@@ -15609,6 +16888,206 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'duckduckgo-image' => [
+            'id' => 'duckduckgo-image',
+            'method' => 'GET',
+            'path' => '/duckduckgo/image',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'duckduckgo-news' => [
+            'id' => 'duckduckgo-news',
+            'method' => 'GET',
+            'path' => '/duckduckgo/news',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'duckduckgo-search' => [
+            'id' => 'duckduckgo-search',
+            'method' => 'GET',
+            'path' => '/duckduckgo/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'time_range',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'd',
+                        'w',
+                        'm',
+                        'y',
+                    ],
+                ],
+                [
+                    'name' => 'safe_search',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'strict',
+                        'moderate',
+                        'off',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'duckduckgo-shopping' => [
+            'id' => 'duckduckgo-shopping',
+            'method' => 'GET',
+            'path' => '/duckduckgo/shopping',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'duckduckgo-video' => [
+            'id' => 'duckduckgo-video',
+            'method' => 'GET',
+            'path' => '/duckduckgo/video',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'ebay-item' => [
             'id' => 'ebay-item',
@@ -16680,48 +18159,6 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
-        'facebook-group' => [
-            'id' => 'facebook-group',
-            'method' => 'GET',
-            'path' => '/facebook/groups/{group}',
-            'pathParams' => [
-                'group',
-            ],
-            'queryParams' => [],
-            'formParams' => [],
-            'bodyParam' => null,
-            'bodyRequired' => false,
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'security' => [
-                'ApiKeyAuth',
-            ],
-        ],
-        'facebook-marketplace-item' => [
-            'id' => 'facebook-marketplace-item',
-            'method' => 'GET',
-            'path' => '/facebook/marketplace/item/{id}',
-            'pathParams' => [
-                'id',
-            ],
-            'queryParams' => [],
-            'formParams' => [],
-            'bodyParam' => null,
-            'bodyRequired' => false,
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'security' => [
-                'ApiKeyAuth',
-            ],
-        ],
         'facebook-marketplace-search' => [
             'id' => 'facebook-marketplace-search',
             'method' => 'GET',
@@ -16827,6 +18264,81 @@ final class Operations
             'path' => '/facebook/{page}',
             'pathParams' => [
                 'page',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fiverr-gig' => [
+            'id' => 'fiverr-gig',
+            'method' => 'GET',
+            'path' => '/fiverr/gig/{username}/{slug}',
+            'pathParams' => [
+                'username',
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fiverr-search' => [
+            'id' => 'fiverr-search',
+            'method' => 'GET',
+            'path' => '/fiverr/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'fiverr-seller' => [
+            'id' => 'fiverr-seller',
+            'method' => 'GET',
+            'path' => '/fiverr/seller/{username}',
+            'pathParams' => [
+                'username',
             ],
             'queryParams' => [],
             'formParams' => [],
@@ -20681,6 +22193,216 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'instacart-departments' => [
+            'id' => 'instacart-departments',
+            'method' => 'GET',
+            'path' => '/instacart/departments',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'shop_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'store_slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'postal_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'instacart-item' => [
+            'id' => 'instacart-item',
+            'method' => 'GET',
+            'path' => '/instacart/item',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'shop_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'store_slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'retailer_location_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'product_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'postal_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'instacart-search' => [
+            'id' => 'instacart-search',
+            'method' => 'GET',
+            'path' => '/instacart/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'shop_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'store_slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'instacart-search-nearby' => [
+            'id' => 'instacart-search-nearby',
+            'method' => 'GET',
+            'path' => '/instacart/search-nearby',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'postal_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'instacart-stores' => [
+            'id' => 'instacart-stores',
+            'method' => 'GET',
+            'path' => '/instacart/stores',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'postal_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'instacart-trending' => [
+            'id' => 'instacart-trending',
+            'method' => 'GET',
+            'path' => '/instacart/trending',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'postal_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'instagram-post' => [
             'id' => 'instagram-post',
             'method' => 'GET',
@@ -23896,6 +25618,117 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'mercari-autocomplete' => [
+            'id' => 'mercari-autocomplete',
+            'method' => 'GET',
+            'path' => '/mercari/autocomplete',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'mercari-home' => [
+            'id' => 'mercari-home',
+            'method' => 'GET',
+            'path' => '/mercari/home',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'mercari-item' => [
+            'id' => 'mercari-item',
+            'method' => 'GET',
+            'path' => '/mercari/item/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'mercari-master' => [
+            'id' => 'mercari-master',
+            'method' => 'GET',
+            'path' => '/mercari/master',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'mercari-search' => [
+            'id' => 'mercari-search',
+            'method' => 'GET',
+            'path' => '/mercari/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'meta-jobs-job' => [
             'id' => 'meta-jobs-job',
             'method' => 'GET',
@@ -25528,6 +27361,178 @@ final class Operations
                 'application/json',
             ],
             'security' => [],
+        ],
+        'pinterest-board' => [
+            'id' => 'pinterest-board',
+            'method' => 'GET',
+            'path' => '/pinterest/board/{username}/{slug}',
+            'pathParams' => [
+                'username',
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pinterest-categories' => [
+            'id' => 'pinterest-categories',
+            'method' => 'GET',
+            'path' => '/pinterest/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pinterest-idea' => [
+            'id' => 'pinterest-idea',
+            'method' => 'GET',
+            'path' => '/pinterest/ideas/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pinterest-pin' => [
+            'id' => 'pinterest-pin',
+            'method' => 'GET',
+            'path' => '/pinterest/pin/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pinterest-search' => [
+            'id' => 'pinterest-search',
+            'method' => 'GET',
+            'path' => '/pinterest/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pinterest-user' => [
+            'id' => 'pinterest-user',
+            'method' => 'GET',
+            'path' => '/pinterest/user/{username}',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pinterest-user-boards' => [
+            'id' => 'pinterest-user-boards',
+            'method' => 'GET',
+            'path' => '/pinterest/user/{username}/boards',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pinterest-user-pins' => [
+            'id' => 'pinterest-user-pins',
+            'method' => 'GET',
+            'path' => '/pinterest/user/{username}/pins',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'pitchbook-advisor' => [
             'id' => 'pitchbook-advisor',
@@ -28249,6 +30254,209 @@ final class Operations
                 'id',
             ],
             'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'poshmark-brand' => [
+            'id' => 'poshmark-brand',
+            'method' => 'GET',
+            'path' => '/poshmark/brand/{name}',
+            'pathParams' => [
+                'name',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'max_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'poshmark-brands' => [
+            'id' => 'poshmark-brands',
+            'method' => 'GET',
+            'path' => '/poshmark/brands',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'poshmark-categories' => [
+            'id' => 'poshmark-categories',
+            'method' => 'GET',
+            'path' => '/poshmark/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'poshmark-category' => [
+            'id' => 'poshmark-category',
+            'method' => 'GET',
+            'path' => '/poshmark/category/{path}',
+            'pathParams' => [
+                'path',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'max_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'poshmark-closet' => [
+            'id' => 'poshmark-closet',
+            'method' => 'GET',
+            'path' => '/poshmark/closet/{username}',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'max_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'poshmark-listing' => [
+            'id' => 'poshmark-listing',
+            'method' => 'GET',
+            'path' => '/poshmark/listing/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'poshmark-search' => [
+            'id' => 'poshmark-search',
+            'method' => 'GET',
+            'path' => '/poshmark/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'department',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'max_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'poshmark-trend' => [
+            'id' => 'poshmark-trend',
+            'method' => 'GET',
+            'path' => '/poshmark/trend/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'max_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -34216,6 +36424,357 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'stockx-brands' => [
+            'id' => 'stockx-brands',
+            'method' => 'GET',
+            'path' => '/stockx/brands',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'stockx-categories' => [
+            'id' => 'stockx-categories',
+            'method' => 'GET',
+            'path' => '/stockx/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'stockx-product' => [
+            'id' => 'stockx-product',
+            'method' => 'GET',
+            'path' => '/stockx/product/{slug}',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'stockx-releases' => [
+            'id' => 'stockx-releases',
+            'method' => 'GET',
+            'path' => '/stockx/releases',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'stockx-search' => [
+            'id' => 'stockx-search',
+            'method' => 'GET',
+            'path' => '/stockx/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'sneakers',
+                        'shoes',
+                        'apparel',
+                        'accessories',
+                        'collectibles',
+                        'trading-cards',
+                        'electronics',
+                    ],
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'gender',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'men',
+                        'women',
+                        'kids',
+                        'unisex',
+                    ],
+                ],
+                [
+                    'name' => 'brand',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'model',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'color',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'white',
+                        'black',
+                        'multi',
+                        'blue',
+                        'grey',
+                        'pink',
+                        'red',
+                        'brown',
+                        'yellow',
+                        'green',
+                        'purple',
+                        'orange',
+                    ],
+                ],
+                [
+                    'name' => 'shoe_height',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'low',
+                        'mid',
+                        'high',
+                    ],
+                ],
+                [
+                    'name' => 'activity',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'basketball',
+                        'football',
+                        'golf',
+                        'hiking',
+                        'running',
+                        'skateboarding',
+                        'soccer',
+                    ],
+                ],
+                [
+                    'name' => 'available_now',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'xpress_ship',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'below_retail',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'featured',
+                        'most-active',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'strava-challenges' => [
+            'id' => 'strava-challenges',
+            'method' => 'GET',
+            'path' => '/strava/challenges',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'strava-club' => [
+            'id' => 'strava-club',
+            'method' => 'GET',
+            'path' => '/strava/clubs/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'strava-routes' => [
+            'id' => 'strava-routes',
+            'method' => 'GET',
+            'path' => '/strava/routes',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'hiking',
+                        'road-biking',
+                        'mountain-biking',
+                        'trail-running',
+                        'gravel-biking',
+                    ],
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'strava-route-detail' => [
+            'id' => 'strava-route-detail',
+            'method' => 'GET',
+            'path' => '/strava/routes/detail',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'target-categories' => [
             'id' => 'target-categories',
             'method' => 'GET',
@@ -36615,6 +39174,65 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'tripcom-hotels-search' => [
+            'id' => 'tripcom-hotels-search',
+            'method' => 'GET',
+            'path' => '/tripcom/hotels/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'city_slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'city_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'tripcom-hotel-detail' => [
+            'id' => 'tripcom-hotel-detail',
+            'method' => 'GET',
+            'path' => '/tripcom/hotels/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'trustmrr-acquire' => [
             'id' => 'trustmrr-acquire',
             'method' => 'GET',
@@ -37175,6 +39793,80 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'upwork-freelancer' => [
+            'id' => 'upwork-freelancer',
+            'method' => 'GET',
+            'path' => '/upwork/freelancer/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'upwork-job' => [
+            'id' => 'upwork-job',
+            'method' => 'GET',
+            'path' => '/upwork/job/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'upwork-search' => [
+            'id' => 'upwork-search',
+            'method' => 'GET',
+            'path' => '/upwork/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'usage-me-endpoints' => [
             'id' => 'usage-me-endpoints',
             'method' => 'GET',
@@ -37445,6 +40137,255 @@ final class Operations
                 'JWTAuth',
             ],
         ],
+        'vinted-brand' => [
+            'id' => 'vinted-brand',
+            'method' => 'GET',
+            'path' => '/vinted/brand',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'price_from',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'price_to',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'order',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'newest_first',
+                        'price_high_to_low',
+                        'price_low_to_high',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'vinted-brands' => [
+            'id' => 'vinted-brands',
+            'method' => 'GET',
+            'path' => '/vinted/brands',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'vinted-catalog' => [
+            'id' => 'vinted-catalog',
+            'method' => 'GET',
+            'path' => '/vinted/catalog',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'search_text',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'price_from',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'price_to',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'order',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'newest_first',
+                        'price_high_to_low',
+                        'price_low_to_high',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'vinted-categories' => [
+            'id' => 'vinted-categories',
+            'method' => 'GET',
+            'path' => '/vinted/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'vinted-category' => [
+            'id' => 'vinted-category',
+            'method' => 'GET',
+            'path' => '/vinted/category',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'price_from',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'price_to',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'order',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'newest_first',
+                        'price_high_to_low',
+                        'price_low_to_high',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'vinted-item' => [
+            'id' => 'vinted-item',
+            'method' => 'GET',
+            'path' => '/vinted/item',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'vinted-member' => [
+            'id' => 'vinted-member',
+            'method' => 'GET',
+            'path' => '/vinted/member',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'walmart-product' => [
             'id' => 'walmart-product',
             'method' => 'GET',
@@ -37560,6 +40501,72 @@ final class Operations
             'formParams' => [],
             'bodyParam' => 'request',
             'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'whatnot-browse' => [
+            'id' => 'whatnot-browse',
+            'method' => 'GET',
+            'path' => '/whatnot/browse',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'whatnot-categories' => [
+            'id' => 'whatnot-categories',
+            'method' => 'GET',
+            'path' => '/whatnot/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'whatnot-live' => [
+            'id' => 'whatnot-live',
+            'method' => 'GET',
+            'path' => '/whatnot/live/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
             'consumes' => [
                 'application/json',
             ],
@@ -38697,6 +41704,38 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'yahoo-search' => [
+            'id' => 'yahoo-search',
+            'method' => 'GET',
+            'path' => '/yahoo-search/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'yelp-business' => [
             'id' => 'yelp-business',
             'method' => 'GET',
@@ -39740,6 +42779,16 @@ final class Operations
 
     /** @var array<string,array<string,string>> */
     public const GROUPS = [
+        'agoda' => [
+            'activitiesSearch' => 'agoda-activities-search',
+            'activityDetail' => 'agoda-activity-detail',
+            'flightsItineraryAmenities' => 'agoda-flights-itinerary-amenities',
+            'flightsSearch' => 'agoda-flights-search',
+            'flightsSearchLocations' => 'agoda-flights-search-locations',
+            'homesSearch' => 'agoda-homes-search',
+            'hotelsSearch' => 'agoda-hotels-search',
+            'hotelDetail' => 'agoda-hotel-detail',
+        ],
         'airbnb' => [
             'host' => 'airbnb-host',
             'hostListings' => 'airbnb-host-listings',
@@ -39833,6 +42882,15 @@ final class Operations
             'suggest' => 'bing-suggest',
             'videos' => 'bing-videos',
         ],
+        'bluesky' => [
+            'authorFeed' => 'bluesky-author-feed',
+            'followers' => 'bluesky-followers',
+            'follows' => 'bluesky-follows',
+            'postThread' => 'bluesky-post-thread',
+            'profile' => 'bluesky-profile',
+            'searchActors' => 'bluesky-search-actors',
+            'trendingTopics' => 'bluesky-trending-topics',
+        ],
         'booking' => [
             'attractionsDetail' => 'booking-attractions-detail',
             'attractionsReviews' => 'booking-attractions-reviews',
@@ -39881,6 +42939,19 @@ final class Operations
             'reviews' => 'capterra-reviews',
             'search' => 'capterra-search',
         ],
+        'carMax' => [
+            'carmaxSearch' => 'carmax-search',
+            'carmaxSearchSuggestions' => 'carmax-search-suggestions',
+            'carmaxShopByBrand' => 'carmax-shop-by-brand',
+            'carmaxStore' => 'carmax-store',
+            'carmaxStores' => 'carmax-stores',
+            'carmaxVehicle' => 'carmax-vehicle',
+            'carmaxVehicleRecommendations' => 'carmax-vehicle-recommendations',
+        ],
+        'carsCom' => [
+            'carsdotcomSearch' => 'carsdotcom-search',
+            'carsdotcomVehicle' => 'carsdotcom-vehicle',
+        ],
         'chromeWebStore' => [
             'chromewebstoreCategories' => 'chromewebstore-categories',
             'chromewebstoreCategory' => 'chromewebstore-category',
@@ -39918,12 +42989,24 @@ final class Operations
             'treasuries' => 'coingecko-treasuries',
             'trending' => 'coingecko-trending',
         ],
+        'congress' => [
+            'report' => 'congress-report',
+            'stockDisclosures' => 'congress-stock-disclosures',
+        ],
         'web' => [
             'contact' => 'contact',
             'antibotCheck' => 'antibot-check',
             'extract' => 'extract',
             'scrape' => 'web-scrape',
             'techstack' => 'web-techstack',
+        ],
+        'costco' => [
+            'categories' => 'costco-categories',
+            'product' => 'costco-product',
+            'productAvailability' => 'costco-product-availability',
+            'productReviews' => 'costco-product-reviews',
+            'search' => 'costco-search',
+            'warehouses' => 'costco-warehouses',
         ],
         'datasets' => [
             'list_' => 'datasets-list',
@@ -40036,6 +43119,12 @@ final class Operations
             'xUsersItem' => 'datasets-x-users-item',
             'xUsersSearch' => 'datasets-x-users-search',
         ],
+        'depop' => [
+            'categories' => 'depop-categories',
+            'item' => 'depop-item',
+            'search' => 'depop-search',
+            'shop' => 'depop-shop',
+        ],
         'discogs' => [
             'artist' => 'discogs-artist',
             'artistReleases' => 'discogs-artist-releases',
@@ -40058,6 +43147,13 @@ final class Operations
             'doordashStoreItem' => 'doordash-store-item',
             'doordashStoreMenu' => 'doordash-store-menu',
             'doordashStoreReviews' => 'doordash-store-reviews',
+        ],
+        'duckDuckGoSearch' => [
+            'duckduckgoImage' => 'duckduckgo-image',
+            'duckduckgoNews' => 'duckduckgo-news',
+            'duckduckgoSearch' => 'duckduckgo-search',
+            'duckduckgoShopping' => 'duckduckgo-shopping',
+            'duckduckgoVideo' => 'duckduckgo-video',
         ],
         'eBay' => [
             'ebayItem' => 'ebay-item',
@@ -40097,10 +43193,13 @@ final class Operations
             'propertiesSearch' => 'expedia-properties-search',
         ],
         'facebook' => [
-            'group' => 'facebook-group',
-            'marketplaceItem' => 'facebook-marketplace-item',
             'marketplaceSearch' => 'facebook-marketplace-search',
             'page' => 'facebook-page',
+        ],
+        'fiverr' => [
+            'gig' => 'fiverr-gig',
+            'search' => 'fiverr-search',
+            'seller' => 'fiverr-seller',
         ],
         'geocoding' => [
             'lookup' => 'geocoding-lookup',
@@ -40228,6 +43327,14 @@ final class Operations
             'locationsSuggest' => 'indeed-locations-suggest',
             'search' => 'indeed-search',
         ],
+        'instacart' => [
+            'departments' => 'instacart-departments',
+            'item' => 'instacart-item',
+            'search' => 'instacart-search',
+            'searchNearby' => 'instacart-search-nearby',
+            'stores' => 'instacart-stores',
+            'trending' => 'instacart-trending',
+        ],
         'instagram' => [
             'post' => 'instagram-post',
             'profile' => 'instagram-profile',
@@ -40329,6 +43436,13 @@ final class Operations
             'search' => 'manga-search',
             'title' => 'manga-title',
         ],
+        'mercari' => [
+            'autocomplete' => 'mercari-autocomplete',
+            'home' => 'mercari-home',
+            'item' => 'mercari-item',
+            'master' => 'mercari-master',
+            'search' => 'mercari-search',
+        ],
         'metaJobs' => [
             'job' => 'meta-jobs-job',
             'list_' => 'meta-jobs-list',
@@ -40392,6 +43506,16 @@ final class Operations
         'meta' => [
             'ping' => 'ping',
             'ready' => 'ready',
+        ],
+        'pinterest' => [
+            'board' => 'pinterest-board',
+            'categories' => 'pinterest-categories',
+            'idea' => 'pinterest-idea',
+            'pin' => 'pinterest-pin',
+            'search' => 'pinterest-search',
+            'user' => 'pinterest-user',
+            'userBoards' => 'pinterest-user-boards',
+            'userPins' => 'pinterest-user-pins',
         ],
         'pitchBook' => [
             'pitchbookAdvisor' => 'pitchbook-advisor',
@@ -40476,6 +43600,16 @@ final class Operations
             'tokensSpreads' => 'polymarket-tokens-spreads',
             'tournaments' => 'polymarket-tournaments',
             'tournament' => 'polymarket-tournament',
+        ],
+        'poshmark' => [
+            'brand' => 'poshmark-brand',
+            'brands' => 'poshmark-brands',
+            'categories' => 'poshmark-categories',
+            'category' => 'poshmark-category',
+            'closet' => 'poshmark-closet',
+            'listing' => 'poshmark-listing',
+            'search' => 'poshmark-search',
+            'trend' => 'poshmark-trend',
         ],
         'productHunt' => [
             'category' => 'producthunt-category',
@@ -40655,6 +43789,19 @@ final class Operations
             'tagsList' => 'steam-tags-list',
             'topSellers' => 'steam-top-sellers',
         ],
+        'stockX' => [
+            'stockxBrands' => 'stockx-brands',
+            'stockxCategories' => 'stockx-categories',
+            'stockxProduct' => 'stockx-product',
+            'stockxReleases' => 'stockx-releases',
+            'stockxSearch' => 'stockx-search',
+        ],
+        'strava' => [
+            'challenges' => 'strava-challenges',
+            'club' => 'strava-club',
+            'routes' => 'strava-routes',
+            'routeDetail' => 'strava-route-detail',
+        ],
         'target' => [
             'categories' => 'target-categories',
             'categoryProducts' => 'target-category-products',
@@ -40732,6 +43879,10 @@ final class Operations
             'tripadvisorReviews' => 'tripadvisor-reviews',
             'tripadvisorSearch' => 'tripadvisor-search',
         ],
+        'tripCom' => [
+            'tripcomHotelsSearch' => 'tripcom-hotels-search',
+            'tripcomHotelDetail' => 'tripcom-hotel-detail',
+        ],
         'trustMrr' => [
             'trustmrrAcquire' => 'trustmrr-acquire',
             'trustmrrCategories' => 'trustmrr-categories',
@@ -40757,6 +43908,11 @@ final class Operations
             'ubereatsStoreMenu' => 'ubereats-store-menu',
             'ubereatsStoreReviews' => 'ubereats-store-reviews',
         ],
+        'upwork' => [
+            'freelancer' => 'upwork-freelancer',
+            'job' => 'upwork-job',
+            'search' => 'upwork-search',
+        ],
         'usage' => [
             'meEndpoints' => 'usage-me-endpoints',
             'meOverview' => 'usage-me-overview',
@@ -40769,10 +43925,24 @@ final class Operations
             'meApiKeysRotate' => 'user-me-api-keys-rotate',
             'meApiKeysReveal' => 'user-me-api-keys-reveal',
         ],
+        'vinted' => [
+            'brand' => 'vinted-brand',
+            'brands' => 'vinted-brands',
+            'catalog' => 'vinted-catalog',
+            'categories' => 'vinted-categories',
+            'category' => 'vinted-category',
+            'item' => 'vinted-item',
+            'member' => 'vinted-member',
+        ],
         'walmart' => [
             'product' => 'walmart-product',
             'productReviews' => 'walmart-product-reviews',
             'search' => 'walmart-search',
+        ],
+        'whatnot' => [
+            'browse' => 'whatnot-browse',
+            'categories' => 'whatnot-categories',
+            'live' => 'whatnot-live',
         ],
         'x' => [
             'post' => 'x-post',
@@ -40820,6 +43990,9 @@ final class Operations
             'tickerValuation' => 'yahoo-finance-ticker-valuation',
             'trending' => 'yahoo-finance-trending',
         ],
+        'yahooSearch' => [
+            'call' => 'yahoo-search',
+        ],
         'yelp' => [
             'business' => 'yelp-business',
             'businessMenu' => 'yelp-business-menu',
@@ -40859,10 +44032,18 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 947;
+    public const OPERATION_COUNT = 1041;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
+        'agoda-activities-search',
+        'agoda-activity-detail',
+        'agoda-flights-itinerary-amenities',
+        'agoda-flights-search',
+        'agoda-flights-search-locations',
+        'agoda-homes-search',
+        'agoda-hotels-search',
+        'agoda-hotel-detail',
         'airbnb-host',
         'airbnb-host-listings',
         'airbnb-host-reviews',
@@ -40934,6 +44115,13 @@ final class Operations
         'bing-search',
         'bing-suggest',
         'bing-videos',
+        'bluesky-author-feed',
+        'bluesky-followers',
+        'bluesky-follows',
+        'bluesky-post-thread',
+        'bluesky-profile',
+        'bluesky-search-actors',
+        'bluesky-trending-topics',
         'booking-attractions-detail',
         'booking-attractions-reviews',
         'booking-attractions-search',
@@ -40972,6 +44160,15 @@ final class Operations
         'capterra-product',
         'capterra-reviews',
         'capterra-search',
+        'carmax-search',
+        'carmax-search-suggestions',
+        'carmax-shop-by-brand',
+        'carmax-store',
+        'carmax-stores',
+        'carmax-vehicle',
+        'carmax-vehicle-recommendations',
+        'carsdotcom-search',
+        'carsdotcom-vehicle',
         'chromewebstore-categories',
         'chromewebstore-category',
         'chromewebstore-charts',
@@ -41005,7 +44202,15 @@ final class Operations
         'coingecko-token-unlocks',
         'coingecko-treasuries',
         'coingecko-trending',
+        'congress-report',
+        'congress-stock-disclosures',
         'contact',
+        'costco-categories',
+        'costco-product',
+        'costco-product-availability',
+        'costco-product-reviews',
+        'costco-search',
+        'costco-warehouses',
         'datasets-list',
         'datasets-airbnb-markets-facets',
         'datasets-airbnb-markets-item',
@@ -41115,6 +44320,10 @@ final class Operations
         'datasets-x-users-facets',
         'datasets-x-users-item',
         'datasets-x-users-search',
+        'depop-categories',
+        'depop-item',
+        'depop-search',
+        'depop-shop',
         'antibot-check',
         'discogs-artist',
         'discogs-artist-releases',
@@ -41135,6 +44344,11 @@ final class Operations
         'doordash-store-item',
         'doordash-store-menu',
         'doordash-store-reviews',
+        'duckduckgo-image',
+        'duckduckgo-news',
+        'duckduckgo-search',
+        'duckduckgo-shopping',
+        'duckduckgo-video',
         'ebay-item',
         'ebay-search',
         'ebay-seller',
@@ -41165,10 +44379,11 @@ final class Operations
         'expedia-properties-reviews',
         'expedia-properties-search',
         'extract',
-        'facebook-group',
-        'facebook-marketplace-item',
         'facebook-marketplace-search',
         'facebook-page',
+        'fiverr-gig',
+        'fiverr-search',
+        'fiverr-seller',
         'geocoding-lookup',
         'geocoding-reverse',
         'geocoding-search',
@@ -41277,6 +44492,12 @@ final class Operations
         'indeed-job',
         'indeed-locations-suggest',
         'indeed-search',
+        'instacart-departments',
+        'instacart-item',
+        'instacart-search',
+        'instacart-search-nearby',
+        'instacart-stores',
+        'instacart-trending',
         'instagram-post',
         'instagram-profile',
         'instagram-reels',
@@ -41364,6 +44585,11 @@ final class Operations
         'manga-rankings',
         'manga-search',
         'manga-title',
+        'mercari-autocomplete',
+        'mercari-home',
+        'mercari-item',
+        'mercari-master',
+        'mercari-search',
         'meta-jobs-job',
         'meta-jobs-list',
         'meta-jobs-search',
@@ -41413,6 +44639,14 @@ final class Operations
         'opentable-restaurant-reviews',
         'opentable-search',
         'ping',
+        'pinterest-board',
+        'pinterest-categories',
+        'pinterest-idea',
+        'pinterest-pin',
+        'pinterest-search',
+        'pinterest-user',
+        'pinterest-user-boards',
+        'pinterest-user-pins',
         'pitchbook-advisor',
         'pitchbook-company',
         'pitchbook-fund',
@@ -41491,6 +44725,14 @@ final class Operations
         'polymarket-tokens-spreads',
         'polymarket-tournaments',
         'polymarket-tournament',
+        'poshmark-brand',
+        'poshmark-brands',
+        'poshmark-categories',
+        'poshmark-category',
+        'poshmark-closet',
+        'poshmark-listing',
+        'poshmark-search',
+        'poshmark-trend',
         'producthunt-category',
         'producthunt-category-products',
         'producthunt-leaderboard',
@@ -41644,6 +44886,15 @@ final class Operations
         'steam-tags',
         'steam-tags-list',
         'steam-top-sellers',
+        'stockx-brands',
+        'stockx-categories',
+        'stockx-product',
+        'stockx-releases',
+        'stockx-search',
+        'strava-challenges',
+        'strava-club',
+        'strava-routes',
+        'strava-route-detail',
         'target-categories',
         'target-category-products',
         'target-filter-options',
@@ -41707,6 +44958,8 @@ final class Operations
         'tripadvisor-place',
         'tripadvisor-reviews',
         'tripadvisor-search',
+        'tripcom-hotels-search',
+        'tripcom-hotel-detail',
         'trustmrr-acquire',
         'trustmrr-categories',
         'trustmrr-category',
@@ -41726,6 +44979,9 @@ final class Operations
         'ubereats-store',
         'ubereats-store-menu',
         'ubereats-store-reviews',
+        'upwork-freelancer',
+        'upwork-job',
+        'upwork-search',
         'usage-me-endpoints',
         'usage-me-overview',
         'usage-me-recent-ips',
@@ -41734,11 +44990,21 @@ final class Operations
         'user-me-api-keys',
         'user-me-api-keys-rotate',
         'user-me-api-keys-reveal',
+        'vinted-brand',
+        'vinted-brands',
+        'vinted-catalog',
+        'vinted-categories',
+        'vinted-category',
+        'vinted-item',
+        'vinted-member',
         'walmart-product',
         'walmart-product-reviews',
         'walmart-search',
         'web-scrape',
         'web-techstack',
+        'whatnot-browse',
+        'whatnot-categories',
+        'whatnot-live',
         'x-post',
         'x-profile',
         'x-profile-posts',
@@ -41781,6 +45047,7 @@ final class Operations
         'yahoo-finance-ticker-sustainability',
         'yahoo-finance-ticker-valuation',
         'yahoo-finance-trending',
+        'yahoo-search',
         'yelp-business',
         'yelp-business-menu',
         'yelp-business-photos',
@@ -41853,6 +45120,14 @@ final class Operations
  */
 final class OperationId
 {
+    public const AGODA_ACTIVITIES_SEARCH = 'agoda-activities-search';
+    public const AGODA_ACTIVITY_DETAIL = 'agoda-activity-detail';
+    public const AGODA_FLIGHTS_ITINERARY_AMENITIES = 'agoda-flights-itinerary-amenities';
+    public const AGODA_FLIGHTS_SEARCH = 'agoda-flights-search';
+    public const AGODA_FLIGHTS_SEARCH_LOCATIONS = 'agoda-flights-search-locations';
+    public const AGODA_HOMES_SEARCH = 'agoda-homes-search';
+    public const AGODA_HOTEL_DETAIL = 'agoda-hotel-detail';
+    public const AGODA_HOTELS_SEARCH = 'agoda-hotels-search';
     public const AIRBNB_HOST = 'airbnb-host';
     public const AIRBNB_HOST_LISTINGS = 'airbnb-host-listings';
     public const AIRBNB_HOST_REVIEWS = 'airbnb-host-reviews';
@@ -41924,6 +45199,13 @@ final class OperationId
     public const BING_SEARCH = 'bing-search';
     public const BING_SUGGEST = 'bing-suggest';
     public const BING_VIDEOS = 'bing-videos';
+    public const BLUESKY_AUTHOR_FEED = 'bluesky-author-feed';
+    public const BLUESKY_FOLLOWERS = 'bluesky-followers';
+    public const BLUESKY_FOLLOWS = 'bluesky-follows';
+    public const BLUESKY_POST_THREAD = 'bluesky-post-thread';
+    public const BLUESKY_PROFILE = 'bluesky-profile';
+    public const BLUESKY_SEARCH_ACTORS = 'bluesky-search-actors';
+    public const BLUESKY_TRENDING_TOPICS = 'bluesky-trending-topics';
     public const BOOKING_ATTRACTIONS_DETAIL = 'booking-attractions-detail';
     public const BOOKING_ATTRACTIONS_REVIEWS = 'booking-attractions-reviews';
     public const BOOKING_ATTRACTIONS_SEARCH = 'booking-attractions-search';
@@ -41962,6 +45244,15 @@ final class OperationId
     public const CAPTERRA_PRODUCT = 'capterra-product';
     public const CAPTERRA_REVIEWS = 'capterra-reviews';
     public const CAPTERRA_SEARCH = 'capterra-search';
+    public const CAR_MAX_CARMAX_SEARCH = 'carmax-search';
+    public const CAR_MAX_CARMAX_SEARCH_SUGGESTIONS = 'carmax-search-suggestions';
+    public const CAR_MAX_CARMAX_SHOP_BY_BRAND = 'carmax-shop-by-brand';
+    public const CAR_MAX_CARMAX_STORE = 'carmax-store';
+    public const CAR_MAX_CARMAX_STORES = 'carmax-stores';
+    public const CAR_MAX_CARMAX_VEHICLE = 'carmax-vehicle';
+    public const CAR_MAX_CARMAX_VEHICLE_RECOMMENDATIONS = 'carmax-vehicle-recommendations';
+    public const CARS_COM_CARSDOTCOM_SEARCH = 'carsdotcom-search';
+    public const CARS_COM_CARSDOTCOM_VEHICLE = 'carsdotcom-vehicle';
     public const CHROME_WEB_STORE_CHROMEWEBSTORE_CATEGORIES = 'chromewebstore-categories';
     public const CHROME_WEB_STORE_CHROMEWEBSTORE_CATEGORY = 'chromewebstore-category';
     public const CHROME_WEB_STORE_CHROMEWEBSTORE_CHARTS = 'chromewebstore-charts';
@@ -41995,6 +45286,14 @@ final class OperationId
     public const COIN_GECKO_TOKEN_UNLOCKS = 'coingecko-token-unlocks';
     public const COIN_GECKO_TREASURIES = 'coingecko-treasuries';
     public const COIN_GECKO_TRENDING = 'coingecko-trending';
+    public const CONGRESS_REPORT = 'congress-report';
+    public const CONGRESS_STOCK_DISCLOSURES = 'congress-stock-disclosures';
+    public const COSTCO_CATEGORIES = 'costco-categories';
+    public const COSTCO_PRODUCT = 'costco-product';
+    public const COSTCO_PRODUCT_AVAILABILITY = 'costco-product-availability';
+    public const COSTCO_PRODUCT_REVIEWS = 'costco-product-reviews';
+    public const COSTCO_SEARCH = 'costco-search';
+    public const COSTCO_WAREHOUSES = 'costco-warehouses';
     public const DATASETS_AIRBNB_MARKETS_FACETS = 'datasets-airbnb-markets-facets';
     public const DATASETS_AIRBNB_MARKETS_ITEM = 'datasets-airbnb-markets-item';
     public const DATASETS_AIRBNB_MARKETS_NEARBY = 'datasets-airbnb-markets-nearby';
@@ -42104,6 +45403,10 @@ final class OperationId
     public const DATASETS_XUSERS_FACETS = 'datasets-x-users-facets';
     public const DATASETS_XUSERS_ITEM = 'datasets-x-users-item';
     public const DATASETS_XUSERS_SEARCH = 'datasets-x-users-search';
+    public const DEPOP_CATEGORIES = 'depop-categories';
+    public const DEPOP_ITEM = 'depop-item';
+    public const DEPOP_SEARCH = 'depop-search';
+    public const DEPOP_SHOP = 'depop-shop';
     public const DISCOGS_ARTIST = 'discogs-artist';
     public const DISCOGS_ARTIST_RELEASES = 'discogs-artist-releases';
     public const DISCOGS_LABEL = 'discogs-label';
@@ -42123,6 +45426,11 @@ final class OperationId
     public const DOOR_DASH_DOORDASH_STORE_ITEM = 'doordash-store-item';
     public const DOOR_DASH_DOORDASH_STORE_MENU = 'doordash-store-menu';
     public const DOOR_DASH_DOORDASH_STORE_REVIEWS = 'doordash-store-reviews';
+    public const DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_IMAGE = 'duckduckgo-image';
+    public const DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_NEWS = 'duckduckgo-news';
+    public const DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_SEARCH = 'duckduckgo-search';
+    public const DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_SHOPPING = 'duckduckgo-shopping';
+    public const DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_VIDEO = 'duckduckgo-video';
     public const EBAY_EBAY_ITEM = 'ebay-item';
     public const EBAY_EBAY_SEARCH = 'ebay-search';
     public const EBAY_EBAY_SELLER = 'ebay-seller';
@@ -42152,10 +45460,11 @@ final class OperationId
     public const EXPEDIA_PROPERTIES_FILTERS = 'expedia-properties-filters';
     public const EXPEDIA_PROPERTIES_REVIEWS = 'expedia-properties-reviews';
     public const EXPEDIA_PROPERTIES_SEARCH = 'expedia-properties-search';
-    public const FACEBOOK_GROUP = 'facebook-group';
-    public const FACEBOOK_MARKETPLACE_ITEM = 'facebook-marketplace-item';
     public const FACEBOOK_MARKETPLACE_SEARCH = 'facebook-marketplace-search';
     public const FACEBOOK_PAGE = 'facebook-page';
+    public const FIVERR_GIG = 'fiverr-gig';
+    public const FIVERR_SEARCH = 'fiverr-search';
+    public const FIVERR_SELLER = 'fiverr-seller';
     public const GEOCODING_LOOKUP = 'geocoding-lookup';
     public const GEOCODING_REVERSE = 'geocoding-reverse';
     public const GEOCODING_SEARCH = 'geocoding-search';
@@ -42264,6 +45573,12 @@ final class OperationId
     public const INDEED_JOB = 'indeed-job';
     public const INDEED_LOCATIONS_SUGGEST = 'indeed-locations-suggest';
     public const INDEED_SEARCH = 'indeed-search';
+    public const INSTACART_DEPARTMENTS = 'instacart-departments';
+    public const INSTACART_ITEM = 'instacart-item';
+    public const INSTACART_SEARCH = 'instacart-search';
+    public const INSTACART_SEARCH_NEARBY = 'instacart-search-nearby';
+    public const INSTACART_STORES = 'instacart-stores';
+    public const INSTACART_TRENDING = 'instacart-trending';
     public const INSTAGRAM_POST = 'instagram-post';
     public const INSTAGRAM_PROFILE = 'instagram-profile';
     public const INSTAGRAM_REELS = 'instagram-reels';
@@ -42351,6 +45666,11 @@ final class OperationId
     public const MANGA_RANKINGS = 'manga-rankings';
     public const MANGA_SEARCH = 'manga-search';
     public const MANGA_TITLE = 'manga-title';
+    public const MERCARI_AUTOCOMPLETE = 'mercari-autocomplete';
+    public const MERCARI_HOME = 'mercari-home';
+    public const MERCARI_ITEM = 'mercari-item';
+    public const MERCARI_MASTER = 'mercari-master';
+    public const MERCARI_SEARCH = 'mercari-search';
     public const META_JOBS_JOB = 'meta-jobs-job';
     public const META_JOBS_LIST = 'meta-jobs-list';
     public const META_JOBS_SEARCH = 'meta-jobs-search';
@@ -42401,6 +45721,14 @@ final class OperationId
     public const OPEN_TABLE_OPENTABLE_RESTAURANT_MENUS = 'opentable-restaurant-menus';
     public const OPEN_TABLE_OPENTABLE_RESTAURANT_REVIEWS = 'opentable-restaurant-reviews';
     public const OPEN_TABLE_OPENTABLE_SEARCH = 'opentable-search';
+    public const PINTEREST_BOARD = 'pinterest-board';
+    public const PINTEREST_CATEGORIES = 'pinterest-categories';
+    public const PINTEREST_IDEA = 'pinterest-idea';
+    public const PINTEREST_PIN = 'pinterest-pin';
+    public const PINTEREST_SEARCH = 'pinterest-search';
+    public const PINTEREST_USER = 'pinterest-user';
+    public const PINTEREST_USER_BOARDS = 'pinterest-user-boards';
+    public const PINTEREST_USER_PINS = 'pinterest-user-pins';
     public const PITCH_BOOK_PITCHBOOK_ADVISOR = 'pitchbook-advisor';
     public const PITCH_BOOK_PITCHBOOK_COMPANY = 'pitchbook-company';
     public const PITCH_BOOK_PITCHBOOK_FUND = 'pitchbook-fund';
@@ -42479,6 +45807,14 @@ final class OperationId
     public const POLYMARKET_TOKENS_SPREADS = 'polymarket-tokens-spreads';
     public const POLYMARKET_TOURNAMENT = 'polymarket-tournament';
     public const POLYMARKET_TOURNAMENTS = 'polymarket-tournaments';
+    public const POSHMARK_BRAND = 'poshmark-brand';
+    public const POSHMARK_BRANDS = 'poshmark-brands';
+    public const POSHMARK_CATEGORIES = 'poshmark-categories';
+    public const POSHMARK_CATEGORY = 'poshmark-category';
+    public const POSHMARK_CLOSET = 'poshmark-closet';
+    public const POSHMARK_LISTING = 'poshmark-listing';
+    public const POSHMARK_SEARCH = 'poshmark-search';
+    public const POSHMARK_TREND = 'poshmark-trend';
     public const PRODUCT_HUNT_ABOUT = 'producthunt-about';
     public const PRODUCT_HUNT_ALTERNATIVES = 'producthunt-alternatives';
     public const PRODUCT_HUNT_CATEGORY = 'producthunt-category';
@@ -42631,6 +45967,15 @@ final class OperationId
     public const STEAM_TAGS = 'steam-tags';
     public const STEAM_TAGS_LIST = 'steam-tags-list';
     public const STEAM_TOP_SELLERS = 'steam-top-sellers';
+    public const STOCK_XSTOCKX_BRANDS = 'stockx-brands';
+    public const STOCK_XSTOCKX_CATEGORIES = 'stockx-categories';
+    public const STOCK_XSTOCKX_PRODUCT = 'stockx-product';
+    public const STOCK_XSTOCKX_RELEASES = 'stockx-releases';
+    public const STOCK_XSTOCKX_SEARCH = 'stockx-search';
+    public const STRAVA_CHALLENGES = 'strava-challenges';
+    public const STRAVA_CLUB = 'strava-club';
+    public const STRAVA_ROUTE_DETAIL = 'strava-route-detail';
+    public const STRAVA_ROUTES = 'strava-routes';
     public const TARGET_CATEGORIES = 'target-categories';
     public const TARGET_CATEGORY_PRODUCTS = 'target-category-products';
     public const TARGET_FILTER_OPTIONS = 'target-filter-options';
@@ -42694,6 +46039,8 @@ final class OperationId
     public const TRIP_ADVISOR_TRIPADVISOR_PLACE = 'tripadvisor-place';
     public const TRIP_ADVISOR_TRIPADVISOR_REVIEWS = 'tripadvisor-reviews';
     public const TRIP_ADVISOR_TRIPADVISOR_SEARCH = 'tripadvisor-search';
+    public const TRIP_COM_TRIPCOM_HOTEL_DETAIL = 'tripcom-hotel-detail';
+    public const TRIP_COM_TRIPCOM_HOTELS_SEARCH = 'tripcom-hotels-search';
     public const TRUST_MRR_TRUSTMRR_ACQUIRE = 'trustmrr-acquire';
     public const TRUST_MRR_TRUSTMRR_CATEGORIES = 'trustmrr-categories';
     public const TRUST_MRR_TRUSTMRR_CATEGORY = 'trustmrr-category';
@@ -42713,6 +46060,9 @@ final class OperationId
     public const UBER_EATS_UBEREATS_STORE = 'ubereats-store';
     public const UBER_EATS_UBEREATS_STORE_MENU = 'ubereats-store-menu';
     public const UBER_EATS_UBEREATS_STORE_REVIEWS = 'ubereats-store-reviews';
+    public const UPWORK_FREELANCER = 'upwork-freelancer';
+    public const UPWORK_JOB = 'upwork-job';
+    public const UPWORK_SEARCH = 'upwork-search';
     public const USAGE_ME_ENDPOINTS = 'usage-me-endpoints';
     public const USAGE_ME_OVERVIEW = 'usage-me-overview';
     public const USAGE_ME_RECENT_IPS = 'usage-me-recent-ips';
@@ -42721,6 +46071,13 @@ final class OperationId
     public const USER_ME_API_KEYS = 'user-me-api-keys';
     public const USER_ME_API_KEYS_REVEAL = 'user-me-api-keys-reveal';
     public const USER_ME_API_KEYS_ROTATE = 'user-me-api-keys-rotate';
+    public const VINTED_BRAND = 'vinted-brand';
+    public const VINTED_BRANDS = 'vinted-brands';
+    public const VINTED_CATALOG = 'vinted-catalog';
+    public const VINTED_CATEGORIES = 'vinted-categories';
+    public const VINTED_CATEGORY = 'vinted-category';
+    public const VINTED_ITEM = 'vinted-item';
+    public const VINTED_MEMBER = 'vinted-member';
     public const WALMART_PRODUCT = 'walmart-product';
     public const WALMART_PRODUCT_REVIEWS = 'walmart-product-reviews';
     public const WALMART_SEARCH = 'walmart-search';
@@ -42729,6 +46086,9 @@ final class OperationId
     public const WEB_EXTRACT = 'extract';
     public const WEB_SCRAPE = 'web-scrape';
     public const WEB_TECHSTACK = 'web-techstack';
+    public const WHATNOT_BROWSE = 'whatnot-browse';
+    public const WHATNOT_CATEGORIES = 'whatnot-categories';
+    public const WHATNOT_LIVE = 'whatnot-live';
     public const XPOST = 'x-post';
     public const XPROFILE = 'x-profile';
     public const XPROFILE_POSTS = 'x-profile-posts';
@@ -42771,6 +46131,7 @@ final class OperationId
     public const YAHOO_FINANCE_TICKER_SUSTAINABILITY = 'yahoo-finance-ticker-sustainability';
     public const YAHOO_FINANCE_TICKER_VALUATION = 'yahoo-finance-ticker-valuation';
     public const YAHOO_FINANCE_TRENDING = 'yahoo-finance-trending';
+    public const YAHOO_SEARCH_CALL = 'yahoo-search';
     public const YELP_BUSINESS = 'yelp-business';
     public const YELP_BUSINESS_MENU = 'yelp-business-menu';
     public const YELP_BUSINESS_PHOTOS = 'yelp-business-photos';

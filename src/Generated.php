@@ -7,6 +7,26 @@ declare(strict_types=1);
 namespace Crawlora\Generated;
 
 /**
+ * @method mixed activitiesSearch(array $params = [], array $options = []) agoda-activities-search (GET /agoda/activities/search)
+ *   params: string $keyword, int $city_id, string $city
+ * @method mixed activityDetail(array $params = [], array $options = []) agoda-activity-detail (GET /agoda/activities/{activity_id})
+ *   params: string $activity_id
+ * @method mixed flightsItineraryAmenities(array $params = [], array $options = []) agoda-flights-itinerary-amenities (POST /agoda/flights/itinerary-amenities)
+ *   params: array $body
+ * @method mixed flightsSearch(array $params = [], array $options = []) agoda-flights-search (GET /agoda/flights/search)
+ *   params: string $origin, string $destination, string $departure_date, int $adults, int $children, int $infants, 'Economy'|'PremiumEconomy'|'Business'|'First' $cabin_class, int $page
+ * @method mixed flightsSearchLocations(array $params = [], array $options = []) agoda-flights-search-locations (GET /agoda/flights/search-locations)
+ *   params: string $keyword
+ * @method mixed homesSearch(array $params = [], array $options = []) agoda-homes-search (GET /agoda/homes/search)
+ *   params: int $city_id, string $city, int $page, int $limit
+ * @method mixed hotelsSearch(array $params = [], array $options = []) agoda-hotels-search (GET /agoda/hotels/search)
+ *   params: int $city_id, string $city, int $page, int $limit
+ * @method mixed hotelDetail(array $params = [], array $options = []) agoda-hotel-detail (GET /agoda/hotels/{property_id})
+ *   params: string $property_id
+ */
+abstract class AgodaGroup {}
+
+/**
  * @method mixed host(array $params = [], array $options = []) airbnb-host (GET /airbnb/host/{id})
  *   params: string $id
  * @method mixed hostListings(array $params = [], array $options = []) airbnb-host-listings (GET /airbnb/host/{id}/listings)
@@ -192,6 +212,23 @@ abstract class BillingGroup {}
 abstract class BingGroup {}
 
 /**
+ * @method mixed authorFeed(array $params = [], array $options = []) bluesky-author-feed (GET /bluesky/author-feed)
+ *   params: string $actor, int $limit, string $cursor
+ * @method mixed followers(array $params = [], array $options = []) bluesky-followers (GET /bluesky/followers)
+ *   params: string $actor, int $limit, string $cursor
+ * @method mixed follows(array $params = [], array $options = []) bluesky-follows (GET /bluesky/follows)
+ *   params: string $actor, int $limit, string $cursor
+ * @method mixed postThread(array $params = [], array $options = []) bluesky-post-thread (GET /bluesky/post-thread)
+ *   params: string $uri, int $depth
+ * @method mixed profile(array $params = [], array $options = []) bluesky-profile (GET /bluesky/profile)
+ *   params: string $actor
+ * @method mixed searchActors(array $params = [], array $options = []) bluesky-search-actors (GET /bluesky/search-actors)
+ *   params: string $q, int $limit, string $cursor
+ * @method mixed trendingTopics(array $params = [], array $options = []) bluesky-trending-topics (GET /bluesky/trending-topics)
+ */
+abstract class BlueskyGroup {}
+
+/**
  * @method mixed attractionsDetail(array $params = [], array $options = []) booking-attractions-detail (GET /booking-attractions/detail)
  *   params: string $slug
  * @method mixed attractionsReviews(array $params = [], array $options = []) booking-attractions-reviews (GET /booking-attractions/reviews)
@@ -287,6 +324,31 @@ abstract class BraveGroup {}
 abstract class CapterraGroup {}
 
 /**
+ * @method mixed carmaxSearch(array $params = [], array $options = []) carmax-search (GET /carmax/search)
+ *   params: string $make, string $model, string $zip, string $sort, int $min_year, int $max_year, int $min_price, int $max_price, int $max_mileage, int $page
+ * @method mixed carmaxSearchSuggestions(array $params = [], array $options = []) carmax-search-suggestions (GET /carmax/search/suggestions)
+ *   params: string $search, bool $exact_match
+ * @method mixed carmaxShopByBrand(array $params = [], array $options = []) carmax-shop-by-brand (GET /carmax/shop-by-brand)
+ * @method mixed carmaxStore(array $params = [], array $options = []) carmax-store (GET /carmax/store/{id})
+ *   params: string $id
+ * @method mixed carmaxStores(array $params = [], array $options = []) carmax-stores (GET /carmax/stores)
+ *   params: string $zip, string $keyword, int $take
+ * @method mixed carmaxVehicle(array $params = [], array $options = []) carmax-vehicle (GET /carmax/vehicle/{stock_number})
+ *   params: string $stock_number, string $store_id
+ * @method mixed carmaxVehicleRecommendations(array $params = [], array $options = []) carmax-vehicle-recommendations (GET /carmax/vehicle/{stock_number}/recommendations)
+ *   params: string $stock_number, string $store_id
+ */
+abstract class CarMaxGroup {}
+
+/**
+ * @method mixed carsdotcomSearch(array $params = [], array $options = []) carsdotcom-search (GET /carsdotcom/search)
+ *   params: string $zip, int $radius, 'new'|'used'|'cpo'|'all' $stock_type, int $page
+ * @method mixed carsdotcomVehicle(array $params = [], array $options = []) carsdotcom-vehicle (GET /carsdotcom/vehicle/{listing_id})
+ *   params: string $listing_id
+ */
+abstract class CarsComGroup {}
+
+/**
  * @method mixed chromewebstoreCategories(array $params = [], array $options = []) chromewebstore-categories (GET /chromewebstore/categories)
  * @method mixed chromewebstoreCategory(array $params = [], array $options = []) chromewebstore-category (GET /chromewebstore/category)
  *   params: string $category, int $num, string $country, string $lang
@@ -359,6 +421,14 @@ abstract class ChromeWebStoreGroup {}
 abstract class CoinGeckoGroup {}
 
 /**
+ * @method mixed report(array $params = [], array $options = []) congress-report (GET /congress/report)
+ *   params: string $url
+ * @method mixed stockDisclosures(array $params = [], array $options = []) congress-stock-disclosures (GET /congress/stock-disclosures)
+ *   params: 'house'|'senate' $chamber, string $member, string $ticker, string $state, string $district, string $filer_type, string $election_year, string $report_type, string $from, string $to, 'name_asc'|'name_desc'|'office_asc'|'office_desc'|'filing_year_asc'|'filing_year_desc' $sort, int $limit
+ */
+abstract class CongressGroup {}
+
+/**
  * @method mixed contact(array $params = [], array $options = []) contact (POST /contact)
  *   params: array $option
  * @method mixed antibotCheck(array $params = [], array $options = []) antibot-check (POST /diagnostics/antibot-check)
@@ -371,6 +441,22 @@ abstract class CoinGeckoGroup {}
  *   params: array $request
  */
 abstract class WebGroup {}
+
+/**
+ * @method mixed categories(array $params = [], array $options = []) costco-categories (GET /costco/categories)
+ *   params: string $query
+ * @method mixed product(array $params = [], array $options = []) costco-product (GET /costco/product/{id})
+ *   params: string $id
+ * @method mixed productAvailability(array $params = [], array $options = []) costco-product-availability (GET /costco/product/{id}/availability)
+ *   params: string $id, string $postal_code, string $state
+ * @method mixed productReviews(array $params = [], array $options = []) costco-product-reviews (GET /costco/product/{id}/reviews)
+ *   params: string $id
+ * @method mixed search(array $params = [], array $options = []) costco-search (GET /costco/search)
+ *   params: string $query, string $category
+ * @method mixed warehouses(array $params = [], array $options = []) costco-warehouses (GET /costco/warehouses)
+ *   params: float $latitude, float $longitude
+ */
+abstract class CostcoGroup {}
 
 /**
  * @method mixed list_(array $params = [], array $options = []) datasets-list (GET /datasets)
@@ -594,6 +680,17 @@ abstract class WebGroup {}
 abstract class DatasetsGroup {}
 
 /**
+ * @method mixed categories(array $params = [], array $options = []) depop-categories (GET /depop/categories)
+ * @method mixed item(array $params = [], array $options = []) depop-item (GET /depop/item/{slug})
+ *   params: string $slug
+ * @method mixed search(array $params = [], array $options = []) depop-search (GET /depop/search)
+ *   params: string $query, float $price_min, float $price_max, string $condition, string $colours, bool $on_sale, string $sort, string $category, string $subcategory, string $gender, string $brand_ids, string $after
+ * @method mixed shop(array $params = [], array $options = []) depop-shop (GET /depop/shop/{username})
+ *   params: string $username, float $price_min, float $price_max, string $condition, string $colours, bool $on_sale, string $sort, string $category, string $subcategory, string $gender
+ */
+abstract class DepopGroup {}
+
+/**
  * @method mixed artist(array $params = [], array $options = []) discogs-artist (GET /discogs/artist/{id})
  *   params: string $id
  * @method mixed artistReleases(array $params = [], array $options = []) discogs-artist-releases (GET /discogs/artist/{id}/releases)
@@ -638,6 +735,20 @@ abstract class DiscogsGroup {}
  *   params: string $store_id, float $latitude, float $longitude
  */
 abstract class DoorDashGroup {}
+
+/**
+ * @method mixed duckduckgoImage(array $params = [], array $options = []) duckduckgo-image (GET /duckduckgo/image)
+ *   params: string $q, int $page, string $region
+ * @method mixed duckduckgoNews(array $params = [], array $options = []) duckduckgo-news (GET /duckduckgo/news)
+ *   params: string $q, int $page, string $region
+ * @method mixed duckduckgoSearch(array $params = [], array $options = []) duckduckgo-search (GET /duckduckgo/search)
+ *   params: string $q, int $page, string $region, 'd'|'w'|'m'|'y' $time_range, 'strict'|'moderate'|'off' $safe_search
+ * @method mixed duckduckgoShopping(array $params = [], array $options = []) duckduckgo-shopping (GET /duckduckgo/shopping)
+ *   params: string $q, string $region
+ * @method mixed duckduckgoVideo(array $params = [], array $options = []) duckduckgo-video (GET /duckduckgo/video)
+ *   params: string $q, int $page, string $region
+ */
+abstract class DuckDuckGoSearchGroup {}
 
 /**
  * @method mixed ebayItem(array $params = [], array $options = []) ebay-item (GET /ebay/item/{item_id})
@@ -714,16 +825,22 @@ abstract class EtsyGroup {}
 abstract class ExpediaGroup {}
 
 /**
- * @method mixed group(array $params = [], array $options = []) facebook-group (GET /facebook/groups/{group})
- *   params: string $group
- * @method mixed marketplaceItem(array $params = [], array $options = []) facebook-marketplace-item (GET /facebook/marketplace/item/{id})
- *   params: string $id
  * @method mixed marketplaceSearch(array $params = [], array $options = []) facebook-marketplace-search (GET /facebook/marketplace/search)
  *   params: string $location, string $query, 'vehicles'|'property_rentals'|'classifieds'|'apparel'|'electronics'|'entertainment'|'family'|'free'|'garden_outdoors'|'hobbies'|'home_goods'|'home_improvement'|'musical_instruments'|'office_supplies'|'pet_supplies'|'property_sale'|'sporting_goods'|'toys_games' $category, int $min_price, int $max_price, 'best_match'|'distance_ascend'|'creation_time_descend'|'price_ascend'|'price_descend' $sort_by, '1'|'7'|'30' $days_since_listed, 'new'|'used_like_new'|'used_good'|'used_fair' $condition
  * @method mixed page(array $params = [], array $options = []) facebook-page (GET /facebook/{page})
  *   params: string $page
  */
 abstract class FacebookGroup {}
+
+/**
+ * @method mixed gig(array $params = [], array $options = []) fiverr-gig (GET /fiverr/gig/{username}/{slug})
+ *   params: string $username, string $slug
+ * @method mixed search(array $params = [], array $options = []) fiverr-search (GET /fiverr/search)
+ *   params: string $q, int $page
+ * @method mixed seller(array $params = [], array $options = []) fiverr-seller (GET /fiverr/seller/{username})
+ *   params: string $username
+ */
+abstract class FiverrGroup {}
 
 /**
  * @method mixed lookup(array $params = [], array $options = []) geocoding-lookup (GET /geocoding/lookup)
@@ -970,6 +1087,22 @@ abstract class ImportYetiGroup {}
 abstract class IndeedGroup {}
 
 /**
+ * @method mixed departments(array $params = [], array $options = []) instacart-departments (GET /instacart/departments)
+ *   params: string $shop_id, string $store_slug, string $postal_code
+ * @method mixed item(array $params = [], array $options = []) instacart-item (GET /instacart/item)
+ *   params: string $shop_id, string $store_slug, string $retailer_location_id, string $product_id, string $postal_code
+ * @method mixed search(array $params = [], array $options = []) instacart-search (GET /instacart/search)
+ *   params: string $shop_id, string $store_slug, string $q
+ * @method mixed searchNearby(array $params = [], array $options = []) instacart-search-nearby (GET /instacart/search-nearby)
+ *   params: string $postal_code, string $q
+ * @method mixed stores(array $params = [], array $options = []) instacart-stores (GET /instacart/stores)
+ *   params: string $postal_code
+ * @method mixed trending(array $params = [], array $options = []) instacart-trending (GET /instacart/trending)
+ *   params: string $postal_code
+ */
+abstract class InstacartGroup {}
+
+/**
  * @method mixed post(array $params = [], array $options = []) instagram-post (GET /instagram/post/{id}/{post_id})
  *   params: string $id, string $post_id
  * @method mixed profile(array $params = [], array $options = []) instagram-profile (GET /instagram/profile/{username})
@@ -1169,6 +1302,18 @@ abstract class LinkedInGroup {}
 abstract class MangaGroup {}
 
 /**
+ * @method mixed autocomplete(array $params = [], array $options = []) mercari-autocomplete (GET /mercari/autocomplete)
+ *   params: string $query
+ * @method mixed home(array $params = [], array $options = []) mercari-home (GET /mercari/home)
+ * @method mixed item(array $params = [], array $options = []) mercari-item (GET /mercari/item/{id})
+ *   params: string $id
+ * @method mixed master(array $params = [], array $options = []) mercari-master (GET /mercari/master)
+ * @method mixed search(array $params = [], array $options = []) mercari-search (GET /mercari/search)
+ *   params: string $query
+ */
+abstract class MercariGroup {}
+
+/**
  * @method mixed job(array $params = [], array $options = []) meta-jobs-job (GET /meta-jobs/job)
  *   params: string $id
  * @method mixed list_(array $params = [], array $options = []) meta-jobs-list (GET /meta-jobs/list)
@@ -1292,6 +1437,25 @@ abstract class OpenTableGroup {}
  * @method mixed ready(array $params = [], array $options = []) ready (GET /ready)
  */
 abstract class MetaGroup {}
+
+/**
+ * @method mixed board(array $params = [], array $options = []) pinterest-board (GET /pinterest/board/{username}/{slug})
+ *   params: string $username, string $slug
+ * @method mixed categories(array $params = [], array $options = []) pinterest-categories (GET /pinterest/categories)
+ * @method mixed idea(array $params = [], array $options = []) pinterest-idea (GET /pinterest/ideas/{id})
+ *   params: string $id
+ * @method mixed pin(array $params = [], array $options = []) pinterest-pin (GET /pinterest/pin/{id})
+ *   params: string $id
+ * @method mixed search(array $params = [], array $options = []) pinterest-search (GET /pinterest/search)
+ *   params: string $query
+ * @method mixed user(array $params = [], array $options = []) pinterest-user (GET /pinterest/user/{username})
+ *   params: string $username
+ * @method mixed userBoards(array $params = [], array $options = []) pinterest-user-boards (GET /pinterest/user/{username}/boards)
+ *   params: string $username
+ * @method mixed userPins(array $params = [], array $options = []) pinterest-user-pins (GET /pinterest/user/{username}/pins)
+ *   params: string $username
+ */
+abstract class PinterestGroup {}
 
 /**
  * @method mixed pitchbookAdvisor(array $params = [], array $options = []) pitchbook-advisor (GET /pitchbook/advisor)
@@ -1455,6 +1619,24 @@ abstract class PlayStationGroup {}
  *   params: int $id
  */
 abstract class PolymarketGroup {}
+
+/**
+ * @method mixed brand(array $params = [], array $options = []) poshmark-brand (GET /poshmark/brand/{name})
+ *   params: string $name, string $max_id
+ * @method mixed brands(array $params = [], array $options = []) poshmark-brands (GET /poshmark/brands)
+ * @method mixed categories(array $params = [], array $options = []) poshmark-categories (GET /poshmark/categories)
+ * @method mixed category(array $params = [], array $options = []) poshmark-category (GET /poshmark/category/{path})
+ *   params: string $path, string $max_id
+ * @method mixed closet(array $params = [], array $options = []) poshmark-closet (GET /poshmark/closet/{username})
+ *   params: string $username, string $max_id
+ * @method mixed listing(array $params = [], array $options = []) poshmark-listing (GET /poshmark/listing/{id})
+ *   params: string $id
+ * @method mixed search(array $params = [], array $options = []) poshmark-search (GET /poshmark/search)
+ *   params: string $query, string $department, string $max_id
+ * @method mixed trend(array $params = [], array $options = []) poshmark-trend (GET /poshmark/trend/{id})
+ *   params: string $id, string $max_id
+ */
+abstract class PoshmarkGroup {}
 
 /**
  * @method mixed category(array $params = [], array $options = []) producthunt-category (GET /producthunt/category/{slug})
@@ -1810,6 +1992,29 @@ abstract class SpotifyGroup {}
 abstract class SteamGroup {}
 
 /**
+ * @method mixed stockxBrands(array $params = [], array $options = []) stockx-brands (GET /stockx/brands)
+ * @method mixed stockxCategories(array $params = [], array $options = []) stockx-categories (GET /stockx/categories)
+ * @method mixed stockxProduct(array $params = [], array $options = []) stockx-product (GET /stockx/product/{slug})
+ *   params: string $slug
+ * @method mixed stockxReleases(array $params = [], array $options = []) stockx-releases (GET /stockx/releases)
+ *   params: string $from, int $page, int $limit
+ * @method mixed stockxSearch(array $params = [], array $options = []) stockx-search (GET /stockx/search)
+ *   params: 'sneakers'|'shoes'|'apparel'|'accessories'|'collectibles'|'trading-cards'|'electronics' $category, string $query, 'men'|'women'|'kids'|'unisex' $gender, string $brand, string $model, 'white'|'black'|'multi'|'blue'|'grey'|'pink'|'red'|'brown'|'yellow'|'green'|'purple'|'orange' $color, 'low'|'mid'|'high' $shoe_height, 'basketball'|'football'|'golf'|'hiking'|'running'|'skateboarding'|'soccer' $activity, bool $available_now, bool $xpress_ship, bool $below_retail, 'featured'|'most-active' $sort, int $page, int $limit
+ */
+abstract class StockXGroup {}
+
+/**
+ * @method mixed challenges(array $params = [], array $options = []) strava-challenges (GET /strava/challenges)
+ * @method mixed club(array $params = [], array $options = []) strava-club (GET /strava/clubs/{id})
+ *   params: string $id
+ * @method mixed routes(array $params = [], array $options = []) strava-routes (GET /strava/routes)
+ *   params: 'hiking'|'road-biking'|'mountain-biking'|'trail-running'|'gravel-biking' $sport, string $country, string $region, int $page
+ * @method mixed routeDetail(array $params = [], array $options = []) strava-route-detail (GET /strava/routes/detail)
+ *   params: string $path
+ */
+abstract class StravaGroup {}
+
+/**
  * @method mixed categories(array $params = [], array $options = []) target-categories (GET /target/categories)
  * @method mixed categoryProducts(array $params = [], array $options = []) target-category-products (GET /target/category-products)
  *   params: string $category_id, int $page, 'relevance'|'featured'|'price-low'|'price-high'|'rating'|'bestselling'|'newest' $sort, int $store_id, string $filter_ids
@@ -1956,6 +2161,14 @@ abstract class TmdbGroup {}
 abstract class TripAdvisorGroup {}
 
 /**
+ * @method mixed tripcomHotelsSearch(array $params = [], array $options = []) tripcom-hotels-search (GET /tripcom/hotels/search)
+ *   params: string $city_slug, string $city_id
+ * @method mixed tripcomHotelDetail(array $params = [], array $options = []) tripcom-hotel-detail (GET /tripcom/hotels/{id})
+ *   params: string $id, string $slug
+ */
+abstract class TripComGroup {}
+
+/**
  * @method mixed trustmrrAcquire(array $params = [], array $options = []) trustmrr-acquire (GET /trustmrr/acquire)
  * @method mixed trustmrrCategories(array $params = [], array $options = []) trustmrr-categories (GET /trustmrr/categories)
  * @method mixed trustmrrCategory(array $params = [], array $options = []) trustmrr-category (GET /trustmrr/category/{slug})
@@ -2002,6 +2215,16 @@ abstract class TrustpilotGroup {}
 abstract class UberEatsGroup {}
 
 /**
+ * @method mixed freelancer(array $params = [], array $options = []) upwork-freelancer (GET /upwork/freelancer/{id})
+ *   params: string $id
+ * @method mixed job(array $params = [], array $options = []) upwork-job (GET /upwork/job/{id})
+ *   params: string $id
+ * @method mixed search(array $params = [], array $options = []) upwork-search (GET /upwork/search)
+ *   params: string $q, int $page
+ */
+abstract class UpworkGroup {}
+
+/**
  * @method mixed meEndpoints(array $params = [], array $options = []) usage-me-endpoints (GET /usage/me/endpoints)
  *   params: 'period'|'day'|'week'|'month'|'custom' $range, int $limit, string $from, string $to
  * @method mixed meOverview(array $params = [], array $options = []) usage-me-overview (GET /usage/me/overview)
@@ -2023,6 +2246,22 @@ abstract class UsageGroup {}
 abstract class UserGroup {}
 
 /**
+ * @method mixed brand(array $params = [], array $options = []) vinted-brand (GET /vinted/brand)
+ *   params: string $id, float $price_from, float $price_to, 'relevance'|'newest_first'|'price_high_to_low'|'price_low_to_high' $order, int $page
+ * @method mixed brands(array $params = [], array $options = []) vinted-brands (GET /vinted/brands)
+ * @method mixed catalog(array $params = [], array $options = []) vinted-catalog (GET /vinted/catalog)
+ *   params: string $search_text, float $price_from, float $price_to, 'relevance'|'newest_first'|'price_high_to_low'|'price_low_to_high' $order, int $page
+ * @method mixed categories(array $params = [], array $options = []) vinted-categories (GET /vinted/categories)
+ * @method mixed category(array $params = [], array $options = []) vinted-category (GET /vinted/category)
+ *   params: string $id, float $price_from, float $price_to, 'relevance'|'newest_first'|'price_high_to_low'|'price_low_to_high' $order, int $page
+ * @method mixed item(array $params = [], array $options = []) vinted-item (GET /vinted/item)
+ *   params: string $id
+ * @method mixed member(array $params = [], array $options = []) vinted-member (GET /vinted/member)
+ *   params: string $id
+ */
+abstract class VintedGroup {}
+
+/**
  * @method mixed product(array $params = [], array $options = []) walmart-product (GET /walmart/product/{item_id})
  *   params: string $item_id
  * @method mixed productReviews(array $params = [], array $options = []) walmart-product-reviews (GET /walmart/product/{item_id}/reviews)
@@ -2031,6 +2270,15 @@ abstract class UserGroup {}
  *   params: string $q, int $page, 'best_match'|'price_low'|'price_high'|'best_seller'|'new_arrivals'|'rating_high' $sort
  */
 abstract class WalmartGroup {}
+
+/**
+ * @method mixed browse(array $params = [], array $options = []) whatnot-browse (GET /whatnot/browse)
+ *   params: string $category
+ * @method mixed categories(array $params = [], array $options = []) whatnot-categories (GET /whatnot/categories)
+ * @method mixed live(array $params = [], array $options = []) whatnot-live (GET /whatnot/live/{id})
+ *   params: string $id
+ */
+abstract class WhatnotGroup {}
 
 /**
  * @method mixed post(array $params = [], array $options = []) x-post (GET /x/post/{id})
@@ -2121,6 +2369,12 @@ abstract class XGroup {}
 abstract class YahooFinanceGroup {}
 
 /**
+ * @method mixed call(array $params = [], array $options = []) yahoo-search (GET /yahoo-search/search)
+ *   params: string $q, int $page
+ */
+abstract class YahooSearchGroup {}
+
+/**
  * @method mixed business(array $params = [], array $options = []) yelp-business (GET /yelp/business/{id})
  *   params: string $id
  * @method mixed businessMenu(array $params = [], array $options = []) yelp-business-menu (GET /yelp/business/{id}/menu)
@@ -2194,6 +2448,7 @@ abstract class ZalandoGroup {}
 abstract class ZillowGroup {}
 
 /**
+ * @property-read \Crawlora\Generated\AgodaGroup $agoda
  * @property-read \Crawlora\Generated\AirbnbGroup $airbnb
  * @property-read \Crawlora\Generated\AmazonJobsGroup $amazonJobs
  * @property-read \Crawlora\Generated\AmazonGroup $amazon
@@ -2205,22 +2460,30 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\AutotraderGroup $autotrader
  * @property-read \Crawlora\Generated\BillingGroup $billing
  * @property-read \Crawlora\Generated\BingGroup $bing
+ * @property-read \Crawlora\Generated\BlueskyGroup $bluesky
  * @property-read \Crawlora\Generated\BookingGroup $booking
  * @property-read \Crawlora\Generated\BoxOfficeMojoGroup $boxOfficeMojo
  * @property-read \Crawlora\Generated\BrandGroup $brand
  * @property-read \Crawlora\Generated\BraveGroup $brave
  * @property-read \Crawlora\Generated\CapterraGroup $capterra
+ * @property-read \Crawlora\Generated\CarMaxGroup $carMax
+ * @property-read \Crawlora\Generated\CarsComGroup $carsCom
  * @property-read \Crawlora\Generated\ChromeWebStoreGroup $chromeWebStore
  * @property-read \Crawlora\Generated\CoinGeckoGroup $coinGecko
+ * @property-read \Crawlora\Generated\CongressGroup $congress
  * @property-read \Crawlora\Generated\WebGroup $web
+ * @property-read \Crawlora\Generated\CostcoGroup $costco
  * @property-read \Crawlora\Generated\DatasetsGroup $datasets
+ * @property-read \Crawlora\Generated\DepopGroup $depop
  * @property-read \Crawlora\Generated\DiscogsGroup $discogs
  * @property-read \Crawlora\Generated\DoorDashGroup $doorDash
+ * @property-read \Crawlora\Generated\DuckDuckGoSearchGroup $duckDuckGoSearch
  * @property-read \Crawlora\Generated\EBayGroup $eBay
  * @property-read \Crawlora\Generated\EspnGroup $espn
  * @property-read \Crawlora\Generated\EtsyGroup $etsy
  * @property-read \Crawlora\Generated\ExpediaGroup $expedia
  * @property-read \Crawlora\Generated\FacebookGroup $facebook
+ * @property-read \Crawlora\Generated\FiverrGroup $fiverr
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
  * @property-read \Crawlora\Generated\GitHubGroup $gitHub
  * @property-read \Crawlora\Generated\GoodreadsGroup $goodreads
@@ -2230,6 +2493,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\ImdbGroup $imdb
  * @property-read \Crawlora\Generated\ImportYetiGroup $importYeti
  * @property-read \Crawlora\Generated\IndeedGroup $indeed
+ * @property-read \Crawlora\Generated\InstacartGroup $instacart
  * @property-read \Crawlora\Generated\InstagramGroup $instagram
  * @property-read \Crawlora\Generated\JobsGroup $jobs
  * @property-read \Crawlora\Generated\JustWatchGroup $justWatch
@@ -2237,6 +2501,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\LetterboxdGroup $letterboxd
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
  * @property-read \Crawlora\Generated\MangaGroup $manga
+ * @property-read \Crawlora\Generated\MercariGroup $mercari
  * @property-read \Crawlora\Generated\MetaJobsGroup $metaJobs
  * @property-read \Crawlora\Generated\MetacriticGroup $metacritic
  * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
@@ -2244,9 +2509,11 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\NumbeoGroup $numbeo
  * @property-read \Crawlora\Generated\OpenTableGroup $openTable
  * @property-read \Crawlora\Generated\MetaGroup $meta
+ * @property-read \Crawlora\Generated\PinterestGroup $pinterest
  * @property-read \Crawlora\Generated\PitchBookGroup $pitchBook
  * @property-read \Crawlora\Generated\PlayStationGroup $playStation
  * @property-read \Crawlora\Generated\PolymarketGroup $polymarket
+ * @property-read \Crawlora\Generated\PoshmarkGroup $poshmark
  * @property-read \Crawlora\Generated\ProductHuntGroup $productHunt
  * @property-read \Crawlora\Generated\RedditGroup $reddit
  * @property-read \Crawlora\Generated\RedfinGroup $redfin
@@ -2260,6 +2527,8 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\SpotifyPodcastsGroup $spotifyPodcasts
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
  * @property-read \Crawlora\Generated\SteamGroup $steam
+ * @property-read \Crawlora\Generated\StockXGroup $stockX
+ * @property-read \Crawlora\Generated\StravaGroup $strava
  * @property-read \Crawlora\Generated\TargetGroup $target
  * @property-read \Crawlora\Generated\TeslaJobsGroup $teslaJobs
  * @property-read \Crawlora\Generated\ThreadsGroup $threads
@@ -2267,14 +2536,19 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\TiktokGroup $tiktok
  * @property-read \Crawlora\Generated\TmdbGroup $tmdb
  * @property-read \Crawlora\Generated\TripAdvisorGroup $tripAdvisor
+ * @property-read \Crawlora\Generated\TripComGroup $tripCom
  * @property-read \Crawlora\Generated\TrustMrrGroup $trustMrr
  * @property-read \Crawlora\Generated\TrustpilotGroup $trustpilot
  * @property-read \Crawlora\Generated\UberEatsGroup $uberEats
+ * @property-read \Crawlora\Generated\UpworkGroup $upwork
  * @property-read \Crawlora\Generated\UsageGroup $usage
  * @property-read \Crawlora\Generated\UserGroup $user
+ * @property-read \Crawlora\Generated\VintedGroup $vinted
  * @property-read \Crawlora\Generated\WalmartGroup $walmart
+ * @property-read \Crawlora\Generated\WhatnotGroup $whatnot
  * @property-read \Crawlora\Generated\XGroup $x
  * @property-read \Crawlora\Generated\YahooFinanceGroup $yahooFinance
+ * @property-read \Crawlora\Generated\YahooSearchGroup $yahooSearch
  * @property-read \Crawlora\Generated\YelpGroup $yelp
  * @property-read \Crawlora\Generated\YoutubeGroup $youtube
  * @property-read \Crawlora\Generated\ZalandoGroup $zalando
