@@ -424,7 +424,7 @@ abstract class CoinGeckoGroup {}
  * @method mixed report(array $params = [], array $options = []) congress-report (GET /congress/report)
  *   params: string $url
  * @method mixed stockDisclosures(array $params = [], array $options = []) congress-stock-disclosures (GET /congress/stock-disclosures)
- *   params: 'house'|'senate' $chamber, string $member, string $ticker, string $state, string $district, string $filer_type, string $election_year, string $report_type, string $from, string $to, 'name_asc'|'name_desc'|'office_asc'|'office_desc'|'filing_year_asc'|'filing_year_desc' $sort, int $page, int $limit
+ *   params: 'house'|'senate' $chamber, string $member, string $first_name, string $last_name, string $ticker, string $state, string $senator_state, string $candidate_state, string $district, string $filer_type, string $election_year, string $report_type, string $from, string $to, 'name_asc'|'name_desc'|'office_asc'|'office_desc'|'filing_year_asc'|'filing_year_desc' $sort, int $page, int $limit
  */
 abstract class CongressGroup {}
 

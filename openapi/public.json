@@ -93632,10 +93632,24 @@
             "x-example": "house"
           },
           {
-            "description": "Chamber member name (required when ticker is omitted).",
+            "description": "Member name. Required for House. For Senate, this backward-compatible shorthand is split into first_name/last_name and cannot be combined with either exact name field.",
             "in": "query",
             "name": "member",
             "type": "string"
+          },
+          {
+            "description": "Senate filer first-name prefix (Senate only; cannot be combined with member).",
+            "in": "query",
+            "name": "first_name",
+            "type": "string",
+            "x-example": "Elizabeth"
+          },
+          {
+            "description": "Senate filer last-name prefix (Senate only; cannot be combined with member).",
+            "in": "query",
+            "name": "last_name",
+            "type": "string",
+            "x-example": "Warren"
           },
           {
             "description": "Ticker symbol filter. Not supported by House or Senate sources.",
@@ -93644,10 +93658,24 @@
             "type": "string"
           },
           {
-            "description": "Member state filter (2-letter code).",
+            "description": "State filter (2-letter code). For Senate this backward-compatible shorthand applies to both Senator and Candidate states and cannot be combined with senator_state or candidate_state.",
             "in": "query",
             "name": "state",
             "type": "string"
+          },
+          {
+            "description": "Senator state filter (Senate only, 2-letter code).",
+            "in": "query",
+            "name": "senator_state",
+            "type": "string",
+            "x-example": "MA"
+          },
+          {
+            "description": "Candidate state filter (Senate only, 2-letter code).",
+            "in": "query",
+            "name": "candidate_state",
+            "type": "string",
+            "x-example": "TX"
           },
           {
             "description": "House district filter (House only).",
@@ -93677,18 +93705,18 @@
             "x-example": "annual,periodic_transaction"
           },
           {
-            "description": "Minimum filing year (YYYY). Senate searches default to 2012 when omitted.",
+            "description": "Minimum filing date. House accepts YYYY. Senate accepts YYYY or MM/DD/YYYY and defaults to 2012 when omitted.",
             "in": "query",
             "name": "from",
             "type": "string",
-            "x-example": "2018"
+            "x-example": "01/01/2024"
           },
           {
-            "description": "Maximum filing year (YYYY).",
+            "description": "Maximum filing date. House accepts YYYY. Senate accepts YYYY or MM/DD/YYYY.",
             "in": "query",
             "name": "to",
             "type": "string",
-            "x-example": "2026"
+            "x-example": "12/31/2024"
           },
           {
             "description": "Sort key. Allowed values: name_asc, name_desc, office_asc, office_desc, filing_year_asc, filing_year_desc.",
