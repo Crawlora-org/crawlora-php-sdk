@@ -15611,6 +15611,12 @@
         "title": {
           "example": "Annual Report for Calendar 2018",
           "type": "string"
+        },
+        "transactions": {
+          "items": {
+            "$ref": "#/definitions/congress.ReportTransaction"
+          },
+          "type": "array"
         }
       },
       "type": "object"
@@ -15632,6 +15638,51 @@
         },
         "title": {
           "example": "Part 3. Assets",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "congress.ReportTransaction": {
+      "properties": {
+        "amount": {
+          "example": "$15,001 - $50,000",
+          "type": "string"
+        },
+        "asset_name": {
+          "example": "Bank of America",
+          "type": "string"
+        },
+        "asset_type": {
+          "example": "Corporate Bond",
+          "type": "string"
+        },
+        "comment": {
+          "example": "--",
+          "type": "string"
+        },
+        "owner": {
+          "example": "Spouse",
+          "type": "string"
+        },
+        "source_part": {
+          "example": "Transactions",
+          "type": "string"
+        },
+        "source_row_number": {
+          "example": "5",
+          "type": "string"
+        },
+        "ticker": {
+          "example": "RPM",
+          "type": "string"
+        },
+        "transaction_date": {
+          "example": "12/19/2018",
+          "type": "string"
+        },
+        "transaction_type": {
+          "example": "Purchase",
           "type": "string"
         }
       },
