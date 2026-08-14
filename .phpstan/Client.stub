@@ -47,6 +47,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\GoogleJobsGroup $googleJobs
  * @property-read \Crawlora\Generated\GoogleGroup $google
  * @property-read \Crawlora\Generated\GooglePlayGroup $googlePlay
+ * @property-read \Crawlora\Generated\HMGroup $hM
  * @property-read \Crawlora\Generated\ImdbGroup $imdb
  * @property-read \Crawlora\Generated\ImportYetiGroup $importYeti
  * @property-read \Crawlora\Generated\IndeedGroup $indeed
@@ -55,15 +56,20 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\JobsGroup $jobs
  * @property-read \Crawlora\Generated\JustWatchGroup $justWatch
  * @property-read \Crawlora\Generated\KalshiGroup $kalshi
+ * @property-read \Crawlora\Generated\KohlSGroup $kohlS
  * @property-read \Crawlora\Generated\LetterboxdGroup $letterboxd
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
+ * @property-read \Crawlora\Generated\LululemonGroup $lululemon
+ * @property-read \Crawlora\Generated\MacySGroup $macyS
  * @property-read \Crawlora\Generated\MangaGroup $manga
  * @property-read \Crawlora\Generated\MercariGroup $mercari
  * @property-read \Crawlora\Generated\MetaJobsGroup $metaJobs
  * @property-read \Crawlora\Generated\MetacriticGroup $metacritic
  * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
  * @property-read \Crawlora\Generated\MlbGroup $mlb
+ * @property-read \Crawlora\Generated\NikeGroup $nike
  * @property-read \Crawlora\Generated\NumbeoGroup $numbeo
+ * @property-read \Crawlora\Generated\OldNavyGroup $oldNavy
  * @property-read \Crawlora\Generated\OpenTableGroup $openTable
  * @property-read \Crawlora\Generated\MetaGroup $meta
  * @property-read \Crawlora\Generated\PinterestGroup $pinterest
@@ -76,11 +82,13 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\RedfinGroup $redfin
  * @property-read \Crawlora\Generated\ReferralsGroup $referrals
  * @property-read \Crawlora\Generated\RottenTomatoesGroup $rottenTomatoes
+ * @property-read \Crawlora\Generated\SamSclubGroup $samSClub
  * @property-read \Crawlora\Generated\SecEdgarGroup $secEdgar
  * @property-read \Crawlora\Generated\ShopAppGroup $shopApp
  * @property-read \Crawlora\Generated\ShopifyGroup $shopify
  * @property-read \Crawlora\Generated\SimilarWebGroup $similarWeb
  * @property-read \Crawlora\Generated\SofaScoreGroup $sofaScore
+ * @property-read \Crawlora\Generated\SoundCloudGroup $soundCloud
  * @property-read \Crawlora\Generated\SpotifyPodcastsGroup $spotifyPodcasts
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
  * @property-read \Crawlora\Generated\SteamGroup $steam
@@ -96,19 +104,34 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\TripComGroup $tripCom
  * @property-read \Crawlora\Generated\TrustMrrGroup $trustMrr
  * @property-read \Crawlora\Generated\TrustpilotGroup $trustpilot
+ * @property-read \Crawlora\Generated\TwitchGroup $twitch
  * @property-read \Crawlora\Generated\UberEatsGroup $uberEats
+ * @property-read \Crawlora\Generated\UltaBeautyGroup $ultaBeauty
  * @property-read \Crawlora\Generated\UpworkGroup $upwork
  * @property-read \Crawlora\Generated\UsageGroup $usage
  * @property-read \Crawlora\Generated\UserGroup $user
+ * @property-read \Crawlora\Generated\AccountDeletionGroup $accountDeletion
  * @property-read \Crawlora\Generated\VintedGroup $vinted
  * @property-read \Crawlora\Generated\WalmartGroup $walmart
+ * @property-read \Crawlora\Generated\WayfairGroup $wayfair
  * @property-read \Crawlora\Generated\WhatnotGroup $whatnot
+ * @property-read \Crawlora\Generated\WishGroup $wish
  * @property-read \Crawlora\Generated\XGroup $x
+ * @property-read \Crawlora\Generated\YahooAutosGroup $yahooAutos
+ * @property-read \Crawlora\Generated\YahooEntertainmentGroup $yahooEntertainment
  * @property-read \Crawlora\Generated\YahooFinanceGroup $yahooFinance
+ * @property-read \Crawlora\Generated\YahooHealthGroup $yahooHealth
+ * @property-read \Crawlora\Generated\YahooLifeGroup $yahooLife
+ * @property-read \Crawlora\Generated\YahooNewsGroup $yahooNews
  * @property-read \Crawlora\Generated\YahooSearchGroup $yahooSearch
+ * @property-read \Crawlora\Generated\YahooShoppingGroup $yahooShopping
+ * @property-read \Crawlora\Generated\YahooSportsGroup $yahooSports
+ * @property-read \Crawlora\Generated\YahooTechGroup $yahooTech
  * @property-read \Crawlora\Generated\YelpGroup $yelp
  * @property-read \Crawlora\Generated\YoutubeGroup $youtube
  * @property-read \Crawlora\Generated\ZalandoGroup $zalando
+ * @property-read \Crawlora\Generated\ZapposGroup $zappos
+ * @property-read \Crawlora\Generated\ZaraGroup $zara
  * @property-read \Crawlora\Generated\ZillowGroup $zillow
  */
 final class Client {}

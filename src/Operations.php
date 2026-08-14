@@ -2796,6 +2796,25 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'billing-me-rejections' => [
+            'id' => 'billing-me-rejections',
+            'method' => 'GET',
+            'path' => '/billing/me/rejections',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'bing-images' => [
             'id' => 'bing-images',
             'method' => 'GET',
@@ -17333,6 +17352,128 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'ebay-live-streams' => [
+            'id' => 'ebay-live-streams',
+            'method' => 'GET',
+            'path' => '/ebay/live/streams',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'explore',
+                        'IPqZx79LNuwFcSVt',
+                        'oHjQFTlZ5cYgWkjB',
+                        'l68DJtBAVZge4x4n',
+                        '2Nk3OYiOJHfXqpWG',
+                        '5quuEnjO3axyz46U',
+                        'nGpMTpm13Q86Eaoo',
+                        'sYRxeaskGmNC6xaB',
+                        'iYaYo88zN2vtQorh',
+                        'GYAbsFw6onSNloAb',
+                        'WJ9zLwYjK8njaBtN',
+                        'rALkRyk8gXHzIBR6',
+                        'DNta0sJ8Y6NXZsC9',
+                        'GU4UfBzZSF4jiteS',
+                        'IO7Oih07PtNJSWhU',
+                        'cF4xtF8z9riubmLh',
+                        'bywKDIdtxhi4hUSO',
+                    ],
+                ],
+                [
+                    'name' => 'request_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'session_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'ebay-live-streams-batch' => [
+            'id' => 'ebay-live-streams-batch',
+            'method' => 'GET',
+            'path' => '/ebay/live/streams/batch',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'ebay-live-stream' => [
+            'id' => 'ebay-live-stream',
+            'method' => 'GET',
+            'path' => '/ebay/live/streams/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'ebay-live-stream-items' => [
+            'id' => 'ebay-live-stream-items',
+            'method' => 'GET',
+            'path' => '/ebay/live/streams/{id}/items',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'ebay-search' => [
             'id' => 'ebay-search',
             'method' => 'POST',
@@ -21499,6 +21640,189 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'hm-categories' => [
+            'id' => 'hm-categories',
+            'method' => 'GET',
+            'path' => '/hm/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'department',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'women',
+                        'men',
+                        'kids',
+                        'home',
+                        'beauty',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'hm-listing' => [
+            'id' => 'hm-listing',
+            'method' => 'GET',
+            'path' => '/hm/listing',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'RELEVANCE',
+                        'NEWEST_FIRST',
+                        'PRICE_ASCENDING',
+                        'PRICE_DESCENDING',
+                    ],
+                ],
+                [
+                    'name' => 'is_new',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'hm-product' => [
+            'id' => 'hm-product',
+            'method' => 'GET',
+            'path' => '/hm/product/{product_id}',
+            'pathParams' => [
+                'product_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'hm-search' => [
+            'id' => 'hm-search',
+            'method' => 'GET',
+            'path' => '/hm/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'hm-stores' => [
+            'id' => 'hm-stores',
+            'method' => 'GET',
+            'path' => '/hm/stores',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'search',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lng',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'radius_meters',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'imdb-name' => [
             'id' => 'imdb-name',
             'method' => 'GET',
@@ -25392,6 +25716,116 @@ final class Operations
                 'cursor',
             ],
         ],
+        'kohls-category' => [
+            'id' => 'kohls-category',
+            'method' => 'GET',
+            'path' => '/kohls/category',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kohls-product-reviews' => [
+            'id' => 'kohls-product-reviews',
+            'method' => 'GET',
+            'path' => '/kohls/product/reviews',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'web_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'kohls-stores' => [
+            'id' => 'kohls-stores',
+            'method' => 'GET',
+            'path' => '/kohls/stores',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'search',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kohls-suggest' => [
+            'id' => 'kohls-suggest',
+            'method' => 'GET',
+            'path' => '/kohls/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'letterboxd-film' => [
             'id' => 'letterboxd-film',
             'method' => 'GET',
@@ -25680,6 +26114,260 @@ final class Operations
                 'id',
             ],
             'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'lululemon-categories' => [
+            'id' => 'lululemon-categories',
+            'method' => 'GET',
+            'path' => '/lululemon/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'section',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'new-featured',
+                        'women',
+                        'men',
+                        'accessories',
+                        'bags',
+                        'activity',
+                        'we-made-too-much',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'lululemon-category' => [
+            'id' => 'lululemon-category',
+            'method' => 'GET',
+            'path' => '/lululemon/category',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'cdp_hash',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'lululemon-outfit' => [
+            'id' => 'lululemon-outfit',
+            'method' => 'GET',
+            'path' => '/lululemon/outfit',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'unified_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'color_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'lululemon-product' => [
+            'id' => 'lululemon-product',
+            'method' => 'GET',
+            'path' => '/lululemon/product/{product_id}',
+            'pathParams' => [
+                'product_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'lululemon-stores' => [
+            'id' => 'lululemon-stores',
+            'method' => 'GET',
+            'path' => '/lululemon/stores',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lng',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'radius_miles',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'macys-product-reviews' => [
+            'id' => 'macys-product-reviews',
+            'method' => 'GET',
+            'path' => '/macys/product/reviews',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'product_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'macys-product' => [
+            'id' => 'macys-product',
+            'method' => 'GET',
+            'path' => '/macys/product/{productId}',
+            'pathParams' => [
+                'productId',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'macys-suggest' => [
+            'id' => 'macys-suggest',
+            'method' => 'GET',
+            'path' => '/macys/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -27158,6 +27846,200 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'nike-categories' => [
+            'id' => 'nike-categories',
+            'method' => 'GET',
+            'path' => '/nike/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nike-product' => [
+            'id' => 'nike-product',
+            'method' => 'GET',
+            'path' => '/nike/product',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'style_color',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nike-product-reviews' => [
+            'id' => 'nike-product-reviews',
+            'method' => 'GET',
+            'path' => '/nike/product/reviews',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'style_color',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'nike-search' => [
+            'id' => 'nike-search',
+            'method' => 'GET',
+            'path' => '/nike/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'keyword',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'nike-stores' => [
+            'id' => 'nike-stores',
+            'method' => 'GET',
+            'path' => '/nike/stores',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'lng',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'radius_miles',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'nike-suggest' => [
+            'id' => 'nike-suggest',
+            'method' => 'GET',
+            'path' => '/nike/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'numbeo-cost-of-living-city' => [
             'id' => 'numbeo-cost-of-living-city',
             'method' => 'GET',
@@ -27400,6 +28282,308 @@ final class Operations
                         'pollution',
                         'traffic',
                         'property-investment',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'oldnavy-categories' => [
+            'id' => 'oldnavy-categories',
+            'method' => 'GET',
+            'path' => '/oldnavy/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'brand',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'on',
+                    ],
+                ],
+                [
+                    'name' => 'cid',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'oldnavy-category' => [
+            'id' => 'oldnavy-category',
+            'method' => 'GET',
+            'path' => '/oldnavy/category',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'cid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'brand',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'on',
+                        'gap',
+                        'br',
+                        'at',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'oldnavy-product' => [
+            'id' => 'oldnavy-product',
+            'method' => 'GET',
+            'path' => '/oldnavy/product',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'pid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'brand',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'on',
+                        'gap',
+                        'br',
+                        'at',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'oldnavy-product-availability' => [
+            'id' => 'oldnavy-product-availability',
+            'method' => 'GET',
+            'path' => '/oldnavy/product/availability',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'pid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'brand',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'on',
+                        'gap',
+                        'br',
+                        'at',
+                    ],
+                ],
+                [
+                    'name' => 'store_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'zip',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lng',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'oldnavy-product-reviews' => [
+            'id' => 'oldnavy-product-reviews',
+            'method' => 'GET',
+            'path' => '/oldnavy/product/reviews',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'pid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'brand',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'on',
+                        'gap',
+                        'br',
+                        'at',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'oldnavy-search' => [
+            'id' => 'oldnavy-search',
+            'method' => 'GET',
+            'path' => '/oldnavy/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'keyword',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'brand',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'on',
+                        'gap',
+                        'br',
+                        'at',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'oldnavy-stores' => [
+            'id' => 'oldnavy-stores',
+            'method' => 'GET',
+            'path' => '/oldnavy/stores',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'search',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lng',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'brand',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'on',
+                        'gap',
+                        'br',
+                        'at',
                     ],
                 ],
             ],
@@ -28167,6 +29351,11 @@ final class Operations
                 ],
                 [
                     'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
                     'in' => 'query',
                     'type' => 'integer',
                 ],
@@ -32192,6 +33381,120 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'samsclub-category' => [
+            'id' => 'samsclub-category',
+            'method' => 'GET',
+            'path' => '/samsclub/category',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'samsclub-content' => [
+            'id' => 'samsclub-content',
+            'method' => 'GET',
+            'path' => '/samsclub/content/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'samsclub-departments' => [
+            'id' => 'samsclub-departments',
+            'method' => 'GET',
+            'path' => '/samsclub/departments',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'samsclub-product' => [
+            'id' => 'samsclub-product',
+            'method' => 'GET',
+            'path' => '/samsclub/product/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'samsclub-product-related' => [
+            'id' => 'samsclub-product-related',
+            'method' => 'GET',
+            'path' => '/samsclub/product/{id}/related',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'sec-company-intelligence' => [
             'id' => 'sec-company-intelligence',
             'method' => 'GET',
@@ -34004,6 +35307,146 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'soundcloud-playlist' => [
+            'id' => 'soundcloud-playlist',
+            'method' => 'GET',
+            'path' => '/soundcloud/playlist',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'soundcloud-profile' => [
+            'id' => 'soundcloud-profile',
+            'method' => 'GET',
+            'path' => '/soundcloud/profile',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'soundcloud-search' => [
+            'id' => 'soundcloud-search',
+            'method' => 'GET',
+            'path' => '/soundcloud/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'soundcloud-track' => [
+            'id' => 'soundcloud-track',
+            'method' => 'GET',
+            'path' => '/soundcloud/track',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'soundcloud-user-tracks' => [
+            'id' => 'soundcloud-user-tracks',
+            'method' => 'GET',
+            'path' => '/soundcloud/user-tracks',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
                 ],
             ],
             'formParams' => [],
@@ -39854,6 +41297,270 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'twitch-channel' => [
+            'id' => 'twitch-channel',
+            'method' => 'GET',
+            'path' => '/twitch/channel',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'login',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'twitch-clips' => [
+            'id' => 'twitch-clips',
+            'method' => 'GET',
+            'path' => '/twitch/clips',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'login',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'twitch-schedule' => [
+            'id' => 'twitch-schedule',
+            'method' => 'GET',
+            'path' => '/twitch/schedule',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'channel',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'weeks',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'twitch-search' => [
+            'id' => 'twitch-search',
+            'method' => 'GET',
+            'path' => '/twitch/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'twitch-streams' => [
+            'id' => 'twitch-streams',
+            'method' => 'GET',
+            'path' => '/twitch/streams',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'twitch-team' => [
+            'id' => 'twitch-team',
+            'method' => 'GET',
+            'path' => '/twitch/team',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'team',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'twitch-top-games' => [
+            'id' => 'twitch-top-games',
+            'method' => 'GET',
+            'path' => '/twitch/top-games',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'twitch-videos' => [
+            'id' => 'twitch-videos',
+            'method' => 'GET',
+            'path' => '/twitch/videos',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'login',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'twitch-vod-comments' => [
+            'id' => 'twitch-vod-comments',
+            'method' => 'GET',
+            'path' => '/twitch/vod-comments',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'video',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'ubereats-feed' => [
             'id' => 'ubereats-feed',
             'method' => 'GET',
@@ -40003,6 +41710,267 @@ final class Operations
                 'store_id',
             ],
             'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'ulta-categories' => [
+            'id' => 'ulta-categories',
+            'method' => 'GET',
+            'path' => '/ulta/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'department',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'makeup-nails',
+                        'skin-care',
+                        'hair-care',
+                        'fragrance',
+                        'body-care',
+                        'wellness',
+                        'mens-care',
+                        'tools-brushes',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'ulta-category' => [
+            'id' => 'ulta-category',
+            'method' => 'GET',
+            'path' => '/ulta/category',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'ulta-product-questions' => [
+            'id' => 'ulta-product-questions',
+            'method' => 'GET',
+            'path' => '/ulta/product/questions',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'product_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'ulta-product-reviews' => [
+            'id' => 'ulta-product-reviews',
+            'method' => 'GET',
+            'path' => '/ulta/product/reviews',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'product_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'ulta-product' => [
+            'id' => 'ulta-product',
+            'method' => 'GET',
+            'path' => '/ulta/product/{productId}',
+            'pathParams' => [
+                'productId',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'sku',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'ulta-search' => [
+            'id' => 'ulta-search',
+            'method' => 'GET',
+            'path' => '/ulta/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'ulta-stores' => [
+            'id' => 'ulta-stores',
+            'method' => 'GET',
+            'path' => '/ulta/stores',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'search',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lng',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'radius_meters',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'ulta-suggest' => [
+            'id' => 'ulta-suggest',
+            'method' => 'GET',
+            'path' => '/ulta/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -40360,6 +42328,63 @@ final class Operations
                 'JWTAuth',
             ],
         ],
+        'account-deletion-cancel' => [
+            'id' => 'account-deletion-cancel',
+            'method' => 'DELETE',
+            'path' => '/user/me/deletion-request',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'JWTAuth',
+            ],
+        ],
+        'account-deletion-my-request' => [
+            'id' => 'account-deletion-my-request',
+            'method' => 'GET',
+            'path' => '/user/me/deletion-request',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'JWTAuth',
+            ],
+        ],
+        'account-deletion-request' => [
+            'id' => 'account-deletion-request',
+            'method' => 'POST',
+            'path' => '/user/me/deletion-request',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'request',
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'JWTAuth',
+            ],
+        ],
         'vinted-brand' => [
             'id' => 'vinted-brand',
             'method' => 'GET',
@@ -40696,6 +42721,95 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'wayfair-categories' => [
+            'id' => 'wayfair-categories',
+            'method' => 'GET',
+            'path' => '/wayfair/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'wayfair-category' => [
+            'id' => 'wayfair-category',
+            'method' => 'GET',
+            'path' => '/wayfair/category',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'wayfair-product' => [
+            'id' => 'wayfair-product',
+            'method' => 'GET',
+            'path' => '/wayfair/product/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'web-scrape' => [
             'id' => 'web-scrape',
             'method' => 'POST',
@@ -40800,6 +42914,163 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'wish-categories' => [
+            'id' => 'wish-categories',
+            'method' => 'GET',
+            'path' => '/wish/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wish-product' => [
+            'id' => 'wish-product',
+            'method' => 'GET',
+            'path' => '/wish/product/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wish-product-related' => [
+            'id' => 'wish-product-related',
+            'method' => 'GET',
+            'path' => '/wish/product/{id}/related',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wish-product-reviews' => [
+            'id' => 'wish-product-reviews',
+            'method' => 'GET',
+            'path' => '/wish/product/{id}/reviews',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wish-search' => [
+            'id' => 'wish-search',
+            'method' => 'GET',
+            'path' => '/wish/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'wish-suggest' => [
+            'id' => 'wish-suggest',
+            'method' => 'GET',
+            'path' => '/wish/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'x-post' => [
             'id' => 'x-post',
             'method' => 'GET',
@@ -40862,6 +43133,178 @@ final class Operations
                     'type' => 'integer',
                 ],
             ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-autos-article' => [
+            'id' => 'yahoo-autos-article',
+            'method' => 'GET',
+            'path' => '/yahoo-autos/article',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-autos-category' => [
+            'id' => 'yahoo-autos-category',
+            'method' => 'GET',
+            'path' => '/yahoo-autos/category',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'auto-shows',
+                        'classic-and-collector',
+                        'deals-and-buying-guides',
+                        'ev-and-future-tech',
+                        'general',
+                        'new-vehicles-and-reviews',
+                        'ownership',
+                        'people-and-culture',
+                        'policy-and-environment',
+                        'safety-and-recalls',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'yahoo-autos-home' => [
+            'id' => 'yahoo-autos-home',
+            'method' => 'GET',
+            'path' => '/yahoo-autos/home',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-entertainment-article' => [
+            'id' => 'yahoo-entertainment-article',
+            'method' => 'GET',
+            'path' => '/yahoo-entertainment/article',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-entertainment-category' => [
+            'id' => 'yahoo-entertainment-category',
+            'method' => 'GET',
+            'path' => '/yahoo-entertainment/category',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'celebrity',
+                        'movies',
+                        'music',
+                        'tv',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'yahoo-entertainment-home' => [
+            'id' => 'yahoo-entertainment-home',
+            'method' => 'GET',
+            'path' => '/yahoo-entertainment/home',
+            'pathParams' => [],
+            'queryParams' => [],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -41927,17 +44370,51 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
-        'yahoo-search' => [
-            'id' => 'yahoo-search',
+        'yahoo-health-article' => [
+            'id' => 'yahoo-health-article',
             'method' => 'GET',
-            'path' => '/yahoo-search/search',
+            'path' => '/yahoo-health/article',
             'pathParams' => [],
             'queryParams' => [
                 [
-                    'name' => 'q',
+                    'name' => 'url',
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-health-category' => [
+            'id' => 'yahoo-health-category',
+            'method' => 'GET',
+            'path' => '/yahoo-health/category',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'conditions',
+                        'general',
+                        'healthcare',
+                        'treatments',
+                        'wellness',
+                        'your-body',
+                    ],
                 ],
                 [
                     'name' => 'page',
@@ -41958,6 +44435,1443 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'yahoo-health-home' => [
+            'id' => 'yahoo-health-home',
+            'method' => 'GET',
+            'path' => '/yahoo-health/home',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-life-article' => [
+            'id' => 'yahoo-life-article',
+            'method' => 'GET',
+            'path' => '/yahoo-life/article',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-life-home' => [
+            'id' => 'yahoo-life-home',
+            'method' => 'GET',
+            'path' => '/yahoo-life/home',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-news-article' => [
+            'id' => 'yahoo-news-article',
+            'method' => 'GET',
+            'path' => '/yahoo-news/article',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-news-category' => [
+            'id' => 'yahoo-news-category',
+            'method' => 'GET',
+            'path' => '/yahoo-news/category',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'us',
+                        'world',
+                        'politics',
+                        'science',
+                        'weather-news',
+                        'originals',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-news-comments' => [
+            'id' => 'yahoo-news-comments',
+            'method' => 'GET',
+            'path' => '/yahoo-news/comments',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'content_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'top',
+                        'popular',
+                        'newest',
+                        'oldest',
+                    ],
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'yahoo-news-comment-replies' => [
+            'id' => 'yahoo-news-comment-replies',
+            'method' => 'GET',
+            'path' => '/yahoo-news/comments/replies',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'content_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'comment_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'newest',
+                        'oldest',
+                    ],
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'yahoo-news-home' => [
+            'id' => 'yahoo-news-home',
+            'method' => 'GET',
+            'path' => '/yahoo-news/home',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-news-suggest' => [
+            'id' => 'yahoo-news-suggest',
+            'method' => 'GET',
+            'path' => '/yahoo-news/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-search-images' => [
+            'id' => 'yahoo-search-images',
+            'method' => 'GET',
+            'path' => '/yahoo-search/images',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-search-local' => [
+            'id' => 'yahoo-search-local',
+            'method' => 'GET',
+            'path' => '/yahoo-search/local',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-search-news' => [
+            'id' => 'yahoo-search-news',
+            'method' => 'GET',
+            'path' => '/yahoo-search/news',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-search' => [
+            'id' => 'yahoo-search',
+            'method' => 'GET',
+            'path' => '/yahoo-search/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'time_range',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'day',
+                        'week',
+                        'month',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'yahoo-search-suggest' => [
+            'id' => 'yahoo-search-suggest',
+            'method' => 'GET',
+            'path' => '/yahoo-search/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-search-videos' => [
+            'id' => 'yahoo-search-videos',
+            'method' => 'GET',
+            'path' => '/yahoo-search/videos',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-shopping-article' => [
+            'id' => 'yahoo-shopping-article',
+            'method' => 'GET',
+            'path' => '/yahoo-shopping/article',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-shopping-category' => [
+            'id' => 'yahoo-shopping-category',
+            'method' => 'GET',
+            'path' => '/yahoo-shopping/category',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'beauty',
+                        'deals',
+                        'general',
+                        'gift-ideas',
+                        'home-garden',
+                        'style',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'yahoo-shopping-home' => [
+            'id' => 'yahoo-shopping-home',
+            'method' => 'GET',
+            'path' => '/yahoo-shopping/home',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-shopping-shopping-list' => [
+            'id' => 'yahoo-shopping-shopping-list',
+            'method' => 'GET',
+            'path' => '/yahoo-shopping/shopping-list',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'list',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-shopping-shopping-lists' => [
+            'id' => 'yahoo-shopping-shopping-lists',
+            'method' => 'GET',
+            'path' => '/yahoo-shopping/shopping-lists',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-shopping-store' => [
+            'id' => 'yahoo-shopping-store',
+            'method' => 'GET',
+            'path' => '/yahoo-shopping/store',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'store',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-shopping-stores' => [
+            'id' => 'yahoo-shopping-stores',
+            'method' => 'GET',
+            'path' => '/yahoo-shopping/stores',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-game' => [
+            'id' => 'yahoo-sports-game',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/game',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'nba',
+                        'wnba',
+                        'mlb',
+                        'nhl',
+                        'college-football',
+                        'college-basketball',
+                        'college-womens-basketball',
+                        'mls',
+                        'premier-league',
+                        'la-liga',
+                        'serie-a',
+                        'bundesliga',
+                        'ligue-1',
+                        'champions-league',
+                        'nwsl',
+                        'ligamx-apertura',
+                        'ligamx-clausura',
+                        'copa-america',
+                        'club-world-cup',
+                        'world-cup',
+                        'concacaf-champions-cup',
+                        'concacaf-gold-cup',
+                        'concacaf-league',
+                    ],
+                ],
+                [
+                    'name' => 'game',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-golf-leaderboard' => [
+            'id' => 'yahoo-sports-golf-leaderboard',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/golf-leaderboard',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tournament',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-golf-schedule' => [
+            'id' => 'yahoo-sports-golf-schedule',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/golf-schedule',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tour',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'pga-tour',
+                        'pga-european-tours',
+                        'lpga-tour',
+                        'champions-tour',
+                        'european-tour',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-mma-fight-card' => [
+            'id' => 'yahoo-sports-mma-fight-card',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/mma-fight-card',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-mma-schedule' => [
+            'id' => 'yahoo-sports-mma-schedule',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/mma-schedule',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-motorsports-race' => [
+            'id' => 'yahoo-sports-motorsports-race',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/motorsports-race',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'series',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'f1',
+                        'nascar',
+                    ],
+                ],
+                [
+                    'name' => 'race',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-motorsports-schedule' => [
+            'id' => 'yahoo-sports-motorsports-schedule',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/motorsports-schedule',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'series',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'f1',
+                        'nascar',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-news' => [
+            'id' => 'yahoo-sports-news',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/news',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'nba',
+                        'wnba',
+                        'mlb',
+                        'nhl',
+                        'college-football',
+                        'college-basketball',
+                        'college-womens-basketball',
+                        'mls',
+                        'premier-league',
+                        'la-liga',
+                        'serie-a',
+                        'bundesliga',
+                        'ligue-1',
+                        'champions-league',
+                        'nwsl',
+                        'ligamx-apertura',
+                        'ligamx-clausura',
+                        'copa-america',
+                        'club-world-cup',
+                        'world-cup',
+                        'concacaf-champions-cup',
+                        'concacaf-gold-cup',
+                        'concacaf-league',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-olympics-medals' => [
+            'id' => 'yahoo-sports-olympics-medals',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/olympics-medals',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-player' => [
+            'id' => 'yahoo-sports-player',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/player',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'nba',
+                        'wnba',
+                        'mlb',
+                        'nhl',
+                        'college-football',
+                        'college-basketball',
+                        'college-womens-basketball',
+                        'mls',
+                        'premier-league',
+                        'la-liga',
+                        'serie-a',
+                        'bundesliga',
+                        'ligue-1',
+                        'champions-league',
+                        'nwsl',
+                        'ligamx-apertura',
+                        'ligamx-clausura',
+                        'copa-america',
+                        'club-world-cup',
+                        'world-cup',
+                        'concacaf-champions-cup',
+                        'concacaf-gold-cup',
+                        'concacaf-league',
+                    ],
+                ],
+                [
+                    'name' => 'player',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-scoreboard' => [
+            'id' => 'yahoo-sports-scoreboard',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/scoreboard',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'nba',
+                        'wnba',
+                        'mlb',
+                        'nhl',
+                        'college-football',
+                        'college-basketball',
+                        'college-womens-basketball',
+                        'mls',
+                        'premier-league',
+                        'la-liga',
+                        'serie-a',
+                        'bundesliga',
+                        'ligue-1',
+                        'champions-league',
+                        'nwsl',
+                        'ligamx-apertura',
+                        'ligamx-clausura',
+                        'copa-america',
+                        'club-world-cup',
+                        'world-cup',
+                        'concacaf-champions-cup',
+                        'concacaf-gold-cup',
+                        'concacaf-league',
+                    ],
+                ],
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-standings' => [
+            'id' => 'yahoo-sports-standings',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/standings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'nba',
+                        'wnba',
+                        'mlb',
+                        'nhl',
+                        'college-football',
+                        'college-basketball',
+                        'mls',
+                        'premier-league',
+                        'la-liga',
+                        'serie-a',
+                        'bundesliga',
+                        'ligue-1',
+                        'champions-league',
+                        'nwsl',
+                        'ligamx-apertura',
+                        'ligamx-clausura',
+                        'world-cup',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-team' => [
+            'id' => 'yahoo-sports-team',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/team',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'nba',
+                        'wnba',
+                        'mlb',
+                        'nhl',
+                        'college-football',
+                        'college-basketball',
+                        'college-womens-basketball',
+                        'mls',
+                        'premier-league',
+                        'la-liga',
+                        'serie-a',
+                        'bundesliga',
+                        'ligue-1',
+                        'champions-league',
+                        'nwsl',
+                        'ligamx-apertura',
+                        'ligamx-clausura',
+                        'copa-america',
+                        'club-world-cup',
+                        'world-cup',
+                        'concacaf-champions-cup',
+                        'concacaf-gold-cup',
+                        'concacaf-league',
+                    ],
+                ],
+                [
+                    'name' => 'team',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-team-roster' => [
+            'id' => 'yahoo-sports-team-roster',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/team-roster',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'nba',
+                        'wnba',
+                        'mlb',
+                        'nhl',
+                        'college-football',
+                        'college-basketball',
+                        'college-womens-basketball',
+                        'mls',
+                        'premier-league',
+                        'la-liga',
+                        'serie-a',
+                        'bundesliga',
+                        'ligue-1',
+                        'champions-league',
+                        'nwsl',
+                        'ligamx-apertura',
+                        'ligamx-clausura',
+                        'copa-america',
+                        'club-world-cup',
+                        'world-cup',
+                        'concacaf-champions-cup',
+                        'concacaf-gold-cup',
+                        'concacaf-league',
+                    ],
+                ],
+                [
+                    'name' => 'team',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-team-schedule' => [
+            'id' => 'yahoo-sports-team-schedule',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/team-schedule',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'nba',
+                        'wnba',
+                        'mlb',
+                        'nhl',
+                        'college-football',
+                        'college-basketball',
+                        'college-womens-basketball',
+                        'mls',
+                        'premier-league',
+                        'la-liga',
+                        'serie-a',
+                        'bundesliga',
+                        'ligue-1',
+                        'champions-league',
+                        'nwsl',
+                        'ligamx-apertura',
+                        'ligamx-clausura',
+                        'copa-america',
+                        'club-world-cup',
+                        'world-cup',
+                        'concacaf-champions-cup',
+                        'concacaf-gold-cup',
+                        'concacaf-league',
+                    ],
+                ],
+                [
+                    'name' => 'team',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-tennis-rankings' => [
+            'id' => 'yahoo-sports-tennis-rankings',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/tennis-rankings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'mens-singles',
+                        'womens-singles',
+                        'mens-doubles',
+                        'womens-doubles',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-tennis-schedule' => [
+            'id' => 'yahoo-sports-tennis-schedule',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/tennis-schedule',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-tennis-scoreboard' => [
+            'id' => 'yahoo-sports-tennis-scoreboard',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/tennis-scoreboard',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-tech-article' => [
+            'id' => 'yahoo-tech-article',
+            'method' => 'GET',
+            'path' => '/yahoo-tech/article',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-tech-category' => [
+            'id' => 'yahoo-tech-category',
+            'method' => 'GET',
+            'path' => '/yahoo-tech/category',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'ai',
+                        'apps',
+                        'audio',
+                        'computing',
+                        'deals',
+                        'gaming',
+                        'home',
+                        'home-entertainment',
+                        'phones',
+                        'puzzles',
+                        'science',
+                        'streaming',
+                        'vpn',
+                        'wearables',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'yahoo-tech-home' => [
+            'id' => 'yahoo-tech-home',
+            'method' => 'GET',
+            'path' => '/yahoo-tech/home',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'yelp-business' => [
             'id' => 'yelp-business',
@@ -42856,6 +46770,343 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'zappos-brand' => [
+            'id' => 'zappos-brand',
+            'method' => 'GET',
+            'path' => '/zappos/brand',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'brand',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'zappos-brands' => [
+            'id' => 'zappos-brands',
+            'method' => 'GET',
+            'path' => '/zappos/brands',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'zappos-product' => [
+            'id' => 'zappos-product',
+            'method' => 'GET',
+            'path' => '/zappos/product/{productId}',
+            'pathParams' => [
+                'productId',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'colorId',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'zappos-search' => [
+            'id' => 'zappos-search',
+            'method' => 'GET',
+            'path' => '/zappos/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'term',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'zappos-suggest' => [
+            'id' => 'zappos-suggest',
+            'method' => 'GET',
+            'path' => '/zappos/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'zara-categories' => [
+            'id' => 'zara-categories',
+            'method' => 'GET',
+            'path' => '/zara/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'zara-category-products' => [
+            'id' => 'zara-category-products',
+            'method' => 'GET',
+            'path' => '/zara/category/{categoryId}/products',
+            'pathParams' => [
+                'categoryId',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'zara-product' => [
+            'id' => 'zara-product',
+            'method' => 'GET',
+            'path' => '/zara/product/{productId}',
+            'pathParams' => [
+                'productId',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'zara-search' => [
+            'id' => 'zara-search',
+            'method' => 'GET',
+            'path' => '/zara/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'section',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'WOMAN',
+                        'MAN',
+                        'KID',
+                        'HOME',
+                        'BEAUTY',
+                    ],
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'zara-stores' => [
+            'id' => 'zara-stores',
+            'method' => 'GET',
+            'path' => '/zara/stores',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'lng',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'radius',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'pickup_only',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'donation_only',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'zara-suggest' => [
+            'id' => 'zara-suggest',
+            'method' => 'GET',
+            'path' => '/zara/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'zillow-autocomplete' => [
             'id' => 'zillow-autocomplete',
             'method' => 'GET',
@@ -43097,6 +47348,7 @@ final class Operations
             'mePeriodStatement' => 'billing-me-period-statement',
             'mePeriodStatementDownload' => 'billing-me-period-statement-download',
             'mePortal' => 'billing-me-portal',
+            'meRejections' => 'billing-me-rejections',
         ],
         'bing' => [
             'images' => 'bing-images',
@@ -43380,6 +47632,10 @@ final class Operations
         ],
         'eBay' => [
             'ebayItem' => 'ebay-item',
+            'ebayLiveStreams' => 'ebay-live-streams',
+            'ebayLiveStreamsBatch' => 'ebay-live-streams-batch',
+            'ebayLiveStream' => 'ebay-live-stream',
+            'ebayLiveStreamItems' => 'ebay-live-stream-items',
             'ebaySearch' => 'ebay-search',
             'ebaySeller' => 'ebay-seller',
             'ebaySellerAbout' => 'ebay-seller-about',
@@ -43519,6 +47775,13 @@ final class Operations
             'similar' => 'googleplay-similar',
             'suggest' => 'googleplay-suggest',
         ],
+        'hM' => [
+            'hmCategories' => 'hm-categories',
+            'hmListing' => 'hm-listing',
+            'hmProduct' => 'hm-product',
+            'hmSearch' => 'hm-search',
+            'hmStores' => 'hm-stores',
+        ],
         'imdb' => [
             'name' => 'imdb-name',
             'nameAwards' => 'imdb-name-awards',
@@ -43639,6 +47902,12 @@ final class Operations
             'seriesDetail' => 'kalshi-series-detail',
             'trades' => 'kalshi-trades',
         ],
+        'kohlS' => [
+            'kohlsCategory' => 'kohls-category',
+            'kohlsProductReviews' => 'kohls-product-reviews',
+            'kohlsStores' => 'kohls-stores',
+            'kohlsSuggest' => 'kohls-suggest',
+        ],
         'letterboxd' => [
             'film' => 'letterboxd-film',
             'filmRatingHistogram' => 'letterboxd-film-rating-histogram',
@@ -43653,6 +47922,18 @@ final class Operations
             'linkedinCompany' => 'linkedin-company',
             'linkedinProduct' => 'linkedin-product',
             'linkedinShowcase' => 'linkedin-showcase',
+        ],
+        'lululemon' => [
+            'categories' => 'lululemon-categories',
+            'category' => 'lululemon-category',
+            'outfit' => 'lululemon-outfit',
+            'product' => 'lululemon-product',
+            'stores' => 'lululemon-stores',
+        ],
+        'macyS' => [
+            'macysProductReviews' => 'macys-product-reviews',
+            'macysProduct' => 'macys-product',
+            'macysSuggest' => 'macys-suggest',
         ],
         'manga' => [
             'rankings' => 'manga-rankings',
@@ -43710,6 +47991,14 @@ final class Operations
             'teams' => 'mlb-teams',
             'transactions' => 'mlb-transactions',
         ],
+        'nike' => [
+            'categories' => 'nike-categories',
+            'product' => 'nike-product',
+            'productReviews' => 'nike-product-reviews',
+            'search' => 'nike-search',
+            'stores' => 'nike-stores',
+            'suggest' => 'nike-suggest',
+        ],
         'numbeo' => [
             'costOfLivingCity' => 'numbeo-cost-of-living-city',
             'costOfLivingCountry' => 'numbeo-cost-of-living-country',
@@ -43719,6 +48008,15 @@ final class Operations
             'indicesCountry' => 'numbeo-indices-country',
             'indicesRankings' => 'numbeo-indices-rankings',
             'indicesRankingsByCountry' => 'numbeo-indices-rankings-by-country',
+        ],
+        'oldNavy' => [
+            'oldnavyCategories' => 'oldnavy-categories',
+            'oldnavyCategory' => 'oldnavy-category',
+            'oldnavyProduct' => 'oldnavy-product',
+            'oldnavyProductAvailability' => 'oldnavy-product-availability',
+            'oldnavyProductReviews' => 'oldnavy-product-reviews',
+            'oldnavySearch' => 'oldnavy-search',
+            'oldnavyStores' => 'oldnavy-stores',
         ],
         'openTable' => [
             'opentableRestaurant' => 'opentable-restaurant',
@@ -43883,6 +48181,13 @@ final class Operations
             'rottentomatoesSeason' => 'rottentomatoes-season',
             'rottentomatoesSeries' => 'rottentomatoes-series',
         ],
+        'samSClub' => [
+            'samsclubCategory' => 'samsclub-category',
+            'samsclubContent' => 'samsclub-content',
+            'samsclubDepartments' => 'samsclub-departments',
+            'samsclubProduct' => 'samsclub-product',
+            'samsclubProductRelated' => 'samsclub-product-related',
+        ],
         'secEdgar' => [
             'secCompanyIntelligence' => 'sec-company-intelligence',
             'secCompanySearch' => 'sec-company-search',
@@ -43946,6 +48251,13 @@ final class Operations
             'sofascoreTeamEvents' => 'sofascore-team-events',
             'sofascoreTeamPlayers' => 'sofascore-team-players',
             'sofascoreTournamentSeasons' => 'sofascore-tournament-seasons',
+        ],
+        'soundCloud' => [
+            'soundcloudPlaylist' => 'soundcloud-playlist',
+            'soundcloudProfile' => 'soundcloud-profile',
+            'soundcloudSearch' => 'soundcloud-search',
+            'soundcloudTrack' => 'soundcloud-track',
+            'soundcloudUserTracks' => 'soundcloud-user-tracks',
         ],
         'spotifyPodcasts' => [
             'categories' => 'spotify-podcasts-categories',
@@ -44124,12 +48436,33 @@ final class Operations
             'categorySearch' => 'trustpilot-category-search',
             'category' => 'trustpilot-category',
         ],
+        'twitch' => [
+            'channel' => 'twitch-channel',
+            'clips' => 'twitch-clips',
+            'schedule' => 'twitch-schedule',
+            'search' => 'twitch-search',
+            'streams' => 'twitch-streams',
+            'team' => 'twitch-team',
+            'topGames' => 'twitch-top-games',
+            'videos' => 'twitch-videos',
+            'vodComments' => 'twitch-vod-comments',
+        ],
         'uberEats' => [
             'ubereatsFeed' => 'ubereats-feed',
             'ubereatsSearch' => 'ubereats-search',
             'ubereatsStore' => 'ubereats-store',
             'ubereatsStoreMenu' => 'ubereats-store-menu',
             'ubereatsStoreReviews' => 'ubereats-store-reviews',
+        ],
+        'ultaBeauty' => [
+            'ultaCategories' => 'ulta-categories',
+            'ultaCategory' => 'ulta-category',
+            'ultaProductQuestions' => 'ulta-product-questions',
+            'ultaProductReviews' => 'ulta-product-reviews',
+            'ultaProduct' => 'ulta-product',
+            'ultaSearch' => 'ulta-search',
+            'ultaStores' => 'ulta-stores',
+            'ultaSuggest' => 'ulta-suggest',
         ],
         'upwork' => [
             'freelancer' => 'upwork-freelancer',
@@ -44148,6 +48481,11 @@ final class Operations
             'meApiKeysRotate' => 'user-me-api-keys-rotate',
             'meApiKeysReveal' => 'user-me-api-keys-reveal',
         ],
+        'accountDeletion' => [
+            'cancel' => 'account-deletion-cancel',
+            'myRequest' => 'account-deletion-my-request',
+            'request' => 'account-deletion-request',
+        ],
         'vinted' => [
             'brand' => 'vinted-brand',
             'brands' => 'vinted-brands',
@@ -44162,15 +48500,38 @@ final class Operations
             'productReviews' => 'walmart-product-reviews',
             'search' => 'walmart-search',
         ],
+        'wayfair' => [
+            'categories' => 'wayfair-categories',
+            'category' => 'wayfair-category',
+            'product' => 'wayfair-product',
+        ],
         'whatnot' => [
             'browse' => 'whatnot-browse',
             'categories' => 'whatnot-categories',
             'live' => 'whatnot-live',
         ],
+        'wish' => [
+            'categories' => 'wish-categories',
+            'product' => 'wish-product',
+            'productRelated' => 'wish-product-related',
+            'productReviews' => 'wish-product-reviews',
+            'search' => 'wish-search',
+            'suggest' => 'wish-suggest',
+        ],
         'x' => [
             'post' => 'x-post',
             'profile' => 'x-profile',
             'profilePosts' => 'x-profile-posts',
+        ],
+        'yahooAutos' => [
+            'article' => 'yahoo-autos-article',
+            'category' => 'yahoo-autos-category',
+            'home' => 'yahoo-autos-home',
+        ],
+        'yahooEntertainment' => [
+            'article' => 'yahoo-entertainment-article',
+            'category' => 'yahoo-entertainment-category',
+            'home' => 'yahoo-entertainment-home',
         ],
         'yahooFinance' => [
             'calendars' => 'yahoo-finance-calendars',
@@ -44213,8 +48574,64 @@ final class Operations
             'tickerValuation' => 'yahoo-finance-ticker-valuation',
             'trending' => 'yahoo-finance-trending',
         ],
+        'yahooHealth' => [
+            'article' => 'yahoo-health-article',
+            'category' => 'yahoo-health-category',
+            'home' => 'yahoo-health-home',
+        ],
+        'yahooLife' => [
+            'article' => 'yahoo-life-article',
+            'home' => 'yahoo-life-home',
+        ],
+        'yahooNews' => [
+            'article' => 'yahoo-news-article',
+            'category' => 'yahoo-news-category',
+            'comments' => 'yahoo-news-comments',
+            'commentReplies' => 'yahoo-news-comment-replies',
+            'home' => 'yahoo-news-home',
+            'suggest' => 'yahoo-news-suggest',
+        ],
         'yahooSearch' => [
+            'images' => 'yahoo-search-images',
+            'local' => 'yahoo-search-local',
+            'news' => 'yahoo-search-news',
             'call' => 'yahoo-search',
+            'suggest' => 'yahoo-search-suggest',
+            'videos' => 'yahoo-search-videos',
+        ],
+        'yahooShopping' => [
+            'article' => 'yahoo-shopping-article',
+            'category' => 'yahoo-shopping-category',
+            'home' => 'yahoo-shopping-home',
+            'shoppingList' => 'yahoo-shopping-shopping-list',
+            'shoppingLists' => 'yahoo-shopping-shopping-lists',
+            'store' => 'yahoo-shopping-store',
+            'stores' => 'yahoo-shopping-stores',
+        ],
+        'yahooSports' => [
+            'game' => 'yahoo-sports-game',
+            'golfLeaderboard' => 'yahoo-sports-golf-leaderboard',
+            'golfSchedule' => 'yahoo-sports-golf-schedule',
+            'mmaFightCard' => 'yahoo-sports-mma-fight-card',
+            'mmaSchedule' => 'yahoo-sports-mma-schedule',
+            'motorsportsRace' => 'yahoo-sports-motorsports-race',
+            'motorsportsSchedule' => 'yahoo-sports-motorsports-schedule',
+            'news' => 'yahoo-sports-news',
+            'olympicsMedals' => 'yahoo-sports-olympics-medals',
+            'player' => 'yahoo-sports-player',
+            'scoreboard' => 'yahoo-sports-scoreboard',
+            'standings' => 'yahoo-sports-standings',
+            'team' => 'yahoo-sports-team',
+            'teamRoster' => 'yahoo-sports-team-roster',
+            'teamSchedule' => 'yahoo-sports-team-schedule',
+            'tennisRankings' => 'yahoo-sports-tennis-rankings',
+            'tennisSchedule' => 'yahoo-sports-tennis-schedule',
+            'tennisScoreboard' => 'yahoo-sports-tennis-scoreboard',
+        ],
+        'yahooTech' => [
+            'article' => 'yahoo-tech-article',
+            'category' => 'yahoo-tech-category',
+            'home' => 'yahoo-tech-home',
         ],
         'yelp' => [
             'business' => 'yelp-business',
@@ -44248,6 +48665,21 @@ final class Operations
             'search' => 'zalando-search',
             'suggest' => 'zalando-suggest',
         ],
+        'zappos' => [
+            'brand' => 'zappos-brand',
+            'brands' => 'zappos-brands',
+            'product' => 'zappos-product',
+            'search' => 'zappos-search',
+            'suggest' => 'zappos-suggest',
+        ],
+        'zara' => [
+            'categories' => 'zara-categories',
+            'categoryProducts' => 'zara-category-products',
+            'product' => 'zara-product',
+            'search' => 'zara-search',
+            'stores' => 'zara-stores',
+            'suggest' => 'zara-suggest',
+        ],
         'zillow' => [
             'autocomplete' => 'zillow-autocomplete',
             'property' => 'zillow-property',
@@ -44255,7 +48687,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 1041;
+    public const OPERATION_COUNT = 1176;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -44333,6 +48765,7 @@ final class Operations
         'billing-me-period-statement',
         'billing-me-period-statement-download',
         'billing-me-portal',
+        'billing-me-rejections',
         'bing-images',
         'bing-news',
         'bing-search',
@@ -44573,6 +49006,10 @@ final class Operations
         'duckduckgo-shopping',
         'duckduckgo-video',
         'ebay-item',
+        'ebay-live-streams',
+        'ebay-live-streams-batch',
+        'ebay-live-stream',
+        'ebay-live-stream-items',
         'ebay-search',
         'ebay-seller',
         'ebay-seller-about',
@@ -44690,6 +49127,11 @@ final class Operations
         'googleplay-search',
         'googleplay-similar',
         'googleplay-suggest',
+        'hm-categories',
+        'hm-listing',
+        'hm-product',
+        'hm-search',
+        'hm-stores',
         'imdb-name',
         'imdb-name-awards',
         'imdb-name-credits',
@@ -44794,6 +49236,10 @@ final class Operations
         'kalshi-series',
         'kalshi-series-detail',
         'kalshi-trades',
+        'kohls-category',
+        'kohls-product-reviews',
+        'kohls-stores',
+        'kohls-suggest',
         'letterboxd-film',
         'letterboxd-film-rating-histogram',
         'letterboxd-film-reviews',
@@ -44805,6 +49251,14 @@ final class Operations
         'linkedin-company',
         'linkedin-product',
         'linkedin-showcase',
+        'lululemon-categories',
+        'lululemon-category',
+        'lululemon-outfit',
+        'lululemon-product',
+        'lululemon-stores',
+        'macys-product-reviews',
+        'macys-product',
+        'macys-suggest',
         'manga-rankings',
         'manga-search',
         'manga-title',
@@ -44849,6 +49303,12 @@ final class Operations
         'mlb-team-stats',
         'mlb-teams',
         'mlb-transactions',
+        'nike-categories',
+        'nike-product',
+        'nike-product-reviews',
+        'nike-search',
+        'nike-stores',
+        'nike-suggest',
         'numbeo-cost-of-living-city',
         'numbeo-cost-of-living-country',
         'numbeo-cost-of-living-rankings',
@@ -44857,6 +49317,13 @@ final class Operations
         'numbeo-indices-country',
         'numbeo-indices-rankings',
         'numbeo-indices-rankings-by-country',
+        'oldnavy-categories',
+        'oldnavy-category',
+        'oldnavy-product',
+        'oldnavy-product-availability',
+        'oldnavy-product-reviews',
+        'oldnavy-search',
+        'oldnavy-stores',
         'opentable-restaurant',
         'opentable-restaurant-menus',
         'opentable-restaurant-reviews',
@@ -44996,6 +49463,11 @@ final class Operations
         'rottentomatoes-search',
         'rottentomatoes-season',
         'rottentomatoes-series',
+        'samsclub-category',
+        'samsclub-content',
+        'samsclub-departments',
+        'samsclub-product',
+        'samsclub-product-related',
         'sec-company-intelligence',
         'sec-company-search',
         'sec-company-submissions',
@@ -45050,6 +49522,11 @@ final class Operations
         'sofascore-team-events',
         'sofascore-team-players',
         'sofascore-tournament-seasons',
+        'soundcloud-playlist',
+        'soundcloud-profile',
+        'soundcloud-search',
+        'soundcloud-track',
+        'soundcloud-user-tracks',
         'spotify-podcasts-categories',
         'spotify-podcasts-charts',
         'spotify-podcasts-episode',
@@ -45197,11 +49674,28 @@ final class Operations
         'trustpilot-categories',
         'trustpilot-category-search',
         'trustpilot-category',
+        'twitch-channel',
+        'twitch-clips',
+        'twitch-schedule',
+        'twitch-search',
+        'twitch-streams',
+        'twitch-team',
+        'twitch-top-games',
+        'twitch-videos',
+        'twitch-vod-comments',
         'ubereats-feed',
         'ubereats-search',
         'ubereats-store',
         'ubereats-store-menu',
         'ubereats-store-reviews',
+        'ulta-categories',
+        'ulta-category',
+        'ulta-product-questions',
+        'ulta-product-reviews',
+        'ulta-product',
+        'ulta-search',
+        'ulta-stores',
+        'ulta-suggest',
         'upwork-freelancer',
         'upwork-job',
         'upwork-search',
@@ -45213,6 +49707,9 @@ final class Operations
         'user-me-api-keys',
         'user-me-api-keys-rotate',
         'user-me-api-keys-reveal',
+        'account-deletion-cancel',
+        'account-deletion-my-request',
+        'account-deletion-request',
         'vinted-brand',
         'vinted-brands',
         'vinted-catalog',
@@ -45223,14 +49720,29 @@ final class Operations
         'walmart-product',
         'walmart-product-reviews',
         'walmart-search',
+        'wayfair-categories',
+        'wayfair-category',
+        'wayfair-product',
         'web-scrape',
         'web-techstack',
         'whatnot-browse',
         'whatnot-categories',
         'whatnot-live',
+        'wish-categories',
+        'wish-product',
+        'wish-product-related',
+        'wish-product-reviews',
+        'wish-search',
+        'wish-suggest',
         'x-post',
         'x-profile',
         'x-profile-posts',
+        'yahoo-autos-article',
+        'yahoo-autos-category',
+        'yahoo-autos-home',
+        'yahoo-entertainment-article',
+        'yahoo-entertainment-category',
+        'yahoo-entertainment-home',
         'yahoo-finance-calendars',
         'yahoo-finance-calendar',
         'yahoo-finance-download',
@@ -45270,7 +49782,51 @@ final class Operations
         'yahoo-finance-ticker-sustainability',
         'yahoo-finance-ticker-valuation',
         'yahoo-finance-trending',
+        'yahoo-health-article',
+        'yahoo-health-category',
+        'yahoo-health-home',
+        'yahoo-life-article',
+        'yahoo-life-home',
+        'yahoo-news-article',
+        'yahoo-news-category',
+        'yahoo-news-comments',
+        'yahoo-news-comment-replies',
+        'yahoo-news-home',
+        'yahoo-news-suggest',
+        'yahoo-search-images',
+        'yahoo-search-local',
+        'yahoo-search-news',
         'yahoo-search',
+        'yahoo-search-suggest',
+        'yahoo-search-videos',
+        'yahoo-shopping-article',
+        'yahoo-shopping-category',
+        'yahoo-shopping-home',
+        'yahoo-shopping-shopping-list',
+        'yahoo-shopping-shopping-lists',
+        'yahoo-shopping-store',
+        'yahoo-shopping-stores',
+        'yahoo-sports-game',
+        'yahoo-sports-golf-leaderboard',
+        'yahoo-sports-golf-schedule',
+        'yahoo-sports-mma-fight-card',
+        'yahoo-sports-mma-schedule',
+        'yahoo-sports-motorsports-race',
+        'yahoo-sports-motorsports-schedule',
+        'yahoo-sports-news',
+        'yahoo-sports-olympics-medals',
+        'yahoo-sports-player',
+        'yahoo-sports-scoreboard',
+        'yahoo-sports-standings',
+        'yahoo-sports-team',
+        'yahoo-sports-team-roster',
+        'yahoo-sports-team-schedule',
+        'yahoo-sports-tennis-rankings',
+        'yahoo-sports-tennis-schedule',
+        'yahoo-sports-tennis-scoreboard',
+        'yahoo-tech-article',
+        'yahoo-tech-category',
+        'yahoo-tech-home',
         'yelp-business',
         'yelp-business-menu',
         'yelp-business-photos',
@@ -45297,6 +49853,17 @@ final class Operations
         'zalando-product',
         'zalando-search',
         'zalando-suggest',
+        'zappos-brand',
+        'zappos-brands',
+        'zappos-product',
+        'zappos-search',
+        'zappos-suggest',
+        'zara-categories',
+        'zara-category-products',
+        'zara-product',
+        'zara-search',
+        'zara-stores',
+        'zara-suggest',
         'zillow-autocomplete',
         'zillow-property',
         'zillow-search',
@@ -45343,6 +49910,9 @@ final class Operations
  */
 final class OperationId
 {
+    public const ACCOUNT_DELETION_CANCEL = 'account-deletion-cancel';
+    public const ACCOUNT_DELETION_MY_REQUEST = 'account-deletion-my-request';
+    public const ACCOUNT_DELETION_REQUEST = 'account-deletion-request';
     public const AGODA_ACTIVITIES_SEARCH = 'agoda-activities-search';
     public const AGODA_ACTIVITY_DETAIL = 'agoda-activity-detail';
     public const AGODA_FLIGHTS_ITINERARY_AMENITIES = 'agoda-flights-itinerary-amenities';
@@ -45417,6 +49987,7 @@ final class OperationId
     public const BILLING_ME_PERIOD_STATEMENT_DOWNLOAD = 'billing-me-period-statement-download';
     public const BILLING_ME_PERIODS = 'billing-me-periods';
     public const BILLING_ME_PORTAL = 'billing-me-portal';
+    public const BILLING_ME_REJECTIONS = 'billing-me-rejections';
     public const BING_IMAGES = 'bing-images';
     public const BING_NEWS = 'bing-news';
     public const BING_SEARCH = 'bing-search';
@@ -45655,6 +50226,10 @@ final class OperationId
     public const DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_SHOPPING = 'duckduckgo-shopping';
     public const DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_VIDEO = 'duckduckgo-video';
     public const EBAY_EBAY_ITEM = 'ebay-item';
+    public const EBAY_EBAY_LIVE_STREAM = 'ebay-live-stream';
+    public const EBAY_EBAY_LIVE_STREAM_ITEMS = 'ebay-live-stream-items';
+    public const EBAY_EBAY_LIVE_STREAMS = 'ebay-live-streams';
+    public const EBAY_EBAY_LIVE_STREAMS_BATCH = 'ebay-live-streams-batch';
     public const EBAY_EBAY_SEARCH = 'ebay-search';
     public const EBAY_EBAY_SELLER = 'ebay-seller';
     public const EBAY_EBAY_SELLER_ABOUT = 'ebay-seller-about';
@@ -45771,6 +50346,11 @@ final class OperationId
     public const GOOGLE_TRENDS_TRENDING = 'google-trends-trending';
     public const GOOGLE_TRENDS_TRENDING_DETAIL = 'google-trends-trending-detail';
     public const GOOGLE_VIDEOS = 'google-videos';
+    public const HMHM_CATEGORIES = 'hm-categories';
+    public const HMHM_LISTING = 'hm-listing';
+    public const HMHM_PRODUCT = 'hm-product';
+    public const HMHM_SEARCH = 'hm-search';
+    public const HMHM_STORES = 'hm-stores';
     public const IMDB_NAME = 'imdb-name';
     public const IMDB_NAME_AWARDS = 'imdb-name-awards';
     public const IMDB_NAME_CREDITS = 'imdb-name-credits';
@@ -45875,6 +50455,10 @@ final class OperationId
     public const KALSHI_SERIES = 'kalshi-series';
     public const KALSHI_SERIES_DETAIL = 'kalshi-series-detail';
     public const KALSHI_TRADES = 'kalshi-trades';
+    public const KOHL_SKOHLS_CATEGORY = 'kohls-category';
+    public const KOHL_SKOHLS_PRODUCT_REVIEWS = 'kohls-product-reviews';
+    public const KOHL_SKOHLS_STORES = 'kohls-stores';
+    public const KOHL_SKOHLS_SUGGEST = 'kohls-suggest';
     public const LETTERBOXD_FILM = 'letterboxd-film';
     public const LETTERBOXD_FILM_RATING_HISTOGRAM = 'letterboxd-film-rating-histogram';
     public const LETTERBOXD_FILM_REVIEWS = 'letterboxd-film-reviews';
@@ -45886,6 +50470,14 @@ final class OperationId
     public const LINKED_IN_LINKEDIN_COMPANY = 'linkedin-company';
     public const LINKED_IN_LINKEDIN_PRODUCT = 'linkedin-product';
     public const LINKED_IN_LINKEDIN_SHOWCASE = 'linkedin-showcase';
+    public const LULULEMON_CATEGORIES = 'lululemon-categories';
+    public const LULULEMON_CATEGORY = 'lululemon-category';
+    public const LULULEMON_OUTFIT = 'lululemon-outfit';
+    public const LULULEMON_PRODUCT = 'lululemon-product';
+    public const LULULEMON_STORES = 'lululemon-stores';
+    public const MACY_SMACYS_PRODUCT = 'macys-product';
+    public const MACY_SMACYS_PRODUCT_REVIEWS = 'macys-product-reviews';
+    public const MACY_SMACYS_SUGGEST = 'macys-suggest';
     public const MANGA_RANKINGS = 'manga-rankings';
     public const MANGA_SEARCH = 'manga-search';
     public const MANGA_TITLE = 'manga-title';
@@ -45932,6 +50524,12 @@ final class OperationId
     public const MLB_TEAM_STATS = 'mlb-team-stats';
     public const MLB_TEAMS = 'mlb-teams';
     public const MLB_TRANSACTIONS = 'mlb-transactions';
+    public const NIKE_CATEGORIES = 'nike-categories';
+    public const NIKE_PRODUCT = 'nike-product';
+    public const NIKE_PRODUCT_REVIEWS = 'nike-product-reviews';
+    public const NIKE_SEARCH = 'nike-search';
+    public const NIKE_STORES = 'nike-stores';
+    public const NIKE_SUGGEST = 'nike-suggest';
     public const NUMBEO_COST_OF_LIVING_CITY = 'numbeo-cost-of-living-city';
     public const NUMBEO_COST_OF_LIVING_COUNTRY = 'numbeo-cost-of-living-country';
     public const NUMBEO_COST_OF_LIVING_RANKINGS = 'numbeo-cost-of-living-rankings';
@@ -45940,6 +50538,13 @@ final class OperationId
     public const NUMBEO_INDICES_COUNTRY = 'numbeo-indices-country';
     public const NUMBEO_INDICES_RANKINGS = 'numbeo-indices-rankings';
     public const NUMBEO_INDICES_RANKINGS_BY_COUNTRY = 'numbeo-indices-rankings-by-country';
+    public const OLD_NAVY_OLDNAVY_CATEGORIES = 'oldnavy-categories';
+    public const OLD_NAVY_OLDNAVY_CATEGORY = 'oldnavy-category';
+    public const OLD_NAVY_OLDNAVY_PRODUCT = 'oldnavy-product';
+    public const OLD_NAVY_OLDNAVY_PRODUCT_AVAILABILITY = 'oldnavy-product-availability';
+    public const OLD_NAVY_OLDNAVY_PRODUCT_REVIEWS = 'oldnavy-product-reviews';
+    public const OLD_NAVY_OLDNAVY_SEARCH = 'oldnavy-search';
+    public const OLD_NAVY_OLDNAVY_STORES = 'oldnavy-stores';
     public const OPEN_TABLE_OPENTABLE_RESTAURANT = 'opentable-restaurant';
     public const OPEN_TABLE_OPENTABLE_RESTAURANT_MENUS = 'opentable-restaurant-menus';
     public const OPEN_TABLE_OPENTABLE_RESTAURANT_REVIEWS = 'opentable-restaurant-reviews';
@@ -46077,6 +50682,11 @@ final class OperationId
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_SEARCH = 'rottentomatoes-search';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_SEASON = 'rottentomatoes-season';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_SERIES = 'rottentomatoes-series';
+    public const SAM_SCLUB_SAMSCLUB_CATEGORY = 'samsclub-category';
+    public const SAM_SCLUB_SAMSCLUB_CONTENT = 'samsclub-content';
+    public const SAM_SCLUB_SAMSCLUB_DEPARTMENTS = 'samsclub-departments';
+    public const SAM_SCLUB_SAMSCLUB_PRODUCT = 'samsclub-product';
+    public const SAM_SCLUB_SAMSCLUB_PRODUCT_RELATED = 'samsclub-product-related';
     public const SEC_EDGAR_SEC_COMPANY_INTELLIGENCE = 'sec-company-intelligence';
     public const SEC_EDGAR_SEC_COMPANY_SEARCH = 'sec-company-search';
     public const SEC_EDGAR_SEC_COMPANY_SUBMISSIONS = 'sec-company-submissions';
@@ -46131,6 +50741,11 @@ final class OperationId
     public const SOFA_SCORE_SOFASCORE_TEAM_EVENTS = 'sofascore-team-events';
     public const SOFA_SCORE_SOFASCORE_TEAM_PLAYERS = 'sofascore-team-players';
     public const SOFA_SCORE_SOFASCORE_TOURNAMENT_SEASONS = 'sofascore-tournament-seasons';
+    public const SOUND_CLOUD_SOUNDCLOUD_PLAYLIST = 'soundcloud-playlist';
+    public const SOUND_CLOUD_SOUNDCLOUD_PROFILE = 'soundcloud-profile';
+    public const SOUND_CLOUD_SOUNDCLOUD_SEARCH = 'soundcloud-search';
+    public const SOUND_CLOUD_SOUNDCLOUD_TRACK = 'soundcloud-track';
+    public const SOUND_CLOUD_SOUNDCLOUD_USER_TRACKS = 'soundcloud-user-tracks';
     public const SPOTIFY_ALBUM = 'spotify-album';
     public const SPOTIFY_ALBUM_TRACKS = 'spotify-album-tracks';
     public const SPOTIFY_ALBUMS_SEARCH = 'spotify-albums-search';
@@ -46278,11 +50893,28 @@ final class OperationId
     public const TRUSTPILOT_CATEGORIES = 'trustpilot-categories';
     public const TRUSTPILOT_CATEGORY = 'trustpilot-category';
     public const TRUSTPILOT_CATEGORY_SEARCH = 'trustpilot-category-search';
+    public const TWITCH_CHANNEL = 'twitch-channel';
+    public const TWITCH_CLIPS = 'twitch-clips';
+    public const TWITCH_SCHEDULE = 'twitch-schedule';
+    public const TWITCH_SEARCH = 'twitch-search';
+    public const TWITCH_STREAMS = 'twitch-streams';
+    public const TWITCH_TEAM = 'twitch-team';
+    public const TWITCH_TOP_GAMES = 'twitch-top-games';
+    public const TWITCH_VIDEOS = 'twitch-videos';
+    public const TWITCH_VOD_COMMENTS = 'twitch-vod-comments';
     public const UBER_EATS_UBEREATS_FEED = 'ubereats-feed';
     public const UBER_EATS_UBEREATS_SEARCH = 'ubereats-search';
     public const UBER_EATS_UBEREATS_STORE = 'ubereats-store';
     public const UBER_EATS_UBEREATS_STORE_MENU = 'ubereats-store-menu';
     public const UBER_EATS_UBEREATS_STORE_REVIEWS = 'ubereats-store-reviews';
+    public const ULTA_BEAUTY_ULTA_CATEGORIES = 'ulta-categories';
+    public const ULTA_BEAUTY_ULTA_CATEGORY = 'ulta-category';
+    public const ULTA_BEAUTY_ULTA_PRODUCT = 'ulta-product';
+    public const ULTA_BEAUTY_ULTA_PRODUCT_QUESTIONS = 'ulta-product-questions';
+    public const ULTA_BEAUTY_ULTA_PRODUCT_REVIEWS = 'ulta-product-reviews';
+    public const ULTA_BEAUTY_ULTA_SEARCH = 'ulta-search';
+    public const ULTA_BEAUTY_ULTA_STORES = 'ulta-stores';
+    public const ULTA_BEAUTY_ULTA_SUGGEST = 'ulta-suggest';
     public const UPWORK_FREELANCER = 'upwork-freelancer';
     public const UPWORK_JOB = 'upwork-job';
     public const UPWORK_SEARCH = 'upwork-search';
@@ -46304,6 +50936,9 @@ final class OperationId
     public const WALMART_PRODUCT = 'walmart-product';
     public const WALMART_PRODUCT_REVIEWS = 'walmart-product-reviews';
     public const WALMART_SEARCH = 'walmart-search';
+    public const WAYFAIR_CATEGORIES = 'wayfair-categories';
+    public const WAYFAIR_CATEGORY = 'wayfair-category';
+    public const WAYFAIR_PRODUCT = 'wayfair-product';
     public const WEB_ANTIBOT_CHECK = 'antibot-check';
     public const WEB_CONTACT = 'contact';
     public const WEB_EXTRACT = 'extract';
@@ -46312,9 +50947,21 @@ final class OperationId
     public const WHATNOT_BROWSE = 'whatnot-browse';
     public const WHATNOT_CATEGORIES = 'whatnot-categories';
     public const WHATNOT_LIVE = 'whatnot-live';
+    public const WISH_CATEGORIES = 'wish-categories';
+    public const WISH_PRODUCT = 'wish-product';
+    public const WISH_PRODUCT_RELATED = 'wish-product-related';
+    public const WISH_PRODUCT_REVIEWS = 'wish-product-reviews';
+    public const WISH_SEARCH = 'wish-search';
+    public const WISH_SUGGEST = 'wish-suggest';
     public const XPOST = 'x-post';
     public const XPROFILE = 'x-profile';
     public const XPROFILE_POSTS = 'x-profile-posts';
+    public const YAHOO_AUTOS_ARTICLE = 'yahoo-autos-article';
+    public const YAHOO_AUTOS_CATEGORY = 'yahoo-autos-category';
+    public const YAHOO_AUTOS_HOME = 'yahoo-autos-home';
+    public const YAHOO_ENTERTAINMENT_ARTICLE = 'yahoo-entertainment-article';
+    public const YAHOO_ENTERTAINMENT_CATEGORY = 'yahoo-entertainment-category';
+    public const YAHOO_ENTERTAINMENT_HOME = 'yahoo-entertainment-home';
     public const YAHOO_FINANCE_CALENDAR = 'yahoo-finance-calendar';
     public const YAHOO_FINANCE_CALENDARS = 'yahoo-finance-calendars';
     public const YAHOO_FINANCE_DOWNLOAD = 'yahoo-finance-download';
@@ -46354,7 +51001,51 @@ final class OperationId
     public const YAHOO_FINANCE_TICKER_SUSTAINABILITY = 'yahoo-finance-ticker-sustainability';
     public const YAHOO_FINANCE_TICKER_VALUATION = 'yahoo-finance-ticker-valuation';
     public const YAHOO_FINANCE_TRENDING = 'yahoo-finance-trending';
+    public const YAHOO_HEALTH_ARTICLE = 'yahoo-health-article';
+    public const YAHOO_HEALTH_CATEGORY = 'yahoo-health-category';
+    public const YAHOO_HEALTH_HOME = 'yahoo-health-home';
+    public const YAHOO_LIFE_ARTICLE = 'yahoo-life-article';
+    public const YAHOO_LIFE_HOME = 'yahoo-life-home';
+    public const YAHOO_NEWS_ARTICLE = 'yahoo-news-article';
+    public const YAHOO_NEWS_CATEGORY = 'yahoo-news-category';
+    public const YAHOO_NEWS_COMMENT_REPLIES = 'yahoo-news-comment-replies';
+    public const YAHOO_NEWS_COMMENTS = 'yahoo-news-comments';
+    public const YAHOO_NEWS_HOME = 'yahoo-news-home';
+    public const YAHOO_NEWS_SUGGEST = 'yahoo-news-suggest';
     public const YAHOO_SEARCH_CALL = 'yahoo-search';
+    public const YAHOO_SEARCH_IMAGES = 'yahoo-search-images';
+    public const YAHOO_SEARCH_LOCAL = 'yahoo-search-local';
+    public const YAHOO_SEARCH_NEWS = 'yahoo-search-news';
+    public const YAHOO_SEARCH_SUGGEST = 'yahoo-search-suggest';
+    public const YAHOO_SEARCH_VIDEOS = 'yahoo-search-videos';
+    public const YAHOO_SHOPPING_ARTICLE = 'yahoo-shopping-article';
+    public const YAHOO_SHOPPING_CATEGORY = 'yahoo-shopping-category';
+    public const YAHOO_SHOPPING_HOME = 'yahoo-shopping-home';
+    public const YAHOO_SHOPPING_SHOPPING_LIST = 'yahoo-shopping-shopping-list';
+    public const YAHOO_SHOPPING_SHOPPING_LISTS = 'yahoo-shopping-shopping-lists';
+    public const YAHOO_SHOPPING_STORE = 'yahoo-shopping-store';
+    public const YAHOO_SHOPPING_STORES = 'yahoo-shopping-stores';
+    public const YAHOO_SPORTS_GAME = 'yahoo-sports-game';
+    public const YAHOO_SPORTS_GOLF_LEADERBOARD = 'yahoo-sports-golf-leaderboard';
+    public const YAHOO_SPORTS_GOLF_SCHEDULE = 'yahoo-sports-golf-schedule';
+    public const YAHOO_SPORTS_MMA_FIGHT_CARD = 'yahoo-sports-mma-fight-card';
+    public const YAHOO_SPORTS_MMA_SCHEDULE = 'yahoo-sports-mma-schedule';
+    public const YAHOO_SPORTS_MOTORSPORTS_RACE = 'yahoo-sports-motorsports-race';
+    public const YAHOO_SPORTS_MOTORSPORTS_SCHEDULE = 'yahoo-sports-motorsports-schedule';
+    public const YAHOO_SPORTS_NEWS = 'yahoo-sports-news';
+    public const YAHOO_SPORTS_OLYMPICS_MEDALS = 'yahoo-sports-olympics-medals';
+    public const YAHOO_SPORTS_PLAYER = 'yahoo-sports-player';
+    public const YAHOO_SPORTS_SCOREBOARD = 'yahoo-sports-scoreboard';
+    public const YAHOO_SPORTS_STANDINGS = 'yahoo-sports-standings';
+    public const YAHOO_SPORTS_TEAM = 'yahoo-sports-team';
+    public const YAHOO_SPORTS_TEAM_ROSTER = 'yahoo-sports-team-roster';
+    public const YAHOO_SPORTS_TEAM_SCHEDULE = 'yahoo-sports-team-schedule';
+    public const YAHOO_SPORTS_TENNIS_RANKINGS = 'yahoo-sports-tennis-rankings';
+    public const YAHOO_SPORTS_TENNIS_SCHEDULE = 'yahoo-sports-tennis-schedule';
+    public const YAHOO_SPORTS_TENNIS_SCOREBOARD = 'yahoo-sports-tennis-scoreboard';
+    public const YAHOO_TECH_ARTICLE = 'yahoo-tech-article';
+    public const YAHOO_TECH_CATEGORY = 'yahoo-tech-category';
+    public const YAHOO_TECH_HOME = 'yahoo-tech-home';
     public const YELP_BUSINESS = 'yelp-business';
     public const YELP_BUSINESS_MENU = 'yelp-business-menu';
     public const YELP_BUSINESS_PHOTOS = 'yelp-business-photos';
@@ -46381,6 +51072,17 @@ final class OperationId
     public const ZALANDO_PRODUCT = 'zalando-product';
     public const ZALANDO_SEARCH = 'zalando-search';
     public const ZALANDO_SUGGEST = 'zalando-suggest';
+    public const ZAPPOS_BRAND = 'zappos-brand';
+    public const ZAPPOS_BRANDS = 'zappos-brands';
+    public const ZAPPOS_PRODUCT = 'zappos-product';
+    public const ZAPPOS_SEARCH = 'zappos-search';
+    public const ZAPPOS_SUGGEST = 'zappos-suggest';
+    public const ZARA_CATEGORIES = 'zara-categories';
+    public const ZARA_CATEGORY_PRODUCTS = 'zara-category-products';
+    public const ZARA_PRODUCT = 'zara-product';
+    public const ZARA_SEARCH = 'zara-search';
+    public const ZARA_STORES = 'zara-stores';
+    public const ZARA_SUGGEST = 'zara-suggest';
     public const ZILLOW_AUTOCOMPLETE = 'zillow-autocomplete';
     public const ZILLOW_PROPERTY = 'zillow-property';
     public const ZILLOW_SEARCH = 'zillow-search';
