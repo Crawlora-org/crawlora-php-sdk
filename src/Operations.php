@@ -2579,6 +2579,84 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'bestbuy-category' => [
+            'id' => 'bestbuy-category',
+            'method' => 'GET',
+            'path' => '/bestbuy/category',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'bestbuy-product' => [
+            'id' => 'bestbuy-product',
+            'method' => 'GET',
+            'path' => '/bestbuy/product',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sku',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'bestbuy-product-reviews' => [
+            'id' => 'bestbuy-product-reviews',
+            'method' => 'GET',
+            'path' => '/bestbuy/product/reviews',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sku',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'billing-me' => [
             'id' => 'billing-me',
             'method' => 'GET',
@@ -16315,6 +16393,38 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'depop-item-similar' => [
+            'id' => 'depop-item-similar',
+            'method' => 'GET',
+            'path' => '/depop/item/{slug}/similar',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'depop-search' => [
             'id' => 'depop-search',
             'method' => 'GET',
@@ -16371,6 +16481,11 @@ final class Operations
                     'name' => 'gender',
                     'in' => 'query',
                     'type' => 'string',
+                ],
+                [
+                    'name' => 'is_kids',
+                    'in' => 'query',
+                    'type' => 'boolean',
                 ],
                 [
                     'name' => 'brand_ids',
@@ -17115,6 +17230,122 @@ final class Operations
                     'name' => 'longitude',
                     'in' => 'query',
                     'type' => 'number',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'draftkings-event' => [
+            'id' => 'draftkings-event',
+            'method' => 'GET',
+            'path' => '/draftkings/event',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'event_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'draftkings-event-markets' => [
+            'id' => 'draftkings-event-markets',
+            'method' => 'GET',
+            'path' => '/draftkings/event-markets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'event_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'subcategory_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'draftkings-futures' => [
+            'id' => 'draftkings-futures',
+            'method' => 'GET',
+            'path' => '/draftkings/futures',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'subcategory_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'draftkings-odds' => [
+            'id' => 'draftkings-odds',
+            'method' => 'GET',
+            'path' => '/draftkings/odds',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
                     'required' => true,
                 ],
             ],
@@ -21153,6 +21384,215 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'googlepatents-coverage' => [
+            'id' => 'googlepatents-coverage',
+            'method' => 'GET',
+            'path' => '/googlepatents/coverage',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'googlepatents-detail' => [
+            'id' => 'googlepatents-detail',
+            'method' => 'GET',
+            'path' => '/googlepatents/detail',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'number',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'googlepatents-search' => [
+            'id' => 'googlepatents-search',
+            'method' => 'GET',
+            'path' => '/googlepatents/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'inventor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'assignee',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'GRANT',
+                        'APPLICATION',
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PATENT',
+                        'DESIGN',
+                    ],
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ENGLISH',
+                        'GERMAN',
+                        'CHINESE',
+                        'FRENCH',
+                        'SPANISH',
+                        'ARABIC',
+                        'JAPANESE',
+                        'KOREAN',
+                        'PORTUGUESE',
+                        'RUSSIAN',
+                        'ITALIAN',
+                        'DUTCH',
+                        'SWEDISH',
+                        'FINNISH',
+                        'NORWEGIAN',
+                        'DANISH',
+                    ],
+                ],
+                [
+                    'name' => 'date_field',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'priority',
+                        'filing',
+                        'publication',
+                    ],
+                ],
+                [
+                    'name' => 'before',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'new',
+                        'old',
+                    ],
+                ],
+                [
+                    'name' => 'num',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'googlepatents-suggest' => [
+            'id' => 'googlepatents-suggest',
+            'method' => 'GET',
+            'path' => '/googlepatents/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'field',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'inventor',
+                        'assignee',
+                    ],
+                ],
+                [
+                    'name' => 'value',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'googleplay-app' => [
             'id' => 'googleplay-app',
             'method' => 'GET',
@@ -21746,6 +22186,27 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'hm-product-related' => [
+            'id' => 'hm-product-related',
+            'method' => 'GET',
+            'path' => '/hm/product/{product_id}/related',
+            'pathParams' => [
+                'product_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'hm-search' => [
             'id' => 'hm-search',
             'method' => 'GET',
@@ -21782,6 +22243,31 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'hm-search-suggestions' => [
+            'id' => 'hm-search-suggestions',
+            'method' => 'GET',
+            'path' => '/hm/search/suggestions',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'hm-stores' => [
             'id' => 'hm-stores',
@@ -47339,6 +47825,11 @@ final class Operations
             'search' => 'autotrader-search',
             'vehicle' => 'autotrader-vehicle',
         ],
+        'bestBuy' => [
+            'bestbuyCategory' => 'bestbuy-category',
+            'bestbuyProduct' => 'bestbuy-product',
+            'bestbuyProductReviews' => 'bestbuy-product-reviews',
+        ],
         'billing' => [
             'me' => 'billing-me',
             'meCheckout' => 'billing-me-checkout',
@@ -47597,6 +48088,7 @@ final class Operations
         'depop' => [
             'categories' => 'depop-categories',
             'item' => 'depop-item',
+            'itemSimilar' => 'depop-item-similar',
             'search' => 'depop-search',
             'shop' => 'depop-shop',
         ],
@@ -47622,6 +48114,12 @@ final class Operations
             'doordashStoreItem' => 'doordash-store-item',
             'doordashStoreMenu' => 'doordash-store-menu',
             'doordashStoreReviews' => 'doordash-store-reviews',
+        ],
+        'draftKings' => [
+            'draftkingsEvent' => 'draftkings-event',
+            'draftkingsEventMarkets' => 'draftkings-event-markets',
+            'draftkingsFutures' => 'draftkings-futures',
+            'draftkingsOdds' => 'draftkings-odds',
         ],
         'duckDuckGoSearch' => [
             'duckduckgoImage' => 'duckduckgo-image',
@@ -47762,6 +48260,12 @@ final class Operations
             'trendsTrendingDetail' => 'google-trends-trending-detail',
             'videos' => 'google-videos',
         ],
+        'googlePatents' => [
+            'googlepatentsCoverage' => 'googlepatents-coverage',
+            'googlepatentsDetail' => 'googlepatents-detail',
+            'googlepatentsSearch' => 'googlepatents-search',
+            'googlepatentsSuggest' => 'googlepatents-suggest',
+        ],
         'googlePlay' => [
             'app' => 'googleplay-app',
             'categories' => 'googleplay-categories',
@@ -47779,7 +48283,9 @@ final class Operations
             'hmCategories' => 'hm-categories',
             'hmListing' => 'hm-listing',
             'hmProduct' => 'hm-product',
+            'hmProductRelated' => 'hm-product-related',
             'hmSearch' => 'hm-search',
+            'hmSearchSuggestions' => 'hm-search-suggestions',
             'hmStores' => 'hm-stores',
         ],
         'imdb' => [
@@ -48687,7 +49193,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 1176;
+    public const OPERATION_COUNT = 1190;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -48757,6 +49263,9 @@ final class Operations
         'autotrader-dealer',
         'autotrader-search',
         'autotrader-vehicle',
+        'bestbuy-category',
+        'bestbuy-product',
+        'bestbuy-product-reviews',
         'billing-me',
         'billing-me-checkout',
         'billing-me-events',
@@ -48978,6 +49487,7 @@ final class Operations
         'datasets-x-users-search',
         'depop-categories',
         'depop-item',
+        'depop-item-similar',
         'depop-search',
         'depop-shop',
         'antibot-check',
@@ -49000,6 +49510,10 @@ final class Operations
         'doordash-store-item',
         'doordash-store-menu',
         'doordash-store-reviews',
+        'draftkings-event',
+        'draftkings-event-markets',
+        'draftkings-futures',
+        'draftkings-odds',
         'duckduckgo-image',
         'duckduckgo-news',
         'duckduckgo-search',
@@ -49116,6 +49630,10 @@ final class Operations
         'google-trends-trending',
         'google-trends-trending-detail',
         'google-videos',
+        'googlepatents-coverage',
+        'googlepatents-detail',
+        'googlepatents-search',
+        'googlepatents-suggest',
         'googleplay-app',
         'googleplay-categories',
         'googleplay-datasafety',
@@ -49130,7 +49648,9 @@ final class Operations
         'hm-categories',
         'hm-listing',
         'hm-product',
+        'hm-product-related',
         'hm-search',
+        'hm-search-suggestions',
         'hm-stores',
         'imdb-name',
         'imdb-name-awards',
@@ -49979,6 +50499,9 @@ final class OperationId
     public const AUTOTRADER_DEALER = 'autotrader-dealer';
     public const AUTOTRADER_SEARCH = 'autotrader-search';
     public const AUTOTRADER_VEHICLE = 'autotrader-vehicle';
+    public const BEST_BUY_BESTBUY_CATEGORY = 'bestbuy-category';
+    public const BEST_BUY_BESTBUY_PRODUCT = 'bestbuy-product';
+    public const BEST_BUY_BESTBUY_PRODUCT_REVIEWS = 'bestbuy-product-reviews';
     public const BILLING_ME = 'billing-me';
     public const BILLING_ME_CHECKOUT = 'billing-me-checkout';
     public const BILLING_ME_EVENTS = 'billing-me-events';
@@ -50199,6 +50722,7 @@ final class OperationId
     public const DATASETS_XUSERS_SEARCH = 'datasets-x-users-search';
     public const DEPOP_CATEGORIES = 'depop-categories';
     public const DEPOP_ITEM = 'depop-item';
+    public const DEPOP_ITEM_SIMILAR = 'depop-item-similar';
     public const DEPOP_SEARCH = 'depop-search';
     public const DEPOP_SHOP = 'depop-shop';
     public const DISCOGS_ARTIST = 'discogs-artist';
@@ -50220,6 +50744,10 @@ final class OperationId
     public const DOOR_DASH_DOORDASH_STORE_ITEM = 'doordash-store-item';
     public const DOOR_DASH_DOORDASH_STORE_MENU = 'doordash-store-menu';
     public const DOOR_DASH_DOORDASH_STORE_REVIEWS = 'doordash-store-reviews';
+    public const DRAFT_KINGS_DRAFTKINGS_EVENT = 'draftkings-event';
+    public const DRAFT_KINGS_DRAFTKINGS_EVENT_MARKETS = 'draftkings-event-markets';
+    public const DRAFT_KINGS_DRAFTKINGS_FUTURES = 'draftkings-futures';
+    public const DRAFT_KINGS_DRAFTKINGS_ODDS = 'draftkings-odds';
     public const DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_IMAGE = 'duckduckgo-image';
     public const DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_NEWS = 'duckduckgo-news';
     public const DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_SEARCH = 'duckduckgo-search';
@@ -50321,6 +50849,10 @@ final class OperationId
     public const GOOGLE_MAP_PLACE_REVIEWS = 'google-map-place-reviews';
     public const GOOGLE_MAP_SEARCH = 'google-map-search';
     public const GOOGLE_NEWS = 'google-news';
+    public const GOOGLE_PATENTS_GOOGLEPATENTS_COVERAGE = 'googlepatents-coverage';
+    public const GOOGLE_PATENTS_GOOGLEPATENTS_DETAIL = 'googlepatents-detail';
+    public const GOOGLE_PATENTS_GOOGLEPATENTS_SEARCH = 'googlepatents-search';
+    public const GOOGLE_PATENTS_GOOGLEPATENTS_SUGGEST = 'googlepatents-suggest';
     public const GOOGLE_PLAY_APP = 'googleplay-app';
     public const GOOGLE_PLAY_CATEGORIES = 'googleplay-categories';
     public const GOOGLE_PLAY_DATASAFETY = 'googleplay-datasafety';
@@ -50349,7 +50881,9 @@ final class OperationId
     public const HMHM_CATEGORIES = 'hm-categories';
     public const HMHM_LISTING = 'hm-listing';
     public const HMHM_PRODUCT = 'hm-product';
+    public const HMHM_PRODUCT_RELATED = 'hm-product-related';
     public const HMHM_SEARCH = 'hm-search';
+    public const HMHM_SEARCH_SUGGESTIONS = 'hm-search-suggestions';
     public const HMHM_STORES = 'hm-stores';
     public const IMDB_NAME = 'imdb-name';
     public const IMDB_NAME_AWARDS = 'imdb-name-awards';

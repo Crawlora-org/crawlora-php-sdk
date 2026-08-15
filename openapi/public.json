@@ -5276,6 +5276,281 @@
       },
       "type": "object"
     },
+    "bestbuy.Breadcrumb": {
+      "properties": {
+        "name": {
+          "example": "Laptops",
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.CategoryProduct": {
+      "properties": {
+        "image_url": {
+          "type": "string"
+        },
+        "price": {
+          "example": 799.99,
+          "type": "number"
+        },
+        "rating": {
+          "example": 4.6,
+          "type": "number"
+        },
+        "review_count": {
+          "example": 28,
+          "type": "integer"
+        },
+        "sku": {
+          "example": "6673590",
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.CategoryResponse": {
+      "properties": {
+        "category_id": {
+          "example": "pcmcat138500050001",
+          "type": "string"
+        },
+        "count": {
+          "example": 24,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "products": {
+          "items": {
+            "$ref": "#/definitions/bestbuy.CategoryProduct"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "total": {
+          "example": 6286,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.Product": {
+      "properties": {
+        "availability": {
+          "example": "InStock",
+          "type": "string"
+        },
+        "brand": {
+          "example": "ASUS",
+          "type": "string"
+        },
+        "breadcrumbs": {
+          "items": {
+            "$ref": "#/definitions/bestbuy.Breadcrumb"
+          },
+          "type": "array"
+        },
+        "color": {
+          "type": "string"
+        },
+        "condition": {
+          "example": "NewCondition",
+          "type": "string"
+        },
+        "currency_code": {
+          "example": "USD",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "images": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "model": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "price": {
+          "example": 4399.99,
+          "type": "number"
+        },
+        "product_id": {
+          "example": "JJGHGSJZR6",
+          "type": "string"
+        },
+        "rating": {
+          "example": 4.6,
+          "type": "number"
+        },
+        "review_count": {
+          "example": 28,
+          "type": "integer"
+        },
+        "sku": {
+          "example": "6673590",
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.ProductResponse": {
+      "properties": {
+        "fetched_at": {
+          "type": "string"
+        },
+        "product": {
+          "$ref": "#/definitions/bestbuy.Product"
+        },
+        "source_url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.ProductReviewsResponse": {
+      "properties": {
+        "count": {
+          "example": 20,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "rating": {
+          "example": 4.6,
+          "type": "number"
+        },
+        "review_count": {
+          "example": 28,
+          "type": "integer"
+        },
+        "reviews": {
+          "items": {
+            "$ref": "#/definitions/bestbuy.Review"
+          },
+          "type": "array"
+        },
+        "sku": {
+          "example": "6673590",
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.Review": {
+      "properties": {
+        "author": {
+          "example": "nhim",
+          "type": "string"
+        },
+        "helpful": {
+          "type": "integer"
+        },
+        "posted": {
+          "example": "Posted 3 days ago",
+          "type": "string"
+        },
+        "rating": {
+          "example": 5,
+          "type": "number"
+        },
+        "recommended": {
+          "type": "boolean"
+        },
+        "tags": {
+          "example": [
+            "Verified Purchaser"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "text": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "unhelpful": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.categoryResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/bestbuy.CategoryResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.productResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/bestbuy.ProductResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.productReviewsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/bestbuy.ProductReviewsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "billing.billingEndpointLedgerDoc": {
       "properties": {
         "charged_requests": {
@@ -20271,6 +20546,10 @@
         "id": {
           "type": "string"
         },
+        "like_count": {
+          "description": "LikeCount is the listing's like count. Depop's search API only\nincludes this field when the request asks for it -- searchURL always\nrequests it (include_like_count=true), so this is populated on every\nsearch result. Confirmed live 2026-08-15 (see notes/depop-maintenance.md).",
+          "type": "integer"
+        },
         "location": {
           "type": "string"
         },
@@ -20416,6 +20695,24 @@
       },
       "type": "object"
     },
+    "depop.SimilarItemsResponse": {
+      "properties": {
+        "has_more": {
+          "description": "HasMore indicates additional results exist beyond this page. When\ntrue, NextCursor can be passed as the next request's After field.",
+          "type": "boolean"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/depop.ItemSummary"
+          },
+          "type": "array"
+        },
+        "next_cursor": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "depop.Subcategory": {
       "properties": {
         "name": {
@@ -20468,6 +20765,22 @@
         },
         "data": {
           "$ref": "#/definitions/depop.ShopResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "depop.similarItemsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/depop.SimilarItemsResponse"
         },
         "msg": {
           "example": "OK",
@@ -22134,6 +22447,298 @@
         },
         "data": {
           "$ref": "#/definitions/doordash.StoreReviewsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.Event": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "markets": {
+          "items": {
+            "$ref": "#/definitions/draftkings.Market"
+          },
+          "type": "array"
+        },
+        "name": {
+          "example": "CAR Panthers @ BUF Bills",
+          "type": "string"
+        },
+        "participants": {
+          "items": {
+            "$ref": "#/definitions/draftkings.Participant"
+          },
+          "type": "array"
+        },
+        "start_time": {
+          "type": "string"
+        },
+        "status": {
+          "example": "NOT_STARTED",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.EventMarketsResponse": {
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "event_id": {
+          "type": "string"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "markets": {
+          "items": {
+            "$ref": "#/definitions/draftkings.Market"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "subcategory_id": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.EventResponse": {
+      "properties": {
+        "fetched_at": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "example": "CAR Panthers @ BUF Bills",
+          "type": "string"
+        },
+        "participants": {
+          "items": {
+            "$ref": "#/definitions/draftkings.Participant"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "start_time": {
+          "type": "string"
+        },
+        "status": {
+          "example": "NOT_STARTED",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.FuturesResponse": {
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "events": {
+          "items": {
+            "$ref": "#/definitions/draftkings.Event"
+          },
+          "type": "array"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "league": {
+          "example": "MLB",
+          "type": "string"
+        },
+        "league_id": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "sport": {
+          "example": "Baseball",
+          "type": "string"
+        },
+        "subcategory_id": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.Market": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "selections": {
+          "items": {
+            "$ref": "#/definitions/draftkings.Selection"
+          },
+          "type": "array"
+        },
+        "subcategory_id": {
+          "example": "4519",
+          "type": "string"
+        },
+        "type": {
+          "example": "Moneyline",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.Odds": {
+      "properties": {
+        "american": {
+          "example": "+130",
+          "type": "string"
+        },
+        "decimal": {
+          "example": "2.30",
+          "type": "string"
+        },
+        "fractional": {
+          "example": "13/10",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.OddsResponse": {
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "events": {
+          "items": {
+            "$ref": "#/definitions/draftkings.Event"
+          },
+          "type": "array"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "league": {
+          "example": "NFL",
+          "type": "string"
+        },
+        "league_id": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "sport": {
+          "example": "Football",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.Participant": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "example": "BUF Bills",
+          "type": "string"
+        },
+        "role": {
+          "example": "Home",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.Selection": {
+      "properties": {
+        "label": {
+          "example": "CAR Panthers",
+          "type": "string"
+        },
+        "odds": {
+          "$ref": "#/definitions/draftkings.Odds"
+        },
+        "outcome_type": {
+          "example": "Away",
+          "type": "string"
+        },
+        "points": {
+          "example": 3,
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.eventMarketsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/draftkings.EventMarketsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.eventResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/draftkings.EventResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.futuresResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/draftkings.FuturesResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.oddsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/draftkings.OddsResponse"
         },
         "msg": {
           "example": "OK",
@@ -34208,6 +34813,509 @@
       },
       "type": "object"
     },
+    "googlepatents.CitedPatent": {
+      "properties": {
+        "assignee": {
+          "example": "Netzsch Maschinenfabrik",
+          "type": "string"
+        },
+        "priority_date": {
+          "example": "1985-12-27",
+          "type": "string"
+        },
+        "publication_date": {
+          "example": "1987-05-19",
+          "type": "string"
+        },
+        "publication_number": {
+          "example": "US4665582A",
+          "type": "string"
+        },
+        "title": {
+          "example": "Apparatus for shaking foundry moulds in a casting installation",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.Classification": {
+      "properties": {
+        "code": {
+          "example": "A47L9/00",
+          "type": "string"
+        },
+        "description": {
+          "example": "Details or accessories of suction cleaners",
+          "type": "string"
+        },
+        "is_cpc": {
+          "example": true,
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.CountryStatus": {
+      "properties": {
+        "country_code": {
+          "example": "US",
+          "type": "string"
+        },
+        "state": {
+          "example": "ACTIVE",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.CoverageCountry": {
+      "properties": {
+        "country_code": {
+          "example": "US",
+          "type": "string"
+        },
+        "years": {
+          "items": {
+            "$ref": "#/definitions/googlepatents.CoverageYear"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.CoverageResponse": {
+      "properties": {
+        "countries": {
+          "items": {
+            "$ref": "#/definitions/googlepatents.CoverageCountry"
+          },
+          "type": "array"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.CoverageYear": {
+      "properties": {
+        "applications": {
+          "example": "1712467",
+          "type": "string"
+        },
+        "grants": {
+          "example": "2802408",
+          "type": "string"
+        },
+        "year": {
+          "example": 2025,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.DetailResponse": {
+      "properties": {
+        "abstract": {
+          "example": "Battery-powered upright vacuum cleaners are disclosed.",
+          "type": "string"
+        },
+        "application_number": {
+          "example": "US15/620,213",
+          "type": "string"
+        },
+        "citations": {
+          "items": {
+            "$ref": "#/definitions/googlepatents.CitedPatent"
+          },
+          "type": "array"
+        },
+        "cited_by": {
+          "items": {
+            "$ref": "#/definitions/googlepatents.CitedPatent"
+          },
+          "type": "array"
+        },
+        "claims": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "claims_count": {
+          "example": 19,
+          "type": "integer"
+        },
+        "classifications": {
+          "items": {
+            "$ref": "#/definitions/googlepatents.Classification"
+          },
+          "type": "array"
+        },
+        "country_code": {
+          "example": "US",
+          "type": "string"
+        },
+        "country_name": {
+          "example": "United States",
+          "type": "string"
+        },
+        "current_assignees": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "description": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "expiration_date": {
+          "example": "2038-04-26",
+          "type": "string"
+        },
+        "family_members": {
+          "items": {
+            "$ref": "#/definitions/googlepatents.FamilyMember"
+          },
+          "type": "array"
+        },
+        "fetched_at": {
+          "example": "2026-08-15T12:00:00Z",
+          "type": "string"
+        },
+        "filing_date": {
+          "example": "2017-06-12",
+          "type": "string"
+        },
+        "inventors": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "kind_code": {
+          "example": "B2",
+          "type": "string"
+        },
+        "legal_status": {
+          "example": "Active",
+          "type": "string"
+        },
+        "original_assignees": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "pdf_url": {
+          "example": "https://patentimages.storage.googleapis.com/ae/9f/51/f34dc3bf93426e/US10758101.pdf",
+          "type": "string"
+        },
+        "prior_art_keywords": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "priority_date": {
+          "example": "2017-06-12",
+          "type": "string"
+        },
+        "publication_date": {
+          "example": "2020-09-01",
+          "type": "string"
+        },
+        "publication_number": {
+          "example": "US10758101B2",
+          "type": "string"
+        },
+        "similar_documents": {
+          "items": {
+            "$ref": "#/definitions/googlepatents.SimilarDocument"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "example": "https://patents.google.com/patent/US10758101B2/en",
+          "type": "string"
+        },
+        "title": {
+          "example": "Upright vacuum cleaner with battery support plate",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.FacetEntry": {
+      "properties": {
+        "key": {
+          "example": "Emerson Electric Co.",
+          "type": "string"
+        },
+        "value": {
+          "example": 666,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.FamilyMember": {
+      "properties": {
+        "publication_date": {
+          "example": "2018-12-13",
+          "type": "string"
+        },
+        "publication_number": {
+          "example": "US20180353038A1",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.SearchResponse": {
+      "properties": {
+        "fetched_at": {
+          "type": "string"
+        },
+        "many_results": {
+          "example": false,
+          "type": "boolean"
+        },
+        "page": {
+          "example": 0,
+          "type": "integer"
+        },
+        "query": {
+          "example": "battery",
+          "type": "string"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/googlepatents.SearchResult"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "top_assignees": {
+          "items": {
+            "$ref": "#/definitions/googlepatents.FacetEntry"
+          },
+          "type": "array"
+        },
+        "top_classifications": {
+          "items": {
+            "$ref": "#/definitions/googlepatents.FacetEntry"
+          },
+          "type": "array"
+        },
+        "top_inventors": {
+          "items": {
+            "$ref": "#/definitions/googlepatents.FacetEntry"
+          },
+          "type": "array"
+        },
+        "total_pages": {
+          "example": 100,
+          "type": "integer"
+        },
+        "total_results": {
+          "example": 112795,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.SearchResult": {
+      "properties": {
+        "assignee": {
+          "example": "Emerson Electric Co",
+          "type": "string"
+        },
+        "country_status": {
+          "items": {
+            "$ref": "#/definitions/googlepatents.CountryStatus"
+          },
+          "type": "array"
+        },
+        "detail_url": {
+          "example": "https://patents.google.com/patent/US10758101B2/en",
+          "type": "string"
+        },
+        "filing_date": {
+          "example": "2017-06-12",
+          "type": "string"
+        },
+        "grant_date": {
+          "example": "2020-09-01",
+          "type": "string"
+        },
+        "inventor": {
+          "example": "Thomas E. Fogarty, Jr.",
+          "type": "string"
+        },
+        "is_similar_document": {
+          "example": false,
+          "type": "boolean"
+        },
+        "language": {
+          "example": "en",
+          "type": "string"
+        },
+        "pdf_url": {
+          "type": "string"
+        },
+        "priority_date": {
+          "example": "2017-06-12",
+          "type": "string"
+        },
+        "publication_date": {
+          "example": "2020-09-01",
+          "type": "string"
+        },
+        "publication_number": {
+          "example": "US10758101B2",
+          "type": "string"
+        },
+        "snippet": {
+          "example": "a battery support plate adapted to support a battery...",
+          "type": "string"
+        },
+        "thumbnail_url": {
+          "type": "string"
+        },
+        "title": {
+          "example": "Upright vacuum cleaner with battery support plate",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.SimilarDocument": {
+      "properties": {
+        "publication_date": {
+          "example": "1990-06-26",
+          "type": "string"
+        },
+        "publication_number": {
+          "example": "CA1270625A",
+          "type": "string"
+        },
+        "title": {
+          "example": "Method and apparatus for setting pattern frame and press die",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.SuggestEntry": {
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "value": {
+          "example": "John Cronin",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.SuggestResponse": {
+      "properties": {
+        "fetched_at": {
+          "type": "string"
+        },
+        "field": {
+          "example": "inventor",
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "suggestions": {
+          "items": {
+            "$ref": "#/definitions/googlepatents.SuggestEntry"
+          },
+          "type": "array"
+        },
+        "value": {
+          "example": "John",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.coverageResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/googlepatents.CoverageResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.detailResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/googlepatents.DetailResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.searchResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/googlepatents.SearchResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.suggestResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/googlepatents.SuggestResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "googleplay.App": {
       "properties": {
         "ad_supported": {
@@ -35223,6 +36331,40 @@
       },
       "type": "object"
     },
+    "hm.RelatedList": {
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "products": {
+          "items": {
+            "$ref": "#/definitions/hm.ProductSummary"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "hm.RelatedResponse": {
+      "properties": {
+        "fetched_at": {
+          "type": "string"
+        },
+        "lists": {
+          "items": {
+            "$ref": "#/definitions/hm.RelatedList"
+          },
+          "type": "array"
+        },
+        "product_id": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "hm.SearchMeta": {
       "properties": {
         "blocked": {
@@ -35368,6 +36510,73 @@
       },
       "type": "object"
     },
+    "hm.SuggestResponse": {
+      "properties": {
+        "blocked": {
+          "type": "boolean"
+        },
+        "content_suggestions": {
+          "items": {
+            "$ref": "#/definitions/hm.SuggestionLink"
+          },
+          "type": "array"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "phrase_suggestions": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "popular_searches": {
+          "items": {
+            "$ref": "#/definitions/hm.SuggestionLink"
+          },
+          "type": "array"
+        },
+        "query": {
+          "type": "string"
+        },
+        "search_history": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "trending_searches": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "hm.SuggestionLink": {
+      "properties": {
+        "content_type": {
+          "type": "string"
+        },
+        "deep_link": {
+          "type": "string"
+        },
+        "image_url": {
+          "type": "string"
+        },
+        "link": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "hm.categoriesResponseDoc": {
       "properties": {
         "code": {
@@ -35416,6 +36625,22 @@
       },
       "type": "object"
     },
+    "hm.relatedResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/hm.RelatedResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "hm.searchResponseDoc": {
       "properties": {
         "code": {
@@ -35440,6 +36665,22 @@
         },
         "data": {
           "$ref": "#/definitions/hm.StoreResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "hm.suggestResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/hm.SuggestResponse"
         },
         "msg": {
           "example": "OK",
@@ -96336,6 +97577,183 @@
         ]
       }
     },
+    "/bestbuy/category": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns page 1 (up to 24) of one Best Buy category's normalized product listing (sku, title, url, image, price, rating, review count). category_id is a Best Buy category id, e.g. pcmcat138500050001, found in a category page URL's trailing <id>.c?id=<id> segment.",
+        "operationId": "bestbuy-category",
+        "parameters": [
+          {
+            "description": "Best Buy category id",
+            "in": "query",
+            "name": "category_id",
+            "required": true,
+            "type": "string",
+            "x-example": "pcmcat138500050001"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/bestbuy.categoryResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get a Best Buy category's product listing",
+        "tags": [
+          "Best Buy"
+        ]
+      }
+    },
+    "/bestbuy/product": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one Best Buy product's normalized detail (name, brand, model, color, price, availability, rating, images, breadcrumbs), sourced from the product page's own schema.org Product structured-data block. sku is the numeric Best Buy SKU shown on bestbuy.com product pages and URLs.",
+        "operationId": "bestbuy-product",
+        "parameters": [
+          {
+            "description": "Numeric Best Buy SKU",
+            "in": "query",
+            "name": "sku",
+            "required": true,
+            "type": "string",
+            "x-example": "6673590"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/bestbuy.productResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get a Best Buy product's detail",
+        "tags": [
+          "Best Buy"
+        ]
+      }
+    },
+    "/bestbuy/product/reviews": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns page 1 (up to 20) of one Best Buy product's normalized customer reviews (rating, title, text, author, posted date, tags such as Verified Purchaser, recommended flag, helpful/unhelpful counts), sourced from the product's dedicated reviews page. sku is the numeric Best Buy SKU shown on bestbuy.com product pages and URLs.",
+        "operationId": "bestbuy-product-reviews",
+        "parameters": [
+          {
+            "description": "Numeric Best Buy SKU",
+            "in": "query",
+            "name": "sku",
+            "required": true,
+            "type": "string",
+            "x-example": "6673590"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/bestbuy.productReviewsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get a Best Buy product's customer reviews",
+        "tags": [
+          "Best Buy"
+        ]
+      }
+    },
     "/billing/me": {
       "get": {
         "consumes": [
@@ -118918,12 +120336,88 @@
         ]
       }
     },
+    "/depop/item/{slug}/similar": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns items similar to a given Depop listing, via Depop's dedicated similar-items API -- richer and paginated (up to 150 per page) compared to the small, non-paginated \"similar items\" carousel already included in item detail. Public data sourced from Depop's own similar-items API.",
+        "operationId": "depop-item-similar",
+        "parameters": [
+          {
+            "description": "Depop item URL slug, e.g. from a search result's id field",
+            "in": "path",
+            "name": "slug",
+            "required": true,
+            "type": "string",
+            "x-example": "ag_boutique-vintage-mid-rise-bootcut-levi-2476"
+          },
+          {
+            "description": "Max results per page, 1-150",
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "x-example": 24
+          },
+          {
+            "description": "Opaque pagination cursor from a previous response's next_cursor field. Omit for the first page.",
+            "in": "query",
+            "name": "after",
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/depop.similarItemsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get Depop items similar to a listing",
+        "tags": [
+          "Depop"
+        ]
+      }
+    },
     "/depop/search": {
       "get": {
         "consumes": [
           "application/json"
         ],
-        "description": "Searches Depop's resale-fashion marketplace by free-text keyword, with optional price, condition, colour, category, subcategory, gender, brand, discount, and sort filters, returning normalized listing summaries (title, price, brand, condition, photos, sizes), a pagination cursor, and the total matching count. Public data sourced from Depop's own search API.",
+        "description": "Searches Depop's resale-fashion marketplace by free-text keyword, with optional price, condition, colour, category, subcategory, gender, kids-department, brand, discount, and sort filters, returning normalized listing summaries (title, price, brand, condition, like count, photos, sizes), a pagination cursor, and the total matching count. Public data sourced from Depop's own search API.",
         "operationId": "depop-search",
         "parameters": [
           {
@@ -118995,6 +120489,12 @@
             "name": "gender",
             "type": "string",
             "x-example": "female"
+          },
+          {
+            "description": "Kids-department filter: true restricts results to kids items only, false excludes them, omitted returns both.",
+            "in": "query",
+            "name": "is_kids",
+            "type": "boolean"
           },
           {
             "description": "Comma-separated Depop internal numeric brand ids. Not documented by Depop -- find a brand's id by browsing its depop.com/brands/<slug>/ page.",
@@ -120655,6 +122155,274 @@
         "summary": "Get DoorDash store reviews",
         "tags": [
           "DoorDash"
+        ]
+      }
+    },
+    "/draftkings/event": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one event's metadata (teams, status, start time) from DraftKings' credential-free public JSON. `event_id` is a numeric DraftKings event identifier (find it from an event's DraftKings Sportsbook page, or from the `id` field of an event returned by /draftkings/odds). This endpoint does not include betting markets/odds -- use /draftkings/odds for those.",
+        "operationId": "draftkings-event",
+        "parameters": [
+          {
+            "description": "Numeric DraftKings event id",
+            "in": "query",
+            "name": "event_id",
+            "required": true,
+            "type": "string",
+            "x-example": "34240140"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/draftkings.eventResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "DraftKings Sportsbook event",
+        "tags": [
+          "DraftKings"
+        ]
+      }
+    },
+    "/draftkings/event-markets": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one event's betting markets and selections for a specific market category, from DraftKings' credential-free public JSON. `event_id` is a numeric DraftKings event identifier (find it from the `id` field of an event returned by /draftkings/odds). `subcategory_id` selects the market category (e.g. game lines, a player-prop category, an alternate-line category) -- find one from the `subcategory_id` field on a market returned by /draftkings/odds, or from a DraftKings Sportsbook event page's own network traffic. An empty `markets` list is a valid response when the category has no markets currently posted for this event.",
+        "operationId": "draftkings-event-markets",
+        "parameters": [
+          {
+            "description": "Numeric DraftKings event id",
+            "in": "query",
+            "name": "event_id",
+            "required": true,
+            "type": "string",
+            "x-example": "34497667"
+          },
+          {
+            "description": "Numeric DraftKings market subcategory id",
+            "in": "query",
+            "name": "subcategory_id",
+            "required": true,
+            "type": "string",
+            "x-example": "6354"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/draftkings.eventMarketsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "DraftKings Sportsbook event markets",
+        "tags": [
+          "DraftKings"
+        ]
+      }
+    },
+    "/draftkings/futures": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns league-level futures markets and selections for a specific DraftKings market category, from DraftKings' credential-free public JSON. `league_id` is a numeric DraftKings league identifier and `subcategory_id` is a numeric futures category identifier. An empty `events` list is a valid response when the category has no markets currently posted for that league.",
+        "operationId": "draftkings-futures",
+        "parameters": [
+          {
+            "description": "Numeric DraftKings league id",
+            "in": "query",
+            "name": "league_id",
+            "required": true,
+            "type": "string",
+            "x-example": "84240"
+          },
+          {
+            "description": "Numeric DraftKings futures market subcategory id",
+            "in": "query",
+            "name": "subcategory_id",
+            "required": true,
+            "type": "string",
+            "x-example": "17279"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/draftkings.futuresResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "DraftKings Sportsbook futures",
+        "tags": [
+          "DraftKings"
+        ]
+      }
+    },
+    "/draftkings/odds": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the primary betting markets (moneyline, spread, total) for every upcoming event in a DraftKings Sportsbook league, from DraftKings' credential-free public JSON. `league_id` is a numeric DraftKings league identifier (find it from a league's DraftKings Sportsbook page). An empty `events` list is a valid response when nothing is currently scheduled.",
+        "operationId": "draftkings-odds",
+        "parameters": [
+          {
+            "description": "Numeric DraftKings league id",
+            "in": "query",
+            "name": "league_id",
+            "required": true,
+            "type": "string",
+            "x-example": "84240"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/draftkings.oddsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "DraftKings Sportsbook odds",
+        "tags": [
+          "DraftKings"
         ]
       }
     },
@@ -129247,6 +131015,387 @@
         ]
       }
     },
+    "/googlepatents/coverage": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns how many patent grants and applications Google Patents has indexed, per patent office/country, per year, across every authority it covers. Public data, sourced from Google Patents' own search API.",
+        "operationId": "googlepatents-coverage",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/googlepatents.coverageResponseDoc"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Google Patents database coverage: grants and applications indexed per country per year",
+        "tags": [
+          "Google Patents"
+        ]
+      }
+    },
+    "/googlepatents/detail": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns a single patent's normalized detail: title, abstract, inventors, assignees, dates, legal status, CPC/IPC classifications, claims, description, patent citations, cited-by patents, family members, and similar documents. `number` is a publication number such as `US10758101B2`, `EP1000000A1`, or `WO2020123456A1`. Public data, sourced from Google Patents' server-rendered detail pages. To search or browse by keyword, inventor, or assignee instead of a known publication number, use `/googlepatents/search`.",
+        "operationId": "googlepatents-detail",
+        "parameters": [
+          {
+            "description": "Publication number, e.g. US10758101B2",
+            "in": "query",
+            "name": "number",
+            "required": true,
+            "type": "string",
+            "x-example": "US10758101B2"
+          },
+          {
+            "description": "Language code for the translated page, default en",
+            "in": "query",
+            "name": "lang",
+            "type": "string",
+            "x-example": "en"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/googlepatents.detailResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "A single patent's bibliographic data, abstract, claims, description, citations, and family",
+        "tags": [
+          "Google Patents"
+        ]
+      }
+    },
+    "/googlepatents/search": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Searches Google Patents' full index by free-text query, with optional inventor, assignee, patent office, status, type, language, and date filters. Returns a page of normalized hits plus top-assignee/top-inventor/top-classification breakdowns over the full result set. Public data, sourced from Google Patents' own search API.",
+        "operationId": "googlepatents-search",
+        "parameters": [
+          {
+            "description": "Free-text search query",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "battery"
+          },
+          {
+            "description": "Filter by inventor name",
+            "in": "query",
+            "name": "inventor",
+            "type": "string",
+            "x-example": "Thomas Fogarty"
+          },
+          {
+            "description": "Filter by assignee/applicant name",
+            "in": "query",
+            "name": "assignee",
+            "type": "string",
+            "x-example": "Emerson Electric"
+          },
+          {
+            "description": "Filter by patent office/authority code, e.g. US, EP, WO, CN, JP",
+            "in": "query",
+            "name": "country",
+            "type": "string",
+            "x-example": "US"
+          },
+          {
+            "description": "Filter by legal status. Allowed values: GRANT, APPLICATION",
+            "enum": [
+              "GRANT",
+              "APPLICATION"
+            ],
+            "in": "query",
+            "name": "status",
+            "type": "string",
+            "x-example": "GRANT"
+          },
+          {
+            "description": "Filter by document type. Allowed values: PATENT, DESIGN",
+            "enum": [
+              "PATENT",
+              "DESIGN"
+            ],
+            "in": "query",
+            "name": "type",
+            "type": "string",
+            "x-example": "PATENT"
+          },
+          {
+            "description": "Filter by document language. Allowed values: ENGLISH, GERMAN, CHINESE, FRENCH, SPANISH, ARABIC, JAPANESE, KOREAN, PORTUGUESE, RUSSIAN, ITALIAN, DUTCH, SWEDISH, FINNISH, NORWEGIAN, DANISH",
+            "enum": [
+              "ENGLISH",
+              "GERMAN",
+              "CHINESE",
+              "FRENCH",
+              "SPANISH",
+              "ARABIC",
+              "JAPANESE",
+              "KOREAN",
+              "PORTUGUESE",
+              "RUSSIAN",
+              "ITALIAN",
+              "DUTCH",
+              "SWEDISH",
+              "FINNISH",
+              "NORWEGIAN",
+              "DANISH"
+            ],
+            "in": "query",
+            "name": "language",
+            "type": "string",
+            "x-example": "ENGLISH"
+          },
+          {
+            "description": "Which date before/after filter. Allowed values: priority, filing, publication. Defaults to priority when before/after is set",
+            "enum": [
+              "priority",
+              "filing",
+              "publication"
+            ],
+            "in": "query",
+            "name": "date_field",
+            "type": "string",
+            "x-example": "priority"
+          },
+          {
+            "description": "Only results dated on or before this date (YYYY-MM-DD)",
+            "in": "query",
+            "name": "before",
+            "type": "string",
+            "x-example": "2021-12-31"
+          },
+          {
+            "description": "Only results dated on or after this date (YYYY-MM-DD)",
+            "in": "query",
+            "name": "after",
+            "type": "string",
+            "x-example": "2020-01-01"
+          },
+          {
+            "description": "Sort order. Allowed values: relevance, new, old. Defaults to relevance",
+            "enum": [
+              "relevance",
+              "new",
+              "old"
+            ],
+            "in": "query",
+            "name": "sort",
+            "type": "string",
+            "x-example": "relevance"
+          },
+          {
+            "description": "Results per page, default 10, max 100",
+            "in": "query",
+            "name": "num",
+            "type": "integer",
+            "x-example": 10
+          },
+          {
+            "description": "Page number, 0-indexed, default 0",
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "x-example": 0
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/googlepatents.searchResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search Google Patents by keyword, inventor, assignee, and other filters",
+        "tags": [
+          "Google Patents"
+        ]
+      }
+    },
+    "/googlepatents/suggest": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns Google Patents' own autocomplete suggestions for an inventor or assignee name as the user types, the same suggestions shown by the Inventor/Assignee fields on Google Patents' advanced search page. Public data, sourced from Google Patents' own search API.",
+        "operationId": "googlepatents-suggest",
+        "parameters": [
+          {
+            "description": "Which field to autocomplete. Allowed values: inventor, assignee",
+            "enum": [
+              "inventor",
+              "assignee"
+            ],
+            "in": "query",
+            "name": "field",
+            "required": true,
+            "type": "string",
+            "x-example": "inventor"
+          },
+          {
+            "description": "Partial name typed so far",
+            "in": "query",
+            "name": "value",
+            "required": true,
+            "type": "string",
+            "x-example": "John"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/googlepatents.suggestResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Autocomplete an inventor or assignee name for Google Patents search",
+        "tags": [
+          "Google Patents"
+        ]
+      }
+    },
     "/googleplay/app": {
       "get": {
         "consumes": [
@@ -130436,6 +132585,63 @@
         ]
       }
     },
+    "/hm/product/{product_id}/related": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns every product-detail recommendation list H&M's own app shows for one product (which lists are present genuinely varies by product -- for example \"more from series\" and \"style with\" appear only when the product has one, while \"alternatives\" and \"upsell\" are more consistently present). An unrecognized product_id returns a well-formed empty result rather than an error.",
+        "operationId": "hm-product-related",
+        "parameters": [
+          {
+            "description": "Numeric H&M product id, from a listing/search result's id field",
+            "in": "path",
+            "name": "product_id",
+            "required": true,
+            "type": "string",
+            "x-example": "1368905001"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/hm.relatedResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get related products for an H&M product",
+        "tags": [
+          "H&M"
+        ]
+      }
+    },
     "/hm/search": {
       "get": {
         "consumes": [
@@ -130502,6 +132708,56 @@
           }
         ],
         "summary": "Search H&M product listings by free-text keyword",
+        "tags": [
+          "H&M"
+        ]
+      }
+    },
+    "/hm/search/suggestions": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns H&M's own search-box typeahead suggestions, sourced from the same credential-free app-backend host as hm-listing/hm-search. When query is given, returns spelling-complete phrase suggestions and merchandised content results. When query is omitted or empty, instead returns trending searches and popular-search shortcuts (phrase/content suggestions are both empty in that mode). search_history is part of the real upstream response but confirmed NOT session-scoped -- it returned the identical list across separate cookie-free requests, so treat it as fixed default content rather than a real per-caller history.",
+        "operationId": "hm-search-suggestions",
+        "parameters": [
+          {
+            "description": "Free-text search-box input; omit or leave empty for trending/popular searches instead",
+            "in": "query",
+            "name": "query",
+            "type": "string",
+            "x-example": "jean"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/hm.suggestResponseDoc"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get H&M search-box typeahead suggestions",
         "tags": [
           "H&M"
         ]

@@ -179,6 +179,16 @@ abstract class AppStoreGroup {}
 abstract class AutotraderGroup {}
 
 /**
+ * @method mixed bestbuyCategory(array $params = [], array $options = []) bestbuy-category (GET /bestbuy/category)
+ *   params: string $category_id
+ * @method mixed bestbuyProduct(array $params = [], array $options = []) bestbuy-product (GET /bestbuy/product)
+ *   params: string $sku
+ * @method mixed bestbuyProductReviews(array $params = [], array $options = []) bestbuy-product-reviews (GET /bestbuy/product/reviews)
+ *   params: string $sku
+ */
+abstract class BestBuyGroup {}
+
+/**
  * @method mixed me(array $params = [], array $options = []) billing-me (GET /billing/me)
  * @method mixed meCheckout(array $params = [], array $options = []) billing-me-checkout (POST /billing/me/checkout)
  *   params: array $request
@@ -684,8 +694,10 @@ abstract class DatasetsGroup {}
  * @method mixed categories(array $params = [], array $options = []) depop-categories (GET /depop/categories)
  * @method mixed item(array $params = [], array $options = []) depop-item (GET /depop/item/{slug})
  *   params: string $slug
+ * @method mixed itemSimilar(array $params = [], array $options = []) depop-item-similar (GET /depop/item/{slug}/similar)
+ *   params: string $slug, int $limit, string $after
  * @method mixed search(array $params = [], array $options = []) depop-search (GET /depop/search)
- *   params: string $query, float $price_min, float $price_max, string $condition, string $colours, bool $on_sale, string $sort, string $category, string $subcategory, string $gender, string $brand_ids, string $after
+ *   params: string $query, float $price_min, float $price_max, string $condition, string $colours, bool $on_sale, string $sort, string $category, string $subcategory, string $gender, bool $is_kids, string $brand_ids, string $after
  * @method mixed shop(array $params = [], array $options = []) depop-shop (GET /depop/shop/{username})
  *   params: string $username, float $price_min, float $price_max, string $condition, string $colours, bool $on_sale, string $sort, string $category, string $subcategory, string $gender
  */
@@ -736,6 +748,18 @@ abstract class DiscogsGroup {}
  *   params: string $store_id, float $latitude, float $longitude
  */
 abstract class DoorDashGroup {}
+
+/**
+ * @method mixed draftkingsEvent(array $params = [], array $options = []) draftkings-event (GET /draftkings/event)
+ *   params: string $event_id
+ * @method mixed draftkingsEventMarkets(array $params = [], array $options = []) draftkings-event-markets (GET /draftkings/event-markets)
+ *   params: string $event_id, string $subcategory_id
+ * @method mixed draftkingsFutures(array $params = [], array $options = []) draftkings-futures (GET /draftkings/futures)
+ *   params: string $league_id, string $subcategory_id
+ * @method mixed draftkingsOdds(array $params = [], array $options = []) draftkings-odds (GET /draftkings/odds)
+ *   params: string $league_id
+ */
+abstract class DraftKingsGroup {}
 
 /**
  * @method mixed duckduckgoImage(array $params = [], array $options = []) duckduckgo-image (GET /duckduckgo/image)
@@ -1008,6 +1032,17 @@ abstract class GoogleJobsGroup {}
 abstract class GoogleGroup {}
 
 /**
+ * @method mixed googlepatentsCoverage(array $params = [], array $options = []) googlepatents-coverage (GET /googlepatents/coverage)
+ * @method mixed googlepatentsDetail(array $params = [], array $options = []) googlepatents-detail (GET /googlepatents/detail)
+ *   params: string $number, string $lang
+ * @method mixed googlepatentsSearch(array $params = [], array $options = []) googlepatents-search (GET /googlepatents/search)
+ *   params: string $q, string $inventor, string $assignee, string $country, 'GRANT'|'APPLICATION' $status, 'PATENT'|'DESIGN' $type, 'ENGLISH'|'GERMAN'|'CHINESE'|'FRENCH'|'SPANISH'|'ARABIC'|'JAPANESE'|'KOREAN'|'PORTUGUESE'|'RUSSIAN'|'ITALIAN'|'DUTCH'|'SWEDISH'|'FINNISH'|'NORWEGIAN'|'DANISH' $language, 'priority'|'filing'|'publication' $date_field, string $before, string $after, 'relevance'|'new'|'old' $sort, int $num, int $page
+ * @method mixed googlepatentsSuggest(array $params = [], array $options = []) googlepatents-suggest (GET /googlepatents/suggest)
+ *   params: 'inventor'|'assignee' $field, string $value
+ */
+abstract class GooglePatentsGroup {}
+
+/**
  * @method mixed app(array $params = [], array $options = []) googleplay-app (GET /googleplay/app)
  *   params: string $app_id, string $country, string $lang
  * @method mixed categories(array $params = [], array $options = []) googleplay-categories (GET /googleplay/categories)
@@ -1040,8 +1075,12 @@ abstract class GooglePlayGroup {}
  *   params: string $category_id, int $page, int $page_size, 'RELEVANCE'|'NEWEST_FIRST'|'PRICE_ASCENDING'|'PRICE_DESCENDING' $sort, bool $is_new
  * @method mixed hmProduct(array $params = [], array $options = []) hm-product (GET /hm/product/{product_id})
  *   params: string $product_id
+ * @method mixed hmProductRelated(array $params = [], array $options = []) hm-product-related (GET /hm/product/{product_id}/related)
+ *   params: string $product_id
  * @method mixed hmSearch(array $params = [], array $options = []) hm-search (GET /hm/search)
  *   params: string $query, int $page, int $page_size
+ * @method mixed hmSearchSuggestions(array $params = [], array $options = []) hm-search-suggestions (GET /hm/search/suggestions)
+ *   params: string $query
  * @method mixed hmStores(array $params = [], array $options = []) hm-stores (GET /hm/stores)
  *   params: string $search, float $lat, float $lng, int $radius_meters
  */
@@ -2799,6 +2838,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\ApplePodcastsGroup $applePodcasts
  * @property-read \Crawlora\Generated\AppStoreGroup $appStore
  * @property-read \Crawlora\Generated\AutotraderGroup $autotrader
+ * @property-read \Crawlora\Generated\BestBuyGroup $bestBuy
  * @property-read \Crawlora\Generated\BillingGroup $billing
  * @property-read \Crawlora\Generated\BingGroup $bing
  * @property-read \Crawlora\Generated\BlueskyGroup $bluesky
@@ -2818,6 +2858,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\DepopGroup $depop
  * @property-read \Crawlora\Generated\DiscogsGroup $discogs
  * @property-read \Crawlora\Generated\DoorDashGroup $doorDash
+ * @property-read \Crawlora\Generated\DraftKingsGroup $draftKings
  * @property-read \Crawlora\Generated\DuckDuckGoSearchGroup $duckDuckGoSearch
  * @property-read \Crawlora\Generated\EBayGroup $eBay
  * @property-read \Crawlora\Generated\EspnGroup $espn
@@ -2830,6 +2871,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\GoodreadsGroup $goodreads
  * @property-read \Crawlora\Generated\GoogleJobsGroup $googleJobs
  * @property-read \Crawlora\Generated\GoogleGroup $google
+ * @property-read \Crawlora\Generated\GooglePatentsGroup $googlePatents
  * @property-read \Crawlora\Generated\GooglePlayGroup $googlePlay
  * @property-read \Crawlora\Generated\HMGroup $hM
  * @property-read \Crawlora\Generated\ImdbGroup $imdb
