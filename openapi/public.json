@@ -5276,10 +5276,84 @@
       },
       "type": "object"
     },
+    "bestbuy.Brand": {
+      "properties": {
+        "id": {
+          "example": "pcmcat128500050005",
+          "type": "string"
+        },
+        "name": {
+          "example": "Apple",
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.BrandsResponse": {
+      "properties": {
+        "brands": {
+          "items": {
+            "$ref": "#/definitions/bestbuy.Brand"
+          },
+          "type": "array"
+        },
+        "count": {
+          "example": 325,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "bestbuy.Breadcrumb": {
       "properties": {
         "name": {
           "example": "Laptops",
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.CategoriesResponse": {
+      "properties": {
+        "categories": {
+          "items": {
+            "$ref": "#/definitions/bestbuy.Category"
+          },
+          "type": "array"
+        },
+        "count": {
+          "example": 25,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.Category": {
+      "properties": {
+        "id": {
+          "example": "pcmcat1690836748285",
+          "type": "string"
+        },
+        "name": {
+          "example": "TV & Home Theater",
           "type": "string"
         },
         "url": {
@@ -5330,6 +5404,10 @@
         },
         "fetched_at": {
           "type": "string"
+        },
+        "page": {
+          "example": 1,
+          "type": "integer"
         },
         "products": {
           "items": {
@@ -5415,6 +5493,75 @@
       },
       "type": "object"
     },
+    "bestbuy.ProductQuestion": {
+      "properties": {
+        "answer": {
+          "type": "string"
+        },
+        "answered": {
+          "example": "Answered 2 months ago",
+          "type": "string"
+        },
+        "answered_by": {
+          "example": "ASUS Answers",
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.ProductQuestionsResponse": {
+      "properties": {
+        "count": {
+          "example": 5,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "questions": {
+          "items": {
+            "$ref": "#/definitions/bestbuy.ProductQuestion"
+          },
+          "type": "array"
+        },
+        "sku": {
+          "example": "6673590",
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.ProductRelatedResponse": {
+      "properties": {
+        "count": {
+          "example": 3,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "products": {
+          "items": {
+            "$ref": "#/definitions/bestbuy.RelatedProduct"
+          },
+          "type": "array"
+        },
+        "sku": {
+          "example": "6673590",
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "bestbuy.ProductResponse": {
       "properties": {
         "fetched_at": {
@@ -5462,6 +5609,32 @@
       },
       "type": "object"
     },
+    "bestbuy.RelatedProduct": {
+      "properties": {
+        "currency_code": {
+          "example": "USD",
+          "type": "string"
+        },
+        "image_url": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "price": {
+          "example": 3399.99,
+          "type": "number"
+        },
+        "sku": {
+          "example": "6673586",
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "bestbuy.Review": {
       "properties": {
         "author": {
@@ -5503,6 +5676,221 @@
       },
       "type": "object"
     },
+    "bestbuy.SearchResponse": {
+      "properties": {
+        "count": {
+          "example": 24,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "page": {
+          "example": 1,
+          "type": "integer"
+        },
+        "products": {
+          "items": {
+            "$ref": "#/definitions/bestbuy.CategoryProduct"
+          },
+          "type": "array"
+        },
+        "query": {
+          "example": "laptop",
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "total": {
+          "example": 6286,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.Store": {
+      "properties": {
+        "address": {
+          "example": "2100 N Elston Ave",
+          "type": "string"
+        },
+        "city": {
+          "example": "Chicago",
+          "type": "string"
+        },
+        "country": {
+          "example": "US",
+          "type": "string"
+        },
+        "hours": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Hours maps a full day name (\"Monday\"..\"Sunday\") to that day's\nopening range, e.g. \"10:00-21:00\" -- expanded from schema.org's own\ncomma-joined-days shorthand (see parseOpeningHours). Joined with\n\", \" for the rare split-hours day.",
+          "type": "object"
+        },
+        "latitude": {
+          "example": 41.919002,
+          "type": "number"
+        },
+        "longitude": {
+          "example": -87.66959,
+          "type": "number"
+        },
+        "name": {
+          "example": "Best Buy",
+          "type": "string"
+        },
+        "phone": {
+          "example": "(773) 486-0142",
+          "type": "string"
+        },
+        "postal_code": {
+          "example": "60614",
+          "type": "string"
+        },
+        "rating": {
+          "example": 4.21,
+          "type": "number"
+        },
+        "review_count": {
+          "example": 3614,
+          "type": "integer"
+        },
+        "state": {
+          "example": "IL",
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.StoreResponse": {
+      "properties": {
+        "city": {
+          "example": "Chicago",
+          "type": "string"
+        },
+        "count": {
+          "example": 3,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "state": {
+          "example": "il",
+          "type": "string"
+        },
+        "stores": {
+          "items": {
+            "$ref": "#/definitions/bestbuy.Store"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.SubcategoriesResponse": {
+      "properties": {
+        "category_id": {
+          "example": "pcmcat138500050001",
+          "type": "string"
+        },
+        "count": {
+          "example": 12,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "subcategories": {
+          "items": {
+            "$ref": "#/definitions/bestbuy.Category"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.TrendingCategoriesResponse": {
+      "properties": {
+        "categories": {
+          "items": {
+            "$ref": "#/definitions/bestbuy.TrendingCategory"
+          },
+          "type": "array"
+        },
+        "count": {
+          "example": 584,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.TrendingCategory": {
+      "properties": {
+        "id": {
+          "example": "pcmcat247400050000",
+          "type": "string"
+        },
+        "name": {
+          "example": "Windows Laptops",
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.brandsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/bestbuy.BrandsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.categoriesResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/bestbuy.CategoriesResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "bestbuy.categoryResponseDoc": {
       "properties": {
         "code": {
@@ -5511,6 +5899,38 @@
         },
         "data": {
           "$ref": "#/definitions/bestbuy.CategoryResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.productQuestionsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/bestbuy.ProductQuestionsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.productRelatedResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/bestbuy.ProductRelatedResponse"
         },
         "msg": {
           "example": "OK",
@@ -5543,6 +5963,70 @@
         },
         "data": {
           "$ref": "#/definitions/bestbuy.ProductReviewsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.searchResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/bestbuy.SearchResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.storesResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/bestbuy.StoreResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.subcategoriesResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/bestbuy.SubcategoriesResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "bestbuy.trendingCategoriesResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/bestbuy.TrendingCategoriesResponse"
         },
         "msg": {
           "example": "OK",
@@ -20402,6 +20886,34 @@
       },
       "type": "object"
     },
+    "depop.Brand": {
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "depop.BrandsResponse": {
+      "properties": {
+        "brands": {
+          "items": {
+            "$ref": "#/definitions/depop.Brand"
+          },
+          "type": "array"
+        },
+        "total": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "depop.CategoriesResponse": {
       "properties": {
         "departments": {
@@ -20452,6 +20964,40 @@
           "type": "boolean"
         },
         "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "depop.DepartmentFacets": {
+      "properties": {
+        "categories": {
+          "items": {
+            "$ref": "#/definitions/depop.FacetCount"
+          },
+          "type": "array"
+        },
+        "count": {
+          "type": "integer"
+        },
+        "department": {
+          "type": "string"
+        },
+        "subcategories": {
+          "items": {
+            "$ref": "#/definitions/depop.FacetCount"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "depop.FacetCount": {
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "id": {
           "type": "string"
         }
       },
@@ -20583,6 +21129,20 @@
       },
       "type": "object"
     },
+    "depop.SearchFacetsResponse": {
+      "properties": {
+        "departments": {
+          "items": {
+            "$ref": "#/definitions/depop.DepartmentFacets"
+          },
+          "type": "array"
+        },
+        "query": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "depop.SearchResponse": {
       "properties": {
         "has_more": {
@@ -20607,6 +21167,20 @@
       },
       "type": "object"
     },
+    "depop.SearchSellersResponse": {
+      "properties": {
+        "query": {
+          "type": "string"
+        },
+        "sellers": {
+          "items": {
+            "$ref": "#/definitions/depop.SellerSummary"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "depop.Seller": {
       "properties": {
         "first_name": {
@@ -20623,6 +21197,26 @@
         },
         "verified": {
           "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "depop.SellerSummary": {
+      "properties": {
+        "avatar_url": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
         }
       },
       "type": "object"
@@ -20713,6 +21307,77 @@
       },
       "type": "object"
     },
+    "depop.SizeCategory": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "regions": {
+          "items": {
+            "$ref": "#/definitions/depop.SizeRegion"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "depop.SizeDepartment": {
+      "properties": {
+        "categories": {
+          "items": {
+            "$ref": "#/definitions/depop.SizeCategory"
+          },
+          "type": "array"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "depop.SizeOption": {
+      "properties": {
+        "id": {
+          "description": "ID is the value to pass in SearchOption.Sizes / ShopOption.Sizes\n(e.g. \"4.17\"). Built from Depop's own size_set_id and id\n(`{size_set_id}.{id}`) -- confirmed live 2026-08-15 that this bare\nform (without the \"-EUR\"/\"-UK\"/\"-US\"/\"-AU\" region suffix Depop's own\nUI appends for display, e.g. \"4.17-US\") is what both the search API\nand shop pages actually key off; the suffix is decorative only.",
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "depop.SizeRegion": {
+      "properties": {
+        "region": {
+          "type": "string"
+        },
+        "sizes": {
+          "items": {
+            "$ref": "#/definitions/depop.SizeOption"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "depop.SizesResponse": {
+      "properties": {
+        "departments": {
+          "items": {
+            "$ref": "#/definitions/depop.SizeDepartment"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "depop.Subcategory": {
       "properties": {
         "name": {
@@ -20720,6 +21385,54 @@
         },
         "slug": {
           "description": "maps to Search's subcategory / Shop's subcategory filter",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "depop.SuggestResponse": {
+      "properties": {
+        "query": {
+          "type": "string"
+        },
+        "suggestions": {
+          "items": {
+            "$ref": "#/definitions/depop.Suggestion"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "depop.Suggestion": {
+      "properties": {
+        "gender": {
+          "type": "string"
+        },
+        "group": {
+          "description": "Group and SuggestedFilterLabel are present when the suggestion maps\nto a specific category (e.g. Group \"tops\", SuggestedFilterLabel\n\"in Women's Tops\") -- both omitted for a plain free-text suggestion.",
+          "type": "string"
+        },
+        "suggested_filter_label": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "depop.brandsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/depop.BrandsResponse"
+        },
+        "msg": {
+          "example": "OK",
           "type": "string"
         }
       },
@@ -20741,6 +21454,22 @@
       },
       "type": "object"
     },
+    "depop.searchFacetsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/depop.SearchFacetsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "depop.searchResponseDoc": {
       "properties": {
         "code": {
@@ -20749,6 +21478,22 @@
         },
         "data": {
           "$ref": "#/definitions/depop.SearchResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "depop.searchSellersResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/depop.SearchSellersResponse"
         },
         "msg": {
           "example": "OK",
@@ -20781,6 +21526,38 @@
         },
         "data": {
           "$ref": "#/definitions/depop.SimilarItemsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "depop.sizesResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/depop.SizesResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "depop.suggestResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/depop.SuggestResponse"
         },
         "msg": {
           "example": "OK",
@@ -22486,6 +23263,41 @@
       },
       "type": "object"
     },
+    "draftkings.EventContextResponse": {
+      "properties": {
+        "event_id": {
+          "example": "34522271",
+          "type": "string"
+        },
+        "event_seo_id": {
+          "example": "chi-white-sox-@-det-tigers",
+          "type": "string"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "league_id": {
+          "example": "84240",
+          "type": "string"
+        },
+        "league_seo_id": {
+          "example": "mlb",
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "sport_id": {
+          "example": "7",
+          "type": "string"
+        },
+        "sport_seo_id": {
+          "example": "baseball",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "draftkings.EventMarketsResponse": {
       "properties": {
         "count": {
@@ -22520,6 +23332,10 @@
         "id": {
           "type": "string"
         },
+        "league_id": {
+          "example": "84240",
+          "type": "string"
+        },
         "name": {
           "example": "CAR Panthers @ BUF Bills",
           "type": "string"
@@ -22533,11 +23349,73 @@
         "source_url": {
           "type": "string"
         },
+        "sport_id": {
+          "example": "7",
+          "type": "string"
+        },
         "start_time": {
           "type": "string"
         },
         "status": {
           "example": "NOT_STARTED",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.FeaturedLeague": {
+      "properties": {
+        "featured_order": {
+          "example": 4855,
+          "type": "integer"
+        },
+        "has_live_offers": {
+          "type": "boolean"
+        },
+        "id": {
+          "example": "84240",
+          "type": "string"
+        },
+        "name": {
+          "example": "MLB",
+          "type": "string"
+        },
+        "slug": {
+          "example": "mlb",
+          "type": "string"
+        },
+        "sport": {
+          "example": "Baseball",
+          "type": "string"
+        },
+        "sport_id": {
+          "example": "7",
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.FeaturedLeaguesResponse": {
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "leagues": {
+          "items": {
+            "$ref": "#/definitions/draftkings.FeaturedLeague"
+          },
+          "type": "array"
+        },
+        "source_url": {
           "type": "string"
         }
       },
@@ -22577,6 +23455,245 @@
       },
       "type": "object"
     },
+    "draftkings.League": {
+      "properties": {
+        "has_live_offers": {
+          "type": "boolean"
+        },
+        "id": {
+          "example": "104557",
+          "type": "string"
+        },
+        "name": {
+          "example": "ITF Doubles - Muttenz (M)",
+          "type": "string"
+        },
+        "slug": {
+          "example": "itf-m25-muttenz%2C-doubles",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.LeagueEvent": {
+      "properties": {
+        "id": {
+          "example": "34522271",
+          "type": "string"
+        },
+        "name": {
+          "example": "CHI White Sox @ DET Tigers",
+          "type": "string"
+        },
+        "participant_type": {
+          "example": "TwoTeam",
+          "type": "string"
+        },
+        "participants": {
+          "items": {
+            "$ref": "#/definitions/draftkings.Participant"
+          },
+          "type": "array"
+        },
+        "start_time": {
+          "type": "string"
+        },
+        "status": {
+          "example": "NOT_STARTED",
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.LeagueEventsResponse": {
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "events": {
+          "items": {
+            "$ref": "#/definitions/draftkings.LeagueEvent"
+          },
+          "type": "array"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "league": {
+          "example": "MLB",
+          "type": "string"
+        },
+        "league_id": {
+          "example": "84240",
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "sport": {
+          "example": "Baseball",
+          "type": "string"
+        },
+        "sport_id": {
+          "example": "7",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.LeaguesResponse": {
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "sports": {
+          "items": {
+            "$ref": "#/definitions/draftkings.Sport"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.LiveEvent": {
+      "properties": {
+        "categories": {
+          "items": {
+            "$ref": "#/definitions/draftkings.MarketCategory"
+          },
+          "type": "array"
+        },
+        "id": {
+          "example": "34525244",
+          "type": "string"
+        },
+        "league_id": {
+          "example": "104557",
+          "type": "string"
+        },
+        "markets": {
+          "items": {
+            "$ref": "#/definitions/draftkings.Market"
+          },
+          "type": "array"
+        },
+        "name": {
+          "example": "A. Casanova / Parizzia vs N. Hipfl / C. Mueller",
+          "type": "string"
+        },
+        "participants": {
+          "items": {
+            "$ref": "#/definitions/draftkings.Participant"
+          },
+          "type": "array"
+        },
+        "period": {
+          "example": "2nd",
+          "type": "string"
+        },
+        "score": {
+          "$ref": "#/definitions/draftkings.LiveScore"
+        },
+        "sport_id": {
+          "example": "6",
+          "type": "string"
+        },
+        "start_time": {
+          "type": "string"
+        },
+        "status": {
+          "example": "STARTED",
+          "type": "string"
+        },
+        "subcategories": {
+          "items": {
+            "$ref": "#/definitions/draftkings.MarketSubcategory"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.LiveResponse": {
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "events": {
+          "items": {
+            "$ref": "#/definitions/draftkings.LiveEvent"
+          },
+          "type": "array"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.LiveScore": {
+      "properties": {
+        "current": {
+          "$ref": "#/definitions/draftkings.LiveScoreLine"
+        },
+        "on_serve": {
+          "example": "away",
+          "type": "string"
+        },
+        "periods": {
+          "items": {
+            "$ref": "#/definitions/draftkings.LiveScorePeriod"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.LiveScoreLine": {
+      "properties": {
+        "away": {
+          "example": "30",
+          "type": "string"
+        },
+        "home": {
+          "example": "30",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.LiveScorePeriod": {
+      "properties": {
+        "away": {
+          "example": "30",
+          "type": "string"
+        },
+        "home": {
+          "example": "30",
+          "type": "string"
+        },
+        "name": {
+          "example": "1",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "draftkings.Market": {
       "properties": {
         "id": {
@@ -22593,6 +23710,36 @@
           "type": "string"
         },
         "type": {
+          "example": "Moneyline",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.MarketCategory": {
+      "properties": {
+        "id": {
+          "example": "488",
+          "type": "string"
+        },
+        "name": {
+          "example": "Match Lines",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.MarketSubcategory": {
+      "properties": {
+        "category_id": {
+          "example": "488",
+          "type": "string"
+        },
+        "id": {
+          "example": "6364",
+          "type": "string"
+        },
+        "name": {
           "example": "Moneyline",
           "type": "string"
         }
@@ -22663,6 +23810,47 @@
       },
       "type": "object"
     },
+    "draftkings.QuickLink": {
+      "properties": {
+        "league_id": {
+          "example": "84240",
+          "type": "string"
+        },
+        "name": {
+          "example": "MLB",
+          "type": "string"
+        },
+        "path": {
+          "example": "/leagues/baseball/mlb",
+          "type": "string"
+        },
+        "sport_id": {
+          "example": "7",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.QuickLinksResponse": {
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "links": {
+          "items": {
+            "$ref": "#/definitions/draftkings.QuickLink"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "draftkings.Selection": {
       "properties": {
         "label": {
@@ -22679,6 +23867,160 @@
         "points": {
           "example": 3,
           "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.Sport": {
+      "properties": {
+        "id": {
+          "example": "6",
+          "type": "string"
+        },
+        "leagues": {
+          "items": {
+            "$ref": "#/definitions/draftkings.League"
+          },
+          "type": "array"
+        },
+        "name": {
+          "example": "Tennis",
+          "type": "string"
+        },
+        "slug": {
+          "example": "tennis",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.Team": {
+      "properties": {
+        "id": {
+          "example": "18454",
+          "type": "string"
+        },
+        "name": {
+          "example": "Arizona Cardinals",
+          "type": "string"
+        },
+        "slug": {
+          "example": "arizona-cardinals",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://sportsbook.draftkings.com/teams/football/arizona-cardinals-odds-18454",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.TeamDetailResponse": {
+      "properties": {
+        "abbreviation": {
+          "example": "ARI",
+          "type": "string"
+        },
+        "city": {
+          "example": "Arizona",
+          "type": "string"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "id": {
+          "example": "18454",
+          "type": "string"
+        },
+        "leagues": {
+          "items": {
+            "$ref": "#/definitions/draftkings.TeamLeagueRef"
+          },
+          "type": "array"
+        },
+        "name": {
+          "example": "ARI Cardinals",
+          "type": "string"
+        },
+        "primary_color": {
+          "example": "#97233F",
+          "type": "string"
+        },
+        "secondary_color": {
+          "example": "#000000",
+          "type": "string"
+        },
+        "short_name": {
+          "example": "Cardinals",
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "sport": {
+          "example": "football",
+          "type": "string"
+        },
+        "sport_id": {
+          "example": "3",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.TeamLeagueRef": {
+      "properties": {
+        "id": {
+          "example": "88808",
+          "type": "string"
+        },
+        "slug": {
+          "example": "nfl",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.TeamsResponse": {
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "league": {
+          "example": "nfl",
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "sport": {
+          "example": "football",
+          "type": "string"
+        },
+        "teams": {
+          "items": {
+            "$ref": "#/definitions/draftkings.Team"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.eventContextResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/draftkings.EventContextResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
         }
       },
       "type": "object"
@@ -22715,6 +24057,22 @@
       },
       "type": "object"
     },
+    "draftkings.featuredLeaguesResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/draftkings.FeaturedLeaguesResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "draftkings.futuresResponseDoc": {
       "properties": {
         "code": {
@@ -22731,6 +24089,54 @@
       },
       "type": "object"
     },
+    "draftkings.leagueEventsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/draftkings.LeagueEventsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.leaguesResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/draftkings.LeaguesResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.liveResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/draftkings.LiveResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "draftkings.oddsResponseDoc": {
       "properties": {
         "code": {
@@ -22739,6 +24145,54 @@
         },
         "data": {
           "$ref": "#/definitions/draftkings.OddsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.quickLinksResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/draftkings.QuickLinksResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.teamResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/draftkings.TeamDetailResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "draftkings.teamsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/draftkings.TeamsResponse"
         },
         "msg": {
           "example": "OK",
@@ -26927,6 +28381,10 @@
           "type": "object"
         },
         "contact_title": {
+          "type": "string"
+        },
+        "content_hash": {
+          "description": "ContentHash is an internal fingerprint of this record's content,\nexcluding crawl bookkeeping fields, used to detect whether a\nre-crawled profile actually changed since it was last stored.",
           "type": "string"
         },
         "crawled_at": {
@@ -34855,6 +36313,62 @@
       },
       "type": "object"
     },
+    "googlepatents.ClassificationRelation": {
+      "properties": {
+        "code": {
+          "example": "A61",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "is_child": {
+          "type": "boolean"
+        },
+        "is_parent": {
+          "type": "boolean"
+        },
+        "is_related": {
+          "type": "boolean"
+        },
+        "name": {
+          "example": "A61 - MEDICAL OR VETERINARY SCIENCE; HYGIENE",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.ClassificationResponse": {
+      "properties": {
+        "code": {
+          "example": "A61K31/00",
+          "type": "string"
+        },
+        "description": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "name": {
+          "example": "A61K31/00 - Medicinal preparations containing organic active ingredients",
+          "type": "string"
+        },
+        "relations": {
+          "items": {
+            "$ref": "#/definitions/googlepatents.ClassificationRelation"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "googlepatents.CountryStatus": {
       "properties": {
         "country_code": {
@@ -35078,6 +36592,48 @@
       },
       "type": "object"
     },
+    "googlepatents.RecentEntry": {
+      "properties": {
+        "publication_number": {
+          "example": "US10758101B2",
+          "type": "string"
+        },
+        "title": {
+          "example": "Adjustable venous cannula and method of treating a patient",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://patents.google.com/patent/US10758101B2/en",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.RecentResponse": {
+      "properties": {
+        "count": {
+          "example": 329,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/googlepatents.RecentEntry"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "week": {
+          "example": "2026-W20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "googlepatents.SearchResponse": {
       "properties": {
         "fetched_at": {
@@ -35252,6 +36808,22 @@
       },
       "type": "object"
     },
+    "googlepatents.classificationResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/googlepatents.ClassificationResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "googlepatents.coverageResponseDoc": {
       "properties": {
         "code": {
@@ -35276,6 +36848,22 @@
         },
         "data": {
           "$ref": "#/definitions/googlepatents.DetailResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "googlepatents.recentResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/googlepatents.RecentResponse"
         },
         "msg": {
           "example": "OK",
@@ -61512,6 +63100,852 @@
       },
       "type": "object"
     },
+    "sephora.Answer": {
+      "properties": {
+        "author": {
+          "type": "string"
+        },
+        "helpful_votes": {
+          "type": "integer"
+        },
+        "id": {
+          "type": "string"
+        },
+        "is_brand_answer": {
+          "type": "boolean"
+        },
+        "not_helpful_votes": {
+          "type": "integer"
+        },
+        "submitted_at": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.CategoryResponse": {
+      "properties": {
+        "brand": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "category_id": {
+          "type": "string"
+        },
+        "count": {
+          "type": "integer"
+        },
+        "display_name": {
+          "example": "Makeup",
+          "type": "string"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "filter": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "is_new": {
+          "type": "boolean"
+        },
+        "page": {
+          "example": 1,
+          "type": "integer"
+        },
+        "page_size": {
+          "example": 60,
+          "type": "integer"
+        },
+        "price_max": {
+          "type": "integer"
+        },
+        "price_min": {
+          "type": "integer"
+        },
+        "products": {
+          "items": {
+            "$ref": "#/definitions/sephora.SearchProduct"
+          },
+          "type": "array"
+        },
+        "rating_min": {
+          "type": "integer"
+        },
+        "related_categories": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "slug": {
+          "example": "makeup-cosmetics",
+          "type": "string"
+        },
+        "sort_by": {
+          "example": "featured",
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "total_products": {
+          "example": 2492,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.FullReview": {
+      "properties": {
+        "author": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        },
+        "helpful_votes": {
+          "type": "integer"
+        },
+        "id": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "not_helpful_votes": {
+          "type": "integer"
+        },
+        "photo_urls": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "rating": {
+          "type": "integer"
+        },
+        "ratings_only": {
+          "description": "RatingsOnly marks a review that carries only a star rating with no\nwritten title/body -- Bazaarvoice allows these and this endpoint still\nsurfaces them, matching the same field already documented for Macy's\n(services/macys/reviews.go) and Kohl's Bazaarvoice integrations.",
+          "type": "boolean"
+        },
+        "recommended": {
+          "type": "boolean"
+        },
+        "secondary_ratings": {
+          "items": {
+            "$ref": "#/definitions/sephora.ReviewSecondaryRating"
+          },
+          "type": "array"
+        },
+        "submitted_at": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.ProductQuestionsResponse": {
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "page": {
+          "type": "integer"
+        },
+        "page_size": {
+          "type": "integer"
+        },
+        "product_id": {
+          "type": "string"
+        },
+        "questions": {
+          "items": {
+            "$ref": "#/definitions/sephora.Question"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "total_pages": {
+          "type": "integer"
+        },
+        "total_questions": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.ProductResponse": {
+      "properties": {
+        "brand": {
+          "example": "LANEIGE",
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "product_group_id": {
+          "example": "P420652",
+          "type": "string"
+        },
+        "rating": {
+          "example": 4.3,
+          "type": "number"
+        },
+        "review_count": {
+          "type": "integer"
+        },
+        "review_sample": {
+          "items": {
+            "$ref": "#/definitions/sephora.ReviewSample"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "variants": {
+          "items": {
+            "$ref": "#/definitions/sephora.Variant"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.ProductReviewsResponse": {
+      "properties": {
+        "average_rating": {
+          "type": "number"
+        },
+        "count": {
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "page": {
+          "type": "integer"
+        },
+        "page_size": {
+          "type": "integer"
+        },
+        "product_id": {
+          "type": "string"
+        },
+        "rating_count": {
+          "description": "RatingCount, AverageRating, RecommendedRatio, and RatingHistogram are\nthe product's site-wide aggregate rating summary, not just this page --\nabsent (zero-valued) for a product with no reviews yet.",
+          "type": "integer"
+        },
+        "rating_histogram": {
+          "description": "RatingHistogram is the count of ratings per star, ascending: index 0 is\n1-star, index 4 is 5-star.",
+          "items": {
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "recommended_ratio": {
+          "type": "number"
+        },
+        "reviews": {
+          "items": {
+            "$ref": "#/definitions/sephora.FullReview"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "total_pages": {
+          "type": "integer"
+        },
+        "total_reviews": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.Question": {
+      "properties": {
+        "answer_count": {
+          "type": "integer"
+        },
+        "answers": {
+          "items": {
+            "$ref": "#/definitions/sephora.Answer"
+          },
+          "type": "array"
+        },
+        "author": {
+          "type": "string"
+        },
+        "has_best_answer": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "submitted_at": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.ReviewSample": {
+      "properties": {
+        "author": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        },
+        "date_published": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "number"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.ReviewSecondaryRating": {
+      "properties": {
+        "max_value": {
+          "example": 5,
+          "type": "integer"
+        },
+        "name": {
+          "example": "Value",
+          "type": "string"
+        },
+        "value": {
+          "example": 4,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.SearchProduct": {
+      "properties": {
+        "brand_name": {
+          "example": "tarte",
+          "type": "string"
+        },
+        "image_url": {
+          "type": "string"
+        },
+        "list_price": {
+          "example": "$25.00",
+          "type": "string"
+        },
+        "more_colors": {
+          "type": "integer"
+        },
+        "product_id": {
+          "example": "P520769",
+          "type": "string"
+        },
+        "product_name": {
+          "type": "string"
+        },
+        "rating": {
+          "example": 4.5,
+          "type": "number"
+        },
+        "review_count": {
+          "type": "integer"
+        },
+        "sku_id": {
+          "type": "string"
+        },
+        "sponsored": {
+          "type": "boolean"
+        },
+        "url": {
+          "type": "string"
+        },
+        "value_price": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.SearchResponse": {
+      "properties": {
+        "brand": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "count": {
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "filter": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "is_new": {
+          "type": "boolean"
+        },
+        "page": {
+          "example": 1,
+          "type": "integer"
+        },
+        "page_size": {
+          "example": 60,
+          "type": "integer"
+        },
+        "price_max": {
+          "example": 30,
+          "type": "integer"
+        },
+        "price_min": {
+          "example": 15,
+          "type": "integer"
+        },
+        "products": {
+          "items": {
+            "$ref": "#/definitions/sephora.SearchProduct"
+          },
+          "type": "array"
+        },
+        "query": {
+          "example": "mascara",
+          "type": "string"
+        },
+        "rating_min": {
+          "example": 4,
+          "type": "integer"
+        },
+        "related_searches": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "sort_by": {
+          "example": "featured",
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "total_products": {
+          "example": 180,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.Store": {
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/sephora.StoreAddress"
+        },
+        "display_name": {
+          "example": "STATE STREET",
+          "type": "string"
+        },
+        "distance_miles": {
+          "example": 0.2,
+          "type": "number"
+        },
+        "hours": {
+          "$ref": "#/definitions/sephora.StoreHours"
+        },
+        "is_bopisable": {
+          "type": "boolean"
+        },
+        "is_curbside_enabled": {
+          "type": "boolean"
+        },
+        "is_online_reservation_enabled": {
+          "type": "boolean"
+        },
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        },
+        "same_day_delivery_enabled": {
+          "type": "boolean"
+        },
+        "store_id": {
+          "example": "0662",
+          "type": "string"
+        },
+        "store_type": {
+          "example": "SEPHORA",
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.StoreAddress": {
+      "properties": {
+        "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "mall_name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.StoreHours": {
+      "properties": {
+        "friday": {
+          "type": "string"
+        },
+        "monday": {
+          "type": "string"
+        },
+        "saturday": {
+          "type": "string"
+        },
+        "sunday": {
+          "type": "string"
+        },
+        "thursday": {
+          "type": "string"
+        },
+        "time_zone": {
+          "example": "America/Chicago",
+          "type": "string"
+        },
+        "tuesday": {
+          "type": "string"
+        },
+        "wednesday": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.StoresResponse": {
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "latitude": {
+          "example": 41.88325,
+          "type": "number"
+        },
+        "longitude": {
+          "example": -87.6323879,
+          "type": "number"
+        },
+        "radius": {
+          "example": 50,
+          "type": "integer"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "stores": {
+          "items": {
+            "$ref": "#/definitions/sephora.Store"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.SuggestCategory": {
+      "properties": {
+        "name": {
+          "example": "Mascara",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://www.sephora.com/shop/mascara",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.SuggestProduct": {
+      "properties": {
+        "brand_name": {
+          "example": "ILIA",
+          "type": "string"
+        },
+        "image_url": {
+          "type": "string"
+        },
+        "product_id": {
+          "example": "P431750",
+          "type": "string"
+        },
+        "product_name": {
+          "type": "string"
+        },
+        "rating": {
+          "example": 4.1361,
+          "type": "number"
+        },
+        "review_count": {
+          "type": "integer"
+        },
+        "sku_id": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.SuggestResponse": {
+      "properties": {
+        "categories": {
+          "items": {
+            "$ref": "#/definitions/sephora.SuggestCategory"
+          },
+          "type": "array"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "products": {
+          "items": {
+            "$ref": "#/definitions/sephora.SuggestProduct"
+          },
+          "type": "array"
+        },
+        "query": {
+          "example": "masc",
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "terms": {
+          "items": {
+            "$ref": "#/definitions/sephora.SuggestTerm"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.SuggestTerm": {
+      "properties": {
+        "term": {
+          "example": "mascara",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.Variant": {
+      "properties": {
+        "availability": {
+          "example": "InStock",
+          "type": "string"
+        },
+        "color": {
+          "example": "Acai Mango Smoothie",
+          "type": "string"
+        },
+        "currency_code": {
+          "example": "USD",
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "price": {
+          "example": "25.00",
+          "type": "string"
+        },
+        "sku": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.categoryResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/sephora.CategoryResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.productQuestionsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/sephora.ProductQuestionsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.productResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/sephora.ProductResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.productReviewsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/sephora.ProductReviewsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.searchResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/sephora.SearchResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.storesResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/sephora.StoresResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "sephora.suggestResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/sephora.SuggestResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "shopapp.AnalysisResponse": {
       "properties": {
         "currencies": {
@@ -81151,6 +83585,220 @@
       },
       "type": "object"
     },
+    "usptoppubs.DetailResponse": {
+      "properties": {
+        "abstract": {
+          "type": "string"
+        },
+        "applicant_names": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "application_number": {
+          "example": "19/048819",
+          "type": "string"
+        },
+        "assignee_name": {
+          "type": "string"
+        },
+        "claims": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "cpc_codes": {
+          "type": "string"
+        },
+        "database": {
+          "example": "US-PGPUB",
+          "type": "string"
+        },
+        "description": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "filing_date": {
+          "example": "2025-02-07",
+          "type": "string"
+        },
+        "guid": {
+          "example": "US-20260238009-A1",
+          "type": "string"
+        },
+        "inventors_short": {
+          "type": "string"
+        },
+        "ipc_codes": {
+          "type": "string"
+        },
+        "kind_codes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "language": {
+          "example": "EN",
+          "type": "string"
+        },
+        "page_count": {
+          "type": "integer"
+        },
+        "publication_date": {
+          "example": "2026-08-13",
+          "type": "string"
+        },
+        "publication_number": {
+          "example": "US20260238009A1",
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "title": {
+          "example": "HOME GRID FOR IMPROVED EFFICIENCY OF SOLAR ENERGY",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "usptoppubs.SearchResponse": {
+      "properties": {
+        "fetched_at": {
+          "type": "string"
+        },
+        "num_found": {
+          "example": 500,
+          "type": "integer"
+        },
+        "page": {
+          "example": 0,
+          "type": "integer"
+        },
+        "per_page": {
+          "example": 20,
+          "type": "integer"
+        },
+        "query": {
+          "example": "battery",
+          "type": "string"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/usptoppubs.SearchResult"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "usptoppubs.SearchResult": {
+      "properties": {
+        "applicant_names": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "application_number": {
+          "example": "15/620,213",
+          "type": "string"
+        },
+        "assignee_name": {
+          "type": "string"
+        },
+        "cpc_codes": {
+          "type": "string"
+        },
+        "database": {
+          "example": "USPAT",
+          "type": "string"
+        },
+        "filing_date": {
+          "example": "2017-06-12",
+          "type": "string"
+        },
+        "guid": {
+          "example": "US-10758101-B2",
+          "type": "string"
+        },
+        "inventors_short": {
+          "type": "string"
+        },
+        "ipc_codes": {
+          "type": "string"
+        },
+        "kind_codes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "language": {
+          "example": "EN",
+          "type": "string"
+        },
+        "page_count": {
+          "type": "integer"
+        },
+        "publication_date": {
+          "example": "2020-09-01",
+          "type": "string"
+        },
+        "publication_number": {
+          "example": "US10758101B2",
+          "type": "string"
+        },
+        "title": {
+          "example": "UPRIGHT VACUUM CLEANER WITH BATTERY SUPPORT PLATE",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "usptoppubs.detailResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/usptoppubs.DetailResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "usptoppubs.searchResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/usptoppubs.SearchResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "vinted.BrandEntry": {
       "properties": {
         "id": {
@@ -97577,12 +100225,135 @@
         ]
       }
     },
+    "/bestbuy/brands": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns Best Buy's full brand directory (name, category id, url), sourced from the site's own \"Name Brands\" page. Each id is directly usable as bestbuy_category's category_id input.",
+        "operationId": "bestbuy-brands",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/bestbuy.brandsResponseDoc"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get Best Buy's full brand directory",
+        "tags": [
+          "Best Buy"
+        ]
+      }
+    },
+    "/bestbuy/categories": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns Best Buy's top-level shopping departments (name, category id, url), sourced from the homepage's own category carousel. Each id is directly usable as bestbuy_category's category_id input.",
+        "operationId": "bestbuy-categories",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/bestbuy.categoriesResponseDoc"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get Best Buy's top-level shopping departments",
+        "tags": [
+          "Best Buy"
+        ]
+      }
+    },
+    "/bestbuy/categories/trending": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns Best Buy's fine-grained, often deeply-nested product-type categories (e.g. \"Windows Laptops\", \"55-Inch TVs (55 - 64 in)\", \"PS5 Consoles\") sourced from the homepage's own \"Best Selling\" section -- much more specific than bestbuy_categories' ~25 top-level departments. Each id is directly usable as bestbuy_category's category_id input.",
+        "operationId": "bestbuy-categories-trending",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/bestbuy.trendingCategoriesResponseDoc"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get Best Buy's fine-grained trending product-type categories",
+        "tags": [
+          "Best Buy"
+        ]
+      }
+    },
     "/bestbuy/category": {
       "get": {
         "consumes": [
           "application/json"
         ],
-        "description": "Returns page 1 (up to 24) of one Best Buy category's normalized product listing (sku, title, url, image, price, rating, review count). category_id is a Best Buy category id, e.g. pcmcat138500050001, found in a category page URL's trailing <id>.c?id=<id> segment.",
+        "description": "Returns one page (up to 24) of one Best Buy category's normalized product listing (sku, title, url, image, price, rating, review count). category_id is a Best Buy category id, e.g. pcmcat138500050001, found in a category page URL's trailing <id>.c?id=<id> segment. page is the optional 1-indexed page number (defaults to 1); requesting a page past the last one returns an empty products list, not an error.",
         "operationId": "bestbuy-category",
         "parameters": [
           {
@@ -97592,6 +100363,13 @@
             "required": true,
             "type": "string",
             "x-example": "pcmcat138500050001"
+          },
+          {
+            "description": "1-indexed page number, defaults to 1",
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "x-example": 1
           }
         ],
         "produces": [
@@ -97635,6 +100413,63 @@
           }
         ],
         "summary": "Get a Best Buy category's product listing",
+        "tags": [
+          "Best Buy"
+        ]
+      }
+    },
+    "/bestbuy/category/subcategories": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns a Best Buy category's own sibling/child category set (name, category id, url), sourced from that category page's own \"Category\" filter facet. Each id is directly usable as bestbuy_category's category_id input. category_id is a Best Buy category id, e.g. pcmcat138500050001, found in a category page URL's trailing <id>.c?id=<id> segment. A leaf category with no siblings returns an empty list, not an error.",
+        "operationId": "bestbuy-category-subcategories",
+        "parameters": [
+          {
+            "description": "Best Buy category id",
+            "in": "query",
+            "name": "category_id",
+            "required": true,
+            "type": "string",
+            "x-example": "pcmcat138500050001"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/bestbuy.subcategoriesResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get a Best Buy category's own sibling/child categories",
         "tags": [
           "Best Buy"
         ]
@@ -97697,6 +100532,120 @@
         ]
       }
     },
+    "/bestbuy/product/questions": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the customer questions (with answers, when present) Best Buy embeds directly on a product's page: question text, answer text, who answered, and when. sku is the numeric Best Buy SKU shown on bestbuy.com product pages and URLs. A product with no questions asked yet returns an empty list, not an error.",
+        "operationId": "bestbuy-product-questions",
+        "parameters": [
+          {
+            "description": "Numeric Best Buy SKU",
+            "in": "query",
+            "name": "sku",
+            "required": true,
+            "type": "string",
+            "x-example": "6673590"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/bestbuy.productQuestionsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get a Best Buy product's customer questions and answers",
+        "tags": [
+          "Best Buy"
+        ]
+      }
+    },
+    "/bestbuy/product/related": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the organic (non-sponsored) related products Best Buy embeds in a product page's own comparison table (sku, name, url, image, price). sku is the numeric Best Buy SKU shown on bestbuy.com product pages and URLs. A product page with no comparison table returns an empty list, not an error.",
+        "operationId": "bestbuy-product-related",
+        "parameters": [
+          {
+            "description": "Numeric Best Buy SKU",
+            "in": "query",
+            "name": "sku",
+            "required": true,
+            "type": "string",
+            "x-example": "6673590"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/bestbuy.productRelatedResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get a Best Buy product's related products",
+        "tags": [
+          "Best Buy"
+        ]
+      }
+    },
     "/bestbuy/product/reviews": {
       "get": {
         "consumes": [
@@ -97749,6 +100698,147 @@
           }
         ],
         "summary": "Get a Best Buy product's customer reviews",
+        "tags": [
+          "Best Buy"
+        ]
+      }
+    },
+    "/bestbuy/search": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one page (up to 24) of one Best Buy keyword search's normalized product listing (sku, title, url, image, price, rating, review count). q is free-text search keywords, e.g. \"laptop\". page is the optional 1-indexed page number (defaults to 1); requesting a page past the last one returns an empty products list, not an error.",
+        "operationId": "bestbuy-search",
+        "parameters": [
+          {
+            "description": "Search keywords",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "laptop"
+          },
+          {
+            "description": "1-indexed page number, defaults to 1",
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "x-example": 1
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/bestbuy.searchResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search Best Buy's product catalog",
+        "tags": [
+          "Best Buy"
+        ]
+      }
+    },
+    "/bestbuy/stores": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns Best Buy's physical store locations in one city (name, address, phone, coordinates, rating, hours), sourced from Best Buy's own SEO store directory. state is one of the 50 US state codes plus dc and pr: `al`, `ak`, `az`, `ar`, `ca`, `co`, `ct`, `de`, `dc`, `fl`, `ga`, `hi`, `id`, `il`, `in`, `ia`, `ks`, `ky`, `la`, `me`, `md`, `ma`, `mi`, `mn`, `ms`, `mo`, `mt`, `ne`, `nv`, `nh`, `nj`, `nm`, `ny`, `nc`, `nd`, `oh`, `ok`, `or`, `pa`, `pr`, `ri`, `sc`, `sd`, `tn`, `tx`, `ut`, `vt`, `va`, `wa`, `wv`, `wi`, `wy`. city is free text matched case-insensitively against that state's own directory (e.g. \"Chicago\").",
+        "operationId": "bestbuy-stores",
+        "parameters": [
+          {
+            "description": "Two-letter state/territory code",
+            "in": "query",
+            "name": "state",
+            "required": true,
+            "type": "string",
+            "x-example": "il"
+          },
+          {
+            "description": "City name",
+            "in": "query",
+            "name": "city",
+            "required": true,
+            "type": "string",
+            "x-example": "Chicago"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/bestbuy.storesResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get Best Buy's physical stores in one city",
         "tags": [
           "Best Buy"
         ]
@@ -120238,12 +123328,53 @@
         ]
       }
     },
+    "/depop/brands": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns Depop's full brand directory (id, name, slug), not just brands with active listings for a given search -- resolves the search endpoint's otherwise-opaque brand_ids filter to human-readable names. Public data sourced from Depop's own brand-directory API.",
+        "operationId": "depop-brands",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/depop.brandsResponseDoc"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Depop's full brand directory",
+        "tags": [
+          "Depop"
+        ]
+      }
+    },
     "/depop/categories": {
       "get": {
         "consumes": [
           "application/json"
         ],
-        "description": "Returns Depop's full department, category, and subcategory taxonomy -- every value usable with /depop/search's and /depop/shop/{username}'s category/subcategory filters. Static data, no live request.",
+        "description": "Returns Depop's full department, category, and subcategory taxonomy -- every value usable with /depop/search's and /depop/shop/{username}'s category/subcategory filters. Tries a live refresh from Depop's own category-filter API first and falls back to a static snapshot on any failure, so this never errors.",
         "operationId": "depop-categories",
         "produces": [
           "application/json"
@@ -120504,6 +123635,13 @@
             "x-example": "219"
           },
           {
+            "description": "Comma-separated Depop size composite ids (format {size_set_id}.{id}, e.g. \\",
+            "in": "query",
+            "name": "sizes",
+            "type": "string",
+            "x-example": "4.17"
+          },
+          {
             "description": "Opaque pagination cursor from a previous response's next_cursor field. Omit for the first page.",
             "in": "query",
             "name": "after",
@@ -120545,6 +123683,120 @@
           }
         ],
         "summary": "Search Depop listings",
+        "tags": [
+          "Depop"
+        ]
+      }
+    },
+    "/depop/search-sellers": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Finds Depop users/sellers by name or username. A matched result's username can be passed directly to GET /depop/shop/{username} for that seller's full shop. Public data sourced from Depop's own user-search API.",
+        "operationId": "depop-search-sellers",
+        "parameters": [
+          {
+            "description": "Seller name or username to search for",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string",
+            "x-example": "vintage nike"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/depop.searchSellersResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search Depop sellers by name",
+        "tags": [
+          "Depop"
+        ]
+      }
+    },
+    "/depop/search/facets": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns result-count breakdowns per department/category/subcategory for a search query, via Depop's dedicated aggregates API -- a distinct upstream call from search itself, not embedded in its response. Public data sourced from Depop's own search-aggregates API.",
+        "operationId": "depop-search-facets",
+        "parameters": [
+          {
+            "description": "Free-text keyword search",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string",
+            "x-example": "bandage dress"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/depop.searchFacetsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Depop search result-count breakdowns",
         "tags": [
           "Depop"
         ]
@@ -120627,6 +123879,13 @@
             "name": "gender",
             "type": "string",
             "x-example": "male"
+          },
+          {
+            "description": "Comma-separated Depop size composite ids (format {size_set_id}.{id}, e.g. \\",
+            "in": "query",
+            "name": "sizes",
+            "type": "string",
+            "x-example": "54.4"
           }
         ],
         "produces": [
@@ -120670,6 +123929,104 @@
           }
         ],
         "summary": "Get a Depop seller's shop",
+        "tags": [
+          "Depop"
+        ]
+      }
+    },
+    "/depop/sizes": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns Depop's full, multi-region size taxonomy -- every composite id usable with /depop/search's and /depop/shop/{username}'s sizes filter. Public data sourced from Depop's own size-filter API.",
+        "operationId": "depop-sizes",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/depop.sizesResponseDoc"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get Depop's size taxonomy",
+        "tags": [
+          "Depop"
+        ]
+      }
+    },
+    "/depop/suggest": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns Depop's own search-box autocomplete suggestions for a partial query, including the category a suggestion maps to when relevant. Public data sourced from Depop's own search-suggestions API.",
+        "operationId": "depop-suggest",
+        "parameters": [
+          {
+            "description": "Partial search query to autocomplete",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string",
+            "x-example": "red corte"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/depop.suggestResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Depop search-box autocomplete",
         "tags": [
           "Depop"
         ]
@@ -122158,12 +125515,12 @@
         ]
       }
     },
-    "/draftkings/event": {
+    "/draftkings/sportsbook/event": {
       "get": {
         "consumes": [
           "application/json"
         ],
-        "description": "Returns one event's metadata (teams, status, start time) from DraftKings' credential-free public JSON. `event_id` is a numeric DraftKings event identifier (find it from an event's DraftKings Sportsbook page, or from the `id` field of an event returned by /draftkings/odds). This endpoint does not include betting markets/odds -- use /draftkings/odds for those.",
+        "description": "Returns one event's metadata (league id, sport id, teams, status, start time) from DraftKings' credential-free public JSON. `event_id` is a numeric DraftKings event identifier (find it from an event's DraftKings Sportsbook page, or from the `id` field of an event returned by /draftkings/sportsbook/odds). The returned `league_id` is accepted by /draftkings/sportsbook/odds and /draftkings/sportsbook/futures. This endpoint does not include betting markets/odds.",
         "operationId": "draftkings-event",
         "parameters": [
           {
@@ -122217,16 +125574,76 @@
         ],
         "summary": "DraftKings Sportsbook event",
         "tags": [
-          "DraftKings"
+          "DraftKings Sportsbook"
         ]
       }
     },
-    "/draftkings/event-markets": {
+    "/draftkings/sportsbook/event-context": {
+      "get": {
+        "description": "Returns public sport, league, and event navigation identifiers for a numeric DraftKings event id. Use it to associate an event with DraftKings Sportsbook's public sport and league navigation.",
+        "operationId": "draftkings-event-context",
+        "parameters": [
+          {
+            "description": "Numeric DraftKings event id",
+            "in": "query",
+            "name": "event_id",
+            "required": true,
+            "type": "string",
+            "x-example": "34522271"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/draftkings.eventContextResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "DraftKings Sportsbook event context",
+        "tags": [
+          "DraftKings Sportsbook"
+        ]
+      }
+    },
+    "/draftkings/sportsbook/event-markets": {
       "get": {
         "consumes": [
           "application/json"
         ],
-        "description": "Returns one event's betting markets and selections for a specific market category, from DraftKings' credential-free public JSON. `event_id` is a numeric DraftKings event identifier (find it from the `id` field of an event returned by /draftkings/odds). `subcategory_id` selects the market category (e.g. game lines, a player-prop category, an alternate-line category) -- find one from the `subcategory_id` field on a market returned by /draftkings/odds, or from a DraftKings Sportsbook event page's own network traffic. An empty `markets` list is a valid response when the category has no markets currently posted for this event.",
+        "description": "Returns one event's betting markets and selections for a specific market category, from DraftKings' credential-free public JSON. `event_id` is a numeric DraftKings event identifier (find it from the `id` field of an event returned by /draftkings/sportsbook/odds). `subcategory_id` selects the market category (e.g. game lines, a player-prop category, an alternate-line category) -- find one from the `subcategory_id` field on a market returned by /draftkings/sportsbook/odds, or from a DraftKings Sportsbook event page's own network traffic. An empty `markets` list is a valid response when the category has no markets currently posted for this event.",
         "operationId": "draftkings-event-markets",
         "parameters": [
           {
@@ -122288,11 +125705,52 @@
         ],
         "summary": "DraftKings Sportsbook event markets",
         "tags": [
-          "DraftKings"
+          "DraftKings Sportsbook"
         ]
       }
     },
-    "/draftkings/futures": {
+    "/draftkings/sportsbook/featured-leagues": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns public DraftKings Sportsbook leagues currently marked as featured in its sport navigation. Each item includes its numeric `id`, capability `tags`, live-offer status, and upstream featured ordering. Use the `id` as `league_id` with /draftkings/sportsbook/odds and /draftkings/sportsbook/futures.",
+        "operationId": "draftkings-featured-leagues",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/draftkings.featuredLeaguesResponseDoc"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "DraftKings Sportsbook featured leagues",
+        "tags": [
+          "DraftKings Sportsbook"
+        ]
+      }
+    },
+    "/draftkings/sportsbook/futures": {
       "get": {
         "consumes": [
           "application/json"
@@ -122359,11 +125817,156 @@
         ],
         "summary": "DraftKings Sportsbook futures",
         "tags": [
-          "DraftKings"
+          "DraftKings Sportsbook"
         ]
       }
     },
-    "/draftkings/odds": {
+    "/draftkings/sportsbook/league-events": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns a DraftKings Sportsbook league's current public event directory, including event IDs, teams or other participants, start times, status, and public availability tags. Supply a numeric `league_id` from /draftkings/sportsbook/leagues, /draftkings/sportsbook/quick-links, /draftkings/sportsbook/featured-leagues, or /draftkings/sportsbook/event. This endpoint does not include betting markets or odds.",
+        "operationId": "draftkings-league-events",
+        "parameters": [
+          {
+            "description": "Numeric DraftKings league id",
+            "in": "query",
+            "name": "league_id",
+            "required": true,
+            "type": "string",
+            "x-example": "84240"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/draftkings.leagueEventsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "DraftKings Sportsbook league event directory",
+        "tags": [
+          "DraftKings Sportsbook"
+        ]
+      }
+    },
+    "/draftkings/sportsbook/leagues": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns DraftKings Sportsbook's current public sport and league directory. Each league `id` is accepted as `league_id` by /draftkings/sportsbook/odds and /draftkings/sportsbook/futures.",
+        "operationId": "draftkings-leagues",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/draftkings.leaguesResponseDoc"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "DraftKings Sportsbook sports and leagues",
+        "tags": [
+          "DraftKings Sportsbook"
+        ]
+      }
+    },
+    "/draftkings/sportsbook/live": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the live events currently shown by DraftKings Sportsbook, including score state, period, primary markets, and market categories that can be used with /draftkings/sportsbook/event-markets. An empty `events` list is valid when DraftKings has no live events at request time.",
+        "operationId": "draftkings-live",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/draftkings.liveResponseDoc"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "DraftKings Sportsbook live events",
+        "tags": [
+          "DraftKings Sportsbook"
+        ]
+      }
+    },
+    "/draftkings/sportsbook/odds": {
       "get": {
         "consumes": [
           "application/json"
@@ -122422,7 +126025,198 @@
         ],
         "summary": "DraftKings Sportsbook odds",
         "tags": [
-          "DraftKings"
+          "DraftKings Sportsbook"
+        ]
+      }
+    },
+    "/draftkings/sportsbook/quick-links": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the ordered league shortcuts currently prioritized on DraftKings Sportsbook's public home page. Each item includes a numeric `league_id` accepted by /draftkings/sportsbook/odds and /draftkings/sportsbook/futures.",
+        "operationId": "draftkings-quick-links",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/draftkings.quickLinksResponseDoc"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "DraftKings Sportsbook quick links",
+        "tags": [
+          "DraftKings Sportsbook"
+        ]
+      }
+    },
+    "/draftkings/sportsbook/team": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns stable team metadata embedded in a public DraftKings Sportsbook team page. Supply `team_id`, `sport`, and `slug` from an item returned by /draftkings/sportsbook/teams. Allowed `sport` values: `football`, `hockey`, `basketball`, `baseball`.",
+        "operationId": "draftkings-team",
+        "parameters": [
+          {
+            "description": "Numeric DraftKings team id",
+            "in": "query",
+            "name": "team_id",
+            "required": true,
+            "type": "string",
+            "x-example": "18454"
+          },
+          {
+            "description": "Sport: football, hockey, basketball, baseball",
+            "enum": [
+              "football",
+              "hockey",
+              "basketball",
+              "baseball"
+            ],
+            "in": "query",
+            "name": "sport",
+            "required": true,
+            "type": "string",
+            "x-example": "football"
+          },
+          {
+            "description": "Lowercase DraftKings team slug",
+            "in": "query",
+            "name": "slug",
+            "required": true,
+            "type": "string",
+            "x-example": "arizona-cardinals"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/draftkings.teamResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "DraftKings Sportsbook team",
+        "tags": [
+          "DraftKings Sportsbook"
+        ]
+      }
+    },
+    "/draftkings/sportsbook/teams": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the teams listed on DraftKings Sportsbook's public Teams page for one league. Allowed `league` values: `nfl`, `nhl`, `nba`, `cbb`, `mlb`, `cfb`.",
+        "operationId": "draftkings-teams",
+        "parameters": [
+          {
+            "description": "League: nfl, nhl, nba, cbb, mlb, cfb",
+            "enum": [
+              "nfl",
+              "nhl",
+              "nba",
+              "cbb",
+              "mlb",
+              "cfb"
+            ],
+            "in": "query",
+            "name": "league",
+            "required": true,
+            "type": "string",
+            "x-example": "nfl"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/draftkings.teamsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "DraftKings Sportsbook league teams",
+        "tags": [
+          "DraftKings Sportsbook"
         ]
       }
     },
@@ -131015,6 +134809,75 @@
         ]
       }
     },
+    "/googlepatents/classification": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns a CPC classification symbol's official title, its position in the classification tree (parent/child symbols), related symbols, and its full scope-note description. Accepts a symbol at any level, e.g. a section (\"A\"), a class (\"A61\"), a subclass (\"A61K\"), or a full group/subgroup (\"A61K31/00\"). Public data, sourced from Google Patents' own search API.",
+        "operationId": "googlepatents-classification",
+        "parameters": [
+          {
+            "description": "CPC classification symbol",
+            "in": "query",
+            "name": "code",
+            "required": true,
+            "type": "string",
+            "x-example": "A61K31/00"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/googlepatents.classificationResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Look up a Cooperative Patent Classification (CPC) symbol",
+        "tags": [
+          "Google Patents"
+        ]
+      }
+    },
     "/googlepatents/coverage": {
       "get": {
         "consumes": [
@@ -131133,6 +134996,75 @@
           }
         ],
         "summary": "A single patent's bibliographic data, abstract, claims, description, citations, and family",
+        "tags": [
+          "Google Patents"
+        ]
+      }
+    },
+    "/googlepatents/recent": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the patent publications Google Patents' bulk sitemap indexes for one ISO 8601 week (format YYYY-Www, e.g. \"2026-W20\"): publication number, title, and detail-page URL for each. Useful for browsing recently published patents without a search query. Public data, sourced from Google Patents' own sitemap.",
+        "operationId": "googlepatents-recent",
+        "parameters": [
+          {
+            "description": "ISO 8601 week, format YYYY-Www",
+            "in": "query",
+            "name": "week",
+            "required": true,
+            "type": "string",
+            "x-example": "2026-W20"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/googlepatents.recentResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Browse patent publications indexed by Google Patents for one ISO week",
         "tags": [
           "Google Patents"
         ]
@@ -132636,7 +136568,7 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Get related products for an H&M product",
+        "summary": "Get an H&M product's related items",
         "tags": [
           "H&M"
         ]
@@ -132757,7 +136689,7 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Get H&M search-box typeahead suggestions",
+        "summary": "Get H&M search-box suggestions",
         "tags": [
           "H&M"
         ]
@@ -158498,6 +162430,604 @@
         ]
       }
     },
+    "/sephora/category": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one page of a Sephora category/browse listing (e.g. Makeup, Skincare), with the same sort and facet filters as /sephora/search. slug is the path segment after sephora.com/shop/, e.g. makeup-cosmetics. An unrecognized slug returns 404.",
+        "operationId": "sephora-category",
+        "parameters": [
+          {
+            "description": "Category-page slug",
+            "in": "query",
+            "name": "slug",
+            "required": true,
+            "type": "string",
+            "x-example": "makeup-cosmetics"
+          },
+          {
+            "description": "Result page, 1-based, defaults to 1",
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "x-example": 1
+          },
+          {
+            "description": "Sort order, defaults to featured",
+            "enum": [
+              "featured",
+              "top_rated",
+              "new",
+              "best_selling",
+              "price_low_to_high",
+              "price_high_to_low"
+            ],
+            "in": "query",
+            "name": "sort_by",
+            "type": "string",
+            "x-example": "featured"
+          },
+          {
+            "description": "Minimum price in whole dollars; must be set together with price_max",
+            "in": "query",
+            "name": "price_min",
+            "type": "integer",
+            "x-example": 15
+          },
+          {
+            "description": "Maximum price in whole dollars; must be set together with price_min",
+            "in": "query",
+            "name": "price_max",
+            "type": "integer",
+            "x-example": 30
+          },
+          {
+            "collectionFormat": "csv",
+            "description": "One or more exact brand names to filter to (OR'd together); repeat the param for multiple values",
+            "in": "query",
+            "items": {
+              "type": "string"
+            },
+            "name": "brand",
+            "type": "array",
+            "x-example": "Lancôme"
+          },
+          {
+            "description": "Minimum star rating, 1 to 4",
+            "in": "query",
+            "name": "rating_min",
+            "type": "integer",
+            "x-example": 4
+          },
+          {
+            "description": "When true, filters to products flagged New",
+            "in": "query",
+            "name": "is_new",
+            "type": "boolean",
+            "x-example": false
+          },
+          {
+            "collectionFormat": "csv",
+            "description": "Additional facet:value filters, repeat the param for multiple; facet must be one of: benefits, ingredientpreferences, colorfamily, formulation, size, shoppingpreferences, agerange, skintype, finish, skinconcerns, coverage, hairtype, hairconcerns, hairtexture",
+            "in": "query",
+            "items": {
+              "type": "string"
+            },
+            "name": "filter",
+            "type": "array",
+            "x-example": "formulation:serum"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/sephora.categoryResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Sephora category browse",
+        "tags": [
+          "Sephora"
+        ]
+      }
+    },
+    "/sephora/product": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one Sephora product's full detail (every color/shade variant with its own price and availability, rating, review count, and a sample of recent reviews), from Sephora's credential-free public JSON-LD. `product_id` is the full product-page slug, e.g. `lip-sleeping-mask-P420652` -- copy it from the path segment after sephora.com/product/ on any product page; unlike some other retailers, an arbitrary or partial slug does not resolve.",
+        "operationId": "sephora-product",
+        "parameters": [
+          {
+            "description": "Full Sephora product-page slug",
+            "in": "query",
+            "name": "product_id",
+            "required": true,
+            "type": "string",
+            "x-example": "lip-sleeping-mask-P420652"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/sephora.productResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Sephora product detail",
+        "tags": [
+          "Sephora"
+        ]
+      }
+    },
+    "/sephora/product/questions": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one page of a Sephora product's customer Q&A: each question plus every answer it received (text, author, whether it's a brand answer, helpful votes). product_id is the Sephora productGroupID, e.g. P420652 -- the same value /sephora/product returns as product_group_id.",
+        "operationId": "sephora-product-questions",
+        "parameters": [
+          {
+            "description": "Sephora productGroupID",
+            "in": "query",
+            "name": "product_id",
+            "required": true,
+            "type": "string",
+            "x-example": "P420652"
+          },
+          {
+            "description": "Result page, 1-based, defaults to 1",
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "x-example": 1
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/sephora.productQuestionsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Sephora product questions and answers",
+        "tags": [
+          "Sephora"
+        ]
+      }
+    },
+    "/sephora/product/reviews": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one page of a Sephora product's full customer reviews (title, body, rating, author, helpful votes, secondary ratings, photos), plus the product's site-wide rating rollup (average rating, recommended ratio, star-count histogram). product_id is the Sephora productGroupID, e.g. P420652 -- the same value /sephora/product returns as product_group_id.",
+        "operationId": "sephora-product-reviews",
+        "parameters": [
+          {
+            "description": "Sephora productGroupID",
+            "in": "query",
+            "name": "product_id",
+            "required": true,
+            "type": "string",
+            "x-example": "P420652"
+          },
+          {
+            "description": "Result page, 1-based, defaults to 1",
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "x-example": 1
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/sephora.productReviewsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Sephora product reviews",
+        "tags": [
+          "Sephora"
+        ]
+      }
+    },
+    "/sephora/search": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Searches Sephora's product catalog by keyword, with real page-based pagination. Returns normalized products with brand, pricing, rating, and review count. Sephora's own search never returns a genuine zero-result state for a nonempty keyword -- an unrecognized/nonsense keyword still returns a full, unrelated fallback result set rather than an empty one. price_min/price_max must be provided together (whole dollars) -- upstream silently ignores a one-sided price range rather than filtering or erroring, so this endpoint rejects a one-sided range as invalid instead of passing it through. brand and filter each accept multiple values (OR'd together within the same facet); brand/rating_min/is_new/filter/price_min/price_max can all be combined with each other (AND'd together across different facets).",
+        "operationId": "sephora-search",
+        "parameters": [
+          {
+            "description": "Search keyword",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string",
+            "x-example": "mascara"
+          },
+          {
+            "description": "Result page, 1-based, defaults to 1",
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "x-example": 1
+          },
+          {
+            "description": "Results per page, 1 to 100, defaults to 60",
+            "in": "query",
+            "name": "page_size",
+            "type": "integer",
+            "x-example": 60
+          },
+          {
+            "description": "Sort order, defaults to featured",
+            "enum": [
+              "featured",
+              "top_rated",
+              "new",
+              "best_selling",
+              "price_low_to_high",
+              "price_high_to_low"
+            ],
+            "in": "query",
+            "name": "sort_by",
+            "type": "string",
+            "x-example": "featured"
+          },
+          {
+            "description": "Minimum price in whole dollars; must be set together with price_max",
+            "in": "query",
+            "name": "price_min",
+            "type": "integer",
+            "x-example": 15
+          },
+          {
+            "description": "Maximum price in whole dollars; must be set together with price_min",
+            "in": "query",
+            "name": "price_max",
+            "type": "integer",
+            "x-example": 30
+          },
+          {
+            "collectionFormat": "csv",
+            "description": "One or more exact brand names to filter to (OR'd together); repeat the param for multiple values",
+            "in": "query",
+            "items": {
+              "type": "string"
+            },
+            "name": "brand",
+            "type": "array",
+            "x-example": "Lancôme"
+          },
+          {
+            "description": "Minimum star rating, 1 to 4",
+            "in": "query",
+            "name": "rating_min",
+            "type": "integer",
+            "x-example": 4
+          },
+          {
+            "description": "When true, filters to products flagged New",
+            "in": "query",
+            "name": "is_new",
+            "type": "boolean",
+            "x-example": false
+          },
+          {
+            "collectionFormat": "csv",
+            "description": "Additional facet:value filters, repeat the param for multiple; facet must be one of: benefits, ingredientpreferences, colorfamily, formulation, size, shoppingpreferences, agerange, skintype, finish, skinconcerns, coverage, hairtype, hairconcerns, hairtexture",
+            "in": "query",
+            "items": {
+              "type": "string"
+            },
+            "name": "filter",
+            "type": "array",
+            "x-example": "formulation:serum"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/sephora.searchResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Sephora product search",
+        "tags": [
+          "Sephora"
+        ]
+      }
+    },
+    "/sephora/stores": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns Sephora physical store locations near a coordinate (address, hours, BOPIS/curbside/same-day flags). Renders through a JS-executing browser backend, unlike every other Sephora endpoint -- the store-locator data call itself is plain HTTP, but it requires a per-visit access token minted by an endpoint gated behind a bot-management JS challenge, so responses may take longer.",
+        "operationId": "sephora-stores",
+        "parameters": [
+          {
+            "description": "Latitude, -90 to 90",
+            "in": "query",
+            "name": "latitude",
+            "required": true,
+            "type": "number",
+            "x-example": 41.88325
+          },
+          {
+            "description": "Longitude, -180 to 180",
+            "in": "query",
+            "name": "longitude",
+            "required": true,
+            "type": "number",
+            "x-example": -87.6323879
+          },
+          {
+            "description": "Search radius in miles, 1 to 500, defaults to 50",
+            "in": "query",
+            "name": "radius",
+            "type": "integer",
+            "x-example": 50
+          },
+          {
+            "description": "Max stores to return, 1 to 50, defaults to 10",
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "x-example": 10
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/sephora.storesResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Sephora store locator",
+        "tags": [
+          "Sephora"
+        ]
+      }
+    },
+    "/sephora/suggest": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns Sephora's own search-box type-ahead suggestions for a partial keyword: keyword-completion terms, matching products, and trending/related categories. Sephora's own upstream never returns a genuine zero-result state for a nonempty query -- a deliberately nonsense query still returns unrelated product suggestions.",
+        "operationId": "sephora-suggest",
+        "parameters": [
+          {
+            "description": "Partial search keywords",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string",
+            "x-example": "masc"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/sephora.suggestResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Sephora search suggestions",
+        "tags": [
+          "Sephora"
+        ]
+      }
+    },
     "/shop-app/analysis": {
       "get": {
         "consumes": [
@@ -175471,6 +180001,167 @@
         "summary": "Request account deletion",
         "tags": [
           "Account Deletion"
+        ]
+      }
+    },
+    "/usptoppubs/detail": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Fetches a single USPTO Patent Public Search record's full text -- bibliographic data, abstract, description, and claims -- by GUID and source database. guid and source normally come straight from a prior /usptoppubs/search result's guid and database fields. Public data, sourced from USPTO's own official search tool.",
+        "operationId": "usptoppubs-detail",
+        "parameters": [
+          {
+            "description": "Document GUID, e.g. from a prior search result's guid field",
+            "in": "query",
+            "name": "guid",
+            "required": true,
+            "type": "string",
+            "x-example": "US-20260238009-A1"
+          },
+          {
+            "description": "Source database. Allowed values: US-PGPUB, USPAT, USOCR",
+            "in": "query",
+            "name": "source",
+            "required": true,
+            "type": "string",
+            "x-example": "US-PGPUB"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/usptoppubs.detailResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Fetch a document's full bibliographic data, abstract, description, and claims",
+        "tags": [
+          "USPTO Patent Public Search"
+        ]
+      }
+    },
+    "/usptoppubs/search": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Searches USPTO Patent Public Search's full-text index of granted patents and published applications, returning normalized bibliographic results (title, applicant/assignee, inventors, filing and publication dates, application number, IPC/CPC classifications, page count). q accepts USPTO's full Advanced Search query syntax -- field-specific search (e.g. battery.ti., Microsoft.as.), date ranges (@pd>=20200101<=20241231), boolean and proximity operators, and wildcards -- see the markdown doc for the full field-code table and syntax reference. Public data, sourced from USPTO's own official search tool.",
+        "operationId": "usptoppubs-search",
+        "parameters": [
+          {
+            "description": "Search query text -- accepts USPTO's full Advanced Search (BRS) query syntax: field codes, date ranges, boolean/proximity operators, wildcards",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "battery"
+          },
+          {
+            "description": "Comma-separated subset of databases to search. Allowed values: US-PGPUB, USPAT, USOCR. Defaults to all three",
+            "in": "query",
+            "name": "databases",
+            "type": "string",
+            "x-example": "US-PGPUB,USPAT,USOCR"
+          },
+          {
+            "description": "Results to return, default 20, max 100",
+            "in": "query",
+            "name": "num",
+            "type": "integer",
+            "x-example": 20
+          },
+          {
+            "description": "Results page, 0-indexed, default 0",
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "x-example": 0
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/usptoppubs.searchResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search USPTO's own patent full-text search index",
+        "tags": [
+          "USPTO Patent Public Search"
         ]
       }
     },
