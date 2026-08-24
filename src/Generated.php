@@ -7,6 +7,20 @@ declare(strict_types=1);
 namespace Crawlora\Generated;
 
 /**
+ * @method mixed product(array $params = [], array $options = []) adidas-product (GET /adidas/product)
+ *   params: string $product_id
+ * @method mixed search(array $params = [], array $options = []) adidas-search (GET /adidas/search)
+ *   params: string $query, string $category, string $sort, int $page
+ * @method mixed store(array $params = [], array $options = []) adidas-store (GET /adidas/store)
+ *   params: string $store_id
+ * @method mixed stores(array $params = [], array $options = []) adidas-stores (GET /adidas/stores)
+ *   params: float $lat, float $lng, int $page
+ * @method mixed suggest(array $params = [], array $options = []) adidas-suggest (GET /adidas/suggest)
+ *   params: string $query
+ */
+abstract class AdidasGroup {}
+
+/**
  * @method mixed activitiesSearch(array $params = [], array $options = []) agoda-activities-search (GET /agoda/activities/search)
  *   params: string $keyword, int $city_id, string $city
  * @method mixed activityDetail(array $params = [], array $options = []) agoda-activity-detail (GET /agoda/activities/{activity_id})
@@ -43,6 +57,30 @@ abstract class AgodaGroup {}
  *   params: string $location, string $check_in, string $check_out, int $adults, int $page, string $currency, float $ne_lat, float $ne_lng, float $sw_lat, float $sw_lng, int $zoom
  */
 abstract class AirbnbGroup {}
+
+/**
+ * @method mixed collections(array $params = [], array $options = []) allbirds-collections (GET /allbirds/collections)
+ *   params: int $page, int $limit
+ * @method mixed collectionProducts(array $params = [], array $options = []) allbirds-collection-products (GET /allbirds/collections/{handle}/products)
+ *   params: string $handle, int $page, int $limit
+ * @method mixed pages(array $params = [], array $options = []) allbirds-pages (GET /allbirds/pages)
+ *   params: int $page, int $limit
+ * @method mixed page(array $params = [], array $options = []) allbirds-page (GET /allbirds/pages/{handle})
+ *   params: string $handle
+ * @method mixed products(array $params = [], array $options = []) allbirds-products (GET /allbirds/products)
+ *   params: int $page, int $limit
+ * @method mixed product(array $params = [], array $options = []) allbirds-product (GET /allbirds/products/{handle})
+ *   params: string $handle
+ * @method mixed productRecommendations(array $params = [], array $options = []) allbirds-product-recommendations (GET /allbirds/products/{handle}/recommendations)
+ *   params: string $handle, int $limit, 'related'|'complementary' $intent
+ * @method mixed searchSuggest(array $params = [], array $options = []) allbirds-search-suggest (GET /allbirds/search/suggest)
+ *   params: string $q, string $types, int $limit
+ * @method mixed sitemapUrls(array $params = [], array $options = []) allbirds-sitemap-urls (GET /allbirds/sitemap/urls)
+ *   params: 'all'|'products'|'collections'|'pages'|'blogs'|'agentic_discovery'|'other' $type, int $limit
+ * @method mixed sitemaps(array $params = [], array $options = []) allbirds-sitemaps (GET /allbirds/sitemaps)
+ * @method mixed store(array $params = [], array $options = []) allbirds-store (GET /allbirds/store)
+ */
+abstract class AllbirdsGroup {}
 
 /**
  * @method mixed job(array $params = [], array $options = []) amazon-jobs-job (GET /amazon-jobs/job)
@@ -169,6 +207,29 @@ abstract class ApplePodcastsGroup {}
 abstract class AppStoreGroup {}
 
 /**
+ * @method mixed categories(array $params = [], array $options = []) audible-categories (GET /audible/categories)
+ * @method mixed category(array $params = [], array $options = []) audible-category (GET /audible/category/{id})
+ *   params: string $id
+ * @method mixed charts(array $params = [], array $options = []) audible-charts (GET /audible/charts)
+ *   params: 'most_listened'|'bestselling' $chart, 'audiobooks'|'podcasts' $content_type, string $category_id, 'all'|'free'|'plus'|'premium' $access_level, 'all'|'danish'|'english'|'french'|'german'|'italian'|'japanese'|'polish'|'portuguese'|'russian'|'spanish'|'swedish' $language, 'all'|'oneHourLess'|'oneToThreeHour'|'threeToSixHour'|'sixToTenHour'|'tenToTwentyHour'|'twentyHourMore' $duration, bool $originals_only, int $page
+ * @method mixed editorialList(array $params = [], array $options = []) audible-editorial-list (GET /audible/list/{list})
+ *   params: 'audiobooks'|'booktok'|'podcasts' $list
+ * @method mixed product(array $params = [], array $options = []) audible-product (GET /audible/product/{asin})
+ *   params: string $asin
+ * @method mixed productRelated(array $params = [], array $options = []) audible-product-related (GET /audible/product/{asin}/related)
+ *   params: string $asin, 'InTheSameSeries'|'ByTheSameNarrator'|'RawSimilarities'|'ByTheSameAuthor'|'NextInSameSeries' $similarity_type, int $limit
+ * @method mixed productReviews(array $params = [], array $options = []) audible-product-reviews (GET /audible/product/{asin}/reviews)
+ *   params: string $asin, int $page, int $limit
+ * @method mixed products(array $params = [], array $options = []) audible-products (GET /audible/products)
+ *   params: string $asins
+ * @method mixed search(array $params = [], array $options = []) audible-search (GET /audible/search)
+ *   params: string $q, string $title, string $author, string $narrator, string $category_id, int $page, int $limit
+ * @method mixed series(array $params = [], array $options = []) audible-series (GET /audible/series/{asin})
+ *   params: string $asin
+ */
+abstract class AudibleGroup {}
+
+/**
  * @method mixed dealer(array $params = [], array $options = []) autotrader-dealer (GET /autotrader/dealer/{id})
  *   params: string $id
  * @method mixed search(array $params = [], array $options = []) autotrader-search (GET /autotrader/search)
@@ -177,6 +238,28 @@ abstract class AppStoreGroup {}
  *   params: string $id
  */
 abstract class AutotraderGroup {}
+
+/**
+ * @method mixed business(array $params = [], array $options = []) bbb-business (GET /bbb/business)
+ *   params: string $url
+ * @method mixed businessComplaints(array $params = [], array $options = []) bbb-business-complaints (GET /bbb/business/complaints)
+ *   params: string $url
+ * @method mixed businessMoreInfo(array $params = [], array $options = []) bbb-business-more-info (GET /bbb/business/more-info)
+ *   params: string $url
+ * @method mixed businessReviews(array $params = [], array $options = []) bbb-business-reviews (GET /bbb/business/reviews)
+ *   params: string $url, int $page
+ * @method mixed category(array $params = [], array $options = []) bbb-category (GET /bbb/category)
+ *   params: string $url, int $page
+ * @method mixed scamtrackerSearch(array $params = [], array $options = []) bbb-scamtracker-search (GET /bbb/scamtracker/search)
+ *   params: string $query, 'Advance Fee Loan'|'Bank/Credit Card Company Imposter'|'Business Email Compromise'|'Charity'|'Counterfeit Product'|'COVID-19'|'Credit Cards'|'Credit Repair/Debt Relief'|'CryptoCurrency'|'Debt Collections'|'Employment'|'Fake Check/Money Order'|'Fake Invoice/Supplier Bill'|'Family/Friend Emergency'|'Foreign Money Exchange'|'Government Agency Imposter'|'Government Grant'|'Healthcare/Medicaid/Medicare'|'Home Improvement'|'Identity Theft'|'Investment'|'Moving'|'Online Purchase'|'Other'|'Phishing'|'Rental'|'Retail Business'|'Romance'|'Scholarship'|'Sweepstakes/Lottery/Prizes'|'Tax Collection'|'Tech Support'|'Travel/Vacation/Timeshare'|'Utility'|'Vanity Award'|'Worthless Problem-solving Service'|'Yellow Pages/Directories' $scam_type, string $state, string $scammer_state, string $date_from, string $date_to, int $min_dollars_lost, int $max_dollars_lost, int $page
+ * @method mixed scamtrackerStateStats(array $params = [], array $options = []) bbb-scamtracker-state-stats (GET /bbb/scamtracker/state-stats)
+ *   params: '30'|'90'|'365'|'all' $period
+ * @method mixed scamtrackerDetail(array $params = [], array $options = []) bbb-scamtracker-detail (GET /bbb/scamtracker/{id})
+ *   params: string $id
+ * @method mixed search(array $params = [], array $options = []) bbb-search (GET /bbb/search)
+ *   params: string $query, string $location, int $page
+ */
+abstract class BbbGroup {}
 
 /**
  * @method mixed bestbuyBrands(array $params = [], array $options = []) bestbuy-brands (GET /bestbuy/brands)
@@ -218,6 +301,11 @@ abstract class BestBuyGroup {}
  * @method mixed mePortal(array $params = [], array $options = []) billing-me-portal (POST /billing/me/portal)
  *   params: array $request
  * @method mixed meRejections(array $params = [], array $options = []) billing-me-rejections (GET /billing/me/rejections)
+ * @method mixed meSubscriptionChange(array $params = [], array $options = []) billing-me-subscription-change (POST /billing/me/subscription/change)
+ *   params: array $request
+ * @method mixed meSubscriptionChangeCancel(array $params = [], array $options = []) billing-me-subscription-change-cancel (POST /billing/me/subscription/change/cancel)
+ * @method mixed meSubscriptionPreview(array $params = [], array $options = []) billing-me-subscription-preview (POST /billing/me/subscription/preview)
+ *   params: array $request
  */
 abstract class BillingGroup {}
 
@@ -338,6 +426,30 @@ abstract class BrandGroup {}
 abstract class BraveGroup {}
 
 /**
+ * @method mixed collections(array $params = [], array $options = []) brooklinen-collections (GET /brooklinen/collections)
+ *   params: int $page, int $limit
+ * @method mixed collectionProducts(array $params = [], array $options = []) brooklinen-collection-products (GET /brooklinen/collections/{handle}/products)
+ *   params: string $handle, int $page, int $limit
+ * @method mixed pages(array $params = [], array $options = []) brooklinen-pages (GET /brooklinen/pages)
+ *   params: int $page, int $limit
+ * @method mixed page(array $params = [], array $options = []) brooklinen-page (GET /brooklinen/pages/{handle})
+ *   params: string $handle
+ * @method mixed products(array $params = [], array $options = []) brooklinen-products (GET /brooklinen/products)
+ *   params: int $page, int $limit
+ * @method mixed product(array $params = [], array $options = []) brooklinen-product (GET /brooklinen/products/{handle})
+ *   params: string $handle
+ * @method mixed productRecommendations(array $params = [], array $options = []) brooklinen-product-recommendations (GET /brooklinen/products/{handle}/recommendations)
+ *   params: string $handle, int $limit, 'related'|'complementary' $intent
+ * @method mixed searchSuggest(array $params = [], array $options = []) brooklinen-search-suggest (GET /brooklinen/search/suggest)
+ *   params: string $q, string $types, int $limit
+ * @method mixed sitemapUrls(array $params = [], array $options = []) brooklinen-sitemap-urls (GET /brooklinen/sitemap/urls)
+ *   params: 'all'|'products'|'collections'|'pages'|'blogs'|'agentic_discovery'|'other' $type, int $limit
+ * @method mixed sitemaps(array $params = [], array $options = []) brooklinen-sitemaps (GET /brooklinen/sitemaps)
+ * @method mixed store(array $params = [], array $options = []) brooklinen-store (GET /brooklinen/store)
+ */
+abstract class BrooklinenGroup {}
+
+/**
  * @method mixed product(array $params = [], array $options = []) capterra-product (GET /capterra/product)
  *   params: string $product_id
  * @method mixed reviews(array $params = [], array $options = []) capterra-reviews (GET /capterra/product/reviews)
@@ -371,6 +483,24 @@ abstract class CarMaxGroup {}
  *   params: string $listing_id
  */
 abstract class CarsComGroup {}
+
+/**
+ * @method mixed categories(array $params = [], array $options = []) chewy-categories (GET /chewy/categories)
+ *   params: string $group_id, int $depth
+ * @method mixed category(array $params = [], array $options = []) chewy-category (GET /chewy/category)
+ *   params: string $group_id, int $page, 'byRelevance'|'byNewest'|'byPopularity'|'byLowestPrice'|'byHighestPrice'|'byRating'|'byRatingCount' $sort, array<string> $filter
+ * @method mixed gtinLookup(array $params = [], array $options = []) chewy-gtin-lookup (GET /chewy/gtin-lookup)
+ *   params: string $gtins
+ * @method mixed product(array $params = [], array $options = []) chewy-product (GET /chewy/product)
+ *   params: string $id
+ * @method mixed products(array $params = [], array $options = []) chewy-products (GET /chewy/products)
+ *   params: string $part_numbers
+ * @method mixed search(array $params = [], array $options = []) chewy-search (GET /chewy/search)
+ *   params: string $q, int $page, 'byRelevance'|'byNewest'|'byPopularity'|'byLowestPrice'|'byHighestPrice'|'byRating'|'byRatingCount' $sort, array<string> $filter
+ * @method mixed suggest(array $params = [], array $options = []) chewy-suggest (GET /chewy/suggest)
+ *   params: string $term
+ */
+abstract class ChewyGroup {}
 
 /**
  * @method mixed chromewebstoreCategories(array $params = [], array $options = []) chromewebstore-categories (GET /chromewebstore/categories)
@@ -445,6 +575,30 @@ abstract class ChromeWebStoreGroup {}
 abstract class CoinGeckoGroup {}
 
 /**
+ * @method mixed colehaanCollections(array $params = [], array $options = []) colehaan-collections (GET /colehaan/collections)
+ *   params: int $page, int $limit
+ * @method mixed colehaanCollectionProducts(array $params = [], array $options = []) colehaan-collection-products (GET /colehaan/collections/{handle}/products)
+ *   params: string $handle, int $page, int $limit
+ * @method mixed colehaanPages(array $params = [], array $options = []) colehaan-pages (GET /colehaan/pages)
+ *   params: int $page, int $limit
+ * @method mixed colehaanPage(array $params = [], array $options = []) colehaan-page (GET /colehaan/pages/{handle})
+ *   params: string $handle
+ * @method mixed colehaanProducts(array $params = [], array $options = []) colehaan-products (GET /colehaan/products)
+ *   params: int $page, int $limit
+ * @method mixed colehaanProduct(array $params = [], array $options = []) colehaan-product (GET /colehaan/products/{handle})
+ *   params: string $handle
+ * @method mixed colehaanProductRecommendations(array $params = [], array $options = []) colehaan-product-recommendations (GET /colehaan/products/{handle}/recommendations)
+ *   params: string $handle, int $limit, 'related'|'complementary' $intent
+ * @method mixed colehaanSearchSuggest(array $params = [], array $options = []) colehaan-search-suggest (GET /colehaan/search/suggest)
+ *   params: string $q, string $types, int $limit
+ * @method mixed colehaanSitemapUrls(array $params = [], array $options = []) colehaan-sitemap-urls (GET /colehaan/sitemap/urls)
+ *   params: 'all'|'products'|'collections'|'pages'|'blogs'|'agentic_discovery'|'other' $type, int $limit
+ * @method mixed colehaanSitemaps(array $params = [], array $options = []) colehaan-sitemaps (GET /colehaan/sitemaps)
+ * @method mixed colehaanStore(array $params = [], array $options = []) colehaan-store (GET /colehaan/store)
+ */
+abstract class ColeHaanGroup {}
+
+/**
  * @method mixed report(array $params = [], array $options = []) congress-report (GET /congress/report)
  *   params: string $url
  * @method mixed stockDisclosures(array $params = [], array $options = []) congress-stock-disclosures (GET /congress/stock-disclosures)
@@ -504,6 +658,12 @@ abstract class CostcoGroup {}
  *   params: string $q, 'ios'|'android' $store, string $app_id, string $country, int $min_score, 'recent'|'score_desc'|'score_asc'|'helpful_desc' $sort, int $page, int $page_size
  * @method mixed appsSearch(array $params = [], array $options = []) datasets-apps-search (GET /datasets/apps/search)
  *   params: string $q, 'ios'|'android'|'both' $store, array<string> $platforms, string $category, string $country, string $developer, bool $free, float $min_rating, int $min_reviews, 'relevance'|'rating_desc'|'reviews_desc'|'installs_desc'|'updated_at_desc'|'popularity_desc' $sort, int $page, int $page_size
+ * @method mixed bbbBusinessesFacets(array $params = [], array $options = []) datasets-bbb-businesses-facets (GET /datasets/bbb-businesses/facets)
+ *   params: 'category'|'state'|'city'|'rating'|'accredited'|'entity_type'|'run_id' $facet, string $q, string $category, string $state, string $city, 'A+'|'A'|'A-'|'B+'|'B'|'B-'|'C+'|'C'|'C-'|'D+'|'D'|'D-'|'F' $rating, bool $accredited, string $entity_type, string $run_id
+ * @method mixed bbbBusinessesItem(array $params = [], array $options = []) datasets-bbb-businesses-item (GET /datasets/bbb-businesses/items/{id})
+ *   params: string $id
+ * @method mixed bbbBusinessesSearch(array $params = [], array $options = []) datasets-bbb-businesses-search (GET /datasets/bbb-businesses/search)
+ *   params: string $q, string $category, string $state, string $city, 'A+'|'A'|'A-'|'B+'|'B'|'B-'|'C+'|'C'|'C-'|'D+'|'D'|'D-'|'F' $rating, int $min_rating_rank, bool $accredited, string $entity_type, string $run_id, 'relevance'|'rating_desc'|'rating_asc'|'accredited_first'|'name_asc'|'years_in_business_desc' $sort, int $page, int $page_size
  * @method mixed boxofficemojoFacets(array $params = [], array $options = []) datasets-boxofficemojo-facets (GET /datasets/boxofficemojo/facets)
  *   params: 'gross_band'|'years_active'|'lifetime_year'|'franchise_names'|'brand_names'|'genre_names'|'hydrated'|'is_billion_dollar'|'in_lifetime_top_1000_ww' $facet, string $q, string $title_id, int $year, int $lifetime_year, string $gross_band, string $franchise, string $brand, string $genre, bool $in_lifetime_top_1000, int $min_worldwide, int $max_worldwide, int $min_domestic, float $min_foreign_share, float $max_domestic_share, bool $hydrated, bool $is_billion_dollar
  * @method mixed boxofficemojoItem(array $params = [], array $options = []) datasets-boxofficemojo-item (GET /datasets/boxofficemojo/items/{title_id})
@@ -526,6 +686,12 @@ abstract class CostcoGroup {}
  *   params: string $q, 'extension'|'theme'|'app'|'unknown' $item_type, string $category, string $developer, string $developer_email, string $permission, 'active'|'removed' $status, '2'|'3' $manifest_version, bool $collects_data, bool $has_broad_host_access, int $min_users, float $min_rating, int $min_rating_count, int $page, int $page_size
  * @method mixed creatorsSearch(array $params = [], array $options = []) datasets-creators-search (GET /datasets/creators/search)
  *   params: string $q, string $handle, string $niche, string $country, bool $verified, int $min_followers, bool $has_email, bool $include_inactive, 'followers_desc'|'engagement_desc'|'likes_desc'|'relevance' $sort, int $page, int $page_size
+ * @method mixed facebookPagesFacets(array $params = [], array $options = []) datasets-facebook-pages-facets (GET /datasets/facebook-pages/facets)
+ *   params: 'category'|'discovery_source' $facet, string $q, string $page_id, string $identifier, string $category, string $discovery_source, bool $has_website, bool $has_email, bool $has_phone, bool $has_whatsapp, int $min_likes, int $max_likes, string $hydrated_after, string $hydrated_before, 'relevance'|'likes_desc'|'likes_asc'|'hydrated_at_desc'|'hydrated_at_asc' $sort
+ * @method mixed facebookPagesItem(array $params = [], array $options = []) datasets-facebook-pages-item (GET /datasets/facebook-pages/items/{page_id})
+ *   params: string $page_id
+ * @method mixed facebookPagesSearch(array $params = [], array $options = []) datasets-facebook-pages-search (GET /datasets/facebook-pages/search)
+ *   params: string $q, string $page_id, string $identifier, string $category, string $discovery_source, bool $has_website, bool $has_email, bool $has_phone, bool $has_whatsapp, int $min_likes, int $max_likes, string $hydrated_after, string $hydrated_before, 'relevance'|'likes_desc'|'likes_asc'|'hydrated_at_desc'|'hydrated_at_asc' $sort, int $page, int $page_size
  * @method mixed githubUsersFacets(array $params = [], array $options = []) datasets-github-users-facets (GET /datasets/github-users/facets)
  *   params: 'influence_tier'|'type'|'country'|'country_code'|'state'|'city'|'domains'|'company'|'reachable'|'has_email'|'has_twitter'|'has_blog'|'active_90d'|'hireable'|'is_org'|'is_bot'|'is_suspected_automation' $facet, string $q, string $login, string $company, 'nano'|'micro'|'mid'|'macro'|'mega' $influence_tier, string $country, string $country_code, string $state, string $city, string $domain, bool $has_email, bool $has_twitter, bool $has_blog, bool $reachable, bool $active_90d, bool $hireable, bool $is_org, bool $is_bot, bool $is_suspected_automation, int $min_followers, int $max_followers, int $min_repos, int $min_rank_score, float $min_account_age_years, float $max_account_age_years, float $lat, float $lon, int $radius_m, 'relevance'|'rank_score_desc'|'followers_desc'|'account_age_desc'|'account_age_asc'|'distance_asc' $sort
  * @method mixed githubUsersItem(array $params = [], array $options = []) datasets-github-users-item (GET /datasets/github-users/items/{login})
@@ -694,12 +860,26 @@ abstract class CostcoGroup {}
  *   params: string $slug
  * @method mixed trustmrrSearch(array $params = [], array $options = []) datasets-trustmrr-search (GET /datasets/trustmrr/search)
  *   params: string $q, string $slug, string $category, string $country, string $payment_provider, string $target_audience, string $business_type, string $tech, string $channel, string $listing_tier, 'active'|'removed' $status, bool $on_sale, bool $is_sponsored, float $min_mrr, float $max_mrr, float $min_revenue, float $min_revenue_30d, float $min_traffic, float $min_growth, float $max_multiple, float $min_asking_price, float $max_asking_price, int $min_ahrefs_dr, 'relevance'|'mrr_desc'|'revenue_desc'|'revenue_30d_desc'|'traffic_desc'|'growth_desc'|'deal_score_desc'|'price_asc'|'price_desc'|'multiple_asc'|'founded_desc' $sort, int $page, int $page_size
+ * @method mixed vehicleListingsFacets(array $params = [], array $options = []) datasets-vehicle-listings-facets (GET /datasets/vehicle-listings/facets)
+ *   params: 'source'|'make'|'model'|'trim'|'body_style'|'transmission'|'drive_type'|'fuel_type'|'seller_type'|'state'|'run_id' $facet, string $q, 'carmax'|'autotrader'|'carsdotcom' $source, string $make, string $model, string $trim, string $body_style, string $transmission, string $drive_type, string $fuel_type, 'retailer'|'dealer'|'private' $seller_type, string $state, string $vin, string $run_id, bool $is_price_reduced, int $min_year, int $max_year, float $min_price, float $max_price, int $max_mileage
+ * @method mixed vehicleListingsItem(array $params = [], array $options = []) datasets-vehicle-listings-item (GET /datasets/vehicle-listings/items/{id})
+ *   params: string $id
+ * @method mixed vehicleListingsPriceHistory(array $params = [], array $options = []) datasets-vehicle-listings-price-history (GET /datasets/vehicle-listings/price-history/{id})
+ *   params: string $id
+ * @method mixed vehicleListingsSearch(array $params = [], array $options = []) datasets-vehicle-listings-search (GET /datasets/vehicle-listings/search)
+ *   params: string $q, 'carmax'|'autotrader'|'carsdotcom' $source, string $make, string $model, string $trim, string $body_style, string $transmission, string $drive_type, string $fuel_type, 'retailer'|'dealer'|'private' $seller_type, string $state, string $vin, string $run_id, bool $is_price_reduced, int $min_year, int $max_year, float $min_price, float $max_price, int $max_mileage, 'relevance'|'recently_updated'|'newly_listed'|'price_asc'|'price_desc'|'mileage_asc'|'mileage_desc'|'year_desc'|'year_asc' $sort, int $page, int $page_size
  * @method mixed xUsersFacets(array $params = [], array $options = []) datasets-x-users-facets (GET /datasets/x-users/facets)
  *   params: 'is_blue_verified'|'has_bio'|'has_external_url'|'source_tier' $facet, string $q, string $username, string $source_tier, bool $is_blue_verified, bool $has_bio, bool $has_external_url, int $min_followers, int $max_followers, float $min_ratio, float $max_ratio, string $created_after, string $created_before, string $crawled_after, string $crawled_before, 'relevance'|'followers_desc'|'followers_asc'|'crawled_at_desc'|'crawled_at_asc'|'created_at_desc'|'created_at_asc' $sort
  * @method mixed xUsersItem(array $params = [], array $options = []) datasets-x-users-item (GET /datasets/x-users/items/{username})
  *   params: string $username
  * @method mixed xUsersSearch(array $params = [], array $options = []) datasets-x-users-search (GET /datasets/x-users/search)
  *   params: string $q, string $username, string $source_tier, bool $is_blue_verified, bool $has_bio, bool $has_external_url, int $min_followers, int $max_followers, float $min_ratio, float $max_ratio, string $created_after, string $created_before, string $crawled_after, string $crawled_before, 'relevance'|'followers_desc'|'followers_asc'|'crawled_at_desc'|'crawled_at_asc'|'created_at_desc'|'created_at_asc' $sort, int $page, int $page_size
+ * @method mixed youtubeCreatorsFacets(array $params = [], array $options = []) datasets-youtube-creators-facets (GET /datasets/youtube-creators/facets)
+ *   params: 'region'|'discovery_source' $facet, string $q, string $channel_id, string $region, string $discovery_source, bool $has_bio, bool $has_links, bool $followers_count_available, bool $videos_count_available, bool $views_count_available, int $min_followers, int $max_followers, int $min_videos, int $max_videos, int $min_views, int $max_views, string $joined_after, string $joined_before, string $hydrated_after, string $hydrated_before, 'relevance'|'followers_desc'|'followers_asc'|'views_desc'|'videos_desc'|'hydrated_at_desc'|'hydrated_at_asc' $sort
+ * @method mixed youtubeCreatorsItem(array $params = [], array $options = []) datasets-youtube-creators-item (GET /datasets/youtube-creators/items/{channel_id})
+ *   params: string $channel_id
+ * @method mixed youtubeCreatorsSearch(array $params = [], array $options = []) datasets-youtube-creators-search (GET /datasets/youtube-creators/search)
+ *   params: string $q, string $channel_id, string $region, string $discovery_source, bool $has_bio, bool $has_links, bool $followers_count_available, bool $videos_count_available, bool $views_count_available, int $min_followers, int $max_followers, int $min_videos, int $max_videos, int $min_views, int $max_views, string $joined_after, string $joined_before, string $hydrated_after, string $hydrated_before, 'relevance'|'followers_desc'|'followers_asc'|'views_desc'|'videos_desc'|'hydrated_at_desc'|'hydrated_at_asc' $sort, int $page, int $page_size
  */
 abstract class DatasetsGroup {}
 
@@ -873,6 +1053,30 @@ abstract class EspnGroup {}
 abstract class EtsyGroup {}
 
 /**
+ * @method mixed collections(array $params = [], array $options = []) everlane-collections (GET /everlane/collections)
+ *   params: int $page, int $limit
+ * @method mixed collectionProducts(array $params = [], array $options = []) everlane-collection-products (GET /everlane/collections/{handle}/products)
+ *   params: string $handle, int $page, int $limit
+ * @method mixed pages(array $params = [], array $options = []) everlane-pages (GET /everlane/pages)
+ *   params: int $page, int $limit
+ * @method mixed page(array $params = [], array $options = []) everlane-page (GET /everlane/pages/{handle})
+ *   params: string $handle
+ * @method mixed products(array $params = [], array $options = []) everlane-products (GET /everlane/products)
+ *   params: int $page, int $limit
+ * @method mixed product(array $params = [], array $options = []) everlane-product (GET /everlane/products/{handle})
+ *   params: string $handle
+ * @method mixed productRecommendations(array $params = [], array $options = []) everlane-product-recommendations (GET /everlane/products/{handle}/recommendations)
+ *   params: string $handle, int $limit, 'related'|'complementary' $intent
+ * @method mixed searchSuggest(array $params = [], array $options = []) everlane-search-suggest (GET /everlane/search/suggest)
+ *   params: string $q, string $types, int $limit
+ * @method mixed sitemapUrls(array $params = [], array $options = []) everlane-sitemap-urls (GET /everlane/sitemap/urls)
+ *   params: 'all'|'products'|'collections'|'pages'|'blogs'|'agentic_discovery'|'other' $type, int $limit
+ * @method mixed sitemaps(array $params = [], array $options = []) everlane-sitemaps (GET /everlane/sitemaps)
+ * @method mixed store(array $params = [], array $options = []) everlane-store (GET /everlane/store)
+ */
+abstract class EverlaneGroup {}
+
+/**
  * @method mixed activitiesSearch(array $params = [], array $options = []) expedia-activities-search (POST /expedia/activities/search)
  *   params: array $option
  * @method mixed flightsSearch(array $params = [], array $options = []) expedia-flights-search (POST /expedia/flights/search)
@@ -899,6 +1103,30 @@ abstract class ExpediaGroup {}
 abstract class FacebookGroup {}
 
 /**
+ * @method mixed fashionnovaCollections(array $params = [], array $options = []) fashionnova-collections (GET /fashionnova/collections)
+ *   params: int $page, int $limit
+ * @method mixed fashionnovaCollectionProducts(array $params = [], array $options = []) fashionnova-collection-products (GET /fashionnova/collections/{handle}/products)
+ *   params: string $handle, int $page, int $limit
+ * @method mixed fashionnovaPages(array $params = [], array $options = []) fashionnova-pages (GET /fashionnova/pages)
+ *   params: int $page, int $limit
+ * @method mixed fashionnovaPage(array $params = [], array $options = []) fashionnova-page (GET /fashionnova/pages/{handle})
+ *   params: string $handle
+ * @method mixed fashionnovaProducts(array $params = [], array $options = []) fashionnova-products (GET /fashionnova/products)
+ *   params: int $page, int $limit
+ * @method mixed fashionnovaProduct(array $params = [], array $options = []) fashionnova-product (GET /fashionnova/products/{handle})
+ *   params: string $handle
+ * @method mixed fashionnovaProductRecommendations(array $params = [], array $options = []) fashionnova-product-recommendations (GET /fashionnova/products/{handle}/recommendations)
+ *   params: string $handle, int $limit, 'related'|'complementary' $intent
+ * @method mixed fashionnovaSearchSuggest(array $params = [], array $options = []) fashionnova-search-suggest (GET /fashionnova/search/suggest)
+ *   params: string $q, string $types, int $limit
+ * @method mixed fashionnovaSitemapUrls(array $params = [], array $options = []) fashionnova-sitemap-urls (GET /fashionnova/sitemap/urls)
+ *   params: 'all'|'products'|'collections'|'pages'|'blogs'|'agentic_discovery'|'other' $type, int $limit
+ * @method mixed fashionnovaSitemaps(array $params = [], array $options = []) fashionnova-sitemaps (GET /fashionnova/sitemaps)
+ * @method mixed fashionnovaStore(array $params = [], array $options = []) fashionnova-store (GET /fashionnova/store)
+ */
+abstract class FashionNovaGroup {}
+
+/**
  * @method mixed gig(array $params = [], array $options = []) fiverr-gig (GET /fiverr/gig/{username}/{slug})
  *   params: string $username, string $slug
  * @method mixed search(array $params = [], array $options = []) fiverr-search (GET /fiverr/search)
@@ -907,6 +1135,33 @@ abstract class FacebookGroup {}
  *   params: string $username
  */
 abstract class FiverrGroup {}
+
+/**
+ * @method mixed context(array $params = [], array $options = []) gdelt-context (GET /gdelt/context)
+ *   params: string $query, string $domain, string $language, bool $is_quote, string $timespan, string $from, string $to, 'relevance'|'datedesc'|'dateasc' $sort, int $maxrecords
+ * @method mixed search(array $params = [], array $options = []) gdelt-search (GET /gdelt/search)
+ *   params: string $query, string $country, string $language, string $domain, string $timespan, string $from, string $to, 'relevance'|'datedesc'|'dateasc'|'tonedesc'|'toneasc' $sort, int $maxrecords
+ * @method mixed timeline(array $params = [], array $options = []) gdelt-timeline (GET /gdelt/timeline)
+ *   params: string $query, 'volume'|'volume_raw'|'tone'|'lang'|'country' $metric, string $country, string $language, string $domain, string $timespan, string $from, string $to, int $smooth
+ * @method mixed tonechart(array $params = [], array $options = []) gdelt-tonechart (GET /gdelt/tonechart)
+ *   params: string $query, string $country, string $language, string $domain, string $timespan, string $from, string $to
+ * @method mixed tvConceptEntities(array $params = [], array $options = []) gdelt-tv-concept-entities (GET /gdelt/tv-concept-entities)
+ *   params: int $limit
+ * @method mixed tvSearch(array $params = [], array $options = []) gdelt-tv-search (GET /gdelt/tv-search)
+ *   params: array<string> $transcript, array<string> $caption, array<string> $concept, array<string> $onscreen_text, array<string> $visual, array<string> $exclude_transcript, array<string> $exclude_caption, array<string> $exclude_concept, array<string> $exclude_onscreen_text, array<string> $exclude_visual, 'CNN'|'MSNBC'|'FOXNEWS'|'BBCNEWS'|'KGO'|'KPIX'|'KNTV' $station, string $show, int $day_of_week, string $timespan, string $from, string $to, 'relevance'|'datedesc'|'dateasc' $sort, int $maxrecords
+ * @method mixed tvShowchart(array $params = [], array $options = []) gdelt-tv-showchart (GET /gdelt/tv-showchart)
+ *   params: array<string> $transcript, array<string> $caption, array<string> $concept, array<string> $onscreen_text, array<string> $visual, array<string> $exclude_transcript, array<string> $exclude_caption, array<string> $exclude_concept, array<string> $exclude_onscreen_text, array<string> $exclude_visual, array<'CNN'|'MSNBC'|'FOXNEWS'|'BBCNEWS'|'KGO'|'KPIX'|'KNTV'> $station, string $show, string $timespan, string $from, string $to
+ * @method mixed tvStationchart(array $params = [], array $options = []) gdelt-tv-stationchart (GET /gdelt/tv-stationchart)
+ *   params: array<string> $transcript, array<string> $caption, array<string> $concept, array<string> $onscreen_text, array<string> $visual, array<string> $exclude_transcript, array<string> $exclude_caption, array<string> $exclude_concept, array<string> $exclude_onscreen_text, array<string> $exclude_visual, array<'CNN'|'MSNBC'|'FOXNEWS'|'BBCNEWS'|'KGO'|'KPIX'|'KNTV'> $station, string $show, string $timespan, string $from, string $to
+ * @method mixed tvStationdetails(array $params = [], array $options = []) gdelt-tv-stationdetails (GET /gdelt/tv-stationdetails)
+ * @method mixed tvTimeline(array $params = [], array $options = []) gdelt-tv-timeline (GET /gdelt/tv-timeline)
+ *   params: array<string> $transcript, array<string> $caption, array<string> $concept, array<string> $onscreen_text, array<string> $visual, array<string> $exclude_transcript, array<string> $exclude_caption, array<string> $exclude_concept, array<string> $exclude_onscreen_text, array<string> $exclude_visual, 'CNN'|'MSNBC'|'FOXNEWS'|'BBCNEWS'|'KGO'|'KPIX'|'KNTV' $station, string $show, string $timespan, string $from, string $to
+ * @method mixed tvVisualEntities(array $params = [], array $options = []) gdelt-tv-visual-entities (GET /gdelt/tv-visual-entities)
+ *   params: int $limit
+ * @method mixed tvWordcloud(array $params = [], array $options = []) gdelt-tv-wordcloud (GET /gdelt/tv-wordcloud)
+ *   params: 'transcript'|'caption'|'concept'|'onscreen_text'|'visual' $channel, array<string> $transcript, array<string> $caption, array<string> $concept, array<string> $onscreen_text, array<string> $visual, array<string> $exclude_transcript, array<string> $exclude_caption, array<string> $exclude_concept, array<string> $exclude_onscreen_text, array<string> $exclude_visual, 'CNN'|'MSNBC'|'FOXNEWS'|'BBCNEWS'|'KGO'|'KPIX'|'KNTV' $station, string $show, string $day_of_week, string $timespan, string $from, string $to
+ */
+abstract class GdeltGroup {}
 
 /**
  * @method mixed lookup(array $params = [], array $options = []) geocoding-lookup (GET /geocoding/lookup)
@@ -1106,6 +1361,28 @@ abstract class GooglePatentsGroup {}
 abstract class GooglePlayGroup {}
 
 /**
+ * @method mixed collections(array $params = [], array $options = []) gymshark-collections (GET /gymshark/collections)
+ *   params: int $page, int $limit
+ * @method mixed collectionProducts(array $params = [], array $options = []) gymshark-collection-products (GET /gymshark/collections/{handle}/products)
+ *   params: string $handle, int $page, int $limit
+ * @method mixed pages(array $params = [], array $options = []) gymshark-pages (GET /gymshark/pages)
+ *   params: int $page, int $limit
+ * @method mixed page(array $params = [], array $options = []) gymshark-page (GET /gymshark/pages/{handle})
+ *   params: string $handle
+ * @method mixed products(array $params = [], array $options = []) gymshark-products (GET /gymshark/products)
+ *   params: int $page, int $limit
+ * @method mixed product(array $params = [], array $options = []) gymshark-product (GET /gymshark/products/{handle})
+ *   params: string $handle
+ * @method mixed productRecommendations(array $params = [], array $options = []) gymshark-product-recommendations (GET /gymshark/products/{handle}/recommendations)
+ *   params: string $handle, int $limit, 'related'|'complementary' $intent
+ * @method mixed sitemapUrls(array $params = [], array $options = []) gymshark-sitemap-urls (GET /gymshark/sitemap/urls)
+ *   params: 'all'|'products'|'collections'|'pages'|'blogs'|'agentic_discovery'|'other' $type, int $limit
+ * @method mixed sitemaps(array $params = [], array $options = []) gymshark-sitemaps (GET /gymshark/sitemaps)
+ * @method mixed store(array $params = [], array $options = []) gymshark-store (GET /gymshark/store)
+ */
+abstract class GymsharkGroup {}
+
+/**
  * @method mixed hmCategories(array $params = [], array $options = []) hm-categories (GET /hm/categories)
  *   params: 'women'|'men'|'kids'|'home'|'beauty' $department
  * @method mixed hmListing(array $params = [], array $options = []) hm-listing (GET /hm/listing)
@@ -1124,6 +1401,41 @@ abstract class GooglePlayGroup {}
 abstract class HMGroup {}
 
 /**
+ * @method mixed homedepotCategories(array $params = [], array $options = []) homedepot-categories (GET /homedepot/categories)
+ * @method mixed homedepotCategory(array $params = [], array $options = []) homedepot-category (GET /homedepot/category)
+ *   params: string $path
+ * @method mixed homedepotProduct(array $params = [], array $options = []) homedepot-product (GET /homedepot/product/{id})
+ *   params: string $id
+ * @method mixed homedepotProductQuestions(array $params = [], array $options = []) homedepot-product-questions (GET /homedepot/product/{id}/questions)
+ *   params: string $id
+ * @method mixed homedepotSearch(array $params = [], array $options = []) homedepot-search (GET /homedepot/search)
+ *   params: string $q, int $page
+ */
+abstract class HomeDepotGroup {}
+
+/**
+ * @method mixed availability(array $params = [], array $options = []) ikea-availability (GET /ikea/availability)
+ *   params: string $item_no, string $country
+ * @method mixed category(array $params = [], array $options = []) ikea-category (GET /ikea/category)
+ *   params: string $category, string $country, string $language, int $offset, int $size, 'relevance'|'price-low'|'price-high'|'newest'|'rating'|'name'|'popular'|'width'|'height'|'depth'|'length' $sort
+ * @method mixed product(array $params = [], array $options = []) ikea-product (GET /ikea/product)
+ *   params: string $item_no, string $country, string $language
+ * @method mixed reviews(array $params = [], array $options = []) ikea-reviews (GET /ikea/reviews)
+ *   params: string $item_no, string $country, string $language
+ * @method mixed search(array $params = [], array $options = []) ikea-search (GET /ikea/search)
+ *   params: string $q, string $country, string $language, int $size
+ * @method mixed store(array $params = [], array $options = []) ikea-store (GET /ikea/store)
+ *   params: string $slug, string $country, string $language
+ * @method mixed stores(array $params = [], array $options = []) ikea-stores (GET /ikea/stores)
+ *   params: string $country, string $language
+ * @method mixed suggest(array $params = [], array $options = []) ikea-suggest (GET /ikea/suggest)
+ *   params: string $q, string $country, string $language, int $size
+ */
+abstract class IkeaGroup {}
+
+/**
+ * @method mixed charts(array $params = [], array $options = []) imdb-charts (GET /imdb/charts)
+ *   params: 'top_rated_movies'|'top_rated_tv_shows'|'most_popular_movies'|'most_popular_tv_shows'|'top_rated_english_movies'|'lowest_rated_movies' $chart, int $limit
  * @method mixed name(array $params = [], array $options = []) imdb-name (GET /imdb/name)
  *   params: string $id, string $url
  * @method mixed nameAwards(array $params = [], array $options = []) imdb-name-awards (GET /imdb/name/awards)
@@ -1156,10 +1468,14 @@ abstract class HMGroup {}
  *   params: string $id, string $url
  * @method mixed titleQuotes(array $params = [], array $options = []) imdb-title-quotes (GET /imdb/title/quotes)
  *   params: string $id, string $url
+ * @method mixed titleRatings(array $params = [], array $options = []) imdb-title-ratings (GET /imdb/title/ratings)
+ *   params: string $id, string $url
  * @method mixed titleReleaseInfo(array $params = [], array $options = []) imdb-title-release-info (GET /imdb/title/release-info)
  *   params: string $id, string $url
  * @method mixed titleReviews(array $params = [], array $options = []) imdb-title-reviews (GET /imdb/title/reviews)
  *   params: string $id, string $url, int $limit
+ * @method mixed titleSimilar(array $params = [], array $options = []) imdb-title-similar (GET /imdb/title/similar)
+ *   params: string $id, string $url
  * @method mixed titleTechnicalSpecs(array $params = [], array $options = []) imdb-title-technical-specs (GET /imdb/title/technical-specs)
  *   params: string $id, string $url
  * @method mixed titleTrivia(array $params = [], array $options = []) imdb-title-trivia (GET /imdb/title/trivia)
@@ -1210,6 +1526,26 @@ abstract class InstacartGroup {}
  *   params: string $id, string $max_id
  */
 abstract class InstagramGroup {}
+
+/**
+ * @method mixed jcrewCategories(array $params = [], array $options = []) jcrew-categories (GET /jcrew/categories)
+ *   params: 'jcrew'|'factory' $site, string $department
+ * @method mixed jcrewCategory(array $params = [], array $options = []) jcrew-category (GET /jcrew/category)
+ *   params: string $category, 'jcrew'|'factory' $site, int $page
+ * @method mixed jcrewProduct(array $params = [], array $options = []) jcrew-product (GET /jcrew/product)
+ *   params: string $pid, 'jcrew'|'factory' $site
+ * @method mixed jcrewProductReviews(array $params = [], array $options = []) jcrew-product-reviews (GET /jcrew/product/reviews)
+ *   params: string $pid, 'jcrew'|'factory' $site, int $page
+ * @method mixed jcrewSearch(array $params = [], array $options = []) jcrew-search (GET /jcrew/search)
+ *   params: string $keyword, 'jcrew'|'factory' $site, int $page, int $per_page, 'relevance'|'price_asc'|'price_desc' $sort, string $filter
+ * @method mixed jcrewSizeChart(array $params = [], array $options = []) jcrew-size-chart (GET /jcrew/size-chart)
+ *   params: string $pid, 'jcrew'|'factory' $site
+ * @method mixed jcrewStores(array $params = [], array $options = []) jcrew-stores (GET /jcrew/stores)
+ *   params: 'jcrew'|'factory' $site, float $lat, float $lng
+ * @method mixed jcrewSuggest(array $params = [], array $options = []) jcrew-suggest (GET /jcrew/suggest)
+ *   params: string $query, 'jcrew'|'factory' $site
+ */
+abstract class JCrewGroup {}
 
 /**
  * @method mixed ashbyBoard(array $params = [], array $options = []) jobs-ashby-board (GET /jobs/ashby/board)
@@ -1361,6 +1697,18 @@ abstract class JustWatchGroup {}
 abstract class KalshiGroup {}
 
 /**
+ * @method mixed comments(array $params = [], array $options = []) kickstarter-comments (GET /kickstarter/comments)
+ *   params: string $creator, string $slug
+ * @method mixed discover(array $params = [], array $options = []) kickstarter-discover (GET /kickstarter/discover)
+ *   params: int $category_id, string $term, 'magic'|'popularity'|'newest'|'end_date'|'most_funded' $sort, int $page, array<'upcoming'|'live'|'late_pledge'|'canceled'|'failed'|'successful'> $state, bool $staff_pick_only
+ * @method mixed project(array $params = [], array $options = []) kickstarter-project (GET /kickstarter/project)
+ *   params: string $creator, string $slug
+ * @method mixed updates(array $params = [], array $options = []) kickstarter-updates (GET /kickstarter/updates)
+ *   params: string $creator, string $slug
+ */
+abstract class KickstarterGroup {}
+
+/**
  * @method mixed kohlsCategory(array $params = [], array $options = []) kohls-category (GET /kohls/category)
  *   params: string $category
  * @method mixed kohlsProductReviews(array $params = [], array $options = []) kohls-product-reviews (GET /kohls/product/reviews)
@@ -1371,6 +1719,30 @@ abstract class KalshiGroup {}
  *   params: string $query
  */
 abstract class KohlSGroup {}
+
+/**
+ * @method mixed kyliecosmeticsCollections(array $params = [], array $options = []) kyliecosmetics-collections (GET /kyliecosmetics/collections)
+ *   params: int $page, int $limit
+ * @method mixed kyliecosmeticsCollectionProducts(array $params = [], array $options = []) kyliecosmetics-collection-products (GET /kyliecosmetics/collections/{handle}/products)
+ *   params: string $handle, int $page, int $limit
+ * @method mixed kyliecosmeticsPages(array $params = [], array $options = []) kyliecosmetics-pages (GET /kyliecosmetics/pages)
+ *   params: int $page, int $limit
+ * @method mixed kyliecosmeticsPage(array $params = [], array $options = []) kyliecosmetics-page (GET /kyliecosmetics/pages/{handle})
+ *   params: string $handle
+ * @method mixed kyliecosmeticsProducts(array $params = [], array $options = []) kyliecosmetics-products (GET /kyliecosmetics/products)
+ *   params: int $page, int $limit
+ * @method mixed kyliecosmeticsProduct(array $params = [], array $options = []) kyliecosmetics-product (GET /kyliecosmetics/products/{handle})
+ *   params: string $handle
+ * @method mixed kyliecosmeticsProductRecommendations(array $params = [], array $options = []) kyliecosmetics-product-recommendations (GET /kyliecosmetics/products/{handle}/recommendations)
+ *   params: string $handle, int $limit, 'related'|'complementary' $intent
+ * @method mixed kyliecosmeticsSearchSuggest(array $params = [], array $options = []) kyliecosmetics-search-suggest (GET /kyliecosmetics/search/suggest)
+ *   params: string $q, string $types, int $limit
+ * @method mixed kyliecosmeticsSitemapUrls(array $params = [], array $options = []) kyliecosmetics-sitemap-urls (GET /kyliecosmetics/sitemap/urls)
+ *   params: 'all'|'products'|'collections'|'pages'|'blogs'|'agentic_discovery'|'other' $type, int $limit
+ * @method mixed kyliecosmeticsSitemaps(array $params = [], array $options = []) kyliecosmetics-sitemaps (GET /kyliecosmetics/sitemaps)
+ * @method mixed kyliecosmeticsStore(array $params = [], array $options = []) kyliecosmetics-store (GET /kyliecosmetics/store)
+ */
+abstract class KylieCosmeticsGroup {}
 
 /**
  * @method mixed film(array $params = [], array $options = []) letterboxd-film (GET /letterboxd/film/{slug})
@@ -1537,9 +1909,30 @@ abstract class MetaculusGroup {}
 abstract class MlbGroup {}
 
 /**
+ * @method mixed list_(array $params = [], array $options = []) monitors-list (GET /monitors)
+ * @method mixed create(array $params = [], array $options = []) monitors-create (POST /monitors)
+ *   params: array $request
+ * @method mixed delete(array $params = [], array $options = []) monitors-delete (DELETE /monitors/{id})
+ *   params: string $id
+ * @method mixed get(array $params = [], array $options = []) monitors-get (GET /monitors/{id})
+ *   params: string $id
+ * @method mixed update(array $params = [], array $options = []) monitors-update (PATCH /monitors/{id})
+ *   params: string $id, array $request
+ * @method mixed checks(array $params = [], array $options = []) monitors-checks (GET /monitors/{id}/checks)
+ *   params: string $id
+ */
+abstract class MonitorsGroup {}
+
+/**
  * @method mixed categories(array $params = [], array $options = []) nike-categories (GET /nike/categories)
  * @method mixed product(array $params = [], array $options = []) nike-product (GET /nike/product)
  *   params: string $slug, string $style_color
+ * @method mixed productAvailability(array $params = [], array $options = []) nike-product-availability (GET /nike/product/availability)
+ *   params: string $group_key
+ * @method mixed productDetails(array $params = [], array $options = []) nike-product-details (GET /nike/product/details)
+ *   params: string $group_key
+ * @method mixed productRecommendations(array $params = [], array $options = []) nike-product-recommendations (GET /nike/product/recommendations)
+ *   params: string $style_color
  * @method mixed productReviews(array $params = [], array $options = []) nike-product-reviews (GET /nike/product/reviews)
  *   params: string $slug, string $style_color, int $page
  * @method mixed search(array $params = [], array $options = []) nike-search (GET /nike/search)
@@ -1569,6 +1962,30 @@ abstract class NikeGroup {}
  *   params: 'quality-of-life'|'crime'|'health-care'|'pollution'|'traffic'|'property-investment' $index
  */
 abstract class NumbeoGroup {}
+
+/**
+ * @method mixed ohpollyCollections(array $params = [], array $options = []) ohpolly-collections (GET /ohpolly/collections)
+ *   params: int $page, int $limit
+ * @method mixed ohpollyCollectionProducts(array $params = [], array $options = []) ohpolly-collection-products (GET /ohpolly/collections/{handle}/products)
+ *   params: string $handle, int $page, int $limit
+ * @method mixed ohpollyPages(array $params = [], array $options = []) ohpolly-pages (GET /ohpolly/pages)
+ *   params: int $page, int $limit
+ * @method mixed ohpollyPage(array $params = [], array $options = []) ohpolly-page (GET /ohpolly/pages/{handle})
+ *   params: string $handle
+ * @method mixed ohpollyProducts(array $params = [], array $options = []) ohpolly-products (GET /ohpolly/products)
+ *   params: int $page, int $limit
+ * @method mixed ohpollyProduct(array $params = [], array $options = []) ohpolly-product (GET /ohpolly/products/{handle})
+ *   params: string $handle
+ * @method mixed ohpollyProductRecommendations(array $params = [], array $options = []) ohpolly-product-recommendations (GET /ohpolly/products/{handle}/recommendations)
+ *   params: string $handle, int $limit, 'related'|'complementary' $intent
+ * @method mixed ohpollySearchSuggest(array $params = [], array $options = []) ohpolly-search-suggest (GET /ohpolly/search/suggest)
+ *   params: string $q, string $types, int $limit
+ * @method mixed ohpollySitemapUrls(array $params = [], array $options = []) ohpolly-sitemap-urls (GET /ohpolly/sitemap/urls)
+ *   params: 'all'|'products'|'collections'|'pages'|'blogs'|'agentic_discovery'|'other' $type, int $limit
+ * @method mixed ohpollySitemaps(array $params = [], array $options = []) ohpolly-sitemaps (GET /ohpolly/sitemaps)
+ * @method mixed ohpollyStore(array $params = [], array $options = []) ohpolly-store (GET /ohpolly/store)
+ */
+abstract class OhPollyGroup {}
 
 /**
  * @method mixed oldnavyCategories(array $params = [], array $options = []) oldnavy-categories (GET /oldnavy/categories)
@@ -1833,10 +2250,31 @@ abstract class PoshmarkGroup {}
 abstract class ProductHuntGroup {}
 
 /**
+ * @method mixed categories(array $params = [], array $options = []) quince-categories (GET /quince/categories)
+ * @method mixed navigation(array $params = [], array $options = []) quince-navigation (GET /quince/navigation)
+ * @method mixed product(array $params = [], array $options = []) quince-product (GET /quince/product)
+ *   params: string $handle
+ * @method mixed productFaq(array $params = [], array $options = []) quince-product-faq (GET /quince/product/faq)
+ *   params: string $handle
+ * @method mixed productReviews(array $params = [], array $options = []) quince-product-reviews (GET /quince/product/reviews)
+ *   params: string $handle
+ * @method mixed search(array $params = [], array $options = []) quince-search (GET /quince/search)
+ *   params: string $q, string $department, string $category, string $material, string $color, string $size, float $min_price, float $max_price, int $page, int $limit
+ * @method mixed sitemapUrls(array $params = [], array $options = []) quince-sitemap-urls (GET /quince/sitemap/urls)
+ *   params: 'all'|'products'|'collections'|'subcollections'|'pages' $type, int $limit
+ * @method mixed sitemaps(array $params = [], array $options = []) quince-sitemaps (GET /quince/sitemaps)
+ * @method mixed suggest(array $params = [], array $options = []) quince-suggest (GET /quince/suggest)
+ *   params: string $q
+ */
+abstract class QuinceGroup {}
+
+/**
  * @method mixed comments(array $params = [], array $options = []) reddit-comments (GET /reddit/comments/{id})
  *   params: string $id, 'confidence'|'top'|'new'|'controversial'|'old'|'qa' $sort, int $limit, int $depth, bool $include_metrics
  * @method mixed domainPosts(array $params = [], array $options = []) reddit-domain-posts (GET /reddit/domain/{domain}/posts)
  *   params: string $domain, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
+ * @method mixed leads(array $params = [], array $options = []) reddit-leads (GET /reddit/leads)
+ *   params: string $q, string $subreddit, 'relevance'|'hot'|'new'|'top'|'comments' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, int $min_score, 'auto'|'heuristic'|'llm' $classifier
  * @method mixed post(array $params = [], array $options = []) reddit-post (GET /reddit/post/{id})
  *   params: string $id, bool $include_metrics
  * @method mixed search(array $params = [], array $options = []) reddit-search (GET /reddit/search)
@@ -1880,6 +2318,30 @@ abstract class RedfinGroup {}
  *   params: int $limit
  */
 abstract class ReferralsGroup {}
+
+/**
+ * @method mixed rothysCollections(array $params = [], array $options = []) rothys-collections (GET /rothys/collections)
+ *   params: int $page, int $limit
+ * @method mixed rothysCollectionProducts(array $params = [], array $options = []) rothys-collection-products (GET /rothys/collections/{handle}/products)
+ *   params: string $handle, int $page, int $limit
+ * @method mixed rothysPages(array $params = [], array $options = []) rothys-pages (GET /rothys/pages)
+ *   params: int $page, int $limit
+ * @method mixed rothysPage(array $params = [], array $options = []) rothys-page (GET /rothys/pages/{handle})
+ *   params: string $handle
+ * @method mixed rothysProducts(array $params = [], array $options = []) rothys-products (GET /rothys/products)
+ *   params: int $page, int $limit
+ * @method mixed rothysProduct(array $params = [], array $options = []) rothys-product (GET /rothys/products/{handle})
+ *   params: string $handle
+ * @method mixed rothysProductRecommendations(array $params = [], array $options = []) rothys-product-recommendations (GET /rothys/products/{handle}/recommendations)
+ *   params: string $handle, int $limit, 'related'|'complementary' $intent
+ * @method mixed rothysSearchSuggest(array $params = [], array $options = []) rothys-search-suggest (GET /rothys/search/suggest)
+ *   params: string $q, string $types, int $limit
+ * @method mixed rothysSitemapUrls(array $params = [], array $options = []) rothys-sitemap-urls (GET /rothys/sitemap/urls)
+ *   params: 'all'|'products'|'collections'|'pages'|'blogs'|'agentic_discovery'|'other' $type, int $limit
+ * @method mixed rothysSitemaps(array $params = [], array $options = []) rothys-sitemaps (GET /rothys/sitemaps)
+ * @method mixed rothysStore(array $params = [], array $options = []) rothys-store (GET /rothys/store)
+ */
+abstract class RothySGroup {}
 
 /**
  * @method mixed rottentomatoesBrowseMovies(array $params = [], array $options = []) rottentomatoes-browse-movies (GET /rottentomatoes/browse/movies)
@@ -1959,6 +2421,26 @@ abstract class SecEdgarGroup {}
 abstract class SephoraGroup {}
 
 /**
+ * @method mixed categoryFilters(array $params = [], array $options = []) shein-category-filters (GET /shein/category/filters)
+ *   params: string $cat_id
+ * @method mixed categoryGoods(array $params = [], array $options = []) shein-category-goods (GET /shein/category/goods)
+ *   params: string $cat_id, int $page, int $page_size, string $sort
+ * @method mixed categoryNav(array $params = [], array $options = []) shein-category-nav (GET /shein/category/nav)
+ *   params: string $cat_id
+ * @method mixed productsAggregationFilters(array $params = [], array $options = []) shein-products-aggregation-filters (POST /shein/products/aggregation-filters)
+ *   params: string $keyword, string $cat_id
+ * @method mixed productsDetail(array $params = [], array $options = []) shein-products-detail (GET /shein/products/detail)
+ *   params: string $goods_id, string $goods_sn
+ * @method mixed productsSearch(array $params = [], array $options = []) shein-products-search (POST /shein/products/search)
+ *   params: string $keyword, int $page, int $page_size, string $sort
+ * @method mixed searchAutocomplete(array $params = [], array $options = []) shein-search-autocomplete (POST /shein/search/autocomplete)
+ *   params: string $word
+ * @method mixed searchKeywords(array $params = [], array $options = []) shein-search-keywords (POST /shein/search/keywords)
+ *   params: string $scene, string $word_type
+ */
+abstract class SheinGroup {}
+
+/**
  * @method mixed analysis(array $params = [], array $options = []) shop-app-analysis (GET /shop-app/analysis)
  *   params: string $query, int $limit, bool $in_stock, bool $on_sale, bool $deep_search
  * @method mixed categories(array $params = [], array $options = []) shop-app-categories (GET /shop-app/categories)
@@ -1997,13 +2479,13 @@ abstract class ShopAppGroup {}
  * @method mixed collections(array $params = [], array $options = []) shopify-collections (GET /shopify/collections)
  *   params: string $url, int $page, int $limit
  * @method mixed collectionProducts(array $params = [], array $options = []) shopify-collection-products (GET /shopify/collections/{handle}/products)
- *   params: string $handle, string $url, int $page, int $limit
+ *   params: string $handle, string $url, int $page, int $limit, 'sortLTH'|'sortHTL'|'newest' $sortBy
  * @method mixed pages(array $params = [], array $options = []) shopify-pages (GET /shopify/pages)
  *   params: string $url, int $page, int $limit
  * @method mixed page(array $params = [], array $options = []) shopify-page (GET /shopify/pages/{handle})
  *   params: string $handle, string $url
  * @method mixed products(array $params = [], array $options = []) shopify-products (GET /shopify/products)
- *   params: string $url, int $page, int $limit
+ *   params: string $url, int $page, int $limit, 'sortLTH'|'sortHTL'|'newest' $sortBy
  * @method mixed product(array $params = [], array $options = []) shopify-product (GET /shopify/products/{handle})
  *   params: string $handle, string $url
  * @method mixed productRecommendations(array $params = [], array $options = []) shopify-product-recommendations (GET /shopify/products/{handle}/recommendations)
@@ -2026,6 +2508,30 @@ abstract class ShopifyGroup {}
  *   params: string $domain
  */
 abstract class SimilarWebGroup {}
+
+/**
+ * @method mixed collections(array $params = [], array $options = []) skims-collections (GET /skims/collections)
+ *   params: int $page, int $limit
+ * @method mixed collectionProducts(array $params = [], array $options = []) skims-collection-products (GET /skims/collections/{handle}/products)
+ *   params: string $handle, int $page, int $limit
+ * @method mixed pages(array $params = [], array $options = []) skims-pages (GET /skims/pages)
+ *   params: int $page, int $limit
+ * @method mixed page(array $params = [], array $options = []) skims-page (GET /skims/pages/{handle})
+ *   params: string $handle
+ * @method mixed products(array $params = [], array $options = []) skims-products (GET /skims/products)
+ *   params: int $page, int $limit
+ * @method mixed product(array $params = [], array $options = []) skims-product (GET /skims/products/{handle})
+ *   params: string $handle
+ * @method mixed productRecommendations(array $params = [], array $options = []) skims-product-recommendations (GET /skims/products/{handle}/recommendations)
+ *   params: string $handle, int $limit, 'related'|'complementary' $intent
+ * @method mixed searchSuggest(array $params = [], array $options = []) skims-search-suggest (GET /skims/search/suggest)
+ *   params: string $q, string $types, int $limit
+ * @method mixed sitemapUrls(array $params = [], array $options = []) skims-sitemap-urls (GET /skims/sitemap/urls)
+ *   params: 'all'|'products'|'collections'|'pages'|'blogs'|'agentic_discovery'|'other' $type, int $limit
+ * @method mixed sitemaps(array $params = [], array $options = []) skims-sitemaps (GET /skims/sitemaps)
+ * @method mixed store(array $params = [], array $options = []) skims-store (GET /skims/store)
+ */
+abstract class SkimsGroup {}
 
 /**
  * @method mixed sofascoreEvent(array $params = [], array $options = []) sofascore-event (GET /sofascore/event)
@@ -2205,6 +2711,30 @@ abstract class SpotifyGroup {}
 abstract class SteamGroup {}
 
 /**
+ * @method mixed stevemaddenCollections(array $params = [], array $options = []) stevemadden-collections (GET /stevemadden/collections)
+ *   params: int $page, int $limit
+ * @method mixed stevemaddenCollectionProducts(array $params = [], array $options = []) stevemadden-collection-products (GET /stevemadden/collections/{handle}/products)
+ *   params: string $handle, int $page, int $limit
+ * @method mixed stevemaddenPages(array $params = [], array $options = []) stevemadden-pages (GET /stevemadden/pages)
+ *   params: int $page, int $limit
+ * @method mixed stevemaddenPage(array $params = [], array $options = []) stevemadden-page (GET /stevemadden/pages/{handle})
+ *   params: string $handle
+ * @method mixed stevemaddenProducts(array $params = [], array $options = []) stevemadden-products (GET /stevemadden/products)
+ *   params: int $page, int $limit
+ * @method mixed stevemaddenProduct(array $params = [], array $options = []) stevemadden-product (GET /stevemadden/products/{handle})
+ *   params: string $handle
+ * @method mixed stevemaddenProductRecommendations(array $params = [], array $options = []) stevemadden-product-recommendations (GET /stevemadden/products/{handle}/recommendations)
+ *   params: string $handle, int $limit, 'related'|'complementary' $intent
+ * @method mixed stevemaddenSearchSuggest(array $params = [], array $options = []) stevemadden-search-suggest (GET /stevemadden/search/suggest)
+ *   params: string $q, string $types, int $limit
+ * @method mixed stevemaddenSitemapUrls(array $params = [], array $options = []) stevemadden-sitemap-urls (GET /stevemadden/sitemap/urls)
+ *   params: 'all'|'products'|'collections'|'pages'|'blogs'|'agentic_discovery'|'other' $type, int $limit
+ * @method mixed stevemaddenSitemaps(array $params = [], array $options = []) stevemadden-sitemaps (GET /stevemadden/sitemaps)
+ * @method mixed stevemaddenStore(array $params = [], array $options = []) stevemadden-store (GET /stevemadden/store)
+ */
+abstract class SteveMaddenGroup {}
+
+/**
  * @method mixed stockxBrands(array $params = [], array $options = []) stockx-brands (GET /stockx/brands)
  * @method mixed stockxCategories(array $params = [], array $options = []) stockx-categories (GET /stockx/categories)
  * @method mixed stockxProduct(array $params = [], array $options = []) stockx-product (GET /stockx/product/{slug})
@@ -2251,6 +2781,30 @@ abstract class TargetGroup {}
  *   params: string $query, string $location, int $page, int $page_size
  */
 abstract class TeslaJobsGroup {}
+
+/**
+ * @method mixed thebodyshopCollections(array $params = [], array $options = []) thebodyshop-collections (GET /thebodyshop/collections)
+ *   params: int $page, int $limit
+ * @method mixed thebodyshopCollectionProducts(array $params = [], array $options = []) thebodyshop-collection-products (GET /thebodyshop/collections/{handle}/products)
+ *   params: string $handle, int $page, int $limit
+ * @method mixed thebodyshopPages(array $params = [], array $options = []) thebodyshop-pages (GET /thebodyshop/pages)
+ *   params: int $page, int $limit
+ * @method mixed thebodyshopPage(array $params = [], array $options = []) thebodyshop-page (GET /thebodyshop/pages/{handle})
+ *   params: string $handle
+ * @method mixed thebodyshopProducts(array $params = [], array $options = []) thebodyshop-products (GET /thebodyshop/products)
+ *   params: int $page, int $limit
+ * @method mixed thebodyshopProduct(array $params = [], array $options = []) thebodyshop-product (GET /thebodyshop/products/{handle})
+ *   params: string $handle
+ * @method mixed thebodyshopProductRecommendations(array $params = [], array $options = []) thebodyshop-product-recommendations (GET /thebodyshop/products/{handle}/recommendations)
+ *   params: string $handle, int $limit, 'related'|'complementary' $intent
+ * @method mixed thebodyshopSearchSuggest(array $params = [], array $options = []) thebodyshop-search-suggest (GET /thebodyshop/search/suggest)
+ *   params: string $q, string $types, int $limit
+ * @method mixed thebodyshopSitemapUrls(array $params = [], array $options = []) thebodyshop-sitemap-urls (GET /thebodyshop/sitemap/urls)
+ *   params: 'all'|'products'|'collections'|'pages'|'blogs'|'agentic_discovery'|'other' $type, int $limit
+ * @method mixed thebodyshopSitemaps(array $params = [], array $options = []) thebodyshop-sitemaps (GET /thebodyshop/sitemaps)
+ * @method mixed thebodyshopStore(array $params = [], array $options = []) thebodyshop-store (GET /thebodyshop/store)
+ */
+abstract class TheBodyShopGroup {}
 
 /**
  * @method mixed post(array $params = [], array $options = []) threads-post (GET /threads/post/{username}/{code})
@@ -2531,6 +3085,12 @@ abstract class UsptoPatentPublicSearchGroup {}
  *   params: string $id
  */
 abstract class VintedGroup {}
+
+/**
+ * @method mixed stores(array $params = [], array $options = []) walgreens-stores (GET /walgreens/stores)
+ *   params: float $latitude, float $longitude, string $zip
+ */
+abstract class WalgreensGroup {}
 
 /**
  * @method mixed product(array $params = [], array $options = []) walmart-product (GET /walmart/product/{item_id})
@@ -2891,8 +3451,10 @@ abstract class ZaraGroup {}
 abstract class ZillowGroup {}
 
 /**
+ * @property-read \Crawlora\Generated\AdidasGroup $adidas
  * @property-read \Crawlora\Generated\AgodaGroup $agoda
  * @property-read \Crawlora\Generated\AirbnbGroup $airbnb
+ * @property-read \Crawlora\Generated\AllbirdsGroup $allbirds
  * @property-read \Crawlora\Generated\AmazonJobsGroup $amazonJobs
  * @property-read \Crawlora\Generated\AmazonGroup $amazon
  * @property-read \Crawlora\Generated\AnimeGroup $anime
@@ -2900,7 +3462,9 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\AppleJobsGroup $appleJobs
  * @property-read \Crawlora\Generated\ApplePodcastsGroup $applePodcasts
  * @property-read \Crawlora\Generated\AppStoreGroup $appStore
+ * @property-read \Crawlora\Generated\AudibleGroup $audible
  * @property-read \Crawlora\Generated\AutotraderGroup $autotrader
+ * @property-read \Crawlora\Generated\BbbGroup $bbb
  * @property-read \Crawlora\Generated\BestBuyGroup $bestBuy
  * @property-read \Crawlora\Generated\BillingGroup $billing
  * @property-read \Crawlora\Generated\BingGroup $bing
@@ -2909,11 +3473,14 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\BoxOfficeMojoGroup $boxOfficeMojo
  * @property-read \Crawlora\Generated\BrandGroup $brand
  * @property-read \Crawlora\Generated\BraveGroup $brave
+ * @property-read \Crawlora\Generated\BrooklinenGroup $brooklinen
  * @property-read \Crawlora\Generated\CapterraGroup $capterra
  * @property-read \Crawlora\Generated\CarMaxGroup $carMax
  * @property-read \Crawlora\Generated\CarsComGroup $carsCom
+ * @property-read \Crawlora\Generated\ChewyGroup $chewy
  * @property-read \Crawlora\Generated\ChromeWebStoreGroup $chromeWebStore
  * @property-read \Crawlora\Generated\CoinGeckoGroup $coinGecko
+ * @property-read \Crawlora\Generated\ColeHaanGroup $coleHaan
  * @property-read \Crawlora\Generated\CongressGroup $congress
  * @property-read \Crawlora\Generated\WebGroup $web
  * @property-read \Crawlora\Generated\CostcoGroup $costco
@@ -2926,9 +3493,12 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\EBayGroup $eBay
  * @property-read \Crawlora\Generated\EspnGroup $espn
  * @property-read \Crawlora\Generated\EtsyGroup $etsy
+ * @property-read \Crawlora\Generated\EverlaneGroup $everlane
  * @property-read \Crawlora\Generated\ExpediaGroup $expedia
  * @property-read \Crawlora\Generated\FacebookGroup $facebook
+ * @property-read \Crawlora\Generated\FashionNovaGroup $fashionNova
  * @property-read \Crawlora\Generated\FiverrGroup $fiverr
+ * @property-read \Crawlora\Generated\GdeltGroup $gdelt
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
  * @property-read \Crawlora\Generated\GitHubGroup $gitHub
  * @property-read \Crawlora\Generated\GoodreadsGroup $goodreads
@@ -2936,16 +3506,22 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\GoogleGroup $google
  * @property-read \Crawlora\Generated\GooglePatentsGroup $googlePatents
  * @property-read \Crawlora\Generated\GooglePlayGroup $googlePlay
+ * @property-read \Crawlora\Generated\GymsharkGroup $gymshark
  * @property-read \Crawlora\Generated\HMGroup $hM
+ * @property-read \Crawlora\Generated\HomeDepotGroup $homeDepot
+ * @property-read \Crawlora\Generated\IkeaGroup $ikea
  * @property-read \Crawlora\Generated\ImdbGroup $imdb
  * @property-read \Crawlora\Generated\ImportYetiGroup $importYeti
  * @property-read \Crawlora\Generated\IndeedGroup $indeed
  * @property-read \Crawlora\Generated\InstacartGroup $instacart
  * @property-read \Crawlora\Generated\InstagramGroup $instagram
+ * @property-read \Crawlora\Generated\JCrewGroup $jCrew
  * @property-read \Crawlora\Generated\JobsGroup $jobs
  * @property-read \Crawlora\Generated\JustWatchGroup $justWatch
  * @property-read \Crawlora\Generated\KalshiGroup $kalshi
+ * @property-read \Crawlora\Generated\KickstarterGroup $kickstarter
  * @property-read \Crawlora\Generated\KohlSGroup $kohlS
+ * @property-read \Crawlora\Generated\KylieCosmeticsGroup $kylieCosmetics
  * @property-read \Crawlora\Generated\LetterboxdGroup $letterboxd
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
  * @property-read \Crawlora\Generated\LululemonGroup $lululemon
@@ -2956,8 +3532,10 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\MetacriticGroup $metacritic
  * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
  * @property-read \Crawlora\Generated\MlbGroup $mlb
+ * @property-read \Crawlora\Generated\MonitorsGroup $monitors
  * @property-read \Crawlora\Generated\NikeGroup $nike
  * @property-read \Crawlora\Generated\NumbeoGroup $numbeo
+ * @property-read \Crawlora\Generated\OhPollyGroup $ohPolly
  * @property-read \Crawlora\Generated\OldNavyGroup $oldNavy
  * @property-read \Crawlora\Generated\OpenTableGroup $openTable
  * @property-read \Crawlora\Generated\MetaGroup $meta
@@ -2967,25 +3545,31 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\PolymarketGroup $polymarket
  * @property-read \Crawlora\Generated\PoshmarkGroup $poshmark
  * @property-read \Crawlora\Generated\ProductHuntGroup $productHunt
+ * @property-read \Crawlora\Generated\QuinceGroup $quince
  * @property-read \Crawlora\Generated\RedditGroup $reddit
  * @property-read \Crawlora\Generated\RedfinGroup $redfin
  * @property-read \Crawlora\Generated\ReferralsGroup $referrals
+ * @property-read \Crawlora\Generated\RothySGroup $rothyS
  * @property-read \Crawlora\Generated\RottenTomatoesGroup $rottenTomatoes
  * @property-read \Crawlora\Generated\SamSclubGroup $samSClub
  * @property-read \Crawlora\Generated\SecEdgarGroup $secEdgar
  * @property-read \Crawlora\Generated\SephoraGroup $sephora
+ * @property-read \Crawlora\Generated\SheinGroup $shein
  * @property-read \Crawlora\Generated\ShopAppGroup $shopApp
  * @property-read \Crawlora\Generated\ShopifyGroup $shopify
  * @property-read \Crawlora\Generated\SimilarWebGroup $similarWeb
+ * @property-read \Crawlora\Generated\SkimsGroup $skims
  * @property-read \Crawlora\Generated\SofaScoreGroup $sofaScore
  * @property-read \Crawlora\Generated\SoundCloudGroup $soundCloud
  * @property-read \Crawlora\Generated\SpotifyPodcastsGroup $spotifyPodcasts
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
  * @property-read \Crawlora\Generated\SteamGroup $steam
+ * @property-read \Crawlora\Generated\SteveMaddenGroup $steveMadden
  * @property-read \Crawlora\Generated\StockXGroup $stockX
  * @property-read \Crawlora\Generated\StravaGroup $strava
  * @property-read \Crawlora\Generated\TargetGroup $target
  * @property-read \Crawlora\Generated\TeslaJobsGroup $teslaJobs
+ * @property-read \Crawlora\Generated\TheBodyShopGroup $theBodyShop
  * @property-read \Crawlora\Generated\ThreadsGroup $threads
  * @property-read \Crawlora\Generated\TicketmasterGroup $ticketmaster
  * @property-read \Crawlora\Generated\TiktokGroup $tiktok
@@ -3003,6 +3587,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\AccountDeletionGroup $accountDeletion
  * @property-read \Crawlora\Generated\UsptoPatentPublicSearchGroup $usptoPatentPublicSearch
  * @property-read \Crawlora\Generated\VintedGroup $vinted
+ * @property-read \Crawlora\Generated\WalgreensGroup $walgreens
  * @property-read \Crawlora\Generated\WalmartGroup $walmart
  * @property-read \Crawlora\Generated\WayfairGroup $wayfair
  * @property-read \Crawlora\Generated\WhatnotGroup $whatnot
