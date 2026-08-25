@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.39.0-sdk.1
+
+- Added Ticketmaster attraction lookup, attraction events, related attractions, attraction reviews, trending attractions, and venue enhanced details.
+- Added Ticketweb platform support: event lookup, search, and venue detail.
+- Regenerated from the public API contract (1475 operations).
+
 ## v1.38.0-sdk.1
 
 - Regenerated from the public API contract (1468 operations).

@@ -847,11 +847,11 @@ abstract class CostcoGroup {}
  * @method mixed steamReviewsSearch(array $params = [], array $options = []) datasets-steam-reviews-search (GET /datasets/steam-reviews/search)
  *   params: string $q, string $app_id, string $language, string $voted_up, 'votes_desc'|'weighted_desc'|'date_desc' $sort, int $page, int $page_size
  * @method mixed techstackFacets(array $params = [], array $options = []) datasets-techstack-facets (GET /datasets/techstack/facets)
- *   params: 'technology'|'category'|'cms'|'ecommerce'|'cdn'|'web_server'|'server_language'|'analytics'|'tld'|'render_tier'|'seed_source' $facet, string $q, array<string> $technology, array<string> $any_of, array<string> $not, string $category, string $cms, string $ecommerce, string $cdn, string $web_server, string $server_language, string $tld, 'http'|'browser' $render_tier, string $seed_source, bool $has_captcha, bool $reachable, int $min_tech_count, string $run_id
+ *   params: 'technology'|'category'|'cms'|'ecommerce'|'cdn'|'web_server'|'server_language'|'analytics'|'tld'|'render_tier'|'seed_source' $facet, string $q, array<string> $technology, array<string> $any_of, array<string> $not, string $category, string $cms, string $ecommerce, string $cdn, string $web_server, string $server_language, string $tld, 'http'|'browser' $render_tier, string $seed_source, bool $has_captcha, bool $is_infrastructure, bool $reachable, int $min_tech_count, string $run_id
  * @method mixed techstackItem(array $params = [], array $options = []) datasets-techstack-item (GET /datasets/techstack/items/{domain})
  *   params: string $domain
  * @method mixed techstackSearch(array $params = [], array $options = []) datasets-techstack-search (GET /datasets/techstack/search)
- *   params: string $q, array<string> $technology, array<string> $any_of, array<string> $not, string $category, string $cms, string $ecommerce, string $cdn, string $web_server, string $server_language, string $tld, 'http'|'browser' $render_tier, string $seed_source, bool $has_captcha, bool $reachable, int $min_tech_count, string $run_id, 'relevance'|'rank_asc'|'tech_count_desc'|'domain_asc'|'crawled_desc' $sort, int $page, int $page_size
+ *   params: string $q, array<string> $technology, array<string> $any_of, array<string> $not, string $category, string $cms, string $ecommerce, string $cdn, string $web_server, string $server_language, string $tld, 'http'|'browser' $render_tier, string $seed_source, bool $has_captcha, bool $is_infrastructure, bool $reachable, int $min_tech_count, string $run_id, 'relevance'|'rank_asc'|'tech_count_desc'|'domain_asc'|'crawled_desc' $sort, int $page, int $page_size
  * @method mixed trustmrrFacets(array $params = [], array $options = []) datasets-trustmrr-facets (GET /datasets/trustmrr/facets)
  *   params: 'category'|'country'|'payment_provider'|'target_audience'|'business_type'|'tech'|'channels'|'listing_tier'|'status'|'on_sale'|'is_sponsored'|'tags' $facet, string $q, string $category, string $country, string $payment_provider, bool $on_sale, float $min_mrr
  * @method mixed trustmrrHistory(array $params = [], array $options = []) datasets-trustmrr-history (GET /datasets/trustmrr/history/{slug})
@@ -2825,6 +2825,10 @@ abstract class ThreadsGroup {}
  *   params: string $id
  * @method mixed attractionEvents(array $params = [], array $options = []) ticketmaster-attraction-events (GET /ticketmaster/attraction-events)
  *   params: string $id, int $page, 'relevance'|'date' $sort
+ * @method mixed attractionRelated(array $params = [], array $options = []) ticketmaster-attraction-related (GET /ticketmaster/attraction-related)
+ *   params: string $id
+ * @method mixed attractionReviews(array $params = [], array $options = []) ticketmaster-attraction-reviews (GET /ticketmaster/attraction-reviews)
+ *   params: string $id, int $offset, int $limit
  * @method mixed discoverCategories(array $params = [], array $options = []) ticketmaster-discover-categories (GET /ticketmaster/discover-categories)
  *   params: 'all'|'concerts'|'sports'|'arts-theater'|'family' $section, int $page, int $per_page
  * @method mixed discoverCategoryEvents(array $params = [], array $options = []) ticketmaster-discover-category-events (GET /ticketmaster/discover-category-events)
@@ -2839,12 +2843,25 @@ abstract class ThreadsGroup {}
  *   params: string $q, int $page, 'relevance'|'date' $sort
  * @method mixed suggest(array $params = [], array $options = []) ticketmaster-suggest (GET /ticketmaster/suggest)
  *   params: string $q
+ * @method mixed trendingAttractions(array $params = [], array $options = []) ticketmaster-trending-attractions (GET /ticketmaster/trending-attractions)
  * @method mixed venue(array $params = [], array $options = []) ticketmaster-venue (GET /ticketmaster/venue)
+ *   params: string $id
+ * @method mixed venueEnhancedDetails(array $params = [], array $options = []) ticketmaster-venue-enhanced-details (GET /ticketmaster/venue-enhanced-details)
  *   params: string $id
  * @method mixed venueEvents(array $params = [], array $options = []) ticketmaster-venue-events (GET /ticketmaster/venue-events)
  *   params: string $id, int $page, 'relevance'|'date' $sort
  */
 abstract class TicketmasterGroup {}
+
+/**
+ * @method mixed ticketwebEvent(array $params = [], array $options = []) ticketweb-event (GET /ticketweb/event)
+ *   params: string $id
+ * @method mixed ticketwebSearch(array $params = [], array $options = []) ticketweb-search (GET /ticketweb/search)
+ *   params: string $q, int $page
+ * @method mixed ticketwebVenue(array $params = [], array $options = []) ticketweb-venue (GET /ticketweb/venue)
+ *   params: string $id, int $page
+ */
+abstract class TicketWebGroup {}
 
 /**
  * @method mixed category(array $params = [], array $options = []) tiktok-category (GET /tiktok/category)
@@ -3572,6 +3589,7 @@ abstract class ZillowGroup {}
  * @property-read \Crawlora\Generated\TheBodyShopGroup $theBodyShop
  * @property-read \Crawlora\Generated\ThreadsGroup $threads
  * @property-read \Crawlora\Generated\TicketmasterGroup $ticketmaster
+ * @property-read \Crawlora\Generated\TicketWebGroup $ticketWeb
  * @property-read \Crawlora\Generated\TiktokGroup $tiktok
  * @property-read \Crawlora\Generated\TmdbGroup $tmdb
  * @property-read \Crawlora\Generated\TripAdvisorGroup $tripAdvisor
