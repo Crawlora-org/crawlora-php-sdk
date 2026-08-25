@@ -18373,6 +18373,11 @@ final class Operations
                     'type' => 'boolean',
                 ],
                 [
+                    'name' => 'is_infrastructure',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
                     'name' => 'reachable',
                     'in' => 'query',
                     'type' => 'boolean',
@@ -18502,6 +18507,11 @@ final class Operations
                 ],
                 [
                     'name' => 'has_captcha',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'is_infrastructure',
                     'in' => 'query',
                     'type' => 'boolean',
                 ],
@@ -49122,6 +49132,69 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'ticketmaster-attraction-related' => [
+            'id' => 'ticketmaster-attraction-related',
+            'method' => 'GET',
+            'path' => '/ticketmaster/attraction-related',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'ticketmaster-attraction-reviews' => [
+            'id' => 'ticketmaster-attraction-reviews',
+            'method' => 'GET',
+            'path' => '/ticketmaster/attraction-reviews',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'ticketmaster-discover-categories' => [
             'id' => 'ticketmaster-discover-categories',
             'method' => 'GET',
@@ -49353,10 +49426,55 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'ticketmaster-trending-attractions' => [
+            'id' => 'ticketmaster-trending-attractions',
+            'method' => 'GET',
+            'path' => '/ticketmaster/trending-attractions',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'ticketmaster-venue' => [
             'id' => 'ticketmaster-venue',
             'method' => 'GET',
             'path' => '/ticketmaster/venue',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'ticketmaster-venue-enhanced-details' => [
+            'id' => 'ticketmaster-venue-enhanced-details',
+            'method' => 'GET',
+            'path' => '/ticketmaster/venue-enhanced-details',
             'pathParams' => [],
             'queryParams' => [
                 [
@@ -49404,6 +49522,96 @@ final class Operations
                         'relevance',
                         'date',
                     ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'ticketweb-event' => [
+            'id' => 'ticketweb-event',
+            'method' => 'GET',
+            'path' => '/ticketweb/event',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'ticketweb-search' => [
+            'id' => 'ticketweb-search',
+            'method' => 'GET',
+            'path' => '/ticketweb/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'ticketweb-venue' => [
+            'id' => 'ticketweb-venue',
+            'method' => 'GET',
+            'path' => '/ticketweb/venue',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
                 ],
             ],
             'formParams' => [],
@@ -58983,6 +59191,8 @@ final class Operations
         'ticketmaster' => [
             'attraction' => 'ticketmaster-attraction',
             'attractionEvents' => 'ticketmaster-attraction-events',
+            'attractionRelated' => 'ticketmaster-attraction-related',
+            'attractionReviews' => 'ticketmaster-attraction-reviews',
             'discoverCategories' => 'ticketmaster-discover-categories',
             'discoverCategoryEvents' => 'ticketmaster-discover-category-events',
             'discoverCities' => 'ticketmaster-discover-cities',
@@ -58990,8 +59200,15 @@ final class Operations
             'event' => 'ticketmaster-event',
             'searchEvents' => 'ticketmaster-search-events',
             'suggest' => 'ticketmaster-suggest',
+            'trendingAttractions' => 'ticketmaster-trending-attractions',
             'venue' => 'ticketmaster-venue',
+            'venueEnhancedDetails' => 'ticketmaster-venue-enhanced-details',
             'venueEvents' => 'ticketmaster-venue-events',
+        ],
+        'ticketWeb' => [
+            'ticketwebEvent' => 'ticketweb-event',
+            'ticketwebSearch' => 'ticketweb-search',
+            'ticketwebVenue' => 'ticketweb-venue',
         ],
         'tiktok' => [
             'category' => 'tiktok-category',
@@ -59317,7 +59534,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 1468;
+    public const OPERATION_COUNT = 1475;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -60530,6 +60747,8 @@ final class Operations
         'threads-search',
         'ticketmaster-attraction',
         'ticketmaster-attraction-events',
+        'ticketmaster-attraction-related',
+        'ticketmaster-attraction-reviews',
         'ticketmaster-discover-categories',
         'ticketmaster-discover-category-events',
         'ticketmaster-discover-cities',
@@ -60537,8 +60756,13 @@ final class Operations
         'ticketmaster-event',
         'ticketmaster-search-events',
         'ticketmaster-suggest',
+        'ticketmaster-trending-attractions',
         'ticketmaster-venue',
+        'ticketmaster-venue-enhanced-details',
         'ticketmaster-venue-events',
+        'ticketweb-event',
+        'ticketweb-search',
+        'ticketweb-venue',
         'tiktok-category',
         'tiktok-video-comments',
         'tiktok-creative-center-hashtags',
@@ -62039,8 +62263,13 @@ final class OperationId
     public const THREADS_PROFILE = 'threads-profile';
     public const THREADS_PROFILE_POSTS = 'threads-profile-posts';
     public const THREADS_SEARCH = 'threads-search';
+    public const TICKET_WEB_TICKETWEB_EVENT = 'ticketweb-event';
+    public const TICKET_WEB_TICKETWEB_SEARCH = 'ticketweb-search';
+    public const TICKET_WEB_TICKETWEB_VENUE = 'ticketweb-venue';
     public const TICKETMASTER_ATTRACTION = 'ticketmaster-attraction';
     public const TICKETMASTER_ATTRACTION_EVENTS = 'ticketmaster-attraction-events';
+    public const TICKETMASTER_ATTRACTION_RELATED = 'ticketmaster-attraction-related';
+    public const TICKETMASTER_ATTRACTION_REVIEWS = 'ticketmaster-attraction-reviews';
     public const TICKETMASTER_DISCOVER_CATEGORIES = 'ticketmaster-discover-categories';
     public const TICKETMASTER_DISCOVER_CATEGORY_EVENTS = 'ticketmaster-discover-category-events';
     public const TICKETMASTER_DISCOVER_CITIES = 'ticketmaster-discover-cities';
@@ -62048,7 +62277,9 @@ final class OperationId
     public const TICKETMASTER_EVENT = 'ticketmaster-event';
     public const TICKETMASTER_SEARCH_EVENTS = 'ticketmaster-search-events';
     public const TICKETMASTER_SUGGEST = 'ticketmaster-suggest';
+    public const TICKETMASTER_TRENDING_ATTRACTIONS = 'ticketmaster-trending-attractions';
     public const TICKETMASTER_VENUE = 'ticketmaster-venue';
+    public const TICKETMASTER_VENUE_ENHANCED_DETAILS = 'ticketmaster-venue-enhanced-details';
     public const TICKETMASTER_VENUE_EVENTS = 'ticketmaster-venue-events';
     public const TIKTOK_CATEGORY = 'tiktok-category';
     public const TIKTOK_CHALLENGE = 'tiktok-challenge';
