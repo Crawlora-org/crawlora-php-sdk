@@ -27571,6 +27571,25 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'email-verify' => [
+            'id' => 'email-verify',
+            'method' => 'POST',
+            'path' => '/email/verify',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'option',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'espn-athlete' => [
             'id' => 'espn-athlete',
             'method' => 'GET',
@@ -74933,6 +74952,7 @@ final class Operations
         'web' => [
             'contact' => 'contact',
             'antibotCheck' => 'antibot-check',
+            'emailVerify' => 'email-verify',
             'extract' => 'extract',
             'scrape' => 'web-scrape',
             'techstack' => 'web-techstack',
@@ -76868,7 +76888,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 1938;
+    public const OPERATION_COUNT = 1939;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -77468,6 +77488,7 @@ final class Operations
         'ebay-seller-about',
         'ebay-seller-feedback',
         'ebay-seller-shop',
+        'email-verify',
         'espn-athlete',
         'espn-game-summary',
         'espn-news',
@@ -80612,6 +80633,7 @@ final class OperationId
     public const WAYFAIR_PRODUCT = 'wayfair-product';
     public const WEB_ANTIBOT_CHECK = 'antibot-check';
     public const WEB_CONTACT = 'contact';
+    public const WEB_EMAIL_VERIFY = 'email-verify';
     public const WEB_EXTRACT = 'extract';
     public const WEB_SCRAPE = 'web-scrape';
     public const WEB_TECHSTACK = 'web-techstack';

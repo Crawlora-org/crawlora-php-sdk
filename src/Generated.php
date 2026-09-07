@@ -869,6 +869,8 @@ abstract class CongressGroup {}
  *   params: array $option
  * @method mixed antibotCheck(array $params = [], array $options = []) antibot-check (POST /diagnostics/antibot-check)
  *   params: array $request
+ * @method mixed emailVerify(array $params = [], array $options = []) email-verify (POST /email/verify)
+ *   params: array $option
  * @method mixed extract(array $params = [], array $options = []) extract (POST /extract)
  *   params: array $extractOption
  * @method mixed scrape(array $params = [], array $options = []) web-scrape (POST /web/scrape)

@@ -2,7 +2,7 @@
 
 Generated from `openapi/public.json`. Deprecated, admin, and internal operations are excluded from this SDK contract.
 
-Total operations: `1938`
+Total operations: `1939`
 
 | Group | SDK method | Operation ID | HTTP | Params | Auth | Response | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -360,6 +360,7 @@ Total operations: `1938`
 | congress | `congress.stockDisclosures` | `congress-stock-disclosures` | `GET /congress/stock-disclosures` | `chamber` (query 'house'\|'senate')<br>`member` (query string)<br>`first_name` (query string)<br>`last_name` (query string)<br>`ticker` (query string)<br>`state` (query 'AK'\|'AL'\|'AR'\|'AS'\|'AZ'\|'CA'\|'CO'\|'CT'\|'DC'\|'DE'\|'FL'\|'FM'\|'GA'\|'GU'\|'HI'\|'IA'\|'ID'\|'IL'\|'IN'\|'KS'\|'KY'\|'LA'\|'MA'\|'MD'\|'ME'\|'MH'\|'MI'\|'MN'\|'MO'\|'MP'\|'MS'\|'MT'\|'NC'\|'ND'\|'NE'\|'NH'\|'NJ'\|'NM'\|'NV'\|'NY'\|'OH'\|'OK'\|'OR'\|'PA'\|'PR'\|'PW'\|'RI'\|'SC'\|'SD'\|'TN'\|'TX'\|'UT'\|'VA'\|'VI'\|'VT'\|'WA'\|'WI'\|'WV'\|'WY')<br>`senator_state` (query 'AK'\|'AL'\|'AR'\|'AS'\|'AZ'\|'CA'\|'CO'\|'CT'\|'DC'\|'DE'\|'FL'\|'FM'\|'GA'\|'GU'\|'HI'\|'IA'\|'ID'\|'IL'\|'IN'\|'KS'\|'KY'\|'LA'\|'MA'\|'MD'\|'ME'\|'MH'\|'MI'\|'MN'\|'MO'\|'MP'\|'MS'\|'MT'\|'NC'\|'ND'\|'NE'\|'NH'\|'NJ'\|'NM'\|'NV'\|'NY'\|'OH'\|'OK'\|'OR'\|'PA'\|'PR'\|'PW'\|'RI'\|'SC'\|'SD'\|'TN'\|'TX'\|'UT'\|'VA'\|'VI'\|'VT'\|'WA'\|'WI'\|'WV'\|'WY')<br>`candidate_state` (query 'AK'\|'AL'\|'AR'\|'AS'\|'AZ'\|'CA'\|'CO'\|'CT'\|'DC'\|'DE'\|'FL'\|'FM'\|'GA'\|'GU'\|'HI'\|'IA'\|'ID'\|'IL'\|'IN'\|'KS'\|'KY'\|'LA'\|'MA'\|'MD'\|'ME'\|'MH'\|'MI'\|'MN'\|'MO'\|'MP'\|'MS'\|'MT'\|'NC'\|'ND'\|'NE'\|'NH'\|'NJ'\|'NM'\|'NV'\|'NY'\|'OH'\|'OK'\|'OR'\|'PA'\|'PR'\|'PW'\|'RI'\|'SC'\|'SD'\|'TN'\|'TX'\|'UT'\|'VA'\|'VI'\|'VT'\|'WA'\|'WI'\|'WV'\|'WY')<br>`district` (query string)<br>`filer_type` (query 'member'\|'candidate'\|'all'\|'senator'\|'former_senator')<br>`election_year` (query string)<br>`report_type` (query 'annual'\|'periodic_transaction'\|'due_date_extension'\|'blind_trust'\|'other')<br>`from` (query string)<br>`to` (query string)<br>`sort` (query 'name_asc'\|'name_desc'\|'office_asc'\|'office_desc'\|'filing_year_asc'\|'filing_year_desc')<br>`page` (query int)<br>`limit` (query int) | `ApiKeyAuth` | `CongressStockDisclosuresResponse` |  |
 | web | `web.contact` | `contact` | `POST /contact` | `option` (body string required) | `ApiKeyAuth` | `WebContactResponse` |  |
 | web | `web.antibotCheck` | `antibot-check` | `POST /diagnostics/antibot-check` | `request` (body string required) | `ApiKeyAuth` | `WebAntibotCheckResponse` |  |
+| web | `web.emailVerify` | `email-verify` | `POST /email/verify` | `option` (body string required) | `ApiKeyAuth` | `WebEmailVerifyResponse` |  |
 | web | `web.extract` | `extract` | `POST /extract` | `extractOption` (body string required) | `ApiKeyAuth` | `WebExtractResponse` |  |
 | web | `web.scrape` | `web-scrape` | `POST /web/scrape` | `scrapeOption` (body string required) | `ApiKeyAuth` | `WebScrapeResponse` |  |
 | web | `web.techstack` | `web-techstack` | `POST /web/techstack` | `request` (body string required) | `ApiKeyAuth` | `WebTechstackResponse` |  |
