@@ -5,6 +5,8 @@
 namespace Crawlora;
 
 /**
+ * @property-read \Crawlora\Generated\SevenNowGroup $sevenNow
+ * @property-read \Crawlora\Generated\AccorGroup $accor
  * @property-read \Crawlora\Generated\AdidasGroup $adidas
  * @property-read \Crawlora\Generated\AgodaGroup $agoda
  * @property-read \Crawlora\Generated\AirbnbGroup $airbnb
@@ -12,38 +14,57 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\AmazonJobsGroup $amazonJobs
  * @property-read \Crawlora\Generated\AmazonGroup $amazon
  * @property-read \Crawlora\Generated\AnimeGroup $anime
+ * @property-read \Crawlora\Generated\AppInsightsGroup $appInsights
  * @property-read \Crawlora\Generated\AppleBooksGroup $appleBooks
  * @property-read \Crawlora\Generated\AppleJobsGroup $appleJobs
+ * @property-read \Crawlora\Generated\AppleMapsGroup $appleMaps
  * @property-read \Crawlora\Generated\ApplePodcastsGroup $applePodcasts
  * @property-read \Crawlora\Generated\AppStoreGroup $appStore
+ * @property-read \Crawlora\Generated\ArbysGroup $arbys
  * @property-read \Crawlora\Generated\AudibleGroup $audible
  * @property-read \Crawlora\Generated\AutotraderGroup $autotrader
  * @property-read \Crawlora\Generated\BbbGroup $bbb
+ * @property-read \Crawlora\Generated\BbcGroup $bbc
  * @property-read \Crawlora\Generated\BestBuyGroup $bestBuy
+ * @property-read \Crawlora\Generated\BigCommerceGroup $bigCommerce
+ * @property-read \Crawlora\Generated\BilibiliGroup $bilibili
  * @property-read \Crawlora\Generated\BillingGroup $billing
  * @property-read \Crawlora\Generated\BingGroup $bing
  * @property-read \Crawlora\Generated\BlueskyGroup $bluesky
+ * @property-read \Crawlora\Generated\BonhamsGroup $bonhams
  * @property-read \Crawlora\Generated\BookingGroup $booking
+ * @property-read \Crawlora\Generated\BootsGroup $boots
  * @property-read \Crawlora\Generated\BoxOfficeMojoGroup $boxOfficeMojo
  * @property-read \Crawlora\Generated\BrandGroup $brand
  * @property-read \Crawlora\Generated\BraveGroup $brave
  * @property-read \Crawlora\Generated\BrooklinenGroup $brooklinen
+ * @property-read \Crawlora\Generated\BurgerKingGroup $burgerKing
  * @property-read \Crawlora\Generated\CapterraGroup $capterra
  * @property-read \Crawlora\Generated\CarMaxGroup $carMax
  * @property-read \Crawlora\Generated\CarsComGroup $carsCom
  * @property-read \Crawlora\Generated\ChewyGroup $chewy
+ * @property-read \Crawlora\Generated\ChickFilAGroup $chickFilA
+ * @property-read \Crawlora\Generated\ChipotleGroup $chipotle
  * @property-read \Crawlora\Generated\ChromeWebStoreGroup $chromeWebStore
+ * @property-read \Crawlora\Generated\CnnGroup $cnn
  * @property-read \Crawlora\Generated\CoinGeckoGroup $coinGecko
  * @property-read \Crawlora\Generated\ColeHaanGroup $coleHaan
  * @property-read \Crawlora\Generated\CongressGroup $congress
  * @property-read \Crawlora\Generated\WebGroup $web
  * @property-read \Crawlora\Generated\CostcoGroup $costco
+ * @property-read \Crawlora\Generated\CourtListenerGroup $courtListener
+ * @property-read \Crawlora\Generated\CricinfoGroup $cricinfo
+ * @property-read \Crawlora\Generated\CulversGroup $culvers
+ * @property-read \Crawlora\Generated\CvsGroup $cvs
  * @property-read \Crawlora\Generated\DatasetsGroup $datasets
+ * @property-read \Crawlora\Generated\DeliverooGroup $deliveroo
  * @property-read \Crawlora\Generated\DepopGroup $depop
  * @property-read \Crawlora\Generated\DiscogsGroup $discogs
+ * @property-read \Crawlora\Generated\DominosGroup $dominos
  * @property-read \Crawlora\Generated\DoorDashGroup $doorDash
  * @property-read \Crawlora\Generated\DraftKingsSportsbookGroup $draftKingsSportsbook
  * @property-read \Crawlora\Generated\DuckDuckGoSearchGroup $duckDuckGoSearch
+ * @property-read \Crawlora\Generated\DunkinGroup $dunkin
  * @property-read \Crawlora\Generated\EBayGroup $eBay
  * @property-read \Crawlora\Generated\EspnGroup $espn
  * @property-read \Crawlora\Generated\EtsyGroup $etsy
@@ -51,18 +72,24 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\ExpediaGroup $expedia
  * @property-read \Crawlora\Generated\FacebookGroup $facebook
  * @property-read \Crawlora\Generated\FashionNovaGroup $fashionNova
+ * @property-read \Crawlora\Generated\FiveGuysGroup $fiveGuys
  * @property-read \Crawlora\Generated\FiverrGroup $fiverr
+ * @property-read \Crawlora\Generated\FoodpandaGroup $foodpanda
  * @property-read \Crawlora\Generated\GdeltGroup $gdelt
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
  * @property-read \Crawlora\Generated\GitHubGroup $gitHub
+ * @property-read \Crawlora\Generated\GoatGroup $goat
  * @property-read \Crawlora\Generated\GoodreadsGroup $goodreads
  * @property-read \Crawlora\Generated\GoogleJobsGroup $googleJobs
  * @property-read \Crawlora\Generated\GoogleGroup $google
  * @property-read \Crawlora\Generated\GooglePatentsGroup $googlePatents
  * @property-read \Crawlora\Generated\GooglePlayGroup $googlePlay
+ * @property-read \Crawlora\Generated\GrubhubGroup $grubhub
+ * @property-read \Crawlora\Generated\GuardianGroup $guardian
  * @property-read \Crawlora\Generated\GymsharkGroup $gymshark
  * @property-read \Crawlora\Generated\HMGroup $hM
  * @property-read \Crawlora\Generated\HomeDepotGroup $homeDepot
+ * @property-read \Crawlora\Generated\HotelsComGroup $hotelsCom
  * @property-read \Crawlora\Generated\IkeaGroup $ikea
  * @property-read \Crawlora\Generated\ImdbGroup $imdb
  * @property-read \Crawlora\Generated\ImportYetiGroup $importYeti
@@ -70,17 +97,24 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\InstacartGroup $instacart
  * @property-read \Crawlora\Generated\InstagramGroup $instagram
  * @property-read \Crawlora\Generated\JCrewGroup $jCrew
+ * @property-read \Crawlora\Generated\JimmyJohnsGroup $jimmyJohns
  * @property-read \Crawlora\Generated\JobsGroup $jobs
+ * @property-read \Crawlora\Generated\JustEatGroup $justEat
  * @property-read \Crawlora\Generated\JustWatchGroup $justWatch
  * @property-read \Crawlora\Generated\KalshiGroup $kalshi
+ * @property-read \Crawlora\Generated\KfcGroup $kfc
  * @property-read \Crawlora\Generated\KickstarterGroup $kickstarter
  * @property-read \Crawlora\Generated\KohlSGroup $kohlS
+ * @property-read \Crawlora\Generated\KrogerGroup $kroger
  * @property-read \Crawlora\Generated\KylieCosmeticsGroup $kylieCosmetics
+ * @property-read \Crawlora\Generated\LazadaGroup $lazada
+ * @property-read \Crawlora\Generated\LeboncoinGroup $leboncoin
  * @property-read \Crawlora\Generated\LetterboxdGroup $letterboxd
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
  * @property-read \Crawlora\Generated\LululemonGroup $lululemon
  * @property-read \Crawlora\Generated\MacySGroup $macyS
  * @property-read \Crawlora\Generated\MangaGroup $manga
+ * @property-read \Crawlora\Generated\McDonaldsGroup $mcDonalds
  * @property-read \Crawlora\Generated\MercariGroup $mercari
  * @property-read \Crawlora\Generated\MetaJobsGroup $metaJobs
  * @property-read \Crawlora\Generated\MetacriticGroup $metacritic
@@ -91,37 +125,57 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\NumbeoGroup $numbeo
  * @property-read \Crawlora\Generated\OhPollyGroup $ohPolly
  * @property-read \Crawlora\Generated\OldNavyGroup $oldNavy
+ * @property-read \Crawlora\Generated\OpenSeaGroup $openSea
  * @property-read \Crawlora\Generated\OpenTableGroup $openTable
+ * @property-read \Crawlora\Generated\OttoGroup $otto
+ * @property-read \Crawlora\Generated\PandamartGroup $pandamart
+ * @property-read \Crawlora\Generated\PaneraGroup $panera
+ * @property-read \Crawlora\Generated\PapaJohnSGroup $papaJohnS
+ * @property-read \Crawlora\Generated\PatreonGroup $patreon
  * @property-read \Crawlora\Generated\MetaGroup $meta
  * @property-read \Crawlora\Generated\PinterestGroup $pinterest
  * @property-read \Crawlora\Generated\PitchBookGroup $pitchBook
+ * @property-read \Crawlora\Generated\PizzaHutGroup $pizzaHut
  * @property-read \Crawlora\Generated\PlayStationGroup $playStation
  * @property-read \Crawlora\Generated\PolymarketGroup $polymarket
+ * @property-read \Crawlora\Generated\PopeyesGroup $popeyes
  * @property-read \Crawlora\Generated\PoshmarkGroup $poshmark
  * @property-read \Crawlora\Generated\ProductHuntGroup $productHunt
  * @property-read \Crawlora\Generated\QuinceGroup $quince
+ * @property-read \Crawlora\Generated\RaisingCaneSGroup $raisingCaneS
  * @property-read \Crawlora\Generated\RedditGroup $reddit
  * @property-read \Crawlora\Generated\RedfinGroup $redfin
  * @property-read \Crawlora\Generated\ReferralsGroup $referrals
+ * @property-read \Crawlora\Generated\RightmoveGroup $rightmove
+ * @property-read \Crawlora\Generated\RobloxGroup $roblox
  * @property-read \Crawlora\Generated\RothySGroup $rothyS
  * @property-read \Crawlora\Generated\RottenTomatoesGroup $rottenTomatoes
+ * @property-read \Crawlora\Generated\RoverGroup $rover
  * @property-read \Crawlora\Generated\SamSclubGroup $samSClub
  * @property-read \Crawlora\Generated\SecEdgarGroup $secEdgar
  * @property-read \Crawlora\Generated\SephoraGroup $sephora
+ * @property-read \Crawlora\Generated\ShakeShackGroup $shakeShack
  * @property-read \Crawlora\Generated\SheinGroup $shein
  * @property-read \Crawlora\Generated\ShopAppGroup $shopApp
  * @property-read \Crawlora\Generated\ShopifyGroup $shopify
  * @property-read \Crawlora\Generated\SimilarWebGroup $similarWeb
  * @property-read \Crawlora\Generated\SkimsGroup $skims
  * @property-read \Crawlora\Generated\SofaScoreGroup $sofaScore
+ * @property-read \Crawlora\Generated\SonicGroup $sonic
  * @property-read \Crawlora\Generated\SoundCloudGroup $soundCloud
+ * @property-read \Crawlora\Generated\SparkFunGroup $sparkFun
  * @property-read \Crawlora\Generated\SpotifyPodcastsGroup $spotifyPodcasts
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
+ * @property-read \Crawlora\Generated\StarbucksGroup $starbucks
  * @property-read \Crawlora\Generated\SteamGroup $steam
  * @property-read \Crawlora\Generated\SteveMaddenGroup $steveMadden
  * @property-read \Crawlora\Generated\StockXGroup $stockX
  * @property-read \Crawlora\Generated\StravaGroup $strava
+ * @property-read \Crawlora\Generated\SubwayGroup $subway
+ * @property-read \Crawlora\Generated\SwiggyGroup $swiggy
+ * @property-read \Crawlora\Generated\TacoBellGroup $tacoBell
  * @property-read \Crawlora\Generated\TargetGroup $target
+ * @property-read \Crawlora\Generated\TesGroup $tes
  * @property-read \Crawlora\Generated\TeslaJobsGroup $teslaJobs
  * @property-read \Crawlora\Generated\TheBodyShopGroup $theBodyShop
  * @property-read \Crawlora\Generated\ThreadsGroup $threads
@@ -129,6 +183,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\TicketWebGroup $ticketWeb
  * @property-read \Crawlora\Generated\TiktokGroup $tiktok
  * @property-read \Crawlora\Generated\TmdbGroup $tmdb
+ * @property-read \Crawlora\Generated\TokopediaGroup $tokopedia
  * @property-read \Crawlora\Generated\TripAdvisorGroup $tripAdvisor
  * @property-read \Crawlora\Generated\TripComGroup $tripCom
  * @property-read \Crawlora\Generated\TrustMrrGroup $trustMrr
@@ -145,8 +200,12 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\WalgreensGroup $walgreens
  * @property-read \Crawlora\Generated\WalmartGroup $walmart
  * @property-read \Crawlora\Generated\WayfairGroup $wayfair
+ * @property-read \Crawlora\Generated\WendysGroup $wendys
+ * @property-read \Crawlora\Generated\WhataburgerGroup $whataburger
  * @property-read \Crawlora\Generated\WhatnotGroup $whatnot
+ * @property-read \Crawlora\Generated\WingstopGroup $wingstop
  * @property-read \Crawlora\Generated\WishGroup $wish
+ * @property-read \Crawlora\Generated\WoltGroup $wolt
  * @property-read \Crawlora\Generated\XGroup $x
  * @property-read \Crawlora\Generated\YahooAutosGroup $yahooAutos
  * @property-read \Crawlora\Generated\YahooEntertainmentGroup $yahooEntertainment
@@ -163,6 +222,8 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\ZalandoGroup $zalando
  * @property-read \Crawlora\Generated\ZapposGroup $zappos
  * @property-read \Crawlora\Generated\ZaraGroup $zara
+ * @property-read \Crawlora\Generated\ZaxbysGroup $zaxbys
  * @property-read \Crawlora\Generated\ZillowGroup $zillow
+ * @property-read \Crawlora\Generated\ZomatoGroup $zomato
  */
 final class Client {}

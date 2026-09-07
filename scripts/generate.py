@@ -46,6 +46,7 @@ POLICY = core.NamingPolicy(
     dedup_sep="",
     keywords=PHP_KEYWORDS,
     tag_group_overrides={
+        "7NOW": "sevenNow",
         "AppStore": "appStore",
         "CoinGecko": "coinGecko",
         "GooglePlay": "googlePlay",
