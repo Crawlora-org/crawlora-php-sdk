@@ -83622,6 +83622,37 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'rottentomatoes-browse-filters' => [
+            'id' => 'rottentomatoes-browse-filters',
+            'method' => 'GET',
+            'path' => '/rottentomatoes/browse/filters',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'list',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'movies_in_theaters',
+                        'movies_at_home',
+                        'movies_coming_soon',
+                        'tv_series_browse',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'rottentomatoes-browse-movies' => [
             'id' => 'rottentomatoes-browse-movies',
             'method' => 'GET',
@@ -83646,7 +83677,116 @@ final class Operations
                         'popular',
                         'newest',
                         'top_box_office',
+                        'a_z',
+                        'critic_highest',
+                        'critic_lowest',
+                        'audience_highest',
+                        'audience_lowest',
                     ],
+                ],
+                [
+                    'name' => 'genres',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'action',
+                        'adventure',
+                        'animation',
+                        'anime',
+                        'biography',
+                        'comedy',
+                        'crime',
+                        'documentary',
+                        'drama',
+                        'entertainment',
+                        'faith_and_spirituality',
+                        'fantasy',
+                        'game_show',
+                        'lgbtq',
+                        'health_and_wellness',
+                        'history',
+                        'holiday',
+                        'horror',
+                        'house_and_garden',
+                        'kids_and_family',
+                        'music',
+                        'musical',
+                        'mystery_and_thriller',
+                        'nature',
+                        'news',
+                        'reality',
+                        'romance',
+                        'sci_fi',
+                        'short',
+                        'soap',
+                        'special_interest',
+                        'sports',
+                        'stand_up',
+                        'talk_show',
+                        'travel',
+                        'variety',
+                        'war',
+                        'western',
+                    ],
+                ],
+                [
+                    'name' => 'ratings',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'g',
+                        'pg',
+                        'pg_13',
+                        'r',
+                        'nc_17',
+                        'nr',
+                        'ur',
+                    ],
+                ],
+                [
+                    'name' => 'audience',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'verified_hot',
+                        'upright',
+                        'spilled',
+                    ],
+                ],
+                [
+                    'name' => 'critics',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'certified_fresh',
+                        'fresh',
+                        'rotten',
+                    ],
+                ],
+                [
+                    'name' => 'affiliates',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'theaters',
+                        'fandango',
+                        'apple-tv-plus',
+                        'netflix',
+                        'prime-video',
+                        'disney-plus',
+                        'max',
+                        'peacock',
+                        'hulu',
+                        'paramount-plus',
+                        'amc-plus',
+                        'acorn-tv',
+                        'apple-tv',
+                    ],
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
                 ],
                 [
                     'name' => 'limit',
@@ -83688,7 +83828,113 @@ final class Operations
                     'enum' => [
                         'popular',
                         'newest',
+                        'a_z',
+                        'critic_highest',
+                        'critic_lowest',
+                        'audience_highest',
+                        'audience_lowest',
                     ],
+                ],
+                [
+                    'name' => 'genres',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'action',
+                        'adventure',
+                        'animation',
+                        'anime',
+                        'biography',
+                        'comedy',
+                        'crime',
+                        'documentary',
+                        'drama',
+                        'entertainment',
+                        'faith_and_spirituality',
+                        'fantasy',
+                        'game_show',
+                        'lgbtq',
+                        'health_and_wellness',
+                        'history',
+                        'holiday',
+                        'horror',
+                        'house_and_garden',
+                        'kids_and_family',
+                        'music',
+                        'musical',
+                        'mystery_and_thriller',
+                        'nature',
+                        'news',
+                        'reality',
+                        'romance',
+                        'sci_fi',
+                        'short',
+                        'soap',
+                        'special_interest',
+                        'sports',
+                        'stand_up',
+                        'talk_show',
+                        'travel',
+                        'variety',
+                        'war',
+                        'western',
+                    ],
+                ],
+                [
+                    'name' => 'ratings',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'tvy',
+                        'tvy7',
+                        'tvg',
+                        'tvpg',
+                        'tv14',
+                        'tvma',
+                    ],
+                ],
+                [
+                    'name' => 'audience',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'upright',
+                        'spilled',
+                    ],
+                ],
+                [
+                    'name' => 'critics',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'fresh',
+                        'rotten',
+                    ],
+                ],
+                [
+                    'name' => 'affiliates',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'theaters',
+                        'fandango',
+                        'apple-tv-plus',
+                        'netflix',
+                        'prime-video',
+                        'disney-plus',
+                        'max',
+                        'peacock',
+                        'hulu',
+                        'paramount-plus',
+                        'amc-plus',
+                        'acorn-tv',
+                        'apple-tv',
+                    ],
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
                 ],
                 [
                     'name' => 'limit',
@@ -83708,6 +83954,122 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'rottentomatoes-critics-authors' => [
+            'id' => 'rottentomatoes-critics-authors',
+            'method' => 'GET',
+            'path' => '/rottentomatoes/critics/authors',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'letter',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '#',
+                        'a',
+                        'b',
+                        'c',
+                        'd',
+                        'e',
+                        'f',
+                        'g',
+                        'h',
+                        'i',
+                        'j',
+                        'k',
+                        'l',
+                        'm',
+                        'n',
+                        'o',
+                        'p',
+                        'q',
+                        'r',
+                        's',
+                        't',
+                        'u',
+                        'v',
+                        'w',
+                        'x',
+                        'y',
+                        'z',
+                    ],
+                ],
+                [
+                    'name' => 'search',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'inactive',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'before',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'rottentomatoes-editorial-search' => [
+            'id' => 'rottentomatoes-editorial-search',
+            'method' => 'GET',
+            'path' => '/rottentomatoes/editorial/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'rottentomatoes-episode' => [
             'id' => 'rottentomatoes-episode',
@@ -83928,6 +84290,62 @@ final class Operations
                     'type' => 'string',
                 ],
             ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'rottentomatoes-sitemap-urls' => [
+            'id' => 'rottentomatoes-sitemap-urls',
+            'method' => 'GET',
+            'path' => '/rottentomatoes/sitemap/urls',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'rottentomatoes-sitemaps' => [
+            'id' => 'rottentomatoes-sitemaps',
+            'method' => 'GET',
+            'path' => '/rottentomatoes/sitemaps',
+            'pathParams' => [],
+            'queryParams' => [],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -116919,8 +117337,11 @@ final class Operations
             'rothysStore' => 'rothys-store',
         ],
         'rottenTomatoes' => [
+            'rottentomatoesBrowseFilters' => 'rottentomatoes-browse-filters',
             'rottentomatoesBrowseMovies' => 'rottentomatoes-browse-movies',
             'rottentomatoesBrowseTv' => 'rottentomatoes-browse-tv',
+            'rottentomatoesCriticsAuthors' => 'rottentomatoes-critics-authors',
+            'rottentomatoesEditorialSearch' => 'rottentomatoes-editorial-search',
             'rottentomatoesEpisode' => 'rottentomatoes-episode',
             'rottentomatoesMovie' => 'rottentomatoes-movie',
             'rottentomatoesMovieReviews' => 'rottentomatoes-movie-reviews',
@@ -116928,6 +117349,8 @@ final class Operations
             'rottentomatoesSearch' => 'rottentomatoes-search',
             'rottentomatoesSeason' => 'rottentomatoes-season',
             'rottentomatoesSeries' => 'rottentomatoes-series',
+            'rottentomatoesSitemapUrls' => 'rottentomatoes-sitemap-urls',
+            'rottentomatoesSitemaps' => 'rottentomatoes-sitemaps',
         ],
         'rover' => [
             'sitterSearch' => 'rover-sitter-search',
@@ -118098,7 +118521,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 3160;
+    public const OPERATION_COUNT = 3165;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -120352,8 +120775,11 @@ final class Operations
         'rothys-sitemap-urls',
         'rothys-sitemaps',
         'rothys-store',
+        'rottentomatoes-browse-filters',
         'rottentomatoes-browse-movies',
         'rottentomatoes-browse-tv',
+        'rottentomatoes-critics-authors',
+        'rottentomatoes-editorial-search',
         'rottentomatoes-episode',
         'rottentomatoes-movie',
         'rottentomatoes-movie-reviews',
@@ -120361,6 +120787,8 @@ final class Operations
         'rottentomatoes-search',
         'rottentomatoes-season',
         'rottentomatoes-series',
+        'rottentomatoes-sitemap-urls',
+        'rottentomatoes-sitemaps',
         'rover-sitter-search',
         'rover-sitter-profile',
         'rover-trainer-search',
@@ -123531,8 +123959,11 @@ final class OperationId
     public const ROTHY_SROTHYS_SITEMAP_URLS = 'rothys-sitemap-urls';
     public const ROTHY_SROTHYS_SITEMAPS = 'rothys-sitemaps';
     public const ROTHY_SROTHYS_STORE = 'rothys-store';
+    public const ROTTEN_TOMATOES_ROTTENTOMATOES_BROWSE_FILTERS = 'rottentomatoes-browse-filters';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_BROWSE_MOVIES = 'rottentomatoes-browse-movies';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_BROWSE_TV = 'rottentomatoes-browse-tv';
+    public const ROTTEN_TOMATOES_ROTTENTOMATOES_CRITICS_AUTHORS = 'rottentomatoes-critics-authors';
+    public const ROTTEN_TOMATOES_ROTTENTOMATOES_EDITORIAL_SEARCH = 'rottentomatoes-editorial-search';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_EPISODE = 'rottentomatoes-episode';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_MOVIE = 'rottentomatoes-movie';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_MOVIE_REVIEWS = 'rottentomatoes-movie-reviews';
@@ -123540,6 +123971,8 @@ final class OperationId
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_SEARCH = 'rottentomatoes-search';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_SEASON = 'rottentomatoes-season';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_SERIES = 'rottentomatoes-series';
+    public const ROTTEN_TOMATOES_ROTTENTOMATOES_SITEMAP_URLS = 'rottentomatoes-sitemap-urls';
+    public const ROTTEN_TOMATOES_ROTTENTOMATOES_SITEMAPS = 'rottentomatoes-sitemaps';
     public const ROVER_SITTER_PROFILE = 'rover-sitter-profile';
     public const ROVER_SITTER_SEARCH = 'rover-sitter-search';
     public const ROVER_TRAINER_PROFILE = 'rover-trainer-profile';

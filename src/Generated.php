@@ -5290,10 +5290,16 @@ abstract class RollingStoneGroup {}
 abstract class RothySGroup {}
 
 /**
+ * @method mixed rottentomatoesBrowseFilters(array $params = [], array $options = []) rottentomatoes-browse-filters (GET /rottentomatoes/browse/filters)
+ *   params: 'movies_in_theaters'|'movies_at_home'|'movies_coming_soon'|'tv_series_browse' $list
  * @method mixed rottentomatoesBrowseMovies(array $params = [], array $options = []) rottentomatoes-browse-movies (GET /rottentomatoes/browse/movies)
- *   params: 'movies_in_theaters'|'movies_at_home'|'movies_coming_soon' $list, 'popular'|'newest'|'top_box_office' $sort, int $limit
+ *   params: 'movies_in_theaters'|'movies_at_home'|'movies_coming_soon' $list, 'popular'|'newest'|'top_box_office'|'a_z'|'critic_highest'|'critic_lowest'|'audience_highest'|'audience_lowest' $sort, 'action'|'adventure'|'animation'|'anime'|'biography'|'comedy'|'crime'|'documentary'|'drama'|'entertainment'|'faith_and_spirituality'|'fantasy'|'game_show'|'lgbtq'|'health_and_wellness'|'history'|'holiday'|'horror'|'house_and_garden'|'kids_and_family'|'music'|'musical'|'mystery_and_thriller'|'nature'|'news'|'reality'|'romance'|'sci_fi'|'short'|'soap'|'special_interest'|'sports'|'stand_up'|'talk_show'|'travel'|'variety'|'war'|'western' $genres, 'g'|'pg'|'pg_13'|'r'|'nc_17'|'nr'|'ur' $ratings, 'verified_hot'|'upright'|'spilled' $audience, 'certified_fresh'|'fresh'|'rotten' $critics, 'theaters'|'fandango'|'apple-tv-plus'|'netflix'|'prime-video'|'disney-plus'|'max'|'peacock'|'hulu'|'paramount-plus'|'amc-plus'|'acorn-tv'|'apple-tv' $affiliates, string $after, int $limit
  * @method mixed rottentomatoesBrowseTv(array $params = [], array $options = []) rottentomatoes-browse-tv (GET /rottentomatoes/browse/tv)
- *   params: 'tv_series_browse' $list, 'popular'|'newest' $sort, int $limit
+ *   params: 'tv_series_browse' $list, 'popular'|'newest'|'a_z'|'critic_highest'|'critic_lowest'|'audience_highest'|'audience_lowest' $sort, 'action'|'adventure'|'animation'|'anime'|'biography'|'comedy'|'crime'|'documentary'|'drama'|'entertainment'|'faith_and_spirituality'|'fantasy'|'game_show'|'lgbtq'|'health_and_wellness'|'history'|'holiday'|'horror'|'house_and_garden'|'kids_and_family'|'music'|'musical'|'mystery_and_thriller'|'nature'|'news'|'reality'|'romance'|'sci_fi'|'short'|'soap'|'special_interest'|'sports'|'stand_up'|'talk_show'|'travel'|'variety'|'war'|'western' $genres, 'tvy'|'tvy7'|'tvg'|'tvpg'|'tv14'|'tvma' $ratings, 'upright'|'spilled' $audience, 'fresh'|'rotten' $critics, 'theaters'|'fandango'|'apple-tv-plus'|'netflix'|'prime-video'|'disney-plus'|'max'|'peacock'|'hulu'|'paramount-plus'|'amc-plus'|'acorn-tv'|'apple-tv' $affiliates, string $after, int $limit
+ * @method mixed rottentomatoesCriticsAuthors(array $params = [], array $options = []) rottentomatoes-critics-authors (GET /rottentomatoes/critics/authors)
+ *   params: '#'|'a'|'b'|'c'|'d'|'e'|'f'|'g'|'h'|'i'|'j'|'k'|'l'|'m'|'n'|'o'|'p'|'q'|'r'|'s'|'t'|'u'|'v'|'w'|'x'|'y'|'z' $letter, string $search, bool $inactive, string $after, string $before, int $limit
+ * @method mixed rottentomatoesEditorialSearch(array $params = [], array $options = []) rottentomatoes-editorial-search (GET /rottentomatoes/editorial/search)
+ *   params: string $query, int $page, int $limit
  * @method mixed rottentomatoesEpisode(array $params = [], array $options = []) rottentomatoes-episode (GET /rottentomatoes/episode)
  *   params: string $path, string $url
  * @method mixed rottentomatoesMovie(array $params = [], array $options = []) rottentomatoes-movie (GET /rottentomatoes/movie)
@@ -5308,6 +5314,9 @@ abstract class RothySGroup {}
  *   params: string $path, string $url
  * @method mixed rottentomatoesSeries(array $params = [], array $options = []) rottentomatoes-series (GET /rottentomatoes/series)
  *   params: string $path, string $url
+ * @method mixed rottentomatoesSitemapUrls(array $params = [], array $options = []) rottentomatoes-sitemap-urls (GET /rottentomatoes/sitemap/urls)
+ *   params: string $name, int $offset, int $limit
+ * @method mixed rottentomatoesSitemaps(array $params = [], array $options = []) rottentomatoes-sitemaps (GET /rottentomatoes/sitemaps)
  */
 abstract class RottenTomatoesGroup {}
 
