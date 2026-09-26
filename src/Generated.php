@@ -7,6 +7,17 @@ declare(strict_types=1);
 namespace Crawlora\Generated;
 
 /**
+ * @method mixed categories(array $params = [], array $options = []) firstdibs-categories (GET /1stdibs/categories)
+ * @method mixed designers(array $params = [], array $options = []) firstdibs-designers (GET /1stdibs/designers)
+ *   params: string $category
+ * @method mixed product(array $params = [], array $options = []) firstdibs-product (GET /1stdibs/product)
+ *   params: string $url
+ * @method mixed search(array $params = [], array $options = []) firstdibs-search (GET /1stdibs/search)
+ *   params: string $q, string $category, string $designer, string $color, string $period, string $location, string $gender, string $origin, 'all price'|'[* TO 999]'|'[* TO 1999]'|'[* TO 4999]'|'[5000 TO *]' $price, float $price_min, float $price_max, bool $on_sale, bool $measurements, bool $this_week, bool $returnable, bool $recognized_seller, bool $top_seller, 'recommended'|'newest'|'price-high'|'price-low'|'popular' $sort, int $page, '60'|'120' $per_page
+ */
+abstract class FirstDibsGroup {}
+
+/**
  * @method mixed catalog(array $params = [], array $options = []) 7now-catalog (GET /7now/catalog)
  *   params: string $store_id, float $lat, float $lon, int $skip, int $limit
  * @method mixed categories(array $params = [], array $options = []) 7now-categories (GET /7now/categories)
@@ -35,6 +46,30 @@ namespace Crawlora\Generated;
  *   params: string $q, 'convenience'|'restaurant'|'global' $vertical
  */
 abstract class SevenNowGroup {}
+
+/**
+ * @method mixed abcauArticle(array $params = [], array $options = []) abcau-article (GET /abcau/article)
+ *   params: string $url
+ * @method mixed abcauAuthor(array $params = [], array $options = []) abcau-author (GET /abcau/author)
+ *   params: string $url
+ * @method mixed abcauHeadlines(array $params = [], array $options = []) abcau-headlines (GET /abcau/headlines)
+ *   params: 'justin'|'world'|'politics'|'business'|'sport'|'health'|'entertainment'|'science'|'rural'|'analysis-and-opinion'|'indigenous'|'environment'|'backstory'|'lifestyle'|'australia' $section
+ * @method mixed abcauNews(array $params = [], array $options = []) abcau-news (GET /abcau/news)
+ * @method mixed abcauSections(array $params = [], array $options = []) abcau-sections (GET /abcau/sections)
+ */
+abstract class AbcNewsAustraliaGroup {}
+
+/**
+ * @method mixed abcnewsArticle(array $params = [], array $options = []) abcnews-article (GET /abcnews/article)
+ *   params: string $url
+ * @method mixed abcnewsAuthor(array $params = [], array $options = []) abcnews-author (GET /abcnews/author)
+ *   params: string $url
+ * @method mixed abcnewsHeadlines(array $params = [], array $options = []) abcnews-headlines (GET /abcnews/headlines)
+ *   params: 'us'|'world'|'politics'|'business'|'technology'|'entertainment'|'health'|'sports' $section
+ * @method mixed abcnewsNews(array $params = [], array $options = []) abcnews-news (GET /abcnews/news)
+ * @method mixed abcnewsSections(array $params = [], array $options = []) abcnews-sections (GET /abcnews/sections)
+ */
+abstract class AbcNewsGroup {}
 
 /**
  * @method mixed amenities(array $params = [], array $options = []) accor-amenities (GET /accor/amenities)
@@ -111,6 +146,18 @@ abstract class AgodaGroup {}
 abstract class AirbnbGroup {}
 
 /**
+ * @method mixed aljazeeraArticle(array $params = [], array $options = []) aljazeera-article (GET /aljazeera/article)
+ *   params: string $url
+ * @method mixed aljazeeraAuthor(array $params = [], array $options = []) aljazeera-author (GET /aljazeera/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed aljazeeraCategories(array $params = [], array $options = []) aljazeera-categories (GET /aljazeera/categories)
+ * @method mixed aljazeeraHeadlines(array $params = [], array $options = []) aljazeera-headlines (GET /aljazeera/headlines)
+ * @method mixed aljazeeraTopic(array $params = [], array $options = []) aljazeera-topic (GET /aljazeera/topic)
+ *   params: string $topic
+ */
+abstract class AlJazeeraGroup {}
+
+/**
  * @method mixed collections(array $params = [], array $options = []) allbirds-collections (GET /allbirds/collections)
  *   params: int $page, int $limit
  * @method mixed collectionProducts(array $params = [], array $options = []) allbirds-collection-products (GET /allbirds/collections/{handle}/products)
@@ -135,14 +182,40 @@ abstract class AirbnbGroup {}
 abstract class AllbirdsGroup {}
 
 /**
+ * @method mixed asset(array $params = [], array $options = []) alt-asset (GET /alt/asset)
+ *   params: string $asset_id
+ * @method mixed auctions(array $params = [], array $options = []) alt-auctions (GET /alt/auctions)
+ *   params: string $q, 'BASEBALL_CARDS'|'POKEMON_CARDS'|'FOOTBALL_CARDS'|'BASKETBALL_CARDS'|'POP-CULTURE_CARDS'|'HOCKEY_CARDS'|'SOCCER_CARDS'|'ONE_PIECE_CARDS'|'OTHER_CARDS'|'TCG_CARDS'|'COMBAT_SPORTS_CARDS'|'RACING_CARDS'|'MAGIC_CARDS'|'YUGIOH_CARDS'|'GOLF_CARDS'|'TENNIS_CARDS' $category, 'PSA'|'CGC'|'BGS'|'CSG'|'SGC'|'PSA/DNA'|'BVG'|'BCCG'|'Factory Sealed'|'BAS'|'AUTHENTIC'|'TAG'|'RELABEL'|'RECASE'|'JSA/BVG'|'REVIEW'|'INTERNAL'|'NEW/'|'BULK'|'OTHERS'|'UNGRADED' $grading_company, 'recommended'|'alt_value_desc'|'alt_value_asc'|'price_desc'|'price_asc'|'watched_desc'|'ending_soonest_asc'|'timestamp_desc' $sort, int $page, int $per_page
+ * @method mixed cardSearch(array $params = [], array $options = []) alt-card-search (GET /alt/card-search)
+ *   params: string $q, int $page, int $per_page
+ * @method mixed categories(array $params = [], array $options = []) alt-categories (GET /alt/categories)
+ * @method mixed listing(array $params = [], array $options = []) alt-listing (GET /alt/listing)
+ *   params: string $id, 'AUCTION'|'FIXED_PRICE'|'EXTERNAL_AUCTION'|'EXTERNAL_FIXED_PRICE' $listing_type
+ * @method mixed marketTrends(array $params = [], array $options = []) alt-market-trends (GET /alt/market-trends)
+ *   params: string $category
+ * @method mixed search(array $params = [], array $options = []) alt-search (GET /alt/search)
+ *   params: string $q, 'BASEBALL_CARDS'|'POKEMON_CARDS'|'FOOTBALL_CARDS'|'BASKETBALL_CARDS'|'POP-CULTURE_CARDS'|'HOCKEY_CARDS'|'SOCCER_CARDS'|'ONE_PIECE_CARDS'|'OTHER_CARDS'|'TCG_CARDS'|'COMBAT_SPORTS_CARDS'|'RACING_CARDS'|'MAGIC_CARDS'|'YUGIOH_CARDS'|'GOLF_CARDS'|'TENNIS_CARDS' $category, 'eBay'|'Fanatics Collect'|'Alt'|'Pristine Auction'|'Goldin'|'CardHobby'|'Memory Lane' $auction_house, 'PSA'|'CGC'|'BGS'|'CSG'|'SGC'|'PSA/DNA'|'BVG'|'BCCG'|'Factory Sealed'|'BAS'|'AUTHENTIC'|'TAG'|'RELABEL'|'RECASE'|'JSA/BVG'|'REVIEW'|'INTERNAL'|'NEW/'|'BULK'|'OTHERS'|'UNGRADED' $grading_company, 'AUCTION'|'FIXED_PRICE'|'EXTERNAL_AUCTION'|'EXTERNAL_FIXED_PRICE' $listing_type, 'recommended'|'alt_value_desc'|'alt_value_asc'|'price_desc'|'price_asc'|'watched_desc'|'ending_soonest_asc'|'timestamp_desc' $sort, int $page, int $per_page
+ * @method mixed soldListings(array $params = [], array $options = []) alt-sold-listings (GET /alt/sold-listings)
+ *   params: string $q, 'BASEBALL_CARDS'|'POKEMON_CARDS'|'FOOTBALL_CARDS'|'BASKETBALL_CARDS'|'POP-CULTURE_CARDS'|'HOCKEY_CARDS'|'SOCCER_CARDS'|'ONE_PIECE_CARDS'|'OTHER_CARDS'|'TCG_CARDS'|'COMBAT_SPORTS_CARDS'|'RACING_CARDS'|'MAGIC_CARDS'|'YUGIOH_CARDS'|'GOLF_CARDS'|'TENNIS_CARDS' $category, 'eBay'|'Fanatics Collect'|'Alt'|'Pristine Auction'|'Goldin'|'CardHobby'|'Memory Lane' $auction_house, 'PSA'|'CGC'|'BGS'|'CSG'|'SGC'|'PSA/DNA'|'BVG'|'BCCG'|'Factory Sealed'|'BAS'|'AUTHENTIC'|'TAG'|'RELABEL'|'RECASE'|'JSA/BVG'|'REVIEW'|'INTERNAL'|'NEW/'|'BULK'|'OTHERS'|'UNGRADED' $grading_company, int $page, int $per_page
+ * @method mixed topMovers(array $params = [], array $options = []) alt-top-movers (GET /alt/top-movers)
+ *   params: string $category, string $subject, int $limit
+ */
+abstract class AltGroup {}
+
+/**
+ * @method mixed categories(array $params = [], array $options = []) amazon-jobs-categories (GET /amazon-jobs/categories)
  * @method mixed job(array $params = [], array $options = []) amazon-jobs-job (GET /amazon-jobs/job)
  *   params: string $id
  * @method mixed search(array $params = [], array $options = []) amazon-jobs-search (GET /amazon-jobs/search)
- *   params: string $q, 'administrative-support'|'applied-science'|'audio-video-photography-production'|'business-intelligence-data-engineering'|'business-merchant-development'|'buying-planning-instock-management'|'customer-service'|'data-science'|'database-administration'|'design'|'economics'|'editorial-writing-content-management'|'facilities-maintenance-real-estate'|'fgbs'|'fulfillment-center-warehouse-associate'|'fulfillment-operations-management'|'hardware-development'|'human-resources'|'investigation-loss-prevention'|'leadership-development-training'|'legal'|'marketing'|'medical-health-safety'|'operations-it-support-engineering'|'project-program-product-management-non-tech'|'project-program-product-management-technical'|'public-policy'|'public-relations-communications'|'research-science'|'sales-advertising-account-management'|'software-development'|'solutions-architecture'|'supply-chain-transportation-management'|'systems-quality-security-engineering' $category, string $country, int $page, int $limit, 'relevant'|'recent' $sort
+ *   params: string $q, 'administrative-support'|'applied-science'|'audio-video-photography-production'|'business-intelligence'|'business-merchant-development'|'buying-planning-instock-management'|'corporate-operations'|'customer-service'|'data-science'|'database-administration'|'design'|'economics'|'editorial-writing-content-management'|'facilities-maintenance-real-estate'|'finance-accounting'|'fulfillment-associate'|'fulfillment-operations-management'|'fulfillment-warehouse-associate'|'hardware-development'|'human-resources'|'investigation-loss-prevention'|'leadership-development-training'|'legal'|'machine-learning-science'|'marketing-pr'|'medical-health-safety'|'operations-it-support-engineering'|'procurement'|'project-program-product-management-non-tech'|'project-program-product-management-technical'|'public-policy'|'public-relations'|'research-science'|'sales-advertising-account-management'|'software-development'|'solutions-architect'|'supply-chain-transportation-management'|'systems-quality-security-engineering' $category, string $country, int $page, int $limit, 'relevant'|'recent' $sort
  */
 abstract class AmazonJobsGroup {}
 
 /**
+ * @method mixed charts(array $params = [], array $options = []) amazon-charts (GET /amazon/charts)
+ *   params: 'best_sellers'|'new_releases'|'most_wished_for' $chart, string $department, string $node, int $page
+ * @method mixed chartsCategories(array $params = [], array $options = []) amazon-charts-categories (GET /amazon/charts/categories)
+ *   params: 'best_sellers'|'new_releases'|'most_wished_for' $chart, string $department, string $node
  * @method mixed product(array $params = [], array $options = []) amazon-product (GET /amazon/product/{asin})
  *   params: string $asin, 'en_US' $language, 'USD' $currency
  * @method mixed search(array $params = [], array $options = []) amazon-search (GET /amazon/search)
@@ -151,6 +224,16 @@ abstract class AmazonJobsGroup {}
  *   params: string $keyword
  */
 abstract class AmazonGroup {}
+
+/**
+ * @method mixed androidauthorityArticle(array $params = [], array $options = []) androidauthority-article (GET /androidauthority/article)
+ *   params: string $url
+ * @method mixed androidauthorityHeadlines(array $params = [], array $options = []) androidauthority-headlines (GET /androidauthority/headlines)
+ *   params: 'news'|'reviews'|'best'|'how-to'|'features'|'deals'|'authority-insights'|'audio'|'computers-pc'|'gaming'|'technology'|'mobile'|'smart-home'|'streaming-entertainment'|'wearables'|'earbuds-headphones'|'chromebook'|'mac'|'pc-windows'|'emulation'|'handhelds'|'mobile-games'|'nintendo'|'playstation'|'xbox'|'smart-devices'|'smart-speakers'|'virtual-assistants'|'streaming-hardware'|'ai'|'mobility'|'privacy-security'|'vr-ar'|'fitness-trackers'|'smartwatches'|'android-apps'|'android-os'|'android-phones'|'android-tablets'|'carriers-plans'|'ios-apps'|'iphone-ipad'|'accessories'|'mobile-technology' $section
+ * @method mixed androidauthorityNews(array $params = [], array $options = []) androidauthority-news (GET /androidauthority/news)
+ * @method mixed androidauthoritySections(array $params = [], array $options = []) androidauthority-sections (GET /androidauthority/sections)
+ */
+abstract class AndroidAuthorityGroup {}
 
 /**
  * @method mixed airingSchedule(array $params = [], array $options = []) anime-airing-schedule (GET /anime/airing-schedule)
@@ -191,6 +274,19 @@ abstract class AnimeGroup {}
 abstract class AppInsightsGroup {}
 
 /**
+ * @method mixed apnewsArticle(array $params = [], array $options = []) apnews-article (GET /apnews/article)
+ *   params: string $url
+ * @method mixed apnewsAuthor(array $params = [], array $options = []) apnews-author (GET /apnews/author)
+ *   params: string $url
+ * @method mixed apnewsFactCheck(array $params = [], array $options = []) apnews-fact-check (GET /apnews/fact-check)
+ * @method mixed apnewsHeadlines(array $params = [], array $options = []) apnews-headlines (GET /apnews/headlines)
+ *   params: 'ap-top-news'|'us-news'|'world-news'|'politics'|'business'|'technology'|'science'|'health'|'sports'|'entertainment'|'lifestyle' $section
+ * @method mixed apnewsNews(array $params = [], array $options = []) apnews-news (GET /apnews/news)
+ * @method mixed apnewsSections(array $params = [], array $options = []) apnews-sections (GET /apnews/sections)
+ */
+abstract class ApNewsGroup {}
+
+/**
  * @method mixed audiobookSeries(array $params = [], array $options = []) apple-books-audiobook-series (GET /apple-books/audiobook-series/{id})
  *   params: string $id, string $country, string $lang
  * @method mixed audiobookSearch(array $params = [], array $options = []) apple-books-audiobook-search (GET /apple-books/audiobook/search)
@@ -221,6 +317,8 @@ abstract class AppleBooksGroup {}
 /**
  * @method mixed job(array $params = [], array $options = []) apple-jobs-job (GET /apple-jobs/job)
  *   params: string $id
+ * @method mixed locations(array $params = [], array $options = []) apple-jobs-locations (GET /apple-jobs/locations)
+ *   params: string $q
  * @method mixed search(array $params = [], array $options = []) apple-jobs-search (GET /apple-jobs/search)
  *   params: string $q, string $location, int $page
  */
@@ -291,6 +389,7 @@ abstract class ApplePodcastsGroup {}
 /**
  * @method mixed app(array $params = [], array $options = []) appstore-app (GET /appstore/app)
  *   params: string $id, string $app_id, string $country, string $lang, bool $ratings, bool $platforms
+ * @method mixed categories(array $params = [], array $options = []) appstore-categories (GET /appstore/categories)
  * @method mixed developer(array $params = [], array $options = []) appstore-developer (GET /appstore/developer/{dev_id})
  *   params: string $dev_id, string $country, string $lang
  * @method mixed editorial(array $params = [], array $options = []) appstore-editorial (GET /appstore/editorial)
@@ -331,11 +430,25 @@ abstract class AppStoreGroup {}
 abstract class ArbysGroup {}
 
 /**
+ * @method mixed arstechnicaArticle(array $params = [], array $options = []) arstechnica-article (GET /arstechnica/article)
+ *   params: string $url
+ * @method mixed arstechnicaAuthor(array $params = [], array $options = []) arstechnica-author (GET /arstechnica/author)
+ *   params: string $url
+ * @method mixed arstechnicaHeadlines(array $params = [], array $options = []) arstechnica-headlines (GET /arstechnica/headlines)
+ *   params: 'ai'|'apple'|'cars'|'culture'|'features'|'gadgets'|'gaming'|'health'|'information-technology'|'reviews'|'science'|'security'|'space'|'staff'|'tech-policy' $section
+ * @method mixed arstechnicaNews(array $params = [], array $options = []) arstechnica-news (GET /arstechnica/news)
+ * @method mixed arstechnicaSections(array $params = [], array $options = []) arstechnica-sections (GET /arstechnica/sections)
+ */
+abstract class ArsTechnicaGroup {}
+
+/**
  * @method mixed categories(array $params = [], array $options = []) audible-categories (GET /audible/categories)
  * @method mixed category(array $params = [], array $options = []) audible-category (GET /audible/category/{id})
  *   params: string $id
  * @method mixed charts(array $params = [], array $options = []) audible-charts (GET /audible/charts)
  *   params: 'most_listened'|'bestselling' $chart, 'audiobooks'|'podcasts' $content_type, string $category_id, 'all'|'free'|'plus'|'premium' $access_level, 'all'|'danish'|'english'|'french'|'german'|'italian'|'japanese'|'polish'|'portuguese'|'russian'|'spanish'|'swedish' $language, 'all'|'oneHourLess'|'oneToThreeHour'|'threeToSixHour'|'sixToTenHour'|'tenToTwentyHour'|'twentyHourMore' $duration, bool $originals_only, int $page
+ * @method mixed authorCharts(array $params = [], array $options = []) audible-author-charts (GET /audible/charts/authors)
+ *   params: int $page
  * @method mixed editorialList(array $params = [], array $options = []) audible-editorial-list (GET /audible/list/{list})
  *   params: 'audiobooks'|'booktok'|'podcasts' $list
  * @method mixed product(array $params = [], array $options = []) audible-product (GET /audible/product/{asin})
@@ -364,6 +477,41 @@ abstract class AudibleGroup {}
 abstract class AutotraderGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) axios-article (GET /axios/article)
+ *   params: string $url
+ * @method mixed categories(array $params = [], array $options = []) axios-categories (GET /axios/categories)
+ * @method mixed headlines(array $params = [], array $options = []) axios-headlines (GET /axios/headlines)
+ *   params: string $topic
+ */
+abstract class AxiosGroup {}
+
+/**
+ * @method mixed categories(array $params = [], array $options = []) balenciaga-categories (GET /balenciaga/categories)
+ * @method mixed category(array $params = [], array $options = []) balenciaga-category (GET /balenciaga/category)
+ *   params: string $path, 'latest'|'price_ascending'|'price_descending' $sort, int $page, int $limit, string $filters
+ * @method mixed product(array $params = [], array $options = []) balenciaga-product (GET /balenciaga/product)
+ *   params: string $url
+ * @method mixed productVariants(array $params = [], array $options = []) balenciaga-product-variants (GET /balenciaga/product/variants)
+ *   params: string $url
+ * @method mixed search(array $params = [], array $options = []) balenciaga-search (GET /balenciaga/search)
+ *   params: string $q, 'latest'|'price_ascending'|'price_descending' $sort, int $page, string $filters
+ * @method mixed storeCountries(array $params = [], array $options = []) balenciaga-store-countries (GET /balenciaga/store-countries)
+ * @method mixed stores(array $params = [], array $options = []) balenciaga-stores (GET /balenciaga/stores)
+ *   params: 'AE'|'AT'|'AU'|'BE'|'BR'|'CA'|'CN'|'CZ'|'DE'|'DK'|'ES'|'FR'|'GB'|'HK'|'IE'|'IT'|'JP'|'KR'|'KW'|'MC'|'MO'|'MX'|'MY'|'NL'|'NZ'|'QA'|'SA'|'SG'|'CH'|'TH'|'TW'|'US' $country
+ */
+abstract class BalenciagaGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) barrons-article (GET /barrons/article)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) barrons-headlines (GET /barrons/headlines)
+ *   params: string $section, int $page
+ * @method mixed news(array $params = [], array $options = []) barrons-news (GET /barrons/news)
+ * @method mixed topics(array $params = [], array $options = []) barrons-topics (GET /barrons/topics)
+ */
+abstract class BarronsGroup {}
+
+/**
  * @method mixed business(array $params = [], array $options = []) bbb-business (GET /bbb/business)
  *   params: string $url
  * @method mixed businessComplaints(array $params = [], array $options = []) bbb-business-complaints (GET /bbb/business/complaints)
@@ -387,6 +535,8 @@ abstract class BbbGroup {}
 
 /**
  * @method mixed article(array $params = [], array $options = []) bbc-article (GET /bbc/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) bbc-author (GET /bbc/author)
  *   params: string $url
  * @method mixed headlines(array $params = [], array $options = []) bbc-headlines (GET /bbc/headlines)
  *   params: 'all'|'world'|'uk'|'politics'|'business'|'health'|'science_and_environment'|'technology'|'entertainment_and_arts' $section
@@ -447,6 +597,18 @@ abstract class BigCommerceGroup {}
 abstract class BilibiliGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) billboard-article (GET /billboard/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) billboard-author (GET /billboard/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) billboard-headlines (GET /billboard/headlines)
+ *   params: 'music'|'music-news'|'chart-beat'|'awards'|'concerts'|'country'|'features'|'latin'|'lyrics'|'pop'|'rb-hip-hop'|'reviews'|'rock'|'business'|'business-news'|'legal'|'management'|'publishing'|'radio'|'record-labels'|'streaming'|'tech'|'touring'|'culture'|'events'|'lifestyle'|'politics'|'pride'|'product-recommendations'|'tv-film'|'media'|'lists'|'photos-media'|'podcasts'|'videos'|'espanol'|'cultura-entretenimiento'|'musica'|'negocios'|'noticias'|'pro' $section
+ * @method mixed news(array $params = [], array $options = []) billboard-news (GET /billboard/news)
+ * @method mixed sections(array $params = [], array $options = []) billboard-sections (GET /billboard/sections)
+ */
+abstract class BillboardGroup {}
+
+/**
  * @method mixed me(array $params = [], array $options = []) billing-me (GET /billing/me)
  * @method mixed meCheckout(array $params = [], array $options = []) billing-me-checkout (POST /billing/me/checkout)
  *   params: array $request
@@ -486,14 +648,59 @@ abstract class BillingGroup {}
 abstract class BingGroup {}
 
 /**
+ * @method mixed birminghammailArticle(array $params = [], array $options = []) birminghammail-article (GET /birminghammail/article)
+ *   params: string $url
+ * @method mixed birminghammailAuthor(array $params = [], array $options = []) birminghammail-author (GET /birminghammail/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed birminghammailHeadlines(array $params = [], array $options = []) birminghammail-headlines (GET /birminghammail/headlines)
+ *   params: 'news'|'news/midlands-news'|'news/uk-news'|'news/world-news'|'news/showbiz-tv'|'news/cost-of-living'|'news/money'|'news/health'|'black-country'|'motoring'|'motoring/motoring-news'|'sport'|'sport/football'|'sport/football/football-news'|'sport/football/transfer-news'|'whats-on'|'whats-on/whats-on-news'|'whats-on/family-kids-news'|'whats-on/food-drink-news'|'whats-on/music-nightlife-news'|'whats-on/shopping'|'travel'|'special-features' $section
+ * @method mixed birminghammailNews(array $params = [], array $options = []) birminghammail-news (GET /birminghammail/news)
+ * @method mixed birminghammailSections(array $params = [], array $options = []) birminghammail-sections (GET /birminghammail/sections)
+ */
+abstract class BirminghamMailGroup {}
+
+/**
+ * @method mixed bleacherreportArticle(array $params = [], array $options = []) bleacherreport-article (GET /bleacherreport/article)
+ *   params: string $url
+ * @method mixed bleacherreportAuthor(array $params = [], array $options = []) bleacherreport-author (GET /bleacherreport/author)
+ *   params: string $slug, string $url
+ * @method mixed bleacherreportHeadlines(array $params = [], array $options = []) bleacherreport-headlines (GET /bleacherreport/headlines)
+ *   params: 'nba'|'nfl'|'mlb'|'nhl'|'wnba'|'college-football'|'college-basketball'|'womens-college-basketball'|'world-football'|'tennis'|'golf'|'nascar'|'formula-1'|'mma'|'boxing'|'wwe'|'all-elite-wrestling'|'olympics'|'nba-rumors'|'nba-draft'|'nfl-rumors'|'nfl-draft'|'fantasy-football'|'mlb-rumors'|'mlb-prospects'|'nhl-rumors'|'nhl-draft'|'recruiting'|'college-basketball-recruiting'|'bracketology' $section
+ * @method mixed bleacherreportNews(array $params = [], array $options = []) bleacherreport-news (GET /bleacherreport/news)
+ * @method mixed bleacherreportSections(array $params = [], array $options = []) bleacherreport-sections (GET /bleacherreport/sections)
+ */
+abstract class BleacherReportGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) bloomberg-article (GET /bloomberg/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) bloomberg-author (GET /bloomberg/author)
+ *   params: string $url
+ * @method mixed categories(array $params = [], array $options = []) bloomberg-categories (GET /bloomberg/categories)
+ * @method mixed headlines(array $params = [], array $options = []) bloomberg-headlines (GET /bloomberg/headlines)
+ *   params: string $section
+ * @method mixed news(array $params = [], array $options = []) bloomberg-news (GET /bloomberg/news)
+ * @method mixed newsSitemaps(array $params = [], array $options = []) bloomberg-news-sitemaps (GET /bloomberg/news-sitemaps)
+ */
+abstract class BloombergGroup {}
+
+/**
  * @method mixed authorFeed(array $params = [], array $options = []) bluesky-author-feed (GET /bluesky/author-feed)
  *   params: string $actor, int $limit, string $cursor
  * @method mixed followers(array $params = [], array $options = []) bluesky-followers (GET /bluesky/followers)
  *   params: string $actor, int $limit, string $cursor
  * @method mixed follows(array $params = [], array $options = []) bluesky-follows (GET /bluesky/follows)
  *   params: string $actor, int $limit, string $cursor
+ * @method mixed postLikes(array $params = [], array $options = []) bluesky-post-likes (GET /bluesky/post-likes)
+ *   params: string $uri, int $limit, string $cursor
+ * @method mixed postQuotes(array $params = [], array $options = []) bluesky-post-quotes (GET /bluesky/post-quotes)
+ *   params: string $uri, int $limit, string $cursor
+ * @method mixed postRepostedBy(array $params = [], array $options = []) bluesky-post-reposted-by (GET /bluesky/post-reposted-by)
+ *   params: string $uri, int $limit, string $cursor
  * @method mixed postThread(array $params = [], array $options = []) bluesky-post-thread (GET /bluesky/post-thread)
  *   params: string $uri, int $depth
+ * @method mixed posts(array $params = [], array $options = []) bluesky-posts (GET /bluesky/posts)
+ *   params: array<string> $uris
  * @method mixed profile(array $params = [], array $options = []) bluesky-profile (GET /bluesky/profile)
  *   params: string $actor
  * @method mixed searchActors(array $params = [], array $options = []) bluesky-search-actors (GET /bluesky/search-actors)
@@ -610,6 +817,18 @@ abstract class BrandGroup {}
 abstract class BraveGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) breitbart-article (GET /breitbart/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) breitbart-author (GET /breitbart/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed headlines(array $params = [], array $options = []) breitbart-headlines (GET /breitbart/headlines)
+ *   params: 'politics'|'economy'|'border'|'immigration'|'national-security'|'entertainment'|'sports'|'tech'|'the-media'|'radio'|'clips'|'faith'|'world-news'|'europe'|'middle-east'|'africa'|'asia'|'latin-america'|'america250'|'on-the-hill-exclusive-video'|'news' $section
+ * @method mixed news(array $params = [], array $options = []) breitbart-news (GET /breitbart/news)
+ * @method mixed sections(array $params = [], array $options = []) breitbart-sections (GET /breitbart/sections)
+ */
+abstract class BreitbartGroup {}
+
+/**
  * @method mixed collections(array $params = [], array $options = []) brooklinen-collections (GET /brooklinen/collections)
  *   params: int $page, int $limit
  * @method mixed collectionProducts(array $params = [], array $options = []) brooklinen-collection-products (GET /brooklinen/collections/{handle}/products)
@@ -634,6 +853,22 @@ abstract class BraveGroup {}
 abstract class BrooklinenGroup {}
 
 /**
+ * @method mixed categories(array $params = [], array $options = []) burberry-categories (GET /burberry/categories)
+ *   params: string $department
+ * @method mixed category(array $params = [], array $options = []) burberry-category (GET /burberry/category)
+ *   params: string $category, int $offset, 'default'|'price_asc'|'price_desc'|'newest' $sort, string $facets
+ * @method mixed product(array $params = [], array $options = []) burberry-product (GET /burberry/product)
+ *   params: string $url
+ * @method mixed related(array $params = [], array $options = []) burberry-related (GET /burberry/related)
+ *   params: string $url
+ * @method mixed search(array $params = [], array $options = []) burberry-search (GET /burberry/search)
+ *   params: string $query, int $offset, 'default'|'price_asc'|'price_desc'|'newest' $sort, string $facets
+ * @method mixed suggest(array $params = [], array $options = []) burberry-suggest (GET /burberry/suggest)
+ *   params: string $query
+ */
+abstract class BurberryGroup {}
+
+/**
  * @method mixed burgerkingAvailability(array $params = [], array $options = []) burgerking-availability (GET /burgerking/availability)
  *   params: string $store_id, string $market, bool $forecast
  * @method mixed burgerkingLocations(array $params = [], array $options = []) burgerking-locations (GET /burgerking/locations)
@@ -644,6 +879,30 @@ abstract class BrooklinenGroup {}
  *   params: string $store_id, string $item_id, string $market
  */
 abstract class BurgerKingGroup {}
+
+/**
+ * @method mixed businessinsiderArticle(array $params = [], array $options = []) businessinsider-article (GET /businessinsider/article)
+ *   params: string $url
+ * @method mixed businessinsiderAuthor(array $params = [], array $options = []) businessinsider-author (GET /businessinsider/author)
+ *   params: string $slug, string $url
+ * @method mixed businessinsiderHeadlines(array $params = [], array $options = []) businessinsider-headlines (GET /businessinsider/headlines)
+ *   params: 'business'|'markets'|'technology'|'politics'|'strategy'|'finance'|'science'|'lifestyle'|'reviews' $section
+ * @method mixed businessinsiderNews(array $params = [], array $options = []) businessinsider-news (GET /businessinsider/news)
+ * @method mixed businessinsiderSections(array $params = [], array $options = []) businessinsider-sections (GET /businessinsider/sections)
+ */
+abstract class BusinessInsiderGroup {}
+
+/**
+ * @method mixed businessstandardArticle(array $params = [], array $options = []) businessstandard-article (GET /businessstandard/article)
+ *   params: string $url
+ * @method mixed businessstandardAuthor(array $params = [], array $options = []) businessstandard-author (GET /businessstandard/author)
+ *   params: string $url
+ * @method mixed businessstandardHeadlines(array $params = [], array $options = []) businessstandard-headlines (GET /businessstandard/headlines)
+ *   params: 'latest-news'|'companies'|'economy'|'finance'|'opinion'|'markets'|'technology'|'specials'|'budget'|'elections'|'politics'|'education'|'health'|'sports'|'entertainment'|'lifestyle'|'india-news'|'industry'|'cricket'|'book'|'world-news'|'external-affairs-defence-security'|'immigration'|'blueprint-defence-magazine'|'todays-paper' $section
+ * @method mixed businessstandardNews(array $params = [], array $options = []) businessstandard-news (GET /businessstandard/news)
+ * @method mixed businessstandardSections(array $params = [], array $options = []) businessstandard-sections (GET /businessstandard/sections)
+ */
+abstract class BusinessStandardGroup {}
 
 /**
  * @method mixed product(array $params = [], array $options = []) capterra-product (GET /capterra/product)
@@ -681,6 +940,54 @@ abstract class CarMaxGroup {}
 abstract class CarsComGroup {}
 
 /**
+ * @method mixed cbcArticle(array $params = [], array $options = []) cbc-article (GET /cbc/article)
+ *   params: string $url
+ * @method mixed cbcAuthor(array $params = [], array $options = []) cbc-author (GET /cbc/author)
+ *   params: string $slug, string $url
+ * @method mixed cbcHeadlines(array $params = [], array $options = []) cbc-headlines (GET /cbc/headlines)
+ *   params: 'world'|'canada'|'politics'|'business'|'health'|'arts'|'technology'|'indigenous'|'british-columbia'|'calgary'|'edmonton'|'hamilton'|'kamloops'|'kitchener-waterloo'|'london'|'manitoba'|'montreal'|'new-brunswick'|'newfoundland-labrador'|'north'|'nova-scotia'|'ottawa'|'prince-edward-island'|'saskatchewan'|'saskatoon'|'sudbury'|'thunder-bay'|'toronto'|'windsor'|'sports'|'sports-golf'|'sports-nhl'|'sports-olympics'|'sports-soccer'|'sports-tennis' $section
+ * @method mixed call(array $params = [], array $options = []) cbc-news (GET /cbc/news)
+ * @method mixed cbcSections(array $params = [], array $options = []) cbc-sections (GET /cbc/sections)
+ */
+abstract class CbcNewsGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) cbr-article (GET /cbr/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) cbr-author (GET /cbr/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) cbr-headlines (GET /cbr/headlines)
+ *   params: 'movies'|'movie-features'|'news-movies'|'reviews-movies'|'movie-lists'|'tv'|'tv-features'|'news-tv'|'reviews-tv'|'tv-lists'|'comics'|'comics-features'|'comics/news'|'comics/reviews'|'comics-lists'|'anime'|'anime-features'|'anime-news'|'anime/reviews-anime'|'anime-lists'|'games'|'game-features'|'game-news'|'games/reviews-games'|'game-guides'|'game-lists'|'lists'|'cbr-exclusives' $section
+ * @method mixed news(array $params = [], array $options = []) cbr-news (GET /cbr/news)
+ * @method mixed sections(array $params = [], array $options = []) cbr-sections (GET /cbr/sections)
+ */
+abstract class CbrGroup {}
+
+/**
+ * @method mixed cbsnewsArticle(array $params = [], array $options = []) cbsnews-article (GET /cbsnews/article)
+ *   params: string $url
+ * @method mixed cbsnewsAuthor(array $params = [], array $options = []) cbsnews-author (GET /cbsnews/author)
+ *   params: string $url
+ * @method mixed cbsnewsHeadlines(array $params = [], array $options = []) cbsnews-headlines (GET /cbsnews/headlines)
+ *   params: 'main'|'us'|'world'|'politics'|'moneywatch'|'health'|'entertainment'|'science'|'technology'|'space' $section
+ * @method mixed cbsnewsNews(array $params = [], array $options = []) cbsnews-news (GET /cbsnews/news)
+ * @method mixed cbsnewsSections(array $params = [], array $options = []) cbsnews-sections (GET /cbsnews/sections)
+ */
+abstract class CbsNewsGroup {}
+
+/**
+ * @method mixed cbssportsArticle(array $params = [], array $options = []) cbssports-article (GET /cbssports/article)
+ *   params: string $url
+ * @method mixed cbssportsAuthor(array $params = [], array $options = []) cbssports-author (GET /cbssports/author)
+ *   params: string $slug, string $url
+ * @method mixed cbssportsHeadlines(array $params = [], array $options = []) cbssports-headlines (GET /cbssports/headlines)
+ *   params: 'nfl'|'college-football'|'nba'|'college-basketball'|'womens-college-basketball'|'wnba'|'mlb'|'nhl'|'soccer'|'golf'|'tennis'|'ufc'|'mma'|'boxing'|'wwe'|'nascar'|'motor-sports'|'olympics'|'betting'|'prediction'|'general' $section
+ * @method mixed cbssportsNews(array $params = [], array $options = []) cbssports-news (GET /cbssports/news)
+ * @method mixed cbssportsSections(array $params = [], array $options = []) cbssports-sections (GET /cbssports/sections)
+ */
+abstract class CbsSportsGroup {}
+
+/**
  * @method mixed brands(array $params = [], array $options = []) chewy-brands (GET /chewy/brands)
  *   params: int $page, int $limit, string $name
  * @method mixed categories(array $params = [], array $options = []) chewy-categories (GET /chewy/categories)
@@ -711,6 +1018,18 @@ abstract class CarsComGroup {}
  *   params: string $id
  */
 abstract class ChewyGroup {}
+
+/**
+ * @method mixed chicagotribuneArticle(array $params = [], array $options = []) chicagotribune-article (GET /chicagotribune/article)
+ *   params: string $url
+ * @method mixed chicagotribuneAuthor(array $params = [], array $options = []) chicagotribune-author (GET /chicagotribune/author)
+ *   params: string $slug, string $url
+ * @method mixed chicagotribuneHeadlines(array $params = [], array $options = []) chicagotribune-headlines (GET /chicagotribune/headlines)
+ *   params: 'news'|'local-news'|'crime-public-safety'|'politics'|'elections'|'immigration'|'investigations'|'education'|'environment'|'health'|'history'|'marijuana'|'national'|'news-obituaries'|'science'|'weather'|'world'|'business'|'real-estate'|'transportation'|'technology'|'aurora-beacon-news'|'daily-southtown'|'elgin-courier-news'|'lake-county-news-sun'|'naperville-sun'|'post-tribune'|'opinion'|'columnists'|'commentary'|'editorials'|'letters-to-the-editor'|'sports'|'college-sports'|'mlb'|'chicago-cubs'|'chicago-white-sox'|'nfl'|'chicago-bears'|'nba'|'chicago-bulls'|'nhl'|'chicago-blackhawks'|'soccer'|'wnba'|'chicago-sky'|'things-to-do'|'arts'|'books'|'entertainment'|'home-garden'|'movies'|'music-concerts'|'restaurants-food-drink'|'theater'|'travel'|'tv-streaming'|'fitness'|'advice'|'best-reviews' $section
+ * @method mixed chicagotribuneNews(array $params = [], array $options = []) chicagotribune-news (GET /chicagotribune/news)
+ * @method mixed chicagotribuneSections(array $params = [], array $options = []) chicagotribune-sections (GET /chicagotribune/sections)
+ */
+abstract class ChicagoTribuneGroup {}
 
 /**
  * @method mixed content(array $params = [], array $options = []) chick-fil-a-content (GET /chick-fil-a/content)
@@ -778,8 +1097,64 @@ abstract class ChipotleGroup {}
 abstract class ChromeWebStoreGroup {}
 
 /**
+ * @method mixed autocomplete(array $params = [], array $options = []) chrono24-autocomplete (GET /chrono24/autocomplete)
+ *   params: string $query
+ * @method mixed brands(array $params = [], array $options = []) chrono24-brands (GET /chrono24/brands)
+ * @method mixed dealer(array $params = [], array $options = []) chrono24-dealer (GET /chrono24/dealer)
+ *   params: string $slug
+ * @method mixed dealerReviews(array $params = [], array $options = []) chrono24-dealer-reviews (GET /chrono24/dealer/reviews)
+ *   params: string $slug, int $page, int $page_size, int $min_stars, 'relevance'|'newest'|'with_recommendation'|'without_recommendation' $sort
+ * @method mixed facets(array $params = [], array $options = []) chrono24-facets (GET /chrono24/facets)
+ *   params: 'condition'|'usedOrNew'|'caseMaterial'|'dialColor'|'braceletMaterial'|'movementType'|'gender'|'watchType'|'stockInfo' $group
+ * @method mixed listing(array $params = [], array $options = []) chrono24-listing (GET /chrono24/listing)
+ *   params: string $path
+ * @method mixed models(array $params = [], array $options = []) chrono24-models (GET /chrono24/models)
+ *   params: string $brand
+ * @method mixed search(array $params = [], array $options = []) chrono24-search (GET /chrono24/search)
+ *   params: string $query, string $brand, string $model, 'relevance'|'price_asc'|'price_desc'|'newest'|'popularity' $sort, int $page, int $page_size, 'new'|'like_new_unworn'|'very_good'|'good'|'fair'|'incomplete'|'no_details' $condition, 'new'|'used'|'no_details' $used_or_new, 'aluminum'|'brass'|'bronze'|'carbon'|'ceramic'|'gold_steel'|'gold_plated'|'palladium'|'plastic'|'platinum'|'rose_gold'|'sapphire_crystal'|'silver'|'steel'|'tantalum'|'titanium'|'tungsten'|'white_gold'|'yellow_gold'|'no_details' $case_material, 'black'|'blue'|'bordeaux'|'bronze'|'brown'|'champagne'|'gold'|'green'|'grey'|'meteorite'|'mother_of_pearl'|'orange'|'pink'|'purple'|'red'|'silver'|'skeletonized'|'turquoise'|'white'|'yellow'|'no_details' $dial_color, 'alligator_skin'|'aluminium'|'brass'|'calf_skin'|'ceramic'|'crocodile_skin'|'gold_steel'|'gold_plated'|'leather'|'lizard_skin'|'ostrich_skin'|'plastic'|'platinum'|'red_gold'|'rose_gold'|'rubber'|'satin'|'shark_skin'|'silicon'|'silver'|'snake_skin'|'steel'|'textile'|'titanium'|'white_gold'|'yellow_gold'|'no_details' $bracelet_material, 'automatic'|'manual_winding'|'quartz'|'solar'|'smartwatch'|'no_details' $movement_type, 'mens_unisex'|'womens' $gender, 'watches'|'parts_accessories' $watch_type, 'in_stock'|'on_order'|'on_request' $stock_info
+ */
+abstract class Chrono24Group {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) cna-article (GET /cna/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) cna-author (GET /cna/author)
+ *   params: string $slug, string $url
+ * @method mixed headlines(array $params = [], array $options = []) cna-headlines (GET /cna/headlines)
+ *   params: 'asia'|'business'|'singapore'|'sport'|'world' $section
+ * @method mixed news(array $params = [], array $options = []) cna-news (GET /cna/news)
+ * @method mixed sections(array $params = [], array $options = []) cna-sections (GET /cna/sections)
+ */
+abstract class CnaGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) cnbc-article (GET /cnbc/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) cnbc-author (GET /cnbc/author)
+ *   params: string $slug, string $url
+ * @method mixed categories(array $params = [], array $options = []) cnbc-categories (GET /cnbc/categories)
+ * @method mixed headlines(array $params = [], array $options = []) cnbc-headlines (GET /cnbc/headlines)
+ *   params: string $section
+ */
+abstract class CnbcGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) cnet-article (GET /cnet/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) cnet-author (GET /cnet/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed headlines(array $params = [], array $options = []) cnet-headlines (GET /cnet/headlines)
+ *   params: 'ai'|'aircraft'|'auto-tech'|'automobiles'|'biology'|'car-accessories'|'car-apps'|'car-industry'|'car-news'|'climate'|'computing'|'culture'|'deals'|'electric-vehicles'|'energy-and-utilities'|'entertainment'|'fashion'|'fitness'|'gaming'|'health'|'home'|'home-entertainment'|'internet'|'kitchen-and-household'|'live-blog'|'medical'|'mental'|'mobile'|'motorcycles'|'news'|'nutrition'|'parenting'|'personal-care'|'personal-finance'|'personal-mobility'|'privacy'|'rideshare'|'roadshow'|'science'|'security'|'services-and-software'|'sleep'|'smart-home'|'social-media'|'space'|'sports'|'tech'|'tech-industry'|'tv-and-movies'|'watercraft'|'yard-and-outdoors' $section
+ * @method mixed news(array $params = [], array $options = []) cnet-news (GET /cnet/news)
+ * @method mixed sections(array $params = [], array $options = []) cnet-sections (GET /cnet/sections)
+ */
+abstract class CnetGroup {}
+
+/**
  * @method mixed article(array $params = [], array $options = []) cnn-article (GET /cnn/article)
  *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) cnn-author (GET /cnn/author)
+ *   params: string $slug, string $url
  * @method mixed headlines(array $params = [], array $options = []) cnn-headlines (GET /cnn/headlines)
  *   params: 'world'|'us'|'politics'|'business'|'health'|'entertainment'|'style'|'travel'|'sports'|'science'|'climate'|'weather'|'opinion' $section
  * @method mixed liveStory(array $params = [], array $options = []) cnn-live-story (GET /cnn/live-story)
@@ -855,6 +1230,27 @@ abstract class CoinGeckoGroup {}
  * @method mixed colehaanStore(array $params = [], array $options = []) colehaan-store (GET /colehaan/store)
  */
 abstract class ColeHaanGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) collider-article (GET /collider/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) collider-author (GET /collider/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) collider-headlines (GET /collider/headlines)
+ *   params: 'movie-tv-news'|'tv-movie-news'|'movies'|'movie-news'|'movie-features'|'movie-reviews'|'movie-trailers'|'tv'|'tv-news'|'tv-features'|'tv-reviews'|'tv-trailers'|'all-reviews'|'trailers'|'features'|'exclusives'|'interviews'|'fyc'|'what-to-watch'|'streaming-guides'|'other-streaming-guides'|'netflix'|'amazon'|'disney'|'max'|'hulu'|'apple-tv-plus'|'reality-tv'|'music'|'horror'|'animation'|'video-games'|'gaming-news'|'collectibles'|'screening'|'collider-signature'|'authority'|'collider-rewind'|'collider-quiz'|'podcasts'|'cl-originals'|'videos'|'latest-videos'|'video-originals'|'video-interviews'|'interview-videos'|'exclusive-videos'|'list-videos' $section
+ * @method mixed news(array $params = [], array $options = []) collider-news (GET /collider/news)
+ * @method mixed sections(array $params = [], array $options = []) collider-sections (GET /collider/sections)
+ */
+abstract class ColliderGroup {}
+
+/**
+ * @method mixed categories(array $params = [], array $options = []) comc-categories (GET /comc/categories)
+ * @method mixed listing(array $params = [], array $options = []) comc-listing (GET /comc/listing)
+ *   params: string $handle
+ * @method mixed search(array $params = [], array $options = []) comc-search (GET /comc/search)
+ *   params: string $category, string $query, 'r'|'c'|'o'|'n'|'b'|'h'|'l'|'d'|'p'|'q'|'s'|'m'|'e' $sort, string $attributes, 'aUngraded'|'aGraded'|'aAftermarketAuto'|'aAfterAutoGraded' $condition, int $page, '6'|'8'|'10'|'12'|'14'|'15'|'16'|'18'|'20'|'24'|'30'|'40'|'50'|'64'|'100' $page_size
+ */
+abstract class ComcGroup {}
 
 /**
  * @method mixed report(array $params = [], array $options = []) congress-report (GET /congress/report)
@@ -950,6 +1346,18 @@ abstract class CourtListenerGroup {}
 abstract class CricinfoGroup {}
 
 /**
+ * @method mixed ctvnewsArticle(array $params = [], array $options = []) ctvnews-article (GET /ctvnews/article)
+ *   params: string $url
+ * @method mixed ctvnewsAuthor(array $params = [], array $options = []) ctvnews-author (GET /ctvnews/author)
+ *   params: string $url
+ * @method mixed ctvnewsHeadlines(array $params = [], array $options = []) ctvnews-headlines (GET /ctvnews/headlines)
+ *   params: 'canada'|'politics'|'world'|'business'|'health'|'entertainment'|'lifestyle'|'climate-and-environment'|'sci-tech'|'sports'|'opinion'|'highly-engaged'|'atlantic'|'barrie'|'calgary'|'edmonton'|'kitchener'|'london'|'montreal'|'northern-ontario'|'ottawa'|'regina'|'saskatoon'|'toronto'|'vancouver'|'windsor'|'winnipeg' $section
+ * @method mixed ctvnewsNews(array $params = [], array $options = []) ctvnews-news (GET /ctvnews/news)
+ * @method mixed ctvnewsSections(array $params = [], array $options = []) ctvnews-sections (GET /ctvnews/sections)
+ */
+abstract class CtvNewsGroup {}
+
+/**
  * @method mixed calendar(array $params = [], array $options = []) culvers-calendar (GET /culvers/calendar)
  *   params: string $slug
  * @method mixed categories(array $params = [], array $options = []) culvers-categories (GET /culvers/categories)
@@ -981,6 +1389,78 @@ abstract class CulversGroup {}
  *   params: string $zip, string $address, float $latitude, float $longitude, 'HH_HealthHub_Ind'|'MC_MinuteClinic_Ind'|'HS_OakStreetHealth_Ind'|'IM_Immunization_Ind'|'RX_OTCH_Ind'|'IM_Covax_Ind'|'CL_CovidTest_Ind'|'RX_24Hours_Ind'|'RX_DriveThru_Ind'|'RX_Pharmacy_Ind'|'RX_DrugDisposal_Ind'|'RS_24Hours_Ind'|'PH_Photo_Ind'|'RS_AcceptsWic_Ind'|'RS_AcceptsSnap_Ind'|'GN_UPSAccessPoint_Ind'|'RS_BOPIS_Ind'|'GN_YMas_Ind'|'BT_BeautyIRL_Ind'|'GN_SmileDirectClub_Ind' $service
  */
 abstract class CvsGroup {}
+
+/**
+ * @method mixed dailycallerArticle(array $params = [], array $options = []) dailycaller-article (GET /dailycaller/article)
+ *   params: string $url
+ * @method mixed dailycallerAuthor(array $params = [], array $options = []) dailycaller-author (GET /dailycaller/author)
+ *   params: string $url
+ * @method mixed dailycallerHeadlines(array $params = [], array $options = []) dailycaller-headlines (GET /dailycaller/headlines)
+ *   params: 'politics'|'us'|'world'|'national-security'|'elections'|'business'|'energy'|'education'|'health'|'tech'|'media'|'entertainment'|'sports'|'guns-and-gear'|'investigative-group'|'opinion'|'analysis'|'two-sides'|'big-tent-ideas'|'patriots'|'satire'|'video' $section
+ * @method mixed dailycallerNews(array $params = [], array $options = []) dailycaller-news (GET /dailycaller/news)
+ * @method mixed dailycallerSections(array $params = [], array $options = []) dailycaller-sections (GET /dailycaller/sections)
+ */
+abstract class TheDailyCallerGroup {}
+
+/**
+ * @method mixed dailyexpressArticle(array $params = [], array $options = []) dailyexpress-article (GET /dailyexpress/article)
+ *   params: string $url
+ * @method mixed dailyexpressAuthor(array $params = [], array $options = []) dailyexpress-author (GET /dailyexpress/author)
+ *   params: string $url
+ * @method mixed dailyexpressHeadlines(array $params = [], array $options = []) dailyexpress-headlines (GET /dailyexpress/headlines)
+ *   params: 'news'|'uk'|'world'|'politics'|'royal'|'us'|'weather'|'science'|'history'|'weird'|'nature'|'obituaries'|'showbiz-tv'|'sport'|'football'|'tennis'|'formula-1'|'finance'|'city-business'|'personal-finance'|'retirement'|'travel'|'entertainment'|'gaming'|'lifestyle'|'health'|'property'|'cars'|'technology' $section
+ * @method mixed dailyexpressNews(array $params = [], array $options = []) dailyexpress-news (GET /dailyexpress/news)
+ * @method mixed dailyexpressSections(array $params = [], array $options = []) dailyexpress-sections (GET /dailyexpress/sections)
+ */
+abstract class DailyExpressGroup {}
+
+/**
+ * @method mixed dailymailArticle(array $params = [], array $options = []) dailymail-article (GET /dailymail/article)
+ *   params: string $url
+ * @method mixed dailymailAuthor(array $params = [], array $options = []) dailymail-author (GET /dailymail/author)
+ *   params: string $url, int $page
+ * @method mixed dailymailHeadlines(array $params = [], array $options = []) dailymail-headlines (GET /dailymail/headlines)
+ *   params: 'home'|'news'|'sport'|'tvshowbiz'|'health'|'femail'|'travel'|'sciencetech'|'money'|'debate'|'us'|'australia' $section
+ * @method mixed dailymailNews(array $params = [], array $options = []) dailymail-news (GET /dailymail/news)
+ * @method mixed dailymailSections(array $params = [], array $options = []) dailymail-sections (GET /dailymail/sections)
+ */
+abstract class DailyMailGroup {}
+
+/**
+ * @method mixed dailyrecordArticle(array $params = [], array $options = []) dailyrecord-article (GET /dailyrecord/article)
+ *   params: string $url
+ * @method mixed dailyrecordAuthor(array $params = [], array $options = []) dailyrecord-author (GET /dailyrecord/author)
+ *   params: string $slug, string $url
+ * @method mixed dailyrecordHeadlines(array $params = [], array $options = []) dailyrecord-headlines (GET /dailyrecord/headlines)
+ *   params: 'news'|'scotland'|'uk-world-news'|'sport'|'football'|'showbiz'|'lifestyle'|'money'|'travel'|'in-your-area' $section
+ * @method mixed dailyrecordNews(array $params = [], array $options = []) dailyrecord-news (GET /dailyrecord/news)
+ * @method mixed dailyrecordSections(array $params = [], array $options = []) dailyrecord-sections (GET /dailyrecord/sections)
+ */
+abstract class DailyRecordGroup {}
+
+/**
+ * @method mixed dailystarukArticle(array $params = [], array $options = []) dailystaruk-article (GET /dailystaruk/article)
+ *   params: string $url
+ * @method mixed dailystarukAuthor(array $params = [], array $options = []) dailystaruk-author (GET /dailystaruk/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed dailystarukHeadlines(array $params = [], array $options = []) dailystaruk-headlines (GET /dailystaruk/headlines)
+ *   params: 'news'|'news/latest-news'|'news/uk-news'|'news/world-news'|'news/us-news'|'news/weird-news'|'news/exclusive'|'news/politics'|'showbiz'|'showbiz/us-showbiz'|'tv'|'music'|'sport'|'sport/football'|'sport/transfer-news'|'sport/boxing'|'sport/ufc'|'sport/f1'|'sport/darts'|'sport/snooker'|'sport/other-sports'|'sport/us-sport'|'sport/motorsport'|'tech'|'tech/news'|'tech/gaming'|'tech/reviews'|'life-style'|'life-style/money'|'life-style/competitions'|'real-life'|'love-sex'|'health'|'fashion-beauty'|'diet-fitness'|'travel'|'travel/travel-news'|'just-jane' $section
+ * @method mixed dailystarukNews(array $params = [], array $options = []) dailystaruk-news (GET /dailystaruk/news)
+ * @method mixed dailystarukSections(array $params = [], array $options = []) dailystaruk-sections (GET /dailystaruk/sections)
+ */
+abstract class DailyStarUkGroup {}
+
+/**
+ * @method mixed dailywireArticle(array $params = [], array $options = []) dailywire-article (GET /dailywire/article)
+ *   params: string $url
+ * @method mixed dailywireAuthor(array $params = [], array $options = []) dailywire-author (GET /dailywire/author)
+ *   params: string $slug, string $url
+ * @method mixed dailywireHeadlines(array $params = [], array $options = []) dailywire-headlines (GET /dailywire/headlines)
+ *   params: 'news'|'opinion'|'dw-opinion'|'analysis'|'news-and-commentary'|'news-and-analysis'|'exclusive'|'entertainment'|'original'|'upstream'|'sports'|'mi-x-dw' $section
+ * @method mixed dailywireNews(array $params = [], array $options = []) dailywire-news (GET /dailywire/news)
+ * @method mixed dailywireSections(array $params = [], array $options = []) dailywire-sections (GET /dailywire/sections)
+ */
+abstract class DailyWireGroup {}
 
 /**
  * @method mixed list_(array $params = [], array $options = []) datasets-list (GET /datasets)
@@ -1031,9 +1511,9 @@ abstract class CvsGroup {}
  * @method mixed chromeExtensionsTrending(array $params = [], array $options = []) datasets-chrome-extensions-trending (GET /datasets/chrome-extensions/trending)
  *   params: string $q, 'extension'|'theme'|'app'|'unknown' $item_type, string $category, string $developer, string $developer_email, string $permission, 'active'|'removed' $status, '2'|'3' $manifest_version, bool $collects_data, bool $has_broad_host_access, int $min_users, float $min_rating, int $min_rating_count, int $page, int $page_size
  * @method mixed creatorsSearch(array $params = [], array $options = []) datasets-creators-search (GET /datasets/creators/search)
- *   params: string $q, string $handle, string $niche, string $country, bool $verified, int $min_followers, bool $has_email, bool $include_email, bool $include_inactive, 'followers_desc'|'engagement_desc'|'likes_desc'|'relevance' $sort, int $page, int $page_size
+ *   params: string $q, string $handle, string $niche, string $country, bool $verified, int $min_followers, bool $has_email, bool $include_email, bool $include_inactive, 'followers_desc'|'engagement_desc'|'engagement_qualified_desc'|'likes_desc'|'relevance' $sort, int $page, int $page_size
  * @method mixed facebookPagesFacets(array $params = [], array $options = []) datasets-facebook-pages-facets (GET /datasets/facebook-pages/facets)
- *   params: 'category'|'discovery_source' $facet, string $q, string $page_id, string $identifier, string $category, string $discovery_source, bool $has_website, bool $has_email, bool $has_phone, bool $has_whatsapp, int $min_likes, int $max_likes, string $hydrated_after, string $hydrated_before, 'relevance'|'likes_desc'|'likes_asc'|'hydrated_at_desc'|'hydrated_at_asc' $sort
+ *   params: int $limit, 'count_desc'|'value_asc' $order, string $after, 'category'|'discovery_source' $facet, string $q, string $page_id, string $identifier, string $category, string $discovery_source, bool $has_website, bool $has_email, bool $has_phone, bool $has_whatsapp, int $min_likes, int $max_likes, string $hydrated_after, string $hydrated_before, 'relevance'|'likes_desc'|'likes_asc'|'hydrated_at_desc'|'hydrated_at_asc' $sort
  * @method mixed facebookPagesItem(array $params = [], array $options = []) datasets-facebook-pages-item (GET /datasets/facebook-pages/items/{page_id})
  *   params: string $page_id
  * @method mixed facebookPagesSearch(array $params = [], array $options = []) datasets-facebook-pages-search (GET /datasets/facebook-pages/search)
@@ -1091,11 +1571,11 @@ abstract class CvsGroup {}
  * @method mixed jobsSearch(array $params = [], array $options = []) datasets-jobs-search (GET /datasets/jobs/search)
  *   params: string $q, string $company, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint'|'amazon-jobs'|'apple-jobs'|'google-jobs'|'meta-jobs'|'tesla-jobs' $provider, string $department, string $location, string $city, string $state, string $country, string $employment_type, string $job_family, bool $remote, 'onsite'|'hybrid'|'remote' $workplace_type, bool $include_closed, float $min_salary, float $max_salary, string $salary_currency, 'relevance'|'posted_desc'|'company_asc' $sort, int $page, int $page_size
  * @method mixed journalistsFacets(array $params = [], array $options = []) datasets-journalists-facets (GET /datasets/journalists/facets)
- *   params: 'outlet'|'vertical'|'topic'|'contact_type' $facet, string $q, string $outlet, 'tech'|'crypto'|'marketing'|'consumer_tech'|'consumer_policy'|'cybersecurity'|'health'|'gaming'|'climate'|'business'|'entertainment'|'sports'|'legal'|'science'|'politics'|'real_estate'|'automotive'|'travel'|'food'|'education'|'design'|'film_tv'|'fashion'|'music'|'personal_finance'|'tech_independent'|'culture_independent'|'local_news'|'construction'|'banking'|'retail'|'aerospace_defense'|'energy'|'agriculture'|'local_business' $vertical, string $topic, 'email'|'social'|'none' $contact_type
+ *   params: 'outlet'|'vertical'|'topic'|'contact_type'|'record_type'|'role_type'|'email_kind'|'outreach_readiness_band' $facet, string $q, string $outlet, 'tech'|'crypto'|'marketing'|'consumer_tech'|'consumer_policy'|'cybersecurity'|'health'|'gaming'|'climate'|'business'|'entertainment'|'sports'|'legal'|'science'|'politics'|'real_estate'|'automotive'|'travel'|'food'|'education'|'design'|'film_tv'|'fashion'|'music'|'personal_finance'|'tech_independent'|'culture_independent'|'local_news'|'construction'|'banking'|'retail'|'aerospace_defense'|'energy'|'agriculture'|'local_business' $vertical, string $topic, 'email'|'social'|'none' $contact_type, 'person'|'desk'|'organization'|'syndicated_byline'|'unknown' $record_type, 'staff'|'editor'|'reporter'|'contributor'|'freelancer'|'columnist'|'non_editorial'|'unknown' $role_type, 'individual_work'|'individual_personal_public'|'shared_desk'|'tips_or_submissions'|'outlet_generic'|'unknown' $email_kind, int $min_outreach_readiness
  * @method mixed journalistsItem(array $params = [], array $options = []) datasets-journalists-item (GET /datasets/journalists/items/{outlet}/{slug})
  *   params: string $outlet, string $slug
  * @method mixed journalistsSearch(array $params = [], array $options = []) datasets-journalists-search (GET /datasets/journalists/search)
- *   params: string $q, string $outlet, 'tech'|'crypto'|'marketing'|'consumer_tech'|'consumer_policy'|'cybersecurity'|'health'|'gaming'|'climate'|'business'|'entertainment'|'sports'|'legal'|'science'|'politics'|'real_estate'|'automotive'|'travel'|'food'|'education'|'design'|'film_tv'|'fashion'|'music'|'personal_finance'|'tech_independent'|'culture_independent'|'local_news'|'construction'|'banking'|'retail'|'aerospace_defense'|'energy'|'agriculture'|'local_business' $vertical, string $topic, 'email'|'social'|'none' $contact_type, 'relevance'|'name_asc'|'outlet_asc'|'crawled_desc' $sort, int $page, int $page_size
+ *   params: string $q, string $outlet, 'tech'|'crypto'|'marketing'|'consumer_tech'|'consumer_policy'|'cybersecurity'|'health'|'gaming'|'climate'|'business'|'entertainment'|'sports'|'legal'|'science'|'politics'|'real_estate'|'automotive'|'travel'|'food'|'education'|'design'|'film_tv'|'fashion'|'music'|'personal_finance'|'tech_independent'|'culture_independent'|'local_news'|'construction'|'banking'|'retail'|'aerospace_defense'|'energy'|'agriculture'|'local_business' $vertical, string $topic, 'email'|'social'|'none' $contact_type, 'person'|'desk'|'organization'|'syndicated_byline'|'unknown' $record_type, 'staff'|'editor'|'reporter'|'contributor'|'freelancer'|'columnist'|'non_editorial'|'unknown' $role_type, 'individual_work'|'individual_personal_public'|'shared_desk'|'tips_or_submissions'|'outlet_generic'|'unknown' $email_kind, int $min_outreach_readiness, 'relevance'|'name_asc'|'outlet_asc'|'crawled_desc'|'readiness_desc' $sort, int $page, int $page_size
  * @method mixed numbeoCitiesFacets(array $params = [], array $options = []) datasets-numbeo-cities-facets (GET /datasets/numbeo-cities/facets)
  *   params: 'country' $facet, string $q, string $country, float $min_cost_of_living_index, float $max_cost_of_living_index, float $min_quality_of_life_index, float $min_crime_index, float $max_crime_index, float $min_safety_index, float $min_health_care_index, float $max_pollution_index, float $max_traffic_index
  * @method mixed numbeoCitiesItem(array $params = [], array $options = []) datasets-numbeo-cities-item (GET /datasets/numbeo-cities/items/{slug})
@@ -1236,6 +1716,30 @@ abstract class CvsGroup {}
  *   params: string $q, string $channel_id, string $region, string $discovery_source, bool $has_bio, bool $has_links, bool $followers_count_available, bool $videos_count_available, bool $views_count_available, int $min_followers, int $max_followers, int $min_videos, int $max_videos, int $min_views, int $max_views, string $joined_after, string $joined_before, string $hydrated_after, string $hydrated_before, 'relevance'|'followers_desc'|'followers_asc'|'views_desc'|'videos_desc'|'hydrated_at_desc'|'hydrated_at_asc' $sort, int $page, int $page_size
  */
 abstract class DatasetsGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) dawn-article (GET /dawn/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) dawn-author (GET /dawn/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) dawn-headlines (GET /dawn/headlines)
+ *   params: 'pakistan'|'pakistan-balochistan'|'pakistan-ict'|'pakistan-kp-fata'|'pakistan-punjab'|'pakistan-sindh'|'world'|'world-south-asia'|'business'|'business-finance'|'sport'|'sport-cricket'|'opinion'|'tech'|'newspaper'|'magazines'|'prism' $section
+ * @method mixed news(array $params = [], array $options = []) dawn-news (GET /dawn/news)
+ * @method mixed sections(array $params = [], array $options = []) dawn-sections (GET /dawn/sections)
+ */
+abstract class DawnGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) deadline-article (GET /deadline/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) deadline-author (GET /deadline/author)
+ *   params: string $url, int $page
+ * @method mixed headlines(array $params = [], array $options = []) deadline-headlines (GET /deadline/headlines)
+ *   params: 'acquisitions'|'agencies'|'album'|'below-the-line'|'books'|'cancellations-renewals'|'casting'|'commentary'|'culture'|'documentary'|'executives'|'festivals'|'late-night-tv'|'legal'|'news'|'obituaries'|'podcast'|'politics'|'predictions'|'primetime-pilot-panic'|'ratings'|'recaps'|'red-carpet-premieres'|'reviews'|'sports'|'touring'|'trailers'|'video-games'|'awards'|'awards-news'|'box-office'|'business'|'cover-stories'|'crew-call'|'dialogue'|'feature'|'film'|'flash-mob'|'hammond'|'hero-nation'|'international'|'look-back-look-ahead'|'music'|'resident-advisor'|'rough-cuts'|'theater'|'tv'|'video' $section
+ * @method mixed news(array $params = [], array $options = []) deadline-news (GET /deadline/news)
+ * @method mixed sections(array $params = [], array $options = []) deadline-sections (GET /deadline/sections)
+ */
+abstract class DeadlineGroup {}
 
 /**
  * @method mixed fulfillmentTimes(array $params = [], array $options = []) deliveroo-fulfillment-times (GET /deliveroo/fulfillment-times)
@@ -1384,6 +1888,18 @@ abstract class DuckDuckGoSearchGroup {}
 abstract class DunkinGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) dw-article (GET /dw/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) dw-author (GET /dw/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) dw-headlines (GET /dw/headlines)
+ *   params: 'africa'|'asia'|'europe'|'latin-america'|'middle-east'|'north-america'|'germany'|'climate'|'equality'|'health'|'human-rights'|'migration'|'technology'|'business'|'science'|'environment'|'culture'|'sports' $section
+ * @method mixed news(array $params = [], array $options = []) dw-news (GET /dw/news)
+ * @method mixed sections(array $params = [], array $options = []) dw-sections (GET /dw/sections)
+ */
+abstract class DwGroup {}
+
+/**
  * @method mixed ebayItem(array $params = [], array $options = []) ebay-item (GET /ebay/item/{item_id})
  *   params: string $item_id
  * @method mixed ebayLiveStreams(array $params = [], array $options = []) ebay-live-streams (GET /ebay/live/streams)
@@ -1406,6 +1922,42 @@ abstract class DunkinGroup {}
  *   params: string $seller, int $page
  */
 abstract class EBayGroup {}
+
+/**
+ * @method mixed economictimesArticle(array $params = [], array $options = []) economictimes-article (GET /economictimes/article)
+ *   params: string $url
+ * @method mixed economictimesAuthor(array $params = [], array $options = []) economictimes-author (GET /economictimes/author)
+ *   params: string $url
+ * @method mixed economictimesHeadlines(array $params = [], array $options = []) economictimes-headlines (GET /economictimes/headlines)
+ *   params: 'top-stories'|'ai'|'ai-ai-insights'|'astrology-chalisa-bhajan'|'astrology-horoscope'|'astrology-love-horoscope'|'astrology-numerology-predictions'|'astrology-others'|'astrology-panchang'|'astrology-planets-transits'|'astrology-tarot-readings'|'astrology-us'|'industry'|'industry-auto'|'industry-banking-finance'|'industry-cons-products'|'industry-csr'|'industry-energy'|'industry-healthcare-biotech'|'industry-indl-goods-svs'|'industry-media-entertainment'|'industry-miscellaneous'|'industry-renewables'|'industry-services'|'industry-telecom'|'industry-transportation'|'jobs'|'jobs-c-suite'|'jobs-exams-results'|'jobs-fresher'|'jobs-government-jobs'|'jobs-hr-policies-trends'|'jobs-mid-career'|'magazines'|'magazines-et-magazine'|'magazines-luxury'|'magazines-panache'|'market-data'|'market-data-etlearn'|'markets'|'markets-aif-pms'|'markets-bonds'|'markets-commodities'|'markets-cryptocurrency'|'markets-digital-real-estate'|'markets-expert-view'|'markets-forex'|'markets-investment-ideas'|'markets-ipos-fpos'|'markets-market-moguls'|'markets-mind-over-money'|'markets-options'|'markets-stocks'|'markets-stocks-podcast'|'markets-us-stocks'|'markets-web-stories'|'mf'|'mf-analysis'|'mf-elss'|'mf-learn'|'mf-mf-news'|'mf-web-stories'|'news'|'news-top-trending-products'|'news-bengaluru-news'|'news-company'|'news-defence'|'news-economy'|'news-elections'|'news-environment'|'news-et-evoke'|'news-et-explains'|'news-india'|'news-international'|'news-latest-news'|'news-morning-brief-podcast'|'news-mumbai-news'|'news-new-updates'|'news-newsblogs'|'news-politics-and-nation'|'news-pune-news'|'news-science'|'news-sports'|'news-videos'|'nri'|'nri-country-pages'|'nri-invest'|'nri-latest-updates'|'nri-migrate'|'nri-study'|'nri-test-guide'|'nri-visit'|'nri-web-stories'|'nri-work'|'opinion'|'opinion-bliss-of-everyday-life'|'opinion-et-commentary'|'opinion-et-editorial'|'opinion-et-view'|'opinion-just-in-jest'|'opinion-speaking-tree'|'podcasts'|'prime'|'prime-collections'|'prime-consumer'|'prime-corporate-governance'|'prime-economy-and-policy'|'prime-energy'|'prime-environment'|'prime-fintech-and-bfsi'|'prime-infrastructure'|'prime-media-and-communications'|'prime-money-and-markets'|'prime-pharma-and-healthcare'|'prime-prime-decoder'|'prime-prime-vantage'|'prime-primeshots'|'prime-technology-and-startups'|'prime-transportation'|'small-biz'|'small-biz-entrepreneurship'|'small-biz-gst'|'small-biz-hr-leadership'|'small-biz-legal'|'small-biz-marketing-branding'|'small-biz-money'|'small-biz-policy-trends'|'small-biz-resources'|'small-biz-security-tech'|'small-biz-sme-sector'|'small-biz-sme-summits'|'small-biz-sustainability'|'small-biz-trade'|'tech'|'tech-artificial-intelligence'|'tech-catalysts'|'tech-funding'|'tech-information-tech'|'tech-newsletters'|'tech-startups'|'tech-tech-and-gadgets'|'tech-tech-bytes'|'tech-technology'|'wealth'|'wealth-borrow'|'wealth-earn'|'wealth-et-wealth'|'wealth-insure'|'wealth-invest'|'wealth-legal-will'|'wealth-mutual-funds'|'wealth-p2p'|'wealth-personal-finance-news'|'wealth-plan'|'wealth-real-estate'|'wealth-save'|'wealth-spend'|'wealth-tax' $section
+ * @method mixed economictimesNews(array $params = [], array $options = []) economictimes-news (GET /economictimes/news)
+ * @method mixed economictimesSections(array $params = [], array $options = []) economictimes-sections (GET /economictimes/sections)
+ */
+abstract class EconomicTimesGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) engadget-article (GET /engadget/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) engadget-author (GET /engadget/author)
+ *   params: string $slug, string $url
+ * @method mixed headlines(array $params = [], array $options = []) engadget-headlines (GET /engadget/headlines)
+ *   params: 'ai'|'amazon'|'apple'|'apps'|'best-tech'|'big-tech'|'computer-accessories'|'computing'|'cybersecurity'|'entertainment'|'features'|'gaming'|'gaming-reviews'|'google'|'headphones-buying-guides'|'headphones-reviews'|'home-product-reviews'|'laptop-buying-guides'|'laptop-pc-reviews'|'laptops'|'meta'|'microsoft'|'mobile'|'news'|'nintendo'|'pc'|'photography-reviews'|'playstation'|'reviews'|'robotics'|'samsung'|'science'|'smart-home-buying-guides'|'smart-home-reviews'|'smartphone-reviews'|'smartphones'|'social-media'|'space'|'streaming'|'tablet-reviews'|'tablets'|'tomorrow'|'transportation-evs'|'tv-movies'|'vpn'|'wearable-reviews'|'wearables'|'xbox' $section
+ * @method mixed news(array $params = [], array $options = []) engadget-news (GET /engadget/news)
+ * @method mixed sections(array $params = [], array $options = []) engadget-sections (GET /engadget/sections)
+ */
+abstract class EngadgetGroup {}
+
+/**
+ * @method mixed eonlineArticle(array $params = [], array $options = []) eonline-article (GET /eonline/article)
+ *   params: string $url
+ * @method mixed eonlineAuthor(array $params = [], array $options = []) eonline-author (GET /eonline/author)
+ *   params: string $url
+ * @method mixed eonlineHeadlines(array $params = [], array $options = []) eonline-headlines (GET /eonline/headlines)
+ *   params: 'top_stories'|'tv'|'movies'|'music'|'celebrities'|'couples'|'royals'|'red_carpet'|'influencer'|'style'|'fashion'|'shop' $section
+ * @method mixed eonlineNews(array $params = [], array $options = []) eonline-news (GET /eonline/news)
+ * @method mixed eonlineSections(array $params = [], array $options = []) eonline-sections (GET /eonline/sections)
+ */
+abstract class ENewsGroup {}
 
 /**
  * @method mixed athlete(array $params = [], array $options = []) espn-athlete (GET /espn/athlete)
@@ -1448,6 +2000,18 @@ abstract class EspnGroup {}
 abstract class EtsyGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) euronews-article (GET /euronews/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) euronews-author (GET /euronews/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) euronews-headlines (GET /euronews/headlines)
+ *   params: 'news'|'news-africa'|'news-americas'|'news-asia'|'news-international'|'news-middle-east'|'news-oceania'|'business'|'business-business'|'business-economy'|'business-markets'|'culture'|'culture-art'|'culture-lifestyle'|'culture-news'|'culture-design'|'culture-food-and-drink'|'earth'|'earth-climate'|'earth-news'|'earth-ecotech'|'earth-nature'|'earth-water'|'health'|'health-news'|'health-healthcare'|'health-nutrition'|'health-wellbeing'|'my-europe'|'my-europe-eu-xl'|'my-europe-news'|'next'|'next-mobility'|'next-money'|'next-space'|'next-tech-news'|'next-work'|'travel'|'travel-destinations'|'travel-moments'|'travel-residences'|'travel-news' $section
+ * @method mixed news(array $params = [], array $options = []) euronews-news (GET /euronews/news)
+ * @method mixed sections(array $params = [], array $options = []) euronews-sections (GET /euronews/sections)
+ */
+abstract class EuronewsGroup {}
+
+/**
  * @method mixed collections(array $params = [], array $options = []) everlane-collections (GET /everlane/collections)
  *   params: int $page, int $limit
  * @method mixed collectionProducts(array $params = [], array $options = []) everlane-collection-products (GET /everlane/collections/{handle}/products)
@@ -1470,6 +2034,18 @@ abstract class EtsyGroup {}
  * @method mixed store(array $params = [], array $options = []) everlane-store (GET /everlane/store)
  */
 abstract class EverlaneGroup {}
+
+/**
+ * @method mixed ewArticle(array $params = [], array $options = []) ew-article (GET /ew/article)
+ *   params: string $url
+ * @method mixed ewAuthor(array $params = [], array $options = []) ew-author (GET /ew/author)
+ *   params: string $url
+ * @method mixed ewHeadlines(array $params = [], array $options = []) ew-headlines (GET /ew/headlines)
+ *   params: 'tv'|'movies'|'music'|'what-to-watch'|'binge'|'celebrity'|'awardist'|'books'|'theater' $section
+ * @method mixed ewNews(array $params = [], array $options = []) ew-news (GET /ew/news)
+ * @method mixed ewSections(array $params = [], array $options = []) ew-sections (GET /ew/sections)
+ */
+abstract class EntertainmentWeeklyGroup {}
 
 /**
  * @method mixed activitiesSearch(array $params = [], array $options = []) expedia-activities-search (POST /expedia/activities/search)
@@ -1498,6 +2074,61 @@ abstract class ExpediaGroup {}
 abstract class FacebookGroup {}
 
 /**
+ * @method mixed categories(array $params = [], array $options = []) fanatics-categories (GET /fanatics/categories)
+ * @method mixed category(array $params = [], array $options = []) fanatics-category (GET /fanatics/category)
+ *   params: string $url, int $page_number, int $page_size, string $sort
+ * @method mixed product(array $params = [], array $options = []) fanatics-product (GET /fanatics/product)
+ *   params: string $url
+ * @method mixed search(array $params = [], array $options = []) fanatics-search (GET /fanatics/search)
+ *   params: string $query, int $page_number, int $page_size, string $sort
+ */
+abstract class FanaticsGroup {}
+
+/**
+ * @method mixed fanaticscollectAuctions(array $params = [], array $options = []) fanaticscollect-auctions (GET /fanaticscollect/auctions)
+ * @method mixed fanaticscollectCategories(array $params = [], array $options = []) fanaticscollect-categories (GET /fanaticscollect/categories)
+ * @method mixed fanaticscollectInstantRipsCategories(array $params = [], array $options = []) fanaticscollect-instant-rips-categories (GET /fanaticscollect/instant-rips/categories)
+ * @method mixed fanaticscollectListing(array $params = [], array $options = []) fanaticscollect-listing (GET /fanaticscollect/listing/{id})
+ *   params: string $id, 'WEEKLY'|'PREMIER'|'FIXED' $type
+ * @method mixed fanaticscollectSearch(array $params = [], array $options = []) fanaticscollect-search (GET /fanaticscollect/search)
+ *   params: string $q, 'WEEKLY'|'PREMIER'|'FIXED' $marketplace, 'Sports Cards'|'Trading Card Games'|'Other'|'Video Games'|'Comics' $category_parent, string $sub_category, 'Ungraded'|'CGC'|'PSA'|'BGS'|'SGC'|'Other Approved'|'PSA/DNA'|'CSG'|'MBA'|'PSA_DNA'|'BVG'|'OTHER_APPROVED'|'BCCG'|'WATA'|'GAI'|'VGA'|'CBCS'|'UDA'|'CAC'|'KSA'|'PCGS' $grading_service, string $certified_seller, string $seller_id, string $brand, string $auction_urn, 'LIVE'|'SOLD'|'ALL' $status, bool $allow_offers, bool $has_offers, bool $great_price, float $min_price, float $max_price, int $min_year, int $max_year, float $min_grade, float $max_grade, 'recommended'|'recently_added'|'best_deals'|'lot_number'|'lowest_price'|'highest_price'|'best_value'|'earliest_year'|'latest_year'|'earliest_sale_date'|'latest_sale_date' $sort, int $page, int $per_page
+ * @method mixed fanaticscollectSoldItems(array $params = [], array $options = []) fanaticscollect-sold-items (GET /fanaticscollect/sold-items)
+ *   params: string $title, 'Trading Cards'|'Baseball'|'Basketball'|'Football'|'Hockey'|'Golf'|'Boxing & MMA'|'Soccer'|'Tennis'|'Racing'|'Misc Sports'|'Non-Sport'|'Yu-Gi-Oh!'|'Magic The Gathering'|'Pokémon'|'Collectible Card Games'|'Miscellaneous'|'Memorabilia'|'Photos'|'Comics'|'Tickets'|'Coins'|'Video Games' $category, 'PSA'|'SGC'|'BGS'|'BVG'|'BCCG'|'CGC'|'CSG'|'ungraded' $grading_service, 'Eye Appeal - A'|'Eye Appeal - E'|'Eye Appeal - S' $eye_appeal_grade, int $min_year, int $max_year, float $min_price, float $max_price, 'sold_date_desc'|'highest_price'|'lowest_price' $sort, int $page, int $per_page
+ * @method mixed fanaticscollectTrendingSearches(array $params = [], array $options = []) fanaticscollect-trending-searches (GET /fanaticscollect/trending-searches)
+ *   params: int $limit
+ */
+abstract class FanaticsCollectGroup {}
+
+/**
+ * @method mixed fanaticsliveBrowse(array $params = [], array $options = []) fanaticslive-browse (GET /fanaticslive/browse)
+ *   params: 'NFL'|'NCAA_FB'|'NBA'|'MLB'|'SOCCER'|'NHL'|'POKEMON'|'STAR_WARS'|'MLS'|'UFC'|'WWE'|'F1'|'NASCAR'|'DISNEY'|'GARBAGE_PAIL_KIDS'|'MAGIC_THE_GATHERING'|'WNBA'|'NCAA_BK'|'GOLF'|'VEE_FRIENDS'|'DUDE_PERFECT'|'OTHER'|'ORIGINALS' $league
+ * @method mixed fanaticsliveChannel(array $params = [], array $options = []) fanaticslive-channel (GET /fanaticslive/channel/{id})
+ *   params: string $id
+ * @method mixed fanaticsliveLeagues(array $params = [], array $options = []) fanaticslive-leagues (GET /fanaticslive/leagues)
+ * @method mixed fanaticsliveShop(array $params = [], array $options = []) fanaticslive-shop (GET /fanaticslive/shop/{slug})
+ *   params: string $slug
+ * @method mixed fanaticsliveShopShows(array $params = [], array $options = []) fanaticslive-shop-shows (GET /fanaticslive/shop/{slug}/shows)
+ *   params: string $slug, 'live'|'replay' $status, string $after, int $limit
+ * @method mixed fanaticsliveShops(array $params = [], array $options = []) fanaticslive-shops (GET /fanaticslive/shops)
+ * @method mixed fanaticsliveShow(array $params = [], array $options = []) fanaticslive-show (GET /fanaticslive/show/{id})
+ *   params: string $id
+ * @method mixed fanaticsliveInstantRips(array $params = [], array $options = []) fanaticslive-instant-rips (GET /fanaticslive/show/{id}/instant-rips)
+ *   params: string $id
+ */
+abstract class FanaticsLiveGroup {}
+
+/**
+ * @method mixed categories(array $params = [], array $options = []) farfetch-categories (GET /farfetch/categories)
+ * @method mixed designers(array $params = [], array $options = []) farfetch-designers (GET /farfetch/designers)
+ *   params: string $gender
+ * @method mixed product(array $params = [], array $options = []) farfetch-product (GET /farfetch/product)
+ *   params: string $gender, string $slug
+ * @method mixed search(array $params = [], array $options = []) farfetch-search (GET /farfetch/search)
+ *   params: string $gender, string $designer, string $category, int $page
+ */
+abstract class FarfetchGroup {}
+
+/**
  * @method mixed fashionnovaCollections(array $params = [], array $options = []) fashionnova-collections (GET /fashionnova/collections)
  *   params: int $page, int $limit
  * @method mixed fashionnovaCollectionProducts(array $params = [], array $options = []) fashionnova-collection-products (GET /fashionnova/collections/{handle}/products)
@@ -1520,6 +2151,44 @@ abstract class FacebookGroup {}
  * @method mixed fashionnovaStore(array $params = [], array $options = []) fashionnova-store (GET /fashionnova/store)
  */
 abstract class FashionNovaGroup {}
+
+/**
+ * @method mixed collections(array $params = [], array $options = []) fashionphile-collections (GET /fashionphile/collections)
+ *   params: int $page, int $limit
+ * @method mixed collectionProducts(array $params = [], array $options = []) fashionphile-collection-products (GET /fashionphile/collections/{handle}/products)
+ *   params: string $handle, int $page, int $limit
+ * @method mixed pages(array $params = [], array $options = []) fashionphile-pages (GET /fashionphile/pages)
+ *   params: int $page, int $limit
+ * @method mixed page(array $params = [], array $options = []) fashionphile-page (GET /fashionphile/pages/{handle})
+ *   params: string $handle
+ * @method mixed products(array $params = [], array $options = []) fashionphile-products (GET /fashionphile/products)
+ *   params: int $page, int $limit
+ * @method mixed product(array $params = [], array $options = []) fashionphile-product (GET /fashionphile/products/{handle})
+ *   params: string $handle
+ * @method mixed productRecommendations(array $params = [], array $options = []) fashionphile-product-recommendations (GET /fashionphile/products/{handle}/recommendations)
+ *   params: string $handle, int $limit, 'related'|'complementary' $intent
+ * @method mixed search(array $params = [], array $options = []) fashionphile-search (GET /fashionphile/search)
+ *   params: string $q, 'New'|'Excellent'|'Giftable'|'Shows Wear'|'Worn'|'Flawed'|'Fair' $condition, 'available'|'sold'|'all' $availability, string $vendor, 'relevance'|'newest'|'price_asc'|'price_desc' $sort, int $page, int $limit
+ * @method mixed searchSuggest(array $params = [], array $options = []) fashionphile-search-suggest (GET /fashionphile/search/suggest)
+ *   params: string $q, string $types, int $limit
+ * @method mixed sitemapUrls(array $params = [], array $options = []) fashionphile-sitemap-urls (GET /fashionphile/sitemap/urls)
+ *   params: 'all'|'products'|'collections'|'pages'|'blogs'|'agentic_discovery'|'other' $type, int $limit
+ * @method mixed sitemaps(array $params = [], array $options = []) fashionphile-sitemaps (GET /fashionphile/sitemaps)
+ * @method mixed store(array $params = [], array $options = []) fashionphile-store (GET /fashionphile/store)
+ */
+abstract class FashionphileGroup {}
+
+/**
+ * @method mixed fastcompanyArticle(array $params = [], array $options = []) fastcompany-article (GET /fastcompany/article)
+ *   params: string $url
+ * @method mixed fastcompanyAuthor(array $params = [], array $options = []) fastcompany-author (GET /fastcompany/author)
+ *   params: string $url
+ * @method mixed fastcompanyHeadlines(array $params = [], array $options = []) fastcompany-headlines (GET /fastcompany/headlines)
+ *   params: string $section
+ * @method mixed fastcompanyNews(array $params = [], array $options = []) fastcompany-news (GET /fastcompany/news)
+ * @method mixed fastcompanySections(array $params = [], array $options = []) fastcompany-sections (GET /fastcompany/sections)
+ */
+abstract class FastCompanyGroup {}
 
 /**
  * @method mixed fiveguysDirectory(array $params = [], array $options = []) fiveguys-directory (GET /fiveguys/directory)
@@ -1555,6 +2224,53 @@ abstract class FiveGuysGroup {}
 abstract class FiverrGroup {}
 
 /**
+ * @method mixed calendar(array $params = [], array $options = []) flashscore-calendar (GET /flashscore/calendar)
+ *   params: 'tennis-atp'|'tennis-wta'|'golf-pga'|'golf-dp-world'|'badminton-bwf'|'motorsport-f1' $category
+ * @method mixed calendarCategories(array $params = [], array $options = []) flashscore-calendar-categories (GET /flashscore/calendar-categories)
+ * @method mixed competitions(array $params = [], array $options = []) flashscore-competitions (GET /flashscore/competitions)
+ *   params: 'football'|'tennis'|'basketball'|'hockey'|'golf'|'formula-1'|'baseball'|'snooker'|'american-football'|'aussie-rules'|'badminton'|'bandy'|'beach-soccer'|'beach-volleyball'|'boxing'|'cricket'|'cycling'|'darts'|'esports'|'field-hockey'|'floorball'|'futsal'|'handball'|'horse-racing'|'kabaddi'|'mma'|'motorsport'|'netball'|'pesapallo'|'rugby-league'|'rugby-union'|'table-tennis'|'volleyball'|'water-polo'|'winter-sports' $sport, int $day_offset
+ * @method mixed matchH2h(array $params = [], array $options = []) flashscore-match-h2h (GET /flashscore/match-h2h)
+ *   params: string $id
+ * @method mixed matchHighlights(array $params = [], array $options = []) flashscore-match-highlights (GET /flashscore/match-highlights)
+ *   params: string $id
+ * @method mixed matchInfo(array $params = [], array $options = []) flashscore-match-info (GET /flashscore/match-info)
+ *   params: string $id
+ * @method mixed matchLineups(array $params = [], array $options = []) flashscore-match-lineups (GET /flashscore/match-lineups)
+ *   params: string $id
+ * @method mixed matchNews(array $params = [], array $options = []) flashscore-match-news (GET /flashscore/match-news)
+ *   params: string $id
+ * @method mixed matchStandings(array $params = [], array $options = []) flashscore-match-standings (GET /flashscore/match-standings)
+ *   params: string $id, 'overall'|'home'|'away'|'form_overall'|'overunder_overall'|'form_home'|'form_away'|'top_scorers'|'htft_overall'|'htft_home'|'htft_away'|'live_overall'|'overunder_home'|'overunder_away' $view
+ * @method mixed matchStats(array $params = [], array $options = []) flashscore-match-stats (GET /flashscore/match-stats)
+ *   params: string $id
+ * @method mixed navigation(array $params = [], array $options = []) flashscore-navigation (GET /flashscore/navigation)
+ *   params: string $path
+ * @method mixed news(array $params = [], array $options = []) flashscore-news (GET /flashscore/news)
+ *   params: 'all'|'football'|'uefa-nations-league'|'tennis'|'features'|'premier-league'|'nfl'|'mlb'|'nba'|'nhl'|'formula-1'|'champions-league'|'europa-league'|'conference-league'|'darts'|'snooker'|'golf'|'road-cycling'|'laliga'|'bundesliga'|'serie-a'|'ligue-1'|'badminton'|'handball'|'hockey'|'basketball'|'cricket'|'rugby-union'|'athletics'|'baseball'|'fifa'|'rugby-league'|'motorsport'|'aussie-rules'|'flashscore-ratings'|'american-sports'|'african-football'|'combat-sports'|'winter-sports'|'transfer-news' $category, int $page
+ * @method mixed newsArticle(array $params = [], array $options = []) flashscore-news-article (GET /flashscore/news-article)
+ *   params: string $id
+ * @method mixed newsCategories(array $params = [], array $options = []) flashscore-news-categories (GET /flashscore/news-categories)
+ * @method mixed rankingCategories(array $params = [], array $options = []) flashscore-ranking-categories (GET /flashscore/ranking-categories)
+ * @method mixed rankings(array $params = [], array $options = []) flashscore-rankings (GET /flashscore/rankings)
+ *   params: 'fifa'|'tennis-atp'|'tennis-wta'|'tennis-atp-race'|'tennis-wta-race'|'tennis-atp-doubles'|'tennis-wta-doubles'|'tennis-atp-doubles-race'|'tennis-wta-doubles-race'|'badminton-bwf-singles-men'|'badminton-bwf-singles-women'|'badminton-bwf-doubles-men'|'badminton-bwf-doubles-women'|'badminton-bwf-mixed-doubles'|'golf-owgr'|'golf-wwgr'|'golf-pga-fedexcup'|'golf-pga-money'|'golf-dp-world-tour'|'golf-lpga'|'golf-asian-tour'|'golf-japan-tour'|'golf-sunshine-tour'|'golf-korn-ferry'|'golf-champions-tour'|'darts-world-ranking'|'snooker-world-ranking'|'tennis-atp-live'|'tennis-wta-live'|'tennis-atp-race-live'|'tennis-wta-race-live'|'tennis-atp-doubles-live'|'tennis-wta-doubles-live'|'tennis-atp-doubles-race-live'|'tennis-wta-doubles-race-live' $category
+ * @method mixed scores(array $params = [], array $options = []) flashscore-scores (GET /flashscore/scores)
+ *   params: 'football'|'tennis'|'basketball'|'hockey'|'golf'|'formula-1'|'baseball'|'snooker'|'american-football'|'aussie-rules'|'badminton'|'bandy'|'beach-soccer'|'beach-volleyball'|'boxing'|'cricket'|'cycling'|'darts'|'esports'|'field-hockey'|'floorball'|'futsal'|'handball'|'horse-racing'|'kabaddi'|'mma'|'motorsport'|'netball'|'pesapallo'|'rugby-league'|'rugby-union'|'table-tennis'|'volleyball'|'water-polo'|'winter-sports' $sport, int $day_offset
+ * @method mixed search(array $params = [], array $options = []) flashscore-search (GET /flashscore/search)
+ *   params: string $q
+ * @method mixed sports(array $params = [], array $options = []) flashscore-sports (GET /flashscore/sports)
+ * @method mixed topSearch(array $params = [], array $options = []) flashscore-top-search (GET /flashscore/top-search)
+ * @method mixed tournamentEvents(array $params = [], array $options = []) flashscore-tournament-events (GET /flashscore/tournament-events)
+ *   params: string $path, int $page
+ * @method mixed tournamentSeasons(array $params = [], array $options = []) flashscore-tournament-seasons (GET /flashscore/tournament-seasons)
+ *   params: string $path
+ * @method mixed tournamentStandings(array $params = [], array $options = []) flashscore-tournament-standings (GET /flashscore/tournament-standings)
+ *   params: string $path, 'overall'|'home'|'away'|'form_overall'|'form_home'|'form_away'|'overunder_overall'|'overunder_home'|'overunder_away'|'htft_overall'|'htft_home'|'htft_away'|'top_scorers' $view
+ * @method mixed tournamentStandingsViews(array $params = [], array $options = []) flashscore-tournament-standings-views (GET /flashscore/tournament-standings-views)
+ *   params: string $path
+ */
+abstract class FlashscoreGroup {}
+
+/**
  * @method mixed restaurant(array $params = [], array $options = []) foodpanda-restaurant (GET /foodpanda/restaurant)
  *   params: 'sg'|'pk'|'bd'|'hk'|'my'|'ph'|'la'|'kh'|'tw'|'mm' $market, string $code, float $latitude, float $longitude
  * @method mixed restaurantMenu(array $params = [], array $options = []) foodpanda-restaurant-menu (GET /foodpanda/restaurant/menu)
@@ -1563,8 +2279,190 @@ abstract class FiverrGroup {}
  *   params: 'sg'|'pk'|'bd'|'hk'|'my'|'ph'|'la'|'kh'|'tw'|'mm' $market, string $code
  * @method mixed search(array $params = [], array $options = []) foodpanda-search (GET /foodpanda/search)
  *   params: 'sg'|'pk'|'bd'|'hk'|'my'|'ph'|'la'|'kh'|'tw'|'mm' $market, float $latitude, float $longitude, int $cuisine_id, int $limit, int $offset
+ * @method mixed searchCuisines(array $params = [], array $options = []) foodpanda-search-cuisines (GET /foodpanda/search/cuisines)
+ *   params: 'sg'|'pk'|'bd'|'hk'|'my'|'ph'|'la'|'kh'|'tw'|'mm' $market, float $latitude, float $longitude
  */
 abstract class FoodpandaGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) forbes-article (GET /forbes/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) forbes-author (GET /forbes/author)
+ *   params: string $slug, string $url
+ * @method mixed billionaires(array $params = [], array $options = []) forbes-billionaires (GET /forbes/billionaires)
+ *   params: int $year, int $limit, int $start
+ * @method mixed categories(array $params = [], array $options = []) forbes-categories (GET /forbes/categories)
+ * @method mixed headlines(array $params = [], array $options = []) forbes-headlines (GET /forbes/headlines)
+ *   params: string $section
+ * @method mixed person(array $params = [], array $options = []) forbes-person (GET /forbes/person)
+ *   params: string $uri
+ */
+abstract class ForbesGroup {}
+
+/**
+ * @method mixed foreignaffairsArticle(array $params = [], array $options = []) foreignaffairs-article (GET /foreignaffairs/article)
+ *   params: string $url
+ * @method mixed foreignaffairsAuthor(array $params = [], array $options = []) foreignaffairs-author (GET /foreignaffairs/author)
+ *   params: string $slug, string $url
+ * @method mixed foreignaffairsHeadlines(array $params = [], array $options = []) foreignaffairs-headlines (GET /foreignaffairs/headlines)
+ * @method mixed foreignaffairsTopic(array $params = [], array $options = []) foreignaffairs-topic (GET /foreignaffairs/topic)
+ *   params: string $topic
+ * @method mixed foreignaffairsTopics(array $params = [], array $options = []) foreignaffairs-topics (GET /foreignaffairs/topics)
+ */
+abstract class ForeignAffairsGroup {}
+
+/**
+ * @method mixed foreignpolicyArticle(array $params = [], array $options = []) foreignpolicy-article (GET /foreignpolicy/article)
+ *   params: string $url
+ * @method mixed foreignpolicyAuthor(array $params = [], array $options = []) foreignpolicy-author (GET /foreignpolicy/author)
+ *   params: string $slug, string $url
+ * @method mixed foreignpolicyHeadlines(array $params = [], array $options = []) foreignpolicy-headlines (GET /foreignpolicy/headlines)
+ * @method mixed foreignpolicyLive(array $params = [], array $options = []) foreignpolicy-live (GET /foreignpolicy/live)
+ * @method mixed foreignpolicyLiveDetail(array $params = [], array $options = []) foreignpolicy-live-detail (GET /foreignpolicy/live-detail)
+ *   params: string $live
+ * @method mixed foreignpolicyProject(array $params = [], array $options = []) foreignpolicy-project (GET /foreignpolicy/project)
+ *   params: string $project
+ * @method mixed foreignpolicyProjects(array $params = [], array $options = []) foreignpolicy-projects (GET /foreignpolicy/projects)
+ *   params: int $page
+ * @method mixed foreignpolicyTopic(array $params = [], array $options = []) foreignpolicy-topic (GET /foreignpolicy/topic)
+ *   params: 'category'|'tag' $type, string $topic, int $page
+ */
+abstract class ForeignPolicyGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) fortune-article (GET /fortune/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) fortune-author (GET /fortune/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed companies(array $params = [], array $options = []) fortune-companies (GET /fortune/companies)
+ *   params: string $search, string $country, string $industry, string $ranking, string $year, int $min_revenue, int $max_revenue, int $min_employees, int $max_employees, int $page
+ * @method mixed companyFilters(array $params = [], array $options = []) fortune-company-filters (GET /fortune/companies/filters)
+ * @method mixed company(array $params = [], array $options = []) fortune-company (GET /fortune/company)
+ *   params: string $slug, string $url
+ * @method mixed headlines(array $params = [], array $options = []) fortune-headlines (GET /fortune/headlines)
+ *   params: 'latest'|'fortune-500'|'finance'|'tech'|'leadership'|'lifestyle'|'economy'|'newsletters'|'success'|'magazine'|'real-estate'|'investing'|'asia'|'politics'|'artificial-intelligence'|'workplace-culture'|'personal-finance'|'middle-east'|'big-tech'|'travel-and-leisure'|'c-suite'|'crypto'|'health'|'commentary'|'retail'|'mpw'|'features'|'conferences'|'europe'|'environment'|'arts-and-entertainment'|'cybersecurity'|'global'|'innovation'|'news'|'north-america' $section
+ * @method mixed news(array $params = [], array $options = []) fortune-news (GET /fortune/news)
+ * @method mixed ranking(array $params = [], array $options = []) fortune-ranking (GET /fortune/ranking)
+ *   params: string $list, string $year, string $search, array<string> $filter, string $sector, string $industry, string $state, string $profitable, string $sort_by, 'asc'|'desc' $sort_order, int $offset, int $limit
+ * @method mixed rankingFilters(array $params = [], array $options = []) fortune-ranking-filters (GET /fortune/ranking/filters)
+ *   params: string $list, string $year
+ * @method mixed rankingLists(array $params = [], array $options = []) fortune-ranking-lists (GET /fortune/ranking/lists)
+ * @method mixed rankingYears(array $params = [], array $options = []) fortune-ranking-years (GET /fortune/ranking/years)
+ *   params: string $list
+ * @method mixed sections(array $params = [], array $options = []) fortune-sections (GET /fortune/sections)
+ */
+abstract class FortuneGroup {}
+
+/**
+ * @method mixed fotmobLeague(array $params = [], array $options = []) fotmob-league (GET /fotmob/league)
+ *   params: int $league_id
+ * @method mixed fotmobLeagues(array $params = [], array $options = []) fotmob-leagues (GET /fotmob/leagues)
+ * @method mixed fotmobMatch(array $params = [], array $options = []) fotmob-match (GET /fotmob/match)
+ *   params: string $id
+ * @method mixed fotmobMatches(array $params = [], array $options = []) fotmob-matches (GET /fotmob/matches)
+ *   params: string $date, string $timezone
+ * @method mixed fotmobNews(array $params = [], array $options = []) fotmob-news (GET /fotmob/news)
+ *   params: string $league_id, int $start_index
+ * @method mixed fotmobPlayer(array $params = [], array $options = []) fotmob-player (GET /fotmob/player)
+ *   params: string $id, bool $include_market_values
+ * @method mixed fotmobPlayerMatchStats(array $params = [], array $options = []) fotmob-player-match-stats (GET /fotmob/player-match-stats)
+ *   params: string $player_id, string $match_id
+ * @method mixed fotmobPlayerMatches(array $params = [], array $options = []) fotmob-player-matches (GET /fotmob/player-matches)
+ *   params: string $player_id, string $league_id, string $team_id, string $before
+ * @method mixed fotmobPlayerStats(array $params = [], array $options = []) fotmob-player-stats (GET /fotmob/player-stats)
+ *   params: string $player_id, string $season_id
+ * @method mixed fotmobSearch(array $params = [], array $options = []) fotmob-search (GET /fotmob/search)
+ *   params: string $term
+ * @method mixed fotmobStats(array $params = [], array $options = []) fotmob-stats (GET /fotmob/stats)
+ *   params: string $league_id, string $season_id, 'players'|'teams' $type, string $stat, string $team_id, 'all'|'striker'|'winger'|'attackingMidfielder'|'midfielder'|'fullback'|'centerBack' $position
+ * @method mixed fotmobStatsCategories(array $params = [], array $options = []) fotmob-stats-categories (GET /fotmob/stats-categories)
+ *   params: string $league_id, string $season_id, 'players'|'teams' $type
+ * @method mixed fotmobTable(array $params = [], array $options = []) fotmob-table (GET /fotmob/table)
+ *   params: string $league_id
+ * @method mixed fotmobTeam(array $params = [], array $options = []) fotmob-team (GET /fotmob/team)
+ *   params: string $id
+ * @method mixed fotmobTeamNews(array $params = [], array $options = []) fotmob-team-news (GET /fotmob/team-news)
+ *   params: int $team_id, int $start_index
+ * @method mixed fotmobTransfers(array $params = [], array $options = []) fotmob-transfers (GET /fotmob/transfers)
+ *   params: 'all'|'rumours'|'popular' $mode, int $page, '6months'|'1year'|'2years'|'3years' $last, 'all'|'in'|'out' $direction, int $min_fee, int $max_fee, string $league_ids, string $team_ids, 'lastModified'|'fee'|'date'|'name'|'fromClubName'|'toClubName' $order_by, bool $exclude_extensions, bool $likely_only
+ */
+abstract class FotMobGroup {}
+
+/**
+ * @method mixed foxnewsArticle(array $params = [], array $options = []) foxnews-article (GET /foxnews/article)
+ *   params: string $url
+ * @method mixed foxnewsAuthor(array $params = [], array $options = []) foxnews-author (GET /foxnews/author)
+ *   params: string $slug, string $url
+ * @method mixed foxnewsHeadlines(array $params = [], array $options = []) foxnews-headlines (GET /foxnews/headlines)
+ *   params: 'us'|'world'|'politics'|'science'|'health'|'sports'|'travel'|'tech'|'opinion'|'entertainment'|'media'|'lifestyle' $section
+ * @method mixed foxnewsNews(array $params = [], array $options = []) foxnews-news (GET /foxnews/news)
+ * @method mixed foxnewsSearch(array $params = [], array $options = []) foxnews-search (GET /foxnews/search)
+ *   params: string $q, int $start, 'article'|'video'|'slideshow' $type
+ * @method mixed foxnewsSections(array $params = [], array $options = []) foxnews-sections (GET /foxnews/sections)
+ */
+abstract class FoxNewsGroup {}
+
+/**
+ * @method mixed france24Article(array $params = [], array $options = []) france24-article (GET /france24/article)
+ *   params: string $url
+ * @method mixed france24Author(array $params = [], array $options = []) france24-author (GET /france24/author)
+ *   params: string $url
+ * @method mixed france24Headlines(array $params = [], array $options = []) france24-headlines (GET /france24/headlines)
+ *   params: 'africa'|'americas'|'asia-pacific'|'europe'|'france'|'middle-east'|'business-tech'|'culture'|'environment'|'sport'|'live-news'|'tv-shows' $section
+ * @method mixed france24News(array $params = [], array $options = []) france24-news (GET /france24/news)
+ * @method mixed france24Sections(array $params = [], array $options = []) france24-sections (GET /france24/sections)
+ */
+abstract class France24Group {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) ft-article (GET /ft/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) ft-author (GET /ft/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed categories(array $params = [], array $options = []) ft-categories (GET /ft/categories)
+ * @method mixed headlines(array $params = [], array $options = []) ft-headlines (GET /ft/headlines)
+ *   params: string $section, int $page
+ * @method mixed news(array $params = [], array $options = []) ft-news (GET /ft/news)
+ * @method mixed search(array $params = [], array $options = []) ft-search (GET /ft/search)
+ *   params: string $q, int $page, 'relevance'|'date' $sort, 'now-24h'|'now-7d'|'now-30d'|'now-1y' $date_range
+ */
+abstract class FtGroup {}
+
+/**
+ * @method mixed gamerantArticle(array $params = [], array $options = []) gamerant-article (GET /gamerant/article)
+ *   params: string $url
+ * @method mixed gamerantAuthor(array $params = [], array $options = []) gamerant-author (GET /gamerant/author)
+ *   params: string $url
+ * @method mixed gamerantHeadlines(array $params = [], array $options = []) gamerant-headlines (GET /gamerant/headlines)
+ *   params: 'games'|'gaming'|'pc-news'|'steam-news'|'core-news'|'xbox-series-xs-news'|'xbox-news'|'xbox-one-news'|'platforms'|'lists'|'strategy-guide'|'anime'|'anime-news'|'nintendo-news'|'legend-of-zelda-news'|'originals'|'features'|'gaming-features'|'exclusives'|'ps5-news'|'bethesda-news'|'playstation-news'|'pokemon-news'|'animal-crossing-news'|'activision-news'|'call-of-duty-news'|'grand-theft-auto-news'|'epic-games-store-news'|'nintendo-switch-news'|'fortnite-news'|'one-piece-news'|'anime-editorial'|'diablo-news'|'pokemon-go-news'|'mobile-news'|'ios-news'|'android-news'|'tabletop'|'dc-news'|'mortal-kombat-news'|'latest-videos'|'game-rant-series'|'gamerant-gaming-videos-original'|'videos'|'disney-news'|'movies-tv'|'movies-tv-news'|'movies-tv-lists'|'movies-tv-features'|'giveaways-contests'|'stardew-valley-articles'|'grand-theft-auto-5-news'|'cd-projekt-red-news'|'halo-news'|'persona-news'|'death-stranding-news'|'dragon-ball-z-news'|'genshin-impact-guides'|'lord-of-the-rings-news'|'world-of-warcraft-news'|'streaming'|'the-witcher-franchise-news'|'final-fantasy-news'|'resident-evil-news'|'final-fantasy-7-news'|'ps4-news'|'call-of-duty-warzone-news'|'the-elder-scrolls-news'|'destiny-news'|'fallout-news'|'red-dead-redemption-news'|'game-reviews'|'final-fantasy-14-news'|'the-last-of-us-news'|'nintendo-3ds-news'|'fallout-76-news'|'marvel-news'|'featured'|'editorial'|'ps3-news'|'xbox-360-news'|'video-interviews'|'assassins-creed-news'|'pause-for-thought'|'star-wars-news'|'pokemon-scarlet-violet-news'|'theme-parks'|'bloodborne-news'|'review-roundup'|'apex-legends-news'|'dungeons-and-dragons-news'|'kingdom-hearts-franchise-news'|'dragon-age-news'|'overwatch-news'|'overwatch-2-news'|'pokemon-legends-z-a-news'|'pokemon-videos'|'minecraft-news'|'game-previews'|'elden-ring-news'|'amazon-news'|'doom-news'|'no-mans-sky-news'|'metroid-franchise-news'|'league-of-legends-news'|'borderlands-news'|'super-smash-bros-news'|'valheim-news'|'spider-man-news'|'wii-news'|'pokemon-go-guides'|'the-witcher-3-news'|'red-dead-redemption-2-news'|'battlefield-franchise-news'|'gta-online-news'|'cod-modern-warfare-news'|'video-lists'|'playstation-videos'|'xbox-videos'|'dark-souls-news'|'video-originals'|'genshin-impact-news'|'elden-ring-videos'|'mass-effect-news'|'rainbow-six-siege-news'|'rainbow-six-franchise-news'|'god-of-war-news'|'persona-5-news'|'the-last-of-us-2-news'|'explainer'|'stardew-valley-guides'|'halo-infinite-news'|'hardware-reviews'|'movie-review'|'dead-by-daylight-news'|'far-cry-franchise-news'|'zelda-breath-of-the-wild-news'|'pokemon-go-reading'|'365-days-later'|'dead-space-news'|'acnh-news'|'game-rant-advance'|'nintendo-switch-reviews'|'pokemon-scarlet-and-violet-features'|'red-dead-online-news'|'game-deals'|'steam-videos'|'psn-news'|'complete-guides-walkthroughs'|'horizon-forbidden-west-news'|'tv-review'|'game-trailers'|'assassins-creed-videos'|'wii-u-news'|'pc-videos'|'pubg-news'|'buyers-guides'|'cyberpunk-videos'|'baldurs-gate-3-videos'|'pokemon-legends-z-a-guides'|'rantable'|'pokemon-scarlet-and-violet-guides'|'fallout-videos'|'fallout-4-videos'|'game-rant-mailbag'|'video-news'|'star-wars-outlaws-videos'|'hype-train-videos'|'borderlands-3-news'|'bite-size-lore'|'open-world-videos'|'gamers-said'|'red-dead-redemption-2-videos'|'stardew-valley-videos'|'have-you-heard-of'|'creators-on-game-rant'|'movies-tv-trailers'|'indie-videos' $section
+ * @method mixed gamerantNews(array $params = [], array $options = []) gamerant-news (GET /gamerant/news)
+ * @method mixed gamerantSections(array $params = [], array $options = []) gamerant-sections (GET /gamerant/sections)
+ */
+abstract class GameRantGroup {}
+
+/**
+ * @method mixed gamesradarArticle(array $params = [], array $options = []) gamesradar-article (GET /gamesradar/article)
+ *   params: string $url
+ * @method mixed gamesradarAuthor(array $params = [], array $options = []) gamesradar-author (GET /gamesradar/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed gamesradarHeadlines(array $params = [], array $options = []) gamesradar-headlines (GET /gamesradar/headlines)
+ *   params: 'games'|'platforms'|'entertainment'|'comics'|'hardware'|'toys-collectibles'|'tabletop-gaming'|'buying-guides'|'lego'|'dungeons-and-dragons'|'videos'|'games-news'|'games-features'|'games-reviews'|'games-guides'|'hardware-news'|'hardware-reviews'|'hardware-features'|'entertainment-tv'|'entertainment-movies'|'entertainment-streaming' $section
+ * @method mixed gamesradarNews(array $params = [], array $options = []) gamesradar-news (GET /gamesradar/news)
+ * @method mixed gamesradarSections(array $params = [], array $options = []) gamesradar-sections (GET /gamesradar/sections)
+ */
+abstract class GamesRadarGroup {}
+
+/**
+ * @method mixed gbnewsArticle(array $params = [], array $options = []) gbnews-article (GET /gbnews/article)
+ *   params: string $url
+ * @method mixed gbnewsAuthor(array $params = [], array $options = []) gbnews-author (GET /gbnews/author)
+ *   params: string $slug, string $url
+ * @method mixed gbnewsHeadlines(array $params = [], array $options = []) gbnews-headlines (GET /gbnews/headlines)
+ *   params: 'news'|'news/animals'|'news/army'|'news/benefit-fraudsters'|'news/best-of-britain'|'news/christianity'|'news/crime'|'news/defence'|'news/education'|'news/energy'|'news/environment'|'news/falkland-islands'|'news/fire'|'news/free-speech'|'news/fuel-crisis'|'news/gibraltar'|'news/grooming-gangs'|'news/lgbt'|'news/m25'|'news/madeleine-mccann'|'news/migrant-crisis'|'news/national-lottery'|'news/neighbour-rows'|'news/oil'|'news/police'|'news/protests'|'news/social-media'|'news/taxpayer-waste'|'news/tesco'|'news/trains'|'news/transport'|'news/uk'|'news/uk/birmingham'|'news/uk/bristol'|'news/uk/east-midlands'|'news/uk/east-of-england'|'news/uk/edinburgh'|'news/uk/england'|'news/uk/essex'|'news/uk/glasgow'|'news/uk/kent'|'news/uk/liverpool'|'news/uk/london'|'news/uk/manchester'|'news/uk/north-east'|'news/uk/north-west'|'news/uk/northern-ireland'|'news/uk/scotland'|'news/uk/south-east'|'news/uk/south-west'|'news/uk/wales'|'news/uk/west-midlands'|'news/uk/yorkshire'|'news/us'|'news/us/elon-musk'|'news/us/melania-trump'|'news/us/new-york'|'news/video-news'|'news/woke-madness'|'news/world'|'news/world/australia'|'news/world/canada'|'news/world/china'|'news/world/emmanuel-macron'|'news/world/europe'|'news/world/france'|'news/world/germany'|'news/world/greece'|'news/world/iran'|'news/world/ireland'|'news/world/isis'|'news/world/israel'|'news/world/italy'|'news/world/nato'|'news/world/poland'|'news/world/portugal'|'news/world/russia'|'news/world/spain'|'news/world/terrorism'|'news/world/ukraine'|'news/world/vladimir-putin'|'news/world/volodymyr-zelenskyy'|'news/world/war'|'editorial'|'politics'|'politics/boris-johnson'|'politics/brexit'|'politics/ed-davey'|'politics/elections'|'politics/green-party'|'politics/uk'|'politics/uk/andy-burnham'|'politics/uk/angela-rayner'|'politics/uk/conservative-party'|'politics/uk/government'|'politics/uk/home-office'|'politics/uk/house-of-commons'|'politics/uk/john-healey'|'politics/uk/keir-starmer'|'politics/uk/kemi-badenoch'|'politics/uk/labour-party'|'politics/uk/liberal-democrats'|'politics/uk/nicola-sturgeon'|'politics/uk/pmqs'|'politics/uk/rachel-reeves'|'politics/uk/reform-uk'|'politics/uk/robert-jenrick'|'politics/uk/sadiq-khan'|'politics/uk/snp'|'politics/uk/suella-braverman'|'politics/uk/tony-blair'|'politics/us'|'politics/us/donald-trump'|'politics/us/jd-vance'|'politics/us/joe-biden'|'politics/world'|'politics/world/eu'|'us'|'sport'|'sport/boxing'|'sport/boxing/anthony-joshua'|'sport/boxing/tyson-fury'|'sport/cricket'|'sport/cricket/england-cricket'|'sport/darts'|'sport/darts/luke-littler'|'sport/f1'|'sport/f1/christian-horner'|'sport/f1/george-russell'|'sport/f1/lando-norris'|'sport/f1/lewis-hamilton'|'sport/f1/max-verstappen'|'sport/f1/michael-schumacher'|'sport/football'|'sport/football/arsenal'|'sport/football/champions-league'|'sport/football/chelsea'|'sport/football/cristiano-ronaldo'|'sport/football/efl'|'sport/football/england-football'|'sport/football/liverpool'|'sport/football/manchester-city'|'sport/football/manchester-united'|'sport/football/premier-league'|'sport/football/scotland-football'|'sport/football/tottenham-hotspur'|'sport/football/world-cup'|'sport/golf'|'sport/golf/rory-mcilroy'|'sport/golf/tiger-woods'|'sport/horse-racing'|'sport/nfl'|'sport/olympics'|'sport/other-sport'|'sport/rugby'|'sport/snooker'|'sport/snooker/ronnie-osullivan'|'sport/tennis'|'sport/tennis/carlos-alcaraz'|'sport/tennis/emma-raducanu'|'sport/tennis/novak-djokovic'|'sport/us-sport'|'opinion'|'celebrity'|'celebrity/22-kids-and-counting'|'celebrity/bbc'|'celebrity/big-brother'|'celebrity/britains-got-talent'|'celebrity/brooklyn-beckham'|'celebrity/channel-4'|'celebrity/channel-5'|'celebrity/clarksons-farm'|'celebrity/coronation-street'|'celebrity/david-beckham'|'celebrity/disney'|'celebrity/dragons-den'|'celebrity/eurovision'|'celebrity/film'|'celebrity/gary-lineker'|'celebrity/gogglebox'|'celebrity/harry-potter'|'celebrity/im-a-celebrity-get-me-out-of-here'|'celebrity/itv'|'celebrity/james-bond'|'celebrity/jk-rowling'|'celebrity/katie-price'|'celebrity/music'|'celebrity/netflix'|'celebrity/ricky-gervais'|'celebrity/rod-stewart'|'celebrity/strictly-come-dancing'|'celebrity/the-grand-tour'|'celebrity/this-morning'|'celebrity/tom-jones'|'celebrity/tv'|'royal'|'royal/buckingham-palace'|'royal/camilla'|'royal/coronation'|'royal/duchess-of-edinburgh'|'royal/earl-charles-spencer'|'royal/edoardo-mapelli-mozzi'|'royal/invictus-games'|'royal/james-middleton'|'royal/kate-middleton'|'royal/king-charles'|'royal/king-frederik'|'royal/lady-louise'|'royal/lilibet'|'royal/meghan-markle'|'royal/mike-tindall'|'royal/pippa-middleton'|'royal/prince-albert'|'royal/prince-andrew'|'royal/prince-archie'|'royal/prince-edward'|'royal/prince-george'|'royal/prince-harry'|'royal/prince-louis'|'royal/prince-philip'|'royal/prince-william'|'royal/princess-anne'|'royal/princess-beatrice'|'royal/princess-charlene'|'royal/princess-charlotte'|'royal/princess-diana'|'royal/princess-eugenie'|'royal/queen-elizabeth'|'royal/sarah-ferguson'|'royal/zara-tindall'|'money'|'money/amazon'|'money/bank-branch-closures'|'money/bank-of-england'|'money/barclays'|'money/cost-of-living'|'money/coventry-building-society'|'money/dwp'|'money/economy'|'money/energy-bills'|'money/high-street'|'money/hmrc'|'money/inflation'|'money/inheritance-tax'|'money/interest-rates'|'money/isa'|'money/jobs'|'money/lloyds-bank'|'money/martin-lewis'|'money/mortgage'|'money/national-insurance'|'money/nationwide-building-society'|'money/net-zero'|'money/nsi'|'money/octopus-energy'|'money/pension-credit'|'money/pensions'|'money/pip'|'money/poundland'|'money/premium-bonds'|'money/royal-mail'|'money/savings'|'money/skipton-building-society'|'money/state-pension'|'money/store-closures'|'money/student-loans'|'money/tax'|'money/universal-credit'|'money/yorkshire-building-society'|'lifestyle'|'lifestyle/aldi'|'lifestyle/asda'|'lifestyle/beauty'|'lifestyle/cars'|'lifestyle/cars/bmw'|'lifestyle/cars/byd'|'lifestyle/cars/car-finance'|'lifestyle/cars/car-insurance'|'lifestyle/cars/car-tax'|'lifestyle/cars/chery'|'lifestyle/cars/classic-cars'|'lifestyle/cars/diesel'|'lifestyle/cars/driving-laws'|'lifestyle/cars/driving-licences'|'lifestyle/cars/dvla'|'lifestyle/cars/dvsa'|'lifestyle/cars/electric-bikes'|'lifestyle/cars/electric-vehicles'|'lifestyle/cars/ford'|'lifestyle/cars/highway-code'|'lifestyle/cars/hydrogen-vehicles'|'lifestyle/cars/hyundai'|'lifestyle/cars/jaguar'|'lifestyle/cars/kia'|'lifestyle/cars/land-rover'|'lifestyle/cars/mercedes'|'lifestyle/cars/mini'|'lifestyle/cars/mot'|'lifestyle/cars/nissan'|'lifestyle/cars/parking'|'lifestyle/cars/petrol'|'lifestyle/cars/renault'|'lifestyle/cars/roads'|'lifestyle/cars/self-driving'|'lifestyle/cars/tesla'|'lifestyle/cars/toyota'|'lifestyle/cars/ulez'|'lifestyle/cars/vauxhall'|'lifestyle/cars/volkswagen'|'lifestyle/cars/volvo'|'lifestyle/diet'|'lifestyle/food'|'lifestyle/hair'|'lifestyle/how-to-look-younger'|'lifestyle/lidl'|'lifestyle/marks-spencer'|'lifestyle/morrisons'|'lifestyle/property'|'lifestyle/sainsburys'|'lifestyle/skin-care'|'lifestyle/style'|'lifestyle/tesco'|'travel'|'travel/british-airways'|'travel/cruise'|'travel/deals'|'travel/egypt'|'travel/france'|'travel/greece'|'travel/italy'|'travel/jet2'|'travel/spain'|'travel/staycation'|'travel/tui'|'travel/turkey'|'travel/wizz-air'|'health'|'health/cancer'|'health/covid'|'health/dementia'|'health/diabetes'|'health/nhs'|'health/sleep'|'health/vaccine'|'health/world-health-organisation'|'science'|'science/archaeology'|'science/space'|'tech'|'tech/ai'|'tech/android'|'tech/apple'|'tech/broadband'|'tech/chatgpt'|'tech/deals'|'tech/dyson'|'tech/ee'|'tech/fire-tv'|'tech/freely'|'tech/freeview'|'tech/gemini'|'tech/google'|'tech/kindle'|'tech/malware'|'tech/meta'|'tech/microsoft'|'tech/nintendo'|'tech/oura'|'tech/playstation'|'tech/prime-video'|'tech/privacy'|'tech/reviews'|'tech/roku'|'tech/samsung'|'tech/sky-tv'|'tech/streaming'|'tech/virgin'|'tech/vpn'|'tech/whatsapp'|'tech/windows'|'weather'|'weather/flood'|'weather/heatwave'|'weather/rain'|'weather/storms'|'traffic-travel'|'reflections'|'newsfromus'|'watch'|'watch/originals' $section
+ * @method mixed gbnewsNews(array $params = [], array $options = []) gbnews-news (GET /gbnews/news)
+ * @method mixed gbnewsSections(array $params = [], array $options = []) gbnews-sections (GET /gbnews/sections)
+ */
+abstract class GbNewsGroup {}
 
 /**
  * @method mixed context(array $params = [], array $options = []) gdelt-context (GET /gdelt/context)
@@ -1642,6 +2540,52 @@ abstract class GeocodingGroup {}
 abstract class GitHubGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) gizmodo-article (GET /gizmodo/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) gizmodo-author (GET /gizmodo/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) gizmodo-headlines (GET /gizmodo/headlines)
+ *   params: 'tech'|'artificial-intelligence'|'commerce'|'crime'|'cryptocurrencies'|'culture'|'gadgets'|'internet'|'politics'|'privacy-and-security'|'robots'|'social-media'|'sploid'|'tech-policy'|'transportation'|'science'|'biology'|'health'|'human-history'|'physics'|'space'|'io9'|'anime'|'books-comics'|'corporate-culture'|'games'|'io9-reviews'|'movies'|'television'|'theme-parks-destinations'|'toys-and-collectibles'|'trailer-frenzy'|'earther'|'climate-change'|'conservation'|'earth-science'|'energy'|'environmental-justice'|'reviews'|'desktops'|'gaming'|'headphones'|'home-entertainment'|'laptops'|'other-gadgets'|'phones'|'tablets'|'wearables'|'deals' $section
+ * @method mixed news(array $params = [], array $options = []) gizmodo-news (GET /gizmodo/news)
+ * @method mixed sections(array $params = [], array $options = []) gizmodo-sections (GET /gizmodo/sections)
+ */
+abstract class GizmodoGroup {}
+
+/**
+ * @method mixed globalnewsArticle(array $params = [], array $options = []) globalnews-article (GET /globalnews/article)
+ *   params: string $url
+ * @method mixed globalnewsAuthor(array $params = [], array $options = []) globalnews-author (GET /globalnews/author)
+ *   params: string $url
+ * @method mixed globalnewsHeadlines(array $params = [], array $options = []) globalnews-headlines (GET /globalnews/headlines)
+ *   params: 'world'|'canada'|'politics'|'money'|'health'|'entertainment'|'environment'|'lifestyle'|'perspectives'|'sports'|'commentary'|'us-news'|'the-curator'|'national'|'barrie'|'bc'|'calgary'|'edmonton'|'guelph'|'halifax'|'hamilton'|'kingston'|'lethbridge'|'london'|'montreal'|'new-brunswick'|'okanagan'|'ottawa'|'peterborough'|'regina'|'saskatoon'|'toronto'|'winnipeg' $section
+ * @method mixed globalnewsNews(array $params = [], array $options = []) globalnews-news (GET /globalnews/news)
+ * @method mixed globalnewsSections(array $params = [], array $options = []) globalnews-sections (GET /globalnews/sections)
+ */
+abstract class GlobalNewsGroup {}
+
+/**
+ * @method mixed globeandmailArticle(array $params = [], array $options = []) globeandmail-article (GET /globeandmail/article)
+ *   params: string $url
+ * @method mixed globeandmailAuthor(array $params = [], array $options = []) globeandmail-author (GET /globeandmail/author)
+ *   params: string $url
+ * @method mixed globeandmailHeadlines(array $params = [], array $options = []) globeandmail-headlines (GET /globeandmail/headlines)
+ *   params: 'canada'|'world'|'business'|'investing'|'personal-finance'|'politics'|'opinion'|'culture'|'sports'|'life'|'real-estate'|'drive' $section
+ * @method mixed globeandmailNews(array $params = [], array $options = []) globeandmail-news (GET /globeandmail/news)
+ * @method mixed globeandmailSections(array $params = [], array $options = []) globeandmail-sections (GET /globeandmail/sections)
+ */
+abstract class GlobeAndMailGroup {}
+
+/**
+ * @method mixed gmanewsArticle(array $params = [], array $options = []) gmanews-article (GET /gmanews/article)
+ *   params: string $url
+ * @method mixed gmanewsHeadlines(array $params = [], array $options = []) gmanews-headlines (GET /gmanews/headlines)
+ *   params: 'topstories'|'topstories-metro'|'topstories-nation'|'topstories-opinion'|'topstories-regions'|'topstories-specialreports'|'topstories-ulatfilipino'|'topstories-world'|'money'|'money-companies'|'money-economy'|'money-motoring'|'money-personalfinance'|'sports'|'sports-basketball'|'sports-boxing'|'sports-football'|'sports-nba'|'sports-othersports'|'sports-volleyball'|'showbiz'|'showbiz-chikaminute'|'showbiz-showbizabroad'|'lifestyle'|'lifestyle-artandculture'|'lifestyle-familyandrelationships'|'lifestyle-food'|'lifestyle-healthandwellness'|'lifestyle-hobbiesandactivities'|'lifestyle-shoppingandfashion'|'lifestyle-travel'|'scitech'|'scitech-science'|'scitech-technology'|'pinoyabroad'|'pinoyabroad-dispatch'|'pinoyabroad-pinoyachievers'|'serbisyopubliko'|'serbisyopubliko-missingpersons'|'serbisyopubliko-transportation'|'serbisyopubliko-walangpasok'|'cbb'|'publicaffairs'|'weather' $section
+ * @method mixed gmanewsNews(array $params = [], array $options = []) gmanews-news (GET /gmanews/news)
+ * @method mixed gmanewsSections(array $params = [], array $options = []) gmanews-sections (GET /gmanews/sections)
+ */
+abstract class GmaNewsGroup {}
+
+/**
  * @method mixed collection(array $params = [], array $options = []) goat-collection (GET /goat/collection)
  *   params: string $slug, int $page, int $limit, string $exclude_product_ids
  * @method mixed countries(array $params = [], array $options = []) goat-countries (GET /goat/countries)
@@ -1659,6 +2603,20 @@ abstract class GitHubGroup {}
  *   params: string $query, int $limit
  */
 abstract class GoatGroup {}
+
+/**
+ * @method mixed auctions(array $params = [], array $options = []) goldin-auctions (GET /goldin/auctions)
+ *   params: 'asc'|'desc' $order
+ * @method mixed categories(array $params = [], array $options = []) goldin-categories (GET /goldin/categories)
+ *   params: 'Auction'|'Fixed_Price' $auction_type
+ * @method mixed listing(array $params = [], array $options = []) goldin-listing (GET /goldin/listing)
+ *   params: string $slug
+ * @method mixed search(array $params = [], array $options = []) goldin-search (GET /goldin/search)
+ *   params: 'Auction'|'Fixed_Price' $auction_type, string $keyword, string $category, string $sub_category, string $certification, string $item_type, string $auction_id, 'Featured'|'Ending_Soonest'|'Highest_Bids'|'Lowest_Bids'|'Most_Bids'|'Least_Bids'|'Most_Recent_Bids'|'Highest_Lot_Number'|'Recently_Started'|'Recently_Created' $sort, int $page, int $page_size
+ * @method mixed suggest(array $params = [], array $options = []) goldin-suggest (GET /goldin/suggest)
+ *   params: string $keyword, int $limit
+ */
+abstract class GoldinGroup {}
 
 /**
  * @method mixed author(array $params = [], array $options = []) goodreads-author (GET /goodreads/author/{id})
@@ -1740,7 +2698,7 @@ abstract class GoogleJobsGroup {}
  *   params: array $mapSearchOption
  * @method mixed news(array $params = [], array $options = []) google-news (GET /google/news)
  *   params: string $q, int $page, int $count, string $country, string $lang
- * @method mixed search(array $params = [], array $options = []) google-search (POST /google/search)
+ * @method mixed newsSearch(array $params = [], array $options = []) google-news-search (POST /google/news)
  *   params: array $searchOption
  * @method mixed suggest(array $params = [], array $options = []) google-suggest (GET /google/suggest)
  *   params: string $q, int $count, string $country, string $lang
@@ -1810,6 +2768,42 @@ abstract class GooglePatentsGroup {}
 abstract class GooglePlayGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) gq-article (GET /gq/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) gq-author (GET /gq/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed headlines(array $params = [], array $options = []) gq-headlines (GET /gq/headlines)
+ *   params: 'culture'|'entertainment'|'fitness'|'gq-hype'|'gq-recommends'|'gqsports'|'grooming'|'politics'|'style'|'watches'|'wellness' $section
+ * @method mixed news(array $params = [], array $options = []) gq-news (GET /gq/news)
+ * @method mixed sections(array $params = [], array $options = []) gq-sections (GET /gq/sections)
+ */
+abstract class GqGroup {}
+
+/**
+ * @method mixed categories(array $params = [], array $options = []) grailed-categories (GET /grailed/categories)
+ * @method mixed collection(array $params = [], array $options = []) grailed-collection (GET /grailed/collection)
+ *   params: int $id
+ * @method mixed collections(array $params = [], array $options = []) grailed-collections (GET /grailed/collections)
+ * @method mixed designers(array $params = [], array $options = []) grailed-designers (GET /grailed/designers)
+ *   params: string $q, int $page, int $limit
+ * @method mixed listing(array $params = [], array $options = []) grailed-listing (GET /grailed/listing)
+ *   params: int $id
+ * @method mixed search(array $params = [], array $options = []) grailed-search (GET /grailed/search)
+ *   params: string $q, string $designer, 'menswear'|'womenswear' $department, string $category, string $size, string $color, 'is_new'|'is_gently_used'|'is_used'|'is_worn'|'is_not_specified' $condition, float $min_price, float $max_price, 'heat'|'heat_recency'|'followers'|'newest'|'price_asc'|'price_desc'|'recently_updated'|'quality' $sort, int $page, int $limit
+ * @method mixed seller(array $params = [], array $options = []) grailed-seller (GET /grailed/seller)
+ *   params: string $username, int $page, int $limit
+ * @method mixed sellerReviews(array $params = [], array $options = []) grailed-seller-reviews (GET /grailed/seller-reviews)
+ *   params: string $username, int $page
+ * @method mixed similarListings(array $params = [], array $options = []) grailed-similar-listings (GET /grailed/similar-listings)
+ *   params: int $id, int $limit
+ * @method mixed soldListings(array $params = [], array $options = []) grailed-sold-listings (GET /grailed/sold-listings)
+ *   params: string $q, string $designer, 'menswear'|'womenswear' $department, string $category, string $size, string $color, 'is_new'|'is_gently_used'|'is_used'|'is_worn'|'is_not_specified' $condition, float $min_price, float $max_price, 'recent'|'price_asc'|'price_desc' $sort, int $page, int $limit
+ * @method mixed suggest(array $params = [], array $options = []) grailed-suggest (GET /grailed/suggest)
+ *   params: string $q
+ */
+abstract class GrailedGroup {}
+
+/**
  * @method mixed availability(array $params = [], array $options = []) grubhub-availability (GET /grubhub/availability)
  *   params: string $restaurant_ids, float $latitude, float $longitude
  * @method mixed offers(array $params = [], array $options = []) grubhub-offers (GET /grubhub/offers)
@@ -1830,6 +2824,8 @@ abstract class GrubhubGroup {}
 /**
  * @method mixed article(array $params = [], array $options = []) guardian-article (GET /guardian/article)
  *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) guardian-author (GET /guardian/author)
+ *   params: string $slug, string $url, int $page
  * @method mixed headlines(array $params = [], array $options = []) guardian-headlines (GET /guardian/headlines)
  *   params: 'world'|'uk-news'|'us-news'|'politics'|'business'|'technology'|'environment'|'science'|'sport'|'culture'|'lifeandstyle'|'commentisfree' $section
  * @method mixed live(array $params = [], array $options = []) guardian-live (GET /guardian/live)
@@ -1838,6 +2834,42 @@ abstract class GrubhubGroup {}
  *   params: string $topic, int $page
  */
 abstract class GuardianGroup {}
+
+/**
+ * @method mixed categories(array $params = [], array $options = []) gucci-categories (GET /gucci/categories)
+ *   params: string $department
+ * @method mixed category(array $params = [], array $options = []) gucci-category (GET /gucci/category)
+ *   params: string $category, int $page
+ * @method mixed product(array $params = [], array $options = []) gucci-product (GET /gucci/product)
+ *   params: string $style_code
+ * @method mixed recommendations(array $params = [], array $options = []) gucci-recommendations (GET /gucci/recommendations)
+ *   params: string $style_code, int $max
+ * @method mixed search(array $params = [], array $options = []) gucci-search (GET /gucci/search)
+ *   params: string $q, int $page, int $limit, string $size
+ * @method mixed sizeGuide(array $params = [], array $options = []) gucci-size-guide (GET /gucci/size-guide)
+ *   params: string $style_code
+ * @method mixed store(array $params = [], array $options = []) gucci-store (GET /gucci/store)
+ *   params: string $slug
+ * @method mixed stores(array $params = [], array $options = []) gucci-stores (GET /gucci/stores)
+ *   params: string $department
+ * @method mixed storeSearch(array $params = [], array $options = []) gucci-store-search (GET /gucci/stores/search)
+ *   params: 'ca'|'fr'|'jp'|'uk'|'us' $market, float $north, float $west, float $south, float $east, float $latitude, float $longitude
+ * @method mixed suggest(array $params = [], array $options = []) gucci-suggest (GET /gucci/suggest)
+ *   params: string $q, int $limit
+ */
+abstract class GucciGroup {}
+
+/**
+ * @method mixed gulfnewsArticle(array $params = [], array $options = []) gulfnews-article (GET /gulfnews/article)
+ *   params: string $url
+ * @method mixed gulfnewsAuthor(array $params = [], array $options = []) gulfnews-author (GET /gulfnews/author)
+ *   params: string $slug, string $url
+ * @method mixed gulfnewsHeadlines(array $params = [], array $options = []) gulfnews-headlines (GET /gulfnews/headlines)
+ *   params: 'latest-news'|'business'|'best-buys'|'uae'|'entertainment'|'world'|'sport'|'living-in-uae'|'lifestyle'|'opinion'|'travel'|'podcasts'|'special-reports'|'things-to-do'|'friday'|'the-kurator'|'uae-success-stories'|'photos'|'your-money' $section
+ * @method mixed gulfnewsNews(array $params = [], array $options = []) gulfnews-news (GET /gulfnews/news)
+ * @method mixed gulfnewsSections(array $params = [], array $options = []) gulfnews-sections (GET /gulfnews/sections)
+ */
+abstract class GulfNewsGroup {}
 
 /**
  * @method mixed collections(array $params = [], array $options = []) gymshark-collections (GET /gymshark/collections)
@@ -1862,6 +2894,48 @@ abstract class GuardianGroup {}
 abstract class GymsharkGroup {}
 
 /**
+ * @method mixed hbrArticle(array $params = [], array $options = []) hbr-article (GET /hbr/article)
+ *   params: string $url
+ * @method mixed hbrCategories(array $params = [], array $options = []) hbr-categories (GET /hbr/categories)
+ * @method mixed hbrHeadlines(array $params = [], array $options = []) hbr-headlines (GET /hbr/headlines)
+ * @method mixed hbrTopic(array $params = [], array $options = []) hbr-topic (GET /hbr/topic)
+ *   params: string $topic
+ */
+abstract class HarvardBusinessReviewGroup {}
+
+/**
+ * @method mixed categories(array $params = [], array $options = []) hermes-categories (GET /hermes/categories)
+ *   params: 'at_de'|'au_en'|'be_en'|'be_fr'|'br_pt'|'ca_en'|'ca_fr'|'ch_de'|'ch_fr'|'cz_en'|'de_de'|'dh_en'|'dk_en'|'es_es'|'fi_en'|'fr_fr'|'gr_en'|'hk_en'|'ie_en'|'it_it'|'jp_ja'|'kr_ko'|'lu_fr'|'mo_en'|'mx_es'|'my_en'|'nl_en'|'no_en'|'pl_en'|'pt_en'|'ri_en'|'se_en'|'sg_en'|'th_en'|'tw_zh'|'uk_en'|'us_en' $locale
+ * @method mixed category(array $params = [], array $options = []) hermes-category (GET /hermes/category)
+ *   params: string $category, 'relevance'|'priceasc'|'pricedsc' $sort, 'at_de'|'au_en'|'be_en'|'be_fr'|'br_pt'|'ca_en'|'ca_fr'|'ch_de'|'ch_fr'|'cz_en'|'de_de'|'dh_en'|'dk_en'|'es_es'|'fi_en'|'fr_fr'|'gr_en'|'hk_en'|'ie_en'|'it_it'|'jp_ja'|'kr_ko'|'lu_fr'|'mo_en'|'mx_es'|'my_en'|'nl_en'|'no_en'|'pl_en'|'pt_en'|'ri_en'|'se_en'|'sg_en'|'th_en'|'tw_zh'|'uk_en'|'us_en' $locale, int $page
+ * @method mixed product(array $params = [], array $options = []) hermes-product (GET /hermes/product)
+ *   params: string $sku, 'at_de'|'au_en'|'be_en'|'be_fr'|'br_pt'|'ca_en'|'ca_fr'|'ch_de'|'ch_fr'|'cz_en'|'de_de'|'dh_en'|'dk_en'|'es_es'|'fi_en'|'fr_fr'|'gr_en'|'hk_en'|'ie_en'|'it_it'|'jp_ja'|'kr_ko'|'lu_fr'|'mo_en'|'mx_es'|'my_en'|'nl_en'|'no_en'|'pl_en'|'pt_en'|'ri_en'|'se_en'|'sg_en'|'th_en'|'tw_zh'|'uk_en'|'us_en' $locale
+ * @method mixed productRecommendations(array $params = [], array $options = []) hermes-product-recommendations (GET /hermes/product/recommendations)
+ *   params: string $sku, 'at_de'|'au_en'|'be_en'|'be_fr'|'br_pt'|'ca_en'|'ca_fr'|'ch_de'|'ch_fr'|'cz_en'|'de_de'|'dh_en'|'dk_en'|'es_es'|'fi_en'|'fr_fr'|'gr_en'|'hk_en'|'ie_en'|'it_it'|'jp_ja'|'kr_ko'|'lu_fr'|'mo_en'|'mx_es'|'my_en'|'nl_en'|'no_en'|'pl_en'|'pt_en'|'ri_en'|'se_en'|'sg_en'|'th_en'|'tw_zh'|'uk_en'|'us_en' $locale
+ * @method mixed products(array $params = [], array $options = []) hermes-products (GET /hermes/products)
+ *   params: 'at_de'|'au_en'|'be_en'|'be_fr'|'br_pt'|'ca_en'|'ca_fr'|'ch_de'|'ch_fr'|'cz_en'|'de_de'|'dh_en'|'dk_en'|'es_es'|'fi_en'|'fr_fr'|'gr_en'|'hk_en'|'ie_en'|'it_it'|'jp_ja'|'kr_ko'|'lu_fr'|'mo_en'|'mx_es'|'my_en'|'nl_en'|'no_en'|'pl_en'|'pt_en'|'ri_en'|'se_en'|'sg_en'|'th_en'|'tw_zh'|'uk_en'|'us_en' $locale, int $page, int $limit, string $changed_since
+ * @method mixed search(array $params = [], array $options = []) hermes-search (GET /hermes/search)
+ *   params: string $query, 'at_de'|'au_en'|'be_en'|'be_fr'|'br_pt'|'ca_en'|'ca_fr'|'ch_de'|'ch_fr'|'cz_en'|'de_de'|'dh_en'|'dk_en'|'es_es'|'fi_en'|'fr_fr'|'gr_en'|'hk_en'|'ie_en'|'it_it'|'jp_ja'|'kr_ko'|'lu_fr'|'mo_en'|'mx_es'|'my_en'|'nl_en'|'no_en'|'pl_en'|'pt_en'|'ri_en'|'se_en'|'sg_en'|'th_en'|'tw_zh'|'uk_en'|'us_en' $locale, int $page
+ * @method mixed stores(array $params = [], array $options = []) hermes-stores (GET /hermes/stores)
+ *   params: 'at_de'|'au_en'|'be_en'|'be_fr'|'br_pt'|'ca_en'|'ca_fr'|'ch_de'|'ch_fr'|'cz_en'|'de_de'|'dh_en'|'dk_en'|'es_es'|'fi_en'|'fr_fr'|'gr_en'|'hk_en'|'ie_en'|'it_it'|'jp_ja'|'kr_ko'|'lu_fr'|'mo_en'|'mx_es'|'my_en'|'nl_en'|'no_en'|'pl_en'|'pt_en'|'ri_en'|'se_en'|'sg_en'|'th_en'|'tw_zh'|'uk_en'|'us_en' $locale, string $country, string $city
+ * @method mixed suggest(array $params = [], array $options = []) hermes-suggest (GET /hermes/suggest)
+ *   params: string $query, 'at_de'|'au_en'|'be_en'|'be_fr'|'br_pt'|'ca_en'|'ca_fr'|'ch_de'|'ch_fr'|'cz_en'|'de_de'|'dh_en'|'dk_en'|'es_es'|'fi_en'|'fr_fr'|'gr_en'|'hk_en'|'ie_en'|'it_it'|'jp_ja'|'kr_ko'|'lu_fr'|'mo_en'|'mx_es'|'my_en'|'nl_en'|'no_en'|'pl_en'|'pt_en'|'ri_en'|'se_en'|'sg_en'|'th_en'|'tw_zh'|'uk_en'|'us_en' $locale
+ */
+abstract class HermesGroup {}
+
+/**
+ * @method mixed hindustantimesArticle(array $params = [], array $options = []) hindustantimes-article (GET /hindustantimes/article)
+ *   params: string $url
+ * @method mixed hindustantimesAuthor(array $params = [], array $options = []) hindustantimes-author (GET /hindustantimes/author)
+ *   params: string $url
+ * @method mixed hindustantimesHeadlines(array $params = [], array $options = []) hindustantimes-headlines (GET /hindustantimes/headlines)
+ *   params: 'india-news'|'world-news'|'cities'|'business'|'sports'|'cricket'|'entertainment'|'lifestyle'|'astrology'|'education'|'technology'|'opinion'|'science'|'books'|'real-estate'|'car-bike'|'nri'|'htcity'|'ht-insight'|'ht-explainers'|'editorials'|'trending'|'india-and-the-elections'|'editors-pick' $section
+ * @method mixed hindustantimesNews(array $params = [], array $options = []) hindustantimes-news (GET /hindustantimes/news)
+ * @method mixed hindustantimesSections(array $params = [], array $options = []) hindustantimes-sections (GET /hindustantimes/sections)
+ */
+abstract class HindustanTimesGroup {}
+
+/**
  * @method mixed hmCategories(array $params = [], array $options = []) hm-categories (GET /hm/categories)
  *   params: 'women'|'men'|'kids'|'home'|'beauty' $department
  * @method mixed hmListing(array $params = [], array $options = []) hm-listing (GET /hm/listing)
@@ -1878,6 +2952,18 @@ abstract class GymsharkGroup {}
  *   params: string $search, float $lat, float $lng, int $radius_meters
  */
 abstract class HMGroup {}
+
+/**
+ * @method mixed hollywoodreporterArticle(array $params = [], array $options = []) hollywoodreporter-article (GET /hollywoodreporter/article)
+ *   params: string $url
+ * @method mixed hollywoodreporterAuthor(array $params = [], array $options = []) hollywoodreporter-author (GET /hollywoodreporter/author)
+ *   params: string $url, int $page
+ * @method mixed hollywoodreporterHeadlines(array $params = [], array $options = []) hollywoodreporter-headlines (GET /hollywoodreporter/headlines)
+ *   params: 'arts'|'business'|'business-news'|'digital'|'film-tv-music-news'|'general-news'|'lifestyle'|'lifestyle-news'|'local-news'|'movie-features'|'movie-news'|'movie-reviews'|'movie-videos'|'movies'|'music'|'music-features'|'music-industry-news'|'music-news'|'news'|'politics-news'|'real-estate'|'shopping'|'style'|'tv'|'tv-features'|'tv-news'|'tv-reviews'|'tv-videos'|'awards'|'behind-the-screen'|'heat-vision'|'international'|'live-feed'|'rambling-reporter'|'the-fien-print'|'the-race'|'thr-esq' $section
+ * @method mixed hollywoodreporterNews(array $params = [], array $options = []) hollywoodreporter-news (GET /hollywoodreporter/news)
+ * @method mixed hollywoodreporterSections(array $params = [], array $options = []) hollywoodreporter-sections (GET /hollywoodreporter/sections)
+ */
+abstract class HollywoodReporterGroup {}
 
 /**
  * @method mixed homedepotCategories(array $params = [], array $options = []) homedepot-categories (GET /homedepot/categories)
@@ -1913,8 +2999,34 @@ abstract class HomeDepotGroup {}
 abstract class HotelsComGroup {}
 
 /**
+ * @method mixed huffpostArticle(array $params = [], array $options = []) huffpost-article (GET /huffpost/article)
+ *   params: string $url
+ * @method mixed huffpostAuthor(array $params = [], array $options = []) huffpost-author (GET /huffpost/author)
+ *   params: string $url
+ * @method mixed huffpostHeadlines(array $params = [], array $options = []) huffpost-headlines (GET /huffpost/headlines)
+ *   params: 'news'|'news/us-news'|'news/world-news'|'impact/business'|'impact/green'|'section/health'|'impact/topic/social-justice'|'news/crime'|'news/politics'|'news/topic/us-congress'|'news/topic/extremism'|'section/opinion'|'entertainment'|'entertainment/arts'|'news/media'|'entertainment/celebrity'|'entertainment/tv'|'section/sports'|'life'|'life/healthy-living'|'life/travel'|'life/technology'|'life/taste'|'life/style'|'life/family'|'life/relationships'|'life/money'|'life/huffpost-home'|'life/worklife'|'life/huffpost-shopping'|'voices'|'voices/black-voices'|'voices/queer-voices'|'voices/latino-voices'|'voices/indigenous-voices'|'voices/asian-voices'|'voices/womens-voices'|'voices/voices-of-disabled-people'|'section/huffpost-personal'|'section/video' $section
+ * @method mixed huffpostNews(array $params = [], array $options = []) huffpost-news (GET /huffpost/news)
+ * @method mixed huffpostSections(array $params = [], array $options = []) huffpost-sections (GET /huffpost/sections)
+ */
+abstract class HuffPostGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) ign-article (GET /ign/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) ign-author (GET /ign/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) ign-headlines (GET /ign/headlines)
+ *   params: 'news'|'reviews'|'games'|'movies'|'tv'|'tech'|'nintendo'|'playstation'|'xbox'|'pc'|'mobile'|'comics' $section
+ * @method mixed news(array $params = [], array $options = []) ign-news (GET /ign/news)
+ * @method mixed sections(array $params = [], array $options = []) ign-sections (GET /ign/sections)
+ */
+abstract class IgnGroup {}
+
+/**
  * @method mixed availability(array $params = [], array $options = []) ikea-availability (GET /ikea/availability)
  *   params: string $item_no, string $country
+ * @method mixed categories(array $params = [], array $options = []) ikea-categories (GET /ikea/categories)
+ *   params: string $q, string $country, string $language, int $page, int $page_size
  * @method mixed category(array $params = [], array $options = []) ikea-category (GET /ikea/category)
  *   params: string $category, string $country, string $language, int $offset, int $size, 'relevance'|'price-low'|'price-high'|'newest'|'rating'|'name'|'popular'|'width'|'height'|'depth'|'length' $sort
  * @method mixed product(array $params = [], array $options = []) ikea-product (GET /ikea/product)
@@ -1935,12 +3047,17 @@ abstract class IkeaGroup {}
 /**
  * @method mixed charts(array $params = [], array $options = []) imdb-charts (GET /imdb/charts)
  *   params: 'top_rated_movies'|'top_rated_tv_shows'|'most_popular_movies'|'most_popular_tv_shows'|'top_rated_english_movies'|'lowest_rated_movies' $chart, int $limit
+ * @method mixed imageTypes(array $params = [], array $options = []) imdb-image-types (GET /imdb/image-types)
  * @method mixed name(array $params = [], array $options = []) imdb-name (GET /imdb/name)
  *   params: string $id, string $url
  * @method mixed nameAwards(array $params = [], array $options = []) imdb-name-awards (GET /imdb/name/awards)
  *   params: string $id, string $url
  * @method mixed nameCredits(array $params = [], array $options = []) imdb-name-credits (GET /imdb/name/credits)
  *   params: string $id, string $url
+ * @method mixed nameImages(array $params = [], array $options = []) imdb-name-images (GET /imdb/name/images)
+ *   params: string $id, string $url, 'behind_the_scenes'|'event'|'poster'|'product'|'production_art'|'publicity'|'still_frame'|'unknown' $type, int $limit
+ * @method mixed nameVideos(array $params = [], array $options = []) imdb-name-videos (GET /imdb/name/videos)
+ *   params: string $id, string $url, int $limit
  * @method mixed search(array $params = [], array $options = []) imdb-search (GET /imdb/search)
  *   params: string $query, int $limit
  * @method mixed searchTitle(array $params = [], array $options = []) imdb-search-title (GET /imdb/search/title)
@@ -1949,8 +3066,12 @@ abstract class IkeaGroup {}
  *   params: string $id, string $url
  * @method mixed titleAwards(array $params = [], array $options = []) imdb-title-awards (GET /imdb/title/awards)
  *   params: string $id, string $url
+ * @method mixed titleBoxOffice(array $params = [], array $options = []) imdb-title-box-office (GET /imdb/title/box-office)
+ *   params: string $id, string $url
  * @method mixed titleCompanyCredits(array $params = [], array $options = []) imdb-title-company-credits (GET /imdb/title/company-credits)
  *   params: string $id, string $url
+ * @method mixed titleConnections(array $params = [], array $options = []) imdb-title-connections (GET /imdb/title/connections)
+ *   params: string $id, string $url, int $limit
  * @method mixed titleCredits(array $params = [], array $options = []) imdb-title-credits (GET /imdb/title/credits)
  *   params: string $id, string $url
  * @method mixed titleEpisodes(array $params = [], array $options = []) imdb-title-episodes (GET /imdb/title/episodes)
@@ -1959,6 +3080,8 @@ abstract class IkeaGroup {}
  *   params: string $id, string $url
  * @method mixed titleGoofs(array $params = [], array $options = []) imdb-title-goofs (GET /imdb/title/goofs)
  *   params: string $id, string $url
+ * @method mixed titleImages(array $params = [], array $options = []) imdb-title-images (GET /imdb/title/images)
+ *   params: string $id, string $url, 'behind_the_scenes'|'event'|'poster'|'product'|'production_art'|'publicity'|'still_frame'|'unknown' $type, int $limit
  * @method mixed titleKeywords(array $params = [], array $options = []) imdb-title-keywords (GET /imdb/title/keywords)
  *   params: string $id, string $url
  * @method mixed titleParentalGuide(array $params = [], array $options = []) imdb-title-parental-guide (GET /imdb/title/parental-guide)
@@ -1979,6 +3102,8 @@ abstract class IkeaGroup {}
  *   params: string $id, string $url
  * @method mixed titleTrivia(array $params = [], array $options = []) imdb-title-trivia (GET /imdb/title/trivia)
  *   params: string $id, string $url
+ * @method mixed titleVideos(array $params = [], array $options = []) imdb-title-videos (GET /imdb/title/videos)
+ *   params: string $id, string $url, int $limit
  */
 abstract class ImdbGroup {}
 
@@ -1999,6 +3124,78 @@ abstract class ImportYetiGroup {}
  *   params: string $q, string $l, int $page, 'relevance'|'date' $sort, int $radius, int $fromage
  */
 abstract class IndeedGroup {}
+
+/**
+ * @method mixed independentArticle(array $params = [], array $options = []) independent-article (GET /independent/article)
+ *   params: string $url
+ * @method mixed independentAuthor(array $params = [], array $options = []) independent-author (GET /independent/author)
+ *   params: string $slug, string $url
+ * @method mixed independentHeadlines(array $params = [], array $options = []) independent-headlines (GET /independent/headlines)
+ *   params: 'news'|'news/uk'|'news/world'|'news/business'|'news/people'|'news/science'|'news/media'|'news/education'|'news/obituaries'|'environment'|'sport'|'arts-entertainment'|'life-style'|'travel'|'voices'|'money'|'bulletin' $section
+ * @method mixed independentNews(array $params = [], array $options = []) independent-news (GET /independent/news)
+ * @method mixed independentSections(array $params = [], array $options = []) independent-sections (GET /independent/sections)
+ */
+abstract class TheIndependentGroup {}
+
+/**
+ * @method mixed indianexpressArticle(array $params = [], array $options = []) indianexpress-article (GET /indianexpress/article)
+ *   params: string $url
+ * @method mixed indianexpressAuthor(array $params = [], array $options = []) indianexpress-author (GET /indianexpress/author)
+ *   params: string $url
+ * @method mixed indianexpressHeadlines(array $params = [], array $options = []) indianexpress-headlines (GET /indianexpress/headlines)
+ *   params: 'politics'|'india'|'world'|'explained'|'express-exclusive'|'opinion'|'opinion-columns'|'business'|'cities'|'cities-delhi'|'cities-mumbai'|'cities-kolkata'|'cities-pune'|'cities-chandigarh'|'cities-ahmedabad'|'cities-lucknow'|'cities-chennai'|'cities-hyderabad'|'cities-bangalore'|'upsc-current-affairs'|'entertainment'|'entertainment-bollywood'|'entertainment-hollywood'|'entertainment-malayalam'|'entertainment-movie-review'|'entertainment-regional'|'entertainment-tamil'|'entertainment-television'|'entertainment-telugu'|'entertainment-web-series'|'lifestyle'|'lifestyle-art-and-culture'|'lifestyle-destination-of-the-week'|'lifestyle-fashion'|'lifestyle-feelings'|'lifestyle-fitness'|'lifestyle-food-wine'|'lifestyle-health'|'lifestyle-pets-animals'|'lifestyle-workplace'|'technology'|'technology-tech-news'|'technology-tech-reviews'|'sports'|'sports-cricket'|'sports-football'|'sports-chess'|'sports-asian-games'|'health-wellness'|'education'|'research'|'books-and-literature'|'long-reads'|'fresh-take'|'political-pulse'|'smart-stocks' $section
+ * @method mixed indianexpressNews(array $params = [], array $options = []) indianexpress-news (GET /indianexpress/news)
+ * @method mixed indianexpressSections(array $params = [], array $options = []) indianexpress-sections (GET /indianexpress/sections)
+ */
+abstract class TheIndianExpressGroup {}
+
+/**
+ * @method mixed indiatodayArticle(array $params = [], array $options = []) indiatoday-article (GET /indiatoday/article)
+ *   params: string $url
+ * @method mixed indiatodayAuthor(array $params = [], array $options = []) indiatoday-author (GET /indiatoday/author)
+ *   params: string $url
+ * @method mixed indiatodayHeadlines(array $params = [], array $options = []) indiatoday-headlines (GET /indiatoday/headlines)
+ *   params: 'top-news'|'india'|'south-india'|'law'|'business'|'markets'|'world'|'us-news'|'sports'|'cricket'|'football'|'technology'|'science'|'health'|'environment'|'lifestyle'|'movies'|'bollywood'|'hollywood'|'movie-reviews'|'ott'|'television'|'education'|'elections'|'fact-check'|'opinion'|'trending'|'sunday-special'|'cities'|'auto'|'jobs'|'horoscopes'|'insight'|'data-intelligence'|'history-of-it' $section
+ * @method mixed indiatodayNews(array $params = [], array $options = []) indiatoday-news (GET /indiatoday/news)
+ * @method mixed indiatodaySections(array $params = [], array $options = []) indiatoday-sections (GET /indiatoday/sections)
+ */
+abstract class IndiaTodayGroup {}
+
+/**
+ * @method mixed indiewireArticle(array $params = [], array $options = []) indiewire-article (GET /indiewire/article)
+ *   params: string $url
+ * @method mixed indiewireAuthor(array $params = [], array $options = []) indiewire-author (GET /indiewire/author)
+ *   params: string $url, int $page
+ * @method mixed indiewireHeadlines(array $params = [], array $options = []) indiewire-headlines (GET /indiewire/headlines)
+ *   params: 'analysis'|'animation'|'awards'|'awards-premium'|'best-of'|'box-office'|'brand-content'|'breaking-news'|'business'|'commentary'|'consider-this'|'craft'|'criticism'|'culture'|'events'|'features'|'festivals'|'film'|'general'|'general-news'|'industry'|'interviews'|'movies'|'news'|'obituary'|'podcast'|'predictions'|'results'|'shop'|'shows'|'special-projects'|'trailers' $section
+ * @method mixed indiewireNews(array $params = [], array $options = []) indiewire-news (GET /indiewire/news)
+ * @method mixed indiewireSections(array $params = [], array $options = []) indiewire-sections (GET /indiewire/sections)
+ */
+abstract class IndieWireGroup {}
+
+/**
+ * @method mixed inewsArticle(array $params = [], array $options = []) inews-article (GET /inews/article)
+ *   params: string $url
+ * @method mixed inewsAuthor(array $params = [], array $options = []) inews-author (GET /inews/author)
+ *   params: string $url
+ * @method mixed inewsHeadlines(array $params = [], array $options = []) inews-headlines (GET /inews/headlines)
+ *   params: 'home'|'news'|'world'|'technology'|'politics'|'science'|'business'|'education'|'environment'|'health'|'media'|'housing'|'crime'|'sport'|'tennis'|'football'|'rugby-union'|'golf'|'cricket'|'boxing'|'olympics'|'rugby-league'|'opinion'|'editor'|'columnists'|'comment'|'culture'|'television'|'music'|'film'|'books'|'arts'|'radio'|'comedy'|'inews-lifestyle'|'money'|'property-and-mortgages'|'saving-and-banking'|'pensions-and-retirement'|'investing'|'small-business'|'travel'|'food-and-drink'|'homes-and-gardens'|'relationships' $section
+ * @method mixed inewsNews(array $params = [], array $options = []) inews-news (GET /inews/news)
+ * @method mixed inewsSections(array $params = [], array $options = []) inews-sections (GET /inews/sections)
+ */
+abstract class IGroup {}
+
+/**
+ * @method mixed inquirerArticle(array $params = [], array $options = []) inquirer-article (GET /inquirer/article)
+ *   params: string $url
+ * @method mixed inquirerAuthor(array $params = [], array $options = []) inquirer-author (GET /inquirer/author)
+ *   params: string $url, int $page
+ * @method mixed inquirerHeadlines(array $params = [], array $options = []) inquirer-headlines (GET /inquirer/headlines)
+ *   params: 'newsinfo'|'globalnation'|'business'|'sports'|'entertainment'|'lifestyle'|'technology'|'opinion'|'usa'|'cebudailynews' $section
+ * @method mixed inquirerNews(array $params = [], array $options = []) inquirer-news (GET /inquirer/news)
+ * @method mixed inquirerSections(array $params = [], array $options = []) inquirer-sections (GET /inquirer/sections)
+ */
+abstract class PhilippineDailyInquirerGroup {}
 
 /**
  * @method mixed departments(array $params = [], array $options = []) instacart-departments (GET /instacart/departments)
@@ -2025,6 +3222,54 @@ abstract class InstacartGroup {}
  *   params: string $id, string $max_id
  */
 abstract class InstagramGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) investopedia-article (GET /investopedia/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) investopedia-author (GET /investopedia/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) investopedia-headlines (GET /investopedia/headlines)
+ *   params: 'news'|'markets-news'|'company-news'|'earnings-reports'|'certificates-deposit-news'|'mortgage-rates'|'economic-news'|'political-news'|'cryptocurrency-news'|'live-markets-news'|'personal-finance-news'|'investing'|'stocks'|'cryptocurrency'|'bonds'|'etfs'|'options-and-derivatives-trading'|'commodities'|'trading'|'financial-technology-and-automated-investing'|'brokers'|'fundamental-analysis'|'banking'|'savings-accounts'|'certificate-of-deposits'|'money-market-account'|'checking-accounts'|'personal-finance'|'retirement-planning'|'student-loans'|'personal-loans'|'budgeting-and-savings'|'mortgage'|'credit-and-debt'|'taxes'|'insurance'|'financial-literacy-resource-center'|'economy'|'government-and-policy'|'monetary-policy'|'fiscal-policy'|'economics'|'financial-product-reviews' $section
+ * @method mixed news(array $params = [], array $options = []) investopedia-news (GET /investopedia/news)
+ * @method mixed sections(array $params = [], array $options = []) investopedia-sections (GET /investopedia/sections)
+ */
+abstract class InvestopediaGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) iol-article (GET /iol/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) iol-author (GET /iol/author)
+ *   params: string $slug, string $url
+ * @method mixed headlines(array $params = [], array $options = []) iol-headlines (GET /iol/headlines)
+ *   params: 'news'|'news/africa'|'news/brics'|'news/crime-and-courts'|'news/education'|'news/energy'|'news/environment'|'news/feel-good'|'news/opinion'|'news/partnered'|'news/politics'|'news/politics/opinion'|'news/south-africa'|'news/south-africa/eastern-cape'|'news/south-africa/free-state'|'news/south-africa/gauteng'|'news/south-africa/kwazulu-natal'|'news/south-africa/limpopo'|'news/south-africa/mpumalanga'|'news/south-africa/north-west'|'news/south-africa/northern-cape'|'news/south-africa/western-cape'|'news/world'|'sport'|'sport/athletics'|'sport/betting'|'sport/boxing'|'sport/cricket'|'sport/cricket/domestic'|'sport/cricket/international'|'sport/cricket/proteas'|'sport/cricket/proteas-women'|'sport/golf'|'sport/horse-racing'|'sport/mma'|'sport/opinion'|'sport/rugby'|'sport/rugby/imbokodo'|'sport/rugby/international'|'sport/rugby/springboks'|'sport/rugby/super-rugby'|'sport/rugby/urc'|'sport/soccer'|'sport/soccer/bafana'|'sport/soccer/la-liga'|'sport/soccer/premier-league'|'sport/soccer/psl'|'sport/soccer/uefa-champions-league'|'sport/swimming'|'sport/tennis'|'business'|'business/economy'|'business/jobs'|'business/property'|'business/window-on-china'|'personal-finance'|'opinion'|'opinion/letters'|'entertainment'|'entertainment/books'|'entertainment/celebrity-news'|'entertainment/events'|'entertainment/movies'|'entertainment/music'|'entertainment/opinion'|'entertainment/royals'|'entertainment/streaming'|'entertainment/tv'|'entertainment/whats-on'|'entertainment/whats-on/cape-town'|'entertainment/whats-on/durban'|'entertainment/whats-on/joburg'|'entertainment/whats-on/pretoria'|'lifestyle'|'lifestyle/competitions'|'lifestyle/family'|'lifestyle/family/parenting'|'lifestyle/food-drink'|'lifestyle/food-drink/recipes'|'lifestyle/health'|'lifestyle/love-sex'|'lifestyle/love-sex/relationships'|'lifestyle/opinion'|'lifestyle/style-beauty'|'lifestyle/style-beauty/beauty'|'lifestyle/style-beauty/fashion'|'technology'|'technology/esports'|'technology/gadgets'|'technology/gaming'|'technology/mobile-apps'|'technology/opinion'|'technology/software-and-internet'|'motoring'|'motoring/f1-grand-prix'|'motoring/industry-news'|'motoring/latest-launches'|'motoring/motorsport'|'motoring/partnered'|'motoring/road-tests'|'travel'|'travel/africa'|'travel/partnered'|'travel/south-africa'|'travel/travel-tips'|'travel/world'|'matric'|'g20'|'government-at-work'|'capeargus'|'capeargus/news'|'capeargus/opinion'|'weekend-argus'|'weekend-argus/news'|'dailynews'|'dailynews/news'|'the-star'|'the-star/news'|'sunday-tribune'|'saturday-star'|'pretoria-news'|'pretoria-news/news'|'pretoria-news/opinion' $section
+ * @method mixed news(array $params = [], array $options = []) iol-news (GET /iol/news)
+ * @method mixed sections(array $params = [], array $options = []) iol-sections (GET /iol/sections)
+ */
+abstract class IolGroup {}
+
+/**
+ * @method mixed irishindependentArticle(array $params = [], array $options = []) irishindependent-article (GET /irishindependent/article)
+ *   params: string $url
+ * @method mixed irishindependentAuthor(array $params = [], array $options = []) irishindependent-author (GET /irishindependent/author)
+ *   params: string $url
+ * @method mixed irishindependentHeadlines(array $params = [], array $options = []) irishindependent-headlines (GET /irishindependent/headlines)
+ *   params: 'home'|'business'|'business-commercial-property'|'business-in-the-workplace'|'business-irish-business'|'business-jobs'|'business-money'|'business-small-business'|'business-technology'|'business-world'|'comment'|'comment-analysis'|'comment-editorial'|'comment-letters'|'comment-opinion'|'county'|'county-cork'|'county-cork-sport'|'county-dublin'|'county-galway'|'county-kerry'|'county-kerry-north-west-kerry-news'|'county-kerry-south-kerry-news'|'county-kerry-sport'|'county-kerry-tralee-news'|'county-louth'|'county-louth-drogheda-news'|'county-louth-dundalk-news'|'county-louth-sport'|'county-sligo'|'county-sligo-sport'|'county-wexford'|'county-wexford-enniscorthy-news'|'county-wexford-gorey-news'|'county-wexford-new-ross-news'|'county-wexford-sport'|'county-wexford-wexford-district'|'county-wicklow'|'county-wicklow-arklow-news'|'county-wicklow-bray-news'|'county-wicklow-sport'|'county-wicklow-west-wicklow-news'|'county-wicklow-wicklow-district'|'entertainment'|'entertainment-books'|'entertainment-celebrity'|'entertainment-movies'|'entertainment-music'|'entertainment-radio'|'entertainment-television'|'entertainment-theatre-arts'|'farming'|'irish-news'|'irish-news-courts'|'irish-news-crime'|'irish-news-education'|'irish-news-health'|'irish-news-politics'|'latest'|'lifestyle'|'lifestyle-family'|'lifestyle-family-learning'|'lifestyle-family-mothers-babies'|'lifestyle-family-parenting'|'lifestyle-fashion-beauty'|'lifestyle-food-drink'|'lifestyle-food-drink-food-reviews'|'lifestyle-food-drink-recipes'|'lifestyle-food-drink-wine'|'lifestyle-health-wellbeing'|'lifestyle-health-wellbeing-baby-loss'|'lifestyle-health-wellbeing-fitness'|'lifestyle-health-wellbeing-healthy-eating'|'lifestyle-health-wellbeing-mental-health'|'lifestyle-home-garden'|'lifestyle-home-garden-gardens'|'lifestyle-home-garden-homes'|'lifestyle-home-garden-interiors'|'lifestyle-home-garden-new-homes'|'lifestyle-motoring'|'lifestyle-motoring-car-news'|'lifestyle-motoring-car-reviews'|'lifestyle-motoring-car-talk'|'lifestyle-sex-relationships'|'lifestyle-travel'|'lifestyle-weddings'|'seachtain'|'sport'|'sport-gaa'|'sport-gaa-camogie'|'sport-gaa-gaelic-football'|'sport-gaa-hurling'|'sport-gaa-ladies-football'|'sport-gaa-u-20-gaelic-football'|'sport-gaa-u-20-hurling'|'sport-golf'|'sport-horse-racing'|'sport-other-sports'|'sport-other-sports-american-football'|'sport-other-sports-athletics'|'sport-other-sports-basketball'|'sport-other-sports-boxing'|'sport-other-sports-cricket'|'sport-other-sports-cycling'|'sport-other-sports-darts'|'sport-other-sports-hockey'|'sport-other-sports-motor-sport'|'sport-other-sports-rowing'|'sport-other-sports-snooker'|'sport-other-sports-swimming'|'sport-other-sports-tennis'|'sport-rugby'|'sport-rugby-champions-cup'|'sport-rugby-connacht-rugby'|'sport-rugby-leinster-rugby'|'sport-rugby-munster-rugby'|'sport-rugby-six-nations'|'sport-rugby-ulster-rugby'|'sport-rugby-united-rugby-championship'|'sport-soccer'|'sport-soccer-champions-league'|'sport-soccer-international-soccer'|'sport-soccer-league-of-ireland'|'sport-soccer-other-soccer'|'sport-soccer-premier-league'|'sport-womens-sport'|'subscriber-exclusives'|'world-news' $section
+ * @method mixed irishindependentNews(array $params = [], array $options = []) irishindependent-news (GET /irishindependent/news)
+ * @method mixed irishindependentSections(array $params = [], array $options = []) irishindependent-sections (GET /irishindependent/sections)
+ */
+abstract class IrishIndependentGroup {}
+
+/**
+ * @method mixed irishtimesArticle(array $params = [], array $options = []) irishtimes-article (GET /irishtimes/article)
+ *   params: string $url
+ * @method mixed irishtimesAuthor(array $params = [], array $options = []) irishtimes-author (GET /irishtimes/author)
+ *   params: string $url
+ * @method mixed irishtimesHeadlines(array $params = [], array $options = []) irishtimes-headlines (GET /irishtimes/headlines)
+ *   params: 'ireland'|'opinion'|'politics'|'business'|'your-money'|'world'|'sport'|'life-style'|'health'|'technology'|'culture'|'property'|'food'|'motors'|'history'|'abroad' $section
+ * @method mixed irishtimesNews(array $params = [], array $options = []) irishtimes-news (GET /irishtimes/news)
+ * @method mixed irishtimesSections(array $params = [], array $options = []) irishtimes-sections (GET /irishtimes/sections)
+ */
+abstract class IrishTimesGroup {}
 
 /**
  * @method mixed jcrewCategories(array $params = [], array $options = []) jcrew-categories (GET /jcrew/categories)
@@ -2131,6 +3376,8 @@ abstract class JobsGroup {}
  *   params: string $unique_name
  * @method mixed justeatSearch(array $params = [], array $options = []) justeat-search (GET /justeat/search)
  *   params: string $postcode, int $limit, array<string> $filter, 'best_match'|'review_rating'|'distance'|'delivery_time'|'minimum_order_value'|'delivery_fee' $sort_by
+ * @method mixed justeatSearchFilters(array $params = [], array $options = []) justeat-search-filters (GET /justeat/search/filters)
+ *   params: string $postcode
  */
 abstract class JustEatGroup {}
 
@@ -2152,7 +3399,7 @@ abstract class JustEatGroup {}
  * @method mixed justwatchNew(array $params = [], array $options = []) justwatch-new (GET /justwatch/new)
  *   params: string $country, string $language, int $limit, 'all'|'movie'|'show' $type
  * @method mixed justwatchPopular(array $params = [], array $options = []) justwatch-popular (GET /justwatch/popular)
- *   params: string $country, string $language, int $limit, 'all'|'movie'|'show' $type
+ *   params: string $country, string $language, int $limit, 'all'|'movie'|'show' $type, string $cursor
  * @method mixed justwatchProviderTitles(array $params = [], array $options = []) justwatch-provider-titles (GET /justwatch/provider/titles)
  *   params: string $provider, string $country, string $language, int $limit, 'all'|'movie'|'show' $type
  * @method mixed justwatchProviders(array $params = [], array $options = []) justwatch-providers (GET /justwatch/providers)
@@ -2242,6 +3489,18 @@ abstract class KalshiGroup {}
 abstract class KfcGroup {}
 
 /**
+ * @method mixed khaleejtimesArticle(array $params = [], array $options = []) khaleejtimes-article (GET /khaleejtimes/article)
+ *   params: string $url
+ * @method mixed khaleejtimesAuthor(array $params = [], array $options = []) khaleejtimes-author (GET /khaleejtimes/author)
+ *   params: string $url
+ * @method mixed khaleejtimesHeadlines(array $params = [], array $options = []) khaleejtimes-headlines (GET /khaleejtimes/headlines)
+ *   params: 'business'|'business-property'|'metaverse'|'metaverse-blockchain'|'metaverse-web3'|'business-auto'|'business-aviation'|'business-corporate'|'business-cryptocurrency'|'business-currency-exchange'|'business-economy'|'business-energy'|'business-finance'|'business-infrastructure'|'business-markets'|'business-personal-finance'|'business-tech'|'business-telecom'|'entertainment'|'entertainment-gaming'|'entertainment-local-events'|'entertainment-movies'|'entertainment-music'|'entertainment-ott'|'entertainment-things-to-do-in-the-uae'|'life-and-living'|'life-and-living-banking-in-uae'|'life-and-living-housing-in-uae'|'life-and-living-public-transport-in-uae'|'life-and-living-schooling-in-uae'|'life-and-living-uae-holidays'|'life-and-living-visa-and-immigration-in-uae'|'lifestyle'|'lifestyle-arts'|'lifestyle-beauty'|'lifestyle-books'|'lifestyle-fashion'|'lifestyle-food'|'lifestyle-gadgets'|'lifestyle-health'|'lifestyle-home'|'lifestyle-mental-health'|'lifestyle-parenting'|'lifestyle-restaurant-reviews'|'lifestyle-shopping'|'lifestyle-wellness'|'lifestyle-women-and-money'|'lifestyle-writers-corner'|'opinion'|'opinion-columnists'|'opinion-editorial'|'offbeat'|'long-reads'|'space'|'reviews'|'reviews-movie-reviews'|'reviews-tech-reviews'|'sports'|'sports-cricket'|'sports-f1'|'sports-fifa-world-cup'|'sports-football'|'sports-golf'|'sports-horse-racing'|'sports-tennis'|'sports-local-sports'|'travel'|'travel-uae-attractions'|'uae'|'uae-crime'|'uae-education'|'uae-emergencies'|'uae-environment'|'uae-expo-city-dubai'|'uae-government'|'uae-legal'|'uae-transport'|'uae-weather'|'world'|'world-africa'|'world-americas'|'world-asia'|'world-europe'|'world-gulf'|'world-mena'|'uae-eid-al-etihad'|'metaverse-nfts'|'leadership'|'leadership-interviews'|'leadership-breaking-bread'|'leadership-stories'|'leadership-contributors'|'uae-schools-and-parents'|'uae-global-indians' $section
+ * @method mixed khaleejtimesNews(array $params = [], array $options = []) khaleejtimes-news (GET /khaleejtimes/news)
+ * @method mixed khaleejtimesSections(array $params = [], array $options = []) khaleejtimes-sections (GET /khaleejtimes/sections)
+ */
+abstract class KhaleejTimesGroup {}
+
+/**
  * @method mixed comments(array $params = [], array $options = []) kickstarter-comments (GET /kickstarter/comments)
  *   params: string $creator, string $slug
  * @method mixed discover(array $params = [], array $options = []) kickstarter-discover (GET /kickstarter/discover)
@@ -2266,6 +3525,19 @@ abstract class KickstarterGroup {}
 abstract class KohlSGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) kotaku-article (GET /kotaku/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) kotaku-author (GET /kotaku/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) kotaku-headlines (GET /kotaku/headlines)
+ *   params: 'entertainment'|'action'|'fantasy'|'horror'|'sci-fi'|'superhero'|'reviews'|'news'|'retro'|'kotaku-game-diary'|'youtube'|'odds-and-ends'|'feature'|'fine-art'|'game-tips'|'games'|'deals' $section
+ * @method mixed news(array $params = [], array $options = []) kotaku-news (GET /kotaku/news)
+ * @method mixed sections(array $params = [], array $options = []) kotaku-sections (GET /kotaku/sections)
+ */
+abstract class KotakuGroup {}
+
+/**
+ * @method mixed categories(array $params = [], array $options = []) kroger-categories (GET /kroger/categories)
  * @method mixed category(array $params = [], array $options = []) kroger-category (GET /kroger/category)
  *   params: string $slug, string $category_id, int $page, 'relevance'|'name_asc'|'popularity_desc' $sort, string $brands, string $nutrition, string $flavor, string $scent, string $savings, string $more_options, float $price_min, float $price_max
  * @method mixed coupons(array $params = [], array $options = []) kroger-coupons (GET /kroger/coupons)
@@ -2312,6 +3584,17 @@ abstract class KrogerGroup {}
 abstract class KylieCosmeticsGroup {}
 
 /**
+ * @method mixed latimesArticle(array $params = [], array $options = []) latimes-article (GET /latimes/article)
+ *   params: string $url
+ * @method mixed latimesAuthor(array $params = [], array $options = []) latimes-author (GET /latimes/author)
+ *   params: string $url
+ * @method mixed latimesHeadlines(array $params = [], array $options = []) latimes-headlines (GET /latimes/headlines)
+ *   params: 'main'|'business'|'business/autos'|'business/real-estate'|'business/technology'|'california'|'california/orange-county'|'entertainment-arts'|'entertainment-arts/awards'|'entertainment-arts/books'|'entertainment-arts/business'|'entertainment-arts/movies'|'entertainment-arts/music'|'entertainment-arts/tv'|'environment'|'espanol/comida'|'espanol/deportes'|'espanol/eeuu'|'espanol/entretenimiento'|'espanol/internacional'|'espanol/mexico'|'espanol/politica'|'espanol/vida-y-estilo'|'food'|'lifestyle'|'obituaries'|'opinion'|'politics'|'science'|'sports'|'sports/angels'|'sports/chargers'|'sports/clippers'|'sports/dodgers'|'sports/highschool'|'sports/hockey'|'sports/lakers'|'sports/rams'|'sports/soccer'|'sports/ucla'|'sports/usc'|'travel'|'world-nation' $section
+ * @method mixed latimesSections(array $params = [], array $options = []) latimes-sections (GET /latimes/sections)
+ */
+abstract class LosAngelesTimesGroup {}
+
+/**
  * @method mixed categories(array $params = [], array $options = []) lazada-categories (GET /lazada/categories)
  *   params: 'id'|'ph'|'th'|'my'|'vn'|'sg' $country
  * @method mixed categoryProducts(array $params = [], array $options = []) lazada-category-products (GET /lazada/category-products)
@@ -2356,12 +3639,79 @@ abstract class LetterboxdGroup {}
 /**
  * @method mixed linkedinCompany(array $params = [], array $options = []) linkedin-company (GET /linkedin/company/{id})
  *   params: string $id
+ * @method mixed linkedinProductCategories(array $params = [], array $options = []) linkedin-product-categories (GET /linkedin/product/categories)
+ *   params: string $keyword
  * @method mixed linkedinProduct(array $params = [], array $options = []) linkedin-product (GET /linkedin/product/{id})
  *   params: string $id
+ * @method mixed linkedinProductsSearch(array $params = [], array $options = []) linkedin-products-search (GET /linkedin/products/search)
+ *   params: string $keyword, string $category_id, int $start
  * @method mixed linkedinShowcase(array $params = [], array $options = []) linkedin-showcase (GET /linkedin/showcase/{id})
  *   params: string $id
  */
 abstract class LinkedInGroup {}
+
+/**
+ * @method mixed livemintArticle(array $params = [], array $options = []) livemint-article (GET /livemint/article)
+ *   params: string $url
+ * @method mixed livemintAuthor(array $params = [], array $options = []) livemint-author (GET /livemint/author)
+ *   params: string $url
+ * @method mixed livemintHeadlines(array $params = [], array $options = []) livemint-headlines (GET /livemint/headlines)
+ *   params: 'companies'|'opinion'|'money'|'politics'|'science'|'industry'|'education'|'sports'|'technology'|'markets'|'ai'|'insurance'|'budget'|'elections'|'videos' $section
+ * @method mixed livemintNews(array $params = [], array $options = []) livemint-news (GET /livemint/news)
+ * @method mixed livemintSections(array $params = [], array $options = []) livemint-sections (GET /livemint/sections)
+ */
+abstract class MintGroup {}
+
+/**
+ * @method mixed liverpoolechoArticle(array $params = [], array $options = []) liverpoolecho-article (GET /liverpoolecho/article)
+ *   params: string $url
+ * @method mixed liverpoolechoAuthor(array $params = [], array $options = []) liverpoolecho-author (GET /liverpoolecho/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed liverpoolechoHeadlines(array $params = [], array $options = []) liverpoolecho-headlines (GET /liverpoolecho/headlines)
+ *   params: 'news'|'news/liverpool-news'|'news/uk-world-news'|'news/showbiz-news'|'news/tv'|'news/nostalgia'|'news/property'|'news/motoring'|'news/cost-of-living'|'news/health'|'sport'|'sport/football'|'sport/football/football-news'|'sport/football/transfer-news'|'sport/boxing'|'sport/other-sport'|'sport/other-sport/horse-racing'|'sport/sport-opinion'|'whats-on'|'whats-on/whats-on-news'|'whats-on/family-kids-news'|'whats-on/food-drink-news'|'whats-on/music-nightlife-news'|'whats-on/shopping'|'whats-on/theatre-news'|'travel'|'special-features'|'in-your-area' $section
+ * @method mixed liverpoolechoNews(array $params = [], array $options = []) liverpoolecho-news (GET /liverpoolecho/news)
+ * @method mixed liverpoolechoSections(array $params = [], array $options = []) liverpoolecho-sections (GET /liverpoolecho/sections)
+ */
+abstract class LiverpoolEchoGroup {}
+
+/**
+ * @method mixed livescienceArticle(array $params = [], array $options = []) livescience-article (GET /livescience/article)
+ *   params: string $url
+ * @method mixed livescienceAuthor(array $params = [], array $options = []) livescience-author (GET /livescience/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed livescienceHeadlines(array $params = [], array $options = []) livescience-headlines (GET /livescience/headlines)
+ *   params: 'animals'|'archaeology'|'chemistry'|'features'|'health'|'human-behavior'|'interviews'|'news'|'opinion'|'physics-mathematics'|'planet-earth'|'products'|'space'|'technology' $section
+ * @method mixed livescienceNews(array $params = [], array $options = []) livescience-news (GET /livescience/news)
+ * @method mixed livescienceSections(array $params = [], array $options = []) livescience-sections (GET /livescience/sections)
+ */
+abstract class LiveScienceGroup {}
+
+/**
+ * @method mixed livescoreCompetition(array $params = [], array $options = []) livescore-competition (GET /livescore/competition)
+ *   params: string $path
+ * @method mixed livescoreLiveScores(array $params = [], array $options = []) livescore-live-scores (GET /livescore/live-scores)
+ *   params: 'soccer'|'hockey'|'basketball'|'tennis'|'cricket' $sport, int $timezone_offset, bool $paging, string $cursor, 'down'|'up' $direction
+ * @method mixed livescoreMatch(array $params = [], array $options = []) livescore-match (GET /livescore/match)
+ *   params: string $path
+ * @method mixed livescoreMatchStats(array $params = [], array $options = []) livescore-match-stats (GET /livescore/match-stats)
+ *   params: string $path
+ * @method mixed livescoreNews(array $params = [], array $options = []) livescore-news (GET /livescore/news)
+ *   params: string $category
+ * @method mixed livescoreNewsArticle(array $params = [], array $options = []) livescore-news-article (GET /livescore/news-article)
+ *   params: string $path
+ * @method mixed livescoreNewsCategories(array $params = [], array $options = []) livescore-news-categories (GET /livescore/news-categories)
+ * @method mixed livescoreNewsFeed(array $params = [], array $options = []) livescore-news-feed (GET /livescore/news-feed)
+ * @method mixed livescorePlayer(array $params = [], array $options = []) livescore-player (GET /livescore/player)
+ *   params: string $path
+ * @method mixed livescoreScores(array $params = [], array $options = []) livescore-scores (GET /livescore/scores)
+ *   params: 'soccer'|'hockey'|'basketball'|'tennis'|'cricket' $sport, string $date, int $timezone_offset, bool $paging, string $cursor, 'down'|'up' $direction
+ * @method mixed livescoreScoresToc(array $params = [], array $options = []) livescore-scores-toc (GET /livescore/scores-toc)
+ *   params: 'soccer'|'hockey'|'basketball'|'tennis'|'cricket' $sport, string $date, int $timezone_offset
+ * @method mixed livescoreSports(array $params = [], array $options = []) livescore-sports (GET /livescore/sports)
+ * @method mixed livescoreTeam(array $params = [], array $options = []) livescore-team (GET /livescore/team)
+ *   params: string $path
+ */
+abstract class LiveScoreGroup {}
 
 /**
  * @method mixed categories(array $params = [], array $options = []) lululemon-categories (GET /lululemon/categories)
@@ -2376,6 +3726,18 @@ abstract class LinkedInGroup {}
  *   params: string $country, string $state, float $lat, float $lng, float $radius_miles
  */
 abstract class LululemonGroup {}
+
+/**
+ * @method mixed macrumorsArticle(array $params = [], array $options = []) macrumors-article (GET /macrumors/article)
+ *   params: string $url
+ * @method mixed macrumorsAuthor(array $params = [], array $options = []) macrumors-author (GET /macrumors/author)
+ *   params: string $slug, string $url
+ * @method mixed macrumorsHeadlines(array $params = [], array $options = []) macrumors-headlines (GET /macrumors/headlines)
+ *   params: 'front-page'|'guides'|'how-to'|'reviews' $section
+ * @method mixed macrumorsNews(array $params = [], array $options = []) macrumors-news (GET /macrumors/news)
+ * @method mixed macrumorsSections(array $params = [], array $options = []) macrumors-sections (GET /macrumors/sections)
+ */
+abstract class MacRumorsGroup {}
 
 /**
  * @method mixed macysProductReviews(array $params = [], array $options = []) macys-product-reviews (GET /macys/product/reviews)
@@ -2404,6 +3766,30 @@ abstract class MacySGroup {}
 abstract class MangaGroup {}
 
 /**
+ * @method mixed marketwatchArticle(array $params = [], array $options = []) marketwatch-article (GET /marketwatch/article)
+ *   params: string $url
+ * @method mixed marketwatchAuthor(array $params = [], array $options = []) marketwatch-author (GET /marketwatch/author)
+ *   params: string $slug, string $url
+ * @method mixed marketwatchHeadlines(array $params = [], array $options = []) marketwatch-headlines (GET /marketwatch/headlines)
+ *   params: 'latest-news'|'markets'|'investing'|'personal-finance'|'economy-politics'|'technology'|'retirement'|'real-estate' $section
+ * @method mixed marketwatchNews(array $params = [], array $options = []) marketwatch-news (GET /marketwatch/news)
+ * @method mixed marketwatchSections(array $params = [], array $options = []) marketwatch-sections (GET /marketwatch/sections)
+ */
+abstract class MarketWatchGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) mashable-article (GET /mashable/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) mashable-author (GET /mashable/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed headlines(array $params = [], array $options = []) mashable-headlines (GET /mashable/headlines)
+ *   params: 'android'|'animals'|'apple'|'cannabis'|'celebrities'|'climate-change'|'covid-19'|'desktops'|'digital-culture'|'education'|'entertainment'|'fitness'|'games'|'gaming'|'gaming-consoles'|'gender'|'headphones'|'health-wellness'|'house-home'|'laptops'|'lgbtq'|'life'|'memes'|'mental-health'|'mobile'|'movies'|'podcasts'|'science'|'sex'|'sex-dating-relationships'|'smart-home'|'social-good'|'social-media'|'space'|'speakers'|'tablets'|'tech'|'tech-industry'|'transportation'|'tv-shows'|'tvs'|'wifirouters' $section
+ * @method mixed news(array $params = [], array $options = []) mashable-news (GET /mashable/news)
+ * @method mixed sections(array $params = [], array $options = []) mashable-sections (GET /mashable/sections)
+ */
+abstract class MashableGroup {}
+
+/**
  * @method mixed mcdonaldsCategories(array $params = [], array $options = []) mcdonalds-categories (GET /mcdonalds/categories)
  *   params: 'us'|'ca'|'gb'|'au'|'ie'|'nz'|'ch'|'se' $country
  * @method mixed mcdonaldsItem(array $params = [], array $options = []) mcdonalds-item (GET /mcdonalds/item)
@@ -2418,6 +3804,30 @@ abstract class MangaGroup {}
  *   params: float $latitude, float $longitude, int $radius, int $max_results, 'us'|'gb'|'ca'|'au'|'de'|'ie'|'nz'|'ch'|'nl'|'se' $country
  */
 abstract class McDonaldsGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) mediaite-article (GET /mediaite/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) mediaite-author (GET /mediaite/author)
+ *   params: string $slug, string $url
+ * @method mixed headlines(array $params = [], array $options = []) mediaite-headlines (GET /mediaite/headlines)
+ *   params: 'media'|'tv'|'news'|'entertainment'|'sports'|'podcasts'|'tech'|'online'|'politics'|'trump'|'election-2020'|'opinion'|'columnists'|'crime'|'premium' $section
+ * @method mixed news(array $params = [], array $options = []) mediaite-news (GET /mediaite/news)
+ * @method mixed sections(array $params = [], array $options = []) mediaite-sections (GET /mediaite/sections)
+ */
+abstract class MediaiteGroup {}
+
+/**
+ * @method mixed menArticle(array $params = [], array $options = []) men-article (GET /men/article)
+ *   params: string $url
+ * @method mixed menAuthor(array $params = [], array $options = []) men-author (GET /men/author)
+ *   params: string $slug, string $url
+ * @method mixed menHeadlines(array $params = [], array $options = []) men-headlines (GET /men/headlines)
+ *   params: 'news'|'news/uk-news'|'news/greater-manchester-news'|'news/local-news'|'news/world-news'|'news/health'|'news/property'|'news/cost-of-living'|'news/money-saving'|'news/parenting'|'news/real-life'|'news/showbiz-news'|'news/tv'|'sport'|'sport/football'|'sport/football/football-news'|'sport/football/transfer-news'|'sport/boxing'|'sport/cricket'|'whats-on'|'whats-on/whats-on-news'|'whats-on/family-kids-news'|'whats-on/food-drink-news'|'whats-on/music-nightlife-news'|'whats-on/theatre-news'|'whats-on/shopping'|'trips-and-breaks' $section
+ * @method mixed menNews(array $params = [], array $options = []) men-news (GET /men/news)
+ * @method mixed menSections(array $params = [], array $options = []) men-sections (GET /men/sections)
+ */
+abstract class ManchesterEveningNewsGroup {}
 
 /**
  * @method mixed autocomplete(array $params = [], array $options = []) mercari-autocomplete (GET /mercari/autocomplete)
@@ -2492,6 +3902,62 @@ abstract class MetacriticGroup {}
 abstract class MetaculusGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) metro-article (GET /metro/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) metro-author (GET /metro/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) metro-headlines (GET /metro/headlines)
+ *   params: 'home'|'news'|'uk'|'world'|'us'|'politics'|'tech'|'weird'|'sport'|'football'|'boxing'|'cricket'|'f1'|'golf'|'snooker'|'tennis'|'entertainment'|'showbiz'|'tv'|'film'|'music'|'gaming'|'tv-soaps'|'coronation-street'|'eastenders'|'emmerdale'|'hollyoaks'|'casualty'|'lifestyle'|'health'|'food'|'travel'|'money'|'property'|'families'|'beauty'|'sex'|'horoscopes'|'shopping'|'opinion'|'letters'|'cartoons' $section
+ * @method mixed news(array $params = [], array $options = []) metro-news (GET /metro/news)
+ * @method mixed sections(array $params = [], array $options = []) metro-sections (GET /metro/sections)
+ */
+abstract class MetroGroup {}
+
+/**
+ * @method mixed microsoftstoreCategories(array $params = [], array $options = []) microsoftstore-categories (GET /microsoftstore/categories)
+ *   params: 'apps'|'games'|'devices'|'passes'|'fonts'|'themes'|'tencent-android'|'tencent-mini' $media_type
+ * @method mixed microsoftstoreCategory(array $params = [], array $options = []) microsoftstore-category (GET /microsoftstore/category)
+ *   params: string $category, 'apps'|'games'|'devices'|'passes'|'fonts'|'themes'|'tencent-android'|'tencent-mini' $media_type, string $cursor, string $country, string $locale
+ * @method mixed microsoftstoreCharts(array $params = [], array $options = []) microsoftstore-charts (GET /microsoftstore/charts)
+ *   params: 'TopFree'|'TopPaid'|'TopGrossing'|'toptrending'|'NewAndRising'|'Deal'|'GettingStartedApps'|'MostPopular' $list, 'apps'|'games' $media_type, string $category, string $subcategory, 'onsale' $discount_filter, 'gamepass' $subscription_filter, 'AllPlayers'|'SinglePlayer'|'OnlineMultiplayerWithGold'|'LocalMultiplayer'|'CoopSupportOnline'|'CoopSupportLocal' $num_players_filter, int $page, int $page_size, string $country, string $locale
+ * @method mixed microsoftstoreEditorial(array $params = [], array $options = []) microsoftstore-editorial (GET /microsoftstore/editorial)
+ *   params: string $editorial_id, string $country, string $locale
+ * @method mixed microsoftstoreEvents(array $params = [], array $options = []) microsoftstore-events (GET /microsoftstore/events)
+ *   params: 'apps'|'games' $media_type, int $page, int $page_size, string $country, string $locale
+ * @method mixed microsoftstoreProduct(array $params = [], array $options = []) microsoftstore-product (GET /microsoftstore/product)
+ *   params: string $product_id, string $country, string $locale
+ * @method mixed microsoftstorePublisher(array $params = [], array $options = []) microsoftstore-publisher (GET /microsoftstore/publisher)
+ *   params: string $publisher_name, string $cursor, string $country, string $locale
+ * @method mixed microsoftstoreRecommended(array $params = [], array $options = []) microsoftstore-recommended (GET /microsoftstore/recommended)
+ *   params: string $country, string $locale
+ * @method mixed microsoftstoreRelated(array $params = [], array $options = []) microsoftstore-related (GET /microsoftstore/related)
+ *   params: string $product_id, 'Application'|'Game'|'Passes' $product_type, int $page, int $page_size, string $country, string $locale
+ * @method mixed microsoftstoreReviews(array $params = [], array $options = []) microsoftstore-reviews (GET /microsoftstore/reviews)
+ *   params: string $product_id, 'MostHelpful'|'MostRecent' $sort, int $page, int $page_size, string $country, string $locale
+ * @method mixed microsoftstoreReviewsSummary(array $params = [], array $options = []) microsoftstore-reviews-summary (GET /microsoftstore/reviews/summary)
+ *   params: string $product_id, string $country, string $locale
+ * @method mixed microsoftstoreSearch(array $params = [], array $options = []) microsoftstore-search (GET /microsoftstore/search)
+ *   params: string $query, 'all'|'apps'|'games'|'devices'|'passes'|'fonts'|'themes'|'tencent-android'|'tencent-mini' $media_type, string $category, 'all'|'Free'|'Paid'|'Sale' $price, 'all'|'TO3'|'TO4'|'TO5'|'TO6'|'TO7'|'TO8'|'TO9'|'TO10'|'TO11'|'TO12'|'TO13'|'TO14'|'TO15'|'TO16'|'TO17' $age, string $cursor, string $country, string $locale
+ * @method mixed microsoftstoreSpotlight(array $params = [], array $options = []) microsoftstore-spotlight (GET /microsoftstore/spotlight)
+ *   params: 'home'|'apps'|'games' $media_type, string $country, string $locale
+ * @method mixed microsoftstoreSuggest(array $params = [], array $options = []) microsoftstore-suggest (GET /microsoftstore/suggest)
+ *   params: string $prefix, string $country, string $locale
+ */
+abstract class MicrosoftStoreGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) mirror-article (GET /mirror/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) mirror-author (GET /mirror/author)
+ *   params: string $slug, string $url
+ * @method mixed headlines(array $params = [], array $options = []) mirror-headlines (GET /mirror/headlines)
+ *   params: 'news'|'news/uk-news'|'news/world-news'|'news/politics'|'news/weird-news'|'news/royals'|'news/health'|'news/us-news'|'news/real-life-stories'|'sport'|'sport/football'|'sport/boxing'|'sport/cricket'|'sport/formula-1'|'sport/golf'|'sport/horse-racing'|'sport/rugby-league'|'sport/rugby-union'|'3am'|'3am/style'|'3am/us-celebrity-news'|'lifestyle'|'lifestyle/family'|'lifestyle/food-drink'|'lifestyle/gardening'|'lifestyle/motoring'|'lifestyle/sex-relationships'|'travel'|'money'|'money/shopping-deals'|'tv'|'film'|'gaming'|'tech' $section
+ * @method mixed news(array $params = [], array $options = []) mirror-news (GET /mirror/news)
+ * @method mixed sections(array $params = [], array $options = []) mirror-sections (GET /mirror/sections)
+ */
+abstract class MirrorGroup {}
+
+/**
  * @method mixed game(array $params = [], array $options = []) mlb-game (GET /mlb/game)
  *   params: string $id
  * @method mixed gameBoxscore(array $params = [], array $options = []) mlb-game-boxscore (GET /mlb/game-boxscore)
@@ -2520,6 +3986,44 @@ abstract class MetaculusGroup {}
 abstract class MlbGroup {}
 
 /**
+ * @method mixed modaoperandiCategories(array $params = [], array $options = []) modaoperandi-categories (GET /modaoperandi/categories)
+ * @method mixed modaoperandiDesigners(array $params = [], array $options = []) modaoperandi-designers (GET /modaoperandi/designers)
+ *   params: 'women'|'men' $gender
+ * @method mixed modaoperandiProduct(array $params = [], array $options = []) modaoperandi-product (GET /modaoperandi/product)
+ *   params: string $url
+ * @method mixed modaoperandiSearch(array $params = [], array $options = []) modaoperandi-search (GET /modaoperandi/search)
+ *   params: 'women'|'men' $gender, string $q, string $category, string $designer, string $color, string $size, string $attribute, 'available_now'|'preorder'|'trunkshow' $availability, float $price_min, float $price_max, bool $on_sale, 'default'|'price_low_to_high'|'price_high_to_low'|'newest' $sort, int $page, int $limit
+ */
+abstract class ModaOperandiGroup {}
+
+/**
+ * @method mixed categories(array $params = [], array $options = []) moncler-categories (GET /moncler/categories)
+ *   params: int $levels
+ * @method mixed category(array $params = [], array $options = []) moncler-category (GET /moncler/category)
+ *   params: string $category_id, 'price-high-to-low'|'price-low-to-high' $sort, array<string> $filter, int $limit, int $offset
+ * @method mixed product(array $params = [], array $options = []) moncler-product (GET /moncler/product)
+ *   params: string $product_id
+ * @method mixed search(array $params = [], array $options = []) moncler-search (GET /moncler/search)
+ *   params: string $q, 'price-high-to-low'|'price-low-to-high' $sort, array<string> $filter, int $limit, int $offset
+ * @method mixed stores(array $params = [], array $options = []) moncler-stores (GET /moncler/stores)
+ * @method mixed suggest(array $params = [], array $options = []) moncler-suggest (GET /moncler/suggest)
+ *   params: string $q
+ */
+abstract class MonclerGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) moneycontrol-article (GET /moneycontrol/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) moneycontrol-author (GET /moneycontrol/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) moneycontrol-headlines (GET /moneycontrol/headlines)
+ *   params: 'business'|'markets'|'economy'|'companies'|'personal-finance'|'ipo'|'startup'|'commodities'|'earnings'|'insurance'|'banks'|'stocks'|'mutual-funds'|'real-estate'|'funding'|'information-technology'|'india'|'politics'|'trends'|'interview'|'opinion'|'currency'|'telecom'|'world'|'city'|'banking'|'explainers'|'technology'|'automobile'|'sports'|'cricket'|'football'|'entertainment'|'bollywood'|'hollywood'|'ott'|'tv'|'regional'|'music'|'lifestyle'|'beauty'|'parenting'|'relationship'|'home-garden'|'health-and-fitness'|'education'|'science'|'astrology'|'religion'|'travel'|'artificial-intelligence'|'books' $section
+ * @method mixed news(array $params = [], array $options = []) moneycontrol-news (GET /moneycontrol/news)
+ * @method mixed sections(array $params = [], array $options = []) moneycontrol-sections (GET /moneycontrol/sections)
+ */
+abstract class MoneycontrolGroup {}
+
+/**
  * @method mixed list_(array $params = [], array $options = []) monitors-list (GET /monitors)
  * @method mixed create(array $params = [], array $options = []) monitors-create (POST /monitors)
  *   params: array $request
@@ -2533,6 +4037,124 @@ abstract class MlbGroup {}
  *   params: string $id
  */
 abstract class MonitorsGroup {}
+
+/**
+ * @method mixed nationafricaArticle(array $params = [], array $options = []) nationafrica-article (GET /nationafrica/article)
+ *   params: string $url
+ * @method mixed nationafricaAuthor(array $params = [], array $options = []) nationafrica-author (GET /nationafrica/author)
+ *   params: string $slug, string $url
+ * @method mixed nationafricaHeadlines(array $params = [], array $options = []) nationafrica-headlines (GET /nationafrica/headlines)
+ *   params: 'news'|'politics'|'world'|'gender'|'education'|'business'|'companies'|'enterprise'|'finance-and-markets'|'seeds-of-gold'|'sports'|'football'|'athletics'|'rugby'|'motorsports'|'other-sports'|'talkup'|'counties'|'coast'|'lake-region'|'mountain'|'nairobi-metro'|'northern'|'rift-valley'|'blogs-opinion'|'opinion'|'editorials'|'letters'|'blogs'|'cutting-edge'|'life-and-style'|'wellness'|'travel'|'relationships'|'motoring'|'family'|'culture'|'art-books'|'health'|'healthy-nation'|'elections'|'elections-news'|'presidential'|'governor-race'|'constituencies'|'explainers'|'fact-checks' $section
+ * @method mixed nationafricaNews(array $params = [], array $options = []) nationafrica-news (GET /nationafrica/news)
+ * @method mixed nationafricaSections(array $params = [], array $options = []) nationafrica-sections (GET /nationafrica/sections)
+ */
+abstract class NationAfricaGroup {}
+
+/**
+ * @method mixed nationalpostArticle(array $params = [], array $options = []) nationalpost-article (GET /nationalpost/article)
+ *   params: string $url
+ * @method mixed nationalpostAuthor(array $params = [], array $options = []) nationalpost-author (GET /nationalpost/author)
+ *   params: string $slug, string $url
+ * @method mixed nationalpostHeadlines(array $params = [], array $options = []) nationalpost-headlines (GET /nationalpost/headlines)
+ *   params: 'canada'|'true-crime'|'politics'|'health'|'world'|'israel-middle-east'|'opinion'|'longreads'|'modern-life'|'food'|'horoscopes'|'style-beauty'|'travel'|'travel-canada'|'travel-usa'|'travel-international'|'travel-cruises'|'travel-guide'|'entertainment'|'books'|'celebrity'|'movies'|'music'|'theatre'|'television'|'business-essentials'|'shopping-essentials'|'buy-canadian'|'home-living'|'outdoor-living'|'kitchen-dining'|'tech'|'personal-care'|'entertainment-hobbies'|'gift-guide'|'deals'|'sports'|'hockey'|'baseball'|'basketball'|'football'|'soccer'|'golf'|'tennis'|'driving' $section
+ * @method mixed nationalpostNews(array $params = [], array $options = []) nationalpost-news (GET /nationalpost/news)
+ * @method mixed nationalpostSections(array $params = [], array $options = []) nationalpost-sections (GET /nationalpost/sections)
+ */
+abstract class NationalPostGroup {}
+
+/**
+ * @method mixed nbcArticle(array $params = [], array $options = []) nbc-article (GET /nbc/article)
+ *   params: string $url
+ * @method mixed nbcAuthor(array $params = [], array $options = []) nbc-author (GET /nbc/author)
+ *   params: string $url
+ * @method mixed nbcHeadlines(array $params = [], array $options = []) nbc-headlines (GET /nbc/headlines)
+ *   params: 'news'|'world'|'us-news'|'politics'|'business'|'science'|'health' $section
+ * @method mixed call(array $params = [], array $options = []) nbc-news (GET /nbc/news)
+ * @method mixed nbcSections(array $params = [], array $options = []) nbc-sections (GET /nbc/sections)
+ */
+abstract class NbcNewsGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) ndtv-article (GET /ndtv/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) ndtv-author (GET /ndtv/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) ndtv-headlines (GET /ndtv/headlines)
+ *   params: 'latest'|'india'|'world'|'world-india-global'|'world-diaspora'|'opinion'|'spotlight'|'business-news'|'south'|'cities'|'bangalore-news'|'chennai-news'|'delhi-news'|'mumbai-news'|'others-news'|'ahmedabad-news'|'allahabad-news'|'amritsar-news'|'bhopal-news'|'bhubaneshwar-news'|'chandigarh-news'|'ghaziabad-news'|'goa-news'|'gurgaon-news'|'guwahati-news'|'hyderabad-news'|'jaipur-news'|'kanpur-news'|'kolkata-news'|'lucknow-news'|'noida-news'|'patna-news'|'pune-news'|'srinagar-news'|'thiruvananthapuram-news'|'andhra-pradesh-news'|'karnataka-news'|'kerala-news'|'tamil-nadu-news'|'telangana-news'|'education'|'education-exams-news'|'education-school-news'|'education-campus-news'|'education-study-abroad'|'education-latest'|'health'|'entertainment'|'lifestyle'|'food'|'travel'|'auto'|'science'|'offbeat'|'trends'|'feature' $section
+ * @method mixed news(array $params = [], array $options = []) ndtv-news (GET /ndtv/news)
+ * @method mixed sections(array $params = [], array $options = []) ndtv-sections (GET /ndtv/sections)
+ */
+abstract class NdtvGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) news18-article (GET /news18/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) news18-author (GET /news18/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) news18-headlines (GET /news18/headlines)
+ *   params: 'india'|'world'|'cricket'|'business'|'sports'|'movies'|'lifestyle'|'tech'|'auto'|'opinion'|'elections'|'politics'|'viral'|'explainers'|'education-career'|'astrology'|'cities'|'breaking-news' $section
+ * @method mixed news(array $params = [], array $options = []) news18-news (GET /news18/news)
+ * @method mixed sections(array $params = [], array $options = []) news18-sections (GET /news18/sections)
+ */
+abstract class News18Group {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) news24-article (GET /news24/article)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) news24-headlines (GET /news24/headlines)
+ *   params: 'business'|'business/climate-future'|'business/climate-future/energy'|'business/climate-future/environment'|'business/climate-future/news'|'business/climate-future/solutions'|'business/companies'|'business/consumer-lookout'|'business/economy'|'business/markets'|'business/money'|'business/opinion'|'business/tech'|'investigations'|'investigations/eskomfiles'|'investigations/phala-phala'|'investigations/silenced'|'life'|'life/arts-and-entertainment'|'life/books'|'life/food'|'life/lifestyle-trends'|'life/motoring'|'life/relationships'|'life/travel'|'life/wellness'|'life/wine'|'opinions'|'opinions/analysis'|'opinions/cartoons'|'opinions/columnists'|'opinions/explainers'|'opinions/fridaybriefing/editions'|'opinions/letters'|'opinions/reader-hub'|'politics'|'southafrica'|'southafrica/crime-and-courts'|'southafrica/debunking'|'southafrica/education'|'southafrica/good-news'|'southafrica/good-news/outdoor'|'southafrica/health-news'|'southafrica/schools-hub'|'southafrica/weather'|'specialreports'|'sport'|'sport/columnists'|'sport/cricket'|'sport/cricket/proteas'|'sport/cricket/sa20'|'sport/golf'|'sport/motorsport'|'sport/motorsport/formula-one'|'sport/other-sport'|'sport/rugby'|'sport/rugby/bulls'|'sport/rugby/cheetahs'|'sport/rugby/lions'|'sport/rugby/pnpgoldcup'|'sport/rugby/sharks'|'sport/rugby/springboks'|'sport/rugby/stormers'|'sport/rugby/urc'|'sport/soccer'|'sport/soccer/bafana-bafana-and-banyana-banyana'|'sport/soccer/english-premier-league'|'sport/soccer/psl'|'sport/soccer/worldcup'|'sport/tennis'|'sunday'|'world'|'world/africa' $section
+ * @method mixed news(array $params = [], array $options = []) news24-news (GET /news24/news)
+ * @method mixed sections(array $params = [], array $options = []) news24-sections (GET /news24/sections)
+ */
+abstract class News24Group {}
+
+/**
+ * @method mixed newscomauArticle(array $params = [], array $options = []) newscomau-article (GET /newscomau/article)
+ *   params: string $url
+ * @method mixed newscomauAuthor(array $params = [], array $options = []) newscomau-author (GET /newscomau/author)
+ *   params: string $url
+ * @method mixed newscomauHeadlines(array $params = [], array $options = []) newscomau-headlines (GET /newscomau/headlines)
+ *   params: string $section
+ * @method mixed newscomauNews(array $params = [], array $options = []) newscomau-news (GET /newscomau/news)
+ * @method mixed newscomauSections(array $params = [], array $options = []) newscomau-sections (GET /newscomau/sections)
+ */
+abstract class NewsComAuGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) newsmax-article (GET /newsmax/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) newsmax-author (GET /newsmax/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) newsmax-headlines (GET /newsmax/headlines)
+ *   params: 'newsfront'|'us'|'politics'|'thewire'|'scitech'|'health-news'|'cancer'|'brain-health'|'diet-and-fitness'|'diabetes'|'natural-health'|'anti-aging'|'finance-headlines'|'street-talk'|'finance-news'|'economy'|'companies'|'investing-analysis'|'global-talk'|'insiders' $section
+ * @method mixed news(array $params = [], array $options = []) newsmax-news (GET /newsmax/news)
+ * @method mixed sections(array $params = [], array $options = []) newsmax-sections (GET /newsmax/sections)
+ */
+abstract class NewsmaxGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) newsweek-article (GET /newsweek/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) newsweek-author (GET /newsweek/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed headlines(array $params = [], array $options = []) newsweek-headlines (GET /newsweek/headlines)
+ *   params: 'news'|'opinion'|'politics'|'world'|'us'|'business'|'technology'|'health'|'entertainment'|'sports'|'fact-check'|'better-planet'|'life'|'travel'|'pets'|'autos'|'relationships'|'tech-science'|'personal-finance'|'better-workplaces'|'my-turn' $section
+ * @method mixed news(array $params = [], array $options = []) newsweek-news (GET /newsweek/news)
+ * @method mixed sections(array $params = [], array $options = []) newsweek-sections (GET /newsweek/sections)
+ */
+abstract class NewsweekGroup {}
+
+/**
+ * @method mixed newyorkerArticle(array $params = [], array $options = []) newyorker-article (GET /newyorker/article)
+ *   params: string $url
+ * @method mixed newyorkerAuthor(array $params = [], array $options = []) newyorker-author (GET /newyorker/author)
+ *   params: string $url
+ * @method mixed newyorkerHeadlines(array $params = [], array $options = []) newyorker-headlines (GET /newyorker/headlines)
+ *   params: 'everything'|'news'|'culture'|'humor'|'magazine'|'business'|'tech'|'daily-comment'|'news-desk'|'cultural-comment'|'photo-booth'|'page-turner'|'borowitz-report' $section
+ * @method mixed newyorkerNews(array $params = [], array $options = []) newyorker-news (GET /newyorker/news)
+ * @method mixed newyorkerSections(array $params = [], array $options = []) newyorker-sections (GET /newyorker/sections)
+ */
+abstract class TheNewYorkerGroup {}
 
 /**
  * @method mixed categories(array $params = [], array $options = []) nike-categories (GET /nike/categories)
@@ -2556,6 +4178,30 @@ abstract class MonitorsGroup {}
 abstract class NikeGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) ninetofivemac-article (GET /ninetofivemac/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) ninetofivemac-author (GET /ninetofivemac/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) ninetofivemac-headlines (GET /ninetofivemac/headlines)
+ *   params: 'iphone'|'mac'|'macbook-pro'|'macbook-air'|'imac'|'mac-mini'|'mac-studio'|'mac-pro'|'ipad-pro'|'ipad-air'|'ipad-mini'|'ipad'|'ipados'|'apple-watch'|'apple-watch-ultra'|'apple-health'|'apple-watch-se'|'vision-pro'|'visionos'|'apple-music'|'airpods'|'homepod'|'apple-tv'|'review'|'how-to'|'aapl'|'apple-store'|'apple-arcade'|'apple-card'|'apple-silicon'|'apple-one'|'apple-fitness'|'carplay'|'siri'|'homekit' $section
+ * @method mixed news(array $params = [], array $options = []) ninetofivemac-news (GET /ninetofivemac/news)
+ * @method mixed sections(array $params = [], array $options = []) ninetofivemac-sections (GET /ninetofivemac/sections)
+ */
+abstract class NineToFiveMacGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) npr-article (GET /npr/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) npr-author (GET /npr/author)
+ *   params: string $url
+ * @method mixed categories(array $params = [], array $options = []) npr-categories (GET /npr/categories)
+ * @method mixed headlines(array $params = [], array $options = []) npr-headlines (GET /npr/headlines)
+ * @method mixed topic(array $params = [], array $options = []) npr-topic (GET /npr/topic)
+ *   params: string $topic
+ */
+abstract class NprGroup {}
+
+/**
  * @method mixed costOfLivingCity(array $params = [], array $options = []) numbeo-cost-of-living-city (GET /numbeo/cost-of-living/city/{slug})
  *   params: string $slug
  * @method mixed costOfLivingCountry(array $params = [], array $options = []) numbeo-cost-of-living-country (GET /numbeo/cost-of-living/country)
@@ -2573,6 +4219,66 @@ abstract class NikeGroup {}
  *   params: 'quality-of-life'|'crime'|'health-care'|'pollution'|'traffic'|'property-investment' $index
  */
 abstract class NumbeoGroup {}
+
+/**
+ * @method mixed nydailynewsArticle(array $params = [], array $options = []) nydailynews-article (GET /nydailynews/article)
+ *   params: string $url
+ * @method mixed nydailynewsAuthor(array $params = [], array $options = []) nydailynews-author (GET /nydailynews/author)
+ *   params: string $slug, string $url
+ * @method mixed nydailynewsHeadlines(array $params = [], array $options = []) nydailynews-headlines (GET /nydailynews/headlines)
+ *   params: 'news'|'crime-public-safety'|'politics'|'new-york-politics'|'business'|'health'|'national'|'world'|'local-news'|'new-york-news'|'education'|'transportation'|'news-obituaries'|'sports'|'mlb'|'new-york-yankees'|'new-york-mets'|'nfl'|'new-york-giants'|'new-york-jets'|'nba'|'new-york-knicks'|'brooklyn-nets'|'wnba'|'new-york-liberty'|'nhl'|'new-york-rangers'|'new-york-islanders'|'soccer'|'opinion'|'editorials'|'viva'|'things-to-do'|'restaurants-food-drink'|'horoscopes'|'best-reviews' $section
+ * @method mixed nydailynewsNews(array $params = [], array $options = []) nydailynews-news (GET /nydailynews/news)
+ * @method mixed nydailynewsSections(array $params = [], array $options = []) nydailynews-sections (GET /nydailynews/sections)
+ */
+abstract class NewYorkDailyNewsGroup {}
+
+/**
+ * @method mixed nymagArticle(array $params = [], array $options = []) nymag-article (GET /nymag/article)
+ *   params: string $url
+ * @method mixed nymagAuthor(array $params = [], array $options = []) nymag-author (GET /nymag/author)
+ *   params: string $url
+ * @method mixed nymagHeadlines(array $params = [], array $options = []) nymag-headlines (GET /nymag/headlines)
+ *   params: 'intelligencer'|'thecut'|'vulture'|'grub-street'|'curbed'|'strategist'|'select-all'|'science'|'daily' $section
+ * @method mixed nymagNews(array $params = [], array $options = []) nymag-news (GET /nymag/news)
+ * @method mixed nymagSections(array $params = [], array $options = []) nymag-sections (GET /nymag/sections)
+ */
+abstract class NewYorkMagazineGroup {}
+
+/**
+ * @method mixed nypostArticle(array $params = [], array $options = []) nypost-article (GET /nypost/article)
+ *   params: string $url
+ * @method mixed nypostAuthor(array $params = [], array $options = []) nypost-author (GET /nypost/author)
+ *   params: string $url
+ * @method mixed nypostHeadlines(array $params = [], array $options = []) nypost-headlines (GET /nypost/headlines)
+ *   params: 'us-news'|'metro'|'long-island'|'politics'|'world-news'|'sports'|'nfl'|'mlb'|'olympics'|'nba'|'nhl'|'college-football'|'college-basketball'|'wnba'|'sports-plus'|'betting'|'business'|'opinion'|'entertainment'|'tv'|'movies'|'music'|'celebrities'|'awards'|'theater'|'shopping'|'lifestyle'|'weird-but-true'|'sex-and-relationships'|'viral-trends'|'human-interest'|'parenting'|'fashion-and-beauty'|'food-and-drink'|'travel'|'health'|'wellness'|'fitness'|'health-care'|'medicine'|'mens-health'|'womens-health'|'mental-health'|'nutrition'|'real-estate'|'alexa'|'media'|'tech'|'science'|'space'|'environment'|'wildlife'|'archaeology'|'astrology' $section
+ * @method mixed nypostNews(array $params = [], array $options = []) nypost-news (GET /nypost/news)
+ * @method mixed nypostSections(array $params = [], array $options = []) nypost-sections (GET /nypost/sections)
+ */
+abstract class NewYorkPostGroup {}
+
+/**
+ * @method mixed nytArticle(array $params = [], array $options = []) nyt-article (GET /nyt/article)
+ *   params: string $url
+ * @method mixed nytAuthor(array $params = [], array $options = []) nyt-author (GET /nyt/author)
+ *   params: string $url
+ * @method mixed nytCategories(array $params = [], array $options = []) nyt-categories (GET /nyt/categories)
+ * @method mixed nytHeadlines(array $params = [], array $options = []) nyt-headlines (GET /nyt/headlines)
+ *   params: string $section
+ * @method mixed nytSections(array $params = [], array $options = []) nyt-sections (GET /nyt/sections)
+ */
+abstract class NewYorkTimesGroup {}
+
+/**
+ * @method mixed nzheraldArticle(array $params = [], array $options = []) nzherald-article (GET /nzherald/article)
+ *   params: string $url
+ * @method mixed nzheraldAuthor(array $params = [], array $options = []) nzherald-author (GET /nzherald/author)
+ *   params: string $url
+ * @method mixed nzheraldHeadlines(array $params = [], array $options = []) nzherald-headlines (GET /nzherald/headlines)
+ *   params: 'business'|'markets-with-madison'|'media-insider'|'business-reports'|'small-business'|'personal-finance'|'economy'|'companies'|'markets'|'entertainment'|'lifestyle'|'society-insider'|'nz'|'crime'|'education'|'politics'|'trailblazers'|'property'|'sport'|'commonwealth-games'|'cricket'|'olympics'|'paralympics'|'rugby'|'rugby-league'|'football'|'basketball'|'golf'|'boxing'|'netball'|'athletics'|'cycling'|'motorsport'|'racing'|'sailing'|'tennis'|'ufc'|'technology'|'travel'|'travel-news'|'world'|'kahu'|'talanoa'|'the-selection' $section
+ * @method mixed nzheraldNews(array $params = [], array $options = []) nzherald-news (GET /nzherald/news)
+ * @method mixed nzheraldSections(array $params = [], array $options = []) nzherald-sections (GET /nzherald/sections)
+ */
+abstract class NzHeraldGroup {}
 
 /**
  * @method mixed ohpollyCollections(array $params = [], array $options = []) ohpolly-collections (GET /ohpolly/collections)
@@ -2712,6 +4418,18 @@ abstract class OpenTableGroup {}
 abstract class OttoGroup {}
 
 /**
+ * @method mixed pagesixArticle(array $params = [], array $options = []) pagesix-article (GET /pagesix/article)
+ *   params: string $url
+ * @method mixed pagesixAuthor(array $params = [], array $options = []) pagesix-author (GET /pagesix/author)
+ *   params: string $url
+ * @method mixed pagesixHeadlines(array $params = [], array $options = []) pagesix-headlines (GET /pagesix/headlines)
+ *   params: 'awards'|'beauty'|'california-society'|'celebrity-news'|'contributor-content'|'entertainment'|'fashion'|'hollywood'|'hollywood-awards-watch'|'hollywood-media-news'|'hollywood-studio-news'|'lifestyle'|'los-angeles-society'|'media'|'miami-society'|'movies'|'music'|'new-york-city-society'|'palm-beach-society'|'parents'|'real-estate'|'royal-family'|'shopping'|'society'|'sports'|'style'|'taylor-swift'|'travel'|'tv'|'washington-dc-society' $section
+ * @method mixed pagesixNews(array $params = [], array $options = []) pagesix-news (GET /pagesix/news)
+ * @method mixed pagesixSections(array $params = [], array $options = []) pagesix-sections (GET /pagesix/sections)
+ */
+abstract class PageSixGroup {}
+
+/**
  * @method mixed search(array $params = [], array $options = []) pandamart-search (GET /pandamart/search)
  *   params: 'sg'|'pk'|'bd'|'hk'|'my'|'ph' $market, float $latitude, float $longitude, int $limit, int $offset
  * @method mixed store(array $params = [], array $options = []) pandamart-store (GET /pandamart/store)
@@ -2818,6 +4536,78 @@ abstract class PapaJohnSGroup {}
 abstract class PatreonGroup {}
 
 /**
+ * @method mixed pcgamerArticle(array $params = [], array $options = []) pcgamer-article (GET /pcgamer/article)
+ *   params: string $url
+ * @method mixed pcgamerAuthor(array $params = [], array $options = []) pcgamer-author (GET /pcgamer/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed pcgamerHeadlines(array $params = [], array $options = []) pcgamer-headlines (GET /pcgamer/headlines)
+ *   params: 'deals'|'games'|'gaming-industry'|'guides'|'hardware'|'movies-tv'|'news'|'software' $section
+ * @method mixed pcgamerNews(array $params = [], array $options = []) pcgamer-news (GET /pcgamer/news)
+ * @method mixed pcgamerSections(array $params = [], array $options = []) pcgamer-sections (GET /pcgamer/sections)
+ */
+abstract class PcGamerGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) pcmag-article (GET /pcmag/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) pcmag-author (GET /pcmag/author)
+ *   params: string $slug, string $url
+ * @method mixed headlines(array $params = [], array $options = []) pcmag-headlines (GET /pcmag/headlines)
+ *   params: '3d-printers'|'accounting'|'ai'|'air-purifiers'|'android'|'android-apps'|'anti-ransomware-for-business'|'antivirus'|'appliances'|'applicant-tracking-systems'|'application-performance-management'|'asset-management'|'audio'|'audio-accessories'|'audio-editing'|'audio-recording'|'background-check-services'|'batteries-power'|'benefits-administration-software'|'billing-invoicing-software'|'blu-ray-players'|'bluetooth-headsets'|'browsers'|'business-card-printing'|'business-plan-software'|'call-center-features'|'camera-accessories'|'cameras'|'car-accessories'|'cars-auto'|'cloud-backup-for-business'|'cloud-file-storage-for-business'|'cloud-infrastructure'|'collaboration'|'communications'|'components'|'computer-mice'|'connected-kitchen'|'contract-management-software'|'credit-card-processors'|'crm-software'|'cryptocurrency'|'dash-cams'|'data-analytics'|'data-visualization-tools'|'database'|'dating'|'desktop-pcs'|'digital-life'|'digital-voice-recorders'|'disaster-recovery'|'dna-testing-kits'|'document-management-software'|'drones'|'e-commerce-fulfillment-services'|'e-commerce-payments'|'e-commerce-software'|'ebook-readers'|'education'|'elearning-authoring-tools'|'electronic-health-record-management'|'email-marketing'|'employee-monitoring'|'employee-monitoring-software'|'employee-shift-scheduling'|'enterprise-accounting-software'|'erp-software'|'expense-tracking-software'|'fax-services'|'file-sync-backup'|'fitness'|'fitness-trackers'|'fleet-management'|'game-controllers-accessories'|'game-streaming-services'|'games'|'gaming'|'gaming-systems'|'gps-navigation'|'graphic-design'|'graphics-cards'|'hard-drives'|'headphones'|'health-fitness'|'heart-rate-monitors'|'help-desk'|'home-automation-hubs'|'home-entertainment'|'home-entertainment-accessories'|'home-security'|'home-security-cameras'|'hosted-email-providers'|'hosted-endpoint-protection'|'hr-software'|'human-resources'|'identity-management'|'infrastructure-management'|'input-devices'|'inventory-management-software'|'ios'|'ipad-apps'|'iphone-apps'|'it-management'|'it-security'|'keyboards'|'language-learning'|'laptop-accessories'|'laptops'|'lead-management'|'lenses'|'linux'|'low-code-app-development'|'macos'|'malware-protection-removal'|'marketing-automation-software'|'meal-kits'|'media-streaming-devices'|'media-streaming-software'|'medical-alert-systems'|'membership-management'|'microsoft-xbox-games'|'mobile-apps'|'mobile-device-management'|'mobile-games'|'mobile-payment-apps'|'mobile-phone-accessories'|'mobile-phones'|'modems-hotspots'|'monitors'|'motherboards'|'music-audio'|'network-attached-storage'|'network-management'|'network-monitoring'|'networking'|'nintendo-games'|'office-suites'|'online-learning-platforms-for-business'|'online-survey-tools'|'onlinecloud-backup-services'|'operating-systems'|'operations'|'parental-control'|'password-managers'|'payroll'|'pc-cases'|'pc-games'|'performance-management'|'personal-finance'|'personal-finance-apps'|'photo-design'|'photo-editing'|'photo-printing'|'podcasting'|'point-of-sale'|'power-supplies'|'printers'|'processors'|'productivity'|'project-management'|'projectors'|'proxies'|'ransomware-protection'|'robot-vacuums'|'sales-marketing'|'scanners'|'secure-file-transfer'|'security'|'security-suites'|'self-service-business-intelligence-tools'|'seo-tools'|'shopping'|'shredders'|'sim-cards'|'smart-displays'|'smart-glasses'|'smart-home'|'smart-lawn-mowers'|'smart-lighting'|'smart-locks'|'smart-plugs'|'smart-scales'|'smart-thermostats'|'smartwatches'|'smb-accounting'|'social-listening-and-influencer-identification'|'social-media'|'social-media-management'|'sony-playstation-games'|'speakers'|'spyware-protection'|'ssds'|'storage'|'streaming-music-services'|'styli'|'subscription-services'|'system-utilities'|'tablet-accessories'|'tablets'|'tax-software'|'team-messaging'|'tech-for-kids'|'time-tracking'|'to-do-list-apps'|'toys'|'tracking-devices-for-kids'|'tracking-devices-for-pets'|'travel'|'tune-up-utilities'|'tvs'|'universal-remotes'|'video'|'video-camera-accessories'|'video-cameras'|'video-conferencing-software'|'video-editing'|'video-streaming-services'|'virtualization'|'voip-phone-services'|'vpn'|'vr'|'wearables'|'web-hosting'|'webcams'|'website-app-building-tools'|'website-builders'|'website-monitoring'|'wi-fi-mesh-networking-systems'|'wi-fi-range-extenders'|'windows'|'wireless-carriers'|'wireless-routers' $section
+ * @method mixed news(array $params = [], array $options = []) pcmag-news (GET /pcmag/news)
+ * @method mixed sections(array $params = [], array $options = []) pcmag-sections (GET /pcmag/sections)
+ */
+abstract class PcmagGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) people-article (GET /people/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) people-author (GET /people/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) people-headlines (GET /people/headlines)
+ *   params: string $section
+ * @method mixed news(array $params = [], array $options = []) people-news (GET /people/news)
+ * @method mixed sections(array $params = [], array $options = []) people-sections (GET /people/sections)
+ */
+abstract class PeopleGroup {}
+
+/**
+ * @method mixed phillyinquirerArticle(array $params = [], array $options = []) phillyinquirer-article (GET /phillyinquirer/article)
+ *   params: string $url
+ * @method mixed phillyinquirerAuthor(array $params = [], array $options = []) phillyinquirer-author (GET /phillyinquirer/author)
+ *   params: string $slug, string $url
+ * @method mixed phillyinquirerHeadlines(array $params = [], array $options = []) phillyinquirer-headlines (GET /phillyinquirer/headlines)
+ *   params: 'arts'|'business'|'college-sports'|'crime'|'eagles'|'education'|'entertainment'|'flyers'|'food'|'health'|'high-school-sports'|'life'|'news'|'opinion'|'phillies'|'politics'|'real-estate'|'science'|'sixers'|'soccer'|'south-jersey'|'sports'|'transportation'|'weather' $section
+ * @method mixed phillyinquirerNews(array $params = [], array $options = []) phillyinquirer-news (GET /phillyinquirer/news)
+ * @method mixed phillyinquirerSections(array $params = [], array $options = []) phillyinquirer-sections (GET /phillyinquirer/sections)
+ */
+abstract class PhiladelphiaInquirerGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) philstar-article (GET /philstar/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) philstar-author (GET /philstar/author)
+ *   params: string $id, string $url
+ * @method mixed headlines(array $params = [], array $options = []) philstar-headlines (GET /philstar/headlines)
+ *   params: 'headlines'|'headlines-climate-and-environment'|'headlines-weather'|'opinion'|'nation'|'world'|'business'|'business-agriculture'|'business-banking'|'business-biz-memos'|'business-business-as-usual'|'business-motoring'|'business-real-estate'|'business-science-and-environment'|'business-stock-commentary'|'business-technology'|'business-telecoms'|'sports'|'sports-deans-corner'|'esport'|'entertainment'|'entertainment-korean-wave'|'entertainment-movies'|'entertainment-music'|'movies'|'music'|'lifestyle'|'lifestyle-arts-and-culture'|'lifestyle-business-life'|'lifestyle-fashion-and-beauty'|'lifestyle-food-and-leisure'|'lifestyle-gadgets'|'lifestyle-health-and-family'|'lifestyle-modern-living'|'lifestyle-on-the-radar'|'lifestyle-pet-life'|'lifestyle-shopping-guide'|'lifestyle-the-budgetarian'|'lifestyle-travel-and-tourism'|'news-commentary'|'videos'|'brandspace'|'campus'|'exam-results'|'lotto-results'|'other-sections-comics'|'other-sections-daily-bread'|'other-sections-education-and-home'|'other-sections-exam-results'|'other-sections-forex'|'other-sections-letters-to-the-editor'|'other-sections-lotto-results'|'other-sections-newsmakers'|'other-sections-star-cover'|'other-sections-supplements'|'other-sections-the-good-news'|'other-sections-word-of-the-day'|'pang-masa'|'pang-masa-pang-movies'|'pang-masa-para-malibang'|'pang-masa-para-manalo'|'pang-masa-pm-sports'|'pang-masa-police-metro'|'pang-masa-punto-mo'|'pilipino-star-ngayon'|'pilipino-star-ngayon-bansa'|'pilipino-star-ngayon-dr-love'|'pilipino-star-ngayon-komiks'|'pilipino-star-ngayon-kutob'|'pilipino-star-ngayon-litra-talk'|'pilipino-star-ngayon-metro'|'pilipino-star-ngayon-opinyon'|'pilipino-star-ngayon-palaro'|'pilipino-star-ngayon-probinsiya'|'pilipino-star-ngayon-showbiz'|'pilipino-star-ngayon-true-confessions'|'banat'|'banat-balita'|'banat-imong-kapalaran'|'banat-kalingawan'|'banat-opinyon'|'banat-palaro'|'banat-punsoy'|'banat-showbiz'|'the-freeman'|'the-freeman-cebu-business'|'the-freeman-cebu-entertainment'|'the-freeman-cebu-lifestyle'|'the-freeman-cebu-news'|'the-freeman-cebu-sports'|'the-freeman-metro-cebu'|'the-freeman-opinion'|'the-freeman-region' $section
+ * @method mixed news(array $params = [], array $options = []) philstar-news (GET /philstar/news)
+ * @method mixed sections(array $params = [], array $options = []) philstar-sections (GET /philstar/sections)
+ */
+abstract class PhilstarGroup {}
+
+/**
+ * @method mixed phonearenaArticle(array $params = [], array $options = []) phonearena-article (GET /phonearena/article)
+ *   params: string $url
+ * @method mixed phonearenaAuthor(array $params = [], array $options = []) phonearena-author (GET /phonearena/author)
+ *   params: string $slug, string $url
+ * @method mixed phonearenaHeadlines(array $params = [], array $options = []) phonearena-headlines (GET /phonearena/headlines)
+ *   params: 'news'|'news-month'|'reviews' $section
+ * @method mixed phonearenaNews(array $params = [], array $options = []) phonearena-news (GET /phonearena/news)
+ * @method mixed phonearenaSections(array $params = [], array $options = []) phonearena-sections (GET /phonearena/sections)
+ */
+abstract class PhoneArenaGroup {}
+
+/**
  * @method mixed ping(array $params = [], array $options = []) ping (GET /ping)
  * @method mixed ready(array $params = [], array $options = []) ready (GET /ready)
  */
@@ -2879,6 +4669,8 @@ abstract class PizzaHutGroup {}
  *   params: string $id, int $page, string $cc, string $l
  * @method mixed playstationConcept(array $params = [], array $options = []) playstation-concept (GET /playstation/concept)
  *   params: string $id, string $cc, string $l
+ * @method mixed playstationConceptReviews(array $params = [], array $options = []) playstation-concept-reviews (GET /playstation/concept/reviews)
+ *   params: string $id, string $cc, string $l, int $page, int $page_size, 'latest'|'oldest'|'helpful' $sort, int $rating
  * @method mixed playstationDeals(array $params = [], array $options = []) playstation-deals (GET /playstation/deals)
  *   params: string $cc, string $l
  * @method mixed playstationLatest(array $params = [], array $options = []) playstation-latest (GET /playstation/latest)
@@ -2889,8 +4681,34 @@ abstract class PizzaHutGroup {}
  *   params: string $id, string $cc, string $l
  * @method mixed playstationSearch(array $params = [], array $options = []) playstation-search (GET /playstation/search)
  *   params: string $term, int $page, int $page_size, string $cc, string $l
+ * @method mixed playstationSuggest(array $params = [], array $options = []) playstation-suggest (GET /playstation/suggest)
+ *   params: string $term, int $limit, string $cc, string $l
  */
 abstract class PlayStationGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) politico-article (GET /politico/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) politico-author (GET /politico/author)
+ *   params: string $slug, string $url
+ * @method mixed categories(array $params = [], array $options = []) politico-categories (GET /politico/categories)
+ * @method mixed headlines(array $params = [], array $options = []) politico-headlines (GET /politico/headlines)
+ * @method mixed topic(array $params = [], array $options = []) politico-topic (GET /politico/topic)
+ *   params: string $topic
+ */
+abstract class PoliticoGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) polygon-article (GET /polygon/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) polygon-author (GET /polygon/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) polygon-headlines (GET /polygon/headlines)
+ *   params: 'gaming-news'|'gaming-reviews'|'gaming-previews'|'gaming-features'|'entertainment-news'|'movie-tv-reviews'|'entertainment-features'|'anime'|'horror'|'sci-fi'|'fantasy'|'what-to-play'|'what-to-watch'|'guides'|'videos' $section
+ * @method mixed news(array $params = [], array $options = []) polygon-news (GET /polygon/news)
+ * @method mixed sections(array $params = [], array $options = []) polygon-sections (GET /polygon/sections)
+ */
+abstract class PolygonGroup {}
 
 /**
  * @method mixed activityTrades(array $params = [], array $options = []) polymarket-activity-trades (GET /polymarket/activity/trades)
@@ -3060,6 +4878,58 @@ abstract class PopeyesGroup {}
 abstract class PoshmarkGroup {}
 
 /**
+ * @method mixed categories(array $params = [], array $options = []) prada-categories (GET /prada/categories)
+ * @method mixed category(array $params = [], array $options = []) prada-category (GET /prada/category)
+ *   params: string $category_id, 'Woman'|'Man' $gender, 'suggested'|'price_asc'|'price_desc'|'newest' $sort, int $page, int $limit
+ * @method mixed product(array $params = [], array $options = []) prada-product (GET /prada/product)
+ *   params: string $pv
+ * @method mixed search(array $params = [], array $options = []) prada-search (GET /prada/search)
+ *   params: string $q, 'Woman'|'Man' $gender, 'suggested'|'price_asc'|'price_desc'|'newest' $sort, int $page, int $limit
+ * @method mixed stores(array $params = [], array $options = []) prada-stores (GET /prada/stores)
+ *   params: string $query, float $lat, float $lng, float $radius_km, int $limit, int $offset
+ * @method mixed suggest(array $params = [], array $options = []) prada-suggest (GET /prada/suggest)
+ *   params: string $q, int $limit
+ */
+abstract class PradaGroup {}
+
+/**
+ * @method mixed categories(array $params = [], array $options = []) pristine-auction-categories (GET /pristine-auction/categories)
+ * @method mixed lotDetail(array $params = [], array $options = []) pristine-auction-lot-detail (GET /pristine-auction/lot/{lot_number})
+ *   params: int $lot_number
+ * @method mixed search(array $params = [], array $options = []) pristine-auction-search (GET /pristine-auction/search)
+ *   params: string $term, 'fine-art'|'baseball'|'basketball'|'boxing-ufc'|'coins-bullion'|'comic-books'|'football'|'golf'|'historical'|'hockey'|'music'|'other-sports'|'pop-culture'|'racing'|'soccer'|'trading-cards'|'wrestling' $category, 'previous_featured'|'ten_minute'|'daily'|'classic'|'fine_art'|'jewelry'|'pop_culture'|'tcg'|'helmet'|'nascar_foundation'|'sports_cards'|'coin'|'sports_gear'|'jersey'|'frame_it_up'|'fall_showcase'|'elite'|'live_stream' $auction_type, 'future'|'active'|'canceled'|'completed'|'forfeited' $status, 'newly-listed'|'bid-time-descending'|'price-descending'|'price-ascending'|'ending-soonest'|'ending-last'|'bid-count-descending'|'bid-count-ascending' $sort, float $min_price, float $max_price, int $page, '15'|'30'|'60' $per_page
+ */
+abstract class PristineAuctionGroup {}
+
+/**
+ * @method mixed collections(array $params = [], array $options = []) pristine-marketplace-collections (GET /pristine-marketplace/collections)
+ *   params: int $page, int $limit
+ * @method mixed collectionProducts(array $params = [], array $options = []) pristine-marketplace-collection-products (GET /pristine-marketplace/collections/{handle}/products)
+ *   params: string $handle, int $page, int $limit
+ * @method mixed pages(array $params = [], array $options = []) pristine-marketplace-pages (GET /pristine-marketplace/pages)
+ *   params: int $page, int $limit
+ * @method mixed page(array $params = [], array $options = []) pristine-marketplace-page (GET /pristine-marketplace/pages/{handle})
+ *   params: string $handle
+ * @method mixed products(array $params = [], array $options = []) pristine-marketplace-products (GET /pristine-marketplace/products)
+ *   params: int $page, int $limit
+ * @method mixed product(array $params = [], array $options = []) pristine-marketplace-product (GET /pristine-marketplace/products/{handle})
+ *   params: string $handle
+ * @method mixed productRecommendations(array $params = [], array $options = []) pristine-marketplace-product-recommendations (GET /pristine-marketplace/products/{handle}/recommendations)
+ *   params: string $handle, int $limit, 'related'|'complementary' $intent
+ * @method mixed reviews(array $params = [], array $options = []) pristine-marketplace-reviews (GET /pristine-marketplace/reviews)
+ *   params: int $page
+ * @method mixed search(array $params = [], array $options = []) pristine-marketplace-search (GET /pristine-marketplace/search)
+ *   params: string $q, int $page, int $limit
+ * @method mixed searchSuggest(array $params = [], array $options = []) pristine-marketplace-search-suggest (GET /pristine-marketplace/search/suggest)
+ *   params: string $q, string $types, int $limit
+ * @method mixed sitemapUrls(array $params = [], array $options = []) pristine-marketplace-sitemap-urls (GET /pristine-marketplace/sitemap/urls)
+ *   params: 'all'|'products'|'collections'|'pages'|'blogs'|'agentic_discovery'|'other' $type, int $limit
+ * @method mixed sitemaps(array $params = [], array $options = []) pristine-marketplace-sitemaps (GET /pristine-marketplace/sitemaps)
+ * @method mixed store(array $params = [], array $options = []) pristine-marketplace-store (GET /pristine-marketplace/store)
+ */
+abstract class PristineMarketplaceGroup {}
+
+/**
  * @method mixed category(array $params = [], array $options = []) producthunt-category (GET /producthunt/category/{slug})
  *   params: string $slug
  * @method mixed categoryProducts(array $params = [], array $options = []) producthunt-category-products (GET /producthunt/category/{slug}/products)
@@ -3084,6 +4954,91 @@ abstract class PoshmarkGroup {}
  *   params: string $query, 'product'|'user'|'launch' $type, int $page, bool $featured, string $topics
  */
 abstract class ProductHuntGroup {}
+
+/**
+ * @method mixed propublicaArticle(array $params = [], array $options = []) propublica-article (GET /propublica/article)
+ *   params: string $url
+ * @method mixed propublicaAuthor(array $params = [], array $options = []) propublica-author (GET /propublica/author)
+ *   params: string $url, int $page
+ * @method mixed propublicaHeadlines(array $params = [], array $options = []) propublica-headlines (GET /propublica/headlines)
+ *   params: 'abortion'|'biden-administration'|'civil-rights'|'courts'|'criminal-justice'|'debt'|'democracy'|'department-of-governmental-efficiency'|'education'|'environment'|'health-care'|'health-insurance'|'immigration'|'jan-6'|'labor'|'mental-health'|'military'|'nonprofits'|'police'|'politics'|'pollution'|'pregnancy'|'prison'|'racial-justice'|'real-estate'|'regulation'|'sex-and-gender'|'sports'|'stock'|'taxes'|'technology'|'trump-administration'|'usaid' $section
+ * @method mixed propublicaNews(array $params = [], array $options = []) propublica-news (GET /propublica/news)
+ * @method mixed propublicaSections(array $params = [], array $options = []) propublica-sections (GET /propublica/sections)
+ */
+abstract class ProPublicaGroup {}
+
+/**
+ * @method mixed autographfactsCategories(array $params = [], array $options = []) psa-autographfacts-categories (GET /psa/autographfacts/categories)
+ * @method mixed autographfactsGallery(array $params = [], array $options = []) psa-autographfacts-gallery (GET /psa/autographfacts/gallery)
+ *   params: string $subject_id
+ * @method mixed autographfactsSubject(array $params = [], array $options = []) psa-autographfacts-subject (GET /psa/autographfacts/subject)
+ *   params: string $subject_id
+ * @method mixed autographfactsSubjects(array $params = [], array $options = []) psa-autographfacts-subjects (GET /psa/autographfacts/subjects)
+ *   params: int $category_id
+ * @method mixed cardfactsCategories(array $params = [], array $options = []) psa-cardfacts-categories (GET /psa/cardfacts/categories)
+ * @method mixed cardfactsChecklist(array $params = [], array $options = []) psa-cardfacts-checklist (GET /psa/cardfacts/checklist)
+ *   params: string $set_id
+ * @method mixed cardfactsSets(array $params = [], array $options = []) psa-cardfacts-sets (GET /psa/cardfacts/sets)
+ *   params: int $category_id
+ * @method mixed certLookup(array $params = [], array $options = []) psa-cert-lookup (GET /psa/cert-lookup)
+ *   params: string $cert_number
+ * @method mixed priceGuideCategories(array $params = [], array $options = []) psa-price-guide-categories (GET /psa/price-guide/categories)
+ * @method mixed priceGuideSearch(array $params = [], array $options = []) psa-price-guide-search (GET /psa/price-guide/search)
+ *   params: string $query, int $page, int $page_size
+ * @method mixed priceGuideSet(array $params = [], array $options = []) psa-price-guide-set (GET /psa/price-guide/set)
+ *   params: string $category_path, string $set_path, string $set_id
+ * @method mixed probatfactsCategories(array $params = [], array $options = []) psa-probatfacts-categories (GET /psa/probatfacts/categories)
+ * @method mixed probatfactsGallery(array $params = [], array $options = []) psa-probatfacts-gallery (GET /psa/probatfacts/gallery)
+ *   params: string $subject_id
+ * @method mixed probatfactsSubject(array $params = [], array $options = []) psa-probatfacts-subject (GET /psa/probatfacts/subject)
+ *   params: string $subject_id
+ * @method mixed probatfactsSubjects(array $params = [], array $options = []) psa-probatfacts-subjects (GET /psa/probatfacts/subjects)
+ *   params: int $category_id
+ * @method mixed ticketfactsCategories(array $params = [], array $options = []) psa-ticketfacts-categories (GET /psa/ticketfacts/categories)
+ * @method mixed ticketfactsGallery(array $params = [], array $options = []) psa-ticketfacts-gallery (GET /psa/ticketfacts/gallery)
+ *   params: string $subject_id
+ * @method mixed ticketfactsSubject(array $params = [], array $options = []) psa-ticketfacts-subject (GET /psa/ticketfacts/subject)
+ *   params: string $subject_id
+ * @method mixed ticketfactsSubjects(array $params = [], array $options = []) psa-ticketfacts-subjects (GET /psa/ticketfacts/subjects)
+ *   params: int $category_id
+ */
+abstract class PsaGroup {}
+
+/**
+ * @method mixed collections(array $params = [], array $options = []) psastore-collections (GET /psastore/collections)
+ *   params: int $page, int $limit
+ * @method mixed collectionProducts(array $params = [], array $options = []) psastore-collection-products (GET /psastore/collections/{handle}/products)
+ *   params: string $handle, int $page, int $limit
+ * @method mixed pages(array $params = [], array $options = []) psastore-pages (GET /psastore/pages)
+ *   params: int $page, int $limit
+ * @method mixed page(array $params = [], array $options = []) psastore-page (GET /psastore/pages/{handle})
+ *   params: string $handle
+ * @method mixed products(array $params = [], array $options = []) psastore-products (GET /psastore/products)
+ *   params: int $page, int $limit
+ * @method mixed product(array $params = [], array $options = []) psastore-product (GET /psastore/products/{handle})
+ *   params: string $handle
+ * @method mixed productRecommendations(array $params = [], array $options = []) psastore-product-recommendations (GET /psastore/products/{handle}/recommendations)
+ *   params: string $handle, int $limit, 'related'|'complementary' $intent
+ * @method mixed searchSuggest(array $params = [], array $options = []) psastore-search-suggest (GET /psastore/search/suggest)
+ *   params: string $q, string $types, int $limit
+ * @method mixed sitemapUrls(array $params = [], array $options = []) psastore-sitemap-urls (GET /psastore/sitemap/urls)
+ *   params: 'all'|'products'|'collections'|'pages'|'blogs'|'agentic_discovery'|'other' $type, int $limit
+ * @method mixed sitemaps(array $params = [], array $options = []) psastore-sitemaps (GET /psastore/sitemaps)
+ * @method mixed store(array $params = [], array $options = []) psastore-store (GET /psastore/store)
+ */
+abstract class PsastoreGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) punch-article (GET /punch/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) punch-author (GET /punch/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) punch-headlines (GET /punch/headlines)
+ *   params: 'business'|'columns'|'continuation-from-print'|'diaspora'|'editorial'|'education'|'entertainment'|'feature'|'featured'|'foreign-news'|'health'|'healthwise'|'information-technology'|'interactive'|'interview'|'latest-news'|'law-digest-2'|'letters'|'metro-plus'|'news'|'opinion'|'osun-decides'|'panorama'|'politics'|'punch-lite'|'sex-relationship'|'smart-tips'|'society'|'special-features'|'spice'|'sponsored'|'sports'|'technology'|'top-stories'|'video'|'weekend-starter' $section
+ * @method mixed news(array $params = [], array $options = []) punch-news (GET /punch/news)
+ * @method mixed sections(array $params = [], array $options = []) punch-sections (GET /punch/sections)
+ */
+abstract class PunchGroup {}
 
 /**
  * @method mixed categories(array $params = [], array $options = []) quince-categories (GET /quince/categories)
@@ -3119,6 +5074,56 @@ abstract class QuinceGroup {}
 abstract class RaisingCaneSGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) rappler-article (GET /rappler/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) rappler-author (GET /rappler/author)
+ *   params: string $slug, string $url
+ * @method mixed headlines(array $params = [], array $options = []) rappler-headlines (GET /rappler/headlines)
+ *   params: 'about'|'awards-recognition'|'news-updates'|'policies'|'special-projects'|'team'|'brandrap'|'announcements'|'beyond-the-buy'|'communicart'|'data-stories'|'detours'|'finance-and-industries'|'first-look'|'food-drinks-dining'|'get-ready-with-me'|'goodrap'|'health-beauty-and-wellness'|'home-and-parenting'|'lifestyle-and-entertainment'|'profiles-and-advocacies'|'reading-book-recommendations'|'tech-and-innovation'|'travel-and-food'|'bulletin-board'|'advisories'|'campus'|'contests-awards'|'corrections'|'events'|'examination-results'|'philippine-government-job-openings'|'scholarships'|'trainings-workshops'|'business'|'consumer-issues'|'corporate'|'economy'|'industries'|'infrastructure'|'personal-finance'|'stocks-banking'|'culture-desk'|'astrology'|'careers'|'food-drinks'|'health-and-wellness'|'literature'|'noteworthy'|'relationships'|'style'|'travel'|'editors-pick'|'elections-philippines-stories'|'entertainment'|'celebrities'|'korean-popular-music'|'live-jam'|'movies'|'music'|'pageants'|'series'|'theater'|'environment'|'climate-change'|'disasters'|'nature'|'pollution'|'faith-religion'|'hustle'|'adulting'|'food'|'play'|'purpose'|'work'|'moveph'|'advocacies'|'agos'|'partners'|'social-good-summit'|'nation'|'newsbreak'|'data-documents'|'explainers'|'fact-check'|'in-depth'|'inside-track'|'investigative'|'iq'|'podcasts-videos'|'people'|'actors'|'artists'|'athletes'|'crimes'|'human-interest'|'neighbors'|'newsmakers'|'obituary'|'profiles'|'philippines'|'elections'|'government'|'luzon'|'metro-manila'|'mindanao'|'national-news'|'overseas-filipinos'|'rappler-talk'|'special-coverage'|'visayas'|'weather'|'plus-membership-program'|'exclusive-content'|'exclusive-events'|'science'|'discoveries-inventions'|'earth-space'|'life-health'|'society-culture'|'social-issues'|'sports'|'boxing'|'fiba'|'football'|'gilas-pilipinas'|'nba'|'ncaa'|'palarong-pambansa'|'pba'|'southeast-asian-games'|'uaap'|'volleyball'|'technology'|'apps'|'features'|'gadgets'|'gaming'|'innovations'|'internet-culture'|'reviews'|'social-media'|'the-wrap'|'top-stories'|'video'|'act-one'|'basagan-ng-trip'|'daily-wrap'|'documentaries'|'editorial'|'hold-the-line-maria-ressa-interview'|'rappler-live-jam'|'rappler-talk-video'|'reporters-vlogs'|'top-5-news-this-week'|'video-explainers'|'watch-now-live'|'voices'|'editorials'|'imho'|'ispeak'|'new-school'|'newsletters'|'rappler-blogs'|'thought-leaders'|'world'|'africa'|'asia-pacific'|'europe'|'global-affairs'|'indonesia'|'latin-america'|'middle-east'|'south-central-asia'|'us-canada' $section
+ * @method mixed news(array $params = [], array $options = []) rappler-news (GET /rappler/news)
+ * @method mixed sections(array $params = [], array $options = []) rappler-sections (GET /rappler/sections)
+ */
+abstract class RapplerGroup {}
+
+/**
+ * @method mixed rawstoryArticle(array $params = [], array $options = []) rawstory-article (GET /rawstory/article)
+ *   params: string $url
+ * @method mixed rawstoryAuthor(array $params = [], array $options = []) rawstory-author (GET /rawstory/author)
+ *   params: string $slug, string $url
+ * @method mixed rawstoryHeadlines(array $params = [], array $options = []) rawstory-headlines (GET /rawstory/headlines)
+ *   params: 'us-news'|'trump-news'|'world'|'enviro-science'|'all-video'|'raw-investigates'|'also-read'|'commentary'|'blogs-media'|'2026-midterm-elections-section'|'presidential-campaign-issues'|'smartnews'|'super-head'|'jd-vance'|'supreme-court' $section
+ * @method mixed rawstoryNews(array $params = [], array $options = []) rawstory-news (GET /rawstory/news)
+ * @method mixed rawstorySections(array $params = [], array $options = []) rawstory-sections (GET /rawstory/sections)
+ */
+abstract class RawStoryGroup {}
+
+/**
+ * @method mixed collections(array $params = [], array $options = []) rebag-collections (GET /rebag/collections)
+ *   params: int $page, int $limit
+ * @method mixed collectionProducts(array $params = [], array $options = []) rebag-collection-products (GET /rebag/collections/{handle}/products)
+ *   params: string $handle, int $page, int $limit
+ * @method mixed pages(array $params = [], array $options = []) rebag-pages (GET /rebag/pages)
+ *   params: int $page, int $limit
+ * @method mixed page(array $params = [], array $options = []) rebag-page (GET /rebag/pages/{handle})
+ *   params: string $handle
+ * @method mixed products(array $params = [], array $options = []) rebag-products (GET /rebag/products)
+ *   params: int $page, int $limit
+ * @method mixed product(array $params = [], array $options = []) rebag-product (GET /rebag/products/{handle})
+ *   params: string $handle
+ * @method mixed productRecommendations(array $params = [], array $options = []) rebag-product-recommendations (GET /rebag/products/{handle}/recommendations)
+ *   params: string $handle, int $limit, 'related'|'complementary' $intent
+ * @method mixed search(array $params = [], array $options = []) rebag-search (GET /rebag/search)
+ *   params: string $q, 'relevance'|'price_asc'|'price_desc' $sort, int $page, int $limit
+ * @method mixed searchSuggest(array $params = [], array $options = []) rebag-search-suggest (GET /rebag/search/suggest)
+ *   params: string $q, string $types, int $limit
+ * @method mixed sitemapUrls(array $params = [], array $options = []) rebag-sitemap-urls (GET /rebag/sitemap/urls)
+ *   params: 'all'|'products'|'collections'|'pages'|'blogs'|'agentic_discovery'|'other' $type, int $limit
+ * @method mixed sitemaps(array $params = [], array $options = []) rebag-sitemaps (GET /rebag/sitemaps)
+ * @method mixed store(array $params = [], array $options = []) rebag-store (GET /rebag/store)
+ */
+abstract class RebagGroup {}
+
+/**
  * @method mixed comments(array $params = [], array $options = []) reddit-comments (GET /reddit/comments/{id})
  *   params: string $id, 'confidence'|'top'|'new'|'controversial'|'old'|'qa' $sort, int $limit, int $depth, bool $include_metrics
  * @method mixed domainPosts(array $params = [], array $options = []) reddit-domain-posts (GET /reddit/domain/{domain}/posts)
@@ -3152,9 +5157,9 @@ abstract class RedditGroup {}
  * @method mixed property(array $params = [], array $options = []) redfin-property (GET /redfin/property)
  *   params: string $url, string $property_id, string $listing_id
  * @method mixed regionTrends(array $params = [], array $options = []) redfin-region-trends (GET /redfin/region-trends)
- *   params: int $region_id, int $region_type
+ *   params: int $region_id, '1'|'2'|'5'|'6' $region_type
  * @method mixed search(array $params = [], array $options = []) redfin-search (GET /redfin/search)
- *   params: string $location, int $page, int $region_id, int $region_type, 'for_sale'|'sold' $status, int $min_price, int $max_price, int $min_beds, float $min_baths
+ *   params: string $location, int $page, int $region_id, '1'|'2'|'5'|'6' $region_type, 'for_sale'|'sold' $status, int $min_price, int $max_price, int $min_beds, float $min_baths
  * @method mixed similar(array $params = [], array $options = []) redfin-similar (GET /redfin/similar)
  *   params: string $property_id
  */
@@ -3170,6 +5175,39 @@ abstract class RedfinGroup {}
 abstract class ReferralsGroup {}
 
 /**
+ * @method mixed availability(array $params = [], array $options = []) resy-availability (GET /resy/availability)
+ *   params: string $restaurant_id, string $date, int $party_size
+ * @method mixed cuisines(array $params = [], array $options = []) resy-cuisines (GET /resy/cuisines)
+ *   params: string $location
+ * @method mixed eventDetail(array $params = [], array $options = []) resy-event-detail (GET /resy/event)
+ *   params: string $event_url_slug, string $restaurant_url_slug, string $location, int $party_size
+ * @method mixed events(array $params = [], array $options = []) resy-events (GET /resy/events)
+ *   params: string $location, string $date, int $limit, int $offset
+ * @method mixed locations(array $params = [], array $options = []) resy-locations (GET /resy/locations)
+ *   params: string $q, string $country
+ * @method mixed restaurant(array $params = [], array $options = []) resy-restaurant (GET /resy/restaurant)
+ *   params: string $restaurant_id
+ * @method mixed search(array $params = [], array $options = []) resy-search (GET /resy/search)
+ *   params: string $term, float $latitude, float $longitude, string $date, int $party_size, int $size
+ */
+abstract class ResyGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) reuters-article (GET /reuters/article)
+ *   params: string $url
+ * @method mixed articles(array $params = [], array $options = []) reuters-articles (GET /reuters/articles)
+ *   params: int $page
+ * @method mixed author(array $params = [], array $options = []) reuters-author (GET /reuters/author)
+ *   params: string $url
+ * @method mixed news(array $params = [], array $options = []) reuters-news (GET /reuters/news)
+ *   params: int $page
+ * @method mixed section(array $params = [], array $options = []) reuters-section (GET /reuters/section)
+ *   params: 'world'|'business'|'markets'|'technology'|'sports'|'legal'|'sustainability'|'commentary'|'lifestyle'|'science'|'live'|'podcasts'|'media-center'|'investigations'|'fact-check'|'wider-image'|'city-memo'|'data'|'video' $section, int $page
+ * @method mixed sections(array $params = [], array $options = []) reuters-sections (GET /reuters/sections)
+ */
+abstract class ReutersGroup {}
+
+/**
  * @method mixed agents(array $params = [], array $options = []) rightmove-agents (GET /rightmove/agents)
  *   params: string $location, int $page
  * @method mixed agentBranch(array $params = [], array $options = []) rightmove-agent-branch (GET /rightmove/agents/{id})
@@ -3177,17 +5215,29 @@ abstract class ReferralsGroup {}
  * @method mixed autocomplete(array $params = [], array $options = []) rightmove-autocomplete (GET /rightmove/autocomplete)
  *   params: string $query, int $limit
  * @method mixed commercialSearch(array $params = [], array $options = []) rightmove-commercial-search (GET /rightmove/commercial/search)
- *   params: string $location, int $page, 'buy'|'let' $status, int $min_price, int $max_price, int $min_size, int $max_size, string $property_type
+ *   params: string $location, int $page, 'buy'|'let' $status, int $min_price, int $max_price, int $min_size, int $max_size, 'business-park'|'office'|'serviced-office'|'convenience-store'|'hairdresser-barber-shop'|'post-office'|'retail_property_high_street_'|'retail_property_out_of_town_'|'retail_property_pop_up_'|'retail_property_retail_park_'|'retail_property_shopping_centre_'|'shop'|'showroom'|'trade-counter'|'bar-nightclub'|'cafe'|'leisure-facility'|'guest-house'|'hotel'|'hospitality'|'pub'|'restaurant'|'takeaway'|'other'|'distribution-warehouse'|'factory'|'heavy-industrial'|'industrial-park'|'light-industrial'|'storage'|'warehouse'|'workshop'|'industrial-development'|'land'|'farm'|'residential-development'|'healthcare-facility'|'childcare-facility'|'commercial-property'|'garage'|'mixed-use'|'commercial-development'|'petrol_station'|'place_of_worship' $property_type
  * @method mixed newHomesSearch(array $params = [], array $options = []) rightmove-new-homes-search (GET /rightmove/new-homes/search)
- *   params: string $location, int $page, int $min_price, int $max_price, int $min_bedrooms, int $max_bedrooms, float $min_bathrooms, float $max_bathrooms, string $property_type
+ *   params: string $location, int $page, int $min_price, int $max_price, int $min_bedrooms, int $max_bedrooms, float $min_bathrooms, float $max_bathrooms, 'detached'|'semi-detached'|'terraced'|'flat'|'bungalow'|'land'|'park-home' $property_type
  * @method mixed property(array $params = [], array $options = []) rightmove-property (GET /rightmove/properties/{id})
  *   params: string $id
  * @method mixed search(array $params = [], array $options = []) rightmove-search (GET /rightmove/search)
- *   params: string $location, int $page, 'for_sale'|'to_let' $status, int $min_price, int $max_price, int $min_bedrooms, int $max_bedrooms, float $min_bathrooms, float $max_bathrooms, string $property_type
+ *   params: string $location, int $page, 'for_sale'|'to_let' $status, int $min_price, int $max_price, int $min_bedrooms, int $max_bedrooms, float $min_bathrooms, float $max_bathrooms, 'detached'|'semi-detached'|'terraced'|'flat'|'bungalow'|'land'|'park-home'|'private-halls' $property_type, '0'|'0.25'|'0.5'|'1'|'3'|'5'|'10'|'15'|'20'|'30'|'40' $radius, 'garden'|'parking'|'retirement'|'newHome'|'sharedOwnership'|'auction' $must_have, 'newHome'|'retirement'|'sharedOwnership'|'auction' $dont_show, 'FREEHOLD'|'LEASEHOLD'|'SHARE_OF_FREEHOLD' $tenure_types, 'lowest_price'|'highest_price'|'newest_listed'|'oldest_listed' $sort
  * @method mixed studentSearch(array $params = [], array $options = []) rightmove-student-search (GET /rightmove/student/search)
  *   params: string $location, int $page, int $min_price, int $max_price, int $min_bedrooms, int $max_bedrooms, 'furnished'|'unfurnished'|'part_furnished' $furnish_type
  */
 abstract class RightmoveGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) rnz-article (GET /rnz/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) rnz-author (GET /rnz/author)
+ *   params: string $slug, string $url
+ * @method mixed headlines(array $params = [], array $options = []) rnz-headlines (GET /rnz/headlines)
+ *   params: 'news'|'national'|'world'|'political'|'business'|'pacific'|'sport'|'health'|'education'|'community'|'country'|'regional'|'te-manu-korihi'|'on-the-inside'|'in-depth'|'indonz'|'ldr'|'chinese'|'weather' $section
+ * @method mixed news(array $params = [], array $options = []) rnz-news (GET /rnz/news)
+ * @method mixed sections(array $params = [], array $options = []) rnz-sections (GET /rnz/sections)
+ */
+abstract class RnzGroup {}
 
 /**
  * @method mixed badges(array $params = [], array $options = []) roblox-badges (GET /roblox/badges)
@@ -3200,6 +5250,18 @@ abstract class RightmoveGroup {}
  *   params: string $q, string $page_token
  */
 abstract class RobloxGroup {}
+
+/**
+ * @method mixed rollingstoneArticle(array $params = [], array $options = []) rollingstone-article (GET /rollingstone/article)
+ *   params: string $url
+ * @method mixed rollingstoneAuthor(array $params = [], array $options = []) rollingstone-author (GET /rollingstone/author)
+ *   params: string $url
+ * @method mixed rollingstoneHeadlines(array $params = [], array $options = []) rollingstone-headlines (GET /rollingstone/headlines)
+ *   params: 'music'|'music-news'|'music-features'|'music-lists'|'music-album-reviews'|'music-live-reviews'|'music-country'|'music-latin'|'music-pictures'|'politics'|'politics-news'|'politics-features'|'politics-lists'|'tv-movies'|'tv-movie-news'|'tv-movie-features'|'tv-movie-lists'|'tv-movie-recaps'|'tv-movie-reviews'|'culture'|'culture-news'|'culture-features'|'culture-lists'|'rs-gaming'|'product-recommendations'|'pro'|'artist-you-need-to-know'|'song-to-know'|'photo-gallery'|'creators'|'rs-recommends'|'rs-essentials'|'audio-awards'|'gift-guide' $section
+ * @method mixed rollingstoneNews(array $params = [], array $options = []) rollingstone-news (GET /rollingstone/news)
+ * @method mixed rollingstoneSections(array $params = [], array $options = []) rollingstone-sections (GET /rollingstone/sections)
+ */
+abstract class RollingStoneGroup {}
 
 /**
  * @method mixed rothysCollections(array $params = [], array $options = []) rothys-collections (GET /rothys/collections)
@@ -3260,6 +5322,30 @@ abstract class RottenTomatoesGroup {}
 abstract class RoverGroup {}
 
 /**
+ * @method mixed rteArticle(array $params = [], array $options = []) rte-article (GET /rte/article)
+ *   params: string $url
+ * @method mixed rteAuthor(array $params = [], array $options = []) rte-author (GET /rte/author)
+ *   params: string $url
+ * @method mixed rteHeadlines(array $params = [], array $options = []) rte-headlines (GET /rte/headlines)
+ *   params: 'ireland'|'world'|'politics'|'business'|'regional'|'connacht'|'dublin'|'leinster'|'munster'|'ulster'|'middle-east'|'europe'|'uk'|'us'|'ukraine'|'a-european-perspective'|'nuacht'|'newslens'|'analysis-and-comment'|'investigations-unit'|'crime'|'courts'|'education'|'health'|'environment'|'science'|'technology'|'weather'|'your-money' $section
+ * @method mixed rteNews(array $params = [], array $options = []) rte-news (GET /rte/news)
+ * @method mixed rteSections(array $params = [], array $options = []) rte-sections (GET /rte/sections)
+ */
+abstract class RtNewsGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) salon-article (GET /salon/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) salon-author (GET /salon/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) salon-headlines (GET /salon/headlines)
+ *   params: 'home'|'audio'|'blog'|'business'|'culture'|'economy'|'economy-and-innovation'|'elections'|'entertainment'|'food'|'guides'|'innovation'|'life'|'life-stories'|'media'|'money'|'news'|'news-and-politics'|'opinion'|'oscars_2012'|'politics'|'satire'|'science-and-health'|'sex-and-love'|'social'|'sustainability'|'sxsw_2013'|'technology'|'the_brief'|'video'|'vpn'|'working_ahead' $section
+ * @method mixed news(array $params = [], array $options = []) salon-news (GET /salon/news)
+ * @method mixed sections(array $params = [], array $options = []) salon-sections (GET /salon/sections)
+ */
+abstract class SalonGroup {}
+
+/**
  * @method mixed samsclubCategory(array $params = [], array $options = []) samsclub-category (GET /samsclub/category)
  *   params: string $id, int $page
  * @method mixed samsclubContent(array $params = [], array $options = []) samsclub-content (GET /samsclub/content/{id})
@@ -3271,6 +5357,65 @@ abstract class RoverGroup {}
  *   params: string $id
  */
 abstract class SamSclubGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) scmp-article (GET /scmp/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) scmp-author (GET /scmp/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) scmp-headlines (GET /scmp/headlines)
+ *   params: 'news'|'business'|'property'|'tech'|'lifestyle'|'culture'|'sport'|'postmag'|'style'|'this-week-in-asia'|'cooking'|'hong-kong'|'china'|'asia'|'world'|'people-culture'|'china-politics'|'china-diplomacy'|'china-economy'|'hong-kong-politics'|'hong-kong-economy'|'hong-kong-health-environment'|'hong-kong-education'|'world-us-canada'|'world-europe'|'world-middle-east'|'world-americas'|'world-africa'|'world-russia-central-asia'|'asia-australasia'|'asia-diplomacy'|'asia-east-asia'|'asia-southeast-asia'|'asia-south-asia'|'business-companies'|'business-investor-relations'|'business-global-economy'|'business-money-wealth'|'opinion-comment'|'opinion-harrys-view'|'opinion-blogs'|'opinion-polls'|'opinion-letters'|'property-hong-kong-china'|'property-international'|'tech-big-tech'|'tech-enterprises'|'tech-innovation'|'tech-leaders-founders'|'tech-science-research'|'lifestyle-fashion-beauty'|'lifestyle-travel-leisure'|'lifestyle-motoring'|'lifestyle-food-drink'|'lifestyle-health-wellness'|'lifestyle-watches'|'culture-books'|'culture-music'|'culture-film-tv'|'culture-arts'|'sport-hong-kong'|'sport-china'|'sport-golf'|'sport-racing'|'sport-rugby'|'sport-football'|'sport-tennis'|'sport-other'|'sport-boxing'|'sport-hong-kong-sevens'|'postmag-culture'|'postmag-travel'|'postmag-food-drink'|'postmag-passions'|'postmag-wellness'|'postmag-design-interiors'|'style-luxury'|'style-fashion'|'style-beauty'|'style-people'|'style-lifestyle'|'this-week-in-asia-politics'|'this-week-in-asia-geopolitics'|'this-week-in-asia-economics'|'this-week-in-asia-society'|'this-week-in-asia-opinion'|'this-week-in-asia-asia-buzz'|'this-week-in-asia-people' $section
+ * @method mixed sections(array $params = [], array $options = []) scmp-sections (GET /scmp/sections)
+ */
+abstract class ScmpGroup {}
+
+/**
+ * @method mixed screenrantArticle(array $params = [], array $options = []) screenrant-article (GET /screenrant/article)
+ *   params: string $url
+ * @method mixed screenrantAuthor(array $params = [], array $options = []) screenrant-author (GET /screenrant/author)
+ *   params: string $url
+ * @method mixed screenrantHeadlines(array $params = [], array $options = []) screenrant-headlines (GET /screenrant/headlines)
+ *   params: 'movies'|'movie-news'|'movie-features'|'movie-reviews'|'movie-lists'|'movie-trailers'|'tv'|'tv-news'|'tv-features'|'tv-reviews'|'tv-lists'|'network-tv'|'reality-tv'|'reality-tv-news'|'reality-tv-features'|'reality-tv-lists'|'comics'|'comics-news'|'comics-features'|'comics-reviews'|'comics-lists'|'gaming'|'game-news'|'game-features'|'game-lists'|'game-reviews'|'anime'|'books'|'interviews'|'lists'|'videos'|'podcasts'|'exclusives'|'streaming-movies-and-tv-guide' $section
+ * @method mixed screenrantNews(array $params = [], array $options = []) screenrant-news (GET /screenrant/news)
+ * @method mixed screenrantSections(array $params = [], array $options = []) screenrant-sections (GET /screenrant/sections)
+ */
+abstract class ScreenRantGroup {}
+
+/**
+ * @method mixed seatgeekCategories(array $params = [], array $options = []) seatgeek-categories (GET /seatgeek/categories)
+ * @method mixed seatgeekCities(array $params = [], array $options = []) seatgeek-cities (GET /seatgeek/cities)
+ * @method mixed seatgeekEvent(array $params = [], array $options = []) seatgeek-event (GET /seatgeek/event)
+ *   params: int $id
+ * @method mixed seatgeekEventsByCategory(array $params = [], array $options = []) seatgeek-events-by-category (GET /seatgeek/events-by-category)
+ *   params: int $taxonomy_id, int $page, int $per_page
+ * @method mixed seatgeekEventsNear(array $params = [], array $options = []) seatgeek-events-near (GET /seatgeek/events-near)
+ *   params: float $lat, float $lon, int $page, int $per_page
+ * @method mixed seatgeekPerformer(array $params = [], array $options = []) seatgeek-performer (GET /seatgeek/performer)
+ *   params: int $id
+ * @method mixed seatgeekPerformerEvents(array $params = [], array $options = []) seatgeek-performer-events (GET /seatgeek/performer-events)
+ *   params: int $performer_id, int $page, int $per_page
+ * @method mixed seatgeekSearch(array $params = [], array $options = []) seatgeek-search (GET /seatgeek/search)
+ *   params: string $q, int $limit
+ * @method mixed seatgeekTrending(array $params = [], array $options = []) seatgeek-trending (GET /seatgeek/trending)
+ *   params: float $lat, float $lon
+ * @method mixed seatgeekVenue(array $params = [], array $options = []) seatgeek-venue (GET /seatgeek/venue)
+ *   params: int $id
+ * @method mixed seatgeekVenueEvents(array $params = [], array $options = []) seatgeek-venue-events (GET /seatgeek/venue-events)
+ *   params: int $venue_id, int $page, int $per_page
+ */
+abstract class SeatGeekGroup {}
+
+/**
+ * @method mixed seattletimesArticle(array $params = [], array $options = []) seattletimes-article (GET /seattletimes/article)
+ *   params: string $url
+ * @method mixed seattletimesAuthor(array $params = [], array $options = []) seattletimes-author (GET /seattletimes/author)
+ *   params: string $slug, string $url
+ * @method mixed seattletimesHeadlines(array $params = [], array $options = []) seattletimes-headlines (GET /seattletimes/headlines)
+ *   params: 'seattle-news'|'law-justice'|'politics'|'transportation'|'climate-lab'|'environment'|'weather'|'health'|'data'|'homeless'|'education-lab'|'education'|'times-watchdog'|'mental-health'|'eastside'|'puget-sound'|'business'|'boeing-aerospace'|'real-estate'|'amazon'|'technology'|'microsoft'|'alaska-airlines'|'costco'|'economy'|'starbucks'|'retail'|'nation-world'|'nation'|'world'|'nation-politics'|'oddities'|'sports'|'seahawks'|'mariners'|'uw-huskies'|'wsu-cougars'|'storm'|'kraken'|'sounders'|'reign'|'torrent'|'high-school'|'entertainment'|'music'|'movies'|'books'|'tv'|'theater'|'visual-arts'|'classical-music'|'local-media'|'events'|'life'|'food-drink'|'travel'|'outdoors'|'wellness'|'lifestyle'|'fashion'|'rant-and-rave'|'op-eds'|'opinion'|'editorials'|'letters-to-the-editor'|'pacific-nw-magazine'|'photo-video'|'video'|'photography'|'at-home'|'marijuana'|'northwest'|'obituaries'|'science'|'special-reports'|'agriculture'|'local-business'|'markets'|'auto-racing'|'college'|'wsu-cougar-basketball'|'wsu-cougar-football'|'golf'|'gonzaga-bulldogs'|'hockey'|'horse-racing'|'uw-husky-basketball'|'nba'|'ncaa-tournament'|'pac-12'|'seattle-university'|'snow-sports'|'world-cup'|'dance'|'video-games'|'fitness'|'garden'|'home-decor' $section
+ * @method mixed seattletimesNews(array $params = [], array $options = []) seattletimes-news (GET /seattletimes/news)
+ * @method mixed seattletimesSections(array $params = [], array $options = []) seattletimes-sections (GET /seattletimes/sections)
+ */
+abstract class SeattleTimesGroup {}
 
 /**
  * @method mixed secCompanyIntelligence(array $params = [], array $options = []) sec-company-intelligence (GET /sec/company/intelligence)
@@ -3297,6 +5442,9 @@ abstract class SamSclubGroup {}
 abstract class SecEdgarGroup {}
 
 /**
+ * @method mixed brands(array $params = [], array $options = []) sephora-brands (GET /sephora/brands)
+ * @method mixed categories(array $params = [], array $options = []) sephora-categories (GET /sephora/categories)
+ *   params: 'new'|'makeup'|'skincare'|'fragrance'|'hair'|'bath-body'|'mini-size'|'brands'|'gifts-value-sets'|'sale-offers' $department
  * @method mixed category(array $params = [], array $options = []) sephora-category (GET /sephora/category)
  *   params: string $slug, int $page, 'featured'|'top_rated'|'new'|'best_selling'|'price_low_to_high'|'price_high_to_low' $sort_by, int $price_min, int $price_max, array<string> $brand, int $rating_min, bool $is_new, array<string> $filter
  * @method mixed product(array $params = [], array $options = []) sephora-product (GET /sephora/product)
@@ -3313,6 +5461,30 @@ abstract class SecEdgarGroup {}
  *   params: string $query
  */
 abstract class SephoraGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) sevennewsau-article (GET /sevennewsau/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) sevennewsau-author (GET /sevennewsau/author)
+ *   params: string $slug, string $url
+ * @method mixed headlines(array $params = [], array $options = []) sevennewsau-headlines (GET /sevennewsau/headlines)
+ *   params: '7you'|'7you-beauty'|'7you-books'|'7you-fashion'|'7you-health-fitness'|'7you-home'|'7you-tech'|'7you-travel'|'business'|'business-economy'|'business-energy'|'business-property'|'business-retail'|'entertainment'|'entertainment-australian-idol'|'entertainment-celebrity'|'entertainment-farmer-wants-a-wife'|'entertainment-home-and-away'|'entertainment-movies'|'entertainment-music'|'entertainment-my-kitchen-rules'|'entertainment-the-voice-australia'|'entertainment-tv'|'lifestyle'|'lifestyle-fashion'|'lifestyle-food'|'lifestyle-health-wellbeing'|'lifestyle-parenting'|'lifestyle-personal-finance'|'lifestyle-pets'|'lifestyle-real-estate'|'lifestyle-recipes'|'lifestyle-relationships'|'lifestyle-shopping'|'lifestyle-sponsored'|'motoring'|'news'|'news-act'|'news-adelaide'|'news-asia'|'news-australia'|'news-brisbane'|'news-canberra'|'news-conflict'|'news-crime'|'news-darwin'|'news-disaster-and-emergency'|'news-education'|'news-europe'|'news-gold-coast'|'news-hobart'|'news-israel'|'news-melbourne'|'news-middle-east'|'news-missing-person'|'news-new-zealand'|'news-newcastle'|'news-nsw'|'news-nsw-police'|'news-nt'|'news-perth'|'news-protest'|'news-qld'|'news-russia'|'news-sa'|'news-sydney'|'news-ukraine'|'news-united-states'|'news-vic'|'news-wa'|'news-weather'|'news-world'|'opinion'|'politics'|'politics-federal-politics'|'politics-state-politics'|'sport'|'sport-afl'|'sport-aflw'|'sport-baseball'|'sport-basketball'|'sport-boxing'|'sport-cricket'|'sport-cycling'|'sport-f1'|'sport-golf'|'sport-horse-racing'|'sport-mixed-martial-arts'|'sport-motorsport'|'sport-netball'|'sport-nfl'|'sport-olympics'|'sport-rugby-league'|'sport-rugby-union'|'sport-soccer'|'sport-supercars'|'sport-tennis'|'sport-ufc'|'spotlight'|'sunrise'|'sunrise-cooking'|'sunrise-cooking-with-coles'|'sunrise-entertainment'|'technology'|'technology-gaming'|'the-morning-show'|'travel'|'travel-jetstar'|'travel-qantas' $section
+ * @method mixed news(array $params = [], array $options = []) sevennewsau-news (GET /sevennewsau/news)
+ * @method mixed sections(array $params = [], array $options = []) sevennewsau-sections (GET /sevennewsau/sections)
+ */
+abstract class SevenNewsAustraliaGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) sfgate-article (GET /sfgate/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) sfgate-author (GET /sfgate/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) sfgate-headlines (GET /sfgate/headlines)
+ *   params: 'top-news'|'bay-area'|'business-technology'|'entertainment'|'celebrity'|'food-dining'|'travel'|'routes'|'top-sports'|'giants'|'49ers'|'warriors' $section
+ * @method mixed news(array $params = [], array $options = []) sfgate-news (GET /sfgate/news)
+ * @method mixed sections(array $params = [], array $options = []) sfgate-sections (GET /sfgate/sections)
+ */
+abstract class SfgateGroup {}
 
 /**
  * @method mixed shakeshackLocations(array $params = [], array $options = []) shakeshack-locations (GET /shakeshack/locations)
@@ -3385,13 +5557,13 @@ abstract class ShopAppGroup {}
  * @method mixed collections(array $params = [], array $options = []) shopify-collections (GET /shopify/collections)
  *   params: string $url, int $page, int $limit
  * @method mixed collectionProducts(array $params = [], array $options = []) shopify-collection-products (GET /shopify/collections/{handle}/products)
- *   params: string $handle, string $url, int $page, int $limit, 'sortLTH'|'sortHTL'|'newest' $sortBy
+ *   params: string $handle, string $url, int $page, int $limit, 'sortLTH'|'sortHTL'|'newest' $sortBy, 'manual'|'best-selling'|'title-ascending'|'title-descending'|'price-ascending'|'price-descending'|'created-ascending'|'created-descending' $sort_by, float $min_price, float $max_price, string $product_type, bool $in_stock_only, string $option_size
  * @method mixed pages(array $params = [], array $options = []) shopify-pages (GET /shopify/pages)
  *   params: string $url, int $page, int $limit
  * @method mixed page(array $params = [], array $options = []) shopify-page (GET /shopify/pages/{handle})
  *   params: string $handle, string $url
  * @method mixed products(array $params = [], array $options = []) shopify-products (GET /shopify/products)
- *   params: string $url, int $page, int $limit, 'sortLTH'|'sortHTL'|'newest' $sortBy
+ *   params: string $url, int $page, int $limit, 'sortLTH'|'sortHTL'|'newest' $sortBy, 'manual'|'best-selling'|'title-ascending'|'title-descending'|'price-ascending'|'price-descending'|'created-ascending'|'created-descending' $sort_by, float $min_price, float $max_price, string $product_type, bool $in_stock_only, string $option_size
  * @method mixed product(array $params = [], array $options = []) shopify-product (GET /shopify/products/{handle})
  *   params: string $handle, string $url
  * @method mixed productRecommendations(array $params = [], array $options = []) shopify-product-recommendations (GET /shopify/products/{handle}/recommendations)
@@ -3438,6 +5610,80 @@ abstract class SimilarWebGroup {}
  * @method mixed store(array $params = [], array $options = []) skims-store (GET /skims/store)
  */
 abstract class SkimsGroup {}
+
+/**
+ * @method mixed skynewsArticle(array $params = [], array $options = []) skynews-article (GET /skynews/article)
+ *   params: string $url
+ * @method mixed skynewsAuthor(array $params = [], array $options = []) skynews-author (GET /skynews/author)
+ *   params: string $url
+ * @method mixed skynewsHeadlines(array $params = [], array $options = []) skynews-headlines (GET /skynews/headlines)
+ *   params: 'home'|'uk'|'world'|'us'|'business'|'politics'|'technology'|'entertainment'|'strange'|'money'|'science-climate-tech'|'offbeat'|'analysis'|'data-and-forensics' $section
+ * @method mixed skynewsNews(array $params = [], array $options = []) skynews-news (GET /skynews/news)
+ * @method mixed skynewsSections(array $params = [], array $options = []) skynews-sections (GET /skynews/sections)
+ * @method mixed skynewsVideo(array $params = [], array $options = []) skynews-video (GET /skynews/video)
+ *   params: string $url
+ * @method mixed skynewsVideos(array $params = [], array $options = []) skynews-videos (GET /skynews/videos)
+ */
+abstract class SkyNewsGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) slate-article (GET /slate/article)
+ *   params: string $url
+ * @method mixed categories(array $params = [], array $options = []) slate-categories (GET /slate/categories)
+ * @method mixed headlines(array $params = [], array $options = []) slate-headlines (GET /slate/headlines)
+ *   params: 'all'|'news-and-politics'|'culture'|'technology'|'business'|'life'|'advice' $section
+ */
+abstract class SlateGroup {}
+
+/**
+ * @method mixed categories(array $params = [], array $options = []) slickdeals-categories (GET /slickdeals/categories)
+ *   params: string $q
+ * @method mixed category(array $params = [], array $options = []) slickdeals-category (GET /slickdeals/category)
+ *   params: string $slug
+ * @method mixed comments(array $params = [], array $options = []) slickdeals-comments (GET /slickdeals/comments)
+ *   params: string $url, int $thread_id
+ * @method mixed deal(array $params = [], array $options = []) slickdeals-deal (GET /slickdeals/deal)
+ *   params: string $url, int $thread_id
+ * @method mixed dealTypes(array $params = [], array $options = []) slickdeals-deal-types (GET /slickdeals/deal-types)
+ *   params: string $q
+ * @method mixed forums(array $params = [], array $options = []) slickdeals-forums (GET /slickdeals/forums)
+ *   params: string $q
+ * @method mixed frontpage(array $params = [], array $options = []) slickdeals-frontpage (GET /slickdeals/frontpage)
+ *   params: int $page
+ * @method mixed primaryCategories(array $params = [], array $options = []) slickdeals-primary-categories (GET /slickdeals/primary-categories)
+ *   params: string $q
+ * @method mixed primaryCategory(array $params = [], array $options = []) slickdeals-primary-category (GET /slickdeals/primary-category)
+ *   params: string $slug
+ * @method mixed search(array $params = [], array $options = []) slickdeals-search (GET /slickdeals/search)
+ *   params: string $q, int $forum_id, int $deal_type_id
+ * @method mixed searchAdvanced(array $params = [], array $options = []) slickdeals-search-advanced (GET /slickdeals/search/advanced)
+ *   params: string $q, int $page, string $sort, int $category_id, int $brand_id, int $store_id
+ */
+abstract class SlickdealsGroup {}
+
+/**
+ * @method mixed sloanreviewArticle(array $params = [], array $options = []) sloanreview-article (GET /sloanreview/article)
+ *   params: string $url
+ * @method mixed sloanreviewArticles(array $params = [], array $options = []) sloanreview-articles (GET /sloanreview/articles)
+ *   params: int $page, int $page_size
+ * @method mixed sloanreviewCategories(array $params = [], array $options = []) sloanreview-categories (GET /sloanreview/categories)
+ * @method mixed sloanreviewHeadlines(array $params = [], array $options = []) sloanreview-headlines (GET /sloanreview/headlines)
+ * @method mixed sloanreviewTopic(array $params = [], array $options = []) sloanreview-topic (GET /sloanreview/topic)
+ *   params: 'ai-machine-learning'|'analytics-business-intelligence'|'automation'|'boards-corporate-governance'|'business-models-strategy'|'climate-change'|'collaboration'|'corporate-social-responsibility-sustainability'|'crisis-management'|'culture'|'customers'|'data-ai-machine-learning'|'data-culture'|'developing-strategy'|'digital-marketing'|'disruption'|'diversity-inclusion'|'equality'|'ethics'|'executing-strategy'|'financial-management-risk'|'global-strategy'|'innovation-3'|'innovation-strategy'|'it-governance-leadership'|'leadership'|'leadership-skills'|'leading-change'|'managing-technology'|'managing-your-career'|'marketing'|'marketing-strategy'|'new-product-development'|'operations'|'organizational-behavior'|'organizational-structure'|'organizational-transformation'|'performance-management'|'platforms-ecosystems'|'project-management'|'quality-service'|'remote-work'|'security-privacy'|'skills-learning'|'social-media'|'social-responsibility'|'strategy'|'supply-chains-logistics'|'sustainability-social-responsibility'|'talent-management'|'technology-implementation'|'technology-innovation-strategy'|'work-life-balance'|'workplace-teams-culture' $topic
+ */
+abstract class MitSloanManagementReviewGroup {}
+
+/**
+ * @method mixed smhArticle(array $params = [], array $options = []) smh-article (GET /smh/article)
+ *   params: string $url
+ * @method mixed smhAuthor(array $params = [], array $options = []) smh-author (GET /smh/author)
+ *   params: string $url
+ * @method mixed smhHeadlines(array $params = [], array $options = []) smh-headlines (GET /smh/headlines)
+ *   params: 'sydney-news'|'national/nsw'|'politics'|'politics/federal'|'politics/nsw'|'politics/victoria'|'politics/queensland'|'politics/western-australia'|'business'|'business/companies'|'business/markets'|'business/bullsnbears'|'business/the-economy'|'business/banking-and-finance'|'business/small-business'|'business/workplace'|'world'|'world/north-america'|'world/europe'|'world/asia'|'world/middle-east'|'world/south-america'|'world/africa'|'national'|'national/victoria'|'national/queensland'|'national/western-australia'|'opinion'|'property'|'property/news'|'property/living'|'sport'|'sport/nrl'|'sport/rugby-union'|'sport/cricket'|'sport/soccer'|'sport/afl'|'sport/racing'|'sport/tennis'|'sport/netball'|'sport/basketball'|'sport/motorsport'|'sport/cycling'|'sport/golf'|'sport/nfl'|'sport/athletics'|'sport/swimming'|'sport/boxing'|'goodfood'|'goodfood/sydney-eating-out'|'goodfood/recipes'|'goodfood/tips-and-advice'|'goodfood/drinks'|'culture'|'culture/movies'|'culture/tv-and-radio'|'culture/music'|'culture/celebrity'|'culture/books'|'culture/comedy'|'culture/dance'|'culture/musicals'|'culture/opera'|'culture/theatre'|'culture/art-and-design'|'culture/live-reviews'|'lifestyle'|'lifestyle/health-and-wellness'|'lifestyle/fashion'|'lifestyle/life-and-relationships'|'lifestyle/beauty'|'traveller'|'traveller/inspiration/destination-guides'|'traveller/inspiration'|'traveller/reviews-and-advice'|'traveller/travel-news'|'good-weekend'|'sunday-life'|'money'|'money/super-and-retirement'|'money/investing'|'money/banking'|'money/borrowing'|'money/saving'|'money/tax'|'money/planning-and-budgeting'|'education'|'healthcare'|'environment'|'environment/conservation'|'environment/climate-change'|'environment/sustainability'|'environment/weather'|'technology'|'technology/video-games'|'australia-higher-education' $section
+ * @method mixed smhNews(array $params = [], array $options = []) smh-news (GET /smh/news)
+ * @method mixed smhSections(array $params = [], array $options = []) smh-sections (GET /smh/sections)
+ */
+abstract class TheSydneyMorningHeraldGroup {}
 
 /**
  * @method mixed sofascoreEvent(array $params = [], array $options = []) sofascore-event (GET /sofascore/event)
@@ -3512,6 +5758,18 @@ abstract class SonicGroup {}
 abstract class SoundCloudGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) space-article (GET /space/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) space-author (GET /space/author)
+ *   params: string $slug, string $url
+ * @method mixed headlines(array $params = [], array $options = []) space-headlines (GET /space/headlines)
+ *   params: 'astronomy'|'astronomy-black-holes'|'astronomy-dark-universe'|'astronomy-exoplanets'|'astronomy-galaxies'|'astronomy-hubble-space-telescope'|'astronomy-james-webb-space-telescope'|'astronomy-solar-system'|'astronomy-solar-system-asteroids'|'astronomy-solar-system-comets'|'astronomy-solar-system-dwarf-planets'|'astronomy-solar-system-earth'|'astronomy-solar-system-jupiter'|'astronomy-solar-system-mars'|'astronomy-solar-system-mercury'|'astronomy-solar-system-moon'|'astronomy-solar-system-neptune'|'astronomy-solar-system-pluto'|'astronomy-solar-system-saturn'|'astronomy-solar-system-sun'|'astronomy-solar-system-uranus'|'astronomy-solar-system-venus'|'astronomy-stars'|'entertainment'|'entertainment-space-books'|'entertainment-space-games'|'entertainment-space-movies-shows'|'entertainment-space-toys-lego'|'science'|'science-astrophysics'|'science-climate-change'|'science-particle-physics'|'science-weather'|'space-exploration'|'space-exploration-human-spaceflight'|'space-exploration-launches-spacecraft'|'space-exploration-missions'|'space-exploration-missions-apollo'|'space-exploration-missions-artemis'|'space-exploration-missions-asteroid-comet-missions'|'space-exploration-missions-international-space-station'|'space-exploration-missions-mars-rovers'|'space-exploration-missions-new-horizons'|'space-exploration-missions-parker-solar-probe'|'space-exploration-missions-space-shuttle'|'space-exploration-missions-voyager'|'space-exploration-private-spaceflight'|'space-exploration-satellites'|'space-exploration-search-for-life'|'stargazing'|'stargazing-astrophotography'|'stargazing-auroras'|'stargazing-constellations'|'stargazing-eclipses'|'stargazing-eclipses-lunar-eclipses'|'stargazing-eclipses-solar-eclipses'|'stargazing-meteor-showers'|'stargazing-skywatching-kit'|'technology'|'technology-aerospace'|'technology-drones' $section
+ * @method mixed news(array $params = [], array $options = []) space-news (GET /space/news)
+ * @method mixed sections(array $params = [], array $options = []) space-sections (GET /space/sections)
+ */
+abstract class SpaceGroup {}
+
+/**
  * @method mixed sparkfunCategories(array $params = [], array $options = []) sparkfun-categories (GET /sparkfun/categories)
  * @method mixed sparkfunCategory(array $params = [], array $options = []) sparkfun-category (GET /sparkfun/category)
  *   params: string $url_key, int $page, int $per_page, array<string> $filter
@@ -3521,6 +5779,18 @@ abstract class SoundCloudGroup {}
  *   params: string $q, int $page, int $per_page, array<string> $filter
  */
 abstract class SparkFunGroup {}
+
+/**
+ * @method mixed sportingnewsArticle(array $params = [], array $options = []) sportingnews-article (GET /sportingnews/article)
+ *   params: string $url
+ * @method mixed sportingnewsAuthor(array $params = [], array $options = []) sportingnews-author (GET /sportingnews/author)
+ *   params: string $slug, string $url
+ * @method mixed sportingnewsHeadlines(array $params = [], array $options = []) sportingnews-headlines (GET /sportingnews/headlines)
+ *   params: 'baseball'|'basketball'|'boxing'|'bundesliga'|'champions-league'|'club-world-cup'|'college'|'cricket'|'culture'|'darts'|'fantasy'|'football'|'formula-1'|'golf'|'high-school'|'horse-racing'|'la-liga'|'liga-mx'|'mlb'|'mls'|'mma'|'nascar'|'nba'|'nba-draft'|'ncaa'|'ncaa-basketball'|'ncaa-football'|'nfl'|'nfl-draft'|'nhl'|'olympics'|'premier-league'|'sec'|'serie-a'|'soccer'|'softball'|'tennis'|'tickets'|'tsn'|'ufc'|'watch'|'wnba'|'womens-college-basketball'|'wwe' $section
+ * @method mixed sportingnewsNews(array $params = [], array $options = []) sportingnews-news (GET /sportingnews/news)
+ * @method mixed sportingnewsSections(array $params = [], array $options = []) sportingnews-sections (GET /sportingnews/sections)
+ */
+abstract class SportingNewsGroup {}
 
 /**
  * @method mixed categories(array $params = [], array $options = []) spotify-podcasts-categories (GET /spotify-podcasts/categories)
@@ -3605,6 +5875,18 @@ abstract class SpotifyPodcastsGroup {}
  *   params: string $q, int $offset, int $limit, int $number_of_top_results, bool $include_audiobooks, bool $include_pre_releases, bool $include_album_pre_releases, bool $include_authors, bool $include_episode_content_ratings_v2
  */
 abstract class SpotifyGroup {}
+
+/**
+ * @method mixed standardArticle(array $params = [], array $options = []) standard-article (GET /standard/article)
+ *   params: string $url
+ * @method mixed standardAuthor(array $params = [], array $options = []) standard-author (GET /standard/author)
+ *   params: string $slug, string $url
+ * @method mixed standardHeadlines(array $params = [], array $options = []) standard-headlines (GET /standard/headlines)
+ *   params: 'news'|'news/london'|'news/politics'|'news/transport'|'news/crime'|'news/world'|'news/education'|'news/health'|'news/tech'|'sport'|'sport/football'|'sport/rugby'|'sport/cricket'|'sport/boxing'|'sport/formula-one'|'sport/tennis'|'business'|'business/business-news'|'business/markets'|'business/economy'|'business/technology-media'|'business/leisure-retail'|'business/money'|'business/property'|'lifestyle'|'lifestyle/fashion'|'lifestyle/beauty'|'lifestyle/travel'|'lifestyle/wellness'|'lifestyle/dating'|'culture'|'culture/theatre'|'culture/film'|'culture/tvfilm'|'culture/music'|'culture/books'|'going-out'|'going-out/restaurants'|'going-out/foodanddrink'|'going-out/bars'|'going-out/attractions'|'going-out/events'|'homesandproperty'|'homesandproperty/property-news'|'homesandproperty/buying-mortgages'|'homesandproperty/renting'|'homesandproperty/where-to-live'|'homesandproperty/interiors'|'homesandproperty/gardening'|'comment'|'comment/podcasts'|'showbiz'|'showbiz/celebrity-news' $section
+ * @method mixed standardNews(array $params = [], array $options = []) standard-news (GET /standard/news)
+ * @method mixed standardSections(array $params = [], array $options = []) standard-sections (GET /standard/sections)
+ */
+abstract class EveningStandardGroup {}
 
 /**
  * @method mixed menu(array $params = [], array $options = []) starbucks-menu (GET /starbucks/menu)
@@ -3702,6 +5984,18 @@ abstract class SteveMaddenGroup {}
 abstract class StockXGroup {}
 
 /**
+ * @method mixed straitstimesArticle(array $params = [], array $options = []) straitstimes-article (GET /straitstimes/article)
+ *   params: string $url
+ * @method mixed straitstimesAuthor(array $params = [], array $options = []) straitstimes-author (GET /straitstimes/author)
+ *   params: string $url
+ * @method mixed straitstimesHeadlines(array $params = [], array $options = []) straitstimes-headlines (GET /straitstimes/headlines)
+ *   params: 'singapore'|'singapore/housing'|'singapore/health'|'singapore/transport'|'singapore/parenting-education'|'singapore/politics'|'singapore/jobs'|'singapore/environment'|'singapore/courts-crime'|'singapore/community'|'asia'|'asia/se-asia'|'asia/east-asia'|'asia/south-asia'|'asia/australianz'|'world'|'world/united-states'|'world/europe'|'world/middle-east'|'opinion'|'opinion/forum'|'life'|'life/entertainment'|'life/travel'|'life/food'|'life/home-design'|'life/style'|'life/arts'|'business'|'business/economy'|'business/banking'|'business/companies-markets'|'business/invest'|'sport'|'sport/basketball'|'sport/football'|'sport/formula-one'|'sport/golf'|'sport/schools'|'sport/tennis'|'sport/racing'|'tech'|'breaking-news' $section
+ * @method mixed straitstimesNews(array $params = [], array $options = []) straitstimes-news (GET /straitstimes/news)
+ * @method mixed straitstimesSections(array $params = [], array $options = []) straitstimes-sections (GET /straitstimes/sections)
+ */
+abstract class TheStraitsTimesGroup {}
+
+/**
  * @method mixed challenges(array $params = [], array $options = []) strava-challenges (GET /strava/challenges)
  * @method mixed club(array $params = [], array $options = []) strava-club (GET /strava/clubs/{id})
  *   params: string $id
@@ -3711,6 +6005,84 @@ abstract class StockXGroup {}
  *   params: string $path
  */
 abstract class StravaGroup {}
+
+/**
+ * @method mixed stubhubCarousel(array $params = [], array $options = []) stubhub-carousel (GET /stubhub/carousel)
+ *   params: string $performer_slug, int $performer_id, '1'|'2'|'3' $top_level_category_id, int $category_id, float $lat, float $lon, int $max
+ * @method mixed stubhubCategories(array $params = [], array $options = []) stubhub-categories (GET /stubhub/categories)
+ *   params: float $lat, float $lon, string $from, string $to
+ * @method mixed stubhubCategoryEvents(array $params = [], array $options = []) stubhub-category-events (GET /stubhub/category-events)
+ *   params: int $category_id, float $lat, float $lon, string $from, string $to, int $page, int $radius_miles, bool $include_parking_passes
+ * @method mixed stubhubExplore(array $params = [], array $options = []) stubhub-explore (GET /stubhub/explore)
+ *   params: float $lat, float $lon, string $from, string $to, int $price_min, int $price_max, '0'|'1'|'2'|'3' $top_level_category_id, int $category_id
+ * @method mixed stubhubNavigationCategories(array $params = [], array $options = []) stubhub-navigation-categories (GET /stubhub/navigation-categories)
+ *   params: '1'|'2'|'3' $category_id
+ * @method mixed stubhubPerformerEvents(array $params = [], array $options = []) stubhub-performer-events (GET /stubhub/performer-events)
+ *   params: string $performer_slug, int $performer_id
+ * @method mixed stubhubSearch(array $params = [], array $options = []) stubhub-search (GET /stubhub/search)
+ *   params: string $query
+ * @method mixed stubhubSuggestedSearches(array $params = [], array $options = []) stubhub-suggested-searches (GET /stubhub/suggested-searches)
+ * @method mixed stubhubTrending(array $params = [], array $options = []) stubhub-trending (GET /stubhub/trending)
+ *   params: '0'|'1'|'2'|'3' $top_level_category_id
+ * @method mixed stubhubTrendingEvents(array $params = [], array $options = []) stubhub-trending-events (GET /stubhub/trending-events)
+ *   params: '0'|'1'|'2'|'3' $top_level_category_id, int $page
+ * @method mixed stubhubVenueEvents(array $params = [], array $options = []) stubhub-venue-events (GET /stubhub/venue-events)
+ *   params: string $venue_slug, int $venue_id
+ */
+abstract class StubHubGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) stuff-article (GET /stuff/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) stuff-author (GET /stuff/author)
+ *   params: string $slug, string $url
+ * @method mixed headlines(array $params = [], array $options = []) stuff-headlines (GET /stuff/headlines)
+ *   params: 'latest-news'|'nz-news'|'nz-news/auckland'|'nz-news/wellington'|'nz-news/canterbury'|'nz-news/north-island'|'nz-news/south-island'|'world-news'|'business'|'money'|'politics'|'perspectives'|'pou-tiaki'|'forever-project'|'sport'|'sport/rugby'|'sport/cricket'|'sport/netball'|'sport/football'|'sport/rugby-league'|'home-property'|'home-property/good-life'|'travel'|'life-and-style'|'wellbeing'|'wellbeing/house-wellness'|'food-drink'|'culture'|'motoring'|'health'|'quizzes' $section
+ * @method mixed news(array $params = [], array $options = []) stuff-news (GET /stuff/news)
+ * @method mixed sections(array $params = [], array $options = []) stuff-sections (GET /stuff/sections)
+ */
+abstract class StuffGroup {}
+
+/**
+ * @method mixed categories(array $params = [], array $options = []) substack-categories (GET /substack/categories)
+ * @method mixed category(array $params = [], array $options = []) substack-category (GET /substack/category)
+ *   params: string $category_id, 'paid'|'free' $type, int $page
+ * @method mixed explore(array $params = [], array $options = []) substack-explore (GET /substack/explore)
+ *   params: string $tab, 'base'|'secondary'|'category' $type, string $cursor
+ * @method mixed leaderboard(array $params = [], array $options = []) substack-leaderboard (GET /substack/leaderboard)
+ *   params: string $category_id, 'trending'|'paid'|'all' $type, int $page
+ * @method mixed note(array $params = [], array $options = []) substack-note (GET /substack/note)
+ *   params: int $note_id
+ * @method mixed noteReplies(array $params = [], array $options = []) substack-note-replies (GET /substack/note/replies)
+ *   params: int $note_id, string $cursor
+ * @method mixed noteRestacks(array $params = [], array $options = []) substack-note-restacks (GET /substack/note/restacks)
+ *   params: int $note_id, string $cursor
+ * @method mixed notes(array $params = [], array $options = []) substack-notes (GET /substack/notes)
+ *   params: string $tab, 'base'|'secondary'|'category' $type, string $cursor
+ * @method mixed notesTabs(array $params = [], array $options = []) substack-notes-tabs (GET /substack/notes/tabs)
+ *   params: 'feed'|'explore' $surface
+ * @method mixed post(array $params = [], array $options = []) substack-post (GET /substack/post)
+ *   params: string $publication, string $slug
+ * @method mixed publication(array $params = [], array $options = []) substack-publication (GET /substack/publication)
+ *   params: string $publication, int $publication_id
+ * @method mixed publicationContributors(array $params = [], array $options = []) substack-publication-contributors (GET /substack/publication/contributors)
+ *   params: string $publication, int $page
+ * @method mixed publicationPosts(array $params = [], array $options = []) substack-publication-posts (GET /substack/publication/posts)
+ *   params: string $publication, string $search, 'new'|'top'|'community' $sort, int $offset, int $limit
+ * @method mixed publicationRecommendations(array $params = [], array $options = []) substack-publication-recommendations (GET /substack/publication/recommendations)
+ *   params: int $publication_id
+ * @method mixed search(array $params = [], array $options = []) substack-search (GET /substack/search)
+ *   params: string $query, int $page, int $focus_publication_id, int $focus_limit
+ * @method mixed user(array $params = [], array $options = []) substack-user (GET /substack/user)
+ *   params: string $handle
+ * @method mixed userActivity(array $params = [], array $options = []) substack-user-activity (GET /substack/user/activity)
+ *   params: int $user_id, string $types, string $cursor
+ * @method mixed userConnections(array $params = [], array $options = []) substack-user-connections (GET /substack/user/connections)
+ *   params: int $user_id, 'followers'|'following'|'subscribers' $list
+ * @method mixed userSearch(array $params = [], array $options = []) substack-user-search (GET /substack/user/search)
+ *   params: string $query, int $page
+ */
+abstract class SubstackGroup {}
 
 /**
  * @method mixed availableTimes(array $params = [], array $options = []) subway-available-times (GET /subway/available-times)
@@ -3727,6 +6099,18 @@ abstract class StravaGroup {}
  *   params: string $path
  */
 abstract class SubwayGroup {}
+
+/**
+ * @method mixed sunArticle(array $params = [], array $options = []) sun-article (GET /sun/article)
+ *   params: string $url
+ * @method mixed sunAuthor(array $params = [], array $options = []) sun-author (GET /sun/author)
+ *   params: string $url
+ * @method mixed sunHeadlines(array $params = [], array $options = []) sun-headlines (GET /sun/headlines)
+ *   params: 'news'|'politics'|'royal-family'|'sport'|'showbiz'|'money'|'tech'|'fabulous'|'travel'|'health' $section
+ * @method mixed sunNews(array $params = [], array $options = []) sun-news (GET /sun/news)
+ * @method mixed sunSections(array $params = [], array $options = []) sun-sections (GET /sun/sections)
+ */
+abstract class TheSunGroup {}
 
 /**
  * @method mixed collections(array $params = [], array $options = []) swiggy-collections (GET /swiggy/collections)
@@ -3773,8 +6157,46 @@ abstract class TacoBellGroup {}
  *   params: string $tcin, int $page, int $per_page
  * @method mixed search(array $params = [], array $options = []) target-search (GET /target/search)
  *   params: string $q, int $page, 'relevance'|'featured'|'price-low'|'price-high'|'rating'|'bestselling'|'newest' $sort, int $store_id, string $filter_ids
+ * @method mixed stores(array $params = [], array $options = []) target-stores (GET /target/stores)
+ *   params: string $place, int $limit, int $within
  */
 abstract class TargetGroup {}
+
+/**
+ * @method mixed techcrunchArticle(array $params = [], array $options = []) techcrunch-article (GET /techcrunch/article)
+ *   params: string $url
+ * @method mixed techcrunchAuthor(array $params = [], array $options = []) techcrunch-author (GET /techcrunch/author)
+ *   params: string $url, int $page
+ * @method mixed techcrunchHeadlines(array $params = [], array $options = []) techcrunch-headlines (GET /techcrunch/headlines)
+ *   params: 'apps'|'artificial-intelligence'|'biotech-health'|'climate'|'commerce'|'cryptocurrency'|'enterprise'|'fintech'|'fundraising'|'gadgets'|'gaming'|'government-policy'|'hardware'|'media-entertainment'|'privacy'|'robotics'|'security'|'social'|'space'|'startups'|'transportation'|'venture' $section
+ * @method mixed techcrunchNews(array $params = [], array $options = []) techcrunch-news (GET /techcrunch/news)
+ * @method mixed techcrunchSections(array $params = [], array $options = []) techcrunch-sections (GET /techcrunch/sections)
+ */
+abstract class TechCrunchGroup {}
+
+/**
+ * @method mixed techradarArticle(array $params = [], array $options = []) techradar-article (GET /techradar/article)
+ *   params: string $url
+ * @method mixed techradarAuthor(array $params = [], array $options = []) techradar-author (GET /techradar/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed techradarHeadlines(array $params = [], array $options = []) techradar-headlines (GET /techradar/headlines)
+ *   params: 'ai-platforms-assistants'|'audio'|'best'|'cameras'|'computing'|'deals'|'gaming'|'health-fitness'|'home'|'how-to'|'how-to-watch'|'news'|'opinion'|'phones'|'pro'|'reviews'|'seasonal-sales'|'streaming'|'tablets'|'tech'|'tech-events'|'televisions'|'vehicle-tech'|'versus'|'vpn' $section
+ * @method mixed techradarNews(array $params = [], array $options = []) techradar-news (GET /techradar/news)
+ * @method mixed techradarSections(array $params = [], array $options = []) techradar-sections (GET /techradar/sections)
+ */
+abstract class TechRadarGroup {}
+
+/**
+ * @method mixed telegraphArticle(array $params = [], array $options = []) telegraph-article (GET /telegraph/article)
+ *   params: string $url
+ * @method mixed telegraphAuthor(array $params = [], array $options = []) telegraph-author (GET /telegraph/author)
+ *   params: string $url
+ * @method mixed telegraphHeadlines(array $params = [], array $options = []) telegraph-headlines (GET /telegraph/headlines)
+ *   params: 'uk-news'|'world-news'|'politics'|'business'|'finance'|'technology'|'sport'|'culture'|'travel'|'lifestyle'|'health'|'science'|'opinion' $section
+ * @method mixed telegraphNews(array $params = [], array $options = []) telegraph-news (GET /telegraph/news)
+ * @method mixed telegraphSections(array $params = [], array $options = []) telegraph-sections (GET /telegraph/sections)
+ */
+abstract class TheTelegraphGroup {}
 
 /**
  * @method mixed jobDetail(array $params = [], array $options = []) tes-job-detail (GET /tes/jobs/detail)
@@ -3803,6 +6225,29 @@ abstract class TesGroup {}
 abstract class TeslaJobsGroup {}
 
 /**
+ * @method mixed theageArticle(array $params = [], array $options = []) theage-article (GET /theage/article)
+ *   params: string $url
+ * @method mixed theageAuthor(array $params = [], array $options = []) theage-author (GET /theage/author)
+ *   params: string $url
+ * @method mixed theageHeadlines(array $params = [], array $options = []) theage-headlines (GET /theage/headlines)
+ *   params: 'melbourne-news'|'national/victoria'|'politics'|'politics/federal'|'politics/victoria'|'politics/nsw'|'politics/queensland'|'politics/western-australia'|'business'|'business/companies'|'business/markets'|'business/bullsnbears'|'business/the-economy'|'business/banking-and-finance'|'business/small-business'|'business/workplace'|'world'|'world/north-america'|'world/europe'|'world/asia'|'world/middle-east'|'world/south-america'|'world/africa'|'national'|'national/nsw'|'national/queensland'|'national/western-australia'|'opinion'|'property'|'property/news'|'property/living'|'sport'|'sport/afl'|'sport/cricket'|'sport/soccer'|'sport/racing'|'sport/tennis'|'sport/nrl'|'sport/rugby-union'|'sport/netball'|'sport/basketball'|'sport/motorsport'|'sport/cycling'|'sport/golf'|'sport/nfl'|'sport/athletics'|'sport/swimming'|'sport/boxing'|'goodfood'|'goodfood/melbourne-eating-out'|'goodfood/recipes'|'goodfood/tips-and-advice'|'goodfood/drinks'|'culture'|'culture/movies'|'culture/tv-and-radio'|'culture/music'|'culture/celebrity'|'culture/books'|'culture/comedy'|'culture/dance'|'culture/musicals'|'culture/opera'|'culture/theatre'|'culture/art-and-design'|'culture/live-reviews'|'lifestyle'|'lifestyle/health-and-wellness'|'lifestyle/fashion'|'lifestyle/life-and-relationships'|'lifestyle/beauty'|'traveller'|'traveller/inspiration/destination-guides'|'traveller/inspiration'|'traveller/reviews-and-advice'|'traveller/travel-news'|'good-weekend'|'sunday-life'|'money'|'money/super-and-retirement'|'money/investing'|'money/banking'|'money/borrowing'|'money/saving'|'money/tax'|'money/planning-and-budgeting'|'education'|'healthcare'|'environment'|'environment/conservation'|'environment/climate-change'|'environment/sustainability'|'environment/weather'|'technology'|'technology/video-games'|'australia-higher-education' $section
+ * @method mixed theageNews(array $params = [], array $options = []) theage-news (GET /theage/news)
+ * @method mixed theageSections(array $params = [], array $options = []) theage-sections (GET /theage/sections)
+ */
+abstract class TheAgeGroup {}
+
+/**
+ * @method mixed theatlanticArticle(array $params = [], array $options = []) theatlantic-article (GET /theatlantic/article)
+ *   params: string $url
+ * @method mixed theatlanticAuthor(array $params = [], array $options = []) theatlantic-author (GET /theatlantic/author)
+ *   params: string $url
+ * @method mixed theatlanticHeadlines(array $params = [], array $options = []) theatlantic-headlines (GET /theatlantic/headlines)
+ *   params: 'ideas'|'politics'|'economy'|'international'|'national-security'|'technology'|'science'|'health'|'education'|'culture'|'family'|'books'|'photography' $section
+ * @method mixed theatlanticSections(array $params = [], array $options = []) theatlantic-sections (GET /theatlantic/sections)
+ */
+abstract class TheAtlanticGroup {}
+
+/**
  * @method mixed thebodyshopCollections(array $params = [], array $options = []) thebodyshop-collections (GET /thebodyshop/collections)
  *   params: int $page, int $limit
  * @method mixed thebodyshopCollectionProducts(array $params = [], array $options = []) thebodyshop-collection-products (GET /thebodyshop/collections/{handle}/products)
@@ -3825,6 +6270,113 @@ abstract class TeslaJobsGroup {}
  * @method mixed thebodyshopStore(array $params = [], array $options = []) thebodyshop-store (GET /thebodyshop/store)
  */
 abstract class TheBodyShopGroup {}
+
+/**
+ * @method mixed thedailybeastArticle(array $params = [], array $options = []) thedailybeast-article (GET /thedailybeast/article)
+ *   params: string $url
+ * @method mixed thedailybeastAuthor(array $params = [], array $options = []) thedailybeast-author (GET /thedailybeast/author)
+ *   params: string $url
+ * @method mixed thedailybeastHeadlines(array $params = [], array $options = []) thedailybeast-headlines (GET /thedailybeast/headlines)
+ *   params: 'lifestyle'|'lifestyle/body'|'lifestyle/face'|'lifestyle/wellness'|'lifestyle/hair'|'lifestyle/style'|'travel'|'entertainment'|'entertainment/music'|'entertainment/tv'|'entertainment/movies'|'entertainment/comedy'|'entertainment/awards-shows'|'archive'|'media'|'tech'|'arts-and-culture'|'arts-and-culture/theater'|'arts-and-culture/royalist'|'arts-and-culture/fashion'|'arts-and-culture/books'|'innovation'|'innovation/science'|'obsessed'|'obsessed/shop'|'obsessed/hot-takes'|'obsessed/reviews'|'obsessed/recaps'|'obsessed/what-to-watch'|'obsessed/trailers'|'obsessed/interviews'|'obsessed/industry'|'obsessed/celebrity'|'obsessed/media'|'obsessed/media/shows'|'obsessed/media/movies'|'obsessed/media/music'|'obsessed/media/books'|'obsessed/rating'|'obsessed/rating/see'|'obsessed/rating/skip'|'obsessed/the-last-laugh'|'obsessed/obsessed-podcast'|'obsessed/obsessed-newsletter'|'politics'|'politics/biden-world'|'politics/congress'|'politics/elections'|'politics/national-security'|'politics/opinion'|'politics/trumpland'|'politics/pay-dirt'|'politics/trail-mix'|'politics/the-new-abnormal'|'scouted'|'scouted/fitness'|'scouted/wellness'|'scouted/beauty'|'scouted/bedroom'|'scouted/clothing'|'scouted/face-masks'|'scouted/home'|'scouted/kitchen'|'scouted/outdoors'|'scouted/technology'|'scouted/new-kids-on-the-block'|'scouted/the-case-for'|'scouted/thisthat'|'us-news'|'us-news/crime-and-justice'|'us-news/identities'|'us-news/sports'|'world'|'world/china'|'world/middle-east'|'world/europe'|'world/russia' $section
+ * @method mixed thedailybeastNews(array $params = [], array $options = []) thedailybeast-news (GET /thedailybeast/news)
+ * @method mixed thedailybeastSections(array $params = [], array $options = []) thedailybeast-sections (GET /thedailybeast/sections)
+ */
+abstract class TheDailyBeastGroup {}
+
+/**
+ * @method mixed thehillArticle(array $params = [], array $options = []) thehill-article (GET /thehill/article)
+ *   params: string $url
+ * @method mixed thehillAuthor(array $params = [], array $options = []) thehill-author (GET /thehill/author)
+ *   params: string $url
+ * @method mixed thehillHeadlines(array $params = [], array $options = []) thehill-headlines (GET /thehill/headlines)
+ *   params: 'home'|'homenews'|'policy'|'business'|'opinion'|'healthcare'|'campaign'|'national-security'|'senate'|'house'|'administration'|'regulation'|'media'|'defense'|'technology'|'transportation'|'international'|'economy'|'policy-healthcare' $section
+ * @method mixed thehillNews(array $params = [], array $options = []) thehill-news (GET /thehill/news)
+ * @method mixed thehillSections(array $params = [], array $options = []) thehill-sections (GET /thehill/sections)
+ */
+abstract class TheHillGroup {}
+
+/**
+ * @method mixed thehinduArticle(array $params = [], array $options = []) thehindu-article (GET /thehindu/article)
+ *   params: string $url
+ * @method mixed thehinduAuthor(array $params = [], array $options = []) thehindu-author (GET /thehindu/author)
+ *   params: string $url
+ * @method mixed thehinduHeadlines(array $params = [], array $options = []) thehindu-headlines (GET /thehindu/headlines)
+ *   params: 'news'|'news-national'|'news-international'|'news-states'|'news-cities'|'opinion'|'opinion-editorial'|'opinion-cartoon'|'opinion-columns'|'opinion-op-ed'|'opinion-interview'|'opinion-lead'|'opinion-letters'|'opinion-open-page'|'business'|'business-agri-business'|'business-economy'|'business-industry'|'business-markets'|'business-budget'|'sport'|'sport-cricket'|'sport-football'|'sport-hockey'|'sport-tennis'|'sport-athletics'|'sport-motorsport'|'sport-races'|'sport-other-sports'|'entertainment'|'entertainment-art'|'entertainment-dance'|'entertainment-movies'|'entertainment-music'|'entertainment-reviews'|'entertainment-theatre'|'data'|'sci-tech-health'|'sci-tech-science'|'sci-tech-technology'|'sci-tech-technology-gadgets'|'sci-tech-technology-internet'|'sci-tech-energy-and-environment'|'sci-tech-agriculture'|'education'|'education-careers'|'education-colleges'|'education-schools'|'life-and-style'|'life-and-style-fashion'|'life-and-style-fitness'|'life-and-style-homes-and-gardens'|'life-and-style-luxury'|'life-and-style-motoring'|'life-and-style-travel'|'society'|'society-faith'|'society-history-and-culture'|'books'|'books-books-authors'|'books-books-reviews'|'children'|'food'|'food-dining'|'food-features'|'food-guides'|'food-recipes'|'real-estate' $section
+ * @method mixed thehinduNews(array $params = [], array $options = []) thehindu-news (GET /thehindu/news)
+ * @method mixed thehinduSections(array $params = [], array $options = []) thehindu-sections (GET /thehindu/sections)
+ */
+abstract class TheHinduGroup {}
+
+/**
+ * @method mixed thejournalArticle(array $params = [], array $options = []) thejournal-article (GET /thejournal/article)
+ *   params: string $url
+ * @method mixed thejournalAuthor(array $params = [], array $options = []) thejournal-author (GET /thejournal/author)
+ *   params: string $slug, string $url
+ * @method mixed thejournalHeadlines(array $params = [], array $options = []) thejournal-headlines (GET /thejournal/headlines)
+ *   params: 'irish'|'politics'|'international'|'business'|'tech'|'science'|'environment'|'voices'|'investigates'|'factcheck'|'explainer'|'gaeilge'|'sport'|'money-diaries'|'quiz'|'climate-change'|'housing'|'cost-of-living'|'road-safety'|'courts'|'ukraine'|'gaza' $section
+ * @method mixed thejournalNews(array $params = [], array $options = []) thejournal-news (GET /thejournal/news)
+ * @method mixed thejournalSections(array $params = [], array $options = []) thejournal-sections (GET /thejournal/sections)
+ */
+abstract class TheJournalIeGroup {}
+
+/**
+ * @method mixed therealrealAutocomplete(array $params = [], array $options = []) therealreal-autocomplete (GET /therealreal/autocomplete)
+ *   params: string $term
+ * @method mixed therealrealCategories(array $params = [], array $options = []) therealreal-categories (GET /therealreal/categories)
+ * @method mixed therealrealCategory(array $params = [], array $options = []) therealreal-category (GET /therealreal/category)
+ *   params: string $path, bool $on_sale, bool $available, string $after
+ * @method mixed therealrealCollection(array $params = [], array $options = []) therealreal-collection (GET /therealreal/collection)
+ *   params: string $slug, string $after
+ * @method mixed therealrealCollections(array $params = [], array $options = []) therealreal-collections (GET /therealreal/collections)
+ * @method mixed therealrealConditions(array $params = [], array $options = []) therealreal-conditions (GET /therealreal/conditions)
+ * @method mixed therealrealDesigner(array $params = [], array $options = []) therealreal-designer (GET /therealreal/designer)
+ *   params: string $slug, bool $on_sale, bool $available, string $after
+ * @method mixed therealrealDesigners(array $params = [], array $options = []) therealreal-designers (GET /therealreal/designers)
+ *   params: string $category
+ * @method mixed therealrealListing(array $params = [], array $options = []) therealreal-listing (GET /therealreal/listing)
+ *   params: string $url
+ * @method mixed therealrealSearch(array $params = [], array $options = []) therealreal-search (GET /therealreal/search)
+ *   params: string $query, string $category_id, string $designer_id, string $condition_id, float $price_from, float $price_to, bool $on_sale, bool $available, string $after
+ * @method mixed therealrealSimilar(array $params = [], array $options = []) therealreal-similar (GET /therealreal/similar)
+ *   params: string $product_id
+ */
+abstract class TheRealRealGroup {}
+
+/**
+ * @method mixed thestarmyArticle(array $params = [], array $options = []) thestarmy-article (GET /thestarmy/article)
+ *   params: string $url
+ * @method mixed thestarmyAuthor(array $params = [], array $options = []) thestarmy-author (GET /thestarmy/author)
+ *   params: string $name, string $url
+ * @method mixed thestarmyHeadlines(array $params = [], array $options = []) thestarmy-headlines (GET /thestarmy/headlines)
+ *   params: 'news-latest'|'latest-nation'|'latest-business'|'latest-education'|'latest-aseanplus'|'latest-sport'|'latest-metro'|'latest-tech'|'latest-world'|'latest-lifestyle'|'latest-food'|'news-nation'|'news-world'|'news-environment'|'news-in-other-media'|'news-true-or-not'|'news-focus'|'aseanplus-aseanplus-news'|'business-insight'|'business-smebiz'|'business-premium'|'sport-athletics'|'sport-hockey'|'sport-football'|'sport-golf'|'sport-badminton'|'sport-tennis'|'sport-motorsport'|'sport-other-sport'|'sport-say-what'|'sport-archery'|'sport-basketball'|'sport-bowling'|'sport-boxing'|'sport-cricket'|'sport-cycling'|'sport-diving'|'sport-gymnastics'|'sport-others'|'sport-rugby'|'sport-shooting'|'sport-squash'|'sport-swimming'|'sport-wrestling'|'metro-metro-news'|'metro-community-sports'|'metro-views'|'lifestyle'|'lifestyle-entertainment-and-style'|'lifestyle-people-and-living'|'lifestyle-health-and-family'|'lifestyle-travel-and-culture'|'lifestyle-viewpoints'|'lifestyle-entertainment'|'lifestyle-living'|'lifestyle-style'|'lifestyle-people'|'lifestyle-health'|'lifestyle-family'|'lifestyle-travel'|'lifestyle-culture'|'lifestyle-design'|'lifestyle-science'|'lifestyle-wellness'|'lifestyle-fitness'|'lifestyle-mind'|'lifestyle-nutrition'|'lifestyle-animals'|'lifestyle-children'|'lifestyle-seniors'|'lifestyle-beauty'|'lifestyle-fashion'|'lifestyle-malaysia'|'lifestyle-global'|'lifestyle-asia-oceania'|'lifestyle-americas'|'lifestyle-europe'|'lifestyle-africa'|'lifestyle-arts'|'lifestyle-books'|'lifestyle-climate'|'lifestyle-movie-review'|'lifestyle-music-review'|'lifestyle-book-review'|'food'|'food-food-for-thought'|'food-food-news'|'food-eating-out'|'tech-tech-news'|'tech-tech-thoughts'|'education-news'|'opinion-columnists'|'opinion-letters'|'starpicks' $section
+ * @method mixed thestarmyNews(array $params = [], array $options = []) thestarmy-news (GET /thestarmy/news)
+ * @method mixed thestarmySections(array $params = [], array $options = []) thestarmy-sections (GET /thestarmy/sections)
+ */
+abstract class TheStarMalaysiaGroup {}
+
+/**
+ * @method mixed thevergeArticle(array $params = [], array $options = []) theverge-article (GET /theverge/article)
+ *   params: string $url
+ * @method mixed thevergeAuthor(array $params = [], array $options = []) theverge-author (GET /theverge/author)
+ *   params: string $url
+ * @method mixed thevergeHeadlines(array $params = [], array $options = []) theverge-headlines (GET /theverge/headlines)
+ *   params: 'tech'|'reviews'|'science'|'entertainment'|'ai'|'policy'|'gaming'|'mobile'|'apps'|'features' $section
+ * @method mixed thevergeNews(array $params = [], array $options = []) theverge-news (GET /theverge/news)
+ * @method mixed thevergeSections(array $params = [], array $options = []) theverge-sections (GET /theverge/sections)
+ */
+abstract class TheVergeGroup {}
+
+/**
+ * @method mixed thisismoneyArticle(array $params = [], array $options = []) thisismoney-article (GET /thisismoney/article)
+ *   params: string $url
+ * @method mixed thisismoneyAuthor(array $params = [], array $options = []) thisismoney-author (GET /thisismoney/author)
+ *   params: string $url
+ * @method mixed thisismoneyHeadlines(array $params = [], array $options = []) thisismoney-headlines (GET /thisismoney/headlines)
+ *   params: 'money'|'markets'|'investing'|'savings'|'pensions'|'mortgages'|'property'|'cars'|'travel'|'consumer' $section
+ * @method mixed thisismoneyNews(array $params = [], array $options = []) thisismoney-news (GET /thisismoney/news)
+ * @method mixed thisismoneySections(array $params = [], array $options = []) thisismoney-sections (GET /thisismoney/sections)
+ */
+abstract class ThisIsMoneyGroup {}
 
 /**
  * @method mixed post(array $params = [], array $options = []) threads-post (GET /threads/post/{username}/{code})
@@ -3884,6 +6436,24 @@ abstract class TicketmasterGroup {}
 abstract class TicketWebGroup {}
 
 /**
+ * @method mixed tiffanyCategories(array $params = [], array $options = []) tiffany-categories (GET /tiffany/categories)
+ * @method mixed tiffanyCategory(array $params = [], array $options = []) tiffany-category (GET /tiffany/category)
+ *   params: string $category, 'recommended'|'price_asc'|'price_desc'|'newest' $sort, int $page, int $per_page, string $material, string $gemstone, string $color, string $product_type, string $gender, string $designer
+ * @method mixed tiffanyContentSearch(array $params = [], array $options = []) tiffany-content-search (GET /tiffany/content-search)
+ *   params: string $keyword, int $page, int $per_page
+ * @method mixed tiffanyFilters(array $params = [], array $options = []) tiffany-filters (GET /tiffany/filters)
+ * @method mixed tiffanyProduct(array $params = [], array $options = []) tiffany-product (GET /tiffany/product)
+ *   params: string $product_id
+ * @method mixed tiffanySearch(array $params = [], array $options = []) tiffany-search (GET /tiffany/search)
+ *   params: string $keyword, 'recommended'|'price_asc'|'price_desc'|'newest' $sort, int $page, int $per_page, string $material, string $gemstone, string $color, string $product_type, string $gender, string $designer
+ * @method mixed tiffanyStores(array $params = [], array $options = []) tiffany-stores (GET /tiffany/stores)
+ *   params: float $latitude, float $longitude, float $radius, int $limit
+ * @method mixed tiffanySuggest(array $params = [], array $options = []) tiffany-suggest (GET /tiffany/suggest)
+ *   params: string $query
+ */
+abstract class TiffanyCoGroup {}
+
+/**
  * @method mixed category(array $params = [], array $options = []) tiktok-category (GET /tiktok/category)
  * @method mixed videoComments(array $params = [], array $options = []) tiktok-video-comments (GET /tiktok/comments)
  *   params: string $aweme_id, int $cursor
@@ -3932,6 +6502,45 @@ abstract class TicketWebGroup {}
 abstract class TiktokGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) time-article (GET /time/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) time-author (GET /time/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) time-headlines (GET /time/headlines)
+ *   params: 'news'|'politics'|'world'|'business'|'technology'|'health'|'entertainment'|'sports'|'ideas'|'climate' $section
+ * @method mixed news(array $params = [], array $options = []) time-news (GET /time/news)
+ * @method mixed sections(array $params = [], array $options = []) time-sections (GET /time/sections)
+ */
+abstract class TimeGroup {}
+
+/**
+ * @method mixed timesofindiaArticle(array $params = [], array $options = []) timesofindia-article (GET /timesofindia/article)
+ *   params: string $url
+ * @method mixed timesofindiaAuthor(array $params = [], array $options = []) timesofindia-author (GET /timesofindia/author)
+ *   params: string $url
+ * @method mixed timesofindiaHeadlines(array $params = [], array $options = []) timesofindia-headlines (GET /timesofindia/headlines)
+ *   params: 'top-stories'|'india'|'world'|'nri'|'business'|'cricket'|'sports'|'science'|'environment'|'tech'|'education'|'entertainment'|'life-style'|'astrology'|'auto'|'mumbai'|'delhi'|'bangalore'|'hyderabad'|'chennai'|'ahmedabad'|'allahabad'|'bhubaneswar'|'coimbatore'|'gurgaon'|'guwahati'|'hubli'|'kanpur'|'kolkata'|'ludhiana'|'mangalore'|'mysore'|'noida'|'pune'|'goa'|'chandigarh'|'lucknow'|'patna'|'jaipur'|'nagpur'|'rajkot'|'ranchi'|'surat'|'vadodara'|'varanasi'|'thane'|'thiruvananthapuram'|'us'|'pakistan'|'south-asia'|'uk'|'europe'|'china'|'middle-east'|'rest-of-world' $section
+ * @method mixed timesofindiaNews(array $params = [], array $options = []) timesofindia-news (GET /timesofindia/news)
+ * @method mixed timesofindiaSections(array $params = [], array $options = []) timesofindia-sections (GET /timesofindia/sections)
+ */
+abstract class TimesOfIndiaGroup {}
+
+/**
+ * @method mixed timesofisraelArticle(array $params = [], array $options = []) timesofisrael-article (GET /timesofisrael/article)
+ *   params: string $url
+ * @method mixed timesofisraelAuthor(array $params = [], array $options = []) timesofisrael-author (GET /timesofisrael/author)
+ *   params: string $url
+ * @method mixed timesofisraelHeadlines(array $params = [], array $options = []) timesofisrael-headlines (GET /timesofisrael/headlines)
+ *   params: 'israel-and-the-region'|'israel-inside'|'jewish-times'|'real-estate-israel'|'tech-israel' $section
+ * @method mixed timesofisraelNews(array $params = [], array $options = []) timesofisrael-news (GET /timesofisrael/news)
+ * @method mixed timesofisraelSections(array $params = [], array $options = []) timesofisrael-sections (GET /timesofisrael/sections)
+ */
+abstract class TimesOfIsraelGroup {}
+
+/**
+ * @method mixed collection(array $params = [], array $options = []) tmdb-collection (GET /tmdb/collection/{id})
+ *   params: string $id
+ * @method mixed genres(array $params = [], array $options = []) tmdb-genres (GET /tmdb/genres)
  * @method mixed movieList(array $params = [], array $options = []) tmdb-movie-list (GET /tmdb/movie/list)
  *   params: 'popular'|'top_rated'|'now_playing'|'upcoming' $category, int $page, 'popularity.desc'|'popularity.asc'|'vote_average.desc'|'vote_average.asc'|'primary_release_date.desc'|'primary_release_date.asc'|'title.asc'|'title.desc' $sort_by, string $with_genres, string $original_language, string $date_from, string $date_to, float $min_rating, float $max_rating, int $min_votes, int $min_runtime, int $max_runtime, bool $include_adult, int $limit
  * @method mixed movie(array $params = [], array $options = []) tmdb-movie (GET /tmdb/movie/{id})
@@ -3941,13 +6550,25 @@ abstract class TiktokGroup {}
  * @method mixed person(array $params = [], array $options = []) tmdb-person (GET /tmdb/person/{id})
  *   params: string $id, int $limit
  * @method mixed search(array $params = [], array $options = []) tmdb-search (GET /tmdb/search)
- *   params: string $query, 'movie'|'tv'|'person' $type, int $page, int $limit
+ *   params: string $query, 'movie'|'tv'|'person'|'collection' $type, int $page, int $limit
  * @method mixed tvList(array $params = [], array $options = []) tmdb-tv-list (GET /tmdb/tv/list)
  *   params: 'popular'|'top_rated'|'airing_today'|'on_the_air' $category, int $page, 'popularity.desc'|'popularity.asc'|'vote_average.desc'|'vote_average.asc'|'first_air_date.desc'|'first_air_date.asc'|'name.asc'|'name.desc' $sort_by, string $with_genres, string $original_language, string $date_from, string $date_to, float $min_rating, float $max_rating, int $min_votes, int $min_runtime, int $max_runtime, bool $include_adult, int $limit
  * @method mixed tv(array $params = [], array $options = []) tmdb-tv (GET /tmdb/tv/{id})
  *   params: string $id
  */
 abstract class TmdbGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) tmz-article (GET /tmz/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) tmz-author (GET /tmz/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed headlines(array $params = [], array $options = []) tmz-headlines (GET /tmz/headlines)
+ *   params: 'news'|'sports' $section
+ * @method mixed news(array $params = [], array $options = []) tmz-news (GET /tmz/news)
+ * @method mixed sections(array $params = [], array $options = []) tmz-sections (GET /tmz/sections)
+ */
+abstract class TmzGroup {}
 
 /**
  * @method mixed autocomplete(array $params = [], array $options = []) tokopedia-autocomplete (GET /tokopedia/autocomplete)
@@ -3967,6 +6588,54 @@ abstract class TmdbGroup {}
  *   params: string $q
  */
 abstract class TokopediaGroup {}
+
+/**
+ * @method mixed tomsguideArticle(array $params = [], array $options = []) tomsguide-article (GET /tomsguide/article)
+ *   params: string $url
+ * @method mixed tomsguideAuthor(array $params = [], array $options = []) tomsguide-author (GET /tomsguide/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed tomsguideHeadlines(array $params = [], array $options = []) tomsguide-headlines (GET /tomsguide/headlines)
+ *   params: 'ai'|'audio'|'best-picks'|'cameras-photography'|'computing'|'deals'|'entertainment'|'face-off'|'gaming'|'home'|'how-to'|'mattresses'|'news'|'reference'|'reviews'|'sales-events'|'tech'|'tech-events'|'tvs'|'vehicle-tech'|'wellness'|'phones' $section
+ * @method mixed tomsguideNews(array $params = [], array $options = []) tomsguide-news (GET /tomsguide/news)
+ * @method mixed tomsguideSections(array $params = [], array $options = []) tomsguide-sections (GET /tomsguide/sections)
+ */
+abstract class TomSguideGroup {}
+
+/**
+ * @method mixed tomshardwareArticle(array $params = [], array $options = []) tomshardware-article (GET /tomshardware/article)
+ *   params: string $url
+ * @method mixed tomshardwareAuthor(array $params = [], array $options = []) tomshardware-author (GET /tomshardware/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed tomshardwareHeadlines(array $params = [], array $options = []) tomshardware-headlines (GET /tomshardware/headlines)
+ *   params: '3d-printing'|'best-picks'|'cpus'|'deals'|'desktops'|'features'|'gpus'|'laptops'|'maker-stem'|'monitors'|'networking'|'news'|'news-analysis'|'pc-components'|'peripherals'|'phones'|'reviews'|'service-providers'|'software'|'tech-industry' $section
+ * @method mixed tomshardwareNews(array $params = [], array $options = []) tomshardware-news (GET /tomshardware/news)
+ * @method mixed tomshardwareSections(array $params = [], array $options = []) tomshardware-sections (GET /tomshardware/sections)
+ */
+abstract class TomShardwareGroup {}
+
+/**
+ * @method mixed torontostarArticle(array $params = [], array $options = []) torontostar-article (GET /torontostar/article)
+ *   params: string $url
+ * @method mixed torontostarAuthor(array $params = [], array $options = []) torontostar-author (GET /torontostar/author)
+ *   params: string $slug, string $url
+ * @method mixed torontostarHeadlines(array $params = [], array $options = []) torontostar-headlines (GET /torontostar/headlines)
+ *   params: 'news'|'news/gta'|'news/toronto-election'|'news/police/project-south'|'news/car-thefts'|'news/canada'|'news/ontario'|'news/canada/british-columbia'|'news/canada/alberta'|'news/canada/quebec'|'news/canada/nova-scotia'|'news/investigations'|'news/world'|'news/world/united-states'|'news/world/americas'|'news/world/europe'|'news/world/asia'|'news/world/africa'|'news/world/australia'|'news/world/middle-east'|'news/world/royals'|'politics'|'politics/federal'|'politics/provincial'|'politics/political-opinion'|'opinion'|'opinion/star-columnists'|'opinion/editorials'|'opinion/contributors'|'opinion/letters-to-the-editor'|'opinion/editorial-cartoons'|'life'|'life/relationships'|'life/food-and-drink'|'life/beauty-and-fashion'|'life/health-wellness'|'life/home-and-garden'|'life/autos'|'life/horoscopes'|'sports'|'sports/hockey'|'sports/hockey/pwhl'|'sports/basketball'|'sports/basketball/wnba'|'sports/baseball'|'sports/football'|'sports/football/cfl'|'sports/golf'|'sports/soccer'|'sports/tennis'|'sports/auto-racing'|'sports/cricket'|'sports/olympics-and-paralympics'|'real-estate'|'entertainment'|'entertainment/stage'|'entertainment/books'|'entertainment/music'|'entertainment/movies'|'entertainment/television'|'business'|'business/small-business'|'business/technology'|'business/mars'|'podcasts'|'podcasts/this-matters'|'podcasts/its-political'|'podcasts/billionaire-murders'|'podcasts/deep-left-field' $section
+ * @method mixed torontostarNews(array $params = [], array $options = []) torontostar-news (GET /torontostar/news)
+ * @method mixed torontostarSections(array $params = [], array $options = []) torontostar-sections (GET /torontostar/sections)
+ */
+abstract class TorontoStarGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) townhall-article (GET /townhall/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) townhall-author (GET /townhall/author)
+ *   params: string $slug, string $url
+ * @method mixed headlines(array $params = [], array $options = []) townhall-headlines (GET /townhall/headlines)
+ *   params: 'news'|'columnists'|'2026-elections'|'congress'|'donald-trump'|'economy'|'foreign-policy'|'illegal-immigration'|'iran'|'supreme-court' $section
+ * @method mixed news(array $params = [], array $options = []) townhall-news (GET /townhall/news)
+ * @method mixed sections(array $params = [], array $options = []) townhall-sections (GET /townhall/sections)
+ */
+abstract class TownhallGroup {}
 
 /**
  * @method mixed tripadvisorAutocomplete(array $params = [], array $options = []) tripadvisor-autocomplete (GET /tripadvisor/autocomplete)
@@ -4103,6 +6772,18 @@ abstract class UpworkGroup {}
 abstract class UsageGroup {}
 
 /**
+ * @method mixed usatodayArticle(array $params = [], array $options = []) usatoday-article (GET /usatoday/article)
+ *   params: string $url
+ * @method mixed usatodayAuthor(array $params = [], array $options = []) usatoday-author (GET /usatoday/author)
+ *   params: string $url
+ * @method mixed usatodayHeadlines(array $params = [], array $options = []) usatoday-headlines (GET /usatoday/headlines)
+ *   params: 'news'|'sports'|'entertainment'|'life'|'money'|'tech'|'travel'|'opinion'|'cars'|'shopping'|'weather'|'politics'|'grocery' $section
+ * @method mixed usatodayNews(array $params = [], array $options = []) usatoday-news (GET /usatoday/news)
+ * @method mixed usatodaySections(array $params = [], array $options = []) usatoday-sections (GET /usatoday/sections)
+ */
+abstract class UsaTodayGroup {}
+
+/**
  * @method mixed me(array $params = [], array $options = []) user-me (GET /user/me)
  * @method mixed meApiKeys(array $params = [], array $options = []) user-me-api-keys (GET /user/me/api-keys)
  * @method mixed meApiKeysRotate(array $params = [], array $options = []) user-me-api-keys-rotate (POST /user/me/api-keys/rotate)
@@ -4122,12 +6803,89 @@ abstract class UserGroup {}
 abstract class AccountDeletionGroup {}
 
 /**
+ * @method mixed usmagazineArticle(array $params = [], array $options = []) usmagazine-article (GET /usmagazine/article)
+ *   params: string $url
+ * @method mixed usmagazineAuthor(array $params = [], array $options = []) usmagazine-author (GET /usmagazine/author)
+ *   params: string $url
+ * @method mixed usmagazineHeadlines(array $params = [], array $options = []) usmagazine-headlines (GET /usmagazine/headlines)
+ *   params: 'celebrity-news'|'entertainment'|'sports'|'shopping'|'crime-news'|'stylish'|'celebrity-moms'|'celebrity-body'|'food'|'reviews'|'reality-tv'|'royal-family' $section
+ * @method mixed usmagazineNews(array $params = [], array $options = []) usmagazine-news (GET /usmagazine/news)
+ * @method mixed usmagazineSections(array $params = [], array $options = []) usmagazine-sections (GET /usmagazine/sections)
+ */
+abstract class UsWeeklyGroup {}
+
+/**
  * @method mixed usptoppubsDetail(array $params = [], array $options = []) usptoppubs-detail (GET /usptoppubs/detail)
  *   params: string $guid, string $source
  * @method mixed usptoppubsSearch(array $params = [], array $options = []) usptoppubs-search (GET /usptoppubs/search)
  *   params: string $q, string $databases, int $num, int $page
  */
 abstract class UsptoPatentPublicSearchGroup {}
+
+/**
+ * @method mixed vanguardngArticle(array $params = [], array $options = []) vanguardng-article (GET /vanguardng/article)
+ *   params: string $url
+ * @method mixed vanguardngAuthor(array $params = [], array $options = []) vanguardng-author (GET /vanguardng/author)
+ *   params: string $name, 'national-news'|'top-stories'|'more-news'|'politics'|'business'|'business/energy'|'business/insurance-and-you'|'sports'|'entertainment'|'health'|'education-2'|'technology'|'innovation-2'|'aviation'|'agric'|'motoring'|'pension'|'foreign'|'editorial'|'opinion'|'columns'|'viewpoints'|'discourse'|'features'|'special-reports'|'thearts'|'cartoons'|'romance-an-relationships'|'homes-property'|'travel-and-tourism'|'style/allure/interviews'|'tribute'|'promoted'|'videos'|'top-podcasts'|'national-news/icymi'|'more'|'more/education'|'more/interview'|'more/labour'|'more/law-and-human-rights'|'more/metro' $section
+ * @method mixed vanguardngHeadlines(array $params = [], array $options = []) vanguardng-headlines (GET /vanguardng/headlines)
+ *   params: 'national-news'|'top-stories'|'more-news'|'politics'|'business'|'business/energy'|'business/insurance-and-you'|'sports'|'entertainment'|'health'|'education-2'|'technology'|'innovation-2'|'aviation'|'agric'|'motoring'|'pension'|'foreign'|'editorial'|'opinion'|'columns'|'viewpoints'|'discourse'|'features'|'special-reports'|'thearts'|'cartoons'|'romance-an-relationships'|'homes-property'|'travel-and-tourism'|'style/allure/interviews'|'tribute'|'promoted'|'videos'|'top-podcasts'|'national-news/icymi'|'more'|'more/education'|'more/interview'|'more/labour'|'more/law-and-human-rights'|'more/metro' $section
+ * @method mixed vanguardngNews(array $params = [], array $options = []) vanguardng-news (GET /vanguardng/news)
+ * @method mixed vanguardngSections(array $params = [], array $options = []) vanguardng-sections (GET /vanguardng/sections)
+ */
+abstract class VanguardGroup {}
+
+/**
+ * @method mixed vanityfairArticle(array $params = [], array $options = []) vanityfair-article (GET /vanityfair/article)
+ *   params: string $url
+ * @method mixed vanityfairAuthor(array $params = [], array $options = []) vanityfair-author (GET /vanityfair/author)
+ *   params: string $url
+ * @method mixed vanityfairHeadlines(array $params = [], array $options = []) vanityfair-headlines (GET /vanityfair/headlines)
+ *   params: 'hollywood'|'movies'|'television'|'award-season'|'what-is-cinema'|'culture'|'politics'|'business'|'style'|'beauty'|'fashion'|'royals' $section
+ * @method mixed vanityfairNews(array $params = [], array $options = []) vanityfair-news (GET /vanityfair/news)
+ * @method mixed vanityfairSections(array $params = [], array $options = []) vanityfair-sections (GET /vanityfair/sections)
+ */
+abstract class VanityFairGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) variety-article (GET /variety/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) variety-author (GET /variety/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed headlines(array $params = [], array $options = []) variety-headlines (GET /variety/headlines)
+ *   params: 'artisans'|'awards'|'biz'|'data'|'digital'|'dirt'|'film'|'gaming'|'global'|'legit'|'music'|'politics'|'scene'|'shopping'|'sports'|'streaming'|'theater'|'tune-in'|'tv'|'video'|'vintage'|'vip'|'vivant'|'voices' $section
+ * @method mixed news(array $params = [], array $options = []) variety-news (GET /variety/news)
+ * @method mixed sections(array $params = [], array $options = []) variety-sections (GET /variety/sections)
+ */
+abstract class VarietyGroup {}
+
+/**
+ * @method mixed brands(array $params = [], array $options = []) vestiaire-brands (GET /vestiaire/brands)
+ * @method mixed categories(array $params = [], array $options = []) vestiaire-categories (GET /vestiaire/categories)
+ * @method mixed conditions(array $params = [], array $options = []) vestiaire-conditions (GET /vestiaire/conditions)
+ * @method mixed product(array $params = [], array $options = []) vestiaire-product (GET /vestiaire/product)
+ *   params: string $path
+ * @method mixed search(array $params = [], array $options = []) vestiaire-search (GET /vestiaire/search)
+ *   params: string $q, string $category_id, string $brand_id, '1'|'2'|'3'|'4'|'5' $condition_id, 'relevance'|'price_asc'|'price_desc'|'recency' $sort, int $page, int $per_page
+ * @method mixed searchSellers(array $params = [], array $options = []) vestiaire-search-sellers (GET /vestiaire/search-sellers)
+ *   params: string $q
+ * @method mixed seller(array $params = [], array $options = []) vestiaire-seller (GET /vestiaire/seller)
+ *   params: string $id
+ * @method mixed suggest(array $params = [], array $options = []) vestiaire-suggest (GET /vestiaire/suggest)
+ *   params: string $q
+ */
+abstract class VestiaireGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) vice-article (GET /vice/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) vice-author (GET /vice/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) vice-headlines (GET /vice/headlines)
+ *   params: 'news'|'life'|'tech'|'music'|'munchies'|'waypoint'|'rec-room'|'membership'|'via-vice'|'spotlights'|'theunstoppables'|'eu' $section
+ * @method mixed news(array $params = [], array $options = []) vice-news (GET /vice/news)
+ * @method mixed sections(array $params = [], array $options = []) vice-sections (GET /vice/sections)
+ */
+abstract class ViceGroup {}
 
 /**
  * @method mixed brand(array $params = [], array $options = []) vinted-brand (GET /vinted/brand)
@@ -4146,6 +6904,30 @@ abstract class UsptoPatentPublicSearchGroup {}
 abstract class VintedGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) vox-article (GET /vox/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) vox-author (GET /vox/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) vox-headlines (GET /vox/headlines)
+ *   params: 'politics'|'culture'|'policy'|'world'|'money'|'technology'|'science-and-health'|'climate'|'future-perfect'|'explainers' $section
+ * @method mixed news(array $params = [], array $options = []) vox-news (GET /vox/news)
+ * @method mixed sections(array $params = [], array $options = []) vox-sections (GET /vox/sections)
+ */
+abstract class VoxGroup {}
+
+/**
+ * @method mixed walesonlineArticle(array $params = [], array $options = []) walesonline-article (GET /walesonline/article)
+ *   params: string $url
+ * @method mixed walesonlineAuthor(array $params = [], array $options = []) walesonline-author (GET /walesonline/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed walesonlineHeadlines(array $params = [], array $options = []) walesonline-headlines (GET /walesonline/headlines)
+ *   params: 'news'|'news/wales-news'|'news/uk-news'|'news/world-news'|'news/politics'|'news/local-news'|'news/education'|'news/health'|'news/cost-of-living'|'news/homes-property'|'news/motoring'|'news/motoring/motoring-news'|'news/news-opinion'|'sport'|'sport/football'|'sport/football/football-news'|'sport/football/transfer-news'|'sport/rugby'|'sport/rugby/rugby-news'|'sport/boxing'|'sport/other-sport'|'sport/other-sport/athletics'|'whats-on'|'whats-on/whats-on-news'|'whats-on/arts-culture-news'|'whats-on/family-kids-news'|'whats-on/food-drink-news'|'whats-on/music-nightlife-news'|'whats-on/restaurants-bars'|'whats-on/shopping'|'whats-on/travel'|'lifestyle'|'lifestyle/showbiz'|'lifestyle/tv'|'lifestyle/welsh-homes'|'special-features'|'in-your-area' $section
+ * @method mixed walesonlineNews(array $params = [], array $options = []) walesonline-news (GET /walesonline/news)
+ * @method mixed walesonlineSections(array $params = [], array $options = []) walesonline-sections (GET /walesonline/sections)
+ */
+abstract class WalesOnlineGroup {}
+
+/**
  * @method mixed stores(array $params = [], array $options = []) walgreens-stores (GET /walgreens/stores)
  *   params: float $latitude, float $longitude, string $zip
  */
@@ -4160,6 +6942,18 @@ abstract class WalgreensGroup {}
  *   params: string $q, int $page, 'best_match'|'price_low'|'price_high'|'best_seller'|'new_arrivals'|'rating_high' $sort
  */
 abstract class WalmartGroup {}
+
+/**
+ * @method mixed wapoArticle(array $params = [], array $options = []) wapo-article (GET /wapo/article)
+ *   params: string $url
+ * @method mixed wapoAuthor(array $params = [], array $options = []) wapo-author (GET /wapo/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed wapoHeadlines(array $params = [], array $options = []) wapo-headlines (GET /wapo/headlines)
+ *   params: string $section
+ * @method mixed wapoNews(array $params = [], array $options = []) wapo-news (GET /wapo/news)
+ * @method mixed wapoSections(array $params = [], array $options = []) wapo-sections (GET /wapo/sections)
+ */
+abstract class WashingtonPostGroup {}
 
 /**
  * @method mixed categories(array $params = [], array $options = []) wayfair-categories (GET /wayfair/categories)
@@ -4227,6 +7021,18 @@ abstract class WhatnotGroup {}
 abstract class WingstopGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) wired-article (GET /wired/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) wired-author (GET /wired/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) wired-headlines (GET /wired/headlines)
+ *   params: 'business'|'culture'|'gear'|'politics'|'science'|'security' $section
+ * @method mixed news(array $params = [], array $options = []) wired-news (GET /wired/news)
+ * @method mixed sections(array $params = [], array $options = []) wired-sections (GET /wired/sections)
+ */
+abstract class WiredGroup {}
+
+/**
  * @method mixed categories(array $params = [], array $options = []) wish-categories (GET /wish/categories)
  * @method mixed product(array $params = [], array $options = []) wish-product (GET /wish/product/{id})
  *   params: string $id
@@ -4262,6 +7068,14 @@ abstract class WishGroup {}
 abstract class WoltGroup {}
 
 /**
+ * @method mixed wsjArticle(array $params = [], array $options = []) wsj-article (GET /wsj/article)
+ *   params: string $url
+ * @method mixed wsjAuthor(array $params = [], array $options = []) wsj-author (GET /wsj/author)
+ *   params: string $slug, string $url
+ */
+abstract class WallStreetJournalGroup {}
+
+/**
  * @method mixed post(array $params = [], array $options = []) x-post (GET /x/post/{id})
  *   params: string $id, string $username
  * @method mixed profile(array $params = [], array $options = []) x-profile (GET /x/profile/{username})
@@ -4270,6 +7084,32 @@ abstract class WoltGroup {}
  *   params: string $username, int $limit
  */
 abstract class XGroup {}
+
+/**
+ * @method mixed browse(array $params = [], array $options = []) xbox-browse (GET /xbox/browse)
+ *   params: string $cursor, 'relevance'|'release_date_desc'|'most_popular'|'price_asc'|'price_desc'|'most_wishlisted'|'discount_desc'|'title_asc'|'title_desc' $sort, array<'Action & adventure'|'Card & board'|'Casino'|'Classics'|'Companion'|'Educational'|'Family & kids'|'Fighting'|'Multi-Player Online Battle Arena'|'Music'|'Other'|'Platformer'|'Puzzle & trivia'|'Racing & flying'|'Role playing'|'Shooter'|'Simulation'|'Sports'|'Strategy'|'Tools'|'Word'> $genre, array<'OnSale'|'0'|'0.01To5'|'5To10'|'10To20'|'20To40'|'40To60'|'60To'> $price, array<'XboxSeriesX|S'|'XboxOne'|'PC'|'Handheld'|'CloudGaming'|'XboxPlayAnywhere'> $platform, array<'CFQ7TTC0KHS0'|'CFQ7TTC0P85B'|'CFQ7TTC0K5DJ'|'CFQ7TTC0K6L8'|'CFQ7TTC0KGQ8'|'CFQ7TTC0K5DH'|'CFQ7TTC0QH5H'> $subscription, array<'ESRB:EC'|'ESRB:E'|'ESRB:E10'|'ESRB:T'|'ESRB:M'|'ESRB:AO'|'ESRB:RPEveryone'|'ESRB:RPMature'|'ESRB:RPTeen'|'ESRB:UR'> $age_rating, array<'CrossPlatformMultiplayer'|'CrossPlatformCoop'|'SinglePlayer'|'OnlineMultiplayerWithGold'|'CoopSupportOnline'|'CoopSupportLocal'|'LocalMultiplayer'> $multiplayer, array<'CapabilityXboxEnhanced'|'ConsoleGen9Optimized'|'ConsoleCrossGen'|'Capability4k'|'CapabilityHDR'|'60fps'|'120fps'|'RayTracing'> $technical_features, array<'VERIFIED'|'PLAYABLE'|'UNSUPPORTED'|'UNKNOWN'> $handheld_compatibility, array<'ar-SA'|'zh-CN'|'zh-TW'|'cs-CZ'|'da-DK'|'nl-NL'|'en-GB'|'en-US'|'fi-FI'|'fr-FR'|'de-DE'|'el-GR'|'he-IL'|'hu-HU'|'it-IT'|'ja-JP'|'ko-KR'|'nb-NO'|'pl-PL'|'pt-BR'|'pt-PT'|'ru-RU'|'sk-SK'|'es-MX'|'es-ES'|'sv-SE'|'tr-TR'> $supported_language, array<'AccessibilityOnLaunch'|'AdjustableDifficulty'|'OnDemandTutorials'|'Pausable'|'ProgressSavingOptions'|'MonoSound'|'CustomVolumeControls'|'NarratedGameMenus'|'StereoSound'|'SpatialAudio'|'SteadyCamera'|'ContrastOptions'|'ColorOptions'|'SubtitleOptions'|'AdjustableTextSize'|'AdjustableInputSensitivity'|'BasicInputRemapping'|'TtsSttCommunications'|'InputRemapping'|'PlayableWithButtonsOnly'|'FullKeyboardSupport'|'PlayableWithMouseOnly'|'PlayableWithTouchOnly'|'NoButtonHolds'|'PlayableWithoutMotionControls'|'NoQuickTimeEvents'|'PlayableWithoutTouchControls'|'SingleStickGameplay'|'StickInversion'> $accessibility, string $locale
+ * @method mixed collection(array $params = [], array $options = []) xbox-collection (GET /xbox/collection)
+ *   params: 'TopFreeGames'|'TopPaidGames'|'OptimizedSeriesXS'|'XboxPlayAnywhere' $id, string $cursor, string $locale
+ * @method mixed game(array $params = [], array $options = []) xbox-game (GET /xbox/game)
+ *   params: string $product_id, string $locale
+ * @method mixed reviews(array $params = [], array $options = []) xbox-reviews (GET /xbox/reviews)
+ *   params: string $product_id, int $item_count, 'MostHelpful'|'MostRecent' $order_by, int $star_filter, string $locale
+ * @method mixed search(array $params = [], array $options = []) xbox-search (GET /xbox/search)
+ *   params: string $query, 'games'|'addons'|'hardware' $category, string $cursor, 'relevance'|'release_date_desc'|'most_popular'|'price_asc'|'price_desc'|'most_wishlisted'|'discount_desc'|'title_asc'|'title_desc' $sort, array<'Action & adventure'|'Card & board'|'Casino'|'Classics'|'Companion'|'Educational'|'Family & kids'|'Fighting'|'Multi-Player Online Battle Arena'|'Music'|'Other'|'Platformer'|'Puzzle & trivia'|'Racing & flying'|'Role playing'|'Shooter'|'Simulation'|'Sports'|'Strategy'|'Tools'|'Word'> $genre, array<'OnSale'|'0'|'0.01To5'|'5To10'|'10To20'|'20To40'|'40To60'|'60To'> $price, array<'XboxSeriesX|S'|'XboxOne'|'PC'|'Handheld'|'CloudGaming'|'XboxPlayAnywhere'> $platform, array<'CFQ7TTC0KHS0'|'CFQ7TTC0P85B'|'CFQ7TTC0K5DJ'|'CFQ7TTC0K6L8'|'CFQ7TTC0KGQ8'|'CFQ7TTC0K5DH'|'CFQ7TTC0QH5H'> $subscription, array<'ESRB:EC'|'ESRB:E'|'ESRB:E10'|'ESRB:T'|'ESRB:M'|'ESRB:AO'|'ESRB:RPEveryone'|'ESRB:RPMature'|'ESRB:RPTeen'|'ESRB:UR'> $age_rating, array<'CrossPlatformMultiplayer'|'CrossPlatformCoop'|'SinglePlayer'|'OnlineMultiplayerWithGold'|'CoopSupportOnline'|'CoopSupportLocal'|'LocalMultiplayer'> $multiplayer, array<'CapabilityXboxEnhanced'|'ConsoleGen9Optimized'|'ConsoleCrossGen'|'Capability4k'|'CapabilityHDR'|'60fps'|'120fps'|'RayTracing'> $technical_features, array<'VERIFIED'|'PLAYABLE'|'UNSUPPORTED'|'UNKNOWN'> $handheld_compatibility, array<'ar-SA'|'zh-CN'|'zh-TW'|'cs-CZ'|'da-DK'|'nl-NL'|'en-GB'|'en-US'|'fi-FI'|'fr-FR'|'de-DE'|'el-GR'|'he-IL'|'hu-HU'|'it-IT'|'ja-JP'|'ko-KR'|'nb-NO'|'pl-PL'|'pt-BR'|'pt-PT'|'ru-RU'|'sk-SK'|'es-MX'|'es-ES'|'sv-SE'|'tr-TR'> $supported_language, array<'AccessibilityOnLaunch'|'AdjustableDifficulty'|'OnDemandTutorials'|'Pausable'|'ProgressSavingOptions'|'MonoSound'|'CustomVolumeControls'|'NarratedGameMenus'|'StereoSound'|'SpatialAudio'|'SteadyCamera'|'ContrastOptions'|'ColorOptions'|'SubtitleOptions'|'AdjustableTextSize'|'AdjustableInputSensitivity'|'BasicInputRemapping'|'TtsSttCommunications'|'InputRemapping'|'PlayableWithButtonsOnly'|'FullKeyboardSupport'|'PlayableWithMouseOnly'|'PlayableWithTouchOnly'|'NoButtonHolds'|'PlayableWithoutMotionControls'|'NoQuickTimeEvents'|'PlayableWithoutTouchControls'|'SingleStickGameplay'|'StickInversion'> $accessibility, string $locale
+ */
+abstract class XboxGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) xda-article (GET /xda/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) xda-author (GET /xda/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) xda-headlines (GET /xda/headlines)
+ *   params: 'news'|'features'|'reviews'|'buying-guides'|'tutorials'|'editorials'|'editor-columns'|'deals'|'commerce'|'evergreen'|'performance'|'beats'|'awards'|'hardware'|'processor'|'gpu'|'storage'|'monitors'|'input-devices'|'laptops'|'devices'|'single-board-computers'|'gaming-handhelds'|'prebuilt-pc'|'networking'|'smart-home'|'home'|'other-hardware'|'headset'|'cpu-cooler'|'printer'|'home-internet'|'other-computing-devices'|'phone-reviews'|'3d-printing'|'esp32'|'home-lab'|'self-hosting'|'software'|'software-and-services'|'apps'|'ai-tools'|'claude'|'notebooklm'|'productivity'|'os'|'windows'|'windows-tutorials'|'linux-hub'|'linux-tutorials'|'macos'|'macos-tutorials'|'chromeos-tutorials'|'microsoft-edge'|'opera'|'spotify'|'bing'|'gaming'|'gaming-news'|'gaming-reviews'|'entertainment'|'entertainment-segment' $section
+ * @method mixed news(array $params = [], array $options = []) xda-news (GET /xda/news)
+ * @method mixed sections(array $params = [], array $options = []) xda-sections (GET /xda/sections)
+ */
+abstract class XdaGroup {}
 
 /**
  * @method mixed article(array $params = [], array $options = []) yahoo-autos-article (GET /yahoo-autos/article)
@@ -4393,6 +7233,8 @@ abstract class YahooLifeGroup {}
  * @method mixed commentReplies(array $params = [], array $options = []) yahoo-news-comment-replies (GET /yahoo-news/comments/replies)
  *   params: string $content_id, string $comment_id, 'newest'|'oldest' $sort, string $cursor, int $count
  * @method mixed home(array $params = [], array $options = []) yahoo-news-home (GET /yahoo-news/home)
+ * @method mixed related(array $params = [], array $options = []) yahoo-news-related (GET /yahoo-news/related)
+ *   params: string $content_id, string $cursor, int $count
  * @method mixed suggest(array $params = [], array $options = []) yahoo-news-suggest (GET /yahoo-news/suggest)
  *   params: string $q, int $count
  */
@@ -4494,6 +7336,17 @@ abstract class YahooTechGroup {}
 abstract class YelpGroup {}
 
 /**
+ * @method mixed categories(array $params = [], array $options = []) yoox-categories (GET /yoox/categories)
+ * @method mixed designers(array $params = [], array $options = []) yoox-designers (GET /yoox/designers)
+ *   params: 'women'|'men'|'kids' $department
+ * @method mixed product(array $params = [], array $options = []) yoox-product (GET /yoox/product)
+ *   params: string $id, string $url
+ * @method mixed search(array $params = [], array $options = []) yoox-search (GET /yoox/search)
+ *   params: 'women'|'men'|'kids' $department, string $q, string $category, string $designer, string $color, string $size, float $price_min, float $price_max, bool $on_sale, 'relevance'|'newest'|'price_asc'|'price_desc'|'discount' $sort, int $page, int $limit
+ */
+abstract class YooxGroup {}
+
+/**
  * @method mixed captions(array $params = [], array $options = []) youtube-captions (GET /youtube/captions/{id})
  *   params: string $id, string $lang
  * @method mixed channelPlaylists(array $params = [], array $options = []) youtube-channel-playlists (GET /youtube/channel/{id}/playlists)
@@ -4511,7 +7364,7 @@ abstract class YelpGroup {}
  * @method mixed profile(array $params = [], array $options = []) youtube-profile (GET /youtube/profile/{id})
  *   params: string $id
  * @method mixed search(array $params = [], array $options = []) youtube-search (GET /youtube/search)
- *   params: string $q, string $search_query, string $continuation_token, 'video'|'channel'|'playlist'|'movie' $type, 'relevance'|'upload_date'|'view_count'|'rating' $sort_by, 'last_hour'|'today'|'this_week'|'this_month'|'this_year' $upload_date, 'short'|'medium'|'long' $duration, string $features, string $params
+ *   params: string $q, string $search_query, string $continuation_token, 'video'|'shorts'|'channel'|'playlist'|'movie' $type, 'relevance'|'upload_date'|'view_count'|'popularity'|'rating' $sort_by, 'last_hour'|'today'|'this_week'|'this_month'|'this_year' $upload_date, 'under_3_minutes'|'three_to_20_minutes'|'over_20_minutes'|'under_3'|'three_to_20'|'over_20'|'short'|'medium'|'long' $duration, string $features, string $hl, string $gl, string $params
  * @method mixed tag(array $params = [], array $options = []) youtube-tag (GET /youtube/tag/{tag})
  *   params: string $tag, 'all'|'shorts' $type, string $continuation_token
  * @method mixed transcript(array $params = [], array $options = []) youtube-transcript (GET /youtube/transcript/{id}) Supports text response mode.
@@ -4524,6 +7377,8 @@ abstract class YelpGroup {}
 abstract class YoutubeGroup {}
 
 /**
+ * @method mixed categories(array $params = [], array $options = []) zalando-categories (GET /zalando/categories)
+ *   params: 'at'|'be'|'ch'|'cz'|'de'|'dk'|'ee'|'es'|'fi'|'fr'|'gb'|'hr'|'hu'|'ie'|'it'|'lt'|'lu'|'lv'|'nl'|'no'|'pl'|'ro'|'se'|'si'|'sk' $market, 'women'|'men'|'kids' $department
  * @method mixed category(array $params = [], array $options = []) zalando-category (GET /zalando/category)
  *   params: string $category, 'at'|'be'|'ch'|'cz'|'de'|'dk'|'ee'|'es'|'fi'|'fr'|'gb'|'hr'|'hu'|'ie'|'it'|'lt'|'lu'|'lv'|'nl'|'no'|'pl'|'ro'|'se'|'si'|'sk' $market
  * @method mixed markets(array $params = [], array $options = []) zalando-markets (GET /zalando/markets)
@@ -4575,6 +7430,18 @@ abstract class ZaraGroup {}
 abstract class ZaxbysGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) zdnet-article (GET /zdnet/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) zdnet-author (GET /zdnet/author)
+ *   params: string $slug, string $url, int $page
+ * @method mixed headlines(array $params = [], array $options = []) zdnet-headlines (GET /zdnet/headlines)
+ *   params: '5g'|'amazon'|'android'|'apple'|'ar-vr'|'artificial-intelligence'|'broadband'|'business'|'cloud'|'cloud-storage'|'collaboration'|'companies'|'computers-tech'|'computing'|'creativity-software'|'cyber-threats'|'data-centers'|'data-management'|'deals'|'digital-transformation'|'e-commerce'|'education'|'energy'|'enterprise-software'|'events'|'finance'|'fitness-bands'|'gaming'|'gaming-accessories'|'gaming-devices'|'google'|'hardware'|'headphones'|'health'|'home-and-office'|'home-entertainment'|'home-networking'|'home-security'|'how-to'|'innovation'|'ios'|'ipad'|'iphone'|'kitchen-household'|'laptops'|'linux'|'mac-os'|'magsafe-accessories'|'microsoft'|'mobile-accessories'|'mobile-carriers'|'mobile-os'|'networking'|'news'|'office-hardware-appliances'|'open-source'|'operating-systems'|'password-manager'|'pcs'|'photo-video'|'power-banks-and-batteries'|'productivity'|'projectors'|'quantum-computing'|'robot-vacuums'|'samsung'|'security'|'servers'|'services-software'|'sleep'|'smart-assistants'|'smart-glasses'|'smart-home'|'smart-rings'|'smart-watches'|'smartphones'|'social-media'|'space'|'speakers'|'storage'|'streaming-devices'|'streaming-services'|'tablets'|'taxes'|'tech'|'tools'|'transportation'|'tvs'|'video-conferencing'|'video-streaming-services'|'vpn'|'wearables'|'web-hosting'|'windows'|'windows-11'|'work-life'|'yard-outdoors' $section
+ * @method mixed news(array $params = [], array $options = []) zdnet-news (GET /zdnet/news)
+ * @method mixed sections(array $params = [], array $options = []) zdnet-sections (GET /zdnet/sections)
+ */
+abstract class ZdnetGroup {}
+
+/**
  * @method mixed autocomplete(array $params = [], array $options = []) zillow-autocomplete (GET /zillow/autocomplete)
  *   params: string $query, int $limit, 'for_sale'|'sale'|'for-sale'|'for_rent'|'rent'|'for-rent'|'sold' $status
  * @method mixed property(array $params = [], array $options = []) zillow-property (GET /zillow/property/{zpid})
@@ -4585,6 +7452,8 @@ abstract class ZaxbysGroup {}
 abstract class ZillowGroup {}
 
 /**
+ * @method mixed cities(array $params = [], array $options = []) zomato-cities (GET /zomato/cities)
+ *   params: string $q
  * @method mixed collection(array $params = [], array $options = []) zomato-collection (GET /zomato/collection)
  *   params: string $url
  * @method mixed collections(array $params = [], array $options = []) zomato-collections (GET /zomato/collections)
@@ -4599,31 +7468,46 @@ abstract class ZillowGroup {}
 abstract class ZomatoGroup {}
 
 /**
+ * @property-read \Crawlora\Generated\FirstDibsGroup $firstDibs
  * @property-read \Crawlora\Generated\SevenNowGroup $sevenNow
+ * @property-read \Crawlora\Generated\AbcNewsAustraliaGroup $abcNewsAustralia
+ * @property-read \Crawlora\Generated\AbcNewsGroup $abcNews
  * @property-read \Crawlora\Generated\AccorGroup $accor
  * @property-read \Crawlora\Generated\AdidasGroup $adidas
  * @property-read \Crawlora\Generated\AgodaGroup $agoda
  * @property-read \Crawlora\Generated\AirbnbGroup $airbnb
+ * @property-read \Crawlora\Generated\AlJazeeraGroup $alJazeera
  * @property-read \Crawlora\Generated\AllbirdsGroup $allbirds
+ * @property-read \Crawlora\Generated\AltGroup $alt
  * @property-read \Crawlora\Generated\AmazonJobsGroup $amazonJobs
  * @property-read \Crawlora\Generated\AmazonGroup $amazon
+ * @property-read \Crawlora\Generated\AndroidAuthorityGroup $androidAuthority
  * @property-read \Crawlora\Generated\AnimeGroup $anime
  * @property-read \Crawlora\Generated\AppInsightsGroup $appInsights
+ * @property-read \Crawlora\Generated\ApNewsGroup $apNews
  * @property-read \Crawlora\Generated\AppleBooksGroup $appleBooks
  * @property-read \Crawlora\Generated\AppleJobsGroup $appleJobs
  * @property-read \Crawlora\Generated\AppleMapsGroup $appleMaps
  * @property-read \Crawlora\Generated\ApplePodcastsGroup $applePodcasts
  * @property-read \Crawlora\Generated\AppStoreGroup $appStore
  * @property-read \Crawlora\Generated\ArbysGroup $arbys
+ * @property-read \Crawlora\Generated\ArsTechnicaGroup $arsTechnica
  * @property-read \Crawlora\Generated\AudibleGroup $audible
  * @property-read \Crawlora\Generated\AutotraderGroup $autotrader
+ * @property-read \Crawlora\Generated\AxiosGroup $axios
+ * @property-read \Crawlora\Generated\BalenciagaGroup $balenciaga
+ * @property-read \Crawlora\Generated\BarronsGroup $barrons
  * @property-read \Crawlora\Generated\BbbGroup $bbb
  * @property-read \Crawlora\Generated\BbcGroup $bbc
  * @property-read \Crawlora\Generated\BestBuyGroup $bestBuy
  * @property-read \Crawlora\Generated\BigCommerceGroup $bigCommerce
  * @property-read \Crawlora\Generated\BilibiliGroup $bilibili
+ * @property-read \Crawlora\Generated\BillboardGroup $billboard
  * @property-read \Crawlora\Generated\BillingGroup $billing
  * @property-read \Crawlora\Generated\BingGroup $bing
+ * @property-read \Crawlora\Generated\BirminghamMailGroup $birminghamMail
+ * @property-read \Crawlora\Generated\BleacherReportGroup $bleacherReport
+ * @property-read \Crawlora\Generated\BloombergGroup $bloomberg
  * @property-read \Crawlora\Generated\BlueskyGroup $bluesky
  * @property-read \Crawlora\Generated\BonhamsGroup $bonhams
  * @property-read \Crawlora\Generated\BookingGroup $booking
@@ -4631,26 +7515,50 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\BoxOfficeMojoGroup $boxOfficeMojo
  * @property-read \Crawlora\Generated\BrandGroup $brand
  * @property-read \Crawlora\Generated\BraveGroup $brave
+ * @property-read \Crawlora\Generated\BreitbartGroup $breitbart
  * @property-read \Crawlora\Generated\BrooklinenGroup $brooklinen
+ * @property-read \Crawlora\Generated\BurberryGroup $burberry
  * @property-read \Crawlora\Generated\BurgerKingGroup $burgerKing
+ * @property-read \Crawlora\Generated\BusinessInsiderGroup $businessInsider
+ * @property-read \Crawlora\Generated\BusinessStandardGroup $businessStandard
  * @property-read \Crawlora\Generated\CapterraGroup $capterra
  * @property-read \Crawlora\Generated\CarMaxGroup $carMax
  * @property-read \Crawlora\Generated\CarsComGroup $carsCom
+ * @property-read \Crawlora\Generated\CbcNewsGroup $cbcNews
+ * @property-read \Crawlora\Generated\CbrGroup $cbr
+ * @property-read \Crawlora\Generated\CbsNewsGroup $cbsNews
+ * @property-read \Crawlora\Generated\CbsSportsGroup $cbsSports
  * @property-read \Crawlora\Generated\ChewyGroup $chewy
+ * @property-read \Crawlora\Generated\ChicagoTribuneGroup $chicagoTribune
  * @property-read \Crawlora\Generated\ChickFilAGroup $chickFilA
  * @property-read \Crawlora\Generated\ChipotleGroup $chipotle
  * @property-read \Crawlora\Generated\ChromeWebStoreGroup $chromeWebStore
+ * @property-read \Crawlora\Generated\Chrono24Group $chrono24
+ * @property-read \Crawlora\Generated\CnaGroup $cna
+ * @property-read \Crawlora\Generated\CnbcGroup $cnbc
+ * @property-read \Crawlora\Generated\CnetGroup $cnet
  * @property-read \Crawlora\Generated\CnnGroup $cnn
  * @property-read \Crawlora\Generated\CoinGeckoGroup $coinGecko
  * @property-read \Crawlora\Generated\ColeHaanGroup $coleHaan
+ * @property-read \Crawlora\Generated\ColliderGroup $collider
+ * @property-read \Crawlora\Generated\ComcGroup $comc
  * @property-read \Crawlora\Generated\CongressGroup $congress
  * @property-read \Crawlora\Generated\WebGroup $web
  * @property-read \Crawlora\Generated\CostcoGroup $costco
  * @property-read \Crawlora\Generated\CourtListenerGroup $courtListener
  * @property-read \Crawlora\Generated\CricinfoGroup $cricinfo
+ * @property-read \Crawlora\Generated\CtvNewsGroup $ctvNews
  * @property-read \Crawlora\Generated\CulversGroup $culvers
  * @property-read \Crawlora\Generated\CvsGroup $cvs
+ * @property-read \Crawlora\Generated\TheDailyCallerGroup $theDailyCaller
+ * @property-read \Crawlora\Generated\DailyExpressGroup $dailyExpress
+ * @property-read \Crawlora\Generated\DailyMailGroup $dailyMail
+ * @property-read \Crawlora\Generated\DailyRecordGroup $dailyRecord
+ * @property-read \Crawlora\Generated\DailyStarUkGroup $dailyStarUk
+ * @property-read \Crawlora\Generated\DailyWireGroup $dailyWire
  * @property-read \Crawlora\Generated\DatasetsGroup $datasets
+ * @property-read \Crawlora\Generated\DawnGroup $dawn
+ * @property-read \Crawlora\Generated\DeadlineGroup $deadline
  * @property-read \Crawlora\Generated\DeliverooGroup $deliveroo
  * @property-read \Crawlora\Generated\DepopGroup $depop
  * @property-read \Crawlora\Generated\DiscogsGroup $discogs
@@ -4659,37 +7567,86 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\DraftKingsSportsbookGroup $draftKingsSportsbook
  * @property-read \Crawlora\Generated\DuckDuckGoSearchGroup $duckDuckGoSearch
  * @property-read \Crawlora\Generated\DunkinGroup $dunkin
+ * @property-read \Crawlora\Generated\DwGroup $dw
  * @property-read \Crawlora\Generated\EBayGroup $eBay
+ * @property-read \Crawlora\Generated\EconomicTimesGroup $economicTimes
+ * @property-read \Crawlora\Generated\EngadgetGroup $engadget
+ * @property-read \Crawlora\Generated\ENewsGroup $eNews
  * @property-read \Crawlora\Generated\EspnGroup $espn
  * @property-read \Crawlora\Generated\EtsyGroup $etsy
+ * @property-read \Crawlora\Generated\EuronewsGroup $euronews
  * @property-read \Crawlora\Generated\EverlaneGroup $everlane
+ * @property-read \Crawlora\Generated\EntertainmentWeeklyGroup $entertainmentWeekly
  * @property-read \Crawlora\Generated\ExpediaGroup $expedia
  * @property-read \Crawlora\Generated\FacebookGroup $facebook
+ * @property-read \Crawlora\Generated\FanaticsGroup $fanatics
+ * @property-read \Crawlora\Generated\FanaticsCollectGroup $fanaticsCollect
+ * @property-read \Crawlora\Generated\FanaticsLiveGroup $fanaticsLive
+ * @property-read \Crawlora\Generated\FarfetchGroup $farfetch
  * @property-read \Crawlora\Generated\FashionNovaGroup $fashionNova
+ * @property-read \Crawlora\Generated\FashionphileGroup $fashionphile
+ * @property-read \Crawlora\Generated\FastCompanyGroup $fastCompany
  * @property-read \Crawlora\Generated\FiveGuysGroup $fiveGuys
  * @property-read \Crawlora\Generated\FiverrGroup $fiverr
+ * @property-read \Crawlora\Generated\FlashscoreGroup $flashscore
  * @property-read \Crawlora\Generated\FoodpandaGroup $foodpanda
+ * @property-read \Crawlora\Generated\ForbesGroup $forbes
+ * @property-read \Crawlora\Generated\ForeignAffairsGroup $foreignAffairs
+ * @property-read \Crawlora\Generated\ForeignPolicyGroup $foreignPolicy
+ * @property-read \Crawlora\Generated\FortuneGroup $fortune
+ * @property-read \Crawlora\Generated\FotMobGroup $fotMob
+ * @property-read \Crawlora\Generated\FoxNewsGroup $foxNews
+ * @property-read \Crawlora\Generated\France24Group $france24
+ * @property-read \Crawlora\Generated\FtGroup $ft
+ * @property-read \Crawlora\Generated\GameRantGroup $gameRant
+ * @property-read \Crawlora\Generated\GamesRadarGroup $gamesRadar
+ * @property-read \Crawlora\Generated\GbNewsGroup $gbNews
  * @property-read \Crawlora\Generated\GdeltGroup $gdelt
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
  * @property-read \Crawlora\Generated\GitHubGroup $gitHub
+ * @property-read \Crawlora\Generated\GizmodoGroup $gizmodo
+ * @property-read \Crawlora\Generated\GlobalNewsGroup $globalNews
+ * @property-read \Crawlora\Generated\GlobeAndMailGroup $globeAndMail
+ * @property-read \Crawlora\Generated\GmaNewsGroup $gmaNews
  * @property-read \Crawlora\Generated\GoatGroup $goat
+ * @property-read \Crawlora\Generated\GoldinGroup $goldin
  * @property-read \Crawlora\Generated\GoodreadsGroup $goodreads
  * @property-read \Crawlora\Generated\GoogleJobsGroup $googleJobs
  * @property-read \Crawlora\Generated\GoogleGroup $google
  * @property-read \Crawlora\Generated\GooglePatentsGroup $googlePatents
  * @property-read \Crawlora\Generated\GooglePlayGroup $googlePlay
+ * @property-read \Crawlora\Generated\GqGroup $gq
+ * @property-read \Crawlora\Generated\GrailedGroup $grailed
  * @property-read \Crawlora\Generated\GrubhubGroup $grubhub
  * @property-read \Crawlora\Generated\GuardianGroup $guardian
+ * @property-read \Crawlora\Generated\GucciGroup $gucci
+ * @property-read \Crawlora\Generated\GulfNewsGroup $gulfNews
  * @property-read \Crawlora\Generated\GymsharkGroup $gymshark
+ * @property-read \Crawlora\Generated\HarvardBusinessReviewGroup $harvardBusinessReview
+ * @property-read \Crawlora\Generated\HermesGroup $hermes
+ * @property-read \Crawlora\Generated\HindustanTimesGroup $hindustanTimes
  * @property-read \Crawlora\Generated\HMGroup $hM
+ * @property-read \Crawlora\Generated\HollywoodReporterGroup $hollywoodReporter
  * @property-read \Crawlora\Generated\HomeDepotGroup $homeDepot
  * @property-read \Crawlora\Generated\HotelsComGroup $hotelsCom
+ * @property-read \Crawlora\Generated\HuffPostGroup $huffPost
+ * @property-read \Crawlora\Generated\IgnGroup $ign
  * @property-read \Crawlora\Generated\IkeaGroup $ikea
  * @property-read \Crawlora\Generated\ImdbGroup $imdb
  * @property-read \Crawlora\Generated\ImportYetiGroup $importYeti
  * @property-read \Crawlora\Generated\IndeedGroup $indeed
+ * @property-read \Crawlora\Generated\TheIndependentGroup $theIndependent
+ * @property-read \Crawlora\Generated\TheIndianExpressGroup $theIndianExpress
+ * @property-read \Crawlora\Generated\IndiaTodayGroup $indiaToday
+ * @property-read \Crawlora\Generated\IndieWireGroup $indieWire
+ * @property-read \Crawlora\Generated\IGroup $i
+ * @property-read \Crawlora\Generated\PhilippineDailyInquirerGroup $philippineDailyInquirer
  * @property-read \Crawlora\Generated\InstacartGroup $instacart
  * @property-read \Crawlora\Generated\InstagramGroup $instagram
+ * @property-read \Crawlora\Generated\InvestopediaGroup $investopedia
+ * @property-read \Crawlora\Generated\IolGroup $iol
+ * @property-read \Crawlora\Generated\IrishIndependentGroup $irishIndependent
+ * @property-read \Crawlora\Generated\IrishTimesGroup $irishTimes
  * @property-read \Crawlora\Generated\JCrewGroup $jCrew
  * @property-read \Crawlora\Generated\JimmyJohnsGroup $jimmyJohns
  * @property-read \Crawlora\Generated\JobsGroup $jobs
@@ -4697,87 +7654,188 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\JustWatchGroup $justWatch
  * @property-read \Crawlora\Generated\KalshiGroup $kalshi
  * @property-read \Crawlora\Generated\KfcGroup $kfc
+ * @property-read \Crawlora\Generated\KhaleejTimesGroup $khaleejTimes
  * @property-read \Crawlora\Generated\KickstarterGroup $kickstarter
  * @property-read \Crawlora\Generated\KohlSGroup $kohlS
+ * @property-read \Crawlora\Generated\KotakuGroup $kotaku
  * @property-read \Crawlora\Generated\KrogerGroup $kroger
  * @property-read \Crawlora\Generated\KylieCosmeticsGroup $kylieCosmetics
+ * @property-read \Crawlora\Generated\LosAngelesTimesGroup $losAngelesTimes
  * @property-read \Crawlora\Generated\LazadaGroup $lazada
  * @property-read \Crawlora\Generated\LeboncoinGroup $leboncoin
  * @property-read \Crawlora\Generated\LetterboxdGroup $letterboxd
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
+ * @property-read \Crawlora\Generated\MintGroup $mint
+ * @property-read \Crawlora\Generated\LiverpoolEchoGroup $liverpoolEcho
+ * @property-read \Crawlora\Generated\LiveScienceGroup $liveScience
+ * @property-read \Crawlora\Generated\LiveScoreGroup $liveScore
  * @property-read \Crawlora\Generated\LululemonGroup $lululemon
+ * @property-read \Crawlora\Generated\MacRumorsGroup $macRumors
  * @property-read \Crawlora\Generated\MacySGroup $macyS
  * @property-read \Crawlora\Generated\MangaGroup $manga
+ * @property-read \Crawlora\Generated\MarketWatchGroup $marketWatch
+ * @property-read \Crawlora\Generated\MashableGroup $mashable
  * @property-read \Crawlora\Generated\McDonaldsGroup $mcDonalds
+ * @property-read \Crawlora\Generated\MediaiteGroup $mediaite
+ * @property-read \Crawlora\Generated\ManchesterEveningNewsGroup $manchesterEveningNews
  * @property-read \Crawlora\Generated\MercariGroup $mercari
  * @property-read \Crawlora\Generated\MetaJobsGroup $metaJobs
  * @property-read \Crawlora\Generated\MetacriticGroup $metacritic
  * @property-read \Crawlora\Generated\MetaculusGroup $metaculus
+ * @property-read \Crawlora\Generated\MetroGroup $metro
+ * @property-read \Crawlora\Generated\MicrosoftStoreGroup $microsoftStore
+ * @property-read \Crawlora\Generated\MirrorGroup $mirror
  * @property-read \Crawlora\Generated\MlbGroup $mlb
+ * @property-read \Crawlora\Generated\ModaOperandiGroup $modaOperandi
+ * @property-read \Crawlora\Generated\MonclerGroup $moncler
+ * @property-read \Crawlora\Generated\MoneycontrolGroup $moneycontrol
  * @property-read \Crawlora\Generated\MonitorsGroup $monitors
+ * @property-read \Crawlora\Generated\NationAfricaGroup $nationAfrica
+ * @property-read \Crawlora\Generated\NationalPostGroup $nationalPost
+ * @property-read \Crawlora\Generated\NbcNewsGroup $nbcNews
+ * @property-read \Crawlora\Generated\NdtvGroup $ndtv
+ * @property-read \Crawlora\Generated\News18Group $news18
+ * @property-read \Crawlora\Generated\News24Group $news24
+ * @property-read \Crawlora\Generated\NewsComAuGroup $newsComAu
+ * @property-read \Crawlora\Generated\NewsmaxGroup $newsmax
+ * @property-read \Crawlora\Generated\NewsweekGroup $newsweek
+ * @property-read \Crawlora\Generated\TheNewYorkerGroup $theNewYorker
  * @property-read \Crawlora\Generated\NikeGroup $nike
+ * @property-read \Crawlora\Generated\NineToFiveMacGroup $nineToFiveMac
+ * @property-read \Crawlora\Generated\NprGroup $npr
  * @property-read \Crawlora\Generated\NumbeoGroup $numbeo
+ * @property-read \Crawlora\Generated\NewYorkDailyNewsGroup $newYorkDailyNews
+ * @property-read \Crawlora\Generated\NewYorkMagazineGroup $newYorkMagazine
+ * @property-read \Crawlora\Generated\NewYorkPostGroup $newYorkPost
+ * @property-read \Crawlora\Generated\NewYorkTimesGroup $newYorkTimes
+ * @property-read \Crawlora\Generated\NzHeraldGroup $nzHerald
  * @property-read \Crawlora\Generated\OhPollyGroup $ohPolly
  * @property-read \Crawlora\Generated\OldNavyGroup $oldNavy
  * @property-read \Crawlora\Generated\OpenSeaGroup $openSea
  * @property-read \Crawlora\Generated\OpenTableGroup $openTable
  * @property-read \Crawlora\Generated\OttoGroup $otto
+ * @property-read \Crawlora\Generated\PageSixGroup $pageSix
  * @property-read \Crawlora\Generated\PandamartGroup $pandamart
  * @property-read \Crawlora\Generated\PaneraGroup $panera
  * @property-read \Crawlora\Generated\PapaJohnSGroup $papaJohnS
  * @property-read \Crawlora\Generated\PatreonGroup $patreon
+ * @property-read \Crawlora\Generated\PcGamerGroup $pcGamer
+ * @property-read \Crawlora\Generated\PcmagGroup $pcmag
+ * @property-read \Crawlora\Generated\PeopleGroup $people
+ * @property-read \Crawlora\Generated\PhiladelphiaInquirerGroup $philadelphiaInquirer
+ * @property-read \Crawlora\Generated\PhilstarGroup $philstar
+ * @property-read \Crawlora\Generated\PhoneArenaGroup $phoneArena
  * @property-read \Crawlora\Generated\MetaGroup $meta
  * @property-read \Crawlora\Generated\PinterestGroup $pinterest
  * @property-read \Crawlora\Generated\PitchBookGroup $pitchBook
  * @property-read \Crawlora\Generated\PizzaHutGroup $pizzaHut
  * @property-read \Crawlora\Generated\PlayStationGroup $playStation
+ * @property-read \Crawlora\Generated\PoliticoGroup $politico
+ * @property-read \Crawlora\Generated\PolygonGroup $polygon
  * @property-read \Crawlora\Generated\PolymarketGroup $polymarket
  * @property-read \Crawlora\Generated\PopeyesGroup $popeyes
  * @property-read \Crawlora\Generated\PoshmarkGroup $poshmark
+ * @property-read \Crawlora\Generated\PradaGroup $prada
+ * @property-read \Crawlora\Generated\PristineAuctionGroup $pristineAuction
+ * @property-read \Crawlora\Generated\PristineMarketplaceGroup $pristineMarketplace
  * @property-read \Crawlora\Generated\ProductHuntGroup $productHunt
+ * @property-read \Crawlora\Generated\ProPublicaGroup $proPublica
+ * @property-read \Crawlora\Generated\PsaGroup $psa
+ * @property-read \Crawlora\Generated\PsastoreGroup $psastore
+ * @property-read \Crawlora\Generated\PunchGroup $punch
  * @property-read \Crawlora\Generated\QuinceGroup $quince
  * @property-read \Crawlora\Generated\RaisingCaneSGroup $raisingCaneS
+ * @property-read \Crawlora\Generated\RapplerGroup $rappler
+ * @property-read \Crawlora\Generated\RawStoryGroup $rawStory
+ * @property-read \Crawlora\Generated\RebagGroup $rebag
  * @property-read \Crawlora\Generated\RedditGroup $reddit
  * @property-read \Crawlora\Generated\RedfinGroup $redfin
  * @property-read \Crawlora\Generated\ReferralsGroup $referrals
+ * @property-read \Crawlora\Generated\ResyGroup $resy
+ * @property-read \Crawlora\Generated\ReutersGroup $reuters
  * @property-read \Crawlora\Generated\RightmoveGroup $rightmove
+ * @property-read \Crawlora\Generated\RnzGroup $rnz
  * @property-read \Crawlora\Generated\RobloxGroup $roblox
+ * @property-read \Crawlora\Generated\RollingStoneGroup $rollingStone
  * @property-read \Crawlora\Generated\RothySGroup $rothyS
  * @property-read \Crawlora\Generated\RottenTomatoesGroup $rottenTomatoes
  * @property-read \Crawlora\Generated\RoverGroup $rover
+ * @property-read \Crawlora\Generated\RtNewsGroup $rtNews
+ * @property-read \Crawlora\Generated\SalonGroup $salon
  * @property-read \Crawlora\Generated\SamSclubGroup $samSClub
+ * @property-read \Crawlora\Generated\ScmpGroup $scmp
+ * @property-read \Crawlora\Generated\ScreenRantGroup $screenRant
+ * @property-read \Crawlora\Generated\SeatGeekGroup $seatGeek
+ * @property-read \Crawlora\Generated\SeattleTimesGroup $seattleTimes
  * @property-read \Crawlora\Generated\SecEdgarGroup $secEdgar
  * @property-read \Crawlora\Generated\SephoraGroup $sephora
+ * @property-read \Crawlora\Generated\SevenNewsAustraliaGroup $sevenNewsAustralia
+ * @property-read \Crawlora\Generated\SfgateGroup $sfgate
  * @property-read \Crawlora\Generated\ShakeShackGroup $shakeShack
  * @property-read \Crawlora\Generated\SheinGroup $shein
  * @property-read \Crawlora\Generated\ShopAppGroup $shopApp
  * @property-read \Crawlora\Generated\ShopifyGroup $shopify
  * @property-read \Crawlora\Generated\SimilarWebGroup $similarWeb
  * @property-read \Crawlora\Generated\SkimsGroup $skims
+ * @property-read \Crawlora\Generated\SkyNewsGroup $skyNews
+ * @property-read \Crawlora\Generated\SlateGroup $slate
+ * @property-read \Crawlora\Generated\SlickdealsGroup $slickdeals
+ * @property-read \Crawlora\Generated\MitSloanManagementReviewGroup $mitSloanManagementReview
+ * @property-read \Crawlora\Generated\TheSydneyMorningHeraldGroup $theSydneyMorningHerald
  * @property-read \Crawlora\Generated\SofaScoreGroup $sofaScore
  * @property-read \Crawlora\Generated\SonicGroup $sonic
  * @property-read \Crawlora\Generated\SoundCloudGroup $soundCloud
+ * @property-read \Crawlora\Generated\SpaceGroup $space
  * @property-read \Crawlora\Generated\SparkFunGroup $sparkFun
+ * @property-read \Crawlora\Generated\SportingNewsGroup $sportingNews
  * @property-read \Crawlora\Generated\SpotifyPodcastsGroup $spotifyPodcasts
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
+ * @property-read \Crawlora\Generated\EveningStandardGroup $eveningStandard
  * @property-read \Crawlora\Generated\StarbucksGroup $starbucks
  * @property-read \Crawlora\Generated\SteamGroup $steam
  * @property-read \Crawlora\Generated\SteveMaddenGroup $steveMadden
  * @property-read \Crawlora\Generated\StockXGroup $stockX
+ * @property-read \Crawlora\Generated\TheStraitsTimesGroup $theStraitsTimes
  * @property-read \Crawlora\Generated\StravaGroup $strava
+ * @property-read \Crawlora\Generated\StubHubGroup $stubHub
+ * @property-read \Crawlora\Generated\StuffGroup $stuff
+ * @property-read \Crawlora\Generated\SubstackGroup $substack
  * @property-read \Crawlora\Generated\SubwayGroup $subway
+ * @property-read \Crawlora\Generated\TheSunGroup $theSun
  * @property-read \Crawlora\Generated\SwiggyGroup $swiggy
  * @property-read \Crawlora\Generated\TacoBellGroup $tacoBell
  * @property-read \Crawlora\Generated\TargetGroup $target
+ * @property-read \Crawlora\Generated\TechCrunchGroup $techCrunch
+ * @property-read \Crawlora\Generated\TechRadarGroup $techRadar
+ * @property-read \Crawlora\Generated\TheTelegraphGroup $theTelegraph
  * @property-read \Crawlora\Generated\TesGroup $tes
  * @property-read \Crawlora\Generated\TeslaJobsGroup $teslaJobs
+ * @property-read \Crawlora\Generated\TheAgeGroup $theAge
+ * @property-read \Crawlora\Generated\TheAtlanticGroup $theAtlantic
  * @property-read \Crawlora\Generated\TheBodyShopGroup $theBodyShop
+ * @property-read \Crawlora\Generated\TheDailyBeastGroup $theDailyBeast
+ * @property-read \Crawlora\Generated\TheHillGroup $theHill
+ * @property-read \Crawlora\Generated\TheHinduGroup $theHindu
+ * @property-read \Crawlora\Generated\TheJournalIeGroup $theJournalIe
+ * @property-read \Crawlora\Generated\TheRealRealGroup $theRealReal
+ * @property-read \Crawlora\Generated\TheStarMalaysiaGroup $theStarMalaysia
+ * @property-read \Crawlora\Generated\TheVergeGroup $theVerge
+ * @property-read \Crawlora\Generated\ThisIsMoneyGroup $thisIsMoney
  * @property-read \Crawlora\Generated\ThreadsGroup $threads
  * @property-read \Crawlora\Generated\TicketmasterGroup $ticketmaster
  * @property-read \Crawlora\Generated\TicketWebGroup $ticketWeb
+ * @property-read \Crawlora\Generated\TiffanyCoGroup $tiffanyCo
  * @property-read \Crawlora\Generated\TiktokGroup $tiktok
+ * @property-read \Crawlora\Generated\TimeGroup $time
+ * @property-read \Crawlora\Generated\TimesOfIndiaGroup $timesOfIndia
+ * @property-read \Crawlora\Generated\TimesOfIsraelGroup $timesOfIsrael
  * @property-read \Crawlora\Generated\TmdbGroup $tmdb
+ * @property-read \Crawlora\Generated\TmzGroup $tmz
  * @property-read \Crawlora\Generated\TokopediaGroup $tokopedia
+ * @property-read \Crawlora\Generated\TomSguideGroup $tomSGuide
+ * @property-read \Crawlora\Generated\TomShardwareGroup $tomSHardware
+ * @property-read \Crawlora\Generated\TorontoStarGroup $torontoStar
+ * @property-read \Crawlora\Generated\TownhallGroup $townhall
  * @property-read \Crawlora\Generated\TripAdvisorGroup $tripAdvisor
  * @property-read \Crawlora\Generated\TripComGroup $tripCom
  * @property-read \Crawlora\Generated\TrustMrrGroup $trustMrr
@@ -4787,20 +7845,34 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\UltaBeautyGroup $ultaBeauty
  * @property-read \Crawlora\Generated\UpworkGroup $upwork
  * @property-read \Crawlora\Generated\UsageGroup $usage
+ * @property-read \Crawlora\Generated\UsaTodayGroup $usaToday
  * @property-read \Crawlora\Generated\UserGroup $user
  * @property-read \Crawlora\Generated\AccountDeletionGroup $accountDeletion
+ * @property-read \Crawlora\Generated\UsWeeklyGroup $usWeekly
  * @property-read \Crawlora\Generated\UsptoPatentPublicSearchGroup $usptoPatentPublicSearch
+ * @property-read \Crawlora\Generated\VanguardGroup $vanguard
+ * @property-read \Crawlora\Generated\VanityFairGroup $vanityFair
+ * @property-read \Crawlora\Generated\VarietyGroup $variety
+ * @property-read \Crawlora\Generated\VestiaireGroup $vestiaire
+ * @property-read \Crawlora\Generated\ViceGroup $vice
  * @property-read \Crawlora\Generated\VintedGroup $vinted
+ * @property-read \Crawlora\Generated\VoxGroup $vox
+ * @property-read \Crawlora\Generated\WalesOnlineGroup $walesOnline
  * @property-read \Crawlora\Generated\WalgreensGroup $walgreens
  * @property-read \Crawlora\Generated\WalmartGroup $walmart
+ * @property-read \Crawlora\Generated\WashingtonPostGroup $washingtonPost
  * @property-read \Crawlora\Generated\WayfairGroup $wayfair
  * @property-read \Crawlora\Generated\WendysGroup $wendys
  * @property-read \Crawlora\Generated\WhataburgerGroup $whataburger
  * @property-read \Crawlora\Generated\WhatnotGroup $whatnot
  * @property-read \Crawlora\Generated\WingstopGroup $wingstop
+ * @property-read \Crawlora\Generated\WiredGroup $wired
  * @property-read \Crawlora\Generated\WishGroup $wish
  * @property-read \Crawlora\Generated\WoltGroup $wolt
+ * @property-read \Crawlora\Generated\WallStreetJournalGroup $wallStreetJournal
  * @property-read \Crawlora\Generated\XGroup $x
+ * @property-read \Crawlora\Generated\XboxGroup $xbox
+ * @property-read \Crawlora\Generated\XdaGroup $xda
  * @property-read \Crawlora\Generated\YahooAutosGroup $yahooAutos
  * @property-read \Crawlora\Generated\YahooEntertainmentGroup $yahooEntertainment
  * @property-read \Crawlora\Generated\YahooFinanceGroup $yahooFinance
@@ -4812,11 +7884,13 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\YahooSportsGroup $yahooSports
  * @property-read \Crawlora\Generated\YahooTechGroup $yahooTech
  * @property-read \Crawlora\Generated\YelpGroup $yelp
+ * @property-read \Crawlora\Generated\YooxGroup $yoox
  * @property-read \Crawlora\Generated\YoutubeGroup $youtube
  * @property-read \Crawlora\Generated\ZalandoGroup $zalando
  * @property-read \Crawlora\Generated\ZapposGroup $zappos
  * @property-read \Crawlora\Generated\ZaraGroup $zara
  * @property-read \Crawlora\Generated\ZaxbysGroup $zaxbys
+ * @property-read \Crawlora\Generated\ZdnetGroup $zdnet
  * @property-read \Crawlora\Generated\ZillowGroup $zillow
  * @property-read \Crawlora\Generated\ZomatoGroup $zomato
  */
