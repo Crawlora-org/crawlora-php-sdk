@@ -61246,6 +61246,31 @@ final class Operations
             'method' => 'GET',
             'path' => '/livescore/news-feed',
             'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'include_content',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'livescore-news-publishers' => [
+            'id' => 'livescore-news-publishers',
+            'method' => 'GET',
+            'path' => '/livescore/news-publishers',
+            'pathParams' => [],
             'queryParams' => [],
             'formParams' => [],
             'bodyParam' => null,
@@ -116036,6 +116061,7 @@ final class Operations
             'livescoreNewsArticle' => 'livescore-news-article',
             'livescoreNewsCategories' => 'livescore-news-categories',
             'livescoreNewsFeed' => 'livescore-news-feed',
+            'livescoreNewsPublishers' => 'livescore-news-publishers',
             'livescorePlayer' => 'livescore-player',
             'livescoreScores' => 'livescore-scores',
             'livescoreScoresToc' => 'livescore-scores-toc',
@@ -118072,7 +118098,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 3159;
+    public const OPERATION_COUNT = 3160;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -119648,6 +119674,7 @@ final class Operations
         'livescore-news-article',
         'livescore-news-categories',
         'livescore-news-feed',
+        'livescore-news-publishers',
         'livescore-player',
         'livescore-scores',
         'livescore-scores-toc',
@@ -122807,6 +122834,7 @@ final class OperationId
     public const LIVE_SCORE_LIVESCORE_NEWS_ARTICLE = 'livescore-news-article';
     public const LIVE_SCORE_LIVESCORE_NEWS_CATEGORIES = 'livescore-news-categories';
     public const LIVE_SCORE_LIVESCORE_NEWS_FEED = 'livescore-news-feed';
+    public const LIVE_SCORE_LIVESCORE_NEWS_PUBLISHERS = 'livescore-news-publishers';
     public const LIVE_SCORE_LIVESCORE_PLAYER = 'livescore-player';
     public const LIVE_SCORE_LIVESCORE_SCORES = 'livescore-scores';
     public const LIVE_SCORE_LIVESCORE_SCORES_TOC = 'livescore-scores-toc';

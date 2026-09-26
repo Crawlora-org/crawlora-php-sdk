@@ -3701,6 +3701,8 @@ abstract class LiveScienceGroup {}
  *   params: string $path
  * @method mixed livescoreNewsCategories(array $params = [], array $options = []) livescore-news-categories (GET /livescore/news-categories)
  * @method mixed livescoreNewsFeed(array $params = [], array $options = []) livescore-news-feed (GET /livescore/news-feed)
+ *   params: bool $include_content
+ * @method mixed livescoreNewsPublishers(array $params = [], array $options = []) livescore-news-publishers (GET /livescore/news-publishers)
  * @method mixed livescorePlayer(array $params = [], array $options = []) livescore-player (GET /livescore/player)
  *   params: string $path
  * @method mixed livescoreScores(array $params = [], array $options = []) livescore-scores (GET /livescore/scores)

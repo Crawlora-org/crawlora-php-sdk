@@ -2,7 +2,7 @@
 
 Generated from `openapi/public.json`. Deprecated, admin, and internal operations are excluded from this SDK contract.
 
-Total operations: `3159`
+Total operations: `3160`
 
 | Group | SDK method | Operation ID | HTTP | Params | Auth | Response | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1579,7 +1579,8 @@ Total operations: `3159`
 | liveScore | `liveScore.livescoreNews` | `livescore-news` | `GET /livescore/news` | `category` (query string required) | `ApiKeyAuth` | `LiveScoreLivescoreNewsResponse` |  |
 | liveScore | `liveScore.livescoreNewsArticle` | `livescore-news-article` | `GET /livescore/news-article` | `path` (query string required) | `ApiKeyAuth` | `LiveScoreLivescoreNewsArticleResponse` |  |
 | liveScore | `liveScore.livescoreNewsCategories` | `livescore-news-categories` | `GET /livescore/news-categories` | none | `ApiKeyAuth` | `LiveScoreLivescoreNewsCategoriesResponse` |  |
-| liveScore | `liveScore.livescoreNewsFeed` | `livescore-news-feed` | `GET /livescore/news-feed` | none | `ApiKeyAuth` | `LiveScoreLivescoreNewsFeedResponse` |  |
+| liveScore | `liveScore.livescoreNewsFeed` | `livescore-news-feed` | `GET /livescore/news-feed` | `include_content` (query bool) | `ApiKeyAuth` | `LiveScoreLivescoreNewsFeedResponse` |  |
+| liveScore | `liveScore.livescoreNewsPublishers` | `livescore-news-publishers` | `GET /livescore/news-publishers` | none | `ApiKeyAuth` | `LiveScoreLivescoreNewsPublishersResponse` |  |
 | liveScore | `liveScore.livescorePlayer` | `livescore-player` | `GET /livescore/player` | `path` (query string required) | `ApiKeyAuth` | `LiveScoreLivescorePlayerResponse` |  |
 | liveScore | `liveScore.livescoreScores` | `livescore-scores` | `GET /livescore/scores` | `sport` (query 'soccer'\|'hockey'\|'basketball'\|'tennis'\|'cricket' required)<br>`date` (query string required)<br>`timezone_offset` (query int)<br>`paging` (query bool)<br>`cursor` (query string)<br>`direction` (query 'down'\|'up') | `ApiKeyAuth` | `LiveScoreLivescoreScoresResponse` |  |
 | liveScore | `liveScore.livescoreScoresToc` | `livescore-scores-toc` | `GET /livescore/scores-toc` | `sport` (query 'soccer'\|'hockey'\|'basketball'\|'tennis'\|'cricket' required)<br>`date` (query string required)<br>`timezone_offset` (query int) | `ApiKeyAuth` | `LiveScoreLivescoreScoresTocResponse` |  |
