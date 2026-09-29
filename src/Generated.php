@@ -146,6 +146,14 @@ abstract class AgodaGroup {}
 abstract class AirbnbGroup {}
 
 /**
+ * @method mixed alcomHeadlines(array $params = [], array $options = []) alcom-headlines (GET /alcom/headlines)
+ *   params: 'news'|'sports'|'life' $section
+ * @method mixed alcomNews(array $params = [], array $options = []) alcom-news (GET /alcom/news)
+ * @method mixed alcomSections(array $params = [], array $options = []) alcom-sections (GET /alcom/sections)
+ */
+abstract class AlComGroup {}
+
+/**
  * @method mixed aljazeeraArticle(array $params = [], array $options = []) aljazeera-article (GET /aljazeera/article)
  *   params: string $url
  * @method mixed aljazeeraAuthor(array $params = [], array $options = []) aljazeera-author (GET /aljazeera/author)
@@ -752,6 +760,11 @@ abstract class BookingGroup {}
 abstract class BootsGroup {}
 
 /**
+ * @method mixed bostonglobeNews(array $params = [], array $options = []) bostonglobe-news (GET /bostonglobe/news)
+ */
+abstract class BostonGlobeGroup {}
+
+/**
  * @method mixed boxofficemojoBrand(array $params = [], array $options = []) boxofficemojo-brand (GET /boxofficemojo/brand)
  *   params: string $id, string $path, string $url, 'grossToDate'|'maxNumTheaters'|'openingWeekendGross'|'openingNumTheaters'|'releaseDate' $sort, 'asc'|'desc' $sortDir, int $offset
  * @method mixed boxofficemojoBrands(array $params = [], array $options = []) boxofficemojo-brands (GET /boxofficemojo/brands)
@@ -1114,6 +1127,11 @@ abstract class ChromeWebStoreGroup {}
  *   params: string $query, string $brand, string $model, 'relevance'|'price_asc'|'price_desc'|'newest'|'popularity' $sort, int $page, int $page_size, 'new'|'like_new_unworn'|'very_good'|'good'|'fair'|'incomplete'|'no_details' $condition, 'new'|'used'|'no_details' $used_or_new, 'aluminum'|'brass'|'bronze'|'carbon'|'ceramic'|'gold_steel'|'gold_plated'|'palladium'|'plastic'|'platinum'|'rose_gold'|'sapphire_crystal'|'silver'|'steel'|'tantalum'|'titanium'|'tungsten'|'white_gold'|'yellow_gold'|'no_details' $case_material, 'black'|'blue'|'bordeaux'|'bronze'|'brown'|'champagne'|'gold'|'green'|'grey'|'meteorite'|'mother_of_pearl'|'orange'|'pink'|'purple'|'red'|'silver'|'skeletonized'|'turquoise'|'white'|'yellow'|'no_details' $dial_color, 'alligator_skin'|'aluminium'|'brass'|'calf_skin'|'ceramic'|'crocodile_skin'|'gold_steel'|'gold_plated'|'leather'|'lizard_skin'|'ostrich_skin'|'plastic'|'platinum'|'red_gold'|'rose_gold'|'rubber'|'satin'|'shark_skin'|'silicon'|'silver'|'snake_skin'|'steel'|'textile'|'titanium'|'white_gold'|'yellow_gold'|'no_details' $bracelet_material, 'automatic'|'manual_winding'|'quartz'|'solar'|'smartwatch'|'no_details' $movement_type, 'mens_unisex'|'womens' $gender, 'watches'|'parts_accessories' $watch_type, 'in_stock'|'on_order'|'on_request' $stock_info
  */
 abstract class Chrono24Group {}
+
+/**
+ * @method mixed clevelandcomNews(array $params = [], array $options = []) clevelandcom-news (GET /clevelandcom/news)
+ */
+abstract class ClevelandComGroup {}
 
 /**
  * @method mixed article(array $params = [], array $options = []) cna-article (GET /cna/article)
@@ -1571,11 +1589,11 @@ abstract class DailyWireGroup {}
  * @method mixed jobsSearch(array $params = [], array $options = []) datasets-jobs-search (GET /datasets/jobs/search)
  *   params: string $q, string $company, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint'|'amazon-jobs'|'apple-jobs'|'google-jobs'|'meta-jobs'|'tesla-jobs' $provider, string $department, string $location, string $city, string $state, string $country, string $employment_type, string $job_family, bool $remote, 'onsite'|'hybrid'|'remote' $workplace_type, bool $include_closed, float $min_salary, float $max_salary, string $salary_currency, 'relevance'|'posted_desc'|'company_asc' $sort, int $page, int $page_size
  * @method mixed journalistsFacets(array $params = [], array $options = []) datasets-journalists-facets (GET /datasets/journalists/facets)
- *   params: 'outlet'|'vertical'|'topic'|'contact_type'|'record_type'|'role_type'|'email_kind'|'outreach_readiness_band' $facet, string $q, string $outlet, 'tech'|'crypto'|'marketing'|'consumer_tech'|'consumer_policy'|'cybersecurity'|'health'|'gaming'|'climate'|'business'|'entertainment'|'sports'|'legal'|'science'|'politics'|'real_estate'|'automotive'|'travel'|'food'|'education'|'design'|'film_tv'|'fashion'|'music'|'personal_finance'|'tech_independent'|'culture_independent'|'local_news'|'construction'|'banking'|'retail'|'aerospace_defense'|'energy'|'agriculture'|'local_business' $vertical, string $topic, 'email'|'social'|'none' $contact_type, 'person'|'desk'|'organization'|'syndicated_byline'|'unknown' $record_type, 'staff'|'editor'|'reporter'|'contributor'|'freelancer'|'columnist'|'non_editorial'|'unknown' $role_type, 'individual_work'|'individual_personal_public'|'shared_desk'|'tips_or_submissions'|'outlet_generic'|'unknown' $email_kind, int $min_outreach_readiness
+ *   params: 'outlet'|'vertical'|'topic'|'contact_type'|'record_type'|'role_type'|'email_kind'|'outreach_readiness_band' $facet, string $q, string $outlet, 'tech'|'crypto'|'marketing'|'consumer_tech'|'consumer_policy'|'cybersecurity'|'health'|'gaming'|'climate'|'business'|'entertainment'|'sports'|'legal'|'science'|'politics'|'real_estate'|'automotive'|'travel'|'food'|'education'|'design'|'film_tv'|'fashion'|'music'|'personal_finance'|'tech_independent'|'culture_independent'|'local_news'|'construction'|'banking'|'retail'|'aerospace_defense'|'energy'|'agriculture'|'local_business'|'general_news' $vertical, string $topic, 'email'|'social'|'none' $contact_type, 'person'|'desk'|'organization'|'syndicated_byline'|'unknown' $record_type, 'staff'|'editor'|'reporter'|'contributor'|'freelancer'|'columnist'|'non_editorial'|'unknown' $role_type, 'individual_work'|'individual_personal_public'|'shared_desk'|'tips_or_submissions'|'outlet_generic'|'unknown' $email_kind, int $min_outreach_readiness
  * @method mixed journalistsItem(array $params = [], array $options = []) datasets-journalists-item (GET /datasets/journalists/items/{outlet}/{slug})
  *   params: string $outlet, string $slug
  * @method mixed journalistsSearch(array $params = [], array $options = []) datasets-journalists-search (GET /datasets/journalists/search)
- *   params: string $q, string $outlet, 'tech'|'crypto'|'marketing'|'consumer_tech'|'consumer_policy'|'cybersecurity'|'health'|'gaming'|'climate'|'business'|'entertainment'|'sports'|'legal'|'science'|'politics'|'real_estate'|'automotive'|'travel'|'food'|'education'|'design'|'film_tv'|'fashion'|'music'|'personal_finance'|'tech_independent'|'culture_independent'|'local_news'|'construction'|'banking'|'retail'|'aerospace_defense'|'energy'|'agriculture'|'local_business' $vertical, string $topic, 'email'|'social'|'none' $contact_type, 'person'|'desk'|'organization'|'syndicated_byline'|'unknown' $record_type, 'staff'|'editor'|'reporter'|'contributor'|'freelancer'|'columnist'|'non_editorial'|'unknown' $role_type, 'individual_work'|'individual_personal_public'|'shared_desk'|'tips_or_submissions'|'outlet_generic'|'unknown' $email_kind, int $min_outreach_readiness, 'relevance'|'name_asc'|'outlet_asc'|'crawled_desc'|'readiness_desc' $sort, int $page, int $page_size
+ *   params: string $q, string $outlet, 'tech'|'crypto'|'marketing'|'consumer_tech'|'consumer_policy'|'cybersecurity'|'health'|'gaming'|'climate'|'business'|'entertainment'|'sports'|'legal'|'science'|'politics'|'real_estate'|'automotive'|'travel'|'food'|'education'|'design'|'film_tv'|'fashion'|'music'|'personal_finance'|'tech_independent'|'culture_independent'|'local_news'|'construction'|'banking'|'retail'|'aerospace_defense'|'energy'|'agriculture'|'local_business'|'general_news' $vertical, string $topic, 'email'|'social'|'none' $contact_type, 'person'|'desk'|'organization'|'syndicated_byline'|'unknown' $record_type, 'staff'|'editor'|'reporter'|'contributor'|'freelancer'|'columnist'|'non_editorial'|'unknown' $role_type, 'individual_work'|'individual_personal_public'|'shared_desk'|'tips_or_submissions'|'outlet_generic'|'unknown' $email_kind, int $min_outreach_readiness, 'relevance'|'name_asc'|'outlet_asc'|'crawled_desc'|'readiness_desc' $sort, int $page, int $page_size
  * @method mixed numbeoCitiesFacets(array $params = [], array $options = []) datasets-numbeo-cities-facets (GET /datasets/numbeo-cities/facets)
  *   params: 'country' $facet, string $q, string $country, float $min_cost_of_living_index, float $max_cost_of_living_index, float $min_quality_of_life_index, float $min_crime_index, float $max_crime_index, float $min_safety_index, float $min_health_care_index, float $max_pollution_index, float $max_traffic_index
  * @method mixed numbeoCitiesItem(array $params = [], array $options = []) datasets-numbeo-cities-item (GET /datasets/numbeo-cities/items/{slug})
@@ -2354,15 +2372,30 @@ abstract class ForeignPolicyGroup {}
 abstract class FortuneGroup {}
 
 /**
+ * @method mixed fotmobAudioMatches(array $params = [], array $options = []) fotmob-audio-matches (GET /fotmob/audio-matches)
+ * @method mixed fotmobFifaRankingPeriods(array $params = [], array $options = []) fotmob-fifa-ranking-periods (GET /fotmob/fifa-ranking-periods)
+ *   params: 'men'|'women' $gender
+ * @method mixed fotmobFifaRankings(array $params = [], array $options = []) fotmob-fifa-rankings (GET /fotmob/fifa-rankings)
+ *   params: 'men'|'women' $gender, string $period_id
+ * @method mixed fotmobLatestNews(array $params = [], array $options = []) fotmob-latest-news (GET /fotmob/latest-news)
+ *   params: int $start_index
  * @method mixed fotmobLeague(array $params = [], array $options = []) fotmob-league (GET /fotmob/league)
- *   params: int $league_id
+ *   params: int $league_id, string $season, bool $shotmap
  * @method mixed fotmobLeagues(array $params = [], array $options = []) fotmob-leagues (GET /fotmob/leagues)
+ * @method mixed fotmobLineupBuilderPlayers(array $params = [], array $options = []) fotmob-lineup-builder-players (GET /fotmob/lineup-builder-players)
+ *   params: string $player_ids
+ * @method mixed fotmobLineupBuilderTeam(array $params = [], array $options = []) fotmob-lineup-builder-team (GET /fotmob/lineup-builder-team)
+ *   params: string $team_id
  * @method mixed fotmobMatch(array $params = [], array $options = []) fotmob-match (GET /fotmob/match)
+ *   params: string $id
+ * @method mixed fotmobMatchMedia(array $params = [], array $options = []) fotmob-match-media (GET /fotmob/match-media)
  *   params: string $id
  * @method mixed fotmobMatches(array $params = [], array $options = []) fotmob-matches (GET /fotmob/matches)
  *   params: string $date, string $timezone
  * @method mixed fotmobNews(array $params = [], array $options = []) fotmob-news (GET /fotmob/news)
  *   params: string $league_id, int $start_index
+ * @method mixed fotmobNewsArticle(array $params = [], array $options = []) fotmob-news-article (GET /fotmob/news-article)
+ *   params: string $id
  * @method mixed fotmobPlayer(array $params = [], array $options = []) fotmob-player (GET /fotmob/player)
  *   params: string $id, bool $include_market_values
  * @method mixed fotmobPlayerMatchStats(array $params = [], array $options = []) fotmob-player-match-stats (GET /fotmob/player-match-stats)
@@ -2373,6 +2406,8 @@ abstract class FortuneGroup {}
  *   params: string $player_id, string $season_id
  * @method mixed fotmobSearch(array $params = [], array $options = []) fotmob-search (GET /fotmob/search)
  *   params: string $term
+ * @method mixed fotmobSeasons(array $params = [], array $options = []) fotmob-seasons (GET /fotmob/seasons)
+ *   params: int $league_id
  * @method mixed fotmobStats(array $params = [], array $options = []) fotmob-stats (GET /fotmob/stats)
  *   params: string $league_id, string $season_id, 'players'|'teams' $type, string $stat, string $team_id, 'all'|'striker'|'winger'|'attackingMidfielder'|'midfielder'|'fullback'|'centerBack' $position
  * @method mixed fotmobStatsCategories(array $params = [], array $options = []) fotmob-stats-categories (GET /fotmob/stats-categories)
@@ -2381,10 +2416,19 @@ abstract class FortuneGroup {}
  *   params: string $league_id
  * @method mixed fotmobTeam(array $params = [], array $options = []) fotmob-team (GET /fotmob/team)
  *   params: string $id
+ * @method mixed fotmobTeamFixtures(array $params = [], array $options = []) fotmob-team-fixtures (GET /fotmob/team-fixtures)
+ *   params: string $team_id, string $cursor
  * @method mixed fotmobTeamNews(array $params = [], array $options = []) fotmob-team-news (GET /fotmob/team-news)
  *   params: int $team_id, int $start_index
  * @method mixed fotmobTransfers(array $params = [], array $options = []) fotmob-transfers (GET /fotmob/transfers)
  *   params: 'all'|'rumours'|'popular' $mode, int $page, '6months'|'1year'|'2years'|'3years' $last, 'all'|'in'|'out' $direction, int $min_fee, int $max_fee, string $league_ids, string $team_ids, 'lastModified'|'fee'|'date'|'name'|'fromClubName'|'toClubName' $order_by, bool $exclude_extensions, bool $likely_only
+ * @method mixed fotmobTrendingNews(array $params = [], array $options = []) fotmob-trending-news (GET /fotmob/trending-news)
+ * @method mixed fotmobTrendingSearches(array $params = [], array $options = []) fotmob-trending-searches (GET /fotmob/trending-searches)
+ * @method mixed fotmobTvGuide(array $params = [], array $options = []) fotmob-tv-guide (GET /fotmob/tv-guide)
+ *   params: 'us'|'se'|'gb'|'de'|'no'|'es'|'mx'|'ar'|'bo'|'cl'|'co'|'cr'|'ec'|'gt'|'hn'|'ni'|'pa'|'py'|'pe'|'uy'|'ve'|'da'|'ca'|'au'|'at'|'be'|'bg'|'hr'|'cy'|'cz'|'ee'|'fi'|'fr'|'gr'|'hu'|'is'|'ie'|'il'|'it'|'nl'|'pl'|'pt'|'ro'|'ru'|'ch'|'tr'|'za'|'br'|'in'|'me'|'id'|'th'|'mm'|'al'|'az'|'bl'|'ba'|'ks'|'la'|'li'|'mk'|'rs'|'sk'|'ua'|'essv'|'nz'|'bd'|'cn'|'gh'|'hk'|'jp'|'kr'|'ma'|'mt'|'my'|'ng'|'ph'|'pk'|'sg'|'si'|'tz' $country, string $timezone
+ * @method mixed fotmobTvGuideChannels(array $params = [], array $options = []) fotmob-tv-guide-channels (GET /fotmob/tv-guide-channels)
+ *   params: 'us'|'se'|'gb'|'de'|'no'|'es'|'mx'|'ar'|'bo'|'cl'|'co'|'cr'|'ec'|'gt'|'hn'|'ni'|'pa'|'py'|'pe'|'uy'|'ve'|'da'|'ca'|'au'|'at'|'be'|'bg'|'hr'|'cy'|'cz'|'ee'|'fi'|'fr'|'gr'|'hu'|'is'|'ie'|'il'|'it'|'nl'|'pl'|'pt'|'ro'|'ru'|'ch'|'tr'|'za'|'br'|'in'|'me'|'id'|'th'|'mm'|'al'|'az'|'bl'|'ba'|'ks'|'la'|'li'|'mk'|'rs'|'sk'|'ua'|'essv'|'nz'|'bd'|'cn'|'gh'|'hk'|'jp'|'kr'|'ma'|'mt'|'my'|'ng'|'ph'|'pk'|'sg'|'si'|'tz' $country
+ * @method mixed fotmobTvGuideCountries(array $params = [], array $options = []) fotmob-tv-guide-countries (GET /fotmob/tv-guide-countries)
  */
 abstract class FotMobGroup {}
 
@@ -2403,6 +2447,16 @@ abstract class FotMobGroup {}
 abstract class FoxNewsGroup {}
 
 /**
+ * @method mixed foxsportsArticle(array $params = [], array $options = []) foxsports-article (GET /foxsports/article)
+ *   params: string $url
+ * @method mixed foxsportsHeadlines(array $params = [], array $options = []) foxsports-headlines (GET /foxsports/headlines)
+ *   params: 'top'|'mlb'|'nfl'|'college-football'|'ufl'|'nba'|'nhl'|'college-basketball'|'nascar'|'ufc'|'motor-sports'|'golf'|'soccer'|'fifa-world-cup'|'fifa-womens-world-cup'|'olympics'|'tennis'|'horseracing'|'westminster-kennel-club-dog-show'|'wnba'|'womens-college-basketball'|'world-baseball-classic'|'wwe' $section
+ * @method mixed foxsportsNews(array $params = [], array $options = []) foxsports-news (GET /foxsports/news)
+ * @method mixed foxsportsSections(array $params = [], array $options = []) foxsports-sections (GET /foxsports/sections)
+ */
+abstract class FoxSportsGroup {}
+
+/**
  * @method mixed france24Article(array $params = [], array $options = []) france24-article (GET /france24/article)
  *   params: string $url
  * @method mixed france24Author(array $params = [], array $options = []) france24-author (GET /france24/author)
@@ -2413,6 +2467,12 @@ abstract class FoxNewsGroup {}
  * @method mixed france24Sections(array $params = [], array $options = []) france24-sections (GET /france24/sections)
  */
 abstract class France24Group {}
+
+/**
+ * @method mixed freemalaysiatodayNews(array $params = [], array $options = []) freemalaysiatoday-news (GET /freemalaysiatoday/news)
+ * @method mixed freemalaysiatodaySections(array $params = [], array $options = []) freemalaysiatoday-sections (GET /freemalaysiatoday/sections)
+ */
+abstract class FreeMalaysiaTodayGroup {}
 
 /**
  * @method mixed article(array $params = [], array $options = []) ft-article (GET /ft/article)
@@ -2500,6 +2560,24 @@ abstract class GdeltGroup {}
  *   params: string $q, string $street, string $city, string $county, string $state, string $country, string $postalcode, int $limit, string $countrycodes, string $accept_language, bool $addressdetails, bool $extratags, bool $namedetails
  */
 abstract class GeocodingGroup {}
+
+/**
+ * @method mixed ghanawebArchive(array $params = [], array $options = []) ghanaweb-archive (GET /ghanaweb/archive)
+ *   params: string $month, int $page, int $limit
+ * @method mixed ghanawebArchiveMonths(array $params = [], array $options = []) ghanaweb-archive-months (GET /ghanaweb/archive/months)
+ * @method mixed ghanawebArticle(array $params = [], array $options = []) ghanaweb-article (GET /ghanaweb/article)
+ *   params: string $url
+ * @method mixed ghanawebHeadlines(array $params = [], array $options = []) ghanaweb-headlines (GET /ghanaweb/headlines)
+ *   params: 'news'|'sports'|'business'|'entertainment'|'africa'|'opinions'|'editorial'|'crime'|'regional'|'health'|'politics'|'tabloid'|'world'|'lifestyle'|'features' $section
+ * @method mixed ghanawebNews(array $params = [], array $options = []) ghanaweb-news (GET /ghanaweb/news)
+ * @method mixed ghanawebSections(array $params = [], array $options = []) ghanaweb-sections (GET /ghanaweb/sections)
+ * @method mixed ghanawebVideo(array $params = [], array $options = []) ghanaweb-video (GET /ghanaweb/video)
+ *   params: string $id
+ * @method mixed ghanawebVideoSections(array $params = [], array $options = []) ghanaweb-video-sections (GET /ghanaweb/video-sections)
+ * @method mixed ghanawebVideos(array $params = [], array $options = []) ghanaweb-videos (GET /ghanaweb/videos)
+ *   params: 'news'|'sports'|'business'|'entertainment' $section
+ */
+abstract class GhanaWebGroup {}
 
 /**
  * @method mixed githubOrg(array $params = [], array $options = []) github-org (GET /github/org/{org})
@@ -2999,6 +3077,11 @@ abstract class HomeDepotGroup {}
 abstract class HotelsComGroup {}
 
 /**
+ * @method mixed howtogeekNews(array $params = [], array $options = []) howtogeek-news (GET /howtogeek/news)
+ */
+abstract class HowToGeekGroup {}
+
+/**
  * @method mixed huffpostArticle(array $params = [], array $options = []) huffpost-article (GET /huffpost/article)
  *   params: string $url
  * @method mixed huffpostAuthor(array $params = [], array $options = []) huffpost-author (GET /huffpost/author)
@@ -3290,6 +3373,19 @@ abstract class IrishTimesGroup {}
  *   params: string $query, 'jcrew'|'factory' $site
  */
 abstract class JCrewGroup {}
+
+/**
+ * @method mixed jerusalempostArticle(array $params = [], array $options = []) jerusalempost-article (GET /jerusalempost/article)
+ *   params: string $url
+ * @method mixed jerusalempostAuthor(array $params = [], array $options = []) jerusalempost-author (GET /jerusalempost/author)
+ *   params: string $url
+ * @method mixed jerusalempostAuthors(array $params = [], array $options = []) jerusalempost-authors (GET /jerusalempost/authors)
+ * @method mixed jerusalempostHeadlines(array $params = [], array $options = []) jerusalempost-headlines (GET /jerusalempost/headlines)
+ *   params: 'aliyah'|'american-politics'|'arab-israeli-conflict'|'archaeology'|'bds-movement'|'all-news'|'banking-and-finance'|'business-and-innovation'|'business-opinion'|'christian-world'|'consumerism'|'culture'|'defense-and-tech'|'diaspora'|'environment'|'food-and-recipes'|'health-and-wellness'|'health-around-the-world'|'history'|'home'|'iran-news'|'israel-election-2026'|'israel-news'|'israel-politics'|'israeli-sports'|'j-spot'|'jewish-holidays'|'judaism'|'kabbalah'|'middle-east'|'must'|'nutrition'|'omg'|'opinion'|'science'|'tech-and-startups'|'terrorism'|'torah-portion'|'ukraine-russia-war'|'world-news' $section
+ * @method mixed jerusalempostNews(array $params = [], array $options = []) jerusalempost-news (GET /jerusalempost/news)
+ * @method mixed jerusalempostSections(array $params = [], array $options = []) jerusalempost-sections (GET /jerusalempost/sections)
+ */
+abstract class JerusalemPostGroup {}
 
 /**
  * @method mixed menu(array $params = [], array $options = []) jimmy-johns-menu (GET /jimmy-johns/menu)
@@ -3689,6 +3785,7 @@ abstract class LiveScienceGroup {}
 /**
  * @method mixed livescoreCompetition(array $params = [], array $options = []) livescore-competition (GET /livescore/competition)
  *   params: string $path
+ * @method mixed livescoreCompetitions(array $params = [], array $options = []) livescore-competitions (GET /livescore/competitions)
  * @method mixed livescoreLiveScores(array $params = [], array $options = []) livescore-live-scores (GET /livescore/live-scores)
  *   params: 'soccer'|'hockey'|'basketball'|'tennis'|'cricket' $sport, int $timezone_offset, bool $paging, string $cursor, 'down'|'up' $direction
  * @method mixed livescoreMatch(array $params = [], array $options = []) livescore-match (GET /livescore/match)
@@ -3709,6 +3806,8 @@ abstract class LiveScienceGroup {}
  *   params: 'soccer'|'hockey'|'basketball'|'tennis'|'cricket' $sport, string $date, int $timezone_offset, bool $paging, string $cursor, 'down'|'up' $direction
  * @method mixed livescoreScoresToc(array $params = [], array $options = []) livescore-scores-toc (GET /livescore/scores-toc)
  *   params: 'soccer'|'hockey'|'basketball'|'tennis'|'cricket' $sport, string $date, int $timezone_offset
+ * @method mixed livescoreSearch(array $params = [], array $options = []) livescore-search (GET /livescore/search)
+ *   params: 'soccer'|'hockey'|'basketball'|'tennis'|'cricket' $sport, string $query, int $limit
  * @method mixed livescoreSports(array $params = [], array $options = []) livescore-sports (GET /livescore/sports)
  * @method mixed livescoreTeam(array $params = [], array $options = []) livescore-team (GET /livescore/team)
  *   params: string $path
@@ -3818,6 +3917,18 @@ abstract class McDonaldsGroup {}
  * @method mixed sections(array $params = [], array $options = []) mediaite-sections (GET /mediaite/sections)
  */
 abstract class MediaiteGroup {}
+
+/**
+ * @method mixed medicalnewstodayArticle(array $params = [], array $options = []) medicalnewstoday-article (GET /medicalnewstoday/article)
+ *   params: string $url
+ * @method mixed medicalnewstodayAuthor(array $params = [], array $options = []) medicalnewstoday-author (GET /medicalnewstoday/author)
+ *   params: string $slug, string $url
+ * @method mixed medicalnewstodayHeadlines(array $params = [], array $options = []) medicalnewstoday-headlines (GET /medicalnewstoday/headlines)
+ *   params: 'news' $section
+ * @method mixed medicalnewstodayNews(array $params = [], array $options = []) medicalnewstoday-news (GET /medicalnewstoday/news)
+ * @method mixed medicalnewstodaySections(array $params = [], array $options = []) medicalnewstoday-sections (GET /medicalnewstoday/sections)
+ */
+abstract class MedicalNewsTodayGroup {}
 
 /**
  * @method mixed menArticle(array $params = [], array $options = []) men-article (GET /men/article)
@@ -3960,32 +4071,52 @@ abstract class MicrosoftStoreGroup {}
 abstract class MirrorGroup {}
 
 /**
+ * @method mixed discovery(array $params = [], array $options = []) mlb-discovery (GET /mlb/discovery)
+ * @method mixed editorialFeed(array $params = [], array $options = []) mlb-editorial-feed (GET /mlb/editorial-feed)
+ *   params: string $slug, 'EN_US'|'ES_US' $language, int $limit, int $skip
  * @method mixed game(array $params = [], array $options = []) mlb-game (GET /mlb/game)
  *   params: string $id
  * @method mixed gameBoxscore(array $params = [], array $options = []) mlb-game-boxscore (GET /mlb/game-boxscore)
  *   params: string $id
  * @method mixed gamePlayByPlay(array $params = [], array $options = []) mlb-game-play-by-play (GET /mlb/game-play-by-play)
  *   params: string $id
+ * @method mixed leagueLeaders(array $params = [], array $options = []) mlb-league-leaders (GET /mlb/league-leaders)
+ *   params: string $categories, int $season, 'hitting'|'pitching'|'fielding'|'catching'|'running'|'game'|'team'|'streak' $group, 'S'|'R'|'F'|'D'|'L'|'W'|'C'|'P'|'A'|'I'|'E' $game_type, '103'|'104' $league_id, int $limit
  * @method mixed leagueStats(array $params = [], array $options = []) mlb-league-stats (GET /mlb/league-stats)
- *   params: int $season, 'hitting'|'pitching'|'fielding' $group, int $limit
+ *   params: int $season, 'hitting'|'pitching'|'fielding'|'catching'|'running'|'game'|'team'|'streak' $group, 'projected'|'projectedRos'|'yearByYear'|'yearByYearAdvanced'|'yearByYearPlayoffs'|'season'|'standard'|'advanced'|'career'|'careerRegularSeason'|'careerAdvanced'|'seasonAdvanced'|'careerStatSplits'|'careerPlayoffs'|'gameLog'|'playLog'|'pitchLog'|'pitchArsenal'|'outsAboveAverage'|'expectedStatistics'|'sabermetrics'|'sprayChart'|'tracking'|'vsPlayer'|'vsPlayerTotal'|'vsPlayer5Y'|'vsTeam'|'vsTeam5Y'|'vsTeamTotal'|'lastXGames'|'byDateRange'|'byDateRangeAdvanced'|'byMonth'|'byMonthPlayoffs'|'byDayOfWeek'|'byDayOfWeekPlayoffs'|'homeAndAway'|'homeAndAwayPlayoffs'|'winLoss'|'winLossPlayoffs'|'rankings'|'rankingsByYear'|'statsSingleSeason'|'statsSingleSeasonAdvanced'|'hotColdZones'|'availableStats'|'opponentsFaced'|'gameTypeStats'|'firstYearStats'|'lastYearStats'|'statSplits'|'statSplitsAdvanced'|'atGameStart'|'vsOpponents'|'sabermetricsMultiTeam'|'projected_Zips'|'projected_ZipsRos'|'projected_Zips2YR'|'projected_Zips3YR' $stat_type, 'S'|'R'|'F'|'D'|'L'|'W'|'C'|'P'|'A'|'I'|'E' $game_type, string $start_date, string $end_date, string $opponent_team_id, string $opponent_player_id, '103'|'104' $league_id, string $team_id, 'C'|'1B'|'2B'|'3B'|'SS'|'LF'|'CF'|'RF'|'DH'|'OF'|'IF' $position, 'QUALIFIED'|'ALL' $player_pool, int $limit, int $offset
  * @method mixed player(array $params = [], array $options = []) mlb-player (GET /mlb/player)
  *   params: string $id
  * @method mixed playerStats(array $params = [], array $options = []) mlb-player-stats (GET /mlb/player-stats)
- *   params: string $id, int $season, 'hitting'|'pitching'|'fielding' $group
+ *   params: string $id, int $season, 'hitting'|'pitching'|'fielding'|'catching'|'running'|'game'|'team'|'streak' $group, 'projected'|'projectedRos'|'yearByYear'|'yearByYearAdvanced'|'yearByYearPlayoffs'|'season'|'standard'|'advanced'|'career'|'careerRegularSeason'|'careerAdvanced'|'seasonAdvanced'|'careerStatSplits'|'careerPlayoffs'|'gameLog'|'playLog'|'pitchLog'|'pitchArsenal'|'outsAboveAverage'|'expectedStatistics'|'sabermetrics'|'sprayChart'|'tracking'|'vsPlayer'|'vsPlayerTotal'|'vsPlayer5Y'|'vsTeam'|'vsTeam5Y'|'vsTeamTotal'|'lastXGames'|'byDateRange'|'byDateRangeAdvanced'|'byMonth'|'byMonthPlayoffs'|'byDayOfWeek'|'byDayOfWeekPlayoffs'|'homeAndAway'|'homeAndAwayPlayoffs'|'winLoss'|'winLossPlayoffs'|'rankings'|'rankingsByYear'|'statsSingleSeason'|'statsSingleSeasonAdvanced'|'hotColdZones'|'availableStats'|'opponentsFaced'|'gameTypeStats'|'firstYearStats'|'lastYearStats'|'statSplits'|'statSplitsAdvanced'|'atGameStart'|'vsOpponents'|'sabermetricsMultiTeam'|'projected_Zips'|'projected_ZipsRos'|'projected_Zips2YR'|'projected_Zips3YR' $stat_type, 'S'|'R'|'F'|'D'|'L'|'W'|'C'|'P'|'A'|'I'|'E' $game_type, string $start_date, string $end_date, string $opponent_team_id, string $opponent_player_id
+ * @method mixed prospectStats(array $params = [], array $options = []) mlb-prospect-stats (GET /mlb/prospect-stats)
+ *   params: 'top100'|'all' $list_type, string $team_id, 'today'|'1day'|'10day'|'30day'|'springTraining'|'Year2019'|'Year2020'|'Year2021'|'Year2022'|'Year2023'|'Year2024'|'Year2025'|'Year2026' $date_range, 'batters'|'pitchers' $player_type, '1'|'5'|'10'|'25'|'50'|'100'|'150'|'200'|'250' $min_pa, '1b'|'2b'|'ss'|'3b'|'c'|'of'|'rhp'|'lhp' $position, string $q, int $limit, int $offset
  * @method mixed schedule(array $params = [], array $options = []) mlb-schedule (GET /mlb/schedule)
- *   params: string $date, string $start_date, string $end_date, string $team_id
+ *   params: string $date, string $start_date, string $end_date, string $team_id, 'S'|'R'|'F'|'D'|'L'|'W'|'C'|'P'|'A'|'I'|'E' $game_type
+ * @method mixed search(array $params = [], array $options = []) mlb-search (GET /mlb/search)
+ *   params: string $q
  * @method mixed standings(array $params = [], array $options = []) mlb-standings (GET /mlb/standings)
- *   params: int $season, 'regularSeason'|'wildCard'|'springTraining' $type
+ *   params: int $season, 'regularSeason'|'wildCard'|'divisionLeaders'|'wildCardWithLeaders'|'firstHalf'|'secondHalf'|'springTraining'|'postseason'|'byDivision'|'byConference'|'byLeague'|'byOrganization'|'currentHalf' $type, string $date
+ * @method mixed statcastExpected(array $params = [], array $options = []) mlb-statcast-expected (GET /mlb/statcast-expected)
+ *   params: 'batter'|'pitcher'|'batter-team'|'pitcher-team' $type, int $year, string $team_id, 'C'|'1B'|'2B'|'SS'|'3B'|'LF'|'CF'|'RF'|'DH' $position, 'bip'|'pa' $filter_type, 'q'|'1'|'25'|'50'|'100'|'150'|'200'|'250'|'350'|'450'|'500'|'600' $minimum, 'entity_name'|'entity_team_name'|'pa'|'bip'|'ba'|'est_ba'|'ba_minus_est_ba_diff'|'slg'|'est_slg'|'slg_minus_est_slg_diff'|'woba'|'est_woba'|'woba_minus_est_woba_diff'|'wobacon'|'est_wobacon'|'wobacon_minus_est_wobacon_diff'|'exit_velocity_avg'|'hard_hit_percent'|'barrels_per_bip'|'barrels_per_pa' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcast(array $params = [], array $options = []) mlb-statcast (GET /mlb/statcast-leaders)
+ *   params: 'batter'|'pitcher'|'batter-team'|'pitcher-team' $type, int $year, string $team_id, 'C'|'1B'|'2B'|'SS'|'3B'|'LF'|'CF'|'RF'|'DH' $position, 'q'|'1'|'25'|'50'|'100'|'150'|'200'|'250'|'350'|'450'|'500'|'600' $min_bbe, 'entity_name'|'bip'|'launch_angle_avg'|'sweet_spot_percent'|'exit_velocity_max'|'exit_velocity_avg'|'avg_best_speed'|'exit_velocity_fbld'|'distance_max'|'distance_hr_avg'|'hard_hit_ct'|'hard_hit_percent'|'hard_hit_per_swing'|'barrel_ct'|'barrels_per_bip'|'barrels_per_pa' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastOaa(array $params = [], array $options = []) mlb-statcast-oaa (GET /mlb/statcast-oaa)
+ *   params: 'Fielder'|'Fielding_Team'|'Batter'|'Batting_Team'|'Pitcher' $type, int $start_year, int $end_year, 'no'|'yes' $split, string $team_id, 'year'|'4'|'5'|'6'|'7'|'8'|'9' $range, 'q'|'10'|'25'|'50'|'75'|'100'|'150'|'200'|'250' $minimum, 'if'|'of'|'3'|'4'|'5'|'6'|'7'|'8'|'9' $position, string $roles, 'entity_name'|'display_team_name'|'primary_pos_formatted'|'fielding_runs_prevented'|'outs_above_average'|'outs_above_average_infront'|'outs_above_average_lateral'|'outs_above_average_behind'|'actual_success_rate'|'adj_estimated_success_rate'|'diff_success_rate'|'n' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
  * @method mixed teamRoster(array $params = [], array $options = []) mlb-team-roster (GET /mlb/team-roster)
- *   params: string $team_id, int $season, 'active'|'40Man'|'fullSeason' $roster_type
+ *   params: string $team_id, int $season, '40Man'|'fullSeason'|'fullRoster'|'nonRosterInvitees'|'active'|'allTime'|'depthChart'|'gameday'|'coach' $roster_type
  * @method mixed teamStats(array $params = [], array $options = []) mlb-team-stats (GET /mlb/team-stats)
- *   params: string $team_id, int $season, 'hitting'|'pitching'|'fielding' $group
+ *   params: string $team_id, int $season, 'hitting'|'pitching'|'fielding'|'catching'|'running'|'game'|'team'|'streak' $group, 'projected'|'projectedRos'|'yearByYear'|'yearByYearAdvanced'|'yearByYearPlayoffs'|'season'|'standard'|'advanced'|'career'|'careerRegularSeason'|'careerAdvanced'|'seasonAdvanced'|'careerStatSplits'|'careerPlayoffs'|'gameLog'|'playLog'|'pitchLog'|'pitchArsenal'|'outsAboveAverage'|'expectedStatistics'|'sabermetrics'|'sprayChart'|'tracking'|'vsPlayer'|'vsPlayerTotal'|'vsPlayer5Y'|'vsTeam'|'vsTeam5Y'|'vsTeamTotal'|'lastXGames'|'byDateRange'|'byDateRangeAdvanced'|'byMonth'|'byMonthPlayoffs'|'byDayOfWeek'|'byDayOfWeekPlayoffs'|'homeAndAway'|'homeAndAwayPlayoffs'|'winLoss'|'winLossPlayoffs'|'rankings'|'rankingsByYear'|'statsSingleSeason'|'statsSingleSeasonAdvanced'|'hotColdZones'|'availableStats'|'opponentsFaced'|'gameTypeStats'|'firstYearStats'|'lastYearStats'|'statSplits'|'statSplitsAdvanced'|'atGameStart'|'vsOpponents'|'sabermetricsMultiTeam'|'projected_Zips'|'projected_ZipsRos'|'projected_Zips2YR'|'projected_Zips3YR' $stat_type, 'S'|'R'|'F'|'D'|'L'|'W'|'C'|'P'|'A'|'I'|'E' $game_type, string $start_date, string $end_date, string $opponent_team_id, string $opponent_player_id
  * @method mixed teams(array $params = [], array $options = []) mlb-teams (GET /mlb/teams)
  *   params: int $season
  * @method mixed transactions(array $params = [], array $options = []) mlb-transactions (GET /mlb/transactions)
  *   params: string $start_date, string $end_date, string $team_id, string $player_id
  */
 abstract class MlbGroup {}
+
+/**
+ * @method mixed news(array $params = [], array $options = []) mlive-news (GET /mlive/news)
+ */
+abstract class MliveGroup {}
 
 /**
  * @method mixed modaoperandiCategories(array $params = [], array $options = []) modaoperandi-categories (GET /modaoperandi/categories)
@@ -4041,6 +4172,18 @@ abstract class MoneycontrolGroup {}
 abstract class MonitorsGroup {}
 
 /**
+ * @method mixed motleyfoolArticle(array $params = [], array $options = []) motleyfool-article (GET /motleyfool/article)
+ *   params: string $url
+ * @method mixed motleyfoolAuthor(array $params = [], array $options = []) motleyfool-author (GET /motleyfool/author)
+ *   params: string $url
+ * @method mixed motleyfoolHeadlines(array $params = [], array $options = []) motleyfool-headlines (GET /motleyfool/headlines)
+ *   params: 'trending-news'|'news'|'market-movers'|'tech-stock-news'|'market-trends'|'crypto-news'|'markets'|'most-active-stocks'|'top-stock-gainers'|'top-stock-losers' $section
+ * @method mixed motleyfoolNews(array $params = [], array $options = []) motleyfool-news (GET /motleyfool/news)
+ * @method mixed motleyfoolSections(array $params = [], array $options = []) motleyfool-sections (GET /motleyfool/sections)
+ */
+abstract class TheMotleyFoolGroup {}
+
+/**
  * @method mixed nationafricaArticle(array $params = [], array $options = []) nationafrica-article (GET /nationafrica/article)
  *   params: string $url
  * @method mixed nationafricaAuthor(array $params = [], array $options = []) nationafrica-author (GET /nationafrica/author)
@@ -4084,6 +4227,8 @@ abstract class NbcNewsGroup {}
  * @method mixed headlines(array $params = [], array $options = []) ndtv-headlines (GET /ndtv/headlines)
  *   params: 'latest'|'india'|'world'|'world-india-global'|'world-diaspora'|'opinion'|'spotlight'|'business-news'|'south'|'cities'|'bangalore-news'|'chennai-news'|'delhi-news'|'mumbai-news'|'others-news'|'ahmedabad-news'|'allahabad-news'|'amritsar-news'|'bhopal-news'|'bhubaneshwar-news'|'chandigarh-news'|'ghaziabad-news'|'goa-news'|'gurgaon-news'|'guwahati-news'|'hyderabad-news'|'jaipur-news'|'kanpur-news'|'kolkata-news'|'lucknow-news'|'noida-news'|'patna-news'|'pune-news'|'srinagar-news'|'thiruvananthapuram-news'|'andhra-pradesh-news'|'karnataka-news'|'kerala-news'|'tamil-nadu-news'|'telangana-news'|'education'|'education-exams-news'|'education-school-news'|'education-campus-news'|'education-study-abroad'|'education-latest'|'health'|'entertainment'|'lifestyle'|'food'|'travel'|'auto'|'science'|'offbeat'|'trends'|'feature' $section
  * @method mixed news(array $params = [], array $options = []) ndtv-news (GET /ndtv/news)
+ * @method mixed search(array $params = [], array $options = []) ndtv-search (GET /ndtv/search)
+ *   params: string $query, int $page
  * @method mixed sections(array $params = [], array $options = []) ndtv-sections (GET /ndtv/sections)
  */
 abstract class NdtvGroup {}
@@ -4190,6 +4335,11 @@ abstract class NikeGroup {}
  * @method mixed sections(array $params = [], array $options = []) ninetofivemac-sections (GET /ninetofivemac/sections)
  */
 abstract class NineToFiveMacGroup {}
+
+/**
+ * @method mixed njcomNews(array $params = [], array $options = []) njcom-news (GET /njcom/news)
+ */
+abstract class NjComGroup {}
 
 /**
  * @method mixed article(array $params = [], array $options = []) npr-article (GET /npr/article)
@@ -4862,6 +5012,11 @@ abstract class PolymarketGroup {}
 abstract class PopeyesGroup {}
 
 /**
+ * @method mixed popularmechanicsNews(array $params = [], array $options = []) popularmechanics-news (GET /popularmechanics/news)
+ */
+abstract class PopularMechanicsGroup {}
+
+/**
  * @method mixed brand(array $params = [], array $options = []) poshmark-brand (GET /poshmark/brand/{name})
  *   params: string $name, string $max_id
  * @method mixed brands(array $params = [], array $options = []) poshmark-brands (GET /poshmark/brands)
@@ -5298,8 +5453,18 @@ abstract class RothySGroup {}
  *   params: 'tv_series_browse' $list, 'popular'|'newest'|'a_z'|'critic_highest'|'critic_lowest'|'audience_highest'|'audience_lowest' $sort, 'action'|'adventure'|'animation'|'anime'|'biography'|'comedy'|'crime'|'documentary'|'drama'|'entertainment'|'faith_and_spirituality'|'fantasy'|'game_show'|'lgbtq'|'health_and_wellness'|'history'|'holiday'|'horror'|'house_and_garden'|'kids_and_family'|'music'|'musical'|'mystery_and_thriller'|'nature'|'news'|'reality'|'romance'|'sci_fi'|'short'|'soap'|'special_interest'|'sports'|'stand_up'|'talk_show'|'travel'|'variety'|'war'|'western' $genres, 'tvy'|'tvy7'|'tvg'|'tvpg'|'tv14'|'tvma' $ratings, 'upright'|'spilled' $audience, 'fresh'|'rotten' $critics, 'theaters'|'fandango'|'apple-tv-plus'|'netflix'|'prime-video'|'disney-plus'|'max'|'peacock'|'hulu'|'paramount-plus'|'amc-plus'|'acorn-tv'|'apple-tv' $affiliates, string $after, int $limit
  * @method mixed rottentomatoesCriticsAuthors(array $params = [], array $options = []) rottentomatoes-critics-authors (GET /rottentomatoes/critics/authors)
  *   params: '#'|'a'|'b'|'c'|'d'|'e'|'f'|'g'|'h'|'i'|'j'|'k'|'l'|'m'|'n'|'o'|'p'|'q'|'r'|'s'|'t'|'u'|'v'|'w'|'x'|'y'|'z' $letter, string $search, bool $inactive, string $after, string $before, int $limit
+ * @method mixed rottentomatoesEditorialContent(array $params = [], array $options = []) rottentomatoes-editorial-content (GET /rottentomatoes/editorial/content)
+ *   params: 'article'|'guide'|'gallery'|'hub-subpage'|'non-rt-publication'|'rt-hub'|'how-to'|'otg-article'|'prev'|'rt_poll'|'pages' $type, string $query, int $page, int $limit, 'categories'|'tags'|'related-movie-id'|'related-tv-season-id'|'related-tv-series-id'|'related-tv-episode-id'|'related-celebrity-id'|'publication'|'franchise'|'coauthors' $taxonomy, string $term_ids, 'AND'|'OR' $operator, bool $include_children
+ * @method mixed rottentomatoesEditorialDetail(array $params = [], array $options = []) rottentomatoes-editorial-detail (GET /rottentomatoes/editorial/detail)
+ *   params: string $path
  * @method mixed rottentomatoesEditorialSearch(array $params = [], array $options = []) rottentomatoes-editorial-search (GET /rottentomatoes/editorial/search)
  *   params: string $query, int $page, int $limit
+ * @method mixed rottentomatoesEditorialSection(array $params = [], array $options = []) rottentomatoes-editorial-section (GET /rottentomatoes/editorial/section)
+ *   params: string $path, int $page
+ * @method mixed rottentomatoesEditorialTaxonomies(array $params = [], array $options = []) rottentomatoes-editorial-taxonomies (GET /rottentomatoes/editorial/taxonomies)
+ * @method mixed rottentomatoesEditorialTerms(array $params = [], array $options = []) rottentomatoes-editorial-terms (GET /rottentomatoes/editorial/terms)
+ *   params: 'categories'|'tags'|'related-movie-id'|'related-tv-season-id'|'related-tv-series-id'|'related-tv-episode-id'|'related-celebrity-id'|'publication'|'franchise'|'coauthors' $taxonomy, string $search, int $page, int $limit, bool $hide_empty, 'asc'|'desc' $order, 'id'|'include'|'name'|'slug'|'include_slugs'|'term_group'|'description'|'count' $orderby, string $include, string $exclude, string $slug, int $post, int $offset, int $parent
+ * @method mixed rottentomatoesEditorialTypes(array $params = [], array $options = []) rottentomatoes-editorial-types (GET /rottentomatoes/editorial/types)
  * @method mixed rottentomatoesEpisode(array $params = [], array $options = []) rottentomatoes-episode (GET /rottentomatoes/episode)
  *   params: string $path, string $url
  * @method mixed rottentomatoesMovie(array $params = [], array $options = []) rottentomatoes-movie (GET /rottentomatoes/movie)
@@ -5368,6 +5533,30 @@ abstract class SalonGroup {}
  *   params: string $id
  */
 abstract class SamSclubGroup {}
+
+/**
+ * @method mixed sbsnewsArticle(array $params = [], array $options = []) sbsnews-article (GET /sbsnews/article)
+ *   params: string $url
+ * @method mixed sbsnewsAuthor(array $params = [], array $options = []) sbsnews-author (GET /sbsnews/author)
+ *   params: string $url, int $page
+ * @method mixed sbsnewsHeadlines(array $params = [], array $options = []) sbsnews-headlines (GET /sbsnews/headlines)
+ *   params: 'top'|'latest'|'australia'|'world'|'politics'|'indigenous'|'environment'|'life'|'cost-of-living'|'immigration'|'health-and-wellbeing'|'sport'|'education'|'technology-and-social-media'|'arts-and-entertainment' $section
+ * @method mixed sbsnewsNews(array $params = [], array $options = []) sbsnews-news (GET /sbsnews/news)
+ * @method mixed sbsnewsSections(array $params = [], array $options = []) sbsnews-sections (GET /sbsnews/sections)
+ */
+abstract class SbsNewsGroup {}
+
+/**
+ * @method mixed sciencealertArticle(array $params = [], array $options = []) sciencealert-article (GET /sciencealert/article)
+ *   params: string $url
+ * @method mixed sciencealertAuthor(array $params = [], array $options = []) sciencealert-author (GET /sciencealert/author)
+ *   params: string $url
+ * @method mixed sciencealertHeadlines(array $params = [], array $options = []) sciencealert-headlines (GET /sciencealert/headlines)
+ *   params: 'space'|'health'|'environment'|'humans'|'tech'|'nature'|'physics'|'this-week-in-science' $section
+ * @method mixed sciencealertNews(array $params = [], array $options = []) sciencealert-news (GET /sciencealert/news)
+ * @method mixed sciencealertSections(array $params = [], array $options = []) sciencealert-sections (GET /sciencealert/sections)
+ */
+abstract class ScienceAlertGroup {}
 
 /**
  * @method mixed article(array $params = [], array $options = []) scmp-article (GET /scmp/article)
@@ -5638,6 +5827,18 @@ abstract class SkimsGroup {}
 abstract class SkyNewsGroup {}
 
 /**
+ * @method mixed skysportsArticle(array $params = [], array $options = []) skysports-article (GET /skysports/article)
+ *   params: string $url
+ * @method mixed skysportsAuthor(array $params = [], array $options = []) skysports-author (GET /skysports/author)
+ *   params: string $url
+ * @method mixed skysportsHeadlines(array $params = [], array $options = []) skysports-headlines (GET /skysports/headlines)
+ *   params: 'football'|'f1'|'cricket'|'rugby-union'|'rugby-league'|'golf'|'boxing'|'nfl'|'tennis'|'nba'|'racing'|'darts'|'netball'|'mma'|'more-sports'|'athletics'|'basketball'|'cycling'|'snooker'|'motor-sport'|'wwe'|'olympics' $section
+ * @method mixed skysportsNews(array $params = [], array $options = []) skysports-news (GET /skysports/news)
+ * @method mixed skysportsSections(array $params = [], array $options = []) skysports-sections (GET /skysports/sections)
+ */
+abstract class SkySportsGroup {}
+
+/**
  * @method mixed article(array $params = [], array $options = []) slate-article (GET /slate/article)
  *   params: string $url
  * @method mixed categories(array $params = [], array $options = []) slate-categories (GET /slate/categories)
@@ -5804,6 +6005,49 @@ abstract class SparkFunGroup {}
 abstract class SportingNewsGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) sportskeeda-article (GET /sportskeeda/article)
+ *   params: string $slug, string $url
+ * @method mixed author(array $params = [], array $options = []) sportskeeda-author (GET /sportskeeda/author)
+ *   params: string $slug, string $url
+ * @method mixed depthChart(array $params = [], array $options = []) sportskeeda-depth-chart (GET /sportskeeda/depth-chart)
+ *   params: 'nfl/depth-chart' $slug
+ * @method mixed feed(array $params = [], array $options = []) sportskeeda-feed (GET /sportskeeda/feed)
+ *   params: string $slug, int $page
+ * @method mixed footballData(array $params = [], array $options = []) sportskeeda-football-data (GET /sportskeeda/football-data)
+ *   params: string $event, string $matchday
+ * @method mixed footballOptions(array $params = [], array $options = []) sportskeeda-football-options (GET /sportskeeda/football-options)
+ *   params: string $event
+ * @method mixed news(array $params = [], array $options = []) sportskeeda-news (GET /sportskeeda/news)
+ * @method mixed pageData(array $params = [], array $options = []) sportskeeda-page-data (GET /sportskeeda/page-data)
+ *   params: string $slug, int $season, string $type
+ * @method mixed pageOptions(array $params = [], array $options = []) sportskeeda-page-options (GET /sportskeeda/page-options)
+ *   params: string $slug
+ * @method mixed playerStats(array $params = [], array $options = []) sportskeeda-player-stats (GET /sportskeeda/player-stats)
+ *   params: string $slug, '0'|'1'|'2'|'3' $event_type
+ * @method mixed profile(array $params = [], array $options = []) sportskeeda-profile (GET /sportskeeda/profile)
+ *   params: string $slug
+ * @method mixed schedule(array $params = [], array $options = []) sportskeeda-schedule (GET /sportskeeda/schedule)
+ *   params: string $slug
+ * @method mixed sections(array $params = [], array $options = []) sportskeeda-sections (GET /sportskeeda/sections)
+ * @method mixed sitemapItems(array $params = [], array $options = []) sportskeeda-sitemap-items (GET /sportskeeda/sitemap-items)
+ *   params: string $slug, string $sitemap_url, int $offset, int $limit
+ * @method mixed sitemaps(array $params = [], array $options = []) sportskeeda-sitemaps (GET /sportskeeda/sitemaps)
+ * @method mixed standings(array $params = [], array $options = []) sportskeeda-standings (GET /sportskeeda/standings)
+ *   params: string $slug, '2026'|'2025'|'2024'|'2023'|'2022'|'2021'|'2020'|'2019'|'2018'|'2017'|'2016'|'2015'|'2014'|'2013' $season
+ * @method mixed standingsOptions(array $params = [], array $options = []) sportskeeda-standings-options (GET /sportskeeda/standings-options)
+ *   params: string $slug, '2026'|'2025'|'2024'|'2023'|'2022'|'2021'|'2020'|'2019'|'2018'|'2017'|'2016'|'2015'|'2014'|'2013' $season
+ * @method mixed taxonomySearch(array $params = [], array $options = []) sportskeeda-taxonomy-search (GET /sportskeeda/taxonomy-search)
+ *   params: string $q
+ * @method mixed tradeValues(array $params = [], array $options = []) sportskeeda-trade-values (GET /sportskeeda/trade-values)
+ *   params: 'nfl/fantasy-football-trade-value-charts'|'nfl/dynasty-trade-value-charts' $slug, 'All'|'QB'|'RB'|'WR'|'TE' $position, 'ppr'|'non_ppr'|'0.5_ppr' $scoring, bool $superflex, int $offset, int $limit
+ * @method mixed video(array $params = [], array $options = []) sportskeeda-video (GET /sportskeeda/video)
+ *   params: string $slug
+ * @method mixed videos(array $params = [], array $options = []) sportskeeda-videos (GET /sportskeeda/videos)
+ *   params: string $slug
+ */
+abstract class SportskeedaGroup {}
+
+/**
  * @method mixed categories(array $params = [], array $options = []) spotify-podcasts-categories (GET /spotify-podcasts/categories)
  *   params: string $uri, int $page_offset, int $page_limit, int $section_offset, int $section_limit, bool $include_episode_content_ratings_v2
  * @method mixed charts(array $params = [], array $options = []) spotify-podcasts-charts (GET /spotify-podcasts/charts)
@@ -5912,6 +6156,11 @@ abstract class EveningStandardGroup {}
  *   params: string $place, float $lat, float $lng, 'us'|'ca' $market
  */
 abstract class StarbucksGroup {}
+
+/**
+ * @method mixed startribuneNews(array $params = [], array $options = []) startribune-news (GET /startribune/news)
+ */
+abstract class MinnesotaStarTribuneGroup {}
 
 /**
  * @method mixed achievements(array $params = [], array $options = []) steam-achievements (GET /steam/achievements)
@@ -7013,6 +7262,8 @@ abstract class WhataburgerGroup {}
  * @method mixed categories(array $params = [], array $options = []) whatnot-categories (GET /whatnot/categories)
  * @method mixed live(array $params = [], array $options = []) whatnot-live (GET /whatnot/live/{id})
  *   params: string $id
+ * @method mixed seller(array $params = [], array $options = []) whatnot-seller (GET /whatnot/seller/{username})
+ *   params: string $username, string $cursor
  */
 abstract class WhatnotGroup {}
 
@@ -7487,6 +7738,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\AdidasGroup $adidas
  * @property-read \Crawlora\Generated\AgodaGroup $agoda
  * @property-read \Crawlora\Generated\AirbnbGroup $airbnb
+ * @property-read \Crawlora\Generated\AlComGroup $alCom
  * @property-read \Crawlora\Generated\AlJazeeraGroup $alJazeera
  * @property-read \Crawlora\Generated\AllbirdsGroup $allbirds
  * @property-read \Crawlora\Generated\AltGroup $alt
@@ -7523,6 +7775,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\BonhamsGroup $bonhams
  * @property-read \Crawlora\Generated\BookingGroup $booking
  * @property-read \Crawlora\Generated\BootsGroup $boots
+ * @property-read \Crawlora\Generated\BostonGlobeGroup $bostonGlobe
  * @property-read \Crawlora\Generated\BoxOfficeMojoGroup $boxOfficeMojo
  * @property-read \Crawlora\Generated\BrandGroup $brand
  * @property-read \Crawlora\Generated\BraveGroup $brave
@@ -7545,6 +7798,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\ChipotleGroup $chipotle
  * @property-read \Crawlora\Generated\ChromeWebStoreGroup $chromeWebStore
  * @property-read \Crawlora\Generated\Chrono24Group $chrono24
+ * @property-read \Crawlora\Generated\ClevelandComGroup $clevelandCom
  * @property-read \Crawlora\Generated\CnaGroup $cna
  * @property-read \Crawlora\Generated\CnbcGroup $cnbc
  * @property-read \Crawlora\Generated\CnetGroup $cnet
@@ -7607,13 +7861,16 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\FortuneGroup $fortune
  * @property-read \Crawlora\Generated\FotMobGroup $fotMob
  * @property-read \Crawlora\Generated\FoxNewsGroup $foxNews
+ * @property-read \Crawlora\Generated\FoxSportsGroup $foxSports
  * @property-read \Crawlora\Generated\France24Group $france24
+ * @property-read \Crawlora\Generated\FreeMalaysiaTodayGroup $freeMalaysiaToday
  * @property-read \Crawlora\Generated\FtGroup $ft
  * @property-read \Crawlora\Generated\GameRantGroup $gameRant
  * @property-read \Crawlora\Generated\GamesRadarGroup $gamesRadar
  * @property-read \Crawlora\Generated\GbNewsGroup $gbNews
  * @property-read \Crawlora\Generated\GdeltGroup $gdelt
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
+ * @property-read \Crawlora\Generated\GhanaWebGroup $ghanaWeb
  * @property-read \Crawlora\Generated\GitHubGroup $gitHub
  * @property-read \Crawlora\Generated\GizmodoGroup $gizmodo
  * @property-read \Crawlora\Generated\GlobalNewsGroup $globalNews
@@ -7640,6 +7897,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\HollywoodReporterGroup $hollywoodReporter
  * @property-read \Crawlora\Generated\HomeDepotGroup $homeDepot
  * @property-read \Crawlora\Generated\HotelsComGroup $hotelsCom
+ * @property-read \Crawlora\Generated\HowToGeekGroup $howToGeek
  * @property-read \Crawlora\Generated\HuffPostGroup $huffPost
  * @property-read \Crawlora\Generated\IgnGroup $ign
  * @property-read \Crawlora\Generated\IkeaGroup $ikea
@@ -7659,6 +7917,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\IrishIndependentGroup $irishIndependent
  * @property-read \Crawlora\Generated\IrishTimesGroup $irishTimes
  * @property-read \Crawlora\Generated\JCrewGroup $jCrew
+ * @property-read \Crawlora\Generated\JerusalemPostGroup $jerusalemPost
  * @property-read \Crawlora\Generated\JimmyJohnsGroup $jimmyJohns
  * @property-read \Crawlora\Generated\JobsGroup $jobs
  * @property-read \Crawlora\Generated\JustEatGroup $justEat
@@ -7688,6 +7947,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\MashableGroup $mashable
  * @property-read \Crawlora\Generated\McDonaldsGroup $mcDonalds
  * @property-read \Crawlora\Generated\MediaiteGroup $mediaite
+ * @property-read \Crawlora\Generated\MedicalNewsTodayGroup $medicalNewsToday
  * @property-read \Crawlora\Generated\ManchesterEveningNewsGroup $manchesterEveningNews
  * @property-read \Crawlora\Generated\MercariGroup $mercari
  * @property-read \Crawlora\Generated\MetaJobsGroup $metaJobs
@@ -7697,10 +7957,12 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\MicrosoftStoreGroup $microsoftStore
  * @property-read \Crawlora\Generated\MirrorGroup $mirror
  * @property-read \Crawlora\Generated\MlbGroup $mlb
+ * @property-read \Crawlora\Generated\MliveGroup $mlive
  * @property-read \Crawlora\Generated\ModaOperandiGroup $modaOperandi
  * @property-read \Crawlora\Generated\MonclerGroup $moncler
  * @property-read \Crawlora\Generated\MoneycontrolGroup $moneycontrol
  * @property-read \Crawlora\Generated\MonitorsGroup $monitors
+ * @property-read \Crawlora\Generated\TheMotleyFoolGroup $theMotleyFool
  * @property-read \Crawlora\Generated\NationAfricaGroup $nationAfrica
  * @property-read \Crawlora\Generated\NationalPostGroup $nationalPost
  * @property-read \Crawlora\Generated\NbcNewsGroup $nbcNews
@@ -7713,6 +7975,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\TheNewYorkerGroup $theNewYorker
  * @property-read \Crawlora\Generated\NikeGroup $nike
  * @property-read \Crawlora\Generated\NineToFiveMacGroup $nineToFiveMac
+ * @property-read \Crawlora\Generated\NjComGroup $njCom
  * @property-read \Crawlora\Generated\NprGroup $npr
  * @property-read \Crawlora\Generated\NumbeoGroup $numbeo
  * @property-read \Crawlora\Generated\NewYorkDailyNewsGroup $newYorkDailyNews
@@ -7745,6 +8008,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\PolygonGroup $polygon
  * @property-read \Crawlora\Generated\PolymarketGroup $polymarket
  * @property-read \Crawlora\Generated\PopeyesGroup $popeyes
+ * @property-read \Crawlora\Generated\PopularMechanicsGroup $popularMechanics
  * @property-read \Crawlora\Generated\PoshmarkGroup $poshmark
  * @property-read \Crawlora\Generated\PradaGroup $prada
  * @property-read \Crawlora\Generated\PristineAuctionGroup $pristineAuction
@@ -7774,6 +8038,8 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\RtNewsGroup $rtNews
  * @property-read \Crawlora\Generated\SalonGroup $salon
  * @property-read \Crawlora\Generated\SamSclubGroup $samSClub
+ * @property-read \Crawlora\Generated\SbsNewsGroup $sbsNews
+ * @property-read \Crawlora\Generated\ScienceAlertGroup $scienceAlert
  * @property-read \Crawlora\Generated\ScmpGroup $scmp
  * @property-read \Crawlora\Generated\ScreenRantGroup $screenRant
  * @property-read \Crawlora\Generated\SeatGeekGroup $seatGeek
@@ -7789,6 +8055,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\SimilarWebGroup $similarWeb
  * @property-read \Crawlora\Generated\SkimsGroup $skims
  * @property-read \Crawlora\Generated\SkyNewsGroup $skyNews
+ * @property-read \Crawlora\Generated\SkySportsGroup $skySports
  * @property-read \Crawlora\Generated\SlateGroup $slate
  * @property-read \Crawlora\Generated\SlickdealsGroup $slickdeals
  * @property-read \Crawlora\Generated\MitSloanManagementReviewGroup $mitSloanManagementReview
@@ -7799,10 +8066,12 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\SpaceGroup $space
  * @property-read \Crawlora\Generated\SparkFunGroup $sparkFun
  * @property-read \Crawlora\Generated\SportingNewsGroup $sportingNews
+ * @property-read \Crawlora\Generated\SportskeedaGroup $sportskeeda
  * @property-read \Crawlora\Generated\SpotifyPodcastsGroup $spotifyPodcasts
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
  * @property-read \Crawlora\Generated\EveningStandardGroup $eveningStandard
  * @property-read \Crawlora\Generated\StarbucksGroup $starbucks
+ * @property-read \Crawlora\Generated\MinnesotaStarTribuneGroup $minnesotaStarTribune
  * @property-read \Crawlora\Generated\SteamGroup $steam
  * @property-read \Crawlora\Generated\SteveMaddenGroup $steveMadden
  * @property-read \Crawlora\Generated\StockXGroup $stockX

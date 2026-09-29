@@ -13,6 +13,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\AdidasGroup $adidas
  * @property-read \Crawlora\Generated\AgodaGroup $agoda
  * @property-read \Crawlora\Generated\AirbnbGroup $airbnb
+ * @property-read \Crawlora\Generated\AlComGroup $alCom
  * @property-read \Crawlora\Generated\AlJazeeraGroup $alJazeera
  * @property-read \Crawlora\Generated\AllbirdsGroup $allbirds
  * @property-read \Crawlora\Generated\AltGroup $alt
@@ -49,6 +50,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\BonhamsGroup $bonhams
  * @property-read \Crawlora\Generated\BookingGroup $booking
  * @property-read \Crawlora\Generated\BootsGroup $boots
+ * @property-read \Crawlora\Generated\BostonGlobeGroup $bostonGlobe
  * @property-read \Crawlora\Generated\BoxOfficeMojoGroup $boxOfficeMojo
  * @property-read \Crawlora\Generated\BrandGroup $brand
  * @property-read \Crawlora\Generated\BraveGroup $brave
@@ -71,6 +73,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\ChipotleGroup $chipotle
  * @property-read \Crawlora\Generated\ChromeWebStoreGroup $chromeWebStore
  * @property-read \Crawlora\Generated\Chrono24Group $chrono24
+ * @property-read \Crawlora\Generated\ClevelandComGroup $clevelandCom
  * @property-read \Crawlora\Generated\CnaGroup $cna
  * @property-read \Crawlora\Generated\CnbcGroup $cnbc
  * @property-read \Crawlora\Generated\CnetGroup $cnet
@@ -133,13 +136,16 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\FortuneGroup $fortune
  * @property-read \Crawlora\Generated\FotMobGroup $fotMob
  * @property-read \Crawlora\Generated\FoxNewsGroup $foxNews
+ * @property-read \Crawlora\Generated\FoxSportsGroup $foxSports
  * @property-read \Crawlora\Generated\France24Group $france24
+ * @property-read \Crawlora\Generated\FreeMalaysiaTodayGroup $freeMalaysiaToday
  * @property-read \Crawlora\Generated\FtGroup $ft
  * @property-read \Crawlora\Generated\GameRantGroup $gameRant
  * @property-read \Crawlora\Generated\GamesRadarGroup $gamesRadar
  * @property-read \Crawlora\Generated\GbNewsGroup $gbNews
  * @property-read \Crawlora\Generated\GdeltGroup $gdelt
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
+ * @property-read \Crawlora\Generated\GhanaWebGroup $ghanaWeb
  * @property-read \Crawlora\Generated\GitHubGroup $gitHub
  * @property-read \Crawlora\Generated\GizmodoGroup $gizmodo
  * @property-read \Crawlora\Generated\GlobalNewsGroup $globalNews
@@ -166,6 +172,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\HollywoodReporterGroup $hollywoodReporter
  * @property-read \Crawlora\Generated\HomeDepotGroup $homeDepot
  * @property-read \Crawlora\Generated\HotelsComGroup $hotelsCom
+ * @property-read \Crawlora\Generated\HowToGeekGroup $howToGeek
  * @property-read \Crawlora\Generated\HuffPostGroup $huffPost
  * @property-read \Crawlora\Generated\IgnGroup $ign
  * @property-read \Crawlora\Generated\IkeaGroup $ikea
@@ -185,6 +192,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\IrishIndependentGroup $irishIndependent
  * @property-read \Crawlora\Generated\IrishTimesGroup $irishTimes
  * @property-read \Crawlora\Generated\JCrewGroup $jCrew
+ * @property-read \Crawlora\Generated\JerusalemPostGroup $jerusalemPost
  * @property-read \Crawlora\Generated\JimmyJohnsGroup $jimmyJohns
  * @property-read \Crawlora\Generated\JobsGroup $jobs
  * @property-read \Crawlora\Generated\JustEatGroup $justEat
@@ -214,6 +222,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\MashableGroup $mashable
  * @property-read \Crawlora\Generated\McDonaldsGroup $mcDonalds
  * @property-read \Crawlora\Generated\MediaiteGroup $mediaite
+ * @property-read \Crawlora\Generated\MedicalNewsTodayGroup $medicalNewsToday
  * @property-read \Crawlora\Generated\ManchesterEveningNewsGroup $manchesterEveningNews
  * @property-read \Crawlora\Generated\MercariGroup $mercari
  * @property-read \Crawlora\Generated\MetaJobsGroup $metaJobs
@@ -223,10 +232,12 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\MicrosoftStoreGroup $microsoftStore
  * @property-read \Crawlora\Generated\MirrorGroup $mirror
  * @property-read \Crawlora\Generated\MlbGroup $mlb
+ * @property-read \Crawlora\Generated\MliveGroup $mlive
  * @property-read \Crawlora\Generated\ModaOperandiGroup $modaOperandi
  * @property-read \Crawlora\Generated\MonclerGroup $moncler
  * @property-read \Crawlora\Generated\MoneycontrolGroup $moneycontrol
  * @property-read \Crawlora\Generated\MonitorsGroup $monitors
+ * @property-read \Crawlora\Generated\TheMotleyFoolGroup $theMotleyFool
  * @property-read \Crawlora\Generated\NationAfricaGroup $nationAfrica
  * @property-read \Crawlora\Generated\NationalPostGroup $nationalPost
  * @property-read \Crawlora\Generated\NbcNewsGroup $nbcNews
@@ -239,6 +250,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\TheNewYorkerGroup $theNewYorker
  * @property-read \Crawlora\Generated\NikeGroup $nike
  * @property-read \Crawlora\Generated\NineToFiveMacGroup $nineToFiveMac
+ * @property-read \Crawlora\Generated\NjComGroup $njCom
  * @property-read \Crawlora\Generated\NprGroup $npr
  * @property-read \Crawlora\Generated\NumbeoGroup $numbeo
  * @property-read \Crawlora\Generated\NewYorkDailyNewsGroup $newYorkDailyNews
@@ -271,6 +283,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\PolygonGroup $polygon
  * @property-read \Crawlora\Generated\PolymarketGroup $polymarket
  * @property-read \Crawlora\Generated\PopeyesGroup $popeyes
+ * @property-read \Crawlora\Generated\PopularMechanicsGroup $popularMechanics
  * @property-read \Crawlora\Generated\PoshmarkGroup $poshmark
  * @property-read \Crawlora\Generated\PradaGroup $prada
  * @property-read \Crawlora\Generated\PristineAuctionGroup $pristineAuction
@@ -300,6 +313,8 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\RtNewsGroup $rtNews
  * @property-read \Crawlora\Generated\SalonGroup $salon
  * @property-read \Crawlora\Generated\SamSclubGroup $samSClub
+ * @property-read \Crawlora\Generated\SbsNewsGroup $sbsNews
+ * @property-read \Crawlora\Generated\ScienceAlertGroup $scienceAlert
  * @property-read \Crawlora\Generated\ScmpGroup $scmp
  * @property-read \Crawlora\Generated\ScreenRantGroup $screenRant
  * @property-read \Crawlora\Generated\SeatGeekGroup $seatGeek
@@ -315,6 +330,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\SimilarWebGroup $similarWeb
  * @property-read \Crawlora\Generated\SkimsGroup $skims
  * @property-read \Crawlora\Generated\SkyNewsGroup $skyNews
+ * @property-read \Crawlora\Generated\SkySportsGroup $skySports
  * @property-read \Crawlora\Generated\SlateGroup $slate
  * @property-read \Crawlora\Generated\SlickdealsGroup $slickdeals
  * @property-read \Crawlora\Generated\MitSloanManagementReviewGroup $mitSloanManagementReview
@@ -325,10 +341,12 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\SpaceGroup $space
  * @property-read \Crawlora\Generated\SparkFunGroup $sparkFun
  * @property-read \Crawlora\Generated\SportingNewsGroup $sportingNews
+ * @property-read \Crawlora\Generated\SportskeedaGroup $sportskeeda
  * @property-read \Crawlora\Generated\SpotifyPodcastsGroup $spotifyPodcasts
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
  * @property-read \Crawlora\Generated\EveningStandardGroup $eveningStandard
  * @property-read \Crawlora\Generated\StarbucksGroup $starbucks
+ * @property-read \Crawlora\Generated\MinnesotaStarTribuneGroup $minnesotaStarTribune
  * @property-read \Crawlora\Generated\SteamGroup $steam
  * @property-read \Crawlora\Generated\SteveMaddenGroup $steveMadden
  * @property-read \Crawlora\Generated\StockXGroup $stockX
