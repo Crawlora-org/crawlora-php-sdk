@@ -30,14 +30,14 @@
     },
     "scripts": {
         "test": "phpunit",
-        "stan": "phpstan analyse"
+        "stan": "phpstan analyse --memory-limit=1G"
     },
     "config": {
         "sort-packages": true
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "1.44.x-dev"
+            "dev-main": "1.45.x-dev"
         }
     }
 }

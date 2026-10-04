@@ -154,6 +154,16 @@ abstract class AirbnbGroup {}
 abstract class AlComGroup {}
 
 /**
+ * @method mixed aliexpressReviews(array $params = [], array $options = []) aliexpress-reviews (GET /aliexpress/reviews)
+ *   params: string $product_id, int $page
+ * @method mixed aliexpressSearch(array $params = [], array $options = []) aliexpress-search (GET /aliexpress/search)
+ *   params: string $q, int $page, 'best_match'|'orders'|'price_asc'|'price_desc' $sort, float $min_price, float $max_price, bool $free_shipping, bool $choice, string $attr
+ * @method mixed aliexpressSearchFilters(array $params = [], array $options = []) aliexpress-search-filters (GET /aliexpress/search-filters)
+ *   params: string $q
+ */
+abstract class AliExpressGroup {}
+
+/**
  * @method mixed aljazeeraArticle(array $params = [], array $options = []) aljazeera-article (GET /aljazeera/article)
  *   params: string $url
  * @method mixed aljazeeraAuthor(array $params = [], array $options = []) aljazeera-author (GET /aljazeera/author)
@@ -242,6 +252,18 @@ abstract class AmazonGroup {}
  * @method mixed androidauthoritySections(array $params = [], array $options = []) androidauthority-sections (GET /androidauthority/sections)
  */
 abstract class AndroidAuthorityGroup {}
+
+/**
+ * @method mixed androidpoliceArticle(array $params = [], array $options = []) androidpolice-article (GET /androidpolice/article)
+ *   params: string $url
+ * @method mixed androidpoliceAuthor(array $params = [], array $options = []) androidpolice-author (GET /androidpolice/author)
+ *   params: string $url
+ * @method mixed androidpoliceHeadlines(array $params = [], array $options = []) androidpolice-headlines (GET /androidpolice/headlines)
+ *   params: 'news'|'phones'|'tablets'|'gadgets'|'accessories'|'apps'|'entertainment'|'productivity'|'utilities'|'ai-machine-learning'|'operating-systems'|'wearables'|'smart-home'|'smart-tv'|'carriers'|'deals'|'videos'|'awards' $section
+ * @method mixed androidpoliceNews(array $params = [], array $options = []) androidpolice-news (GET /androidpolice/news)
+ * @method mixed androidpoliceSections(array $params = [], array $options = []) androidpolice-sections (GET /androidpolice/sections)
+ */
+abstract class AndroidPoliceGroup {}
 
 /**
  * @method mixed airingSchedule(array $params = [], array $options = []) anime-airing-schedule (GET /anime/airing-schedule)
@@ -398,6 +420,10 @@ abstract class ApplePodcastsGroup {}
  * @method mixed app(array $params = [], array $options = []) appstore-app (GET /appstore/app)
  *   params: string $id, string $app_id, string $country, string $lang, bool $ratings, bool $platforms
  * @method mixed categories(array $params = [], array $options = []) appstore-categories (GET /appstore/categories)
+ * @method mixed collection(array $params = [], array $options = []) appstore-collection (GET /appstore/collection)
+ *   params: 'iphone'|'ipad'|'mac'|'vision'|'watch'|'tv' $platform, string $collection_id, string $country, string $lang
+ * @method mixed collections(array $params = [], array $options = []) appstore-collections (GET /appstore/collections)
+ *   params: 'iphone'|'ipad'|'mac'|'vision'|'watch'|'tv' $platform, string $country, string $lang
  * @method mixed developer(array $params = [], array $options = []) appstore-developer (GET /appstore/developer/{dev_id})
  *   params: string $dev_id, string $country, string $lang
  * @method mixed editorial(array $params = [], array $options = []) appstore-editorial (GET /appstore/editorial)
@@ -554,6 +580,18 @@ abstract class BbbGroup {}
  *   params: string $q, int $page
  */
 abstract class BbcGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) benzinga-article (GET /benzinga/article)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) benzinga-headlines (GET /benzinga/headlines)
+ *   params: 'latest'|'technology-stocks'|'politics'|'health-care' $section
+ * @method mixed news(array $params = [], array $options = []) benzinga-news (GET /benzinga/news)
+ * @method mixed search(array $params = [], array $options = []) benzinga-search (GET /benzinga/search)
+ *   params: string $q
+ * @method mixed sections(array $params = [], array $options = []) benzinga-sections (GET /benzinga/sections)
+ */
+abstract class BenzingaGroup {}
 
 /**
  * @method mixed bestbuyBrands(array $params = [], array $options = []) bestbuy-brands (GET /bestbuy/brands)
@@ -840,6 +878,18 @@ abstract class BraveGroup {}
  * @method mixed sections(array $params = [], array $options = []) breitbart-sections (GET /breitbart/sections)
  */
 abstract class BreitbartGroup {}
+
+/**
+ * @method mixed brisbanetimesArticle(array $params = [], array $options = []) brisbanetimes-article (GET /brisbanetimes/article)
+ *   params: string $url
+ * @method mixed brisbanetimesAuthor(array $params = [], array $options = []) brisbanetimes-author (GET /brisbanetimes/author)
+ *   params: string $url
+ * @method mixed brisbanetimesHeadlines(array $params = [], array $options = []) brisbanetimes-headlines (GET /brisbanetimes/headlines)
+ *   params: 'national/queensland'|'politics'|'business'|'world'|'goodfood'|'lifestyle'|'traveller'|'sport'|'brisbane-news'|'politics/federal'|'politics/queensland'|'politics/nsw'|'politics/victoria'|'politics/western-australia'|'business/companies'|'business/markets'|'business/bullsnbears'|'business/the-economy'|'business/banking-and-finance'|'business/small-business'|'business/workplace'|'world/north-america'|'world/europe'|'world/asia'|'world/middle-east'|'world/south-america'|'world/africa'|'national'|'national/nsw'|'national/victoria'|'national/western-australia'|'opinion'|'property'|'property/news'|'property/living'|'sport/nrl'|'sport/rugby-union'|'sport/afl'|'sport/cricket'|'sport/soccer'|'sport/racing'|'sport/tennis'|'sport/netball'|'sport/basketball'|'sport/motorsport'|'sport/golf'|'sport/nfl'|'sport/athletics'|'sport/swimming'|'sport/boxing'|'goodfood/recipes'|'goodfood/tips-and-advice'|'goodfood/brisbane-eating-out'|'goodfood/drinks'|'culture'|'culture/movies'|'culture/tv-and-radio'|'culture/music'|'culture/celebrity'|'culture/books'|'culture/comedy'|'culture/dance'|'culture/musicals'|'culture/opera'|'culture/theatre'|'culture/art-and-design'|'culture/live-reviews'|'lifestyle/health-and-wellness'|'lifestyle/fashion'|'lifestyle/life-and-relationships'|'lifestyle/beauty'|'traveller/inspiration/destination-guides'|'traveller/inspiration'|'traveller/reviews-and-advice'|'traveller/travel-news'|'good-weekend'|'sunday-life'|'money'|'money/super-and-retirement'|'money/investing'|'money/banking'|'money/borrowing'|'money/saving'|'money/tax'|'money/planning-and-budgeting'|'education'|'healthcare'|'environment'|'environment/conservation'|'environment/climate-change'|'environment/sustainability'|'environment/weather'|'technology'|'technology/video-games'|'australia-higher-education'|'topic/media-and-marketing-5z7'|'topic/auctions-1nq1'|'topic/financing-1nq2'|'topic/style-luxury-1nij'|'topic/horoscopes-5yc'|'topic/home-technology-hqq'|'topic/phones-5zt'|'topic/gadgets-hqp'|'topic/explainers-1lz9' $section
+ * @method mixed brisbanetimesNews(array $params = [], array $options = []) brisbanetimes-news (GET /brisbanetimes/news)
+ * @method mixed brisbanetimesSections(array $params = [], array $options = []) brisbanetimes-sections (GET /brisbanetimes/sections)
+ */
+abstract class BrisbaneTimesGroup {}
 
 /**
  * @method mixed collections(array $params = [], array $options = []) brooklinen-collections (GET /brooklinen/collections)
@@ -1433,6 +1483,16 @@ abstract class TheDailyCallerGroup {}
 abstract class DailyExpressGroup {}
 
 /**
+ * @method mixed dailykosArticle(array $params = [], array $options = []) dailykos-article (GET /dailykos/article)
+ *   params: string $url
+ * @method mixed dailykosHeadlines(array $params = [], array $options = []) dailykos-headlines (GET /dailykos/headlines)
+ *   params: 'announcements'|'cartoon'|'daily-kos'|'partnerhub'|'news'|'news/business-and-economy'|'news/congress'|'news/courts'|'news/culture'|'news/elections'|'news/environment'|'news/health'|'news/immigration'|'news/justice'|'news/media'|'news/media-and-culture'|'news/national'|'news/science'|'news/series'|'news/stateandlocal'|'news/tech'|'news/videos'|'news/whitehouse'|'news/world' $section
+ * @method mixed dailykosNews(array $params = [], array $options = []) dailykos-news (GET /dailykos/news)
+ * @method mixed dailykosSections(array $params = [], array $options = []) dailykos-sections (GET /dailykos/sections)
+ */
+abstract class DailyKosGroup {}
+
+/**
  * @method mixed dailymailArticle(array $params = [], array $options = []) dailymail-article (GET /dailymail/article)
  *   params: string $url
  * @method mixed dailymailAuthor(array $params = [], array $options = []) dailymail-author (GET /dailymail/author)
@@ -1443,6 +1503,16 @@ abstract class DailyExpressGroup {}
  * @method mixed dailymailSections(array $params = [], array $options = []) dailymail-sections (GET /dailymail/sections)
  */
 abstract class DailyMailGroup {}
+
+/**
+ * @method mixed dailymaverickArticle(array $params = [], array $options = []) dailymaverick-article (GET /dailymaverick/article)
+ *   params: string $url
+ * @method mixed dailymaverickHeadlines(array $params = [], array $options = []) dailymaverick-headlines (GET /dailymaverick/headlines)
+ *   params: '2019-elections'|'2019-rugby-world-cup'|'africa'|'analysis'|'articles'|'blog'|'books'|'business-maverick'|'cartoons'|'companies'|'covid-19'|'crypto'|'culture'|'declassified-uk'|'dm168'|'economy'|'editorial'|'elections'|'fifa-world-cup-2026'|'international-finance'|'johannesburg'|'magazine'|'maverick-citizen'|'maverick-earth'|'maverick-insider'|'maverick-life'|'maverick-news'|'media'|'mining'|'motoring'|'multimedia'|'nelson-mandela-bay'|'op-eds'|'open-secrets'|'opinionistas'|'partner-content'|'people-of-the-year'|'personal-finance'|'podcasts'|'politics'|'sci-tech'|'scorpio'|'south-africa'|'sponsored-content'|'sport'|'tgifood'|'ukraine-crisis'|'webinars'|'weekend-wrap'|'world'|'world-cup-2018' $section
+ * @method mixed dailymaverickNews(array $params = [], array $options = []) dailymaverick-news (GET /dailymaverick/news)
+ * @method mixed dailymaverickSections(array $params = [], array $options = []) dailymaverick-sections (GET /dailymaverick/sections)
+ */
+abstract class DailyMaverickGroup {}
 
 /**
  * @method mixed dailyrecordArticle(array $params = [], array $options = []) dailyrecord-article (GET /dailyrecord/article)
@@ -1530,6 +1600,14 @@ abstract class DailyWireGroup {}
  *   params: string $q, 'extension'|'theme'|'app'|'unknown' $item_type, string $category, string $developer, string $developer_email, string $permission, 'active'|'removed' $status, '2'|'3' $manifest_version, bool $collects_data, bool $has_broad_host_access, int $min_users, float $min_rating, int $min_rating_count, int $page, int $page_size
  * @method mixed creatorsSearch(array $params = [], array $options = []) datasets-creators-search (GET /datasets/creators/search)
  *   params: string $q, string $handle, string $niche, string $country, bool $verified, int $min_followers, bool $has_email, bool $include_email, bool $include_inactive, 'followers_desc'|'engagement_desc'|'engagement_qualified_desc'|'likes_desc'|'relevance' $sort, int $page, int $page_size
+ * @method mixed doordashStoresFacets(array $params = [], array $options = []) datasets-doordash-stores-facets (GET /datasets/doordash-stores/facets)
+ *   params: 'country'|'state'|'city'|'tags'|'display_status'|'price_range'|'dash_pass_eligible' $facet, string $q, string $country, string $state, string $city, string $tag, bool $dash_pass_only
+ * @method mixed doordashStoresItem(array $params = [], array $options = []) datasets-doordash-stores-item (GET /datasets/doordash-stores/items/{store_id})
+ *   params: string $store_id
+ * @method mixed doordashStoresNearby(array $params = [], array $options = []) datasets-doordash-stores-nearby (GET /datasets/doordash-stores/nearby)
+ *   params: float $lat, float $lon, int $radius_m, string $country, string $tag, bool $dash_pass_only, 'offset'|'cursor' $pagination, string $cursor, int $page, int $page_size
+ * @method mixed doordashStoresSearch(array $params = [], array $options = []) datasets-doordash-stores-search (GET /datasets/doordash-stores/search)
+ *   params: string $q, string $country, string $state, string $city, string $tag, bool $dash_pass_only, int $min_price, int $max_price, float $min_rating, float $lat, float $lon, int $radius_m, 'relevance'|'rating'|'distance'|'distance_asc' $sort, 'offset'|'cursor' $pagination, string $cursor, int $page, int $page_size
  * @method mixed facebookPagesFacets(array $params = [], array $options = []) datasets-facebook-pages-facets (GET /datasets/facebook-pages/facets)
  *   params: int $limit, 'count_desc'|'value_asc' $order, string $after, 'category'|'discovery_source' $facet, string $q, string $page_id, string $identifier, string $category, string $discovery_source, bool $has_website, bool $has_email, bool $has_phone, bool $has_whatsapp, int $min_likes, int $max_likes, string $hydrated_after, string $hydrated_before, 'relevance'|'likes_desc'|'likes_asc'|'hydrated_at_desc'|'hydrated_at_asc' $sort
  * @method mixed facebookPagesItem(array $params = [], array $options = []) datasets-facebook-pages-item (GET /datasets/facebook-pages/items/{page_id})
@@ -1772,6 +1850,18 @@ abstract class DeadlineGroup {}
  *   params: float $latitude, float $longitude, 'uk'|'ie'|'fr'|'it'|'be'|'ae'|'kw' $market
  */
 abstract class DeliverooGroup {}
+
+/**
+ * @method mixed denverpostArticle(array $params = [], array $options = []) denverpost-article (GET /denverpost/article)
+ *   params: string $url
+ * @method mixed denverpostAuthor(array $params = [], array $options = []) denverpost-author (GET /denverpost/author)
+ *   params: string $slug, string $url
+ * @method mixed denverpostHeadlines(array $params = [], array $options = []) denverpost-headlines (GET /denverpost/headlines)
+ *   params: 'news'|'latest-headlines'|'colorado'|'politics'|'crime-public-safety'|'courts'|'national'|'world'|'education'|'health'|'environment'|'transportation'|'housing'|'news-obituaries'|'photos-and-videos'|'weather'|'sports'|'sports-columnists'|'denver-broncos'|'colorado-rockies'|'denver-nuggets'|'colorado-avalanche'|'colorado-rapids'|'denver-summit-fc'|'college'|'colorado-preps'|'betting'|'golf'|'boxing-mma'|'sports-podcasts'|'business'|'colorado-real-estate'|'airlines'|'economy'|'energy'|'retail'|'colorado-technology'|'best-reviews'|'theknow'|'restaurants-food-drink'|'arts'|'culture'|'movies'|'television'|'music'|'theater'|'travel'|'parenting-family'|'bars'|'beer'|'outdoors'|'hiking'|'fall-colors'|'cycling'|'fitness'|'running'|'camping'|'fishing'|'hunting'|'water-sports'|'skiing'|'snowboarding'|'winter-sports'|'opinion'|'editorials'|'opinion-columnists'|'letters'|'endorsements'|'things-to-do'|'horoscopes'|'advice'|'home-garden'|'free-and-cheap'|'cannabis'|'recipes' $section
+ * @method mixed denverpostNews(array $params = [], array $options = []) denverpost-news (GET /denverpost/news)
+ * @method mixed denverpostSections(array $params = [], array $options = []) denverpost-sections (GET /denverpost/sections)
+ */
+abstract class TheDenverPostGroup {}
 
 /**
  * @method mixed brands(array $params = [], array $options = []) depop-brands (GET /depop/brands)
@@ -2082,6 +2172,18 @@ abstract class EntertainmentWeeklyGroup {}
  *   params: array $option
  */
 abstract class ExpediaGroup {}
+
+/**
+ * @method mixed expresstribuneArticle(array $params = [], array $options = []) expresstribune-article (GET /expresstribune/article)
+ *   params: string $url
+ * @method mixed expresstribuneAuthor(array $params = [], array $options = []) expresstribune-author (GET /expresstribune/author)
+ *   params: string $url, int $page
+ * @method mixed expresstribuneHeadlines(array $params = [], array $options = []) expresstribune-headlines (GET /expresstribune/headlines)
+ *   params: 'home'|'latest'|'analysis'|'politics'|'cricket'|'movies'|'health'|'style'|'pakistan'|'sindh'|'punjab'|'balochistan'|'khyber-pakhtunkhwa'|'jammu-kashmir'|'gilgit-baltistan'|'business'|'world'|'sports'|'technology'|'games'|'gadget'|'life-style'|'art-books'|'music'|'film'|'fashion'|'gossip'|'tv'|'theatre'|'entertainment'|'opinion'|'editorial'|'blogs' $section
+ * @method mixed expresstribuneNews(array $params = [], array $options = []) expresstribune-news (GET /expresstribune/news)
+ * @method mixed expresstribuneSections(array $params = [], array $options = []) expresstribune-sections (GET /expresstribune/sections)
+ */
+abstract class TheExpressTribuneGroup {}
 
 /**
  * @method mixed marketplaceSearch(array $params = [], array $options = []) facebook-marketplace-search (GET /facebook/marketplace/search)
@@ -2720,6 +2822,44 @@ abstract class GoldinGroup {}
 abstract class GoodreadsGroup {}
 
 /**
+ * @method mixed goodrxAnswer(array $params = [], array $options = []) goodrx-answer (GET /goodrx/answer)
+ *   params: string $slug
+ * @method mixed goodrxAnswers(array $params = [], array $options = []) goodrx-answers (GET /goodrx/answers)
+ * @method mixed goodrxBrands(array $params = [], array $options = []) goodrx-brands (GET /goodrx/brands)
+ * @method mixed goodrxClass(array $params = [], array $options = []) goodrx-class (GET /goodrx/class)
+ *   params: string $slug
+ * @method mixed goodrxClasses(array $params = [], array $options = []) goodrx-classes (GET /goodrx/classes)
+ * @method mixed goodrxComparison(array $params = [], array $options = []) goodrx-comparison (GET /goodrx/comparison)
+ *   params: string $slug
+ * @method mixed goodrxComparisons(array $params = [], array $options = []) goodrx-comparisons (GET /goodrx/comparisons)
+ * @method mixed goodrxCondition(array $params = [], array $options = []) goodrx-condition (GET /goodrx/condition)
+ *   params: string $slug
+ * @method mixed goodrxConditionDrugs(array $params = [], array $options = []) goodrx-condition-drugs (GET /goodrx/condition-drugs)
+ *   params: string $slug
+ * @method mixed goodrxConditions(array $params = [], array $options = []) goodrx-conditions (GET /goodrx/conditions)
+ * @method mixed goodrxDrugGuide(array $params = [], array $options = []) goodrx-drug-guide (GET /goodrx/drug-guide)
+ *   params: string $slug, 'side-effects'|'dosage'|'interactions' $topic
+ * @method mixed goodrxDrugGuides(array $params = [], array $options = []) goodrx-drug-guides (GET /goodrx/drug-guides)
+ *   params: 'side-effects'|'dosage'|'interactions' $topic, string $letter
+ * @method mixed goodrxDrugInfo(array $params = [], array $options = []) goodrx-drug-info (GET /goodrx/drug-info)
+ *   params: string $slug, 'people'|'pets' $audience
+ * @method mixed goodrxDrugOptions(array $params = [], array $options = []) goodrx-drug-options (GET /goodrx/drug-options)
+ *   params: string $slug
+ * @method mixed goodrxDrugPrices(array $params = [], array $options = []) goodrx-drug-prices (GET /goodrx/drug-prices)
+ *   params: string $slug, string $label, string $form, string $dosage, int $quantity, float $latitude, float $longitude, string $zip_code, string $state
+ * @method mixed goodrxDrugs(array $params = [], array $options = []) goodrx-drugs (GET /goodrx/drugs)
+ *   params: 'a'|'b'|'c'|'d'|'e'|'f'|'g'|'h'|'i'|'j'|'k'|'l'|'m'|'n'|'o'|'p'|'q'|'r'|'s'|'t'|'u'|'v'|'w'|'x'|'y'|'z' $letter
+ * @method mixed goodrxHealthArticle(array $params = [], array $options = []) goodrx-health-article (GET /goodrx/health-article)
+ *   params: string $path
+ * @method mixed goodrxHealthArticles(array $params = [], array $options = []) goodrx-health-articles (GET /goodrx/health-articles)
+ *   params: 'conditions'|'health-topic'|'well-being'|'pet-health'|'insurance'|'classes'|'drugs'|'healthcare-access'|'corporate'|'hcp'|'drug' $section, string $topic, int $page, int $page_size
+ * @method mixed goodrxHealthTopics(array $params = [], array $options = []) goodrx-health-topics (GET /goodrx/health-topics)
+ *   params: 'conditions'|'health-topic'|'well-being'|'pet-health'|'insurance'|'classes'|'drugs'|'healthcare-access'|'corporate'|'hcp'|'drug' $section
+ * @method mixed goodrxPetMedications(array $params = [], array $options = []) goodrx-pet-medications (GET /goodrx/pet-medications)
+ */
+abstract class GoodRxGroup {}
+
+/**
  * @method mixed job(array $params = [], array $options = []) google-jobs-job (GET /google-jobs/job)
  *   params: string $id
  * @method mixed search(array $params = [], array $options = []) google-jobs-search (GET /google-jobs/search)
@@ -2882,6 +3022,27 @@ abstract class GqGroup {}
 abstract class GrailedGroup {}
 
 /**
+ * @method mixed articles(array $params = [], array $options = []) greystar-articles (GET /greystar/articles)
+ *   params: 'applying-and-leasing'|'general-guides'|'moving'|'blog' $section, string $query, int $page, int $per_page
+ * @method mixed article(array $params = [], array $options = []) greystar-article (GET /greystar/articles/{section}/{slug})
+ *   params: 'applying-and-leasing'|'general-guides'|'moving'|'blog' $section, string $slug
+ * @method mixed location(array $params = [], array $options = []) greystar-location (GET /greystar/location)
+ *   params: string $state, string $city, string $neighborhood
+ * @method mixed locations(array $params = [], array $options = []) greystar-locations (GET /greystar/locations)
+ *   params: 'state'|'city'|'neighborhood' $level, string $state, string $city, int $page, int $per_page
+ * @method mixed markets(array $params = [], array $options = []) greystar-markets (GET /greystar/markets)
+ * @method mixed newsroom(array $params = [], array $options = []) greystar-newsroom (GET /greystar/newsroom)
+ *   params: string $query, int $page, int $per_page
+ * @method mixed newsroomArticle(array $params = [], array $options = []) greystar-newsroom-article (GET /greystar/newsroom/{slug})
+ *   params: string $slug
+ * @method mixed property(array $params = [], array $options = []) greystar-property (GET /greystar/properties/{id})
+ *   params: string $id
+ * @method mixed search(array $params = [], array $options = []) greystar-search (GET /greystar/search)
+ *   params: string $query, string $market_area, string $neighborhood, string $city, string $state, string $country_code, float $min_price, float $max_price, 'relevance'|'name'|'price_asc'|'price_desc' $sort, int $page, int $per_page
+ */
+abstract class GreystarGroup {}
+
+/**
  * @method mixed availability(array $params = [], array $options = []) grubhub-availability (GET /grubhub/availability)
  *   params: string $restaurant_ids, float $latitude, float $longitude
  * @method mixed offers(array $params = [], array $options = []) grubhub-offers (GET /grubhub/offers)
@@ -2982,6 +3143,39 @@ abstract class GymsharkGroup {}
 abstract class HarvardBusinessReviewGroup {}
 
 /**
+ * @method mixed autocomplete(array $params = [], array $options = []) healthgrades-autocomplete (GET /healthgrades/autocomplete)
+ *   params: string $term
+ * @method mixed facilitiesFilters(array $params = [], array $options = []) healthgrades-facilities-filters (GET /healthgrades/facilities/filters)
+ *   params: 'hospital'|'pharmacy'|'group_practice'|'urgent_care' $type, string $query, string $where
+ * @method mixed facilitiesSearch(array $params = [], array $options = []) healthgrades-facilities-search (GET /healthgrades/facilities/search)
+ *   params: 'hospital'|'pharmacy'|'group_practice'|'urgent_care' $type, string $query, string $where, int $page, 'bestmatch'|'distance'|'patientsatisfaction' $sort, '0.5'|'1'|'5'|'10'|'25'|'50'|'100'|'national' $distance, string $rating, string $award
+ * @method mixed facility(array $params = [], array $options = []) healthgrades-facility (GET /healthgrades/facility)
+ *   params: string $url
+ * @method mixed healthArticle(array $params = [], array $options = []) healthgrades-health-article (GET /healthgrades/health-article)
+ *   params: string $url
+ * @method mixed healthArticles(array $params = [], array $options = []) healthgrades-health-articles (GET /healthgrades/health-articles)
+ *   params: string $topic, int $page, int $page_size
+ * @method mixed healthTopics(array $params = [], array $options = []) healthgrades-health-topics (GET /healthgrades/health-topics)
+ * @method mixed hospital(array $params = [], array $options = []) healthgrades-hospital (GET /healthgrades/hospital)
+ *   params: string $url
+ * @method mixed hospitalAwards(array $params = [], array $options = []) healthgrades-hospital-awards (GET /healthgrades/hospital-awards)
+ *   params: 'americas-best-hospitals'|'specialty-excellence-americas-best-care'|'patient-safety-excellence-award'|'outstanding-patient-experience-award'|'ob-gyn-care-excellence-awards'|'state-rankings' $award, string $year, string $state, string $city, 'top50'|'top100'|'top250' $list, 'top50'|'top100' $list_category, 'BAR'|'CVO'|'CWS'|'PCI'|'NSG'|'CCU'|'GIO'|'GSO'|'ORJ'|'NSC'|'ORT'|'OJO'|'OOR'|'OBP'|'PRS'|'PUL'|'ORS'|'NEU'|'OVSC'|'VAS' $specialty, 'GYS'|'LAB'|'OBG' $ob_gyn_type, 'name'|'distance' $sort, float $latitude, float $longitude, int $page
+ * @method mixed hospitalAwardFilters(array $params = [], array $options = []) healthgrades-hospital-award-filters (GET /healthgrades/hospital-awards/filters)
+ *   params: 'americas-best-hospitals'|'specialty-excellence-americas-best-care'|'patient-safety-excellence-award'|'outstanding-patient-experience-award'|'ob-gyn-care-excellence-awards'|'state-rankings' $award, string $state, string $year
+ * @method mixed locations(array $params = [], array $options = []) healthgrades-locations (GET /healthgrades/locations)
+ *   params: string $term
+ * @method mixed physician(array $params = [], array $options = []) healthgrades-physician (GET /healthgrades/physician)
+ *   params: string $url
+ * @method mixed physiciansFilters(array $params = [], array $options = []) healthgrades-physicians-filters (GET /healthgrades/physicians/filters)
+ *   params: string $query, string $where
+ * @method mixed physiciansSearch(array $params = [], array $options = []) healthgrades-physicians-search (GET /healthgrades/physicians/search)
+ *   params: string $query, string $where, int $page, 'bestmatch'|'distance'|'ratings' $sort, 'F'|'M' $gender, '1'|'5'|'10'|'25'|'50'|'100'|'national' $distance, '*-40'|'41-50'|'51-60'|'61-70'|'71-*' $age, 'today'|'tomorrow'|'nextTwoWeeks'|'online'|'acceptsNewPatients'|'telehealth' $availability, '1'|'2'|'3'|'4'|'5' $rating, string $insurance, string $insurance_plan, string $language, string $clinical_focus, string $affiliated_hospital, string $specialty, bool $affirming_care
+ * @method mixed specialties(array $params = [], array $options = []) healthgrades-specialties (GET /healthgrades/specialties)
+ * @method mixed topSearches(array $params = [], array $options = []) healthgrades-top-searches (GET /healthgrades/top-searches)
+ */
+abstract class HealthgradesGroup {}
+
+/**
  * @method mixed categories(array $params = [], array $options = []) hermes-categories (GET /hermes/categories)
  *   params: 'at_de'|'au_en'|'be_en'|'be_fr'|'br_pt'|'ca_en'|'ca_fr'|'ch_de'|'ch_fr'|'cz_en'|'de_de'|'dh_en'|'dk_en'|'es_es'|'fi_en'|'fr_fr'|'gr_en'|'hk_en'|'ie_en'|'it_it'|'jp_ja'|'kr_ko'|'lu_fr'|'mo_en'|'mx_es'|'my_en'|'nl_en'|'no_en'|'pl_en'|'pt_en'|'ri_en'|'se_en'|'sg_en'|'th_en'|'tw_zh'|'uk_en'|'us_en' $locale
  * @method mixed category(array $params = [], array $options = []) hermes-category (GET /hermes/category)
@@ -3075,6 +3269,18 @@ abstract class HomeDepotGroup {}
  *   params: array $request
  */
 abstract class HotelsComGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) houston-chronicle-article (GET /houston-chronicle/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) houston-chronicle-author (GET /houston-chronicle/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) houston-chronicle-headlines (GET /houston-chronicle/headlines)
+ *   params: 'news-houston-texas'|'news-houston-texas-trending'|'neighborhood'|'news-houston-texas-education'|'news-houston-texas-environment'|'health'|'news-houston-weather'|'politics'|'politics-houston'|'politics-texas'|'politics-us-world'|'business'|'business-energy'|'business-real-estate'|'business-tech'|'sports'|'sports-texans'|'sports-astros'|'sports-rockets'|'sports-college'|'sports-high-school'|'sports-dynamo'|'entertainment'|'lifestyle'|'food-restaurants'|'food-restaurants-reviews'|'food-restaurants-bbq'|'opinion'|'opinion-editorials'|'opinion-letters'|'opinion-columnists'|'news-interactives'|'news-investigations'|'la-voz'|'visuals' $section
+ * @method mixed news(array $params = [], array $options = []) houston-chronicle-news (GET /houston-chronicle/news)
+ * @method mixed sections(array $params = [], array $options = []) houston-chronicle-sections (GET /houston-chronicle/sections)
+ */
+abstract class HoustonChronicleGroup {}
 
 /**
  * @method mixed howtogeekNews(array $params = [], array $options = []) howtogeek-news (GET /howtogeek/news)
@@ -3353,6 +3559,18 @@ abstract class IrishIndependentGroup {}
  * @method mixed irishtimesSections(array $params = [], array $options = []) irishtimes-sections (GET /irishtimes/sections)
  */
 abstract class IrishTimesGroup {}
+
+/**
+ * @method mixed japantimesArticle(array $params = [], array $options = []) japantimes-article (GET /japantimes/article)
+ *   params: string $url
+ * @method mixed japantimesAuthor(array $params = [], array $options = []) japantimes-author (GET /japantimes/author)
+ *   params: string $url
+ * @method mixed japantimesHeadlines(array $params = [], array $options = []) japantimes-headlines (GET /japantimes/headlines)
+ *   params: 'news-japan'|'news-japan-politics'|'news-japan-society'|'news-japan-crime-legal'|'news-japan-science-health'|'news-japan-explainer'|'news-japan-history'|'news-world'|'news-world-politics'|'news-world-crime-legal'|'news-world-science-health'|'news-world-society'|'news-asia-pacific'|'news-asia-pacific-politics'|'news-asia-pacific-crime-legal'|'news-asia-pacific-science-health'|'news-asia-pacific-society'|'business'|'business-companies'|'business-economy'|'business-markets'|'business-tech'|'sports'|'sports-sumo'|'sports-soccer'|'sports-baseball'|'sports-basketball'|'sports-tennis'|'sports-olympics'|'sports-more-sports'|'opinion'|'opinion-editorials'|'opinion-commentary'|'tag-geoeconomic-briefing'|'environment'|'environment-climate-change'|'environment-energy'|'environment-sustainability'|'environment-wildlife'|'environment-earth-science'|'life'|'life-travel'|'life-digital'|'life-food-drink'|'life-style-design'|'life-language'|'life-lifestyle'|'culture'|'culture-film'|'culture-books'|'culture-music'|'culture-art'|'culture-tv-streaming'|'culture-stage'|'culture-entertainment-news'|'community'|'community-voices'|'community-issues'|'community-how-tos'|'community-our-lives' $section
+ * @method mixed japantimesNews(array $params = [], array $options = []) japantimes-news (GET /japantimes/news)
+ * @method mixed japantimesSections(array $params = [], array $options = []) japantimes-sections (GET /japantimes/sections)
+ */
+abstract class TheJapanTimesGroup {}
 
 /**
  * @method mixed jcrewCategories(array $params = [], array $options = []) jcrew-categories (GET /jcrew/categories)
@@ -3851,6 +4069,28 @@ abstract class MacRumorsGroup {}
 abstract class MacySGroup {}
 
 /**
+ * @method mixed makeuseofArticle(array $params = [], array $options = []) makeuseof-article (GET /makeuseof/article)
+ *   params: string $url
+ * @method mixed makeuseofAuthor(array $params = [], array $options = []) makeuseof-author (GET /makeuseof/author)
+ *   params: string $url
+ * @method mixed makeuseofHeadlines(array $params = [], array $options = []) makeuseof-headlines (GET /makeuseof/headlines)
+ *   params: 'windows'|'linux'|'google-android'|'apple'|'technology-explained'|'networking'|'security'|'productivity'|'creative'|'entertainment'|'streaming'|'smart-home'|'home'|'news' $section
+ * @method mixed makeuseofNews(array $params = [], array $options = []) makeuseof-news (GET /makeuseof/news)
+ * @method mixed makeuseofSections(array $params = [], array $options = []) makeuseof-sections (GET /makeuseof/sections)
+ */
+abstract class MakeUseOfGroup {}
+
+/**
+ * @method mixed malaymailArticle(array $params = [], array $options = []) malaymail-article (GET /malaymail/article)
+ *   params: string $url
+ * @method mixed malaymailHeadlines(array $params = [], array $options = []) malaymail-headlines (GET /malaymail/headlines)
+ *   params: 'malaysia'|'singapore'|'money'|'world'|'life'|'eat-drink'|'showbiz'|'opinion'|'sports'|'tech-gadgets'|'what-you-think' $section
+ * @method mixed malaymailNews(array $params = [], array $options = []) malaymail-news (GET /malaymail/news)
+ * @method mixed malaymailSections(array $params = [], array $options = []) malaymail-sections (GET /malaymail/sections)
+ */
+abstract class MalayMailGroup {}
+
+/**
  * @method mixed rankings(array $params = [], array $options = []) manga-rankings (GET /manga/rankings)
  *   params: 'TRENDING_DESC'|'POPULARITY_DESC'|'SCORE_DESC'|'FAVOURITES_DESC'|'START_DATE_DESC'|'UPDATED_AT_DESC' $sort, 'MANGA'|'NOVEL'|'ONE_SHOT' $format, string $genre, 'FINISHED'|'RELEASING'|'NOT_YET_RELEASED'|'CANCELLED'|'HIATUS' $status, int $page, int $per_page
  * @method mixed search(array $params = [], array $options = []) manga-search (GET /manga/search)
@@ -4088,6 +4328,8 @@ abstract class MirrorGroup {}
  *   params: string $id
  * @method mixed playerStats(array $params = [], array $options = []) mlb-player-stats (GET /mlb/player-stats)
  *   params: string $id, int $season, 'hitting'|'pitching'|'fielding'|'catching'|'running'|'game'|'team'|'streak' $group, 'projected'|'projectedRos'|'yearByYear'|'yearByYearAdvanced'|'yearByYearPlayoffs'|'season'|'standard'|'advanced'|'career'|'careerRegularSeason'|'careerAdvanced'|'seasonAdvanced'|'careerStatSplits'|'careerPlayoffs'|'gameLog'|'playLog'|'pitchLog'|'pitchArsenal'|'outsAboveAverage'|'expectedStatistics'|'sabermetrics'|'sprayChart'|'tracking'|'vsPlayer'|'vsPlayerTotal'|'vsPlayer5Y'|'vsTeam'|'vsTeam5Y'|'vsTeamTotal'|'lastXGames'|'byDateRange'|'byDateRangeAdvanced'|'byMonth'|'byMonthPlayoffs'|'byDayOfWeek'|'byDayOfWeekPlayoffs'|'homeAndAway'|'homeAndAwayPlayoffs'|'winLoss'|'winLossPlayoffs'|'rankings'|'rankingsByYear'|'statsSingleSeason'|'statsSingleSeasonAdvanced'|'hotColdZones'|'availableStats'|'opponentsFaced'|'gameTypeStats'|'firstYearStats'|'lastYearStats'|'statSplits'|'statSplitsAdvanced'|'atGameStart'|'vsOpponents'|'sabermetricsMultiTeam'|'projected_Zips'|'projected_ZipsRos'|'projected_Zips2YR'|'projected_Zips3YR' $stat_type, 'S'|'R'|'F'|'D'|'L'|'W'|'C'|'P'|'A'|'I'|'E' $game_type, string $start_date, string $end_date, string $opponent_team_id, string $opponent_player_id
+ * @method mixed prospectRankings(array $params = [], array $options = []) mlb-prospect-rankings (GET /mlb/prospect-rankings)
+ *   params: 'top100'|'team'|'position'|'draft'|'international' $view, '2026'|'2025'|'2024'|'2023'|'2022'|'2021'|'2020'|'2019'|'2018'|'2017'|'2016'|'2015'|'2014'|'2013'|'2011'|'2012' $year, string $team_slug, '1b'|'2b'|'ss'|'3b'|'c'|'of'|'rhp'|'lhp' $position, string $team_filter, string $q, 'rank'|'level'|'eta'|'age' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
  * @method mixed prospectStats(array $params = [], array $options = []) mlb-prospect-stats (GET /mlb/prospect-stats)
  *   params: 'top100'|'all' $list_type, string $team_id, 'today'|'1day'|'10day'|'30day'|'springTraining'|'Year2019'|'Year2020'|'Year2021'|'Year2022'|'Year2023'|'Year2024'|'Year2025'|'Year2026' $date_range, 'batters'|'pitchers' $player_type, '1'|'5'|'10'|'25'|'50'|'100'|'150'|'200'|'250' $min_pa, '1b'|'2b'|'ss'|'3b'|'c'|'of'|'rhp'|'lhp' $position, string $q, int $limit, int $offset
  * @method mixed schedule(array $params = [], array $options = []) mlb-schedule (GET /mlb/schedule)
@@ -4096,12 +4338,102 @@ abstract class MirrorGroup {}
  *   params: string $q
  * @method mixed standings(array $params = [], array $options = []) mlb-standings (GET /mlb/standings)
  *   params: int $season, 'regularSeason'|'wildCard'|'divisionLeaders'|'wildCardWithLeaders'|'firstHalf'|'secondHalf'|'springTraining'|'postseason'|'byDivision'|'byConference'|'byLeague'|'byOrganization'|'currentHalf' $type, string $date
+ * @method mixed statcastAbsChallenges(array $params = [], array $options = []) mlb-statcast-abs-challenges (GET /mlb/statcast-abs-challenges)
+ *   params: 'batter'|'batting-team'|'catcher'|'pitcher'|'catching-team'|'team-summary'|'league' $challenge_type, array<'2025'|'2026'> $seasons, array<'R'|'S'|'F'|'D'|'L'|'W'> $game_types, 'for'|'against' $data_mode, 'chal'|'runs' $data_count, '0'|'1'|'2'|'5'|'10'|'20' $min_challenges, '0'|'1'|'2'|'5'|'10'|'20' $min_opponent_challenges, 'mlb'|'aaa' $level, 'vlow'|'low'|'med'|'high' $leverage, 'in'|'out' $ball_strike, 'low'|'med'|'high'|'vhigh' $breakeven, '0'|'1' $split_year, array<'api_game_date_month_text'|'game_type'|'bat_position_code'|'lineup_cd'|'leverage_run_value_code'|'is_strike_calc'|'home_away'|'api_pitch_type_group03'|'gameday3_pitchzone_cd'|'abschallenge_breakeven_code'> $splits, array<'141'|'110'|'139'|'111'|'147'|'114'|'118'|'116'|'142'|'145'|'108'|'117'|'133'|'136'|'140'|'144'|'146'|'121'|'120'|'143'|'158'|'138'|'112'|'134'|'113'|'109'|'119'|'137'|'135'|'115'> $challenge_team_ids, array<'141'|'110'|'139'|'111'|'147'|'114'|'118'|'116'|'142'|'145'|'108'|'117'|'133'|'136'|'140'|'144'|'146'|'121'|'120'|'143'|'158'|'138'|'112'|'134'|'113'|'109'|'119'|'137'|'135'|'115'> $opponent_team_ids, array<'FF'|'SI'|'FC'|'CH'|'FS'|'FO'|'SC'|'CU'|'SL'|'ST'|'SV'|'KN'> $pitch_types, array<'11'|'12'|'13'|'14'|'16'|'17'|'18'|'19'> $shadow_zones
+ * @method mixed statcastActiveSpin(array $params = [], array $options = []) mlb-statcast-active-spin (GET /mlb/statcast-active-spin)
+ *   params: '2026_spin-based'|'2026_observed'|'2025_spin-based'|'2025_observed'|'2024_spin-based'|'2024_observed'|'2023_spin-based'|'2023_observed'|'2022_spin-based'|'2022_observed'|'2021_spin-based'|'2021_observed'|'2020_spin-based'|'2020_observed'|'2019_observed'|'2018_observed'|'2017_observed' $year, '50'|'100'|'250'|'500'|'750'|'1000'|'1500'|'2000'|'2500'|'3000' $min, 'R'|'L' $hand, 'name_display_last_first'|'team_id'|'pitch_hand'|'formatted_active_spin_fourseam'|'formatted_active_spin_sinker'|'formatted_active_spin_cutter'|'formatted_active_spin_changeup'|'formatted_active_spin_splitter'|'formatted_active_spin_curve'|'formatted_active_spin_slider'|'formatted_active_spin_sweeper'|'formatted_active_spin_slurve' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastArmAngle(array $params = [], array $options = []) mlb-statcast-arm-angle (GET /mlb/statcast-arm-angle)
+ *   params: array<'2026'|'2025'|'2024'|'2023'|'2022'|'2021'|'2020'> $seasons, array<'108'|'109'|'110'|'111'|'112'|'113'|'114'|'115'|'116'|'117'|'118'|'119'|'120'|'121'|'133'|'134'|'135'|'136'|'137'|'138'|'139'|'140'|'141'|'142'|'143'|'144'|'145'|'146'|'147'|'158'> $teams, array<'R'|'F'|'D'|'L'|'W'> $game_types, array<'FF'|'SI'|'FC'|'CH'|'FS'|'FO'|'SC'|'CU'|'SL'|'ST'|'SV'|'KN'> $pitch_types, 'L'|'R' $pitch_hand, 'L'|'R' $bat_side, 'q'|'1'|'5'|'10'|'25'|'50'|'100'|'300'|'500'|'1000'|'1500'|'2000'|'2500'|'3000' $min, '1'|'5'|'10'|'25'|'50'|'100'|'300'|'500'|'1000'|'1500'|'2000' $min_group_pitches, array<'year'|'api_game_date_month_text'|'api_pitch_type_group03'|'game_type'|'bat_side'|'fld_team_id'> $group_by, string $date_start, string $date_end, 'name'|'team_name'|'pitch_hand'|'n_pitches'|'arm_angle'|'release_ball_x'|'relative_release_ball_x'|'release_ball_z'|'relative_shoulder_x'|'shoulder_z' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastArmStrength(array $params = [], array $options = []) mlb-statcast-arm-strength (GET /mlb/statcast-arm-strength)
+ *   params: 'player'|'team' $type, '2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026'|'9999' $year, '108'|'117'|'133'|'141'|'144'|'158'|'138'|'112'|'109'|'119'|'137'|'114'|'136'|'146'|'121'|'120'|'110'|'135'|'143'|'134'|'140'|'139'|'113'|'111'|'115'|'118'|'116'|'142'|'145'|'147' $team_id, 'arm_inf'|'arm_of'|'arm_1b'|'arm_2b'|'arm_3b'|'arm_ss'|'arm_lf'|'arm_cf'|'arm_rf' $position, '50'|'100'|'300'|'500'|'1000' $min_throws, 'fielder_name'|'team_name'|'total_throws'|'max_arm_strength'|'arm_overall'|'arm_inf'|'arm_of'|'arm_1b'|'arm_2b'|'arm_3b'|'arm_ss'|'arm_lf'|'arm_cf'|'arm_rf' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastArmStrengthPlayer(array $params = [], array $options = []) mlb-statcast-arm-strength-player (GET /mlb/statcast-arm-strength-player)
+ *   params: string $player_id, '2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026'|'9999' $year
+ * @method mixed statcastArmValue(array $params = [], array $options = []) mlb-statcast-arm-value (GET /mlb/statcast-arm-value)
+ *   params: string $q, 'Run'|'Fld'|'Pit'|'Batting Team'|'Pitching Team'|'League' $type, 'Regular'|'Playoff'|'All' $game_type, 'All'|'r10_to_2b_210'|'r10_to_3b_210'|'r11_to_3b_10'|'r11_to_3b_2'|'r11_to_hp_10'|'r11_to_hp_2'|'r12_to_hp_10'|'r12_to_hp_2'|'r13_to_hp_0'|'r13_to_hp_1' $key_base_out, 'top'|'1'|'5'|'10'|'20'|'30'|'40'|'50'|'75'|'100'|'250'|'500'|'1000' $minimum_opps, int $start_year, int $end_year, 'no'|'yes' $split, '108'|'117'|'133'|'141'|'144'|'158'|'138'|'112'|'109'|'119'|'137'|'114'|'136'|'146'|'121'|'120'|'110'|'135'|'143'|'134'|'140'|'139'|'113'|'111'|'115'|'118'|'116'|'142'|'145'|'147'|'split' $team_id, '1'|'0' $with_team_only, 'entity_name'|'team_name'|'start_year'|'runner_runs'|'fielder_runs'|'runner_runs_swipe'|'runner_runs_snipe'|'runner_runs_freeze'|'fielder_runs_swipe'|'fielder_runs_snipe'|'fielder_runs_freeze'|'n_opp_xb'|'n_att_xb'|'rate_att_xb'|'est_rate_att_generic_runner'|'est_rate_att_generic_fielder'|'rate_att_xb_diff_runner'|'rate_att_xb_diff_fielder'|'n_safe'|'rate_safe'|'rate_safe_per_attempt' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastArmValueDetails(array $params = [], array $options = []) mlb-statcast-arm-value-details (GET /mlb/statcast-arm-value-details)
+ *   params: string $entity_id, 'Run'|'Fld'|'Pit' $type, 'Regular'|'Playoff'|'All' $game_type, 'All'|'r10_to_2b_210'|'r10_to_3b_210'|'r11_to_3b_10'|'r11_to_3b_2'|'r11_to_hp_10'|'r11_to_hp_2'|'r12_to_hp_10'|'r12_to_hp_2'|'r13_to_hp_0'|'r13_to_hp_1' $key_base_out, 'top'|'1'|'5'|'10'|'20'|'30'|'40'|'50'|'75'|'100'|'250'|'500'|'1000' $minimum_opps, int $start_year, int $end_year, 'no'|'yes' $split, '108'|'117'|'133'|'141'|'144'|'158'|'138'|'112'|'109'|'119'|'137'|'114'|'136'|'146'|'121'|'120'|'110'|'135'|'143'|'134'|'140'|'139'|'113'|'111'|'115'|'118'|'116'|'142'|'145'|'147'|'split' $team_id, '1'|'0' $with_team_only
+ * @method mixed statcastBaserunning(array $params = [], array $options = []) mlb-statcast-baserunning (GET /mlb/statcast-baserunning)
+ *   params: 'baserunning-run-value'|'basestealing-running-game'|'baserunning' $board, 'Run'|'Bat'|'Batting Team'|'Pitching Team'|'Fld'|'Pit'|'League' $type, 'Regular'|'Playoff'|'All' $game_type, '2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_start, '2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_end, 'no'|'yes' $split, 'q'|'top'|'1'|'5'|'10'|'20'|'30'|'40'|'50'|'75'|'100'|'250'|'500'|'1000'|'1500'|'2000' $n, 'split'|'108'|'117'|'133'|'141'|'144'|'158'|'138'|'112'|'109'|'119'|'137'|'114'|'136'|'146'|'121'|'120'|'110'|'135'|'143'|'134'|'140'|'139'|'113'|'111'|'115'|'118'|'116'|'142'|'145'|'147' $team, bool $with_team_only, 'all'|'L'|'R' $pitch_hand, 'All'|'Advance'|'Out'|'Hold' $runner_moved, 'All'|'2B'|'3B' $target_base, 'All'|'0'|'1'|'2'|'3' $prior_pk, 'All'|'r10_to_2b_210'|'r10_to_3b_210'|'r11_to_3b_10'|'r11_to_3b_2'|'r11_to_hp_10'|'r11_to_hp_2'|'r12_to_hp_10'|'r12_to_hp_2'|'r13_to_hp_0'|'r13_to_hp_1' $key_base_out, 'entity_name'|'team_name'|'start_year'|'N_runner_moved'|'N_runner_moved_SBX'|'N_runner_moved_XB'|'runner_runs_SB2'|'runner_runs_SB3'|'runner_runs_SBX'|'runner_runs_XB'|'runner_runs_XB_freeze'|'runner_runs_XB_snipe'|'runner_runs_XB_swipe'|'runner_runs_tot'|'simple_stolen_on_running_act_SB2'|'simple_stolen_on_running_act_SB3'|'bk'|'catcher_name'|'cs'|'entity_id'|'fb'|'fielder_name'|'game_date'|'n_bk'|'n_cs'|'n_fb'|'n_init'|'n_minus'|'n_pk'|'n_plus'|'n_sb'|'net_act_minus'|'net_act_plus'|'pitcher_name'|'pk'|'r_primary_lead'|'r_primary_lead_sbx'|'r_sec_minus_prim_lead'|'r_sec_minus_prim_lead_sbx'|'r_secondary_lead'|'r_secondary_lead_sbx'|'r_sprint_speed_top50percent'|'rate_sbx'|'runner_moved_cd'|'runner_name'|'runs_stolen_on_running_act'|'sb'|'sba'|'simple_stolen_on_running_act'|'target_base'|'runner_runs'|'fielder_runs'|'runner_runs_swipe'|'runner_runs_snipe'|'runner_runs_freeze'|'fielder_runs_swipe'|'fielder_runs_snipe'|'fielder_runs_freeze'|'n_opp_xb'|'rate_att_xb'|'est_rate_att_generic_runner'|'est_rate_att_generic_fielder'|'rate_att_xb_diff_runner'|'rate_att_xb_diff_fielder'|'n_safe'|'rate_safe'|'rate_safe_per_attempt' $sort, 'asc'|'desc' $sort_dir, string $search, int $limit, int $offset
+ * @method mixed statcastBatTracking(array $params = [], array $options = []) mlb-statcast-bat-tracking (GET /mlb/statcast-bat-tracking)
+ *   params: 'batter'|'batting-team'|'pitcher'|'pitching-team'|'league' $type, '2023'|'2024'|'2025'|'2026' $season_start, '2023'|'2024'|'2025'|'2026' $season_end, 'Any'|'Playoff'|'Regular' $game_type, 'q'|'1'|'5'|'10'|'25'|'50'|'100'|'200'|'500'|'1000' $min_swings, '1'|'5'|'10'|'25'|'50'|'100'|'200'|'500'|'1000' $min_group_swings, string $date_start, string $date_end, 'L'|'R' $bat_side, '2'|'4'|'9' $contact_type, '1'|'0' $is_hard_hit, '0'|'1'|'1.1'|'2'|'3' $attack_zone, 'L'|'R' $pitch_hand, array<'108'|'109'|'110'|'111'|'112'|'113'|'114'|'115'|'116'|'117'|'118'|'119'|'120'|'121'|'133'|'134'|'135'|'136'|'137'|'138'|'139'|'140'|'141'|'142'|'143'|'144'|'145'|'146'|'147'|'158'> $teams, array<'FF'|'SI'|'FC'|'CH'|'FS'|'FO'|'SC'|'CU'|'SL'|'ST'|'SV'|'KN'> $pitch_types, array<'00'|'01'|'02'|'10'|'11'|'12'|'20'|'21'|'22'|'30'|'31'|'32'> $counts, array<'year'|'api_game_date_month_text'|'bat_contact_code'|'api_pitch_type_group03'|'game_type'|'is_hit_into_play_hardhit'|'is_best_speed'|'pitch_hand'|'bat_side'|'is_pre_ball_count_3'|'is_pre_strike_count_2'> $group_by, 'avg_batter_x_position'|'avg_batter_y_position'|'avg_intercept_x_vs_batter'|'avg_intercept_y_vs_batter'|'avg_foot_sep0'|'avg_foot_angle0'|'attack_direction_pullopp'|'rate_ideal_attack_angle'|'attack_angle'|'avg_plane_vertical_angle'|'avg_sweetspot_speed_mph'|'avg_sweetspot_speed_mph_qualified'|'avg_is_sweetspot_speed_high'|'avg_is_sweetspot_speed_high_qualified'|'squared_up'|'squared_up_qualified'|'squared_up_per_bat_contact'|'squared_up_per_swing'|'squared_up_with_speed'|'squared_up_with_speed_qualified'|'squared_up_with_speed_per_bat_contact'|'squared_up_with_speed_per_swing'|'swing_length_qualified'|'swords'|'swings_qualified'|'percent_qualified'|'hit_into_play_qualified'|'bat_contact'|'bat_contact_qualified'|'count'|'delta_run_exp'|'hit_into_play_per_swing'|'pitcher_delta_run_exp'|'strikes_swinging_qualified'|'sweetspot_speed_high_qualified'|'strike_swinging_per_swing'|'id'|'name'|'batter_name'|'b_name_display_first_last'|'savant_batter_id'|'team_id'|'team_name'|'side'|'n_sides'|'n_teams'|'bat_side_formatted' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastBattedBall(array $params = [], array $options = []) mlb-statcast-batted-ball (GET /mlb/statcast-batted-ball)
+ *   params: 'batter'|'batting-team'|'pitcher'|'pitching-team'|'league' $type, array<'2015'|'2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026'> $seasons, array<'R'|'A'|'F'|'D'|'L'|'W'> $game_types, array<'api_game_date_month_text'|'game_type'|'api_pitch_type_group03'|'bat_side'|'pitch_hand'> $splits, 'q'|'1'|'5'|'10'|'25'|'50'|'100'|'200'|'500'|'1000' $min, '1'|'5'|'10'|'25'|'50'|'100'|'200'|'500'|'1000' $min_split, '1'|'0' $split_year, array<'108'|'109'|'110'|'111'|'112'|'113'|'114'|'115'|'116'|'117'|'118'|'119'|'120'|'121'|'133'|'134'|'135'|'136'|'137'|'138'|'139'|'140'|'141'|'142'|'143'|'144'|'145'|'146'|'147'|'158'> $teams, string $date_start, string $date_end, 'L'|'R' $bat_side, 'L'|'R' $pitch_hand, array<'FF'|'SI'|'FC'|'CH'|'FS'|'FO'|'SC'|'CU'|'SL'|'ST'|'SV'|'KN'> $pitch_types, bool $include_league_average, 'name'|'team_name'|'num_bbe'|'gb_rate'|'air_rate'|'fb_rate'|'ld_rate'|'pu_rate'|'pull_rate'|'straight_rate'|'oppo_rate'|'pull_gb_rate'|'straight_gb_rate'|'oppo_gb_rate'|'pull_air_rate'|'straight_air_rate'|'oppo_air_rate' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastBirthdayIndex(array $params = [], array $options = []) mlb-statcast-birthday-index (GET /mlb/statcast-birthday-index)
+ *   params: 'batter'|'pitcher' $type, '1'|'2'|'3'|'5'|'8'|'10' $min_games, string $date, bool $show_inactives, 'player_name'|'is_player_active'|'birth_day_noyear_sort_hidden'|'age'|'daysUntil'|'birthday_index'|'birthday_games'|'birthday_pa'|'birthday_hits'|'birthday_hit_1b'|'birthday_hit_2b'|'birthday_hit_3b'|'birthday_hit_hr'|'birthday_strikeout'|'birthday_k_percent'|'birthday_walk'|'birthday_bb_percent'|'birthday_BA'|'non_birthday_BA'|'birthday_BA_diff'|'birthday_OPS'|'non_birthday_OPS'|'birthday_OPS_diff'|'birthday_wOBA'|'non_birthday_wOBA'|'birthday_wOBA_diff' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastCatcherBlocking(array $params = [], array $options = []) mlb-statcast-catcher-blocking (GET /mlb/statcast-catcher-blocking)
+ *   params: 'Cat'|'Pit'|'Pitching Team'|'League' $type, 'Regular'|'Playoff'|'All' $game_type, 'q'|'1'|'50'|'100'|'250'|'500'|'1000'|'2000'|'3000'|'4000'|'5000' $min, int $start_year, int $end_year, 'yes'|'no' $split, string $team, bool $with_team_only, 'entity_name'|'team_name'|'start_year'|'N'|'catcher_runs'|'diff_runner_pbwp'|'N_runner_pbwp'|'x_runner_pbwp'|'diff_rate_runner_pbwp'|'freq_pbwp_1_easy'|'freq_pbwp_2_medium'|'freq_pbwp_3_tough'|'diff_runner_pbwp_1_easy'|'diff_runner_pbwp_2_medium'|'diff_runner_pbwp_3_tough' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastCatcherBlockingDetails(array $params = [], array $options = []) mlb-statcast-catcher-blocking-details (GET /mlb/statcast-catcher-blocking-details)
+ *   params: string $entity_id, 'Cat'|'Pit'|'Pitching Team' $type, 'Regular'|'Playoff'|'All' $game_type, int $start_year, int $end_year, 'yes'|'no' $split, string $team, bool $with_team_only, int $limit, int $offset
+ * @method mixed statcastCatcherFraming(array $params = [], array $options = []) mlb-statcast-catcher-framing (GET /mlb/statcast-catcher-framing)
+ *   params: 'catcher'|'catching-team'|'batter'|'batting-team'|'pitcher'|'league' $type, 'Any'|'Playoff'|'Regular' $game_type, '108'|'117'|'133'|'141'|'144'|'158'|'138'|'112'|'109'|'119'|'137'|'114'|'136'|'146'|'121'|'120'|'110'|'135'|'143'|'134'|'140'|'139'|'113'|'111'|'115'|'118'|'116'|'142'|'145'|'147' $team, 'q'|'100'|'250'|'500'|'750'|'1000'|'1250'|'1500' $min_pitches, '1'|'25'|'50'|'100'|'250'|'500'|'750'|'1000'|'1250'|'1500' $min_results, '2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_start, '2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_end, string $date_start, string $date_end, 'L'|'R' $bat_side, 'L'|'R' $pitch_hand, 'FF'|'SI'|'FC'|'CH'|'FS'|'FO'|'SC'|'CU'|'SL'|'ST'|'SV'|'KN' $pitch_type, 'in'|'out' $ball_strike, 'original'|'final' $call, 'name'|'team_name'|'pitches'|'pitches_shadow'|'rv_tot'|'pct_tot'|'pitches_shadow_top'|'rv_shadow_top'|'pct_shadow_top'|'pitches_shadow_bot'|'rv_shadow_bot'|'pct_shadow_bot'|'pitches_11'|'rv_11'|'pct_11'|'pitches_12'|'rv_12'|'pct_12'|'pitches_13'|'rv_13'|'pct_13'|'pitches_14'|'rv_14'|'pct_14'|'pitches_16'|'rv_16'|'pct_16'|'pitches_17'|'rv_17'|'pct_17'|'pitches_18'|'rv_18'|'pct_18'|'pitches_19'|'rv_19'|'pct_19'|'pitches_heart'|'rv_heart'|'pct_heart'|'pitches_chwa'|'rv_chwa'|'pct_chwa'|'pitches_bin_minus10'|'pitches_bin_minus9'|'pitches_bin_minus8'|'pitches_bin_minus7'|'pitches_bin_minus6'|'pitches_bin_minus5'|'pitches_bin_minus4'|'pitches_bin_minus3'|'pitches_bin_minus2'|'pitches_bin_minus1'|'pitches_bin_0'|'pitches_bin_1'|'pitches_bin_2'|'pitches_bin_3'|'pitches_bin_4'|'pitches_bin_5'|'pitches_bin_6'|'pitches_bin_7'|'pitches_bin_8'|'pitches_bin_9'|'pct_bin_minus10'|'pct_bin_minus9'|'pct_bin_minus8'|'pct_bin_minus7'|'pct_bin_minus6'|'pct_bin_minus5'|'pct_bin_minus4'|'pct_bin_minus3'|'pct_bin_minus2'|'pct_bin_minus1'|'pct_bin_0'|'pct_bin_1'|'pct_bin_2'|'pct_bin_3'|'pct_bin_4'|'pct_bin_5'|'pct_bin_6'|'pct_bin_7'|'pct_bin_8'|'pct_bin_9' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastCatcherFramingDetails(array $params = [], array $options = []) mlb-statcast-catcher-framing-details (GET /mlb/statcast-catcher-framing-details)
+ *   params: string $entity_id, 'catcher'|'catching-team'|'batter'|'batting-team'|'pitcher' $type, 'Any'|'Playoff'|'Regular' $game_type, '108'|'117'|'133'|'141'|'144'|'158'|'138'|'112'|'109'|'119'|'137'|'114'|'136'|'146'|'121'|'120'|'110'|'135'|'143'|'134'|'140'|'139'|'113'|'111'|'115'|'118'|'116'|'142'|'145'|'147' $team, 'q'|'100'|'250'|'500'|'750'|'1000'|'1250'|'1500' $min_pitches, '1'|'25'|'50'|'100'|'250'|'500'|'750'|'1000'|'1250'|'1500' $min_results, '2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_start, '2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_end, string $date_start, string $date_end, 'L'|'R' $bat_side, 'L'|'R' $pitch_hand, 'FF'|'SI'|'FC'|'CH'|'FS'|'FO'|'SC'|'CU'|'SL'|'ST'|'SV'|'KN' $pitch_type, 'in'|'out' $ball_strike, 'original'|'final' $call, int $limit, int $offset
+ * @method mixed statcastCatcherPopTime(array $params = [], array $options = []) mlb-statcast-catcher-pop-time (GET /mlb/statcast-catcher-pop-time)
+ *   params: '2015'|'2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $year, '108'|'117'|'133'|'141'|'144'|'158'|'138'|'112'|'109'|'119'|'137'|'114'|'136'|'146'|'121'|'120'|'110'|'135'|'143'|'134'|'140'|'139'|'111'|'113'|'115'|'118'|'116'|'142'|'145'|'147' $team_id, '1'|'5'|'10'|'15'|'20' $min2b, '0'|'1'|'5'|'10'|'15'|'20' $min3b, 'catcher'|'team'|'age'|'arm'|'exchange'|'2b_attempts'|'2b_all'|'2b_caught_stealing'|'2b_stolen_bases'|'3b_attempts'|'3b_all'|'3b_caught_stealing'|'3b_stolen_bases' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastCatcherStance(array $params = [], array $options = []) mlb-statcast-catcher-stance (GET /mlb/statcast-catcher-stance)
+ *   params: 'catcher'|'catching-team'|'batter'|'batting-team'|'pitcher'|'league' $type, '2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_start, '2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_end, 'Any'|'Playoff'|'Regular' $game_type, 'q'|'100'|'250'|'500'|'750'|'1000'|'2500'|'5000'|'7500'|'10000'|'15000'|'20000' $min_pitches, '1'|'25'|'50'|'100'|'250'|'500'|'750'|'1000'|'2500'|'5000'|'7500'|'10000'|'15000'|'20000' $min_results, string $date_start, string $date_end, 'L'|'R' $bat_side, 'L'|'R' $pitch_hand, '9999'|'4'|'1'|'2'|'3' $knee_code, array<'108'|'117'|'133'|'141'|'144'|'158'|'138'|'112'|'109'|'119'|'137'|'114'|'136'|'146'|'121'|'120'|'110'|'135'|'143'|'134'|'140'|'139'|'111'|'113'|'115'|'118'|'116'|'142'|'145'|'147'> $teams, array<'FF'|'SI'|'FC'|'CH'|'FS'|'FO'|'SC'|'CU'|'SL'|'ST'|'SV'|'KN'> $pitch_types, array<'none'|'year'|'api_game_date_month_text'|'game_type'|'knee_code_overview'|'pitch_hand'|'bat_side'|'api_pitch_type_group03'|'knee_code'> $group_by, 'name'|'id'|'team_id'|'team_name'|'year'|'pitches'|'skeletal_pitches'|'n_both_down'|'n_both_up'|'n_inside_down'|'n_l_down'|'n_leg_extended'|'n_one_down'|'n_outside_down'|'n_r_down'|'n_teams'|'pct_both_down'|'pct_both_up'|'pct_inside_down'|'pct_l_down'|'pct_leg_extended'|'pct_one_down'|'pct_outside_down'|'pct_r_down'|'one_knee_blocking'|'one_knee_blocking_162'|'one_knee_csaa'|'one_knee_csp'|'one_knee_framing'|'one_knee_framing_162'|'one_knee_pbwp'|'one_knee_pitching'|'one_knee_pitching_162'|'one_knee_ron_num'|'one_knee_ron_pbwp'|'one_knee_sba_csaa'|'one_knee_sba_num'|'one_knee_shadow_cs'|'one_knee_shadow_num'|'one_knee_throwing'|'one_knee_throwing_162'|'other_blocking'|'other_blocking_162'|'other_csaa'|'other_csp'|'other_framing'|'other_framing_162'|'other_pbwp'|'other_pitching'|'other_pitching_162'|'other_ron_num'|'other_ron_pbwp'|'other_sba_csaa'|'other_sba_num'|'other_shadow_cs'|'other_shadow_num'|'other_throwing'|'other_throwing_162'|'total_blocking'|'total_framing'|'total_frv'|'total_throwing'|'total_untracked' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastCatcherThrowing(array $params = [], array $options = []) mlb-statcast-catcher-throwing (GET /mlb/statcast-catcher-throwing)
+ *   params: 'Cat'|'Pitching Team'|'League' $type, '2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_start, '2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_end, 'Regular'|'Playoff'|'All' $game_type, 'q'|'1'|'5'|'10'|'20'|'30'|'40'|'50'|'75'|'100' $minimum, '2B'|'3B'|'All' $target_base, 'yes'|'no' $split, 'split'|'108'|'117'|'133'|'141'|'144'|'158'|'138'|'112'|'109'|'119'|'137'|'114'|'136'|'146'|'121'|'120'|'110'|'135'|'143'|'134'|'140'|'139'|'111'|'113'|'115'|'118'|'116'|'142'|'145'|'147' $team, bool $with_team_only, 'entity_name'|'start_year'|'n'|'cs_raa'|'n_cs_aa'|'n_cs'|'rate_cs'|'n_xcs'|'rate_xcs'|'rate_cs_aa'|'seasonal_sprint_speed'|'distance_to_target'|'pop_time'|'exchange_time'|'arm_strength'|'n_xcs_with_flight_over_xcs'|'n_xcs_with_exchange_over_xcs'|'n_xcs_with_accuracy_over_xcs'|'n_xcs_with_ground_other_over_xcs'|'n_xcs_with_onfly_other_over_xcs'|'n_xcs_with_untracked_other_over_xcs' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastCatcherThrowingDetails(array $params = [], array $options = []) mlb-statcast-catcher-throwing-details (GET /mlb/statcast-catcher-throwing-details)
+ *   params: int $entity_id, '2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $year, 'Regular'|'Playoff'|'All' $game_type, 'q'|'1'|'5'|'10'|'20'|'30'|'40'|'50'|'75'|'100' $minimum, '2B'|'3B'|'All' $target_base, 'yes'|'no' $split, '108'|'117'|'133'|'141'|'144'|'158'|'138'|'112'|'109'|'119'|'137'|'114'|'136'|'146'|'121'|'120'|'110'|'135'|'143'|'134'|'140'|'139'|'111'|'113'|'115'|'118'|'116'|'142'|'145'|'147' $team, bool $with_team_only, int $limit, int $offset
  * @method mixed statcastExpected(array $params = [], array $options = []) mlb-statcast-expected (GET /mlb/statcast-expected)
  *   params: 'batter'|'pitcher'|'batter-team'|'pitcher-team' $type, int $year, string $team_id, 'C'|'1B'|'2B'|'SS'|'3B'|'LF'|'CF'|'RF'|'DH' $position, 'bip'|'pa' $filter_type, 'q'|'1'|'25'|'50'|'100'|'150'|'200'|'250'|'350'|'450'|'500'|'600' $minimum, 'entity_name'|'entity_team_name'|'pa'|'bip'|'ba'|'est_ba'|'ba_minus_est_ba_diff'|'slg'|'est_slg'|'slg_minus_est_slg_diff'|'woba'|'est_woba'|'woba_minus_est_woba_diff'|'wobacon'|'est_wobacon'|'wobacon_minus_est_wobacon_diff'|'exit_velocity_avg'|'hard_hit_percent'|'barrels_per_bip'|'barrels_per_pa' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastFieldingRunValue(array $params = [], array $options = []) mlb-statcast-fielding-run-value (GET /mlb/statcast-fielding-run-value)
+ *   params: 'fielder'|'fielding-team'|'batter'|'batting-team'|'pitcher' $type, '2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_start, '2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_end, 'Any'|'Regular'|'Playoff' $game_type, 'q'|'0.1'|'1'|'10'|'25'|'50'|'100'|'200'|'500'|'750'|'1000'|'2500'|'5000' $minimum, '0.1'|'1'|'10'|'25'|'50'|'100'|'200'|'500'|'750'|'1000'|'2500'|'5000' $minimum_split, '0'|'11'|'12'|'111'|'112'|'121'|'13'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9' $position, array<'108'|'109'|'110'|'111'|'112'|'113'|'114'|'115'|'116'|'117'|'118'|'119'|'120'|'121'|'133'|'134'|'135'|'136'|'137'|'138'|'139'|'140'|'141'|'142'|'143'|'144'|'145'|'146'|'147'|'158'> $team_id, array<'year'|'api_game_date_month_text'|'position'|'game_type'> $group_by, string $date_start, string $date_end, 'name'|'team_name'|'total_runs'|'inf_of_runs'|'range_runs'|'arm_runs'|'dp_runs'|'fielding_runs_prevented_on_rec1b'|'catching_runs'|'framing_runs'|'throwing_runs'|'blocking_runs'|'outs_total'|'outs_2'|'outs_3'|'outs_4'|'outs_5'|'outs_6'|'outs_7'|'outs_8'|'outs_9'|'tot_pa'|'year'|'api_game_date_month_mm'|'api_game_date_month_text'|'pos_id'|'game_type' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastFirstBaseReceiving(array $params = [], array $options = []) mlb-statcast-first-base-receiving (GET /mlb/statcast-first-base-receiving)
+ *   params: 'fielder_3'|'throw_fielder_id'|'pitching-team'|'batting-team'|'league' $type, array<'2021'|'2022'|'2023'|'2024'|'2025'|'2026'> $season[], array<'R'|'F'|'D'|'L'|'W'> $gameType[], 'q'|'1'|'5'|'10'|'25'|'50'|'75'|'100'|'200'|'300'|'400'|'500'|'750'|'1000' $min, '1'|'5'|'10'|'25'|'50'|'75'|'100'|'200'|'300'|'400'|'500'|'750'|'1000' $minSplit, '0'|'1' $splitYear, array<'throw_height_code'|'throw_location_code_full'|'runners_on_cd'> $split[], array<'108'|'117'|'133'|'141'|'144'|'158'|'138'|'112'|'109'|'119'|'137'|'114'|'136'|'146'|'121'|'120'|'110'|'135'|'143'|'134'|'140'|'139'|'111'|'113'|'115'|'118'|'116'|'142'|'145'|'147'> $team[], string $dateStart, string $dateEnd, 'L'|'R' $fielder_3_hand, '70'|'71'|'72'|'73'|'74'|'75'|'76'|'77'|'78'|'79'|'80' $min_height_in_inches, '0'|'1' $is_hit_into_play_field_out, array<'0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'> $runners_on_cd[], array<'4'|'5'|'6'> $throw_pos_id[], array<'1_Low'|'2_Mid'|'3_High'> $throw_height_code[], array<'A. On Target'|'B. Scoop'|'C. Bounce'|'D. Low'|'E. Wide'|'F. High'> $throw_location_code_full[], array<'-1'|'0'|'1'|'2'|'3'|'4'|'5'> $bin_time_X10[], 'entity_name'|'total_oaa'|'oaa_on_target'|'oaa_bounce'|'oaa_scoop'|'oaa_low'|'oaa_high'|'oaa_wide'|'n_on_target'|'n_bounce'|'n_scoop'|'n_low'|'n_high'|'n_wide'|'outs_on_target'|'outs_bounce'|'outs_scoop'|'outs_low'|'outs_high'|'outs_wide'|'n_outs'|'n_plays'|'avg_expected_rate_out' $sortColumn, 'asc'|'desc' $sortDirection, int $limit, int $offset
+ * @method mixed statcastFirstBaseReceivingDetails(array $params = [], array $options = []) mlb-statcast-first-base-receiving-details (GET /mlb/statcast-first-base-receiving-details)
+ *   params: int $player_id, 'fielder_3'|'throw_fielder_id'|'pitching-team'|'batting-team'|'league' $type, array<'2021'|'2022'|'2023'|'2024'|'2025'|'2026'> $season[], array<'R'|'F'|'D'|'L'|'W'> $gameType[], 'q'|'1'|'5'|'10'|'25'|'50'|'75'|'100'|'200'|'300'|'400'|'500'|'750'|'1000' $min, '1'|'5'|'10'|'25'|'50'|'75'|'100'|'200'|'300'|'400'|'500'|'750'|'1000' $minSplit, array<'throw_height_code'|'throw_location_code_full'|'runners_on_cd'> $split[], '0'|'1' $splitYear, array<'108'|'117'|'133'|'141'|'144'|'158'|'138'|'112'|'109'|'119'|'137'|'114'|'136'|'146'|'121'|'120'|'110'|'135'|'143'|'134'|'140'|'139'|'111'|'113'|'115'|'118'|'116'|'142'|'145'|'147'> $team[], string $dateStart, string $dateEnd, 'L'|'R' $fielder_3_hand, '70'|'71'|'72'|'73'|'74'|'75'|'76'|'77'|'78'|'79'|'80' $min_height_in_inches, '0'|'1' $is_hit_into_play_field_out, array<'0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'> $runners_on_cd[], array<'4'|'5'|'6'> $throw_pos_id[], array<'1_Low'|'2_Mid'|'3_High'> $throw_height_code[], array<'A. On Target'|'B. Scoop'|'C. Bounce'|'D. Low'|'E. Wide'|'F. High'> $throw_location_code_full[], array<'-1'|'0'|'1'|'2'|'3'|'4'|'5'> $bin_time_X10[], int $limit, int $offset
+ * @method mixed statcastHomeRuns(array $params = [], array $options = []) mlb-statcast-home-runs (GET /mlb/statcast-home-runs)
+ *   params: 'Batter'|'Pitcher' $player_type, '2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $year, '108'|'109'|'110'|'111'|'112'|'113'|'114'|'115'|'116'|'117'|'118'|'119'|'120'|'121'|'133'|'134'|'135'|'136'|'137'|'138'|'139'|'140'|'141'|'142'|'143'|'144'|'145'|'146'|'147'|'158' $team, '0'|'5'|'10'|'15'|'20'|'25' $min, 'adj_xhr'|'xhr' $cat, 'player'|'team'|'year'|'cat'|'avg_hr_trot'|'doubters'|'mostly_gone'|'no_doubters'|'no_doubter_per'|'hr_total'|'xhr'|'xhr_diff' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastHomeRunsDetails(array $params = [], array $options = []) mlb-statcast-home-runs-details (GET /mlb/statcast-home-runs-details)
+ *   params: string $player_id, 'Batter'|'Pitcher' $player_type, '2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $year, 'adj_xhr'|'xhr' $cat, int $limit, int $offset
  * @method mixed statcast(array $params = [], array $options = []) mlb-statcast (GET /mlb/statcast-leaders)
  *   params: 'batter'|'pitcher'|'batter-team'|'pitcher-team' $type, int $year, string $team_id, 'C'|'1B'|'2B'|'SS'|'3B'|'LF'|'CF'|'RF'|'DH' $position, 'q'|'1'|'25'|'50'|'100'|'150'|'200'|'250'|'350'|'450'|'500'|'600' $min_bbe, 'entity_name'|'bip'|'launch_angle_avg'|'sweet_spot_percent'|'exit_velocity_max'|'exit_velocity_avg'|'avg_best_speed'|'exit_velocity_fbld'|'distance_max'|'distance_hr_avg'|'hard_hit_ct'|'hard_hit_percent'|'hard_hit_per_swing'|'barrel_ct'|'barrels_per_bip'|'barrels_per_pa' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
  * @method mixed statcastOaa(array $params = [], array $options = []) mlb-statcast-oaa (GET /mlb/statcast-oaa)
  *   params: 'Fielder'|'Fielding_Team'|'Batter'|'Batting_Team'|'Pitcher' $type, int $start_year, int $end_year, 'no'|'yes' $split, string $team_id, 'year'|'4'|'5'|'6'|'7'|'8'|'9' $range, 'q'|'10'|'25'|'50'|'75'|'100'|'150'|'200'|'250' $minimum, 'if'|'of'|'3'|'4'|'5'|'6'|'7'|'8'|'9' $position, string $roles, 'entity_name'|'display_team_name'|'primary_pos_formatted'|'fielding_runs_prevented'|'outs_above_average'|'outs_above_average_infront'|'outs_above_average_lateral'|'outs_above_average_behind'|'actual_success_rate'|'adj_estimated_success_rate'|'diff_success_rate'|'n' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastParkFactors(array $params = [], array $options = []) mlb-statcast-park-factors (GET /mlb/statcast-park-factors)
+ *   params: 'year'|'venue'|'distance'|'distance-all'|'raw'|'dimensions' $type, string $year, 'R'|'L' $bat_side, 'All'|'Day'|'Night'|'Roof Closed'|'Open Air' $condition, '1'|'2'|'3' $rolling, 'index_wOBA'|'index_wOBAcon'|'index_xwOBAcon'|'index_BACON'|'index_xBAcon'|'index_hardhit'|'index_runs'|'index_OBP'|'index_Hits'|'index_1B'|'index_2B'|'index_3B'|'index_HR'|'index_BB'|'index_SO' $stat, 'mlb'|'all' $parks, string $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastPercentile(array $params = [], array $options = []) mlb-statcast-percentile (GET /mlb/statcast-percentile)
+ *   params: 'batter'|'pitcher' $type, '2015'|'2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $year, '108'|'109'|'110'|'111'|'112'|'113'|'114'|'115'|'116'|'117'|'118'|'119'|'120'|'121'|'133'|'134'|'135'|'136'|'137'|'138'|'139'|'140'|'141'|'142'|'143'|'144'|'145'|'146'|'147'|'158' $team, array<string> $pctl, string $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastPitchArsenal(array $params = [], array $options = []) mlb-statcast-pitch-arsenal (GET /mlb/statcast-pitch-arsenal)
+ *   params: 'pitcher'|'batter' $type, '2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $year, string $team_id, 'FF'|'CH'|'CU'|'FC'|'KN'|'SC'|'SI'|'SL'|'SV'|'FS'|'ST'|'CUKC'|'SIFT' $pitch_type, '1'|'10'|'25'|'50'|'100'|'150'|'200'|'250'|'350'|'450'|'500'|'600' $min_pa, 'q'|'1'|'10'|'50'|'100'|'200'|'300'|'500'|'750' $min_pitches, 'player_name'|'team_name_alt'|'pitch_name'|'run_value_per_100'|'run_value'|'pitches'|'pitch_usage'|'pa'|'ba'|'slg'|'woba'|'whiff_percent'|'k_percent'|'put_away'|'est_ba'|'est_slg'|'est_woba'|'hard_hit_percent' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastPitchArsenalDetails(array $params = [], array $options = []) mlb-statcast-pitch-arsenal-details (GET /mlb/statcast-pitch-arsenal-details)
+ *   params: string $player_id, 'pitcher'|'batter' $player_type, 'FF'|'CH'|'CU'|'FC'|'KN'|'SC'|'SI'|'SL'|'SV'|'FS'|'ST'|'CUKC'|'SIFT' $pitch_type, '2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $year, int $limit, int $offset
+ * @method mixed statcastPitchArsenals(array $params = [], array $options = []) mlb-statcast-pitch-arsenals (GET /mlb/statcast-pitch-arsenals)
+ *   params: '2008'|'2009'|'2010'|'2011'|'2012'|'2013'|'2014'|'2015'|'2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $year, 'avg_speed'|'n_'|'avg_spin' $type, 'R'|'L' $hand, 'q'|'100'|'250'|'500'|'750'|'1000'|'1500'|'2000'|'2500'|'3000' $min_pitches, 'ATH'|'ATL'|'AZ'|'BAL'|'BOS'|'CHC'|'CIN'|'CLE'|'COL'|'CWS'|'DET'|'HOU'|'KC'|'LAA'|'LAD'|'MIA'|'MIL'|'MIN'|'NYM'|'NYY'|'PHI'|'PIT'|'SD'|'SEA'|'SF'|'STL'|'TB'|'TEX'|'TOR'|'WSH' $team, 'player_name'|'four_seam'|'sinker'|'cutter'|'slider'|'changeup'|'curve'|'splitter'|'sweeper'|'slurve' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastPitchMovement(array $params = [], array $options = []) mlb-statcast-pitch-movement (GET /mlb/statcast-pitch-movement)
+ *   params: '2026'|'2025'|'2024'|'2023'|'2022'|'2021'|'2020'|'2019'|'2018'|'2017' $year, 'FF'|'CH'|'CU'|'FC'|'FO'|'KN'|'SC'|'SI'|'SL'|'SV'|'FS'|'ST'|'ALL' $pitch_type, 'R'|'L' $hand, 'q'|'50'|'100'|'250'|'500'|'750'|'1000'|'1500'|'2000'|'2500'|'3000' $min, 'pitcher_name'|'team_name_abbrev'|'pitch_hand'|'pitch_type_name'|'pitches_thrown'|'avg_speed'|'pitcher_break_z'|'diff_z'|'pitcher_break_x_hidden'|'diff_x'|'pitcher_break_z_induced'|'diff_z_induced_standard'|'diff_x_standard' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastPitchTempo(array $params = [], array $options = []) mlb-statcast-pitch-tempo (GET /mlb/statcast-pitch-tempo)
+ *   params: 'Pit'|'Bat'|'Pitching Team'|'Batting Team'|'League' $type, '2010'|'2011'|'2012'|'2013'|'2014'|'2015'|'2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_start, '2010'|'2011'|'2012'|'2013'|'2014'|'2015'|'2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_end, 'Regular'|'Playoff'|'All' $game_type, 'q'|'1'|'10'|'50'|'100'|'250'|'500'|'1000'|'2000'|'5000' $n, '108'|'109'|'110'|'111'|'112'|'113'|'114'|'115'|'116'|'117'|'118'|'119'|'120'|'121'|'133'|'134'|'135'|'136'|'137'|'138'|'139'|'140'|'141'|'142'|'143'|'144'|'145'|'146'|'147'|'158' $team, 'yes'|'no' $split, '0'|'1' $with_team_only, string $q, 'entity_name'|'start_year'|'tot_n_empty'|'median_seconds_empty'|'empty_equiv'|'freq_hot_empty'|'freq_cold_empty'|'tot_n_onbase'|'median_seconds_onbase'|'onbase_equiv'|'freq_hot_onbase'|'freq_cold_onbase' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastPitchTempoPlayer(array $params = [], array $options = []) mlb-statcast-pitch-tempo-player (GET /mlb/statcast-pitch-tempo-player)
+ *   params: string $entity_id, 'Pit'|'Bat' $type, '2010'|'2011'|'2012'|'2013'|'2014'|'2015'|'2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_start, '2010'|'2011'|'2012'|'2013'|'2014'|'2015'|'2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_end, 'Regular'|'Playoff'|'All' $game_type
+ * @method mixed statcastPitchTimer(array $params = [], array $options = []) mlb-statcast-pitch-timer (GET /mlb/statcast-pitch-timer)
+ *   params: 'Pit'|'Bat'|'Cat'|'Team'|'Opp' $type, '2023'|'2024'|'2025'|'2026' $season, '1'|'5'|'25'|'50'|'100'|'250'|'500'|'1000' $min_pitches, '0'|'1' $include_zeroes, string $q, 'violating'|'violated'|'net'|'ballsAgainst'|'ballsFor'|'strikesAgainst'|'strikesFor'|'division' $chart_sort, 'entity_name'|'N_pitches'|'N_time_violations'|'N_pitcher_pitch_timer'|'N_batter_pitch_timer'|'N_batter_timeout'|'N_catcher_pitch_timer'|'N_defensive_shift'|'rate' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastPlayerDetails(array $params = [], array $options = []) mlb-statcast-player-details (GET /mlb/statcast-player-details)
+ *   params: string $player_id, 'batter'|'pitcher' $player_type, int $year
+ * @method mixed statcastRolling(array $params = [], array $options = []) mlb-statcast-rolling (GET /mlb/statcast-rolling)
+ *   params: 'xwoba'|'woba'|'ba'|'xba'|'slg'|'xslg' $metric, 'Batter'|'Pitcher' $role, '50'|'100'|'250' $window_pa, int $limit, int $offset
+ * @method mixed statcastRunValue(array $params = [], array $options = []) mlb-statcast-run-value (GET /mlb/statcast-run-value)
+ *   params: 'Batter'|'Pitcher' $group, 'All'|'Career'|'2026'|'2025'|'2024'|'2023'|'2022'|'2021'|'2020'|'2019'|'2018'|'2017'|'2016'|'2015'|'2014'|'2013'|'2012'|'2011'|'2010'|'2009'|'2008' $year, string $team, 'q'|'10'|'25'|'50'|'75'|'100'|'150'|'200'|'250'|'500'|'600'|'700'|'800'|'900'|'1000'|'1500' $min, 'Neutral'|'Leveraged' $leverage, 'All'|'Swing-Take'|'Pitch Type'|'Attack Region'|'Bat-side' $type, 'Swing'|'Take'|'4-Seam Fastball'|'Changeup'|'Curveball'|'Cutter'|'Knuckleball'|'Screwball'|'Sinker'|'Slider'|'Slurve'|'Split-Finger'|'Sweeper'|'Heart'|'Shadow'|'Chase'|'Waste' $sub_type, 'player_name'|'team_name_abbrev'|'year'|'pa'|'pitches'|'runs_heart'|'runs_shadow'|'runs_chase'|'runs_waste'|'runs_all'|'runs_ff'|'runs_si'|'runs_fc'|'runs_ch'|'runs_fs'|'runs_cu'|'runs_sl'|'runs_st'|'runs_sv'|'runs_kn'|'runs_sc'|'delta_runs' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastRunningGame(array $params = [], array $options = []) mlb-statcast-running-game (GET /mlb/statcast-running-game)
+ *   params: 'Pit'|'Pitching Team'|'League' $type, 'Regular'|'Playoff'|'All' $game_type, 'all'|'L'|'R' $pitch_hand, 'All'|'Advance'|'Out'|'Hold' $runner_moved, 'All'|'2B'|'3B' $target_base, 'All'|'0'|'1'|'2'|'3' $prior_pk, 'q'|'1'|'50'|'100'|'200'|'500'|'1000'|'1500'|'2000' $n, '2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_start, '2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_end, 'yes'|'no' $split, 'split'|'108'|'117'|'133'|'141'|'144'|'158'|'138'|'112'|'109'|'119'|'137'|'114'|'136'|'146'|'121'|'120'|'110'|'135'|'143'|'134'|'140'|'139'|'113'|'111'|'115'|'118'|'116'|'142'|'145'|'147' $team, bool $with_team_only, 'entity_name'|'team_name'|'start_year'|'pitch_hand'|'key_pitch_hand'|'runs_prevented_on_running_attr'|'simple_prevented_on_running_attr'|'net_attr_plus'|'net_attr_minus'|'n_init'|'rate_sbx'|'n_plus'|'n_minus'|'r_sec_minus_prim_lead'|'r_sec_minus_prim_lead_sbx'|'n_sb'|'n_cs'|'n_pk'|'n_bk'|'n_fb'|'r_primary_lead'|'r_secondary_lead'|'r_primary_lead_sbx'|'r_secondary_lead_sbx' $sort, 'asc'|'desc' $sort_dir, string $search, int $limit, int $offset
+ * @method mixed statcastRunningGameDetails(array $params = [], array $options = []) mlb-statcast-running-game-details (GET /mlb/statcast-running-game-details)
+ *   params: int $entity_id, 'Pit'|'Pitching Team' $type, 'Regular'|'Playoff'|'All' $game_type, 'all'|'L'|'R' $pitch_hand, 'All'|'Advance'|'Out'|'Hold' $runner_moved, 'All'|'2B'|'3B' $target_base, 'All'|'0'|'1'|'2'|'3' $prior_pk, 'q'|'1'|'50'|'100'|'200'|'500'|'1000'|'1500'|'2000' $n, '2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_start, '2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season_end, 'yes'|'no' $split, '108'|'117'|'133'|'141'|'144'|'158'|'138'|'112'|'109'|'119'|'137'|'114'|'136'|'146'|'121'|'120'|'110'|'135'|'143'|'134'|'140'|'139'|'113'|'111'|'115'|'118'|'116'|'142'|'145'|'147' $team, bool $with_team_only, int $limit, int $offset
+ * @method mixed statcastSprintSpeed(array $params = [], array $options = []) mlb-statcast-sprint-speed (GET /mlb/statcast-sprint-speed)
+ *   params: '2015'|'2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $min_season, '2015'|'2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $max_season, 'all'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'10' $position, '108'|'117'|'133'|'141'|'144'|'158'|'138'|'112'|'109'|'119'|'137'|'114'|'136'|'146'|'121'|'120'|'110'|'135'|'143'|'134'|'140'|'139'|'113'|'111'|'115'|'118'|'116'|'142'|'145'|'147' $team_id, '0'|'5'|'10'|'25'|'50'|'75'|'100'|'150'|'200'|'250' $minimum_runs, 'player'|'team'|'position'|'age'|'competitive_runs'|'bolts'|'home_to_first'|'sprint_speed' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastSprintSpeedTeams(array $params = [], array $options = []) mlb-statcast-sprint-speed-teams (GET /mlb/statcast-sprint-speed-teams)
+ *   params: '2015'|'2016'|'2017'|'2018'|'2019'|'2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026'|'all' $season, 'LAA'|'HOU'|'OAK'|'TOR'|'ATL'|'MIL'|'STL'|'CHC'|'ARI'|'LAD'|'SF'|'CLE'|'SEA'|'MIA'|'NYM'|'WSH'|'BAL'|'SD'|'PHI'|'PIT'|'TEX'|'TB'|'BOS'|'CIN'|'COL'|'KC'|'DET'|'MIN'|'CWS'|'NYY' $team, 'season'|'team'|'players'|'competitive_runs'|'average_sprint_speed'|'fastest_sprint_speed'|'slowest_sprint_speed'|'bolts'|'average_home_to_first' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastSwingPath(array $params = [], array $options = []) mlb-statcast-swing-path (GET /mlb/statcast-swing-path)
+ *   params: 'batter'|'batting-team'|'league' $type, '2023'|'2024'|'2025'|'2026' $season_start, '2023'|'2024'|'2025'|'2026' $season_end, 'Any'|'Exhibition'|'Playoff'|'Regular' $game_type, 'q'|'1'|'5'|'10'|'25'|'50'|'100'|'200'|'500'|'1000' $min_swings, '1'|'5'|'10'|'25'|'50'|'100'|'200'|'500'|'1000' $min_group_swings, '108'|'109'|'110'|'111'|'112'|'113'|'114'|'115'|'116'|'117'|'118'|'119'|'120'|'121'|'133'|'134'|'135'|'136'|'137'|'138'|'139'|'140'|'141'|'142'|'143'|'144'|'145'|'146'|'147'|'158' $team_id, string $date_start, string $date_end, 'L'|'R' $bat_side, '2'|'4'|'9' $contact_type, '1'|'0' $is_hard_hit, '0'|'1'|'1.1'|'2'|'3' $attack_zone, 'L'|'R' $pitch_hand, 'name'|'team_name'|'avg_sweetspot_speed_mph'|'avg_plane_vertical_angle'|'attack_angle'|'attack_direction_pullopp'|'rate_ideal_attack_angle'|'avg_intercept_y_vs_plate'|'avg_intercept_y_vs_batter'|'avg_batter_y_position'|'avg_batter_x_position'|'avg_foot_sep0'|'avg_foot_angle0'|'n_swings' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastSwingTiming(array $params = [], array $options = []) mlb-statcast-swing-timing (GET /mlb/statcast-swing-timing)
+ *   params: 'batter'|'batting-team'|'pitcher'|'pitching-team'|'league' $type, array<'2023'|'2024'|'2025'|'2026'> $seasons, array<'R'|'A'|'F'|'D'|'L'|'W'> $game_types, array<'api_pitch_type_group03'|'api_pitch_type_group09'|'api_game_date_month_text'|'bat_contact_code'|'game_type'|'is_hit_into_play_hardhit'|'is_best_speed'|'timing_x_tiedupflail'|'timing_y_earlylate'|'timing_z_overunder'|'pitch_hand'|'bat_side'|'is_pre_ball_count_3'|'is_pre_strike_count_2'|'pitchzone_height_code'|'is_starter_pitcher'> $splits, 'q'|'1'|'5'|'10'|'25'|'50'|'100'|'200'|'500'|'1000' $min_swings, '1'|'5'|'10'|'25'|'50'|'100'|'200'|'500'|'1000' $min_split, '1'|'0' $split_year, array<'108'|'109'|'110'|'111'|'112'|'113'|'114'|'115'|'116'|'117'|'118'|'119'|'120'|'121'|'133'|'134'|'135'|'136'|'137'|'138'|'139'|'140'|'141'|'142'|'143'|'144'|'145'|'146'|'147'|'158'> $teams, string $date_start, string $date_end, 'L'|'R' $bat_side, '2'|'4'|'9' $contact_type, '0'|'1'|'1.1'|'2'|'3' $attack_zone, 'L'|'R' $pitch_hand, array<'FF'|'SI'|'FC'|'CH'|'FS'|'FO'|'SC'|'CU'|'SL'|'ST'|'SV'|'KN'> $pitch_types, array<'00'|'01'|'02'|'10'|'11'|'12'|'20'|'21'|'22'|'30'|'31'|'32'> $counts, array<'Tiedup'|'Centered'|'Flail'> $swing_timing_x, array<'Early'|'OnTime'|'Late'> $swing_timing_y, array<'Under'|'Linedup'|'Over'> $swing_timing_z, array<'is_timing_xyz_flawed'|'is_timing_xyz_perfect'> $flags, array<'is_timing_xyz_flawed'|'is_timing_xyz_perfect'> $not_flags, 'name'|'team_name'|'pitch_hand_type'|'bat_side_type'|'n_swings'|'competitive_swings'|'strikes_swinging'|'miss_distance'|'flails'|'centers'|'tied_ups'|'earlys'|'on_times'|'lates'|'unders'|'lined_ups'|'overs'|'delta_run_exp'|'whiff_rate'|'competitive_percent'|'perfect_percent'|'flawed_percent' $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
+ * @method mixed statcastSwingTimingDetails(array $params = [], array $options = []) mlb-statcast-swing-timing-details (GET /mlb/statcast-swing-timing-details)
+ *   params: string $row_id, 'batter'|'pitcher' $type, array<'2023'|'2024'|'2025'|'2026'> $seasons, array<'R'|'A'|'F'|'D'|'L'|'W'> $game_types, array<'api_pitch_type_group03'|'api_pitch_type_group09'|'api_game_date_month_text'|'bat_contact_code'|'game_type'|'is_hit_into_play_hardhit'|'is_best_speed'|'timing_x_tiedupflail'|'timing_y_earlylate'|'timing_z_overunder'|'pitch_hand'|'bat_side'|'is_pre_ball_count_3'|'is_pre_strike_count_2'|'pitchzone_height_code'|'is_starter_pitcher'> $splits, 'q'|'1'|'5'|'10'|'25'|'50'|'100'|'200'|'500'|'1000' $min_swings, '1'|'5'|'10'|'25'|'50'|'100'|'200'|'500'|'1000' $min_split, '0'|'1' $split_year, array<'108'|'117'|'133'|'141'|'144'|'158'|'138'|'112'|'109'|'119'|'137'|'114'|'136'|'146'|'121'|'120'|'110'|'135'|'143'|'134'|'113'|'111'|'115'|'118'|'116'|'142'|'145'|'147'> $teams, string $date_start, string $date_end, 'L'|'R' $bat_side, '2'|'4'|'9' $contact_type, '0'|'1'|'1.1'|'2'|'3' $attack_zone, 'L'|'R' $pitch_hand, array<'FF'|'SI'|'FC'|'CH'|'FS'|'FO'|'SC'|'CU'|'SL'|'ST'|'SV'|'KN'> $pitch_types, array<'00'|'01'|'02'|'10'|'11'|'12'|'20'|'21'|'22'|'30'|'31'|'32'> $counts, array<'Tiedup'|'Centered'|'Flail'> $swing_timing_x, array<'Early'|'OnTime'|'Late'> $swing_timing_y, array<'Under'|'Linedup'|'Over'> $swing_timing_z, array<'is_timing_xyz_flawed'|'is_timing_xyz_perfect'> $flags, array<'is_timing_xyz_flawed'|'is_timing_xyz_perfect'> $not_flags
+ * @method mixed statcastTopPerformers(array $params = [], array $options = []) mlb-statcast-top-performers (GET /mlb/statcast-top-performers)
+ *   params: int $year
+ * @method mixed statcastYearToYear(array $params = [], array $options = []) mlb-statcast-year-to-year (GET /mlb/statcast-year-to-year)
+ *   params: 'Batter'|'Pitcher'|'Batter Team'|'Pitcher Team' $group, 'ba'|'xba'|'obp'|'xobp'|'slg'|'xslg'|'iso'|'xiso'|'babip'|'woba'|'xwoba'|'wobacon'|'xwobacon'|'bacon'|'xbacon'|'hard_hit_percent'|'exit_velocity_avg'|'sweet_spot_percent'|'barrel_batted_rate'|'launch_angle_avg'|'avg_swing_speed'|'attack_angle'|'ideal_angle_rate'|'attack_direction'|'vertical_swing_path'|'avg_swing_length'|'fastball_velo'|'breaking_velo'|'offspeed_velo'|'barrels'|'popups_percent'|'flyballs_percent'|'linedrives_percent'|'groundballs_percent'|'pull_percent'|'straightaway_percent'|'opposite_percent'|'poorlyweak_percent'|'pull_percent_airballs'|'poorlytopped_percent'|'poorlyunder_percent'|'flareburner_percent'|'solidcontact_percent'|'hr_flyballs_percent'|'popups'|'flyballs'|'linedrives'|'groundballs'|'in_zone_percent'|'out_zone_percent'|'edge_percent'|'z_swing_percent'|'oz_swing_percent'|'iz_contact_percent'|'oz_contact_percent'|'whiff_percent'|'f_strike_percent'|'f_swing_percent'|'swing_percent'|'meatball_swing_percent'|'meatball_percent'|'z_swing_miss_percent'|'oz_swing_miss_percent'|'in_zone'|'out_zone'|'edge'|'in_zone_swing'|'out_zone_swing'|'in_zone_swing_miss'|'out_zone_swing_miss'|'pitch_count'|'pa'|'ab'|'hit'|'single'|'double'|'triple'|'home_run'|'walk'|'strikeout'|'k_percent'|'bb_percent'|'hbp'|'batted_ball'|'pitch_usage_fastball'|'pitch_usage_offspeed'|'pitch_usage_breaking'|'pitch_count_fastball'|'pitch_count_offspeed'|'pitch_count_breaking' $type, '2025'|'2024'|'2023'|'2022'|'2021'|'2020'|'2019'|'2018'|'2017' $year, string $sort, 'asc'|'desc' $sort_dir, int $limit, int $offset
  * @method mixed teamRoster(array $params = [], array $options = []) mlb-team-roster (GET /mlb/team-roster)
  *   params: string $team_id, int $season, '40Man'|'fullSeason'|'fullRoster'|'nonRosterInvitees'|'active'|'allTime'|'depthChart'|'gameday'|'coach' $roster_type
  * @method mixed teamStats(array $params = [], array $options = []) mlb-team-stats (GET /mlb/team-stats)
@@ -4196,6 +4528,18 @@ abstract class TheMotleyFoolGroup {}
 abstract class NationAfricaGroup {}
 
 /**
+ * @method mixed nationalArticle(array $params = [], array $options = []) national-article (GET /national/article)
+ *   params: string $url
+ * @method mixed nationalAuthor(array $params = [], array $options = []) national-author (GET /national/author)
+ *   params: string $slug, string $url
+ * @method mixed nationalHeadlines(array $params = [], array $options = []) national-headlines (GET /national/headlines)
+ *   params: 'news'|'news/uae'|'news/gulf'|'news/mena'|'mena/arab-showcase'|'news/us'|'news/uk'|'news/europe'|'news/asia'|'business'|'business/aviation'|'business/economy'|'business/energy'|'business/money'|'business/property'|'business/banking'|'business/uk'|'business/markets'|'in-focus'|'opinion'|'opinion/comment'|'opinion/editorial'|'opinion/obituaries'|'opinion/cartoon'|'opinion/feedback'|'future'|'future/science'|'future/space'|'future/technology'|'climate'|'climate/environment'|'climate/road-to-net-zero'|'health'|'arts-culture'|'arts-culture/art-design'|'arts-culture/books'|'arts-culture/film-tv'|'arts-culture/music-stage'|'arts-culture/pop-culture'|'lifestyle'|'travel'|'lifestyle/fashion-beauty'|'lifestyle/food'|'lifestyle/motoring'|'magazine'|'lifestyle/luxury'|'lifestyle/home-garden'|'lifestyle/wellbeing'|'lifestyle/things-to-do'|'sport'|'sport/football'|'sport/cricket'|'sport/f1'|'sport/tennis'|'sport/combat-sports'|'sport/cycling'|'weekend' $section
+ * @method mixed nationalNews(array $params = [], array $options = []) national-news (GET /national/news)
+ * @method mixed nationalSections(array $params = [], array $options = []) national-sections (GET /national/sections)
+ */
+abstract class TheNationalGroup {}
+
+/**
  * @method mixed nationalpostArticle(array $params = [], array $options = []) nationalpost-article (GET /nationalpost/article)
  *   params: string $url
  * @method mixed nationalpostAuthor(array $params = [], array $options = []) nationalpost-author (GET /nationalpost/author)
@@ -4223,13 +4567,24 @@ abstract class NbcNewsGroup {}
  * @method mixed article(array $params = [], array $options = []) ndtv-article (GET /ndtv/article)
  *   params: string $url
  * @method mixed author(array $params = [], array $options = []) ndtv-author (GET /ndtv/author)
- *   params: string $url
+ *   params: string $url, int $page
  * @method mixed headlines(array $params = [], array $options = []) ndtv-headlines (GET /ndtv/headlines)
  *   params: 'latest'|'india'|'world'|'world-india-global'|'world-diaspora'|'opinion'|'spotlight'|'business-news'|'south'|'cities'|'bangalore-news'|'chennai-news'|'delhi-news'|'mumbai-news'|'others-news'|'ahmedabad-news'|'allahabad-news'|'amritsar-news'|'bhopal-news'|'bhubaneshwar-news'|'chandigarh-news'|'ghaziabad-news'|'goa-news'|'gurgaon-news'|'guwahati-news'|'hyderabad-news'|'jaipur-news'|'kanpur-news'|'kolkata-news'|'lucknow-news'|'noida-news'|'patna-news'|'pune-news'|'srinagar-news'|'thiruvananthapuram-news'|'andhra-pradesh-news'|'karnataka-news'|'kerala-news'|'tamil-nadu-news'|'telangana-news'|'education'|'education-exams-news'|'education-school-news'|'education-campus-news'|'education-study-abroad'|'education-latest'|'health'|'entertainment'|'lifestyle'|'food'|'travel'|'auto'|'science'|'offbeat'|'trends'|'feature' $section
+ * @method mixed latestVideos(array $params = [], array $options = []) ndtv-latest-videos (GET /ndtv/latest-videos)
+ *   params: int $page
+ * @method mixed liveBlog(array $params = [], array $options = []) ndtv-live-blog (GET /ndtv/live-blog)
+ *   params: string $url
+ * @method mixed liveBlogs(array $params = [], array $options = []) ndtv-live-blogs (GET /ndtv/live-blogs)
+ *   params: int $page
  * @method mixed news(array $params = [], array $options = []) ndtv-news (GET /ndtv/news)
  * @method mixed search(array $params = [], array $options = []) ndtv-search (GET /ndtv/search)
  *   params: string $query, int $page
  * @method mixed sections(array $params = [], array $options = []) ndtv-sections (GET /ndtv/sections)
+ * @method mixed video(array $params = [], array $options = []) ndtv-video (GET /ndtv/video)
+ *   params: string $url
+ * @method mixed videoCategories(array $params = [], array $options = []) ndtv-video-categories (GET /ndtv/video-categories)
+ * @method mixed videos(array $params = [], array $options = []) ndtv-videos (GET /ndtv/videos)
+ *   params: 'news'|'business'|'entertainment'|'auto'|'exclusive'|'features'|'environment'|'fashion'|'travel'|'elections'|'comedy'|'property'|'art'|'beauty'|'lifestyle'|'tech360' $category, int $page
  */
 abstract class NdtvGroup {}
 
@@ -4323,6 +4678,18 @@ abstract class TheNewYorkerGroup {}
  *   params: string $query
  */
 abstract class NikeGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) ninetofivegoogle-article (GET /ninetofivegoogle/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) ninetofivegoogle-author (GET /ninetofivegoogle/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) ninetofivegoogle-headlines (GET /ninetofivegoogle/headlines)
+ *   params: 'gemini'|'google-pixel-9-pro-fold'|'google-pixel-9-pro-xl'|'google-pixel-9-pro'|'google-pixel-9'|'google-pixel-8-pro'|'google-pixel-8'|'google-pixel-watch-3'|'google-pixel-watch'|'google-pixel-buds-pro-2'|'google-pixel-buds-pro'|'google-nest-hub'|'google-nest-hub-max'|'google-nest-mini'|'google-nest-audio'|'nest-thermostat'|'nest-cam'|'google-nest-doorbell'|'android-17'|'android-auto'|'wear-os'|'samsung'|'oneplus'|'oppo'|'xiaomi'|'google-chrome'|'chrome-os'|'google-tv'|'android-tv'|'chromecast'|'chromecast-with-google-tv'|'gmail'|'google-meet'|'google-chat'|'google-calendar'|'google-keep'|'google-drive'|'google-docs'|'youtube'|'youtube-music'|'youtube-tv'|'android'|'android-14'|'android-15'|'android-15-beta'|'apk-insight'|'apps-and-updates-2'|'exclusives'|'fitbit'|'google'|'google-apps'|'google-assistant'|'google-home'|'google-pixel'|'pixel-11-buyers-guide'|'google-play'|'google-search'|'made-by-google'|'feature-exclusives'|'feature-review'|'feature-newsletter'|'feature-videos'|'feature-sponsored-post' $section
+ * @method mixed news(array $params = [], array $options = []) ninetofivegoogle-news (GET /ninetofivegoogle/news)
+ * @method mixed sections(array $params = [], array $options = []) ninetofivegoogle-sections (GET /ninetofivegoogle/sections)
+ */
+abstract class NineToFiveGoogleGroup {}
 
 /**
  * @method mixed article(array $params = [], array $options = []) ninetofivemac-article (GET /ninetofivemac/article)
@@ -4758,6 +5125,16 @@ abstract class PhilstarGroup {}
  * @method mixed phonearenaSections(array $params = [], array $options = []) phonearena-sections (GET /phonearena/sections)
  */
 abstract class PhoneArenaGroup {}
+
+/**
+ * @method mixed physorgArticle(array $params = [], array $options = []) physorg-article (GET /physorg/article)
+ *   params: string $url
+ * @method mixed physorgHeadlines(array $params = [], array $options = []) physorg-headlines (GET /physorg/headlines)
+ *   params: 'nanotech-news'|'physics-news'|'space-news'|'earth-news'|'chemistry-news'|'biology-news'|'science-news'|'breaking'|'editorials' $section
+ * @method mixed physorgNews(array $params = [], array $options = []) physorg-news (GET /physorg/news)
+ * @method mixed physorgSections(array $params = [], array $options = []) physorg-sections (GET /physorg/sections)
+ */
+abstract class PhysOrgGroup {}
 
 /**
  * @method mixed ping(array $params = [], array $options = []) ping (GET /ping)
@@ -5348,6 +5725,31 @@ abstract class ReferralsGroup {}
  *   params: string $term, float $latitude, float $longitude, string $date, int $party_size, int $size
  */
 abstract class ResyGroup {}
+
+/**
+ * @method mixed retailmenotAutocomplete(array $params = [], array $options = []) retailmenot-autocomplete (GET /retailmenot/autocomplete)
+ *   params: string $term
+ * @method mixed retailmenotBlogCategories(array $params = [], array $options = []) retailmenot-blog-categories (GET /retailmenot/blog-categories)
+ * @method mixed retailmenotBlogPost(array $params = [], array $options = []) retailmenot-blog-post (GET /retailmenot/blog-post)
+ *   params: string $slug
+ * @method mixed retailmenotBlogPosts(array $params = [], array $options = []) retailmenot-blog-posts (GET /retailmenot/blog-posts)
+ *   params: string $query, string $category, string $tag, 'date'|'modified'|'title'|'relevance' $order_by, 'desc'|'asc' $order, int $page, int $page_size
+ * @method mixed retailmenotBlogTags(array $params = [], array $options = []) retailmenot-blog-tags (GET /retailmenot/blog-tags)
+ *   params: string $query, int $page, int $page_size
+ * @method mixed retailmenotCashback(array $params = [], array $options = []) retailmenot-cashback (GET /retailmenot/cashback)
+ * @method mixed retailmenotCategories(array $params = [], array $options = []) retailmenot-categories (GET /retailmenot/categories)
+ * @method mixed retailmenotCategory(array $params = [], array $options = []) retailmenot-category (GET /retailmenot/category)
+ *   params: string $slug, int $page
+ * @method mixed retailmenotDealEvent(array $params = [], array $options = []) retailmenot-deal-event (GET /retailmenot/deal-event)
+ *   params: string $slug
+ * @method mixed retailmenotDealEvents(array $params = [], array $options = []) retailmenot-deal-events (GET /retailmenot/deal-events)
+ * @method mixed retailmenotHome(array $params = [], array $options = []) retailmenot-home (GET /retailmenot/home)
+ * @method mixed retailmenotStore(array $params = [], array $options = []) retailmenot-store (GET /retailmenot/store)
+ *   params: string $domain, 'us'|'ca' $market
+ * @method mixed retailmenotStores(array $params = [], array $options = []) retailmenot-stores (GET /retailmenot/stores)
+ *   params: 'a'|'b'|'c'|'d'|'e'|'f'|'g'|'h'|'i'|'j'|'k'|'l'|'m'|'n'|'o'|'p'|'q'|'r'|'s'|'t'|'u'|'v'|'w'|'x'|'y'|'z'|'0-9' $letter, 'us'|'ca' $market
+ */
+abstract class RetailMeNotGroup {}
 
 /**
  * @method mixed article(array $params = [], array $options = []) reuters-article (GET /reuters/article)
@@ -6009,23 +6411,52 @@ abstract class SportingNewsGroup {}
  *   params: string $slug, string $url
  * @method mixed author(array $params = [], array $options = []) sportskeeda-author (GET /sportskeeda/author)
  *   params: string $slug, string $url
+ * @method mixed collegeBasketballSchedule(array $params = [], array $options = []) sportskeeda-college-basketball-schedule (GET /sportskeeda/college-basketball-schedule)
+ *   params: string $date, int $season
+ * @method mixed collegeBasketballScheduleOptions(array $params = [], array $options = []) sportskeeda-college-basketball-schedule-options (GET /sportskeeda/college-basketball-schedule-options)
+ *   params: int $season
+ * @method mixed cricketCommentary(array $params = [], array $options = []) sportskeeda-cricket-commentary (GET /sportskeeda/cricket-commentary)
+ *   params: string $slug, string $cursor, 'en'|'hi'|'ta'|'te'|'bho' $language
+ * @method mixed cricketMatch(array $params = [], array $options = []) sportskeeda-cricket-match (GET /sportskeeda/cricket-match)
+ *   params: string $slug
  * @method mixed depthChart(array $params = [], array $options = []) sportskeeda-depth-chart (GET /sportskeeda/depth-chart)
  *   params: 'nfl/depth-chart' $slug
+ * @method mixed draftPicks(array $params = [], array $options = []) sportskeeda-draft-picks (GET /sportskeeda/draft-picks)
+ *   params: string $slug, int $year, string $round, string $position, string $q, int $page, int $per_page
+ * @method mixed draftPicksOptions(array $params = [], array $options = []) sportskeeda-draft-picks-options (GET /sportskeeda/draft-picks-options)
+ *   params: string $slug
+ * @method mixed eventCalendar(array $params = [], array $options = []) sportskeeda-event-calendar (GET /sportskeeda/event-calendar)
+ *   params: 'us'|'india' $region, 'NFL'|'Football'|'MLB'|'College Football'|'NBA'|'College Basketball'|'NHL'|'WNBA'|'Golf'|'Tennis'|'NASCAR'|'WWE'|'Boxing'|'UFC'|'MMA'|'Formula 1'|'College Baseball'|'IndyCar'|'AEW'|'MotoGP'|'Wrestling'|'Cricket'|'Table Tennis'|'Chess'|'Kabaddi'|'Hockey'|'Badminton'|'Athletics' $sport, array<'2026-09'|'2026-10'|'2026-11'|'2026-12'> $month, string $start_date, string $end_date
+ * @method mixed eventCalendarOptions(array $params = [], array $options = []) sportskeeda-event-calendar-options (GET /sportskeeda/event-calendar-options)
  * @method mixed feed(array $params = [], array $options = []) sportskeeda-feed (GET /sportskeeda/feed)
  *   params: string $slug, int $page
  * @method mixed footballData(array $params = [], array $options = []) sportskeeda-football-data (GET /sportskeeda/football-data)
  *   params: string $event, string $matchday
  * @method mixed footballOptions(array $params = [], array $options = []) sportskeeda-football-options (GET /sportskeeda/football-options)
  *   params: string $event
+ * @method mixed guessingGame(array $params = [], array $options = []) sportskeeda-guessing-game (GET /sportskeeda/guessing-game)
+ *   params: 'wwe/brainbuster-wwe-player-guessing-game'|'nfl/gridle-nfl-player-guessing-game' $slug, string $date
+ * @method mixed guessingGameEntities(array $params = [], array $options = []) sportskeeda-guessing-game-entities (GET /sportskeeda/guessing-game-entities)
+ *   params: 'wwe/brainbuster-wwe-player-guessing-game'|'nfl/gridle-nfl-player-guessing-game' $slug
+ * @method mixed guessingGames(array $params = [], array $options = []) sportskeeda-guessing-games (GET /sportskeeda/guessing-games)
+ * @method mixed nbaQueries(array $params = [], array $options = []) sportskeeda-nba-queries (GET /sportskeeda/nba-queries)
+ *   params: 'player-stat'|'player-vs-team' $category, int $offset, int $limit
  * @method mixed news(array $params = [], array $options = []) sportskeeda-news (GET /sportskeeda/news)
  * @method mixed pageData(array $params = [], array $options = []) sportskeeda-page-data (GET /sportskeeda/page-data)
- *   params: string $slug, int $season, string $type
+ *   params: string $slug, int $season, string $type, 'all-conferences'|'all-fbs-i-a'|'atlantic-coast'|'big-ten'|'mid-american'|'pac-12'|'southeastern'|'independents-fbs'|'big-12'|'conference-usa'|'mountain-west'|'sun-belt'|'aac'|'all-fcs-i-aa'|'big-sky'|'missouri-valley'|'ivy-league'|'mid-eastern-athletic'|'ohio-valley'|'patriot-league'|'pioneer-league'|'southern'|'southland'|'swac'|'northeast'|'independents-fcs'|'big-south'|'caa'|'united-athletic' $conference
  * @method mixed pageOptions(array $params = [], array $options = []) sportskeeda-page-options (GET /sportskeeda/page-options)
  *   params: string $slug
  * @method mixed playerStats(array $params = [], array $options = []) sportskeeda-player-stats (GET /sportskeeda/player-stats)
  *   params: string $slug, '0'|'1'|'2'|'3' $event_type
  * @method mixed profile(array $params = [], array $options = []) sportskeeda-profile (GET /sportskeeda/profile)
  *   params: string $slug
+ * @method mixed quiz(array $params = [], array $options = []) sportskeeda-quiz (GET /sportskeeda/quiz)
+ *   params: string $slug
+ * @method mixed quizCategories(array $params = [], array $options = []) sportskeeda-quiz-categories (GET /sportskeeda/quiz-categories)
+ * @method mixed quizzes(array $params = [], array $options = []) sportskeeda-quizzes (GET /sportskeeda/quizzes)
+ *   params: 'anime/quiz'|'cricket/quiz'|'daily-soaps/quiz'|'esports/quiz'|'fortnite/quiz'|'minecraft/quiz'|'movies/quiz'|'pokemon/quiz'|'shows/quiz'|'tennis/quiz'|'wwe/quiz' $slug
+ * @method mixed salaryCap(array $params = [], array $options = []) sportskeeda-salary-cap (GET /sportskeeda/salary-cap)
+ *   params: string $slug, string $q, 'player'|'cap_number'|'cut_pre_june_1_dead_money'|'cut_pre_june_1_cap_saving'|'cut_post_june_1_dead_money'|'cut_post_june_1_cap_saving'|'trade_pre_june_1_dead_money'|'trade_pre_june_1_cap_saving'|'trade_post_june_1_dead_money'|'trade_post_june_1_cap_saving'|'restructure_cap_saving'|'extension_cap_saving' $sort_by, 'asc'|'desc' $order
  * @method mixed schedule(array $params = [], array $options = []) sportskeeda-schedule (GET /sportskeeda/schedule)
  *   params: string $slug
  * @method mixed sections(array $params = [], array $options = []) sportskeeda-sections (GET /sportskeeda/sections)
@@ -6038,11 +6469,32 @@ abstract class SportingNewsGroup {}
  *   params: string $slug, '2026'|'2025'|'2024'|'2023'|'2022'|'2021'|'2020'|'2019'|'2018'|'2017'|'2016'|'2015'|'2014'|'2013' $season
  * @method mixed taxonomySearch(array $params = [], array $options = []) sportskeeda-taxonomy-search (GET /sportskeeda/taxonomy-search)
  *   params: string $q
+ * @method mixed topic(array $params = [], array $options = []) sportskeeda-topic (GET /sportskeeda/topic)
+ *   params: string $slug
  * @method mixed tradeValues(array $params = [], array $options = []) sportskeeda-trade-values (GET /sportskeeda/trade-values)
  *   params: 'nfl/fantasy-football-trade-value-charts'|'nfl/dynasty-trade-value-charts' $slug, 'All'|'QB'|'RB'|'WR'|'TE' $position, 'ppr'|'non_ppr'|'0.5_ppr' $scoring, bool $superflex, int $offset, int $limit
+ * @method mixed transactions(array $params = [], array $options = []) sportskeeda-transactions (GET /sportskeeda/transactions)
+ *   params: string $slug, '2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season, '022020'|'032020'|'042020'|'052020'|'062020'|'072020'|'082020'|'092020'|'102020'|'112020'|'122020'|'012021'|'022021'|'032021'|'042021'|'052021'|'062021'|'072021'|'082021'|'092021'|'102021'|'112021'|'122021'|'012022'|'022022'|'032022'|'042022'|'052022'|'062022'|'072022'|'082022'|'092022'|'102022'|'112022'|'122022'|'012023'|'022023'|'032023'|'042023'|'052023'|'062023'|'072023'|'082023'|'092023'|'102023'|'112023'|'122023'|'012024'|'022024'|'032024'|'042024'|'052024'|'062024'|'072024'|'082024'|'092024'|'102024'|'112024'|'122024'|'012025'|'022025'|'032025'|'042025'|'052025'|'062025'|'072025'|'082025'|'092025'|'102025'|'112025'|'122025'|'012026'|'022026'|'032026'|'042026'|'052026'|'062026'|'072026'|'082026'|'092026' $month, int $page, int $per_page
+ * @method mixed transactionsOptions(array $params = [], array $options = []) sportskeeda-transactions-options (GET /sportskeeda/transactions-options)
+ *   params: '2020'|'2021'|'2022'|'2023'|'2024'|'2025'|'2026' $season
  * @method mixed video(array $params = [], array $options = []) sportskeeda-video (GET /sportskeeda/video)
  *   params: string $slug
  * @method mixed videos(array $params = [], array $options = []) sportskeeda-videos (GET /sportskeeda/videos)
+ *   params: string $slug
+ * @method mixed wikiActivity(array $params = [], array $options = []) sportskeeda-wiki-activity (GET /sportskeeda/wiki-activity)
+ *   params: string $slug, int $page, int $limit, 'asc'|'desc' $sort, 'author_name'|'updated_at' $sort_by
+ * @method mixed wikiArticle(array $params = [], array $options = []) sportskeeda-wiki-article (GET /sportskeeda/wiki-article)
+ *   params: string $slug
+ * @method mixed wikiCategories(array $params = [], array $options = []) sportskeeda-wiki-categories (GET /sportskeeda/wiki-categories)
+ *   params: 'minecraft'|'terraria'|'naruto'|'tiktok'|'youtube'|'gta'|'one-piece'|'sk-communities' $wiki
+ * @method mixed wikiContributors(array $params = [], array $options = []) sportskeeda-wiki-contributors (GET /sportskeeda/wiki-contributors)
+ *   params: string $slug, int $page, int $limit, 'asc'|'desc' $sort, 'author_name'|'contributions'|'updated_at' $sort_by
+ * @method mixed wikiIssues(array $params = [], array $options = []) sportskeeda-wiki-issues (GET /sportskeeda/wiki-issues)
+ *   params: string $slug, int $page, int $limit, 'opened'|'closed' $status
+ * @method mixed wikiOptions(array $params = [], array $options = []) sportskeeda-wiki-options (GET /sportskeeda/wiki-options)
+ * @method mixed wikiPages(array $params = [], array $options = []) sportskeeda-wiki-pages (GET /sportskeeda/wiki-pages)
+ *   params: 'minecraft'|'terraria'|'naruto'|'tiktok'|'youtube'|'gta'|'one-piece'|'sk-communities' $wiki, int $page, int $limit, 'ASC'|'DESC' $sort, 'last_updated'|'page_size'|'ratings'|'issues_count' $sort_by, string $search
+ * @method mixed wikiSummary(array $params = [], array $options = []) sportskeeda-wiki-summary (GET /sportskeeda/wiki-summary)
  *   params: string $slug
  */
 abstract class SportskeedaGroup {}
@@ -6265,6 +6717,30 @@ abstract class TheStraitsTimesGroup {}
  *   params: string $path
  */
 abstract class StravaGroup {}
+
+/**
+ * @method mixed streeteasyAreas(array $params = [], array $options = []) streeteasy-areas (GET /streeteasy/areas)
+ * @method mixed streeteasyBuilding(array $params = [], array $options = []) streeteasy-building (GET /streeteasy/buildings/{slug})
+ *   params: string $slug
+ * @method mixed streeteasyMarketDataCatalog(array $params = [], array $options = []) streeteasy-market-data-catalog (GET /streeteasy/market-data/catalog)
+ * @method mixed streeteasyMarketIndices(array $params = [], array $options = []) streeteasy-market-indices (GET /streeteasy/market-data/indices)
+ *   params: string $start_month, string $end_month
+ * @method mixed streeteasyMarketInventory(array $params = [], array $options = []) streeteasy-market-inventory (GET /streeteasy/market-data/inventory)
+ *   params: string $start_month, string $end_month
+ * @method mixed streeteasyMarketDataSeries(array $params = [], array $options = []) streeteasy-market-data-series (GET /streeteasy/market-data/series)
+ *   params: 'medianAskingPPSF'|'medianAskingPPSFOneBd'|'medianAskingPPSFStudio'|'medianAskingPPSFThreePlusBd'|'medianAskingPPSFTwoBd'|'medianAskingPrice'|'medianAskingPriceCondo'|'medianAskingPriceCoop'|'medianAskingPriceSfr'|'medianAskingRent'|'medianAskingRentOneBd'|'medianAskingRentStudio'|'medianAskingRentThreePlusBd'|'medianAskingRentTwoBd'|'medianDaysMarket'|'medianDaysMarketCondo'|'medianDaysMarketCoop'|'medianRecordedSalesPrice'|'medianRecordedSalesPriceCondo'|'medianRecordedSalesPriceCoop'|'medianRecordedSalesPriceSfr'|'medianRentalDiscount'|'medianRentalDiscountOneBd'|'medianRentalDiscountStudio'|'medianRentalDiscountThreePlusBd'|'medianRentalDiscountTwoBd'|'newInventory'|'newInventoryCondo'|'newInventoryCoop'|'newInventorySfr'|'priceIndex'|'recordedSales'|'recordedSalesCondo'|'recordedSalesCoop'|'recordedSalesSfr'|'rentIndex'|'rentalConcessions'|'rentalInventory'|'rentalInventoryOneBd'|'rentalInventoryStudio'|'rentalInventoryThreePlusBd'|'rentalInventoryTwoBd'|'saleListRatio'|'saleListRatioCondo'|'saleListRatioCoop'|'saleListRatioSfr'|'salesInventory'|'salesInventoryCondo'|'salesInventoryCoop'|'salesInventoryOneBd'|'salesInventorySfr'|'salesInventoryStudio'|'salesInventoryThreePlusBd'|'salesInventoryTwoBd'|'shareOfRentalsDiscounted'|'shareOfRentalsDiscountedOneBd'|'shareOfRentalsDiscountedStudio'|'shareOfRentalsDiscountedThreePlusBd'|'shareOfRentalsDiscountedTwoBd'|'sharePriceCut'|'sharePriceCutCondo'|'sharePriceCutCoop'|'sharePriceCutSfr' $dataset, string $start_month, string $end_month
+ * @method mixed streeteasyQuickSearch(array $params = [], array $options = []) streeteasy-quick-search (GET /streeteasy/quick-search)
+ *   params: string $query
+ * @method mixed streeteasyRentalsSearch(array $params = [], array $options = []) streeteasy-rentals-search (GET /streeteasy/rentals/search)
+ *   params: array<int> $area_id, int $page, int $per_page, 'default'|'newest'|'recently_updated'|'price_desc'|'price_asc'|'largest'|'smallest' $sort, int $min_price, int $max_price, int $min_bedrooms, int $max_bedrooms, float $min_bathrooms, float $max_bathrooms, int $min_sqft, int $max_sqft, array<'rental'|'condo'|'co-op'|'house'|'multifamily'> $building_type, array<'washer_dryer'|'dishwasher'|'private_outdoor_space'|'central_air'|'furnished'|'fireplace'|'loft'|'city_view'|'garden_view'|'park_view'|'skyline_view'|'water_view'|'elevator'|'doorman'|'laundry'|'gym'|'parking'|'shared_outdoor_space'|'pool'|'pied_a_terre'|'childrens_playroom'|'smoke_free'|'storage'> $amenity, array<'washer_dryer'|'dishwasher'|'private_outdoor_space'|'central_air'|'furnished'|'fireplace'|'loft'|'city_view'|'garden_view'|'park_view'|'skyline_view'|'water_view'|'elevator'|'doorman'|'laundry'|'gym'|'parking'|'shared_outdoor_space'|'pool'|'pied_a_terre'|'childrens_playroom'|'smoke_free'|'storage'> $optional_amenity, bool $pets_allowed, bool $open_house, bool $tour_3d, bool $video_tour, array<'1'|'2'|'3'|'4'|'5'|'6'|'7'|'A'|'C'|'E'|'B'|'D'|'F'|'M'|'G'|'N'|'Q'|'R'|'W'|'J'|'Z'|'L'|'S'|'HBLR'|'PATH'> $transit_line
+ * @method mixed streeteasySalesSearch(array $params = [], array $options = []) streeteasy-sales-search (GET /streeteasy/sales/search)
+ *   params: array<int> $area_id, array<'active'|'preview'|'coming_soon'|'in_contract'|'sold'|'unavailable'> $sale_status, array<'sponsor_unit'|'foreclosure'|'resale'|'restricted_sale'> $sale_type, int $page, int $per_page, 'default'|'newest'|'recently_updated'|'price_desc'|'price_asc'|'largest'|'smallest' $sort, int $min_price, int $max_price, int $min_bedrooms, int $max_bedrooms, float $min_bathrooms, float $max_bathrooms, int $min_sqft, int $max_sqft, int $min_maintenance, int $max_maintenance, int $min_monthly_taxes, int $max_monthly_taxes, int $min_price_per_sqft, int $max_price_per_sqft, bool $include_unknown_price_per_sqft, int $min_year_built, int $max_year_built, bool $prewar, 'pre_construction' $development, bool $income_restricted, array<int> $school_id, string $zip_code, string $keywords, array<'condo'|'co-op'|'house'|'multifamily'> $building_type, array<'washer_dryer'|'dishwasher'|'private_outdoor_space'|'central_air'|'furnished'|'fireplace'|'loft'|'city_view'|'garden_view'|'park_view'|'skyline_view'|'water_view'|'elevator'|'doorman'|'laundry'|'gym'|'parking'|'shared_outdoor_space'|'pool'|'pied_a_terre'|'childrens_playroom'|'smoke_free'|'storage'> $amenity, array<'washer_dryer'|'dishwasher'|'private_outdoor_space'|'central_air'|'furnished'|'fireplace'|'loft'|'city_view'|'garden_view'|'park_view'|'skyline_view'|'water_view'|'elevator'|'doorman'|'laundry'|'gym'|'parking'|'shared_outdoor_space'|'pool'|'pied_a_terre'|'childrens_playroom'|'smoke_free'|'storage'> $optional_amenity, bool $pets_allowed, bool $open_house, bool $tour_3d, bool $video_tour, array<'1'|'2'|'3'|'4'|'5'|'6'|'7'|'A'|'C'|'E'|'B'|'D'|'F'|'M'|'G'|'N'|'Q'|'R'|'W'|'J'|'Z'|'L'|'S'|'HBLR'|'PATH'> $transit_line
+ * @method mixed streeteasySchool(array $params = [], array $options = []) streeteasy-school (GET /streeteasy/schools/{slug})
+ *   params: string $slug
+ * @method mixed streeteasyUnit(array $params = [], array $options = []) streeteasy-unit (GET /streeteasy/units/{building_slug}/{unit})
+ *   params: string $building_slug, string $unit
+ */
+abstract class StreetEasyGroup {}
 
 /**
  * @method mixed stubhubCarousel(array $params = [], array $options = []) stubhub-carousel (GET /stubhub/carousel)
@@ -6508,6 +6984,18 @@ abstract class TheAgeGroup {}
 abstract class TheAtlanticGroup {}
 
 /**
+ * @method mixed theblazeArticle(array $params = [], array $options = []) theblaze-article (GET /theblaze/article)
+ *   params: string $url
+ * @method mixed theblazeAuthor(array $params = [], array $options = []) theblaze-author (GET /theblaze/author)
+ *   params: string $slug, string $url
+ * @method mixed theblazeHeadlines(array $params = [], array $options = []) theblaze-headlines (GET /theblaze/headlines)
+ *   params: 'news'|'columns'|'columns/opinion'|'columns/analysis'|'tech'|'lifestyle'|'lifestyle/men'|'lifestyle/women'|'lifestyle/provisions'|'fearless'|'exclusive'|'original'|'politics'|'your-opinion'|'shows'|'shows/back-to-the-people'|'shows/blaze-news-tonight'|'shows/blaze-originals'|'shows/blazetv-specials'|'shows/come-take-it-with-sara-gonzales'|'shows/conservative-review-with-daniel-horowitz'|'shows/dusty-bluffs'|'shows/fearless-with-jason-whitlock'|'shows/glenn-tv'|'shows/kibbe-on-liberty'|'shows/live-free-with-josh-howerton'|'shows/making-the-argument-with-nick-freitas'|'shows/pat-gray-unleashed'|'shows/relatable'|'shows/rufo-lomez'|'shows/sara-gonzales-unfiltered'|'shows/steve-deace-show'|'shows/strange-encounters'|'shows/stu-and-dave-do-america'|'shows/the-auron-macintyre-show'|'shows/the-coverup'|'shows/glenn-beck-podcast'|'shows/the-glenn-beck-program'|'shows/the-john-doyle-show'|'shows/the-liz-wheeler-show'|'shows/the-rick-burgess-show'|'shows/zero-hour'|'contributors'|'jan-6-truth' $section
+ * @method mixed theblazeNews(array $params = [], array $options = []) theblaze-news (GET /theblaze/news)
+ * @method mixed theblazeSections(array $params = [], array $options = []) theblaze-sections (GET /theblaze/sections)
+ */
+abstract class TheBlazeGroup {}
+
+/**
  * @method mixed thebodyshopCollections(array $params = [], array $options = []) thebodyshop-collections (GET /thebodyshop/collections)
  *   params: int $page, int $limit
  * @method mixed thebodyshopCollectionProducts(array $params = [], array $options = []) thebodyshop-collection-products (GET /thebodyshop/collections/{handle}/products)
@@ -6578,6 +7066,18 @@ abstract class TheHinduGroup {}
  * @method mixed thejournalSections(array $params = [], array $options = []) thejournal-sections (GET /thejournal/sections)
  */
 abstract class TheJournalIeGroup {}
+
+/**
+ * @method mixed thenextwebArticle(array $params = [], array $options = []) thenextweb-article (GET /thenextweb/article)
+ *   params: string $url
+ * @method mixed thenextwebAuthor(array $params = [], array $options = []) thenextweb-author (GET /thenextweb/author)
+ *   params: string $slug, string $url
+ * @method mixed thenextwebHeadlines(array $params = [], array $options = []) thenextweb-headlines (GET /thenextweb/headlines)
+ *   params: 'deep-tech'|'sustainability'|'ecosystems'|'data-security'|'fintech-ecommerce'|'future-of-work'|'startups-technology'|'investors-funding'|'government-policy'|'corporates-innovation' $section
+ * @method mixed thenextwebNews(array $params = [], array $options = []) thenextweb-news (GET /thenextweb/news)
+ * @method mixed thenextwebSections(array $params = [], array $options = []) thenextweb-sections (GET /thenextweb/sections)
+ */
+abstract class TheNextWebGroup {}
 
 /**
  * @method mixed therealrealAutocomplete(array $params = [], array $options = []) therealreal-autocomplete (GET /therealreal/autocomplete)
@@ -6774,6 +7274,16 @@ abstract class TiktokGroup {}
 abstract class TimeGroup {}
 
 /**
+ * @method mixed timesliveArticle(array $params = [], array $options = []) timeslive-article (GET /timeslive/article)
+ *   params: string $url
+ * @method mixed timesliveHeadlines(array $params = [], array $options = []) timeslive-headlines (GET /timeslive/headlines)
+ *   params: 'news'|'news/south-africa'|'news/africa'|'news/world'|'news/business'|'news/sci-tech'|'politics'|'opinion'|'ideas'|'investigations'|'tshisa-live'|'lifestyle'|'lifestyle/fashion'|'lifestyle/food'|'lifestyle/travel'|'lifestyle/books'|'lifestyle/spotlight'|'sport'|'sport/soccer'|'sport/rugby'|'sport/cricket'|'sport/arena-sports-show'|'motoring' $section
+ * @method mixed timesliveNews(array $params = [], array $options = []) timeslive-news (GET /timeslive/news)
+ * @method mixed timesliveSections(array $params = [], array $options = []) timeslive-sections (GET /timeslive/sections)
+ */
+abstract class TimesLiveGroup {}
+
+/**
  * @method mixed timesofindiaArticle(array $params = [], array $options = []) timesofindia-article (GET /timesofindia/article)
  *   params: string $url
  * @method mixed timesofindiaAuthor(array $params = [], array $options = []) timesofindia-author (GET /timesofindia/author)
@@ -6906,7 +7416,7 @@ abstract class TownhallGroup {}
  * @method mixed tripadvisorPlace(array $params = [], array $options = []) tripadvisor-place (GET /tripadvisor/place)
  *   params: string $url, string $id
  * @method mixed tripadvisorReviews(array $params = [], array $options = []) tripadvisor-reviews (GET /tripadvisor/reviews)
- *   params: string $id, string $url, int $page, int $limit, string $language, string $sort_type, string $sort_by, array<int> $ratings, bool $do_machine_translation, int $photos_per_review_limit
+ *   params: string $id, string $url, int $page, int $limit, string $language, 'ML_SORTED'|'DEFAULT' $sort_type, 'FAVORABLE_RATING'|'DATE' $sort_by, array<'1'|'2'|'3'|'4'|'5'> $ratings, bool $do_machine_translation, int $photos_per_review_limit
  * @method mixed tripadvisorSearch(array $params = [], array $options = []) tripadvisor-search (GET /tripadvisor/search)
  *   params: int $geo_id, string $type, string $filter_id, int $class, array<int> $amenities, int $price_min, int $price_max, string $pricing_mode, bool $travelers_choice, bool $travelers_choice_botb, string $restaurant_date, string $restaurant_time, int $restaurant_guests, array<int> $establishment_types, array<int> $online_options, int $offset, int $limit, string $locale, string $currency, string $sort
  */
@@ -7176,6 +7686,23 @@ abstract class VintedGroup {}
 abstract class VoxGroup {}
 
 /**
+ * @method mixed locationSuggestions(array $params = [], array $options = []) vrbo-location-suggestions (GET /vrbo/locations/search)
+ *   params: string $search_term
+ * @method mixed property(array $params = [], array $options = []) vrbo-property (GET /vrbo/properties/{property_id})
+ *   params: string $property_id
+ * @method mixed rateCalendar(array $params = [], array $options = []) vrbo-rate-calendar (GET /vrbo/properties/{property_id}/rate-calendar)
+ *   params: string $property_id
+ * @method mixed propertyReviews(array $params = [], array $options = []) vrbo-property-reviews (GET /vrbo/properties/{property_id}/reviews)
+ *   params: string $property_id, int $start_index, int $size, 'HIGHEST_TO_LOWEST_RATED'|'LOWEST_TO_HIGHEST_RATED'|'NEWEST_TO_OLDEST'|'NEWEST_TO_OLDEST_BY_LANGUAGE'|'NEWEST_TO_OLDEST_BY_RELEVANCY' $sort_by, bool $include_recent_reviews, bool $include_ratings_only_reviews
+ * @method mixed search(array $params = [], array $options = []) vrbo-search (POST /vrbo/search)
+ *   params: array $request
+ * @method mixed travelPages(array $params = [], array $options = []) vrbo-travel-pages (GET /vrbo/travel-pages)
+ * @method mixed travelPageDetail(array $params = [], array $options = []) vrbo-travel-page-detail (GET /vrbo/travel-pages/{slug})
+ *   params: string $slug
+ */
+abstract class VrboGroup {}
+
+/**
  * @method mixed walesonlineArticle(array $params = [], array $options = []) walesonline-article (GET /walesonline/article)
  *   params: string $url
  * @method mixed walesonlineAuthor(array $params = [], array $options = []) walesonline-author (GET /walesonline/author)
@@ -7224,6 +7751,18 @@ abstract class WashingtonPostGroup {}
  *   params: string $id
  */
 abstract class WayfairGroup {}
+
+/**
+ * @method mixed article(array $params = [], array $options = []) wccftech-article (GET /wccftech/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) wccftech-author (GET /wccftech/author)
+ *   params: string $slug, string $url
+ * @method mixed headlines(array $params = [], array $options = []) wccftech-headlines (GET /wccftech/headlines)
+ *   params: string $section
+ * @method mixed news(array $params = [], array $options = []) wccftech-news (GET /wccftech/news)
+ * @method mixed sections(array $params = [], array $options = []) wccftech-sections (GET /wccftech/sections)
+ */
+abstract class WccftechGroup {}
 
 /**
  * @method mixed categories(array $params = [], array $options = []) wendys-categories (GET /wendys/categories)
@@ -7578,6 +8117,18 @@ abstract class YahooSportsGroup {}
 abstract class YahooTechGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) yardbarker-article (GET /yardbarker/article)
+ *   params: string $url
+ * @method mixed author(array $params = [], array $options = []) yardbarker-author (GET /yardbarker/author)
+ *   params: string $url
+ * @method mixed headlines(array $params = [], array $options = []) yardbarker-headlines (GET /yardbarker/headlines)
+ *   params: string $section
+ * @method mixed news(array $params = [], array $options = []) yardbarker-news (GET /yardbarker/news)
+ * @method mixed sections(array $params = [], array $options = []) yardbarker-sections (GET /yardbarker/sections)
+ */
+abstract class YardbarkerGroup {}
+
+/**
  * @method mixed business(array $params = [], array $options = []) yelp-business (GET /yelp/business/{id})
  *   params: string $id
  * @method mixed businessMenu(array $params = [], array $options = []) yelp-business-menu (GET /yelp/business/{id}/menu)
@@ -7739,12 +8290,14 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\AgodaGroup $agoda
  * @property-read \Crawlora\Generated\AirbnbGroup $airbnb
  * @property-read \Crawlora\Generated\AlComGroup $alCom
+ * @property-read \Crawlora\Generated\AliExpressGroup $aliExpress
  * @property-read \Crawlora\Generated\AlJazeeraGroup $alJazeera
  * @property-read \Crawlora\Generated\AllbirdsGroup $allbirds
  * @property-read \Crawlora\Generated\AltGroup $alt
  * @property-read \Crawlora\Generated\AmazonJobsGroup $amazonJobs
  * @property-read \Crawlora\Generated\AmazonGroup $amazon
  * @property-read \Crawlora\Generated\AndroidAuthorityGroup $androidAuthority
+ * @property-read \Crawlora\Generated\AndroidPoliceGroup $androidPolice
  * @property-read \Crawlora\Generated\AnimeGroup $anime
  * @property-read \Crawlora\Generated\AppInsightsGroup $appInsights
  * @property-read \Crawlora\Generated\ApNewsGroup $apNews
@@ -7762,6 +8315,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\BarronsGroup $barrons
  * @property-read \Crawlora\Generated\BbbGroup $bbb
  * @property-read \Crawlora\Generated\BbcGroup $bbc
+ * @property-read \Crawlora\Generated\BenzingaGroup $benzinga
  * @property-read \Crawlora\Generated\BestBuyGroup $bestBuy
  * @property-read \Crawlora\Generated\BigCommerceGroup $bigCommerce
  * @property-read \Crawlora\Generated\BilibiliGroup $bilibili
@@ -7780,6 +8334,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\BrandGroup $brand
  * @property-read \Crawlora\Generated\BraveGroup $brave
  * @property-read \Crawlora\Generated\BreitbartGroup $breitbart
+ * @property-read \Crawlora\Generated\BrisbaneTimesGroup $brisbaneTimes
  * @property-read \Crawlora\Generated\BrooklinenGroup $brooklinen
  * @property-read \Crawlora\Generated\BurberryGroup $burberry
  * @property-read \Crawlora\Generated\BurgerKingGroup $burgerKing
@@ -7817,7 +8372,9 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\CvsGroup $cvs
  * @property-read \Crawlora\Generated\TheDailyCallerGroup $theDailyCaller
  * @property-read \Crawlora\Generated\DailyExpressGroup $dailyExpress
+ * @property-read \Crawlora\Generated\DailyKosGroup $dailyKos
  * @property-read \Crawlora\Generated\DailyMailGroup $dailyMail
+ * @property-read \Crawlora\Generated\DailyMaverickGroup $dailyMaverick
  * @property-read \Crawlora\Generated\DailyRecordGroup $dailyRecord
  * @property-read \Crawlora\Generated\DailyStarUkGroup $dailyStarUk
  * @property-read \Crawlora\Generated\DailyWireGroup $dailyWire
@@ -7825,6 +8382,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\DawnGroup $dawn
  * @property-read \Crawlora\Generated\DeadlineGroup $deadline
  * @property-read \Crawlora\Generated\DeliverooGroup $deliveroo
+ * @property-read \Crawlora\Generated\TheDenverPostGroup $theDenverPost
  * @property-read \Crawlora\Generated\DepopGroup $depop
  * @property-read \Crawlora\Generated\DiscogsGroup $discogs
  * @property-read \Crawlora\Generated\DominosGroup $dominos
@@ -7843,6 +8401,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\EverlaneGroup $everlane
  * @property-read \Crawlora\Generated\EntertainmentWeeklyGroup $entertainmentWeekly
  * @property-read \Crawlora\Generated\ExpediaGroup $expedia
+ * @property-read \Crawlora\Generated\TheExpressTribuneGroup $theExpressTribune
  * @property-read \Crawlora\Generated\FacebookGroup $facebook
  * @property-read \Crawlora\Generated\FanaticsGroup $fanatics
  * @property-read \Crawlora\Generated\FanaticsCollectGroup $fanaticsCollect
@@ -7879,24 +8438,28 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\GoatGroup $goat
  * @property-read \Crawlora\Generated\GoldinGroup $goldin
  * @property-read \Crawlora\Generated\GoodreadsGroup $goodreads
+ * @property-read \Crawlora\Generated\GoodRxGroup $goodRx
  * @property-read \Crawlora\Generated\GoogleJobsGroup $googleJobs
  * @property-read \Crawlora\Generated\GoogleGroup $google
  * @property-read \Crawlora\Generated\GooglePatentsGroup $googlePatents
  * @property-read \Crawlora\Generated\GooglePlayGroup $googlePlay
  * @property-read \Crawlora\Generated\GqGroup $gq
  * @property-read \Crawlora\Generated\GrailedGroup $grailed
+ * @property-read \Crawlora\Generated\GreystarGroup $greystar
  * @property-read \Crawlora\Generated\GrubhubGroup $grubhub
  * @property-read \Crawlora\Generated\GuardianGroup $guardian
  * @property-read \Crawlora\Generated\GucciGroup $gucci
  * @property-read \Crawlora\Generated\GulfNewsGroup $gulfNews
  * @property-read \Crawlora\Generated\GymsharkGroup $gymshark
  * @property-read \Crawlora\Generated\HarvardBusinessReviewGroup $harvardBusinessReview
+ * @property-read \Crawlora\Generated\HealthgradesGroup $healthgrades
  * @property-read \Crawlora\Generated\HermesGroup $hermes
  * @property-read \Crawlora\Generated\HindustanTimesGroup $hindustanTimes
  * @property-read \Crawlora\Generated\HMGroup $hM
  * @property-read \Crawlora\Generated\HollywoodReporterGroup $hollywoodReporter
  * @property-read \Crawlora\Generated\HomeDepotGroup $homeDepot
  * @property-read \Crawlora\Generated\HotelsComGroup $hotelsCom
+ * @property-read \Crawlora\Generated\HoustonChronicleGroup $houstonChronicle
  * @property-read \Crawlora\Generated\HowToGeekGroup $howToGeek
  * @property-read \Crawlora\Generated\HuffPostGroup $huffPost
  * @property-read \Crawlora\Generated\IgnGroup $ign
@@ -7916,6 +8479,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\IolGroup $iol
  * @property-read \Crawlora\Generated\IrishIndependentGroup $irishIndependent
  * @property-read \Crawlora\Generated\IrishTimesGroup $irishTimes
+ * @property-read \Crawlora\Generated\TheJapanTimesGroup $theJapanTimes
  * @property-read \Crawlora\Generated\JCrewGroup $jCrew
  * @property-read \Crawlora\Generated\JerusalemPostGroup $jerusalemPost
  * @property-read \Crawlora\Generated\JimmyJohnsGroup $jimmyJohns
@@ -7942,6 +8506,8 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\LululemonGroup $lululemon
  * @property-read \Crawlora\Generated\MacRumorsGroup $macRumors
  * @property-read \Crawlora\Generated\MacySGroup $macyS
+ * @property-read \Crawlora\Generated\MakeUseOfGroup $makeUseOf
+ * @property-read \Crawlora\Generated\MalayMailGroup $malayMail
  * @property-read \Crawlora\Generated\MangaGroup $manga
  * @property-read \Crawlora\Generated\MarketWatchGroup $marketWatch
  * @property-read \Crawlora\Generated\MashableGroup $mashable
@@ -7964,6 +8530,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\MonitorsGroup $monitors
  * @property-read \Crawlora\Generated\TheMotleyFoolGroup $theMotleyFool
  * @property-read \Crawlora\Generated\NationAfricaGroup $nationAfrica
+ * @property-read \Crawlora\Generated\TheNationalGroup $theNational
  * @property-read \Crawlora\Generated\NationalPostGroup $nationalPost
  * @property-read \Crawlora\Generated\NbcNewsGroup $nbcNews
  * @property-read \Crawlora\Generated\NdtvGroup $ndtv
@@ -7974,6 +8541,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\NewsweekGroup $newsweek
  * @property-read \Crawlora\Generated\TheNewYorkerGroup $theNewYorker
  * @property-read \Crawlora\Generated\NikeGroup $nike
+ * @property-read \Crawlora\Generated\NineToFiveGoogleGroup $nineToFiveGoogle
  * @property-read \Crawlora\Generated\NineToFiveMacGroup $nineToFiveMac
  * @property-read \Crawlora\Generated\NjComGroup $njCom
  * @property-read \Crawlora\Generated\NprGroup $npr
@@ -7999,6 +8567,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\PhiladelphiaInquirerGroup $philadelphiaInquirer
  * @property-read \Crawlora\Generated\PhilstarGroup $philstar
  * @property-read \Crawlora\Generated\PhoneArenaGroup $phoneArena
+ * @property-read \Crawlora\Generated\PhysOrgGroup $physOrg
  * @property-read \Crawlora\Generated\MetaGroup $meta
  * @property-read \Crawlora\Generated\PinterestGroup $pinterest
  * @property-read \Crawlora\Generated\PitchBookGroup $pitchBook
@@ -8027,6 +8596,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\RedfinGroup $redfin
  * @property-read \Crawlora\Generated\ReferralsGroup $referrals
  * @property-read \Crawlora\Generated\ResyGroup $resy
+ * @property-read \Crawlora\Generated\RetailMeNotGroup $retailMeNot
  * @property-read \Crawlora\Generated\ReutersGroup $reuters
  * @property-read \Crawlora\Generated\RightmoveGroup $rightmove
  * @property-read \Crawlora\Generated\RnzGroup $rnz
@@ -8077,6 +8647,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\StockXGroup $stockX
  * @property-read \Crawlora\Generated\TheStraitsTimesGroup $theStraitsTimes
  * @property-read \Crawlora\Generated\StravaGroup $strava
+ * @property-read \Crawlora\Generated\StreetEasyGroup $streetEasy
  * @property-read \Crawlora\Generated\StubHubGroup $stubHub
  * @property-read \Crawlora\Generated\StuffGroup $stuff
  * @property-read \Crawlora\Generated\SubstackGroup $substack
@@ -8092,11 +8663,13 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\TeslaJobsGroup $teslaJobs
  * @property-read \Crawlora\Generated\TheAgeGroup $theAge
  * @property-read \Crawlora\Generated\TheAtlanticGroup $theAtlantic
+ * @property-read \Crawlora\Generated\TheBlazeGroup $theBlaze
  * @property-read \Crawlora\Generated\TheBodyShopGroup $theBodyShop
  * @property-read \Crawlora\Generated\TheDailyBeastGroup $theDailyBeast
  * @property-read \Crawlora\Generated\TheHillGroup $theHill
  * @property-read \Crawlora\Generated\TheHinduGroup $theHindu
  * @property-read \Crawlora\Generated\TheJournalIeGroup $theJournalIe
+ * @property-read \Crawlora\Generated\TheNextWebGroup $theNextWeb
  * @property-read \Crawlora\Generated\TheRealRealGroup $theRealReal
  * @property-read \Crawlora\Generated\TheStarMalaysiaGroup $theStarMalaysia
  * @property-read \Crawlora\Generated\TheVergeGroup $theVerge
@@ -8107,6 +8680,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\TiffanyCoGroup $tiffanyCo
  * @property-read \Crawlora\Generated\TiktokGroup $tiktok
  * @property-read \Crawlora\Generated\TimeGroup $time
+ * @property-read \Crawlora\Generated\TimesLiveGroup $timesLive
  * @property-read \Crawlora\Generated\TimesOfIndiaGroup $timesOfIndia
  * @property-read \Crawlora\Generated\TimesOfIsraelGroup $timesOfIsrael
  * @property-read \Crawlora\Generated\TmdbGroup $tmdb
@@ -8137,11 +8711,13 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\ViceGroup $vice
  * @property-read \Crawlora\Generated\VintedGroup $vinted
  * @property-read \Crawlora\Generated\VoxGroup $vox
+ * @property-read \Crawlora\Generated\VrboGroup $vrbo
  * @property-read \Crawlora\Generated\WalesOnlineGroup $walesOnline
  * @property-read \Crawlora\Generated\WalgreensGroup $walgreens
  * @property-read \Crawlora\Generated\WalmartGroup $walmart
  * @property-read \Crawlora\Generated\WashingtonPostGroup $washingtonPost
  * @property-read \Crawlora\Generated\WayfairGroup $wayfair
+ * @property-read \Crawlora\Generated\WccftechGroup $wccftech
  * @property-read \Crawlora\Generated\WendysGroup $wendys
  * @property-read \Crawlora\Generated\WhataburgerGroup $whataburger
  * @property-read \Crawlora\Generated\WhatnotGroup $whatnot
@@ -8163,6 +8739,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\YahooShoppingGroup $yahooShopping
  * @property-read \Crawlora\Generated\YahooSportsGroup $yahooSports
  * @property-read \Crawlora\Generated\YahooTechGroup $yahooTech
+ * @property-read \Crawlora\Generated\YardbarkerGroup $yardbarker
  * @property-read \Crawlora\Generated\YelpGroup $yelp
  * @property-read \Crawlora\Generated\YooxGroup $yoox
  * @property-read \Crawlora\Generated\YoutubeGroup $youtube
