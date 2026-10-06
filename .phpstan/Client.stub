@@ -35,6 +35,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\AudibleGroup $audible
  * @property-read \Crawlora\Generated\AutotraderGroup $autotrader
  * @property-read \Crawlora\Generated\AxiosGroup $axios
+ * @property-read \Crawlora\Generated\BaiduGroup $baidu
  * @property-read \Crawlora\Generated\BalenciagaGroup $balenciaga
  * @property-read \Crawlora\Generated\BarronsGroup $barrons
  * @property-read \Crawlora\Generated\BbbGroup $bbb
@@ -312,6 +313,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\PsastoreGroup $psastore
  * @property-read \Crawlora\Generated\PunchGroup $punch
  * @property-read \Crawlora\Generated\QuinceGroup $quince
+ * @property-read \Crawlora\Generated\QwantGroup $qwant
  * @property-read \Crawlora\Generated\RaisingCaneSGroup $raisingCaneS
  * @property-read \Crawlora\Generated\RapplerGroup $rappler
  * @property-read \Crawlora\Generated\RawStoryGroup $rawStory
@@ -365,6 +367,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
  * @property-read \Crawlora\Generated\EveningStandardGroup $eveningStandard
  * @property-read \Crawlora\Generated\StarbucksGroup $starbucks
+ * @property-read \Crawlora\Generated\StartpageGroup $startpage
  * @property-read \Crawlora\Generated\MinnesotaStarTribuneGroup $minnesotaStarTribune
  * @property-read \Crawlora\Generated\SteamGroup $steam
  * @property-read \Crawlora\Generated\SteveMaddenGroup $steveMadden
@@ -463,6 +466,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\YahooShoppingGroup $yahooShopping
  * @property-read \Crawlora\Generated\YahooSportsGroup $yahooSports
  * @property-read \Crawlora\Generated\YahooTechGroup $yahooTech
+ * @property-read \Crawlora\Generated\YandexGroup $yandex
  * @property-read \Crawlora\Generated\YardbarkerGroup $yardbarker
  * @property-read \Crawlora\Generated\YelpGroup $yelp
  * @property-read \Crawlora\Generated\YooxGroup $yoox
