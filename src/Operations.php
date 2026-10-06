@@ -7631,6 +7631,69 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'baidu-search' => [
+            'id' => 'baidu-search',
+            'method' => 'GET',
+            'path' => '/baidu/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'baidu-suggest' => [
+            'id' => 'baidu-suggest',
+            'method' => 'GET',
+            'path' => '/baidu/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'balenciaga-categories' => [
             'id' => 'balenciaga-categories',
             'method' => 'GET',
@@ -9729,6 +9792,11 @@ final class Operations
                     'name' => 'lang',
                     'in' => 'query',
                     'type' => 'string',
+                ],
+                [
+                    'name' => 'rich',
+                    'in' => 'query',
+                    'type' => 'boolean',
                 ],
             ],
             'formParams' => [],
@@ -12537,6 +12605,11 @@ final class Operations
                         'sw-ke',
                         'zh-tw',
                     ],
+                ],
+                [
+                    'name' => 'rich',
+                    'in' => 'query',
+                    'type' => 'boolean',
                 ],
             ],
             'formParams' => [],
@@ -35152,6 +35225,42 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'duckduckgo-suggest' => [
+            'id' => 'duckduckgo-suggest',
+            'method' => 'GET',
+            'path' => '/duckduckgo/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'duckduckgo-video' => [
             'id' => 'duckduckgo-video',
             'method' => 'GET',
@@ -49568,6 +49677,21 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                 ],
+                [
+                    'name' => 'source',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'web',
+                        'youtube',
+                        'shopping',
+                    ],
+                ],
+                [
+                    'name' => 'rich',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -51817,6 +51941,150 @@ final class Operations
                         'name',
                         'price_asc',
                         'price_desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'greystar-unit-locations' => [
+            'id' => 'greystar-unit-locations',
+            'method' => 'GET',
+            'path' => '/greystar/unit-locations',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'greystar-units' => [
+            'id' => 'greystar-units',
+            'method' => 'GET',
+            'path' => '/greystar/units',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'bedrooms',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'enum' => [
+                        '0',
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                        '5',
+                        '6',
+                    ],
+                ],
+                [
+                    'name' => 'bathrooms',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'enum' => [
+                        '0',
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                    ],
+                ],
+                [
+                    'name' => 'building_type',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'enum' => [
+                        'Active Adult',
+                        'Garden',
+                        'High-Rise',
+                        'Mid-Rise',
+                        'Single Family Home',
+                        'Student',
+                        'Townhome',
+                    ],
+                ],
+                [
+                    'name' => 'highlights',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'enum' => [
+                        'airCon',
+                        'dishwasher',
+                        'eco',
+                        'fitness',
+                        'garages',
+                        'limitedAccess',
+                        'patioBalcony',
+                        'pets',
+                        'playground',
+                        'pools',
+                        'smokeFree',
+                        'walkInClosets',
+                        'washerDryer',
+                    ],
+                ],
+                [
+                    'name' => 'min_price',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_price',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'price_asc',
                     ],
                 ],
                 [
@@ -95289,6 +95557,42 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'qwant-suggest' => [
+            'id' => 'qwant-suggest',
+            'method' => 'GET',
+            'path' => '/qwant/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'locale',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'raisingcanes-directory' => [
             'id' => 'raisingcanes-directory',
             'method' => 'GET',
@@ -110931,6 +111235,37 @@ final class Operations
                         'us',
                         'ca',
                     ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'startpage-suggest' => [
+            'id' => 'startpage-suggest',
+            'method' => 'GET',
+            'path' => '/startpage/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
                 ],
             ],
             'formParams' => [],
@@ -131838,6 +132173,74 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'yandex-search' => [
+            'id' => 'yandex-search',
+            'method' => 'GET',
+            'path' => '/yandex/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'yandex-suggest' => [
+            'id' => 'yandex-suggest',
+            'method' => 'GET',
+            'path' => '/yandex/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'yardbarker-article' => [
             'id' => 'yardbarker-article',
             'method' => 'GET',
@@ -132644,6 +133047,47 @@ final class Operations
                 ],
                 [
                     'name' => 'params',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'youtube-suggest' => [
+            'id' => 'youtube-suggest',
+            'method' => 'GET',
+            'path' => '/youtube/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'hl',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'gl',
                     'in' => 'query',
                     'type' => 'string',
                 ],
@@ -134334,6 +134778,10 @@ final class Operations
             'categories' => 'axios-categories',
             'headlines' => 'axios-headlines',
         ],
+        'baidu' => [
+            'search' => 'baidu-search',
+            'suggest' => 'baidu-suggest',
+        ],
         'balenciaga' => [
             'categories' => 'balenciaga-categories',
             'category' => 'balenciaga-category',
@@ -135117,6 +135565,7 @@ final class Operations
             'duckduckgoNews' => 'duckduckgo-news',
             'duckduckgoSearch' => 'duckduckgo-search',
             'duckduckgoShopping' => 'duckduckgo-shopping',
+            'duckduckgoSuggest' => 'duckduckgo-suggest',
             'duckduckgoVideo' => 'duckduckgo-video',
         ],
         'dunkin' => [
@@ -135699,6 +136148,8 @@ final class Operations
             'newsroomArticle' => 'greystar-newsroom-article',
             'property' => 'greystar-property',
             'search' => 'greystar-search',
+            'unitLocations' => 'greystar-unit-locations',
+            'units' => 'greystar-units',
         ],
         'grubhub' => [
             'availability' => 'grubhub-availability',
@@ -137074,6 +137525,9 @@ final class Operations
             'sitemaps' => 'quince-sitemaps',
             'suggest' => 'quince-suggest',
         ],
+        'qwant' => [
+            'suggest' => 'qwant-suggest',
+        ],
         'raisingCaneS' => [
             'raisingcanesDirectory' => 'raisingcanes-directory',
             'raisingcanesMenu' => 'raisingcanes-menu',
@@ -137619,6 +138073,9 @@ final class Operations
             'product' => 'starbucks-product',
             'nutrition' => 'starbucks-nutrition',
             'stores' => 'starbucks-stores',
+        ],
+        'startpage' => [
+            'suggest' => 'startpage-suggest',
         ],
         'minnesotaStarTribune' => [
             'startribuneNews' => 'startribune-news',
@@ -138445,6 +138902,10 @@ final class Operations
             'category' => 'yahoo-tech-category',
             'home' => 'yahoo-tech-home',
         ],
+        'yandex' => [
+            'search' => 'yandex-search',
+            'suggest' => 'yandex-suggest',
+        ],
         'yardbarker' => [
             'article' => 'yardbarker-article',
             'author' => 'yardbarker-author',
@@ -138478,6 +138939,7 @@ final class Operations
             'playlist' => 'youtube-playlist',
             'profile' => 'youtube-profile',
             'search' => 'youtube-search',
+            'suggest' => 'youtube-suggest',
             'tag' => 'youtube-tag',
             'transcript' => 'youtube-transcript',
             'transcriptLanguages' => 'youtube-transcript-languages',
@@ -138533,7 +138995,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 3529;
+    public const OPERATION_COUNT = 3539;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -138747,6 +139209,8 @@ final class Operations
         'axios-article',
         'axios-categories',
         'axios-headlines',
+        'baidu-search',
+        'baidu-suggest',
         'balenciaga-categories',
         'balenciaga-category',
         'balenciaga-product',
@@ -139371,6 +139835,7 @@ final class Operations
         'duckduckgo-news',
         'duckduckgo-search',
         'duckduckgo-shopping',
+        'duckduckgo-suggest',
         'duckduckgo-video',
         'dunkin-directory',
         'dunkin-menu',
@@ -139841,6 +140306,8 @@ final class Operations
         'greystar-newsroom-article',
         'greystar-property',
         'greystar-search',
+        'greystar-unit-locations',
+        'greystar-units',
         'grubhub-availability',
         'grubhub-offers',
         'grubhub-restaurant',
@@ -140930,6 +141397,7 @@ final class Operations
         'quince-sitemap-urls',
         'quince-sitemaps',
         'quince-suggest',
+        'qwant-suggest',
         'raisingcanes-directory',
         'raisingcanes-menu',
         'raisingcanes-nearby',
@@ -141371,6 +141839,7 @@ final class Operations
         'starbucks-product',
         'starbucks-nutrition',
         'starbucks-stores',
+        'startpage-suggest',
         'startribune-news',
         'steam-achievements',
         'steam-app',
@@ -142002,6 +142471,8 @@ final class Operations
         'yahoo-tech-article',
         'yahoo-tech-category',
         'yahoo-tech-home',
+        'yandex-search',
+        'yandex-suggest',
         'yardbarker-article',
         'yardbarker-author',
         'yardbarker-headlines',
@@ -142028,6 +142499,7 @@ final class Operations
         'youtube-playlist',
         'youtube-profile',
         'youtube-search',
+        'youtube-suggest',
         'youtube-tag',
         'youtube-transcript',
         'youtube-transcript-languages',
@@ -142305,6 +142777,8 @@ final class OperationId
     public const AXIOS_ARTICLE = 'axios-article';
     public const AXIOS_CATEGORIES = 'axios-categories';
     public const AXIOS_HEADLINES = 'axios-headlines';
+    public const BAIDU_SEARCH = 'baidu-search';
+    public const BAIDU_SUGGEST = 'baidu-suggest';
     public const BALENCIAGA_CATEGORIES = 'balenciaga-categories';
     public const BALENCIAGA_CATEGORY = 'balenciaga-category';
     public const BALENCIAGA_PRODUCT = 'balenciaga-product';
@@ -142917,6 +143391,7 @@ final class OperationId
     public const DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_NEWS = 'duckduckgo-news';
     public const DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_SEARCH = 'duckduckgo-search';
     public const DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_SHOPPING = 'duckduckgo-shopping';
+    public const DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_SUGGEST = 'duckduckgo-suggest';
     public const DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_VIDEO = 'duckduckgo-video';
     public const DUNKIN_DIRECTORY = 'dunkin-directory';
     public const DUNKIN_MENU = 'dunkin-menu';
@@ -143389,6 +143864,8 @@ final class OperationId
     public const GREYSTAR_NEWSROOM_ARTICLE = 'greystar-newsroom-article';
     public const GREYSTAR_PROPERTY = 'greystar-property';
     public const GREYSTAR_SEARCH = 'greystar-search';
+    public const GREYSTAR_UNIT_LOCATIONS = 'greystar-unit-locations';
+    public const GREYSTAR_UNITS = 'greystar-units';
     public const GRUBHUB_AVAILABILITY = 'grubhub-availability';
     public const GRUBHUB_OFFERS = 'grubhub-offers';
     public const GRUBHUB_RESTAURANT = 'grubhub-restaurant';
@@ -144455,6 +144932,7 @@ final class OperationId
     public const QUINCE_SITEMAP_URLS = 'quince-sitemap-urls';
     public const QUINCE_SITEMAPS = 'quince-sitemaps';
     public const QUINCE_SUGGEST = 'quince-suggest';
+    public const QWANT_SUGGEST = 'qwant-suggest';
     public const RAISING_CANE_SRAISINGCANES_DIRECTORY = 'raisingcanes-directory';
     public const RAISING_CANE_SRAISINGCANES_MENU = 'raisingcanes-menu';
     public const RAISING_CANE_SRAISINGCANES_NEARBY = 'raisingcanes-nearby';
@@ -144893,6 +145371,7 @@ final class OperationId
     public const STARBUCKS_NUTRITION = 'starbucks-nutrition';
     public const STARBUCKS_PRODUCT = 'starbucks-product';
     public const STARBUCKS_STORES = 'starbucks-stores';
+    public const STARTPAGE_SUGGEST = 'startpage-suggest';
     public const STEAM_ACHIEVEMENTS = 'steam-achievements';
     public const STEAM_APP = 'steam-app';
     public const STEAM_CATEGORY = 'steam-category';
@@ -145574,6 +146053,8 @@ final class OperationId
     public const YAHOO_TECH_ARTICLE = 'yahoo-tech-article';
     public const YAHOO_TECH_CATEGORY = 'yahoo-tech-category';
     public const YAHOO_TECH_HOME = 'yahoo-tech-home';
+    public const YANDEX_SEARCH = 'yandex-search';
+    public const YANDEX_SUGGEST = 'yandex-suggest';
     public const YARDBARKER_ARTICLE = 'yardbarker-article';
     public const YARDBARKER_AUTHOR = 'yardbarker-author';
     public const YARDBARKER_HEADLINES = 'yardbarker-headlines';
@@ -145600,6 +146081,7 @@ final class OperationId
     public const YOUTUBE_PLAYLIST = 'youtube-playlist';
     public const YOUTUBE_PROFILE = 'youtube-profile';
     public const YOUTUBE_SEARCH = 'youtube-search';
+    public const YOUTUBE_SUGGEST = 'youtube-suggest';
     public const YOUTUBE_TAG = 'youtube-tag';
     public const YOUTUBE_TRANSCRIPT = 'youtube-transcript';
     public const YOUTUBE_TRANSCRIPT_LANGUAGES = 'youtube-transcript-languages';

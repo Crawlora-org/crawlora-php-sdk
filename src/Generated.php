@@ -520,6 +520,14 @@ abstract class AutotraderGroup {}
 abstract class AxiosGroup {}
 
 /**
+ * @method mixed search(array $params = [], array $options = []) baidu-search (GET /baidu/search)
+ *   params: string $q, int $page
+ * @method mixed suggest(array $params = [], array $options = []) baidu-suggest (GET /baidu/suggest)
+ *   params: string $q, int $count
+ */
+abstract class BaiduGroup {}
+
+/**
  * @method mixed categories(array $params = [], array $options = []) balenciaga-categories (GET /balenciaga/categories)
  * @method mixed category(array $params = [], array $options = []) balenciaga-category (GET /balenciaga/category)
  *   params: string $path, 'latest'|'price_ascending'|'price_descending' $sort, int $page, int $limit, string $filters
@@ -687,7 +695,7 @@ abstract class BillingGroup {}
  * @method mixed search(array $params = [], array $options = []) bing-search (GET /bing/search)
  *   params: string $q, int $page, int $count, string $country, string $lang
  * @method mixed suggest(array $params = [], array $options = []) bing-suggest (GET /bing/suggest)
- *   params: string $q, int $count, string $country, string $lang
+ *   params: string $q, int $count, string $country, string $lang, bool $rich
  * @method mixed videos(array $params = [], array $options = []) bing-videos (GET /bing/videos)
  *   params: string $q, int $page, int $count, string $country, string $lang
  */
@@ -861,7 +869,7 @@ abstract class BrandGroup {}
  * @method mixed search(array $params = [], array $options = []) brave-search (GET /brave/search)
  *   params: string $q, int $offset, 'all'|'ar'|'at'|'au'|'be'|'br'|'ca'|'ch'|'cl'|'cn'|'de'|'dk'|'es'|'fi'|'fr'|'gb'|'gr'|'hk'|'id'|'in'|'it'|'jp'|'kr'|'mx'|'my'|'nl'|'no'|'nz'|'ph'|'pl'|'pt'|'ru'|'sa'|'se'|'sg'|'tr'|'tw'|'us'|'za' $country, 'de-de'|'en-ca'|'en-gb'|'en-in'|'en-us'|'fi-fi'|'fr-ca'|'fr-fr'|'ja-jp'|'pt-br'|'sq-al'|'sw-ke'|'zh-tw' $lang, 'any'|'day'|'week'|'month'|'year'|'custom' $time_range, string $date_from, string $date_to
  * @method mixed suggest(array $params = [], array $options = []) brave-suggest (GET /brave/suggest)
- *   params: string $q, int $count, 'all'|'ar'|'at'|'au'|'be'|'br'|'ca'|'ch'|'cl'|'cn'|'de'|'dk'|'es'|'fi'|'fr'|'gb'|'gr'|'hk'|'id'|'in'|'it'|'jp'|'kr'|'mx'|'my'|'nl'|'no'|'nz'|'ph'|'pl'|'pt'|'ru'|'sa'|'se'|'sg'|'tr'|'tw'|'us'|'za' $country, 'de-de'|'en-ca'|'en-gb'|'en-in'|'en-us'|'fi-fi'|'fr-ca'|'fr-fr'|'ja-jp'|'pt-br'|'sq-al'|'sw-ke'|'zh-tw' $lang
+ *   params: string $q, int $count, 'all'|'ar'|'at'|'au'|'be'|'br'|'ca'|'ch'|'cl'|'cn'|'de'|'dk'|'es'|'fi'|'fr'|'gb'|'gr'|'hk'|'id'|'in'|'it'|'jp'|'kr'|'mx'|'my'|'nl'|'no'|'nz'|'ph'|'pl'|'pt'|'ru'|'sa'|'se'|'sg'|'tr'|'tw'|'us'|'za' $country, 'de-de'|'en-ca'|'en-gb'|'en-in'|'en-us'|'fi-fi'|'fr-ca'|'fr-fr'|'ja-jp'|'pt-br'|'sq-al'|'sw-ke'|'zh-tw' $lang, bool $rich
  * @method mixed videos(array $params = [], array $options = []) brave-videos (GET /brave/videos)
  *   params: string $q, int $offset, int $count, 'all'|'ar'|'at'|'au'|'be'|'br'|'ca'|'ch'|'cl'|'cn'|'de'|'dk'|'es'|'fi'|'fr'|'gb'|'gr'|'hk'|'id'|'in'|'it'|'jp'|'kr'|'mx'|'my'|'nl'|'no'|'nz'|'ph'|'pl'|'pt'|'ru'|'sa'|'se'|'sg'|'tr'|'tw'|'us'|'za' $country, 'de-de'|'en-ca'|'en-gb'|'en-in'|'en-us'|'fi-fi'|'fr-ca'|'fr-fr'|'ja-jp'|'pt-br'|'sq-al'|'sw-ke'|'zh-tw' $lang, 'any'|'day'|'week'|'month'|'year'|'custom' $time_range, string $date_from, string $date_to
  */
@@ -1979,6 +1987,8 @@ abstract class DraftKingsSportsbookGroup {}
  *   params: string $q, int $page, string $region, 'd'|'w'|'m'|'y' $time_range, 'strict'|'moderate'|'off' $safe_search
  * @method mixed duckduckgoShopping(array $params = [], array $options = []) duckduckgo-shopping (GET /duckduckgo/shopping)
  *   params: string $q, string $region
+ * @method mixed duckduckgoSuggest(array $params = [], array $options = []) duckduckgo-suggest (GET /duckduckgo/suggest)
+ *   params: string $q, int $count, string $region
  * @method mixed duckduckgoVideo(array $params = [], array $options = []) duckduckgo-video (GET /duckduckgo/video)
  *   params: string $q, int $page, string $region
  */
@@ -2919,7 +2929,7 @@ abstract class GoogleJobsGroup {}
  * @method mixed newsSearch(array $params = [], array $options = []) google-news-search (POST /google/news)
  *   params: array $searchOption
  * @method mixed suggest(array $params = [], array $options = []) google-suggest (GET /google/suggest)
- *   params: string $q, int $count, string $country, string $lang
+ *   params: string $q, int $count, string $country, string $lang, 'web'|'youtube'|'shopping' $source, bool $rich
  * @method mixed trendsCategories(array $params = [], array $options = []) google-trends-categories (GET /google/trends/categories)
  * @method mixed trendsEnums(array $params = [], array $options = []) google-trends-enums (GET /google/trends/enums)
  * @method mixed trendsExplore(array $params = [], array $options = []) google-trends-explore (POST /google/trends/explore)
@@ -3039,6 +3049,10 @@ abstract class GrailedGroup {}
  *   params: string $id
  * @method mixed search(array $params = [], array $options = []) greystar-search (GET /greystar/search)
  *   params: string $query, string $market_area, string $neighborhood, string $city, string $state, string $country_code, float $min_price, float $max_price, 'relevance'|'name'|'price_asc'|'price_desc' $sort, int $page, int $per_page
+ * @method mixed unitLocations(array $params = [], array $options = []) greystar-unit-locations (GET /greystar/unit-locations)
+ *   params: string $query
+ * @method mixed units(array $params = [], array $options = []) greystar-units (GET /greystar/units)
+ *   params: string $location, array<'0'|'1'|'2'|'3'|'4'|'5'|'6'> $bedrooms, array<'0'|'1'|'2'|'3'|'4'> $bathrooms, array<'Active Adult'|'Garden'|'High-Rise'|'Mid-Rise'|'Single Family Home'|'Student'|'Townhome'> $building_type, array<'airCon'|'dishwasher'|'eco'|'fitness'|'garages'|'limitedAccess'|'patioBalcony'|'pets'|'playground'|'pools'|'smokeFree'|'walkInClosets'|'washerDryer'> $highlights, float $min_price, float $max_price, 'relevance'|'price_asc' $sort, int $page, int $per_page
  */
 abstract class GreystarGroup {}
 
@@ -5594,6 +5608,12 @@ abstract class PunchGroup {}
 abstract class QuinceGroup {}
 
 /**
+ * @method mixed suggest(array $params = [], array $options = []) qwant-suggest (GET /qwant/suggest)
+ *   params: string $q, int $count, string $locale
+ */
+abstract class QwantGroup {}
+
+/**
  * @method mixed raisingcanesDirectory(array $params = [], array $options = []) raisingcanes-directory (GET /raisingcanes/directory)
  *   params: string $path
  * @method mixed raisingcanesMenu(array $params = [], array $options = []) raisingcanes-menu (GET /raisingcanes/menu)
@@ -6608,6 +6628,12 @@ abstract class EveningStandardGroup {}
  *   params: string $place, float $lat, float $lng, 'us'|'ca' $market
  */
 abstract class StarbucksGroup {}
+
+/**
+ * @method mixed suggest(array $params = [], array $options = []) startpage-suggest (GET /startpage/suggest)
+ *   params: string $q, int $count
+ */
+abstract class StartpageGroup {}
 
 /**
  * @method mixed startribuneNews(array $params = [], array $options = []) startribune-news (GET /startribune/news)
@@ -8117,6 +8143,14 @@ abstract class YahooSportsGroup {}
 abstract class YahooTechGroup {}
 
 /**
+ * @method mixed search(array $params = [], array $options = []) yandex-search (GET /yandex/search)
+ *   params: string $q, int $page
+ * @method mixed suggest(array $params = [], array $options = []) yandex-suggest (GET /yandex/suggest)
+ *   params: string $q, int $count, string $lang
+ */
+abstract class YandexGroup {}
+
+/**
  * @method mixed article(array $params = [], array $options = []) yardbarker-article (GET /yardbarker/article)
  *   params: string $url
  * @method mixed author(array $params = [], array $options = []) yardbarker-author (GET /yardbarker/author)
@@ -8178,6 +8212,8 @@ abstract class YooxGroup {}
  *   params: string $id
  * @method mixed search(array $params = [], array $options = []) youtube-search (GET /youtube/search)
  *   params: string $q, string $search_query, string $continuation_token, 'video'|'shorts'|'channel'|'playlist'|'movie' $type, 'relevance'|'upload_date'|'view_count'|'popularity'|'rating' $sort_by, 'last_hour'|'today'|'this_week'|'this_month'|'this_year' $upload_date, 'under_3_minutes'|'three_to_20_minutes'|'over_20_minutes'|'under_3'|'three_to_20'|'over_20'|'short'|'medium'|'long' $duration, string $features, string $hl, string $gl, string $params
+ * @method mixed suggest(array $params = [], array $options = []) youtube-suggest (GET /youtube/suggest)
+ *   params: string $q, int $count, string $hl, string $gl
  * @method mixed tag(array $params = [], array $options = []) youtube-tag (GET /youtube/tag/{tag})
  *   params: string $tag, 'all'|'shorts' $type, string $continuation_token
  * @method mixed transcript(array $params = [], array $options = []) youtube-transcript (GET /youtube/transcript/{id}) Supports text response mode.
@@ -8311,6 +8347,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\AudibleGroup $audible
  * @property-read \Crawlora\Generated\AutotraderGroup $autotrader
  * @property-read \Crawlora\Generated\AxiosGroup $axios
+ * @property-read \Crawlora\Generated\BaiduGroup $baidu
  * @property-read \Crawlora\Generated\BalenciagaGroup $balenciaga
  * @property-read \Crawlora\Generated\BarronsGroup $barrons
  * @property-read \Crawlora\Generated\BbbGroup $bbb
@@ -8588,6 +8625,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\PsastoreGroup $psastore
  * @property-read \Crawlora\Generated\PunchGroup $punch
  * @property-read \Crawlora\Generated\QuinceGroup $quince
+ * @property-read \Crawlora\Generated\QwantGroup $qwant
  * @property-read \Crawlora\Generated\RaisingCaneSGroup $raisingCaneS
  * @property-read \Crawlora\Generated\RapplerGroup $rappler
  * @property-read \Crawlora\Generated\RawStoryGroup $rawStory
@@ -8641,6 +8679,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
  * @property-read \Crawlora\Generated\EveningStandardGroup $eveningStandard
  * @property-read \Crawlora\Generated\StarbucksGroup $starbucks
+ * @property-read \Crawlora\Generated\StartpageGroup $startpage
  * @property-read \Crawlora\Generated\MinnesotaStarTribuneGroup $minnesotaStarTribune
  * @property-read \Crawlora\Generated\SteamGroup $steam
  * @property-read \Crawlora\Generated\SteveMaddenGroup $steveMadden
@@ -8739,6 +8778,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\YahooShoppingGroup $yahooShopping
  * @property-read \Crawlora\Generated\YahooSportsGroup $yahooSports
  * @property-read \Crawlora\Generated\YahooTechGroup $yahooTech
+ * @property-read \Crawlora\Generated\YandexGroup $yandex
  * @property-read \Crawlora\Generated\YardbarkerGroup $yardbarker
  * @property-read \Crawlora\Generated\YelpGroup $yelp
  * @property-read \Crawlora\Generated\YooxGroup $yoox
