@@ -8031,6 +8031,30 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'bbb-article' => [
+            'id' => 'bbb-article',
+            'method' => 'GET',
+            'path' => '/bbb/article',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'bbb-business' => [
             'id' => 'bbb-business',
             'method' => 'GET',
@@ -8069,6 +8093,11 @@ final class Operations
                     'type' => 'string',
                     'required' => true,
                 ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -8082,6 +8111,7 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+            'paginatable' => true,
         ],
         'bbb-business-more-info' => [
             'id' => 'bbb-business-more-info',
@@ -8158,6 +8188,70 @@ final class Operations
                     'in' => 'query',
                     'type' => 'integer',
                 ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Relevance',
+                        'Distance',
+                        'Rating',
+                        'AToZ',
+                        'ZToA',
+                    ],
+                ],
+                [
+                    'name' => 'distance',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '5',
+                        '10',
+                        '25',
+                        '50',
+                        '100',
+                    ],
+                ],
+                [
+                    'name' => 'rating',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'enum' => [
+                        'A',
+                        'B',
+                        'C',
+                        'D',
+                        'F',
+                    ],
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'accredited',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'get_quote',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'service_area',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -8172,6 +8266,135 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'bbb-local-bbb' => [
+            'id' => 'bbb-local-bbb',
+            'method' => 'GET',
+            'path' => '/bbb/local-bbb',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'bbb-local-bbbs' => [
+            'id' => 'bbb-local-bbbs',
+            'method' => 'GET',
+            'path' => '/bbb/local-bbbs',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'us',
+                        'ca',
+                    ],
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'bbb-news' => [
+            'id' => 'bbb-news',
+            'method' => 'GET',
+            'path' => '/bbb/news',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'bbb-news-topics' => [
+            'id' => 'bbb-news-topics',
+            'method' => 'GET',
+            'path' => '/bbb/news/topics',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'bbb-regions' => [
+            'id' => 'bbb-regions',
+            'method' => 'GET',
+            'path' => '/bbb/regions',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'bbb-scamtracker-search' => [
             'id' => 'bbb-scamtracker-search',
@@ -8352,6 +8575,193 @@ final class Operations
                     'name' => 'page',
                     'in' => 'query',
                     'type' => 'integer',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'USA',
+                        'CAN',
+                    ],
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Relevance',
+                        'Distance',
+                        'Rating',
+                        'AToZ',
+                        'ZToA',
+                    ],
+                ],
+                [
+                    'name' => 'distance',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '5',
+                        '10',
+                        '25',
+                        '50',
+                        '100',
+                    ],
+                ],
+                [
+                    'name' => 'rating',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'enum' => [
+                        'A',
+                        'B',
+                        'C',
+                        'D',
+                        'F',
+                    ],
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'accredited',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'get_quote',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'service_area',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'bbb-search-filters' => [
+            'id' => 'bbb-search-filters',
+            'method' => 'GET',
+            'path' => '/bbb/search/filters',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category_url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'USA',
+                        'CAN',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Relevance',
+                        'Distance',
+                        'Rating',
+                        'AToZ',
+                        'ZToA',
+                    ],
+                ],
+                [
+                    'name' => 'distance',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '5',
+                        '10',
+                        '25',
+                        '50',
+                        '100',
+                    ],
+                ],
+                [
+                    'name' => 'rating',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'enum' => [
+                        'A',
+                        'B',
+                        'C',
+                        'D',
+                        'F',
+                    ],
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'accredited',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'get_quote',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'service_area',
+                    'in' => 'query',
+                    'type' => 'boolean',
                 ],
             ],
             'formParams' => [],
@@ -23536,6 +23946,8 @@ final class Operations
                         'accredited',
                         'entity_type',
                         'run_id',
+                        'alert_title',
+                        'has_alerts',
                     ],
                 ],
                 [
@@ -23582,6 +23994,21 @@ final class Operations
                     'name' => 'accredited',
                     'in' => 'query',
                     'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_alerts',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'alert_title',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_complaints',
+                    'in' => 'query',
+                    'type' => 'integer',
                 ],
                 [
                     'name' => 'entity_type',
@@ -23685,6 +24112,21 @@ final class Operations
                     'type' => 'boolean',
                 ],
                 [
+                    'name' => 'has_alerts',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'alert_title',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_complaints',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
                     'name' => 'entity_type',
                     'in' => 'query',
                     'type' => 'string',
@@ -23705,6 +24147,189 @@ final class Operations
                         'accredited_first',
                         'name_asc',
                         'years_in_business_desc',
+                        'complaints_desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-bbb-scamtracker-reports-facets' => [
+            'id' => 'datasets-bbb-scamtracker-reports-facets',
+            'method' => 'GET',
+            'path' => '/datasets/bbb-scamtracker-reports/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'scam_type',
+                        'state',
+                        'country',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'scam_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'USA',
+                        'CAN',
+                    ],
+                ],
+                [
+                    'name' => 'date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_loss',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_loss',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-bbb-scamtracker-reports-item' => [
+            'id' => 'datasets-bbb-scamtracker-reports-item',
+            'method' => 'GET',
+            'path' => '/datasets/bbb-scamtracker-reports/items/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-bbb-scamtracker-reports-search' => [
+            'id' => 'datasets-bbb-scamtracker-reports-search',
+            'method' => 'GET',
+            'path' => '/datasets/bbb-scamtracker-reports/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'scam_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'USA',
+                        'CAN',
+                    ],
+                ],
+                [
+                    'name' => 'date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_loss',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_loss',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'reported_desc',
+                        'reported_asc',
+                        'loss_desc',
                     ],
                 ],
                 [
@@ -27704,6 +28329,579 @@ final class Operations
                         'outlet_asc',
                         'crawled_desc',
                         'readiness_desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-llms-facets' => [
+            'id' => 'datasets-llms-facets',
+            'method' => 'GET',
+            'path' => '/datasets/llms/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'state',
+                        'source_kind',
+                        'generator',
+                        'bot',
+                        'policy',
+                        'tld',
+                        'category',
+                        'robots_state',
+                        'robots_default',
+                        'blocked_crawler',
+                        'partial_crawler',
+                        'content_signal_train',
+                        'full_state',
+                        'home_status',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'text',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'present',
+                        'absent',
+                        'blocked',
+                        'error',
+                        'skipped',
+                    ],
+                ],
+                [
+                    'name' => 'valid',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'source_kind',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'shopify_agent_template',
+                        'seo_plugin',
+                        'platform_default',
+                        'parked',
+                        'custom',
+                    ],
+                ],
+                [
+                    'name' => 'generator',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'yoast',
+                        'aioseo',
+                        'rankmath',
+                        'wix',
+                        'shopify',
+                        'parked',
+                    ],
+                ],
+                [
+                    'name' => 'bot',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_links',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'mentions_mcp',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'mentions_openapi',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'placeholder',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'injection',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'full_valid',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'robots_state',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'present',
+                        'absent',
+                        'blocked',
+                        'error',
+                        'skipped',
+                    ],
+                ],
+                [
+                    'name' => 'robots_default',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'allowed',
+                        'partial',
+                        'blocked',
+                    ],
+                ],
+                [
+                    'name' => 'blocks_all',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'GPTBot',
+                        'OAI-SearchBot',
+                        'ChatGPT-User',
+                        'ClaudeBot',
+                        'Claude-SearchBot',
+                        'Claude-User',
+                        'anthropic-ai',
+                        'Google-Extended',
+                        'PerplexityBot',
+                        'Perplexity-User',
+                        'CCBot',
+                        'Bytespider',
+                        'Applebot-Extended',
+                        'Amazonbot',
+                        'meta-externalagent',
+                        'cohere-ai',
+                        'Diffbot',
+                    ],
+                ],
+                [
+                    'name' => 'blocks_any',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'GPTBot',
+                        'OAI-SearchBot',
+                        'ChatGPT-User',
+                        'ClaudeBot',
+                        'Claude-SearchBot',
+                        'Claude-User',
+                        'anthropic-ai',
+                        'Google-Extended',
+                        'PerplexityBot',
+                        'Perplexity-User',
+                        'CCBot',
+                        'Bytespider',
+                        'Applebot-Extended',
+                        'Amazonbot',
+                        'meta-externalagent',
+                        'cohere-ai',
+                        'Diffbot',
+                    ],
+                ],
+                [
+                    'name' => 'not_blocked',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'GPTBot',
+                        'OAI-SearchBot',
+                        'ChatGPT-User',
+                        'ClaudeBot',
+                        'Claude-SearchBot',
+                        'Claude-User',
+                        'anthropic-ai',
+                        'Google-Extended',
+                        'PerplexityBot',
+                        'Perplexity-User',
+                        'CCBot',
+                        'Bytespider',
+                        'Applebot-Extended',
+                        'Amazonbot',
+                        'meta-externalagent',
+                        'cohere-ai',
+                        'Diffbot',
+                    ],
+                ],
+                [
+                    'name' => 'all_ai_blocked',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_train_blocked',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'content_signal_train',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'yes',
+                        'no',
+                    ],
+                ],
+                [
+                    'name' => 'tld',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'reachable',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'home_blocked',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'is_infrastructure',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-llms-item' => [
+            'id' => 'datasets-llms-item',
+            'method' => 'GET',
+            'path' => '/datasets/llms/items/{domain}',
+            'pathParams' => [
+                'domain',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-llms-search' => [
+            'id' => 'datasets-llms-search',
+            'method' => 'GET',
+            'path' => '/datasets/llms/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'text',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'present',
+                        'absent',
+                        'blocked',
+                        'error',
+                        'skipped',
+                    ],
+                ],
+                [
+                    'name' => 'valid',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'source_kind',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'shopify_agent_template',
+                        'seo_plugin',
+                        'platform_default',
+                        'parked',
+                        'custom',
+                    ],
+                ],
+                [
+                    'name' => 'generator',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'yoast',
+                        'aioseo',
+                        'rankmath',
+                        'wix',
+                        'shopify',
+                        'parked',
+                    ],
+                ],
+                [
+                    'name' => 'bot',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_links',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'mentions_mcp',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'mentions_openapi',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'placeholder',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'injection',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'full_valid',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'robots_state',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'present',
+                        'absent',
+                        'blocked',
+                        'error',
+                        'skipped',
+                    ],
+                ],
+                [
+                    'name' => 'robots_default',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'allowed',
+                        'partial',
+                        'blocked',
+                    ],
+                ],
+                [
+                    'name' => 'blocks_all',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'GPTBot',
+                        'OAI-SearchBot',
+                        'ChatGPT-User',
+                        'ClaudeBot',
+                        'Claude-SearchBot',
+                        'Claude-User',
+                        'anthropic-ai',
+                        'Google-Extended',
+                        'PerplexityBot',
+                        'Perplexity-User',
+                        'CCBot',
+                        'Bytespider',
+                        'Applebot-Extended',
+                        'Amazonbot',
+                        'meta-externalagent',
+                        'cohere-ai',
+                        'Diffbot',
+                    ],
+                ],
+                [
+                    'name' => 'blocks_any',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'GPTBot',
+                        'OAI-SearchBot',
+                        'ChatGPT-User',
+                        'ClaudeBot',
+                        'Claude-SearchBot',
+                        'Claude-User',
+                        'anthropic-ai',
+                        'Google-Extended',
+                        'PerplexityBot',
+                        'Perplexity-User',
+                        'CCBot',
+                        'Bytespider',
+                        'Applebot-Extended',
+                        'Amazonbot',
+                        'meta-externalagent',
+                        'cohere-ai',
+                        'Diffbot',
+                    ],
+                ],
+                [
+                    'name' => 'not_blocked',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'GPTBot',
+                        'OAI-SearchBot',
+                        'ChatGPT-User',
+                        'ClaudeBot',
+                        'Claude-SearchBot',
+                        'Claude-User',
+                        'anthropic-ai',
+                        'Google-Extended',
+                        'PerplexityBot',
+                        'Perplexity-User',
+                        'CCBot',
+                        'Bytespider',
+                        'Applebot-Extended',
+                        'Amazonbot',
+                        'meta-externalagent',
+                        'cohere-ai',
+                        'Diffbot',
+                    ],
+                ],
+                [
+                    'name' => 'all_ai_blocked',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_train_blocked',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'content_signal_train',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'yes',
+                        'no',
+                    ],
+                ],
+                [
+                    'name' => 'tld',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'reachable',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'home_blocked',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'is_infrastructure',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'run_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'rank_asc',
+                        'links_desc',
+                        'bytes_desc',
+                        'domain_asc',
+                        'crawled_desc',
                     ],
                 ],
                 [
@@ -33837,6 +35035,50 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'developer-search' => [
+            'id' => 'developer-search',
+            'method' => 'POST',
+            'path' => '/developer/search',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'request',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'developer-sources' => [
+            'id' => 'developer-sources',
+            'method' => 'GET',
+            'path' => '/developer/sources',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
                 ],
             ],
             'formParams' => [],
@@ -40371,12 +41613,107 @@ final class Operations
                         'volleyball',
                         'water-polo',
                         'winter-sports',
+                        'moto-racing',
+                        'ski-jumping',
+                        'alpine-skiing',
+                        'cross-country-skiing',
+                        'biathlon',
                     ],
                 ],
                 [
                     'name' => 'day_offset',
                     'in' => 'query',
                     'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-entity-news' => [
+            'id' => 'flashscore-entity-news',
+            'method' => 'GET',
+            'path' => '/flashscore/entity-news',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'team',
+                        'player',
+                        'tournament',
+                        'sport',
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-match-box-score' => [
+            'id' => 'flashscore-match-box-score',
+            'method' => 'GET',
+            'path' => '/flashscore/match-box-score',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-match-darts' => [
+            'id' => 'flashscore-match-darts',
+            'method' => 'GET',
+            'path' => '/flashscore/match-darts',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
                 ],
             ],
             'formParams' => [],
@@ -40496,10 +41833,445 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'flashscore-match-missing-players' => [
+            'id' => 'flashscore-match-missing-players',
+            'method' => 'GET',
+            'path' => '/flashscore/match-missing-players',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-match-momentum' => [
+            'id' => 'flashscore-match-momentum',
+            'method' => 'GET',
+            'path' => '/flashscore/match-momentum',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'flashscore-match-news' => [
             'id' => 'flashscore-match-news',
             'method' => 'GET',
             'path' => '/flashscore/match-news',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-match-odds' => [
+            'id' => 'flashscore-match-odds',
+            'method' => 'GET',
+            'path' => '/flashscore/match-odds',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'geo',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'AE',
+                        'AL',
+                        'AM',
+                        'AO',
+                        'AR',
+                        'AT',
+                        'AU',
+                        'AZ',
+                        'BA',
+                        'BD',
+                        'BE',
+                        'BG',
+                        'BO',
+                        'BR',
+                        'BY',
+                        'CA',
+                        'CH',
+                        'CI',
+                        'CL',
+                        'CM',
+                        'CN',
+                        'CO',
+                        'CR',
+                        'CY',
+                        'CZ',
+                        'DE',
+                        'DK',
+                        'DO',
+                        'DZ',
+                        'EC',
+                        'EE',
+                        'EG',
+                        'ES',
+                        'ET',
+                        'FI',
+                        'FR',
+                        'GB',
+                        'GE',
+                        'GH',
+                        'GR',
+                        'GT',
+                        'HK',
+                        'HN',
+                        'HR',
+                        'HU',
+                        'ID',
+                        'IE',
+                        'IL',
+                        'IN',
+                        'IQ',
+                        'IR',
+                        'IS',
+                        'IT',
+                        'JO',
+                        'JP',
+                        'KE',
+                        'KG',
+                        'KH',
+                        'KR',
+                        'KW',
+                        'KZ',
+                        'LA',
+                        'LB',
+                        'LK',
+                        'LT',
+                        'LU',
+                        'LV',
+                        'LY',
+                        'MA',
+                        'MD',
+                        'ME',
+                        'MK',
+                        'MM',
+                        'MN',
+                        'MT',
+                        'MX',
+                        'MY',
+                        'NG',
+                        'NI',
+                        'NL',
+                        'NO',
+                        'NP',
+                        'NZ',
+                        'PA',
+                        'PE',
+                        'PH',
+                        'PK',
+                        'PL',
+                        'PT',
+                        'PY',
+                        'QA',
+                        'RO',
+                        'RS',
+                        'RU',
+                        'SA',
+                        'SD',
+                        'SE',
+                        'SG',
+                        'SI',
+                        'SK',
+                        'SN',
+                        'SV',
+                        'TH',
+                        'TN',
+                        'TR',
+                        'TW',
+                        'TZ',
+                        'UA',
+                        'UG',
+                        'US',
+                        'UY',
+                        'UZ',
+                        'VE',
+                        'VN',
+                        'XK',
+                        'ZA',
+                        'ZM',
+                        'ZW',
+                    ],
+                ],
+                [
+                    'name' => 'subdivision',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'AB',
+                        'AK',
+                        'AL',
+                        'AR',
+                        'AZ',
+                        'BC',
+                        'CA',
+                        'CO',
+                        'CT',
+                        'DC',
+                        'DE',
+                        'FL',
+                        'GA',
+                        'HI',
+                        'IA',
+                        'ID',
+                        'IL',
+                        'IN',
+                        'KS',
+                        'KY',
+                        'LA',
+                        'MA',
+                        'MB',
+                        'MD',
+                        'ME',
+                        'MI',
+                        'MN',
+                        'MO',
+                        'MS',
+                        'MT',
+                        'NB',
+                        'NC',
+                        'ND',
+                        'NE',
+                        'NH',
+                        'NJ',
+                        'NL',
+                        'NM',
+                        'NS',
+                        'NT',
+                        'NU',
+                        'NV',
+                        'NY',
+                        'OH',
+                        'OK',
+                        'ON',
+                        'OR',
+                        'PA',
+                        'PE',
+                        'QC',
+                        'RI',
+                        'SC',
+                        'SD',
+                        'SK',
+                        'TN',
+                        'TX',
+                        'UT',
+                        'VA',
+                        'VT',
+                        'WA',
+                        'WI',
+                        'WV',
+                        'WY',
+                        'YT',
+                    ],
+                ],
+                [
+                    'name' => 'betting_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'HOME_DRAW_AWAY',
+                        'HOME_AWAY',
+                        'DRAW_NO_BET',
+                        'DOUBLE_CHANCE',
+                        'ASIAN_HANDICAP',
+                        'EUROPEAN_HANDICAP',
+                        'OVER_UNDER',
+                        'BOTH_TEAMS_TO_SCORE',
+                        'CORRECT_SCORE',
+                        'HALF_FULL_TIME',
+                        'ODD_OR_EVEN',
+                        'TO_QUALIFY',
+                        'NEXT_GOAL',
+                        'TOP_POSITION_MERGED',
+                        'TO_WIN_AND_TOP_POSITION',
+                        'WIN_EACH_WAY',
+                    ],
+                ],
+                [
+                    'name' => 'scope',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'FULL_TIME',
+                        'FULL_TIME_OVER_TIME',
+                        'FIRST_HALF',
+                        'SECOND_HALF',
+                        'FIRST_PERIOD',
+                        'FIRST_QUARTER',
+                        'FIRST_SET',
+                        'SECOND_SET',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-match-player-stats' => [
+            'id' => 'flashscore-match-player-stats',
+            'method' => 'GET',
+            'path' => '/flashscore/match-player-stats',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'player_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'group',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'top_stats',
+                        'shots',
+                        'attack',
+                        'passes',
+                        'defense',
+                        'goalkeeping',
+                        'general',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-match-point-by-point' => [
+            'id' => 'flashscore-match-point-by-point',
+            'method' => 'GET',
+            'path' => '/flashscore/match-point-by-point',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-match-predicted-lineups' => [
+            'id' => 'flashscore-match-predicted-lineups',
+            'method' => 'GET',
+            'path' => '/flashscore/match-predicted-lineups',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-match-report' => [
+            'id' => 'flashscore-match-report',
+            'method' => 'GET',
+            'path' => '/flashscore/match-report',
             'pathParams' => [],
             'queryParams' => [
                 [
@@ -40580,6 +42352,157 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-match-tv' => [
+            'id' => 'flashscore-match-tv',
+            'method' => 'GET',
+            'path' => '/flashscore/match-tv',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'geo',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'AE',
+                        'AL',
+                        'AM',
+                        'AO',
+                        'AR',
+                        'AT',
+                        'AU',
+                        'AZ',
+                        'BA',
+                        'BD',
+                        'BE',
+                        'BG',
+                        'BO',
+                        'BR',
+                        'BY',
+                        'CA',
+                        'CH',
+                        'CI',
+                        'CL',
+                        'CM',
+                        'CN',
+                        'CO',
+                        'CR',
+                        'CY',
+                        'CZ',
+                        'DE',
+                        'DK',
+                        'DO',
+                        'DZ',
+                        'EC',
+                        'EE',
+                        'EG',
+                        'ES',
+                        'ET',
+                        'FI',
+                        'FR',
+                        'GB',
+                        'GE',
+                        'GH',
+                        'GR',
+                        'GT',
+                        'HK',
+                        'HN',
+                        'HR',
+                        'HU',
+                        'ID',
+                        'IE',
+                        'IL',
+                        'IN',
+                        'IQ',
+                        'IR',
+                        'IS',
+                        'IT',
+                        'JO',
+                        'JP',
+                        'KE',
+                        'KG',
+                        'KH',
+                        'KR',
+                        'KW',
+                        'KZ',
+                        'LA',
+                        'LB',
+                        'LK',
+                        'LT',
+                        'LU',
+                        'LV',
+                        'LY',
+                        'MA',
+                        'MD',
+                        'ME',
+                        'MK',
+                        'MM',
+                        'MN',
+                        'MT',
+                        'MX',
+                        'MY',
+                        'NG',
+                        'NI',
+                        'NL',
+                        'NO',
+                        'NP',
+                        'NZ',
+                        'PA',
+                        'PE',
+                        'PH',
+                        'PK',
+                        'PL',
+                        'PT',
+                        'PY',
+                        'QA',
+                        'RO',
+                        'RS',
+                        'RU',
+                        'SA',
+                        'SD',
+                        'SE',
+                        'SG',
+                        'SI',
+                        'SK',
+                        'SN',
+                        'SV',
+                        'TH',
+                        'TN',
+                        'TR',
+                        'TW',
+                        'TZ',
+                        'UA',
+                        'UG',
+                        'US',
+                        'UY',
+                        'UZ',
+                        'VE',
+                        'VN',
+                        'XK',
+                        'ZA',
+                        'ZM',
+                        'ZW',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -40719,12 +42642,291 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'flashscore-news-article-body' => [
+            'id' => 'flashscore-news-article-body',
+            'method' => 'GET',
+            'path' => '/flashscore/news-article-body',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'flashscore-news-categories' => [
             'id' => 'flashscore-news-categories',
             'method' => 'GET',
             'path' => '/flashscore/news-categories',
             'pathParams' => [],
             'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-news-most-read' => [
+            'id' => 'flashscore-news-most-read',
+            'method' => 'GET',
+            'path' => '/flashscore/news-most-read',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-odds-geos' => [
+            'id' => 'flashscore-odds-geos',
+            'method' => 'GET',
+            'path' => '/flashscore/odds-geos',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-player' => [
+            'id' => 'flashscore-player',
+            'method' => 'GET',
+            'path' => '/flashscore/player',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-player-fixtures' => [
+            'id' => 'flashscore-player-fixtures',
+            'method' => 'GET',
+            'path' => '/flashscore/player-fixtures',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'flashscore-player-injuries' => [
+            'id' => 'flashscore-player-injuries',
+            'method' => 'GET',
+            'path' => '/flashscore/player-injuries',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-player-match-log' => [
+            'id' => 'flashscore-player-match-log',
+            'method' => 'GET',
+            'path' => '/flashscore/player-match-log',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'flashscore-player-news' => [
+            'id' => 'flashscore-player-news',
+            'method' => 'GET',
+            'path' => '/flashscore/player-news',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-player-results' => [
+            'id' => 'flashscore-player-results',
+            'method' => 'GET',
+            'path' => '/flashscore/player-results',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'flashscore-player-transfers' => [
+            'id' => 'flashscore-player-transfers',
+            'method' => 'GET',
+            'path' => '/flashscore/player-transfers',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -40867,6 +43069,11 @@ final class Operations
                         'volleyball',
                         'water-polo',
                         'winter-sports',
+                        'moto-racing',
+                        'ski-jumping',
+                        'alpine-skiing',
+                        'cross-country-skiing',
+                        'biathlon',
                     ],
                 ],
                 [
@@ -40933,12 +43140,454 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'flashscore-team' => [
+            'id' => 'flashscore-team',
+            'method' => 'GET',
+            'path' => '/flashscore/team',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-team-fixtures' => [
+            'id' => 'flashscore-team-fixtures',
+            'method' => 'GET',
+            'path' => '/flashscore/team-fixtures',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'flashscore-team-news' => [
+            'id' => 'flashscore-team-news',
+            'method' => 'GET',
+            'path' => '/flashscore/team-news',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-team-outright-odds' => [
+            'id' => 'flashscore-team-outright-odds',
+            'method' => 'GET',
+            'path' => '/flashscore/team-outright-odds',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'geo',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'AE',
+                        'AL',
+                        'AM',
+                        'AO',
+                        'AR',
+                        'AT',
+                        'AU',
+                        'AZ',
+                        'BA',
+                        'BD',
+                        'BE',
+                        'BG',
+                        'BO',
+                        'BR',
+                        'BY',
+                        'CA',
+                        'CH',
+                        'CI',
+                        'CL',
+                        'CM',
+                        'CN',
+                        'CO',
+                        'CR',
+                        'CY',
+                        'CZ',
+                        'DE',
+                        'DK',
+                        'DO',
+                        'DZ',
+                        'EC',
+                        'EE',
+                        'EG',
+                        'ES',
+                        'ET',
+                        'FI',
+                        'FR',
+                        'GB',
+                        'GE',
+                        'GH',
+                        'GR',
+                        'GT',
+                        'HK',
+                        'HN',
+                        'HR',
+                        'HU',
+                        'ID',
+                        'IE',
+                        'IL',
+                        'IN',
+                        'IQ',
+                        'IR',
+                        'IS',
+                        'IT',
+                        'JO',
+                        'JP',
+                        'KE',
+                        'KG',
+                        'KH',
+                        'KR',
+                        'KW',
+                        'KZ',
+                        'LA',
+                        'LB',
+                        'LK',
+                        'LT',
+                        'LU',
+                        'LV',
+                        'LY',
+                        'MA',
+                        'MD',
+                        'ME',
+                        'MK',
+                        'MM',
+                        'MN',
+                        'MT',
+                        'MX',
+                        'MY',
+                        'NG',
+                        'NI',
+                        'NL',
+                        'NO',
+                        'NP',
+                        'NZ',
+                        'PA',
+                        'PE',
+                        'PH',
+                        'PK',
+                        'PL',
+                        'PT',
+                        'PY',
+                        'QA',
+                        'RO',
+                        'RS',
+                        'RU',
+                        'SA',
+                        'SD',
+                        'SE',
+                        'SG',
+                        'SI',
+                        'SK',
+                        'SN',
+                        'SV',
+                        'TH',
+                        'TN',
+                        'TR',
+                        'TW',
+                        'TZ',
+                        'UA',
+                        'UG',
+                        'US',
+                        'UY',
+                        'UZ',
+                        'VE',
+                        'VN',
+                        'XK',
+                        'ZA',
+                        'ZM',
+                        'ZW',
+                    ],
+                ],
+                [
+                    'name' => 'subdivision',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'AB',
+                        'AK',
+                        'AL',
+                        'AR',
+                        'AZ',
+                        'BC',
+                        'CA',
+                        'CO',
+                        'CT',
+                        'DC',
+                        'DE',
+                        'FL',
+                        'GA',
+                        'HI',
+                        'IA',
+                        'ID',
+                        'IL',
+                        'IN',
+                        'KS',
+                        'KY',
+                        'LA',
+                        'MA',
+                        'MB',
+                        'MD',
+                        'ME',
+                        'MI',
+                        'MN',
+                        'MO',
+                        'MS',
+                        'MT',
+                        'NB',
+                        'NC',
+                        'ND',
+                        'NE',
+                        'NH',
+                        'NJ',
+                        'NL',
+                        'NM',
+                        'NS',
+                        'NT',
+                        'NU',
+                        'NV',
+                        'NY',
+                        'OH',
+                        'OK',
+                        'ON',
+                        'OR',
+                        'PA',
+                        'PE',
+                        'QC',
+                        'RI',
+                        'SC',
+                        'SD',
+                        'SK',
+                        'TN',
+                        'TX',
+                        'UT',
+                        'VA',
+                        'VT',
+                        'WA',
+                        'WI',
+                        'WV',
+                        'WY',
+                        'YT',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-team-results' => [
+            'id' => 'flashscore-team-results',
+            'method' => 'GET',
+            'path' => '/flashscore/team-results',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'flashscore-team-squad' => [
+            'id' => 'flashscore-team-squad',
+            'method' => 'GET',
+            'path' => '/flashscore/team-squad',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'scope',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-team-transfers' => [
+            'id' => 'flashscore-team-transfers',
+            'method' => 'GET',
+            'path' => '/flashscore/team-transfers',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'arrivals',
+                        'departures',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'flashscore-top-search' => [
             'id' => 'flashscore-top-search',
             'method' => 'GET',
             'path' => '/flashscore/top-search',
             'pathParams' => [],
             'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-tournament-archive-seasons' => [
+            'id' => 'flashscore-tournament-archive-seasons',
+            'method' => 'GET',
+            'path' => '/flashscore/tournament-archive-seasons',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'stage_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -40983,6 +43632,228 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'flashscore-tournament-outright-odds' => [
+            'id' => 'flashscore-tournament-outright-odds',
+            'method' => 'GET',
+            'path' => '/flashscore/tournament-outright-odds',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tournament_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'geo',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'AE',
+                        'AL',
+                        'AM',
+                        'AO',
+                        'AR',
+                        'AT',
+                        'AU',
+                        'AZ',
+                        'BA',
+                        'BD',
+                        'BE',
+                        'BG',
+                        'BO',
+                        'BR',
+                        'BY',
+                        'CA',
+                        'CH',
+                        'CI',
+                        'CL',
+                        'CM',
+                        'CN',
+                        'CO',
+                        'CR',
+                        'CY',
+                        'CZ',
+                        'DE',
+                        'DK',
+                        'DO',
+                        'DZ',
+                        'EC',
+                        'EE',
+                        'EG',
+                        'ES',
+                        'ET',
+                        'FI',
+                        'FR',
+                        'GB',
+                        'GE',
+                        'GH',
+                        'GR',
+                        'GT',
+                        'HK',
+                        'HN',
+                        'HR',
+                        'HU',
+                        'ID',
+                        'IE',
+                        'IL',
+                        'IN',
+                        'IQ',
+                        'IR',
+                        'IS',
+                        'IT',
+                        'JO',
+                        'JP',
+                        'KE',
+                        'KG',
+                        'KH',
+                        'KR',
+                        'KW',
+                        'KZ',
+                        'LA',
+                        'LB',
+                        'LK',
+                        'LT',
+                        'LU',
+                        'LV',
+                        'LY',
+                        'MA',
+                        'MD',
+                        'ME',
+                        'MK',
+                        'MM',
+                        'MN',
+                        'MT',
+                        'MX',
+                        'MY',
+                        'NG',
+                        'NI',
+                        'NL',
+                        'NO',
+                        'NP',
+                        'NZ',
+                        'PA',
+                        'PE',
+                        'PH',
+                        'PK',
+                        'PL',
+                        'PT',
+                        'PY',
+                        'QA',
+                        'RO',
+                        'RS',
+                        'RU',
+                        'SA',
+                        'SD',
+                        'SE',
+                        'SG',
+                        'SI',
+                        'SK',
+                        'SN',
+                        'SV',
+                        'TH',
+                        'TN',
+                        'TR',
+                        'TW',
+                        'TZ',
+                        'UA',
+                        'UG',
+                        'US',
+                        'UY',
+                        'UZ',
+                        'VE',
+                        'VN',
+                        'XK',
+                        'ZA',
+                        'ZM',
+                        'ZW',
+                    ],
+                ],
+                [
+                    'name' => 'subdivision',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'AB',
+                        'AK',
+                        'AL',
+                        'AR',
+                        'AZ',
+                        'BC',
+                        'CA',
+                        'CO',
+                        'CT',
+                        'DC',
+                        'DE',
+                        'FL',
+                        'GA',
+                        'HI',
+                        'IA',
+                        'ID',
+                        'IL',
+                        'IN',
+                        'KS',
+                        'KY',
+                        'LA',
+                        'MA',
+                        'MB',
+                        'MD',
+                        'ME',
+                        'MI',
+                        'MN',
+                        'MO',
+                        'MS',
+                        'MT',
+                        'NB',
+                        'NC',
+                        'ND',
+                        'NE',
+                        'NH',
+                        'NJ',
+                        'NL',
+                        'NM',
+                        'NS',
+                        'NT',
+                        'NU',
+                        'NV',
+                        'NY',
+                        'OH',
+                        'OK',
+                        'ON',
+                        'OR',
+                        'PA',
+                        'PE',
+                        'QC',
+                        'RI',
+                        'SC',
+                        'SD',
+                        'SK',
+                        'TN',
+                        'TX',
+                        'UT',
+                        'VA',
+                        'VT',
+                        'WA',
+                        'WI',
+                        'WV',
+                        'WY',
+                        'YT',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'flashscore-tournament-seasons' => [
             'id' => 'flashscore-tournament-seasons',
@@ -97380,6 +100251,257 @@ final class Operations
                 'JWTAuth',
             ],
         ],
+        'research-start' => [
+            'id' => 'research-start',
+            'method' => 'POST',
+            'path' => '/research/jobs',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'request',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'research-status' => [
+            'id' => 'research-status',
+            'method' => 'GET',
+            'path' => '/research/jobs/{job_id}',
+            'pathParams' => [
+                'job_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'research-cancel' => [
+            'id' => 'research-cancel',
+            'method' => 'POST',
+            'path' => '/research/jobs/{job_id}/cancel',
+            'pathParams' => [
+                'job_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'research-events' => [
+            'id' => 'research-events',
+            'method' => 'GET',
+            'path' => '/research/jobs/{job_id}/events',
+            'pathParams' => [
+                'job_id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'research-results' => [
+            'id' => 'research-results',
+            'method' => 'GET',
+            'path' => '/research/jobs/{job_id}/results',
+            'pathParams' => [
+                'job_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'research-inspect-paper' => [
+            'id' => 'research-inspect-paper',
+            'method' => 'GET',
+            'path' => '/research/papers/metadata',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'paper_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'research-read-paper' => [
+            'id' => 'research-read-paper',
+            'method' => 'POST',
+            'path' => '/research/papers/read',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'request',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'research-related-papers' => [
+            'id' => 'research-related-papers',
+            'method' => 'POST',
+            'path' => '/research/papers/related',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'request',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'research-search-papers' => [
+            'id' => 'research-search-papers',
+            'method' => 'GET',
+            'path' => '/research/papers/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sources',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'enum' => [
+                        'arxiv',
+                    ],
+                ],
+                [
+                    'name' => 'authors',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'published_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'published_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'research-sources' => [
+            'id' => 'research-sources',
+            'method' => 'GET',
+            'path' => '/research/sources',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'resy-availability' => [
             'id' => 'resy-availability',
             'method' => 'GET',
@@ -97396,7 +100518,6 @@ final class Operations
                     'name' => 'date',
                     'in' => 'query',
                     'type' => 'string',
-                    'required' => true,
                 ],
                 [
                     'name' => 'party_size',
@@ -106043,10 +109164,418 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'sofascore-categories' => [
+            'id' => 'sofascore-categories',
+            'method' => 'GET',
+            'path' => '/sofascore/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'american-football',
+                        'aussie-rules',
+                        'badminton',
+                        'bandy',
+                        'baseball',
+                        'basketball',
+                        'beach-volley',
+                        'cricket',
+                        'darts',
+                        'esports',
+                        'floorball',
+                        'football',
+                        'futsal',
+                        'handball',
+                        'ice-hockey',
+                        'mma',
+                        'minifootball',
+                        'padel',
+                        'rugby',
+                        'snooker',
+                        'table-tennis',
+                        'tennis',
+                        'volleyball',
+                        'waterpolo',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-category-tournaments' => [
+            'id' => 'sofascore-category-tournaments',
+            'method' => 'GET',
+            'path' => '/sofascore/category-tournaments',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-draft' => [
+            'id' => 'sofascore-draft',
+            'method' => 'GET',
+            'path' => '/sofascore/draft',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nba',
+                        'nfl',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-draft-picks' => [
+            'id' => 'sofascore-draft-picks',
+            'method' => 'GET',
+            'path' => '/sofascore/draft-picks',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nba',
+                        'nfl',
+                    ],
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'round',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-esports-game' => [
+            'id' => 'sofascore-esports-game',
+            'method' => 'GET',
+            'path' => '/sofascore/esports-game',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'part',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'statistics',
+                        'lineups',
+                        'bans',
+                        'rounds',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'sofascore-event' => [
             'id' => 'sofascore-event',
             'method' => 'GET',
             'path' => '/sofascore/event',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-at-bat-pitches' => [
+            'id' => 'sofascore-event-at-bat-pitches',
+            'method' => 'GET',
+            'path' => '/sofascore/event-at-bat-pitches',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'at_bat_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-at-bats' => [
+            'id' => 'sofascore-event-at-bats',
+            'method' => 'GET',
+            'path' => '/sofascore/event-at-bats',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-average-positions' => [
+            'id' => 'sofascore-event-average-positions',
+            'method' => 'GET',
+            'path' => '/sofascore/event-average-positions',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-baseball-top-performers' => [
+            'id' => 'sofascore-event-baseball-top-performers',
+            'method' => 'GET',
+            'path' => '/sofascore/event-baseball-top-performers',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-best-players' => [
+            'id' => 'sofascore-event-best-players',
+            'method' => 'GET',
+            'path' => '/sofascore/event-best-players',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-comments' => [
+            'id' => 'sofascore-event-comments',
+            'method' => 'GET',
+            'path' => '/sofascore/event-comments',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-esports-games' => [
+            'id' => 'sofascore-event-esports-games',
+            'method' => 'GET',
+            'path' => '/sofascore/event-esports-games',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-graph' => [
+            'id' => 'sofascore-event-graph',
+            'method' => 'GET',
+            'path' => '/sofascore/event-graph',
             'pathParams' => [],
             'queryParams' => [
                 [
@@ -106095,10 +109624,62 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'sofascore-event-highlights' => [
+            'id' => 'sofascore-event-highlights',
+            'method' => 'GET',
+            'path' => '/sofascore/event-highlights',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'sofascore-event-incidents' => [
             'id' => 'sofascore-event-incidents',
             'method' => 'GET',
             'path' => '/sofascore/event-incidents',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-innings' => [
+            'id' => 'sofascore-event-innings',
+            'method' => 'GET',
+            'path' => '/sofascore/event-innings',
             'pathParams' => [],
             'queryParams' => [
                 [
@@ -106147,10 +109728,178 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'sofascore-event-managers' => [
+            'id' => 'sofascore-event-managers',
+            'method' => 'GET',
+            'path' => '/sofascore/event-managers',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'sofascore-event-odds' => [
             'id' => 'sofascore-event-odds',
             'method' => 'GET',
             'path' => '/sofascore/event-odds',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-player-heatmap' => [
+            'id' => 'sofascore-event-player-heatmap',
+            'method' => 'GET',
+            'path' => '/sofascore/event-player-heatmap',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'player_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-player-statistics' => [
+            'id' => 'sofascore-event-player-statistics',
+            'method' => 'GET',
+            'path' => '/sofascore/event-player-statistics',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'player_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-point-by-point' => [
+            'id' => 'sofascore-event-point-by-point',
+            'method' => 'GET',
+            'path' => '/sofascore/event-point-by-point',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-pregame-form' => [
+            'id' => 'sofascore-event-pregame-form',
+            'method' => 'GET',
+            'path' => '/sofascore/event-pregame-form',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-shotmap' => [
+            'id' => 'sofascore-event-shotmap',
+            'method' => 'GET',
+            'path' => '/sofascore/event-shotmap',
             'pathParams' => [],
             'queryParams' => [
                 [
@@ -106199,6 +109948,147 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'sofascore-event-team-heatmap' => [
+            'id' => 'sofascore-event-team-heatmap',
+            'method' => 'GET',
+            'path' => '/sofascore/event-team-heatmap',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-team-streaks' => [
+            'id' => 'sofascore-event-team-streaks',
+            'method' => 'GET',
+            'path' => '/sofascore/event-team-streaks',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-tennis-power' => [
+            'id' => 'sofascore-event-tennis-power',
+            'method' => 'GET',
+            'path' => '/sofascore/event-tennis-power',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-tv-channels' => [
+            'id' => 'sofascore-event-tv-channels',
+            'method' => 'GET',
+            'path' => '/sofascore/event-tv-channels',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-votes' => [
+            'id' => 'sofascore-event-votes',
+            'method' => 'GET',
+            'path' => '/sofascore/event-votes',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'sofascore-live-events' => [
             'id' => 'sofascore-live-events',
             'method' => 'GET',
@@ -106211,9 +110101,268 @@ final class Operations
                     'type' => 'string',
                     'required' => true,
                     'enum' => [
-                        'football',
+                        'american-football',
+                        'aussie-rules',
+                        'badminton',
+                        'bandy',
+                        'baseball',
                         'basketball',
+                        'beach-volley',
+                        'cricket',
+                        'darts',
+                        'esports',
+                        'floorball',
+                        'football',
+                        'futsal',
+                        'handball',
+                        'ice-hockey',
+                        'mma',
+                        'minifootball',
+                        'padel',
+                        'rugby',
+                        'snooker',
+                        'table-tennis',
                         'tennis',
+                        'volleyball',
+                        'waterpolo',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-manager' => [
+            'id' => 'sofascore-manager',
+            'method' => 'GET',
+            'path' => '/sofascore/manager',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-manager-events' => [
+            'id' => 'sofascore-manager-events',
+            'method' => 'GET',
+            'path' => '/sofascore/manager-events',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'sofascore-mma-card' => [
+            'id' => 'sofascore-mma-card',
+            'method' => 'GET',
+            'path' => '/sofascore/mma-card',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'org_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'card_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'part',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'all',
+                        'maincard',
+                        'prelims',
+                        'earlyprelims',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-mma-schedule' => [
+            'id' => 'sofascore-mma-schedule',
+            'method' => 'GET',
+            'path' => '/sofascore/mma-schedule',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'org_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'month',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-odds-dropping' => [
+            'id' => 'sofascore-odds-dropping',
+            'method' => 'GET',
+            'path' => '/sofascore/odds-dropping',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'american-football',
+                        'aussie-rules',
+                        'badminton',
+                        'bandy',
+                        'baseball',
+                        'basketball',
+                        'beach-volley',
+                        'cricket',
+                        'darts',
+                        'esports',
+                        'floorball',
+                        'football',
+                        'futsal',
+                        'handball',
+                        'ice-hockey',
+                        'mma',
+                        'minifootball',
+                        'padel',
+                        'rugby',
+                        'snooker',
+                        'table-tennis',
+                        'tennis',
+                        'volleyball',
+                        'waterpolo',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-odds-winning' => [
+            'id' => 'sofascore-odds-winning',
+            'method' => 'GET',
+            'path' => '/sofascore/odds-winning',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'american-football',
+                        'aussie-rules',
+                        'badminton',
+                        'bandy',
+                        'baseball',
+                        'basketball',
+                        'beach-volley',
+                        'cricket',
+                        'darts',
+                        'esports',
+                        'floorball',
+                        'football',
+                        'futsal',
+                        'handball',
+                        'ice-hockey',
+                        'mma',
+                        'minifootball',
+                        'padel',
+                        'rugby',
+                        'snooker',
+                        'table-tennis',
+                        'tennis',
+                        'volleyball',
+                        'waterpolo',
                     ],
                 ],
             ],
@@ -106234,6 +110383,566 @@ final class Operations
             'id' => 'sofascore-player',
             'method' => 'GET',
             'path' => '/sofascore/player',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-player-attributes' => [
+            'id' => 'sofascore-player-attributes',
+            'method' => 'GET',
+            'path' => '/sofascore/player-attributes',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-player-events' => [
+            'id' => 'sofascore-player-events',
+            'method' => 'GET',
+            'path' => '/sofascore/player-events',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'sofascore-player-last-year-summary' => [
+            'id' => 'sofascore-player-last-year-summary',
+            'method' => 'GET',
+            'path' => '/sofascore/player-last-year-summary',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-player-national-team-statistics' => [
+            'id' => 'sofascore-player-national-team-statistics',
+            'method' => 'GET',
+            'path' => '/sofascore/player-national-team-statistics',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-player-penalty-history' => [
+            'id' => 'sofascore-player-penalty-history',
+            'method' => 'GET',
+            'path' => '/sofascore/player-penalty-history',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-player-ratings' => [
+            'id' => 'sofascore-player-ratings',
+            'method' => 'GET',
+            'path' => '/sofascore/player-ratings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'tournament_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'overall',
+                        'home',
+                        'away',
+                        'regular_season',
+                        'playoffs',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-player-season-heatmap' => [
+            'id' => 'sofascore-player-season-heatmap',
+            'method' => 'GET',
+            'path' => '/sofascore/player-season-heatmap',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'tournament_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-player-season-statistics' => [
+            'id' => 'sofascore-player-season-statistics',
+            'method' => 'GET',
+            'path' => '/sofascore/player-season-statistics',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'tournament_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'overall',
+                        'home',
+                        'away',
+                        'regular_season',
+                        'playoffs',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-player-statistical-rankings' => [
+            'id' => 'sofascore-player-statistical-rankings',
+            'method' => 'GET',
+            'path' => '/sofascore/player-statistical-rankings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'overall',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-player-statistics-seasons' => [
+            'id' => 'sofascore-player-statistics-seasons',
+            'method' => 'GET',
+            'path' => '/sofascore/player-statistics-seasons',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-player-tournaments' => [
+            'id' => 'sofascore-player-tournaments',
+            'method' => 'GET',
+            'path' => '/sofascore/player-tournaments',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-player-transfers' => [
+            'id' => 'sofascore-player-transfers',
+            'method' => 'GET',
+            'path' => '/sofascore/player-transfers',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-ranking-types' => [
+            'id' => 'sofascore-ranking-types',
+            'method' => 'GET',
+            'path' => '/sofascore/ranking-types',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-rankings' => [
+            'id' => 'sofascore-rankings',
+            'method' => 'GET',
+            'path' => '/sofascore/rankings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                        '5',
+                        '6',
+                        '7',
+                        '8',
+                        '9',
+                        '11',
+                        '12',
+                        '13',
+                        '14',
+                        '15',
+                        '16',
+                        '17',
+                        '18',
+                        '19',
+                        '20',
+                        '21',
+                        '22',
+                        '34',
+                        '35',
+                        '36',
+                        '37',
+                        '40',
+                        '41',
+                        '42',
+                        '43',
+                        '44',
+                        '45',
+                        '46',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-referee' => [
+            'id' => 'sofascore-referee',
+            'method' => 'GET',
+            'path' => '/sofascore/referee',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-referee-events' => [
+            'id' => 'sofascore-referee-events',
+            'method' => 'GET',
+            'path' => '/sofascore/referee-events',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'sofascore-referee-statistics' => [
+            'id' => 'sofascore-referee-statistics',
+            'method' => 'GET',
+            'path' => '/sofascore/referee-statistics',
             'pathParams' => [],
             'queryParams' => [
                 [
@@ -106280,6 +110989,16 @@ final class Operations
                     'type' => 'integer',
                     'required' => true,
                 ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'prefix',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -106294,6 +111013,102 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'sofascore-scheduled-events' => [
+            'id' => 'sofascore-scheduled-events',
+            'method' => 'GET',
+            'path' => '/sofascore/scheduled-events',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-scheduled-tournaments' => [
+            'id' => 'sofascore-scheduled-tournaments',
+            'method' => 'GET',
+            'path' => '/sofascore/scheduled-tournaments',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'american-football',
+                        'aussie-rules',
+                        'badminton',
+                        'bandy',
+                        'baseball',
+                        'basketball',
+                        'beach-volley',
+                        'cricket',
+                        'darts',
+                        'esports',
+                        'floorball',
+                        'football',
+                        'futsal',
+                        'handball',
+                        'ice-hockey',
+                        'mma',
+                        'minifootball',
+                        'padel',
+                        'rugby',
+                        'snooker',
+                        'table-tennis',
+                        'tennis',
+                        'volleyball',
+                        'waterpolo',
+                    ],
+                ],
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'sofascore-search' => [
             'id' => 'sofascore-search',
             'method' => 'GET',
@@ -106302,6 +111117,387 @@ final class Operations
             'queryParams' => [
                 [
                     'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-search-typed' => [
+            'id' => 'sofascore-search-typed',
+            'method' => 'GET',
+            'path' => '/sofascore/search-typed',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'events',
+                        'teams',
+                        'players',
+                        'managers',
+                        'referees',
+                        'venues',
+                        'unique_tournaments',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'american-football',
+                        'aussie-rules',
+                        'badminton',
+                        'bandy',
+                        'baseball',
+                        'basketball',
+                        'beach-volley',
+                        'cricket',
+                        'darts',
+                        'esports',
+                        'floorball',
+                        'football',
+                        'futsal',
+                        'handball',
+                        'ice-hockey',
+                        'mma',
+                        'minifootball',
+                        'padel',
+                        'rugby',
+                        'snooker',
+                        'table-tennis',
+                        'tennis',
+                        'volleyball',
+                        'waterpolo',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'sofascore-season-events' => [
+            'id' => 'sofascore-season-events',
+            'method' => 'GET',
+            'path' => '/sofascore/season-events',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'next',
+                        'last',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'sofascore-sports' => [
+            'id' => 'sofascore-sports',
+            'method' => 'GET',
+            'path' => '/sofascore/sports',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-stage' => [
+            'id' => 'sofascore-stage',
+            'method' => 'GET',
+            'path' => '/sofascore/stage',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-stage-categories' => [
+            'id' => 'sofascore-stage-categories',
+            'method' => 'GET',
+            'path' => '/sofascore/stage-categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'motorsport',
+                        'cycling',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-stage-driver-performance' => [
+            'id' => 'sofascore-stage-driver-performance',
+            'method' => 'GET',
+            'path' => '/sofascore/stage-driver-performance',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-stage-featured' => [
+            'id' => 'sofascore-stage-featured',
+            'method' => 'GET',
+            'path' => '/sofascore/stage-featured',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'motorsport',
+                        'cycling',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-stage-schedule' => [
+            'id' => 'sofascore-stage-schedule',
+            'method' => 'GET',
+            'path' => '/sofascore/stage-schedule',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'motorsport',
+                        'cycling',
+                    ],
+                ],
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-stage-seasons' => [
+            'id' => 'sofascore-stage-seasons',
+            'method' => 'GET',
+            'path' => '/sofascore/stage-seasons',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-stage-standings' => [
+            'id' => 'sofascore-stage-standings',
+            'method' => 'GET',
+            'path' => '/sofascore/stage-standings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'competitor',
+                        'team',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-stage-substages' => [
+            'id' => 'sofascore-stage-substages',
+            'method' => 'GET',
+            'path' => '/sofascore/stage-substages',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
@@ -106389,6 +111585,32 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'sofascore-team-achievements' => [
+            'id' => 'sofascore-team-achievements',
+            'method' => 'GET',
+            'path' => '/sofascore/team-achievements',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'sofascore-team-events' => [
             'id' => 'sofascore-team-events',
             'method' => 'GET',
@@ -106431,6 +111653,242 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'sofascore-team-goal-distributions' => [
+            'id' => 'sofascore-team-goal-distributions',
+            'method' => 'GET',
+            'path' => '/sofascore/team-goal-distributions',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'tournament_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-team-near-events' => [
+            'id' => 'sofascore-team-near-events',
+            'method' => 'GET',
+            'path' => '/sofascore/team-near-events',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-team-of-the-week' => [
+            'id' => 'sofascore-team-of-the-week',
+            'method' => 'GET',
+            'path' => '/sofascore/team-of-the-week',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'period',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-team-of-the-week-periods' => [
+            'id' => 'sofascore-team-of-the-week-periods',
+            'method' => 'GET',
+            'path' => '/sofascore/team-of-the-week-periods',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-team-performance' => [
+            'id' => 'sofascore-team-performance',
+            'method' => 'GET',
+            'path' => '/sofascore/team-performance',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-team-player-statistics' => [
+            'id' => 'sofascore-team-player-statistics',
+            'method' => 'GET',
+            'path' => '/sofascore/team-player-statistics',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'tournament_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'overall',
+                        'home',
+                        'away',
+                        'regular_season',
+                        'playoffs',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-team-player-statistics-seasons' => [
+            'id' => 'sofascore-team-player-statistics-seasons',
+            'method' => 'GET',
+            'path' => '/sofascore/team-player-statistics-seasons',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'sofascore-team-players' => [
             'id' => 'sofascore-team-players',
             'method' => 'GET',
@@ -106439,6 +111897,508 @@ final class Operations
             'queryParams' => [
                 [
                     'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-team-rankings' => [
+            'id' => 'sofascore-team-rankings',
+            'method' => 'GET',
+            'path' => '/sofascore/team-rankings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-team-season-statistics' => [
+            'id' => 'sofascore-team-season-statistics',
+            'method' => 'GET',
+            'path' => '/sofascore/team-season-statistics',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'tournament_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'overall',
+                        'home',
+                        'away',
+                        'regular_season',
+                        'playoffs',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-team-statistics-seasons' => [
+            'id' => 'sofascore-team-statistics-seasons',
+            'method' => 'GET',
+            'path' => '/sofascore/team-statistics-seasons',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-team-top-players' => [
+            'id' => 'sofascore-team-top-players',
+            'method' => 'GET',
+            'path' => '/sofascore/team-top-players',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'tournament_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'overall',
+                        'regular_season',
+                        'playoffs',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-team-tournaments' => [
+            'id' => 'sofascore-team-tournaments',
+            'method' => 'GET',
+            'path' => '/sofascore/team-tournaments',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'all',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-team-transfers' => [
+            'id' => 'sofascore-team-transfers',
+            'method' => 'GET',
+            'path' => '/sofascore/team-transfers',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-tennis-player-grand-slam-results' => [
+            'id' => 'sofascore-tennis-player-grand-slam-results',
+            'method' => 'GET',
+            'path' => '/sofascore/tennis-player-grand-slam-results',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-tournament-cuptree' => [
+            'id' => 'sofascore-tournament-cuptree',
+            'method' => 'GET',
+            'path' => '/sofascore/tournament-cuptree',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-tournament-info' => [
+            'id' => 'sofascore-tournament-info',
+            'method' => 'GET',
+            'path' => '/sofascore/tournament-info',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-tournament-player-of-the-season' => [
+            'id' => 'sofascore-tournament-player-of-the-season',
+            'method' => 'GET',
+            'path' => '/sofascore/tournament-player-of-the-season',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-tournament-player-statistics' => [
+            'id' => 'sofascore-tournament-player-statistics',
+            'method' => 'GET',
+            'path' => '/sofascore/tournament-player-statistics',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'order',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'rating',
+                        'goals',
+                        'expectedGoals',
+                        'assists',
+                        'successfulDribbles',
+                        'tackles',
+                        'accuratePassesPercentage',
+                        'bigChancesMissed',
+                        'totalShots',
+                        'goalConversionPercentage',
+                        'interceptions',
+                        'clearances',
+                        'errorLeadToGoal',
+                        'outfielderBlocks',
+                        'bigChancesCreated',
+                        'accuratePasses',
+                        'keyPasses',
+                        'saves',
+                        'cleanSheet',
+                        'penaltySave',
+                        'savedShotsFromInsideTheBox',
+                        'runsOut',
+                    ],
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'desc',
+                        'asc',
+                    ],
+                ],
+                [
+                    'name' => 'accumulation',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'total',
+                        'perGame',
+                        'per90',
+                    ],
+                ],
+                [
+                    'name' => 'group',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'summary',
+                        'attack',
+                        'defence',
+                        'passing',
+                        'goalkeeper',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'team',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'nationality',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'position',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'G',
+                        'D',
+                        'M',
+                        'F',
+                    ],
+                ],
+                [
+                    'name' => 'min_appearances',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_minutes',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'sofascore-tournament-rounds' => [
+            'id' => 'sofascore-tournament-rounds',
+            'method' => 'GET',
+            'path' => '/sofascore/tournament-rounds',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
@@ -106482,6 +112442,488 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'sofascore-tournament-statistics-info' => [
+            'id' => 'sofascore-tournament-statistics-info',
+            'method' => 'GET',
+            'path' => '/sofascore/tournament-statistics-info',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-tournament-team-of-the-season' => [
+            'id' => 'sofascore-tournament-team-of-the-season',
+            'method' => 'GET',
+            'path' => '/sofascore/tournament-team-of-the-season',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-tournament-teams' => [
+            'id' => 'sofascore-tournament-teams',
+            'method' => 'GET',
+            'path' => '/sofascore/tournament-teams',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-tournament-top-players' => [
+            'id' => 'sofascore-tournament-top-players',
+            'method' => 'GET',
+            'path' => '/sofascore/tournament-top-players',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'overall',
+                        'regular_season',
+                        'playoffs',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-tournament-top-teams' => [
+            'id' => 'sofascore-tournament-top-teams',
+            'method' => 'GET',
+            'path' => '/sofascore/tournament-top-teams',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'overall',
+                        'regular_season',
+                        'playoffs',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-tournament-venues' => [
+            'id' => 'sofascore-tournament-venues',
+            'method' => 'GET',
+            'path' => '/sofascore/tournament-venues',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-tournament-winners' => [
+            'id' => 'sofascore-tournament-winners',
+            'method' => 'GET',
+            'path' => '/sofascore/tournament-winners',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'sofascore-tournaments-with-feature' => [
+            'id' => 'sofascore-tournaments-with-feature',
+            'method' => 'GET',
+            'path' => '/sofascore/tournaments-with-feature',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'feature',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'cuptree',
+                        'standings',
+                        'totw',
+                        'power_rankings',
+                    ],
+                ],
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'american-football',
+                        'aussie-rules',
+                        'badminton',
+                        'bandy',
+                        'baseball',
+                        'basketball',
+                        'beach-volley',
+                        'cricket',
+                        'darts',
+                        'esports',
+                        'floorball',
+                        'football',
+                        'futsal',
+                        'handball',
+                        'ice-hockey',
+                        'minifootball',
+                        'rugby',
+                        'snooker',
+                        'table-tennis',
+                        'tennis',
+                        'volleyball',
+                        'waterpolo',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-trending-events' => [
+            'id' => 'sofascore-trending-events',
+            'method' => 'GET',
+            'path' => '/sofascore/trending-events',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-trending-players' => [
+            'id' => 'sofascore-trending-players',
+            'method' => 'GET',
+            'path' => '/sofascore/trending-players',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'football',
+                        'basketball',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-venue' => [
+            'id' => 'sofascore-venue',
+            'method' => 'GET',
+            'path' => '/sofascore/venue',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-venue-events' => [
+            'id' => 'sofascore-venue-events',
+            'method' => 'GET',
+            'path' => '/sofascore/venue-events',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'next',
+                        'last',
+                    ],
+                ],
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'american-football',
+                        'aussie-rules',
+                        'badminton',
+                        'bandy',
+                        'baseball',
+                        'basketball',
+                        'beach-volley',
+                        'cricket',
+                        'darts',
+                        'esports',
+                        'floorball',
+                        'football',
+                        'futsal',
+                        'handball',
+                        'ice-hockey',
+                        'mma',
+                        'minifootball',
+                        'padel',
+                        'rugby',
+                        'snooker',
+                        'table-tennis',
+                        'tennis',
+                        'volleyball',
+                        'waterpolo',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'tournament',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'sonic-availability' => [
             'id' => 'sonic-availability',
@@ -127186,6 +133628,133 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'web-capabilities' => [
+            'id' => 'web-capabilities',
+            'method' => 'GET',
+            'path' => '/web/capabilities',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'web-crawl' => [
+            'id' => 'web-crawl',
+            'method' => 'POST',
+            'path' => '/web/crawl',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'request',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'web-crawl-status' => [
+            'id' => 'web-crawl-status',
+            'method' => 'GET',
+            'path' => '/web/crawl/{job_id}',
+            'pathParams' => [
+                'job_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'web-crawl-cancel' => [
+            'id' => 'web-crawl-cancel',
+            'method' => 'POST',
+            'path' => '/web/crawl/{job_id}/cancel',
+            'pathParams' => [
+                'job_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'web-crawl-results' => [
+            'id' => 'web-crawl-results',
+            'method' => 'GET',
+            'path' => '/web/crawl/{job_id}/results',
+            'pathParams' => [
+                'job_id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'web-map' => [
+            'id' => 'web-map',
+            'method' => 'POST',
+            'path' => '/web/map',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'request',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'web-scrape' => [
             'id' => 'web-scrape',
             'method' => 'POST',
@@ -127194,6 +133763,25 @@ final class Operations
             'queryParams' => [],
             'formParams' => [],
             'bodyParam' => 'scrapeOption',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'web-search' => [
+            'id' => 'web-search',
+            'method' => 'POST',
+            'path' => '/web/search',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'request',
             'bodyRequired' => true,
             'consumes' => [
                 'application/json',
@@ -134798,15 +141386,22 @@ final class Operations
             'topics' => 'barrons-topics',
         ],
         'bbb' => [
+            'article' => 'bbb-article',
             'business' => 'bbb-business',
             'businessComplaints' => 'bbb-business-complaints',
             'businessMoreInfo' => 'bbb-business-more-info',
             'businessReviews' => 'bbb-business-reviews',
             'category' => 'bbb-category',
+            'localBbb' => 'bbb-local-bbb',
+            'localBbbs' => 'bbb-local-bbbs',
+            'news' => 'bbb-news',
+            'newsTopics' => 'bbb-news-topics',
+            'regions' => 'bbb-regions',
             'scamtrackerSearch' => 'bbb-scamtracker-search',
             'scamtrackerStateStats' => 'bbb-scamtracker-state-stats',
             'scamtrackerDetail' => 'bbb-scamtracker-detail',
             'search' => 'bbb-search',
+            'searchFilters' => 'bbb-search-filters',
         ],
         'bbc' => [
             'article' => 'bbc-article',
@@ -135358,6 +141953,9 @@ final class Operations
             'bbbBusinessesFacets' => 'datasets-bbb-businesses-facets',
             'bbbBusinessesItem' => 'datasets-bbb-businesses-item',
             'bbbBusinessesSearch' => 'datasets-bbb-businesses-search',
+            'bbbScamtrackerReportsFacets' => 'datasets-bbb-scamtracker-reports-facets',
+            'bbbScamtrackerReportsItem' => 'datasets-bbb-scamtracker-reports-item',
+            'bbbScamtrackerReportsSearch' => 'datasets-bbb-scamtracker-reports-search',
             'boxofficemojoFacets' => 'datasets-boxofficemojo-facets',
             'boxofficemojoItem' => 'datasets-boxofficemojo-item',
             'boxofficemojoSearch' => 'datasets-boxofficemojo-search',
@@ -135405,6 +142003,9 @@ final class Operations
             'journalistsFacets' => 'datasets-journalists-facets',
             'journalistsItem' => 'datasets-journalists-item',
             'journalistsSearch' => 'datasets-journalists-search',
+            'llmsFacets' => 'datasets-llms-facets',
+            'llmsItem' => 'datasets-llms-item',
+            'llmsSearch' => 'datasets-llms-search',
             'numbeoCitiesFacets' => 'datasets-numbeo-cities-facets',
             'numbeoCitiesItem' => 'datasets-numbeo-cities-item',
             'numbeoCitiesSearch' => 'datasets-numbeo-cities-search',
@@ -135514,6 +142115,17 @@ final class Operations
             'shop' => 'depop-shop',
             'sizes' => 'depop-sizes',
             'suggest' => 'depop-suggest',
+        ],
+        'retrieval' => [
+            'developerSearch' => 'developer-search',
+            'developerSources' => 'developer-sources',
+            'webCapabilities' => 'web-capabilities',
+            'webCrawl' => 'web-crawl',
+            'webCrawlStatus' => 'web-crawl-status',
+            'webCrawlCancel' => 'web-crawl-cancel',
+            'webCrawlResults' => 'web-crawl-results',
+            'webMap' => 'web-map',
+            'webSearch' => 'web-search',
         ],
         'discogs' => [
             'artist' => 'discogs-artist',
@@ -135767,24 +142379,54 @@ final class Operations
             'calendar' => 'flashscore-calendar',
             'calendarCategories' => 'flashscore-calendar-categories',
             'competitions' => 'flashscore-competitions',
+            'entityNews' => 'flashscore-entity-news',
+            'matchBoxScore' => 'flashscore-match-box-score',
+            'matchDarts' => 'flashscore-match-darts',
             'matchH2h' => 'flashscore-match-h2h',
             'matchHighlights' => 'flashscore-match-highlights',
             'matchInfo' => 'flashscore-match-info',
             'matchLineups' => 'flashscore-match-lineups',
+            'matchMissingPlayers' => 'flashscore-match-missing-players',
+            'matchMomentum' => 'flashscore-match-momentum',
             'matchNews' => 'flashscore-match-news',
+            'matchOdds' => 'flashscore-match-odds',
+            'matchPlayerStats' => 'flashscore-match-player-stats',
+            'matchPointByPoint' => 'flashscore-match-point-by-point',
+            'matchPredictedLineups' => 'flashscore-match-predicted-lineups',
+            'matchReport' => 'flashscore-match-report',
             'matchStandings' => 'flashscore-match-standings',
             'matchStats' => 'flashscore-match-stats',
+            'matchTv' => 'flashscore-match-tv',
             'navigation' => 'flashscore-navigation',
             'news' => 'flashscore-news',
             'newsArticle' => 'flashscore-news-article',
+            'newsArticleBody' => 'flashscore-news-article-body',
             'newsCategories' => 'flashscore-news-categories',
+            'newsMostRead' => 'flashscore-news-most-read',
+            'oddsGeos' => 'flashscore-odds-geos',
+            'player' => 'flashscore-player',
+            'playerFixtures' => 'flashscore-player-fixtures',
+            'playerInjuries' => 'flashscore-player-injuries',
+            'playerMatchLog' => 'flashscore-player-match-log',
+            'playerNews' => 'flashscore-player-news',
+            'playerResults' => 'flashscore-player-results',
+            'playerTransfers' => 'flashscore-player-transfers',
             'rankingCategories' => 'flashscore-ranking-categories',
             'rankings' => 'flashscore-rankings',
             'scores' => 'flashscore-scores',
             'search' => 'flashscore-search',
             'sports' => 'flashscore-sports',
+            'team' => 'flashscore-team',
+            'teamFixtures' => 'flashscore-team-fixtures',
+            'teamNews' => 'flashscore-team-news',
+            'teamOutrightOdds' => 'flashscore-team-outright-odds',
+            'teamResults' => 'flashscore-team-results',
+            'teamSquad' => 'flashscore-team-squad',
+            'teamTransfers' => 'flashscore-team-transfers',
             'topSearch' => 'flashscore-top-search',
+            'tournamentArchiveSeasons' => 'flashscore-tournament-archive-seasons',
             'tournamentEvents' => 'flashscore-tournament-events',
+            'tournamentOutrightOdds' => 'flashscore-tournament-outright-odds',
             'tournamentSeasons' => 'flashscore-tournament-seasons',
             'tournamentStandings' => 'flashscore-tournament-standings',
             'tournamentStandingsViews' => 'flashscore-tournament-standings-views',
@@ -137590,6 +144232,20 @@ final class Operations
             'me' => 'referrals-me',
             'meEvents' => 'referrals-me-events',
         ],
+        'researchJobs' => [
+            'researchStart' => 'research-start',
+            'researchStatus' => 'research-status',
+            'researchCancel' => 'research-cancel',
+            'researchEvents' => 'research-events',
+            'researchResults' => 'research-results',
+        ],
+        'research' => [
+            'inspectPaper' => 'research-inspect-paper',
+            'readPaper' => 'research-read-paper',
+            'relatedPapers' => 'research-related-papers',
+            'searchPapers' => 'research-search-papers',
+            'sources' => 'research-sources',
+        ],
         'resy' => [
             'availability' => 'resy-availability',
             'cuisines' => 'resy-cuisines',
@@ -137911,21 +144567,115 @@ final class Operations
             'smhSections' => 'smh-sections',
         ],
         'sofaScore' => [
+            'sofascoreCategories' => 'sofascore-categories',
+            'sofascoreCategoryTournaments' => 'sofascore-category-tournaments',
+            'sofascoreDraft' => 'sofascore-draft',
+            'sofascoreDraftPicks' => 'sofascore-draft-picks',
+            'sofascoreEsportsGame' => 'sofascore-esports-game',
             'sofascoreEvent' => 'sofascore-event',
+            'sofascoreEventAtBatPitches' => 'sofascore-event-at-bat-pitches',
+            'sofascoreEventAtBats' => 'sofascore-event-at-bats',
+            'sofascoreEventAveragePositions' => 'sofascore-event-average-positions',
+            'sofascoreEventBaseballTopPerformers' => 'sofascore-event-baseball-top-performers',
+            'sofascoreEventBestPlayers' => 'sofascore-event-best-players',
+            'sofascoreEventComments' => 'sofascore-event-comments',
+            'sofascoreEventEsportsGames' => 'sofascore-event-esports-games',
+            'sofascoreEventGraph' => 'sofascore-event-graph',
             'sofascoreEventH2h' => 'sofascore-event-h2h',
+            'sofascoreEventHighlights' => 'sofascore-event-highlights',
             'sofascoreEventIncidents' => 'sofascore-event-incidents',
+            'sofascoreEventInnings' => 'sofascore-event-innings',
             'sofascoreEventLineups' => 'sofascore-event-lineups',
+            'sofascoreEventManagers' => 'sofascore-event-managers',
             'sofascoreEventOdds' => 'sofascore-event-odds',
+            'sofascoreEventPlayerHeatmap' => 'sofascore-event-player-heatmap',
+            'sofascoreEventPlayerStatistics' => 'sofascore-event-player-statistics',
+            'sofascoreEventPointByPoint' => 'sofascore-event-point-by-point',
+            'sofascoreEventPregameForm' => 'sofascore-event-pregame-form',
+            'sofascoreEventShotmap' => 'sofascore-event-shotmap',
             'sofascoreEventStatistics' => 'sofascore-event-statistics',
+            'sofascoreEventTeamHeatmap' => 'sofascore-event-team-heatmap',
+            'sofascoreEventTeamStreaks' => 'sofascore-event-team-streaks',
+            'sofascoreEventTennisPower' => 'sofascore-event-tennis-power',
+            'sofascoreEventTvChannels' => 'sofascore-event-tv-channels',
+            'sofascoreEventVotes' => 'sofascore-event-votes',
             'sofascoreLiveEvents' => 'sofascore-live-events',
+            'sofascoreManager' => 'sofascore-manager',
+            'sofascoreManagerEvents' => 'sofascore-manager-events',
+            'sofascoreMmaCard' => 'sofascore-mma-card',
+            'sofascoreMmaSchedule' => 'sofascore-mma-schedule',
+            'sofascoreOddsDropping' => 'sofascore-odds-dropping',
+            'sofascoreOddsWinning' => 'sofascore-odds-winning',
             'sofascorePlayer' => 'sofascore-player',
+            'sofascorePlayerAttributes' => 'sofascore-player-attributes',
+            'sofascorePlayerEvents' => 'sofascore-player-events',
+            'sofascorePlayerLastYearSummary' => 'sofascore-player-last-year-summary',
+            'sofascorePlayerNationalTeamStatistics' => 'sofascore-player-national-team-statistics',
+            'sofascorePlayerPenaltyHistory' => 'sofascore-player-penalty-history',
+            'sofascorePlayerRatings' => 'sofascore-player-ratings',
+            'sofascorePlayerSeasonHeatmap' => 'sofascore-player-season-heatmap',
+            'sofascorePlayerSeasonStatistics' => 'sofascore-player-season-statistics',
+            'sofascorePlayerStatisticalRankings' => 'sofascore-player-statistical-rankings',
+            'sofascorePlayerStatisticsSeasons' => 'sofascore-player-statistics-seasons',
+            'sofascorePlayerTournaments' => 'sofascore-player-tournaments',
+            'sofascorePlayerTransfers' => 'sofascore-player-transfers',
+            'sofascoreRankingTypes' => 'sofascore-ranking-types',
+            'sofascoreRankings' => 'sofascore-rankings',
+            'sofascoreReferee' => 'sofascore-referee',
+            'sofascoreRefereeEvents' => 'sofascore-referee-events',
+            'sofascoreRefereeStatistics' => 'sofascore-referee-statistics',
             'sofascoreRoundEvents' => 'sofascore-round-events',
+            'sofascoreScheduledEvents' => 'sofascore-scheduled-events',
+            'sofascoreScheduledTournaments' => 'sofascore-scheduled-tournaments',
             'sofascoreSearch' => 'sofascore-search',
+            'sofascoreSearchTyped' => 'sofascore-search-typed',
+            'sofascoreSeasonEvents' => 'sofascore-season-events',
+            'sofascoreSports' => 'sofascore-sports',
+            'sofascoreStage' => 'sofascore-stage',
+            'sofascoreStageCategories' => 'sofascore-stage-categories',
+            'sofascoreStageDriverPerformance' => 'sofascore-stage-driver-performance',
+            'sofascoreStageFeatured' => 'sofascore-stage-featured',
+            'sofascoreStageSchedule' => 'sofascore-stage-schedule',
+            'sofascoreStageSeasons' => 'sofascore-stage-seasons',
+            'sofascoreStageStandings' => 'sofascore-stage-standings',
+            'sofascoreStageSubstages' => 'sofascore-stage-substages',
             'sofascoreStandings' => 'sofascore-standings',
             'sofascoreTeam' => 'sofascore-team',
+            'sofascoreTeamAchievements' => 'sofascore-team-achievements',
             'sofascoreTeamEvents' => 'sofascore-team-events',
+            'sofascoreTeamGoalDistributions' => 'sofascore-team-goal-distributions',
+            'sofascoreTeamNearEvents' => 'sofascore-team-near-events',
+            'sofascoreTeamOfTheWeek' => 'sofascore-team-of-the-week',
+            'sofascoreTeamOfTheWeekPeriods' => 'sofascore-team-of-the-week-periods',
+            'sofascoreTeamPerformance' => 'sofascore-team-performance',
+            'sofascoreTeamPlayerStatistics' => 'sofascore-team-player-statistics',
+            'sofascoreTeamPlayerStatisticsSeasons' => 'sofascore-team-player-statistics-seasons',
             'sofascoreTeamPlayers' => 'sofascore-team-players',
+            'sofascoreTeamRankings' => 'sofascore-team-rankings',
+            'sofascoreTeamSeasonStatistics' => 'sofascore-team-season-statistics',
+            'sofascoreTeamStatisticsSeasons' => 'sofascore-team-statistics-seasons',
+            'sofascoreTeamTopPlayers' => 'sofascore-team-top-players',
+            'sofascoreTeamTournaments' => 'sofascore-team-tournaments',
+            'sofascoreTeamTransfers' => 'sofascore-team-transfers',
+            'sofascoreTennisPlayerGrandSlamResults' => 'sofascore-tennis-player-grand-slam-results',
+            'sofascoreTournamentCuptree' => 'sofascore-tournament-cuptree',
+            'sofascoreTournamentInfo' => 'sofascore-tournament-info',
+            'sofascoreTournamentPlayerOfTheSeason' => 'sofascore-tournament-player-of-the-season',
+            'sofascoreTournamentPlayerStatistics' => 'sofascore-tournament-player-statistics',
+            'sofascoreTournamentRounds' => 'sofascore-tournament-rounds',
             'sofascoreTournamentSeasons' => 'sofascore-tournament-seasons',
+            'sofascoreTournamentStatisticsInfo' => 'sofascore-tournament-statistics-info',
+            'sofascoreTournamentTeamOfTheSeason' => 'sofascore-tournament-team-of-the-season',
+            'sofascoreTournamentTeams' => 'sofascore-tournament-teams',
+            'sofascoreTournamentTopPlayers' => 'sofascore-tournament-top-players',
+            'sofascoreTournamentTopTeams' => 'sofascore-tournament-top-teams',
+            'sofascoreTournamentVenues' => 'sofascore-tournament-venues',
+            'sofascoreTournamentWinners' => 'sofascore-tournament-winners',
+            'sofascoreTournamentsWithFeature' => 'sofascore-tournaments-with-feature',
+            'sofascoreTrendingEvents' => 'sofascore-trending-events',
+            'sofascoreTrendingPlayers' => 'sofascore-trending-players',
+            'sofascoreVenue' => 'sofascore-venue',
+            'sofascoreVenueEvents' => 'sofascore-venue-events',
         ],
         'sonic' => [
             'availability' => 'sonic-availability',
@@ -138995,7 +145745,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 3539;
+    public const OPERATION_COUNT = 3695;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -139222,15 +145972,22 @@ final class Operations
         'barrons-headlines',
         'barrons-news',
         'barrons-topics',
+        'bbb-article',
         'bbb-business',
         'bbb-business-complaints',
         'bbb-business-more-info',
         'bbb-business-reviews',
         'bbb-category',
+        'bbb-local-bbb',
+        'bbb-local-bbbs',
+        'bbb-news',
+        'bbb-news-topics',
+        'bbb-regions',
         'bbb-scamtracker-search',
         'bbb-scamtracker-state-stats',
         'bbb-scamtracker-detail',
         'bbb-search',
+        'bbb-search-filters',
         'bbc-article',
         'bbc-author',
         'bbc-headlines',
@@ -139647,6 +146404,9 @@ final class Operations
         'datasets-bbb-businesses-facets',
         'datasets-bbb-businesses-item',
         'datasets-bbb-businesses-search',
+        'datasets-bbb-scamtracker-reports-facets',
+        'datasets-bbb-scamtracker-reports-item',
+        'datasets-bbb-scamtracker-reports-search',
         'datasets-boxofficemojo-facets',
         'datasets-boxofficemojo-item',
         'datasets-boxofficemojo-search',
@@ -139694,6 +146454,9 @@ final class Operations
         'datasets-journalists-facets',
         'datasets-journalists-item',
         'datasets-journalists-search',
+        'datasets-llms-facets',
+        'datasets-llms-item',
+        'datasets-llms-search',
         'datasets-numbeo-cities-facets',
         'datasets-numbeo-cities-item',
         'datasets-numbeo-cities-search',
@@ -139793,6 +146556,8 @@ final class Operations
         'depop-shop',
         'depop-sizes',
         'depop-suggest',
+        'developer-search',
+        'developer-sources',
         'antibot-check',
         'discogs-artist',
         'discogs-artist-releases',
@@ -139991,24 +146756,54 @@ final class Operations
         'flashscore-calendar',
         'flashscore-calendar-categories',
         'flashscore-competitions',
+        'flashscore-entity-news',
+        'flashscore-match-box-score',
+        'flashscore-match-darts',
         'flashscore-match-h2h',
         'flashscore-match-highlights',
         'flashscore-match-info',
         'flashscore-match-lineups',
+        'flashscore-match-missing-players',
+        'flashscore-match-momentum',
         'flashscore-match-news',
+        'flashscore-match-odds',
+        'flashscore-match-player-stats',
+        'flashscore-match-point-by-point',
+        'flashscore-match-predicted-lineups',
+        'flashscore-match-report',
         'flashscore-match-standings',
         'flashscore-match-stats',
+        'flashscore-match-tv',
         'flashscore-navigation',
         'flashscore-news',
         'flashscore-news-article',
+        'flashscore-news-article-body',
         'flashscore-news-categories',
+        'flashscore-news-most-read',
+        'flashscore-odds-geos',
+        'flashscore-player',
+        'flashscore-player-fixtures',
+        'flashscore-player-injuries',
+        'flashscore-player-match-log',
+        'flashscore-player-news',
+        'flashscore-player-results',
+        'flashscore-player-transfers',
         'flashscore-ranking-categories',
         'flashscore-rankings',
         'flashscore-scores',
         'flashscore-search',
         'flashscore-sports',
+        'flashscore-team',
+        'flashscore-team-fixtures',
+        'flashscore-team-news',
+        'flashscore-team-outright-odds',
+        'flashscore-team-results',
+        'flashscore-team-squad',
+        'flashscore-team-transfers',
         'flashscore-top-search',
+        'flashscore-tournament-archive-seasons',
         'flashscore-tournament-events',
+        'flashscore-tournament-outright-odds',
         'flashscore-tournament-seasons',
         'flashscore-tournament-standings',
         'flashscore-tournament-standings-views',
@@ -141447,6 +148242,16 @@ final class Operations
         'referrals-click',
         'referrals-me',
         'referrals-me-events',
+        'research-start',
+        'research-status',
+        'research-cancel',
+        'research-events',
+        'research-results',
+        'research-inspect-paper',
+        'research-read-paper',
+        'research-related-papers',
+        'research-search-papers',
+        'research-sources',
         'resy-availability',
         'resy-cuisines',
         'resy-event-detail',
@@ -141697,21 +148502,115 @@ final class Operations
         'smh-headlines',
         'smh-news',
         'smh-sections',
+        'sofascore-categories',
+        'sofascore-category-tournaments',
+        'sofascore-draft',
+        'sofascore-draft-picks',
+        'sofascore-esports-game',
         'sofascore-event',
+        'sofascore-event-at-bat-pitches',
+        'sofascore-event-at-bats',
+        'sofascore-event-average-positions',
+        'sofascore-event-baseball-top-performers',
+        'sofascore-event-best-players',
+        'sofascore-event-comments',
+        'sofascore-event-esports-games',
+        'sofascore-event-graph',
         'sofascore-event-h2h',
+        'sofascore-event-highlights',
         'sofascore-event-incidents',
+        'sofascore-event-innings',
         'sofascore-event-lineups',
+        'sofascore-event-managers',
         'sofascore-event-odds',
+        'sofascore-event-player-heatmap',
+        'sofascore-event-player-statistics',
+        'sofascore-event-point-by-point',
+        'sofascore-event-pregame-form',
+        'sofascore-event-shotmap',
         'sofascore-event-statistics',
+        'sofascore-event-team-heatmap',
+        'sofascore-event-team-streaks',
+        'sofascore-event-tennis-power',
+        'sofascore-event-tv-channels',
+        'sofascore-event-votes',
         'sofascore-live-events',
+        'sofascore-manager',
+        'sofascore-manager-events',
+        'sofascore-mma-card',
+        'sofascore-mma-schedule',
+        'sofascore-odds-dropping',
+        'sofascore-odds-winning',
         'sofascore-player',
+        'sofascore-player-attributes',
+        'sofascore-player-events',
+        'sofascore-player-last-year-summary',
+        'sofascore-player-national-team-statistics',
+        'sofascore-player-penalty-history',
+        'sofascore-player-ratings',
+        'sofascore-player-season-heatmap',
+        'sofascore-player-season-statistics',
+        'sofascore-player-statistical-rankings',
+        'sofascore-player-statistics-seasons',
+        'sofascore-player-tournaments',
+        'sofascore-player-transfers',
+        'sofascore-ranking-types',
+        'sofascore-rankings',
+        'sofascore-referee',
+        'sofascore-referee-events',
+        'sofascore-referee-statistics',
         'sofascore-round-events',
+        'sofascore-scheduled-events',
+        'sofascore-scheduled-tournaments',
         'sofascore-search',
+        'sofascore-search-typed',
+        'sofascore-season-events',
+        'sofascore-sports',
+        'sofascore-stage',
+        'sofascore-stage-categories',
+        'sofascore-stage-driver-performance',
+        'sofascore-stage-featured',
+        'sofascore-stage-schedule',
+        'sofascore-stage-seasons',
+        'sofascore-stage-standings',
+        'sofascore-stage-substages',
         'sofascore-standings',
         'sofascore-team',
+        'sofascore-team-achievements',
         'sofascore-team-events',
+        'sofascore-team-goal-distributions',
+        'sofascore-team-near-events',
+        'sofascore-team-of-the-week',
+        'sofascore-team-of-the-week-periods',
+        'sofascore-team-performance',
+        'sofascore-team-player-statistics',
+        'sofascore-team-player-statistics-seasons',
         'sofascore-team-players',
+        'sofascore-team-rankings',
+        'sofascore-team-season-statistics',
+        'sofascore-team-statistics-seasons',
+        'sofascore-team-top-players',
+        'sofascore-team-tournaments',
+        'sofascore-team-transfers',
+        'sofascore-tennis-player-grand-slam-results',
+        'sofascore-tournament-cuptree',
+        'sofascore-tournament-info',
+        'sofascore-tournament-player-of-the-season',
+        'sofascore-tournament-player-statistics',
+        'sofascore-tournament-rounds',
         'sofascore-tournament-seasons',
+        'sofascore-tournament-statistics-info',
+        'sofascore-tournament-team-of-the-season',
+        'sofascore-tournament-teams',
+        'sofascore-tournament-top-players',
+        'sofascore-tournament-top-teams',
+        'sofascore-tournament-venues',
+        'sofascore-tournament-winners',
+        'sofascore-tournaments-with-feature',
+        'sofascore-trending-events',
+        'sofascore-trending-players',
+        'sofascore-venue',
+        'sofascore-venue-events',
         'sonic-availability',
         'sonic-categories',
         'sonic-deals',
@@ -142322,7 +149221,14 @@ final class Operations
         'wccftech-headlines',
         'wccftech-news',
         'wccftech-sections',
+        'web-capabilities',
+        'web-crawl',
+        'web-crawl-status',
+        'web-crawl-cancel',
+        'web-crawl-results',
+        'web-map',
         'web-scrape',
+        'web-search',
         'web-techstack',
         'wendys-categories',
         'wendys-directory',
@@ -142790,15 +149696,22 @@ final class OperationId
     public const BARRONS_HEADLINES = 'barrons-headlines';
     public const BARRONS_NEWS = 'barrons-news';
     public const BARRONS_TOPICS = 'barrons-topics';
+    public const BBB_ARTICLE = 'bbb-article';
     public const BBB_BUSINESS = 'bbb-business';
     public const BBB_BUSINESS_COMPLAINTS = 'bbb-business-complaints';
     public const BBB_BUSINESS_MORE_INFO = 'bbb-business-more-info';
     public const BBB_BUSINESS_REVIEWS = 'bbb-business-reviews';
     public const BBB_CATEGORY = 'bbb-category';
+    public const BBB_LOCAL_BBB = 'bbb-local-bbb';
+    public const BBB_LOCAL_BBBS = 'bbb-local-bbbs';
+    public const BBB_NEWS = 'bbb-news';
+    public const BBB_NEWS_TOPICS = 'bbb-news-topics';
+    public const BBB_REGIONS = 'bbb-regions';
     public const BBB_SCAMTRACKER_DETAIL = 'bbb-scamtracker-detail';
     public const BBB_SCAMTRACKER_SEARCH = 'bbb-scamtracker-search';
     public const BBB_SCAMTRACKER_STATE_STATS = 'bbb-scamtracker-state-stats';
     public const BBB_SEARCH = 'bbb-search';
+    public const BBB_SEARCH_FILTERS = 'bbb-search-filters';
     public const BBC_ARTICLE = 'bbc-article';
     public const BBC_AUTHOR = 'bbc-author';
     public const BBC_HEADLINES = 'bbc-headlines';
@@ -143208,6 +150121,9 @@ final class OperationId
     public const DATASETS_BBB_BUSINESSES_FACETS = 'datasets-bbb-businesses-facets';
     public const DATASETS_BBB_BUSINESSES_ITEM = 'datasets-bbb-businesses-item';
     public const DATASETS_BBB_BUSINESSES_SEARCH = 'datasets-bbb-businesses-search';
+    public const DATASETS_BBB_SCAMTRACKER_REPORTS_FACETS = 'datasets-bbb-scamtracker-reports-facets';
+    public const DATASETS_BBB_SCAMTRACKER_REPORTS_ITEM = 'datasets-bbb-scamtracker-reports-item';
+    public const DATASETS_BBB_SCAMTRACKER_REPORTS_SEARCH = 'datasets-bbb-scamtracker-reports-search';
     public const DATASETS_BOXOFFICEMOJO_FACETS = 'datasets-boxofficemojo-facets';
     public const DATASETS_BOXOFFICEMOJO_ITEM = 'datasets-boxofficemojo-item';
     public const DATASETS_BOXOFFICEMOJO_SEARCH = 'datasets-boxofficemojo-search';
@@ -143256,6 +150172,9 @@ final class OperationId
     public const DATASETS_JOURNALISTS_ITEM = 'datasets-journalists-item';
     public const DATASETS_JOURNALISTS_SEARCH = 'datasets-journalists-search';
     public const DATASETS_LIST = 'datasets-list';
+    public const DATASETS_LLMS_FACETS = 'datasets-llms-facets';
+    public const DATASETS_LLMS_ITEM = 'datasets-llms-item';
+    public const DATASETS_LLMS_SEARCH = 'datasets-llms-search';
     public const DATASETS_NUMBEO_CITIES_FACETS = 'datasets-numbeo-cities-facets';
     public const DATASETS_NUMBEO_CITIES_ITEM = 'datasets-numbeo-cities-item';
     public const DATASETS_NUMBEO_CITIES_SEARCH = 'datasets-numbeo-cities-search';
@@ -143549,24 +150468,54 @@ final class OperationId
     public const FLASHSCORE_CALENDAR = 'flashscore-calendar';
     public const FLASHSCORE_CALENDAR_CATEGORIES = 'flashscore-calendar-categories';
     public const FLASHSCORE_COMPETITIONS = 'flashscore-competitions';
+    public const FLASHSCORE_ENTITY_NEWS = 'flashscore-entity-news';
+    public const FLASHSCORE_MATCH_BOX_SCORE = 'flashscore-match-box-score';
+    public const FLASHSCORE_MATCH_DARTS = 'flashscore-match-darts';
     public const FLASHSCORE_MATCH_H2H = 'flashscore-match-h2h';
     public const FLASHSCORE_MATCH_HIGHLIGHTS = 'flashscore-match-highlights';
     public const FLASHSCORE_MATCH_INFO = 'flashscore-match-info';
     public const FLASHSCORE_MATCH_LINEUPS = 'flashscore-match-lineups';
+    public const FLASHSCORE_MATCH_MISSING_PLAYERS = 'flashscore-match-missing-players';
+    public const FLASHSCORE_MATCH_MOMENTUM = 'flashscore-match-momentum';
     public const FLASHSCORE_MATCH_NEWS = 'flashscore-match-news';
+    public const FLASHSCORE_MATCH_ODDS = 'flashscore-match-odds';
+    public const FLASHSCORE_MATCH_PLAYER_STATS = 'flashscore-match-player-stats';
+    public const FLASHSCORE_MATCH_POINT_BY_POINT = 'flashscore-match-point-by-point';
+    public const FLASHSCORE_MATCH_PREDICTED_LINEUPS = 'flashscore-match-predicted-lineups';
+    public const FLASHSCORE_MATCH_REPORT = 'flashscore-match-report';
     public const FLASHSCORE_MATCH_STANDINGS = 'flashscore-match-standings';
     public const FLASHSCORE_MATCH_STATS = 'flashscore-match-stats';
+    public const FLASHSCORE_MATCH_TV = 'flashscore-match-tv';
     public const FLASHSCORE_NAVIGATION = 'flashscore-navigation';
     public const FLASHSCORE_NEWS = 'flashscore-news';
     public const FLASHSCORE_NEWS_ARTICLE = 'flashscore-news-article';
+    public const FLASHSCORE_NEWS_ARTICLE_BODY = 'flashscore-news-article-body';
     public const FLASHSCORE_NEWS_CATEGORIES = 'flashscore-news-categories';
+    public const FLASHSCORE_NEWS_MOST_READ = 'flashscore-news-most-read';
+    public const FLASHSCORE_ODDS_GEOS = 'flashscore-odds-geos';
+    public const FLASHSCORE_PLAYER = 'flashscore-player';
+    public const FLASHSCORE_PLAYER_FIXTURES = 'flashscore-player-fixtures';
+    public const FLASHSCORE_PLAYER_INJURIES = 'flashscore-player-injuries';
+    public const FLASHSCORE_PLAYER_MATCH_LOG = 'flashscore-player-match-log';
+    public const FLASHSCORE_PLAYER_NEWS = 'flashscore-player-news';
+    public const FLASHSCORE_PLAYER_RESULTS = 'flashscore-player-results';
+    public const FLASHSCORE_PLAYER_TRANSFERS = 'flashscore-player-transfers';
     public const FLASHSCORE_RANKING_CATEGORIES = 'flashscore-ranking-categories';
     public const FLASHSCORE_RANKINGS = 'flashscore-rankings';
     public const FLASHSCORE_SCORES = 'flashscore-scores';
     public const FLASHSCORE_SEARCH = 'flashscore-search';
     public const FLASHSCORE_SPORTS = 'flashscore-sports';
+    public const FLASHSCORE_TEAM = 'flashscore-team';
+    public const FLASHSCORE_TEAM_FIXTURES = 'flashscore-team-fixtures';
+    public const FLASHSCORE_TEAM_NEWS = 'flashscore-team-news';
+    public const FLASHSCORE_TEAM_OUTRIGHT_ODDS = 'flashscore-team-outright-odds';
+    public const FLASHSCORE_TEAM_RESULTS = 'flashscore-team-results';
+    public const FLASHSCORE_TEAM_SQUAD = 'flashscore-team-squad';
+    public const FLASHSCORE_TEAM_TRANSFERS = 'flashscore-team-transfers';
     public const FLASHSCORE_TOP_SEARCH = 'flashscore-top-search';
+    public const FLASHSCORE_TOURNAMENT_ARCHIVE_SEASONS = 'flashscore-tournament-archive-seasons';
     public const FLASHSCORE_TOURNAMENT_EVENTS = 'flashscore-tournament-events';
+    public const FLASHSCORE_TOURNAMENT_OUTRIGHT_ODDS = 'flashscore-tournament-outright-odds';
     public const FLASHSCORE_TOURNAMENT_SEASONS = 'flashscore-tournament-seasons';
     public const FLASHSCORE_TOURNAMENT_STANDINGS = 'flashscore-tournament-standings';
     public const FLASHSCORE_TOURNAMENT_STANDINGS_VIEWS = 'flashscore-tournament-standings-views';
@@ -144981,6 +151930,16 @@ final class OperationId
     public const REFERRALS_CLICK = 'referrals-click';
     public const REFERRALS_ME = 'referrals-me';
     public const REFERRALS_ME_EVENTS = 'referrals-me-events';
+    public const RESEARCH_INSPECT_PAPER = 'research-inspect-paper';
+    public const RESEARCH_JOBS_RESEARCH_CANCEL = 'research-cancel';
+    public const RESEARCH_JOBS_RESEARCH_EVENTS = 'research-events';
+    public const RESEARCH_JOBS_RESEARCH_RESULTS = 'research-results';
+    public const RESEARCH_JOBS_RESEARCH_START = 'research-start';
+    public const RESEARCH_JOBS_RESEARCH_STATUS = 'research-status';
+    public const RESEARCH_READ_PAPER = 'research-read-paper';
+    public const RESEARCH_RELATED_PAPERS = 'research-related-papers';
+    public const RESEARCH_SEARCH_PAPERS = 'research-search-papers';
+    public const RESEARCH_SOURCES = 'research-sources';
     public const RESY_AVAILABILITY = 'resy-availability';
     public const RESY_CUISINES = 'resy-cuisines';
     public const RESY_EVENT_DETAIL = 'resy-event-detail';
@@ -145001,6 +151960,15 @@ final class OperationId
     public const RETAIL_ME_NOT_RETAILMENOT_HOME = 'retailmenot-home';
     public const RETAIL_ME_NOT_RETAILMENOT_STORE = 'retailmenot-store';
     public const RETAIL_ME_NOT_RETAILMENOT_STORES = 'retailmenot-stores';
+    public const RETRIEVAL_DEVELOPER_SEARCH = 'developer-search';
+    public const RETRIEVAL_DEVELOPER_SOURCES = 'developer-sources';
+    public const RETRIEVAL_WEB_CAPABILITIES = 'web-capabilities';
+    public const RETRIEVAL_WEB_CRAWL = 'web-crawl';
+    public const RETRIEVAL_WEB_CRAWL_CANCEL = 'web-crawl-cancel';
+    public const RETRIEVAL_WEB_CRAWL_RESULTS = 'web-crawl-results';
+    public const RETRIEVAL_WEB_CRAWL_STATUS = 'web-crawl-status';
+    public const RETRIEVAL_WEB_MAP = 'web-map';
+    public const RETRIEVAL_WEB_SEARCH = 'web-search';
     public const REUTERS_ARTICLE = 'reuters-article';
     public const REUTERS_ARTICLES = 'reuters-articles';
     public const REUTERS_AUTHOR = 'reuters-author';
@@ -145234,21 +152202,115 @@ final class OperationId
     public const SLICKDEALS_PRIMARY_CATEGORY = 'slickdeals-primary-category';
     public const SLICKDEALS_SEARCH = 'slickdeals-search';
     public const SLICKDEALS_SEARCH_ADVANCED = 'slickdeals-search-advanced';
+    public const SOFA_SCORE_SOFASCORE_CATEGORIES = 'sofascore-categories';
+    public const SOFA_SCORE_SOFASCORE_CATEGORY_TOURNAMENTS = 'sofascore-category-tournaments';
+    public const SOFA_SCORE_SOFASCORE_DRAFT = 'sofascore-draft';
+    public const SOFA_SCORE_SOFASCORE_DRAFT_PICKS = 'sofascore-draft-picks';
+    public const SOFA_SCORE_SOFASCORE_ESPORTS_GAME = 'sofascore-esports-game';
     public const SOFA_SCORE_SOFASCORE_EVENT = 'sofascore-event';
+    public const SOFA_SCORE_SOFASCORE_EVENT_AT_BAT_PITCHES = 'sofascore-event-at-bat-pitches';
+    public const SOFA_SCORE_SOFASCORE_EVENT_AT_BATS = 'sofascore-event-at-bats';
+    public const SOFA_SCORE_SOFASCORE_EVENT_AVERAGE_POSITIONS = 'sofascore-event-average-positions';
+    public const SOFA_SCORE_SOFASCORE_EVENT_BASEBALL_TOP_PERFORMERS = 'sofascore-event-baseball-top-performers';
+    public const SOFA_SCORE_SOFASCORE_EVENT_BEST_PLAYERS = 'sofascore-event-best-players';
+    public const SOFA_SCORE_SOFASCORE_EVENT_COMMENTS = 'sofascore-event-comments';
+    public const SOFA_SCORE_SOFASCORE_EVENT_ESPORTS_GAMES = 'sofascore-event-esports-games';
+    public const SOFA_SCORE_SOFASCORE_EVENT_GRAPH = 'sofascore-event-graph';
     public const SOFA_SCORE_SOFASCORE_EVENT_H2H = 'sofascore-event-h2h';
+    public const SOFA_SCORE_SOFASCORE_EVENT_HIGHLIGHTS = 'sofascore-event-highlights';
     public const SOFA_SCORE_SOFASCORE_EVENT_INCIDENTS = 'sofascore-event-incidents';
+    public const SOFA_SCORE_SOFASCORE_EVENT_INNINGS = 'sofascore-event-innings';
     public const SOFA_SCORE_SOFASCORE_EVENT_LINEUPS = 'sofascore-event-lineups';
+    public const SOFA_SCORE_SOFASCORE_EVENT_MANAGERS = 'sofascore-event-managers';
     public const SOFA_SCORE_SOFASCORE_EVENT_ODDS = 'sofascore-event-odds';
+    public const SOFA_SCORE_SOFASCORE_EVENT_PLAYER_HEATMAP = 'sofascore-event-player-heatmap';
+    public const SOFA_SCORE_SOFASCORE_EVENT_PLAYER_STATISTICS = 'sofascore-event-player-statistics';
+    public const SOFA_SCORE_SOFASCORE_EVENT_POINT_BY_POINT = 'sofascore-event-point-by-point';
+    public const SOFA_SCORE_SOFASCORE_EVENT_PREGAME_FORM = 'sofascore-event-pregame-form';
+    public const SOFA_SCORE_SOFASCORE_EVENT_SHOTMAP = 'sofascore-event-shotmap';
     public const SOFA_SCORE_SOFASCORE_EVENT_STATISTICS = 'sofascore-event-statistics';
+    public const SOFA_SCORE_SOFASCORE_EVENT_TEAM_HEATMAP = 'sofascore-event-team-heatmap';
+    public const SOFA_SCORE_SOFASCORE_EVENT_TEAM_STREAKS = 'sofascore-event-team-streaks';
+    public const SOFA_SCORE_SOFASCORE_EVENT_TENNIS_POWER = 'sofascore-event-tennis-power';
+    public const SOFA_SCORE_SOFASCORE_EVENT_TV_CHANNELS = 'sofascore-event-tv-channels';
+    public const SOFA_SCORE_SOFASCORE_EVENT_VOTES = 'sofascore-event-votes';
     public const SOFA_SCORE_SOFASCORE_LIVE_EVENTS = 'sofascore-live-events';
+    public const SOFA_SCORE_SOFASCORE_MANAGER = 'sofascore-manager';
+    public const SOFA_SCORE_SOFASCORE_MANAGER_EVENTS = 'sofascore-manager-events';
+    public const SOFA_SCORE_SOFASCORE_MMA_CARD = 'sofascore-mma-card';
+    public const SOFA_SCORE_SOFASCORE_MMA_SCHEDULE = 'sofascore-mma-schedule';
+    public const SOFA_SCORE_SOFASCORE_ODDS_DROPPING = 'sofascore-odds-dropping';
+    public const SOFA_SCORE_SOFASCORE_ODDS_WINNING = 'sofascore-odds-winning';
     public const SOFA_SCORE_SOFASCORE_PLAYER = 'sofascore-player';
+    public const SOFA_SCORE_SOFASCORE_PLAYER_ATTRIBUTES = 'sofascore-player-attributes';
+    public const SOFA_SCORE_SOFASCORE_PLAYER_EVENTS = 'sofascore-player-events';
+    public const SOFA_SCORE_SOFASCORE_PLAYER_LAST_YEAR_SUMMARY = 'sofascore-player-last-year-summary';
+    public const SOFA_SCORE_SOFASCORE_PLAYER_NATIONAL_TEAM_STATISTICS = 'sofascore-player-national-team-statistics';
+    public const SOFA_SCORE_SOFASCORE_PLAYER_PENALTY_HISTORY = 'sofascore-player-penalty-history';
+    public const SOFA_SCORE_SOFASCORE_PLAYER_RATINGS = 'sofascore-player-ratings';
+    public const SOFA_SCORE_SOFASCORE_PLAYER_SEASON_HEATMAP = 'sofascore-player-season-heatmap';
+    public const SOFA_SCORE_SOFASCORE_PLAYER_SEASON_STATISTICS = 'sofascore-player-season-statistics';
+    public const SOFA_SCORE_SOFASCORE_PLAYER_STATISTICAL_RANKINGS = 'sofascore-player-statistical-rankings';
+    public const SOFA_SCORE_SOFASCORE_PLAYER_STATISTICS_SEASONS = 'sofascore-player-statistics-seasons';
+    public const SOFA_SCORE_SOFASCORE_PLAYER_TOURNAMENTS = 'sofascore-player-tournaments';
+    public const SOFA_SCORE_SOFASCORE_PLAYER_TRANSFERS = 'sofascore-player-transfers';
+    public const SOFA_SCORE_SOFASCORE_RANKING_TYPES = 'sofascore-ranking-types';
+    public const SOFA_SCORE_SOFASCORE_RANKINGS = 'sofascore-rankings';
+    public const SOFA_SCORE_SOFASCORE_REFEREE = 'sofascore-referee';
+    public const SOFA_SCORE_SOFASCORE_REFEREE_EVENTS = 'sofascore-referee-events';
+    public const SOFA_SCORE_SOFASCORE_REFEREE_STATISTICS = 'sofascore-referee-statistics';
     public const SOFA_SCORE_SOFASCORE_ROUND_EVENTS = 'sofascore-round-events';
+    public const SOFA_SCORE_SOFASCORE_SCHEDULED_EVENTS = 'sofascore-scheduled-events';
+    public const SOFA_SCORE_SOFASCORE_SCHEDULED_TOURNAMENTS = 'sofascore-scheduled-tournaments';
     public const SOFA_SCORE_SOFASCORE_SEARCH = 'sofascore-search';
+    public const SOFA_SCORE_SOFASCORE_SEARCH_TYPED = 'sofascore-search-typed';
+    public const SOFA_SCORE_SOFASCORE_SEASON_EVENTS = 'sofascore-season-events';
+    public const SOFA_SCORE_SOFASCORE_SPORTS = 'sofascore-sports';
+    public const SOFA_SCORE_SOFASCORE_STAGE = 'sofascore-stage';
+    public const SOFA_SCORE_SOFASCORE_STAGE_CATEGORIES = 'sofascore-stage-categories';
+    public const SOFA_SCORE_SOFASCORE_STAGE_DRIVER_PERFORMANCE = 'sofascore-stage-driver-performance';
+    public const SOFA_SCORE_SOFASCORE_STAGE_FEATURED = 'sofascore-stage-featured';
+    public const SOFA_SCORE_SOFASCORE_STAGE_SCHEDULE = 'sofascore-stage-schedule';
+    public const SOFA_SCORE_SOFASCORE_STAGE_SEASONS = 'sofascore-stage-seasons';
+    public const SOFA_SCORE_SOFASCORE_STAGE_STANDINGS = 'sofascore-stage-standings';
+    public const SOFA_SCORE_SOFASCORE_STAGE_SUBSTAGES = 'sofascore-stage-substages';
     public const SOFA_SCORE_SOFASCORE_STANDINGS = 'sofascore-standings';
     public const SOFA_SCORE_SOFASCORE_TEAM = 'sofascore-team';
+    public const SOFA_SCORE_SOFASCORE_TEAM_ACHIEVEMENTS = 'sofascore-team-achievements';
     public const SOFA_SCORE_SOFASCORE_TEAM_EVENTS = 'sofascore-team-events';
+    public const SOFA_SCORE_SOFASCORE_TEAM_GOAL_DISTRIBUTIONS = 'sofascore-team-goal-distributions';
+    public const SOFA_SCORE_SOFASCORE_TEAM_NEAR_EVENTS = 'sofascore-team-near-events';
+    public const SOFA_SCORE_SOFASCORE_TEAM_OF_THE_WEEK = 'sofascore-team-of-the-week';
+    public const SOFA_SCORE_SOFASCORE_TEAM_OF_THE_WEEK_PERIODS = 'sofascore-team-of-the-week-periods';
+    public const SOFA_SCORE_SOFASCORE_TEAM_PERFORMANCE = 'sofascore-team-performance';
+    public const SOFA_SCORE_SOFASCORE_TEAM_PLAYER_STATISTICS = 'sofascore-team-player-statistics';
+    public const SOFA_SCORE_SOFASCORE_TEAM_PLAYER_STATISTICS_SEASONS = 'sofascore-team-player-statistics-seasons';
     public const SOFA_SCORE_SOFASCORE_TEAM_PLAYERS = 'sofascore-team-players';
+    public const SOFA_SCORE_SOFASCORE_TEAM_RANKINGS = 'sofascore-team-rankings';
+    public const SOFA_SCORE_SOFASCORE_TEAM_SEASON_STATISTICS = 'sofascore-team-season-statistics';
+    public const SOFA_SCORE_SOFASCORE_TEAM_STATISTICS_SEASONS = 'sofascore-team-statistics-seasons';
+    public const SOFA_SCORE_SOFASCORE_TEAM_TOP_PLAYERS = 'sofascore-team-top-players';
+    public const SOFA_SCORE_SOFASCORE_TEAM_TOURNAMENTS = 'sofascore-team-tournaments';
+    public const SOFA_SCORE_SOFASCORE_TEAM_TRANSFERS = 'sofascore-team-transfers';
+    public const SOFA_SCORE_SOFASCORE_TENNIS_PLAYER_GRAND_SLAM_RESULTS = 'sofascore-tennis-player-grand-slam-results';
+    public const SOFA_SCORE_SOFASCORE_TOURNAMENT_CUPTREE = 'sofascore-tournament-cuptree';
+    public const SOFA_SCORE_SOFASCORE_TOURNAMENT_INFO = 'sofascore-tournament-info';
+    public const SOFA_SCORE_SOFASCORE_TOURNAMENT_PLAYER_OF_THE_SEASON = 'sofascore-tournament-player-of-the-season';
+    public const SOFA_SCORE_SOFASCORE_TOURNAMENT_PLAYER_STATISTICS = 'sofascore-tournament-player-statistics';
+    public const SOFA_SCORE_SOFASCORE_TOURNAMENT_ROUNDS = 'sofascore-tournament-rounds';
     public const SOFA_SCORE_SOFASCORE_TOURNAMENT_SEASONS = 'sofascore-tournament-seasons';
+    public const SOFA_SCORE_SOFASCORE_TOURNAMENT_STATISTICS_INFO = 'sofascore-tournament-statistics-info';
+    public const SOFA_SCORE_SOFASCORE_TOURNAMENT_TEAM_OF_THE_SEASON = 'sofascore-tournament-team-of-the-season';
+    public const SOFA_SCORE_SOFASCORE_TOURNAMENT_TEAMS = 'sofascore-tournament-teams';
+    public const SOFA_SCORE_SOFASCORE_TOURNAMENT_TOP_PLAYERS = 'sofascore-tournament-top-players';
+    public const SOFA_SCORE_SOFASCORE_TOURNAMENT_TOP_TEAMS = 'sofascore-tournament-top-teams';
+    public const SOFA_SCORE_SOFASCORE_TOURNAMENT_VENUES = 'sofascore-tournament-venues';
+    public const SOFA_SCORE_SOFASCORE_TOURNAMENT_WINNERS = 'sofascore-tournament-winners';
+    public const SOFA_SCORE_SOFASCORE_TOURNAMENTS_WITH_FEATURE = 'sofascore-tournaments-with-feature';
+    public const SOFA_SCORE_SOFASCORE_TRENDING_EVENTS = 'sofascore-trending-events';
+    public const SOFA_SCORE_SOFASCORE_TRENDING_PLAYERS = 'sofascore-trending-players';
+    public const SOFA_SCORE_SOFASCORE_VENUE = 'sofascore-venue';
+    public const SOFA_SCORE_SOFASCORE_VENUE_EVENTS = 'sofascore-venue-events';
     public const SONIC_AVAILABILITY = 'sonic-availability';
     public const SONIC_CATEGORIES = 'sonic-categories';
     public const SONIC_DEALS = 'sonic-deals';

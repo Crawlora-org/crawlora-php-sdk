@@ -109,6 +109,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\DeliverooGroup $deliveroo
  * @property-read \Crawlora\Generated\TheDenverPostGroup $theDenverPost
  * @property-read \Crawlora\Generated\DepopGroup $depop
+ * @property-read \Crawlora\Generated\RetrievalGroup $retrieval
  * @property-read \Crawlora\Generated\DiscogsGroup $discogs
  * @property-read \Crawlora\Generated\DominosGroup $dominos
  * @property-read \Crawlora\Generated\DoorDashGroup $doorDash
@@ -321,6 +322,8 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\RedditGroup $reddit
  * @property-read \Crawlora\Generated\RedfinGroup $redfin
  * @property-read \Crawlora\Generated\ReferralsGroup $referrals
+ * @property-read \Crawlora\Generated\ResearchJobsGroup $researchJobs
+ * @property-read \Crawlora\Generated\ResearchGroup $research
  * @property-read \Crawlora\Generated\ResyGroup $resy
  * @property-read \Crawlora\Generated\RetailMeNotGroup $retailMeNot
  * @property-read \Crawlora\Generated\ReutersGroup $reuters

@@ -554,16 +554,27 @@ abstract class BalenciagaGroup {}
 abstract class BarronsGroup {}
 
 /**
+ * @method mixed article(array $params = [], array $options = []) bbb-article (GET /bbb/article)
+ *   params: string $url
  * @method mixed business(array $params = [], array $options = []) bbb-business (GET /bbb/business)
  *   params: string $url
  * @method mixed businessComplaints(array $params = [], array $options = []) bbb-business-complaints (GET /bbb/business/complaints)
- *   params: string $url
+ *   params: string $url, int $page
  * @method mixed businessMoreInfo(array $params = [], array $options = []) bbb-business-more-info (GET /bbb/business/more-info)
  *   params: string $url
  * @method mixed businessReviews(array $params = [], array $options = []) bbb-business-reviews (GET /bbb/business/reviews)
  *   params: string $url, int $page
  * @method mixed category(array $params = [], array $options = []) bbb-category (GET /bbb/category)
- *   params: string $url, int $page
+ *   params: string $url, int $page, 'Relevance'|'Distance'|'Rating'|'AToZ'|'ZToA' $sort, '5'|'10'|'25'|'50'|'100' $distance, array<'A'|'B'|'C'|'D'|'F'> $rating, array<string> $category_id, array<string> $state, bool $accredited, bool $get_quote, bool $service_area
+ * @method mixed localBbb(array $params = [], array $options = []) bbb-local-bbb (GET /bbb/local-bbb)
+ *   params: string $url
+ * @method mixed localBbbs(array $params = [], array $options = []) bbb-local-bbbs (GET /bbb/local-bbbs)
+ *   params: 'us'|'ca' $country, string $region
+ * @method mixed news(array $params = [], array $options = []) bbb-news (GET /bbb/news)
+ *   params: string $url
+ * @method mixed newsTopics(array $params = [], array $options = []) bbb-news-topics (GET /bbb/news/topics)
+ *   params: string $url
+ * @method mixed regions(array $params = [], array $options = []) bbb-regions (GET /bbb/regions)
  * @method mixed scamtrackerSearch(array $params = [], array $options = []) bbb-scamtracker-search (GET /bbb/scamtracker/search)
  *   params: string $query, 'Advance Fee Loan'|'Bank/Credit Card Company Imposter'|'Business Email Compromise'|'Charity'|'Counterfeit Product'|'COVID-19'|'Credit Cards'|'Credit Repair/Debt Relief'|'CryptoCurrency'|'Debt Collections'|'Employment'|'Fake Check/Money Order'|'Fake Invoice/Supplier Bill'|'Family/Friend Emergency'|'Foreign Money Exchange'|'Government Agency Imposter'|'Government Grant'|'Healthcare/Medicaid/Medicare'|'Home Improvement'|'Identity Theft'|'Investment'|'Moving'|'Online Purchase'|'Other'|'Phishing'|'Rental'|'Retail Business'|'Romance'|'Scholarship'|'Sweepstakes/Lottery/Prizes'|'Tax Collection'|'Tech Support'|'Travel/Vacation/Timeshare'|'Utility'|'Vanity Award'|'Worthless Problem-solving Service'|'Yellow Pages/Directories' $scam_type, string $state, string $scammer_state, string $date_from, string $date_to, int $min_dollars_lost, int $max_dollars_lost, int $page
  * @method mixed scamtrackerStateStats(array $params = [], array $options = []) bbb-scamtracker-state-stats (GET /bbb/scamtracker/state-stats)
@@ -571,7 +582,9 @@ abstract class BarronsGroup {}
  * @method mixed scamtrackerDetail(array $params = [], array $options = []) bbb-scamtracker-detail (GET /bbb/scamtracker/{id})
  *   params: string $id
  * @method mixed search(array $params = [], array $options = []) bbb-search (GET /bbb/search)
- *   params: string $query, string $location, int $page
+ *   params: string $query, string $location, int $page, 'USA'|'CAN' $country, 'Relevance'|'Distance'|'Rating'|'AToZ'|'ZToA' $sort, '5'|'10'|'25'|'50'|'100' $distance, array<'A'|'B'|'C'|'D'|'F'> $rating, array<string> $category_id, array<string> $state, bool $accredited, bool $get_quote, bool $service_area
+ * @method mixed searchFilters(array $params = [], array $options = []) bbb-search-filters (GET /bbb/search/filters)
+ *   params: string $query, string $location, string $category_url, 'USA'|'CAN' $country, int $page, 'Relevance'|'Distance'|'Rating'|'AToZ'|'ZToA' $sort, '5'|'10'|'25'|'50'|'100' $distance, array<'A'|'B'|'C'|'D'|'F'> $rating, array<string> $category_id, array<string> $state, bool $accredited, bool $get_quote, bool $service_area
  */
 abstract class BbbGroup {}
 
@@ -1581,11 +1594,17 @@ abstract class DailyWireGroup {}
  * @method mixed appsSearch(array $params = [], array $options = []) datasets-apps-search (GET /datasets/apps/search)
  *   params: string $q, 'ios'|'android'|'both' $store, array<string> $platforms, string $category, string $country, string $developer, bool $free, float $min_rating, int $min_reviews, 'relevance'|'rating_desc'|'reviews_desc'|'installs_desc'|'updated_at_desc'|'popularity_desc' $sort, int $page, int $page_size
  * @method mixed bbbBusinessesFacets(array $params = [], array $options = []) datasets-bbb-businesses-facets (GET /datasets/bbb-businesses/facets)
- *   params: 'category'|'state'|'city'|'rating'|'accredited'|'entity_type'|'run_id' $facet, string $q, string $category, string $state, string $city, 'A+'|'A'|'A-'|'B+'|'B'|'B-'|'C+'|'C'|'C-'|'D+'|'D'|'D-'|'F' $rating, bool $accredited, string $entity_type, string $run_id
+ *   params: 'category'|'state'|'city'|'rating'|'accredited'|'entity_type'|'run_id'|'alert_title'|'has_alerts' $facet, string $q, string $category, string $state, string $city, 'A+'|'A'|'A-'|'B+'|'B'|'B-'|'C+'|'C'|'C-'|'D+'|'D'|'D-'|'F' $rating, bool $accredited, bool $has_alerts, string $alert_title, int $min_complaints, string $entity_type, string $run_id
  * @method mixed bbbBusinessesItem(array $params = [], array $options = []) datasets-bbb-businesses-item (GET /datasets/bbb-businesses/items/{id})
  *   params: string $id
  * @method mixed bbbBusinessesSearch(array $params = [], array $options = []) datasets-bbb-businesses-search (GET /datasets/bbb-businesses/search)
- *   params: string $q, string $category, string $state, string $city, 'A+'|'A'|'A-'|'B+'|'B'|'B-'|'C+'|'C'|'C-'|'D+'|'D'|'D-'|'F' $rating, int $min_rating_rank, bool $accredited, string $entity_type, string $run_id, 'relevance'|'rating_desc'|'rating_asc'|'accredited_first'|'name_asc'|'years_in_business_desc' $sort, int $page, int $page_size
+ *   params: string $q, string $category, string $state, string $city, 'A+'|'A'|'A-'|'B+'|'B'|'B-'|'C+'|'C'|'C-'|'D+'|'D'|'D-'|'F' $rating, int $min_rating_rank, bool $accredited, bool $has_alerts, string $alert_title, int $min_complaints, string $entity_type, string $run_id, 'relevance'|'rating_desc'|'rating_asc'|'accredited_first'|'name_asc'|'years_in_business_desc'|'complaints_desc' $sort, int $page, int $page_size
+ * @method mixed bbbScamtrackerReportsFacets(array $params = [], array $options = []) datasets-bbb-scamtracker-reports-facets (GET /datasets/bbb-scamtracker-reports/facets)
+ *   params: 'scam_type'|'state'|'country' $facet, string $q, string $scam_type, string $state, 'USA'|'CAN' $country, string $date_from, string $date_to, float $min_loss, float $max_loss
+ * @method mixed bbbScamtrackerReportsItem(array $params = [], array $options = []) datasets-bbb-scamtracker-reports-item (GET /datasets/bbb-scamtracker-reports/items/{id})
+ *   params: string $id
+ * @method mixed bbbScamtrackerReportsSearch(array $params = [], array $options = []) datasets-bbb-scamtracker-reports-search (GET /datasets/bbb-scamtracker-reports/search)
+ *   params: string $q, string $scam_type, string $state, 'USA'|'CAN' $country, string $date_from, string $date_to, float $min_loss, float $max_loss, 'relevance'|'reported_desc'|'reported_asc'|'loss_desc' $sort, int $page, int $page_size
  * @method mixed boxofficemojoFacets(array $params = [], array $options = []) datasets-boxofficemojo-facets (GET /datasets/boxofficemojo/facets)
  *   params: 'gross_band'|'years_active'|'lifetime_year'|'franchise_names'|'brand_names'|'genre_names'|'hydrated'|'is_billion_dollar'|'in_lifetime_top_1000_ww' $facet, string $q, string $title_id, int $year, int $lifetime_year, string $gross_band, string $franchise, string $brand, string $genre, bool $in_lifetime_top_1000, int $min_worldwide, int $max_worldwide, int $min_domestic, float $min_foreign_share, float $max_domestic_share, bool $hydrated, bool $is_billion_dollar
  * @method mixed boxofficemojoItem(array $params = [], array $options = []) datasets-boxofficemojo-item (GET /datasets/boxofficemojo/items/{title_id})
@@ -1680,6 +1699,12 @@ abstract class DailyWireGroup {}
  *   params: string $outlet, string $slug
  * @method mixed journalistsSearch(array $params = [], array $options = []) datasets-journalists-search (GET /datasets/journalists/search)
  *   params: string $q, string $outlet, 'tech'|'crypto'|'marketing'|'consumer_tech'|'consumer_policy'|'cybersecurity'|'health'|'gaming'|'climate'|'business'|'entertainment'|'sports'|'legal'|'science'|'politics'|'real_estate'|'automotive'|'travel'|'food'|'education'|'design'|'film_tv'|'fashion'|'music'|'personal_finance'|'tech_independent'|'culture_independent'|'local_news'|'construction'|'banking'|'retail'|'aerospace_defense'|'energy'|'agriculture'|'local_business'|'general_news' $vertical, string $topic, 'email'|'social'|'none' $contact_type, 'person'|'desk'|'organization'|'syndicated_byline'|'unknown' $record_type, 'staff'|'editor'|'reporter'|'contributor'|'freelancer'|'columnist'|'non_editorial'|'unknown' $role_type, 'individual_work'|'individual_personal_public'|'shared_desk'|'tips_or_submissions'|'outlet_generic'|'unknown' $email_kind, int $min_outreach_readiness, 'relevance'|'name_asc'|'outlet_asc'|'crawled_desc'|'readiness_desc' $sort, int $page, int $page_size
+ * @method mixed llmsFacets(array $params = [], array $options = []) datasets-llms-facets (GET /datasets/llms/facets)
+ *   params: 'state'|'source_kind'|'generator'|'bot'|'policy'|'tld'|'category'|'robots_state'|'robots_default'|'blocked_crawler'|'partial_crawler'|'content_signal_train'|'full_state'|'home_status' $facet, string $q, string $text, 'present'|'absent'|'blocked'|'error'|'skipped' $state, bool $valid, 'shopify_agent_template'|'seo_plugin'|'platform_default'|'parked'|'custom' $source_kind, 'yoast'|'aioseo'|'rankmath'|'wix'|'shopify'|'parked' $generator, string $bot, int $min_links, bool $mentions_mcp, bool $mentions_openapi, bool $placeholder, bool $injection, bool $full_valid, 'present'|'absent'|'blocked'|'error'|'skipped' $robots_state, 'allowed'|'partial'|'blocked' $robots_default, array<'GPTBot'|'OAI-SearchBot'|'ChatGPT-User'|'ClaudeBot'|'Claude-SearchBot'|'Claude-User'|'anthropic-ai'|'Google-Extended'|'PerplexityBot'|'Perplexity-User'|'CCBot'|'Bytespider'|'Applebot-Extended'|'Amazonbot'|'meta-externalagent'|'cohere-ai'|'Diffbot'> $blocks_all, array<'GPTBot'|'OAI-SearchBot'|'ChatGPT-User'|'ClaudeBot'|'Claude-SearchBot'|'Claude-User'|'anthropic-ai'|'Google-Extended'|'PerplexityBot'|'Perplexity-User'|'CCBot'|'Bytespider'|'Applebot-Extended'|'Amazonbot'|'meta-externalagent'|'cohere-ai'|'Diffbot'> $blocks_any, array<'GPTBot'|'OAI-SearchBot'|'ChatGPT-User'|'ClaudeBot'|'Claude-SearchBot'|'Claude-User'|'anthropic-ai'|'Google-Extended'|'PerplexityBot'|'Perplexity-User'|'CCBot'|'Bytespider'|'Applebot-Extended'|'Amazonbot'|'meta-externalagent'|'cohere-ai'|'Diffbot'> $not_blocked, bool $all_ai_blocked, int $min_train_blocked, 'yes'|'no' $content_signal_train, string $tld, string $category, bool $reachable, bool $home_blocked, bool $is_infrastructure, string $run_id
+ * @method mixed llmsItem(array $params = [], array $options = []) datasets-llms-item (GET /datasets/llms/items/{domain})
+ *   params: string $domain
+ * @method mixed llmsSearch(array $params = [], array $options = []) datasets-llms-search (GET /datasets/llms/search)
+ *   params: string $q, string $text, 'present'|'absent'|'blocked'|'error'|'skipped' $state, bool $valid, 'shopify_agent_template'|'seo_plugin'|'platform_default'|'parked'|'custom' $source_kind, 'yoast'|'aioseo'|'rankmath'|'wix'|'shopify'|'parked' $generator, string $bot, int $min_links, bool $mentions_mcp, bool $mentions_openapi, bool $placeholder, bool $injection, bool $full_valid, 'present'|'absent'|'blocked'|'error'|'skipped' $robots_state, 'allowed'|'partial'|'blocked' $robots_default, array<'GPTBot'|'OAI-SearchBot'|'ChatGPT-User'|'ClaudeBot'|'Claude-SearchBot'|'Claude-User'|'anthropic-ai'|'Google-Extended'|'PerplexityBot'|'Perplexity-User'|'CCBot'|'Bytespider'|'Applebot-Extended'|'Amazonbot'|'meta-externalagent'|'cohere-ai'|'Diffbot'> $blocks_all, array<'GPTBot'|'OAI-SearchBot'|'ChatGPT-User'|'ClaudeBot'|'Claude-SearchBot'|'Claude-User'|'anthropic-ai'|'Google-Extended'|'PerplexityBot'|'Perplexity-User'|'CCBot'|'Bytespider'|'Applebot-Extended'|'Amazonbot'|'meta-externalagent'|'cohere-ai'|'Diffbot'> $blocks_any, array<'GPTBot'|'OAI-SearchBot'|'ChatGPT-User'|'ClaudeBot'|'Claude-SearchBot'|'Claude-User'|'anthropic-ai'|'Google-Extended'|'PerplexityBot'|'Perplexity-User'|'CCBot'|'Bytespider'|'Applebot-Extended'|'Amazonbot'|'meta-externalagent'|'cohere-ai'|'Diffbot'> $not_blocked, bool $all_ai_blocked, int $min_train_blocked, 'yes'|'no' $content_signal_train, string $tld, string $category, bool $reachable, bool $home_blocked, bool $is_infrastructure, string $run_id, 'relevance'|'rank_asc'|'links_desc'|'bytes_desc'|'domain_asc'|'crawled_desc' $sort, int $page, int $page_size
  * @method mixed numbeoCitiesFacets(array $params = [], array $options = []) datasets-numbeo-cities-facets (GET /datasets/numbeo-cities/facets)
  *   params: 'country' $facet, string $q, string $country, float $min_cost_of_living_index, float $max_cost_of_living_index, float $min_quality_of_life_index, float $min_crime_index, float $max_crime_index, float $min_safety_index, float $min_health_care_index, float $max_pollution_index, float $max_traffic_index
  * @method mixed numbeoCitiesItem(array $params = [], array $options = []) datasets-numbeo-cities-item (GET /datasets/numbeo-cities/items/{slug})
@@ -1891,6 +1916,27 @@ abstract class TheDenverPostGroup {}
  *   params: string $query
  */
 abstract class DepopGroup {}
+
+/**
+ * @method mixed developerSearch(array $params = [], array $options = []) developer-search (POST /developer/search)
+ *   params: array $request
+ * @method mixed developerSources(array $params = [], array $options = []) developer-sources (GET /developer/sources)
+ *   params: int $limit
+ * @method mixed webCapabilities(array $params = [], array $options = []) web-capabilities (GET /web/capabilities)
+ * @method mixed webCrawl(array $params = [], array $options = []) web-crawl (POST /web/crawl)
+ *   params: array $request
+ * @method mixed webCrawlStatus(array $params = [], array $options = []) web-crawl-status (GET /web/crawl/{job_id})
+ *   params: string $job_id
+ * @method mixed webCrawlCancel(array $params = [], array $options = []) web-crawl-cancel (POST /web/crawl/{job_id}/cancel)
+ *   params: string $job_id
+ * @method mixed webCrawlResults(array $params = [], array $options = []) web-crawl-results (GET /web/crawl/{job_id}/results)
+ *   params: string $job_id, string $cursor, int $limit
+ * @method mixed webMap(array $params = [], array $options = []) web-map (POST /web/map)
+ *   params: array $request
+ * @method mixed webSearch(array $params = [], array $options = []) web-search (POST /web/search)
+ *   params: array $request
+ */
+abstract class RetrievalGroup {}
 
 /**
  * @method mixed artist(array $params = [], array $options = []) discogs-artist (GET /discogs/artist/{id})
@@ -2358,7 +2404,13 @@ abstract class FiverrGroup {}
  *   params: 'tennis-atp'|'tennis-wta'|'golf-pga'|'golf-dp-world'|'badminton-bwf'|'motorsport-f1' $category
  * @method mixed calendarCategories(array $params = [], array $options = []) flashscore-calendar-categories (GET /flashscore/calendar-categories)
  * @method mixed competitions(array $params = [], array $options = []) flashscore-competitions (GET /flashscore/competitions)
- *   params: 'football'|'tennis'|'basketball'|'hockey'|'golf'|'formula-1'|'baseball'|'snooker'|'american-football'|'aussie-rules'|'badminton'|'bandy'|'beach-soccer'|'beach-volleyball'|'boxing'|'cricket'|'cycling'|'darts'|'esports'|'field-hockey'|'floorball'|'futsal'|'handball'|'horse-racing'|'kabaddi'|'mma'|'motorsport'|'netball'|'pesapallo'|'rugby-league'|'rugby-union'|'table-tennis'|'volleyball'|'water-polo'|'winter-sports' $sport, int $day_offset
+ *   params: 'football'|'tennis'|'basketball'|'hockey'|'golf'|'formula-1'|'baseball'|'snooker'|'american-football'|'aussie-rules'|'badminton'|'bandy'|'beach-soccer'|'beach-volleyball'|'boxing'|'cricket'|'cycling'|'darts'|'esports'|'field-hockey'|'floorball'|'futsal'|'handball'|'horse-racing'|'kabaddi'|'mma'|'motorsport'|'netball'|'pesapallo'|'rugby-league'|'rugby-union'|'table-tennis'|'volleyball'|'water-polo'|'winter-sports'|'moto-racing'|'ski-jumping'|'alpine-skiing'|'cross-country-skiing'|'biathlon' $sport, int $day_offset
+ * @method mixed entityNews(array $params = [], array $options = []) flashscore-entity-news (GET /flashscore/entity-news)
+ *   params: 'team'|'player'|'tournament'|'sport' $type, string $id
+ * @method mixed matchBoxScore(array $params = [], array $options = []) flashscore-match-box-score (GET /flashscore/match-box-score)
+ *   params: string $id
+ * @method mixed matchDarts(array $params = [], array $options = []) flashscore-match-darts (GET /flashscore/match-darts)
+ *   params: string $id
  * @method mixed matchH2h(array $params = [], array $options = []) flashscore-match-h2h (GET /flashscore/match-h2h)
  *   params: string $id
  * @method mixed matchHighlights(array $params = [], array $options = []) flashscore-match-highlights (GET /flashscore/match-highlights)
@@ -2367,30 +2419,82 @@ abstract class FiverrGroup {}
  *   params: string $id
  * @method mixed matchLineups(array $params = [], array $options = []) flashscore-match-lineups (GET /flashscore/match-lineups)
  *   params: string $id
+ * @method mixed matchMissingPlayers(array $params = [], array $options = []) flashscore-match-missing-players (GET /flashscore/match-missing-players)
+ *   params: string $id
+ * @method mixed matchMomentum(array $params = [], array $options = []) flashscore-match-momentum (GET /flashscore/match-momentum)
+ *   params: string $id
  * @method mixed matchNews(array $params = [], array $options = []) flashscore-match-news (GET /flashscore/match-news)
+ *   params: string $id
+ * @method mixed matchOdds(array $params = [], array $options = []) flashscore-match-odds (GET /flashscore/match-odds)
+ *   params: string $id, 'AE'|'AL'|'AM'|'AO'|'AR'|'AT'|'AU'|'AZ'|'BA'|'BD'|'BE'|'BG'|'BO'|'BR'|'BY'|'CA'|'CH'|'CI'|'CL'|'CM'|'CN'|'CO'|'CR'|'CY'|'CZ'|'DE'|'DK'|'DO'|'DZ'|'EC'|'EE'|'EG'|'ES'|'ET'|'FI'|'FR'|'GB'|'GE'|'GH'|'GR'|'GT'|'HK'|'HN'|'HR'|'HU'|'ID'|'IE'|'IL'|'IN'|'IQ'|'IR'|'IS'|'IT'|'JO'|'JP'|'KE'|'KG'|'KH'|'KR'|'KW'|'KZ'|'LA'|'LB'|'LK'|'LT'|'LU'|'LV'|'LY'|'MA'|'MD'|'ME'|'MK'|'MM'|'MN'|'MT'|'MX'|'MY'|'NG'|'NI'|'NL'|'NO'|'NP'|'NZ'|'PA'|'PE'|'PH'|'PK'|'PL'|'PT'|'PY'|'QA'|'RO'|'RS'|'RU'|'SA'|'SD'|'SE'|'SG'|'SI'|'SK'|'SN'|'SV'|'TH'|'TN'|'TR'|'TW'|'TZ'|'UA'|'UG'|'US'|'UY'|'UZ'|'VE'|'VN'|'XK'|'ZA'|'ZM'|'ZW' $geo, 'AB'|'AK'|'AL'|'AR'|'AZ'|'BC'|'CA'|'CO'|'CT'|'DC'|'DE'|'FL'|'GA'|'HI'|'IA'|'ID'|'IL'|'IN'|'KS'|'KY'|'LA'|'MA'|'MB'|'MD'|'ME'|'MI'|'MN'|'MO'|'MS'|'MT'|'NB'|'NC'|'ND'|'NE'|'NH'|'NJ'|'NL'|'NM'|'NS'|'NT'|'NU'|'NV'|'NY'|'OH'|'OK'|'ON'|'OR'|'PA'|'PE'|'QC'|'RI'|'SC'|'SD'|'SK'|'TN'|'TX'|'UT'|'VA'|'VT'|'WA'|'WI'|'WV'|'WY'|'YT' $subdivision, 'HOME_DRAW_AWAY'|'HOME_AWAY'|'DRAW_NO_BET'|'DOUBLE_CHANCE'|'ASIAN_HANDICAP'|'EUROPEAN_HANDICAP'|'OVER_UNDER'|'BOTH_TEAMS_TO_SCORE'|'CORRECT_SCORE'|'HALF_FULL_TIME'|'ODD_OR_EVEN'|'TO_QUALIFY'|'NEXT_GOAL'|'TOP_POSITION_MERGED'|'TO_WIN_AND_TOP_POSITION'|'WIN_EACH_WAY' $betting_type, 'FULL_TIME'|'FULL_TIME_OVER_TIME'|'FIRST_HALF'|'SECOND_HALF'|'FIRST_PERIOD'|'FIRST_QUARTER'|'FIRST_SET'|'SECOND_SET' $scope
+ * @method mixed matchPlayerStats(array $params = [], array $options = []) flashscore-match-player-stats (GET /flashscore/match-player-stats)
+ *   params: string $id, string $player_id, 'top_stats'|'shots'|'attack'|'passes'|'defense'|'goalkeeping'|'general' $group
+ * @method mixed matchPointByPoint(array $params = [], array $options = []) flashscore-match-point-by-point (GET /flashscore/match-point-by-point)
+ *   params: string $id
+ * @method mixed matchPredictedLineups(array $params = [], array $options = []) flashscore-match-predicted-lineups (GET /flashscore/match-predicted-lineups)
+ *   params: string $id
+ * @method mixed matchReport(array $params = [], array $options = []) flashscore-match-report (GET /flashscore/match-report)
  *   params: string $id
  * @method mixed matchStandings(array $params = [], array $options = []) flashscore-match-standings (GET /flashscore/match-standings)
  *   params: string $id, 'overall'|'home'|'away'|'form_overall'|'overunder_overall'|'form_home'|'form_away'|'top_scorers'|'htft_overall'|'htft_home'|'htft_away'|'live_overall'|'overunder_home'|'overunder_away' $view
  * @method mixed matchStats(array $params = [], array $options = []) flashscore-match-stats (GET /flashscore/match-stats)
  *   params: string $id
+ * @method mixed matchTv(array $params = [], array $options = []) flashscore-match-tv (GET /flashscore/match-tv)
+ *   params: string $id, 'AE'|'AL'|'AM'|'AO'|'AR'|'AT'|'AU'|'AZ'|'BA'|'BD'|'BE'|'BG'|'BO'|'BR'|'BY'|'CA'|'CH'|'CI'|'CL'|'CM'|'CN'|'CO'|'CR'|'CY'|'CZ'|'DE'|'DK'|'DO'|'DZ'|'EC'|'EE'|'EG'|'ES'|'ET'|'FI'|'FR'|'GB'|'GE'|'GH'|'GR'|'GT'|'HK'|'HN'|'HR'|'HU'|'ID'|'IE'|'IL'|'IN'|'IQ'|'IR'|'IS'|'IT'|'JO'|'JP'|'KE'|'KG'|'KH'|'KR'|'KW'|'KZ'|'LA'|'LB'|'LK'|'LT'|'LU'|'LV'|'LY'|'MA'|'MD'|'ME'|'MK'|'MM'|'MN'|'MT'|'MX'|'MY'|'NG'|'NI'|'NL'|'NO'|'NP'|'NZ'|'PA'|'PE'|'PH'|'PK'|'PL'|'PT'|'PY'|'QA'|'RO'|'RS'|'RU'|'SA'|'SD'|'SE'|'SG'|'SI'|'SK'|'SN'|'SV'|'TH'|'TN'|'TR'|'TW'|'TZ'|'UA'|'UG'|'US'|'UY'|'UZ'|'VE'|'VN'|'XK'|'ZA'|'ZM'|'ZW' $geo
  * @method mixed navigation(array $params = [], array $options = []) flashscore-navigation (GET /flashscore/navigation)
  *   params: string $path
  * @method mixed news(array $params = [], array $options = []) flashscore-news (GET /flashscore/news)
  *   params: 'all'|'football'|'uefa-nations-league'|'tennis'|'features'|'premier-league'|'nfl'|'mlb'|'nba'|'nhl'|'formula-1'|'champions-league'|'europa-league'|'conference-league'|'darts'|'snooker'|'golf'|'road-cycling'|'laliga'|'bundesliga'|'serie-a'|'ligue-1'|'badminton'|'handball'|'hockey'|'basketball'|'cricket'|'rugby-union'|'athletics'|'baseball'|'fifa'|'rugby-league'|'motorsport'|'aussie-rules'|'flashscore-ratings'|'american-sports'|'african-football'|'combat-sports'|'winter-sports'|'transfer-news' $category, int $page
  * @method mixed newsArticle(array $params = [], array $options = []) flashscore-news-article (GET /flashscore/news-article)
  *   params: string $id
+ * @method mixed newsArticleBody(array $params = [], array $options = []) flashscore-news-article-body (GET /flashscore/news-article-body)
+ *   params: string $id
  * @method mixed newsCategories(array $params = [], array $options = []) flashscore-news-categories (GET /flashscore/news-categories)
+ * @method mixed newsMostRead(array $params = [], array $options = []) flashscore-news-most-read (GET /flashscore/news-most-read)
+ * @method mixed oddsGeos(array $params = [], array $options = []) flashscore-odds-geos (GET /flashscore/odds-geos)
+ * @method mixed player(array $params = [], array $options = []) flashscore-player (GET /flashscore/player)
+ *   params: string $id, string $slug
+ * @method mixed playerFixtures(array $params = [], array $options = []) flashscore-player-fixtures (GET /flashscore/player-fixtures)
+ *   params: string $id, int $page
+ * @method mixed playerInjuries(array $params = [], array $options = []) flashscore-player-injuries (GET /flashscore/player-injuries)
+ *   params: string $id, string $slug
+ * @method mixed playerMatchLog(array $params = [], array $options = []) flashscore-player-match-log (GET /flashscore/player-match-log)
+ *   params: string $id, int $page
+ * @method mixed playerNews(array $params = [], array $options = []) flashscore-player-news (GET /flashscore/player-news)
+ *   params: string $id
+ * @method mixed playerResults(array $params = [], array $options = []) flashscore-player-results (GET /flashscore/player-results)
+ *   params: string $id, int $page
+ * @method mixed playerTransfers(array $params = [], array $options = []) flashscore-player-transfers (GET /flashscore/player-transfers)
+ *   params: string $id, string $slug
  * @method mixed rankingCategories(array $params = [], array $options = []) flashscore-ranking-categories (GET /flashscore/ranking-categories)
  * @method mixed rankings(array $params = [], array $options = []) flashscore-rankings (GET /flashscore/rankings)
  *   params: 'fifa'|'tennis-atp'|'tennis-wta'|'tennis-atp-race'|'tennis-wta-race'|'tennis-atp-doubles'|'tennis-wta-doubles'|'tennis-atp-doubles-race'|'tennis-wta-doubles-race'|'badminton-bwf-singles-men'|'badminton-bwf-singles-women'|'badminton-bwf-doubles-men'|'badminton-bwf-doubles-women'|'badminton-bwf-mixed-doubles'|'golf-owgr'|'golf-wwgr'|'golf-pga-fedexcup'|'golf-pga-money'|'golf-dp-world-tour'|'golf-lpga'|'golf-asian-tour'|'golf-japan-tour'|'golf-sunshine-tour'|'golf-korn-ferry'|'golf-champions-tour'|'darts-world-ranking'|'snooker-world-ranking'|'tennis-atp-live'|'tennis-wta-live'|'tennis-atp-race-live'|'tennis-wta-race-live'|'tennis-atp-doubles-live'|'tennis-wta-doubles-live'|'tennis-atp-doubles-race-live'|'tennis-wta-doubles-race-live' $category
  * @method mixed scores(array $params = [], array $options = []) flashscore-scores (GET /flashscore/scores)
- *   params: 'football'|'tennis'|'basketball'|'hockey'|'golf'|'formula-1'|'baseball'|'snooker'|'american-football'|'aussie-rules'|'badminton'|'bandy'|'beach-soccer'|'beach-volleyball'|'boxing'|'cricket'|'cycling'|'darts'|'esports'|'field-hockey'|'floorball'|'futsal'|'handball'|'horse-racing'|'kabaddi'|'mma'|'motorsport'|'netball'|'pesapallo'|'rugby-league'|'rugby-union'|'table-tennis'|'volleyball'|'water-polo'|'winter-sports' $sport, int $day_offset
+ *   params: 'football'|'tennis'|'basketball'|'hockey'|'golf'|'formula-1'|'baseball'|'snooker'|'american-football'|'aussie-rules'|'badminton'|'bandy'|'beach-soccer'|'beach-volleyball'|'boxing'|'cricket'|'cycling'|'darts'|'esports'|'field-hockey'|'floorball'|'futsal'|'handball'|'horse-racing'|'kabaddi'|'mma'|'motorsport'|'netball'|'pesapallo'|'rugby-league'|'rugby-union'|'table-tennis'|'volleyball'|'water-polo'|'winter-sports'|'moto-racing'|'ski-jumping'|'alpine-skiing'|'cross-country-skiing'|'biathlon' $sport, int $day_offset
  * @method mixed search(array $params = [], array $options = []) flashscore-search (GET /flashscore/search)
  *   params: string $q
  * @method mixed sports(array $params = [], array $options = []) flashscore-sports (GET /flashscore/sports)
+ * @method mixed team(array $params = [], array $options = []) flashscore-team (GET /flashscore/team)
+ *   params: string $id
+ * @method mixed teamFixtures(array $params = [], array $options = []) flashscore-team-fixtures (GET /flashscore/team-fixtures)
+ *   params: string $id, int $page
+ * @method mixed teamNews(array $params = [], array $options = []) flashscore-team-news (GET /flashscore/team-news)
+ *   params: string $id
+ * @method mixed teamOutrightOdds(array $params = [], array $options = []) flashscore-team-outright-odds (GET /flashscore/team-outright-odds)
+ *   params: string $id, 'AE'|'AL'|'AM'|'AO'|'AR'|'AT'|'AU'|'AZ'|'BA'|'BD'|'BE'|'BG'|'BO'|'BR'|'BY'|'CA'|'CH'|'CI'|'CL'|'CM'|'CN'|'CO'|'CR'|'CY'|'CZ'|'DE'|'DK'|'DO'|'DZ'|'EC'|'EE'|'EG'|'ES'|'ET'|'FI'|'FR'|'GB'|'GE'|'GH'|'GR'|'GT'|'HK'|'HN'|'HR'|'HU'|'ID'|'IE'|'IL'|'IN'|'IQ'|'IR'|'IS'|'IT'|'JO'|'JP'|'KE'|'KG'|'KH'|'KR'|'KW'|'KZ'|'LA'|'LB'|'LK'|'LT'|'LU'|'LV'|'LY'|'MA'|'MD'|'ME'|'MK'|'MM'|'MN'|'MT'|'MX'|'MY'|'NG'|'NI'|'NL'|'NO'|'NP'|'NZ'|'PA'|'PE'|'PH'|'PK'|'PL'|'PT'|'PY'|'QA'|'RO'|'RS'|'RU'|'SA'|'SD'|'SE'|'SG'|'SI'|'SK'|'SN'|'SV'|'TH'|'TN'|'TR'|'TW'|'TZ'|'UA'|'UG'|'US'|'UY'|'UZ'|'VE'|'VN'|'XK'|'ZA'|'ZM'|'ZW' $geo, 'AB'|'AK'|'AL'|'AR'|'AZ'|'BC'|'CA'|'CO'|'CT'|'DC'|'DE'|'FL'|'GA'|'HI'|'IA'|'ID'|'IL'|'IN'|'KS'|'KY'|'LA'|'MA'|'MB'|'MD'|'ME'|'MI'|'MN'|'MO'|'MS'|'MT'|'NB'|'NC'|'ND'|'NE'|'NH'|'NJ'|'NL'|'NM'|'NS'|'NT'|'NU'|'NV'|'NY'|'OH'|'OK'|'ON'|'OR'|'PA'|'PE'|'QC'|'RI'|'SC'|'SD'|'SK'|'TN'|'TX'|'UT'|'VA'|'VT'|'WA'|'WI'|'WV'|'WY'|'YT' $subdivision
+ * @method mixed teamResults(array $params = [], array $options = []) flashscore-team-results (GET /flashscore/team-results)
+ *   params: string $id, int $page
+ * @method mixed teamSquad(array $params = [], array $options = []) flashscore-team-squad (GET /flashscore/team-squad)
+ *   params: string $id, string $slug, string $scope
+ * @method mixed teamTransfers(array $params = [], array $options = []) flashscore-team-transfers (GET /flashscore/team-transfers)
+ *   params: string $id, 'all'|'arrivals'|'departures' $type, int $page
  * @method mixed topSearch(array $params = [], array $options = []) flashscore-top-search (GET /flashscore/top-search)
+ * @method mixed tournamentArchiveSeasons(array $params = [], array $options = []) flashscore-tournament-archive-seasons (GET /flashscore/tournament-archive-seasons)
+ *   params: string $stage_id
  * @method mixed tournamentEvents(array $params = [], array $options = []) flashscore-tournament-events (GET /flashscore/tournament-events)
  *   params: string $path, int $page
+ * @method mixed tournamentOutrightOdds(array $params = [], array $options = []) flashscore-tournament-outright-odds (GET /flashscore/tournament-outright-odds)
+ *   params: string $tournament_id, 'AE'|'AL'|'AM'|'AO'|'AR'|'AT'|'AU'|'AZ'|'BA'|'BD'|'BE'|'BG'|'BO'|'BR'|'BY'|'CA'|'CH'|'CI'|'CL'|'CM'|'CN'|'CO'|'CR'|'CY'|'CZ'|'DE'|'DK'|'DO'|'DZ'|'EC'|'EE'|'EG'|'ES'|'ET'|'FI'|'FR'|'GB'|'GE'|'GH'|'GR'|'GT'|'HK'|'HN'|'HR'|'HU'|'ID'|'IE'|'IL'|'IN'|'IQ'|'IR'|'IS'|'IT'|'JO'|'JP'|'KE'|'KG'|'KH'|'KR'|'KW'|'KZ'|'LA'|'LB'|'LK'|'LT'|'LU'|'LV'|'LY'|'MA'|'MD'|'ME'|'MK'|'MM'|'MN'|'MT'|'MX'|'MY'|'NG'|'NI'|'NL'|'NO'|'NP'|'NZ'|'PA'|'PE'|'PH'|'PK'|'PL'|'PT'|'PY'|'QA'|'RO'|'RS'|'RU'|'SA'|'SD'|'SE'|'SG'|'SI'|'SK'|'SN'|'SV'|'TH'|'TN'|'TR'|'TW'|'TZ'|'UA'|'UG'|'US'|'UY'|'UZ'|'VE'|'VN'|'XK'|'ZA'|'ZM'|'ZW' $geo, 'AB'|'AK'|'AL'|'AR'|'AZ'|'BC'|'CA'|'CO'|'CT'|'DC'|'DE'|'FL'|'GA'|'HI'|'IA'|'ID'|'IL'|'IN'|'KS'|'KY'|'LA'|'MA'|'MB'|'MD'|'ME'|'MI'|'MN'|'MO'|'MS'|'MT'|'NB'|'NC'|'ND'|'NE'|'NH'|'NJ'|'NL'|'NM'|'NS'|'NT'|'NU'|'NV'|'NY'|'OH'|'OK'|'ON'|'OR'|'PA'|'PE'|'QC'|'RI'|'SC'|'SD'|'SK'|'TN'|'TX'|'UT'|'VA'|'VT'|'WA'|'WI'|'WV'|'WY'|'YT' $subdivision
  * @method mixed tournamentSeasons(array $params = [], array $options = []) flashscore-tournament-seasons (GET /flashscore/tournament-seasons)
  *   params: string $path
  * @method mixed tournamentStandings(array $params = [], array $options = []) flashscore-tournament-standings (GET /flashscore/tournament-standings)
@@ -5729,6 +5833,33 @@ abstract class RedfinGroup {}
 abstract class ReferralsGroup {}
 
 /**
+ * @method mixed researchStart(array $params = [], array $options = []) research-start (POST /research/jobs)
+ *   params: array $request
+ * @method mixed researchStatus(array $params = [], array $options = []) research-status (GET /research/jobs/{job_id})
+ *   params: string $job_id
+ * @method mixed researchCancel(array $params = [], array $options = []) research-cancel (POST /research/jobs/{job_id}/cancel)
+ *   params: string $job_id
+ * @method mixed researchEvents(array $params = [], array $options = []) research-events (GET /research/jobs/{job_id}/events)
+ *   params: string $job_id, string $cursor, int $limit
+ * @method mixed researchResults(array $params = [], array $options = []) research-results (GET /research/jobs/{job_id}/results)
+ *   params: string $job_id
+ */
+abstract class ResearchJobsGroup {}
+
+/**
+ * @method mixed inspectPaper(array $params = [], array $options = []) research-inspect-paper (GET /research/papers/metadata)
+ *   params: string $paper_id
+ * @method mixed readPaper(array $params = [], array $options = []) research-read-paper (POST /research/papers/read)
+ *   params: array $request
+ * @method mixed relatedPapers(array $params = [], array $options = []) research-related-papers (POST /research/papers/related)
+ *   params: array $request
+ * @method mixed searchPapers(array $params = [], array $options = []) research-search-papers (GET /research/papers/search)
+ *   params: string $q, int $limit, array<'arxiv'> $sources, array<string> $authors, string $published_from, string $published_to, string $cursor
+ * @method mixed sources(array $params = [], array $options = []) research-sources (GET /research/sources)
+ */
+abstract class ResearchGroup {}
+
+/**
  * @method mixed availability(array $params = [], array $options = []) resy-availability (GET /resy/availability)
  *   params: string $restaurant_id, string $date, int $party_size
  * @method mixed cuisines(array $params = [], array $options = []) resy-cuisines (GET /resy/cuisines)
@@ -6320,36 +6451,222 @@ abstract class MitSloanManagementReviewGroup {}
 abstract class TheSydneyMorningHeraldGroup {}
 
 /**
+ * @method mixed sofascoreCategories(array $params = [], array $options = []) sofascore-categories (GET /sofascore/categories)
+ *   params: 'american-football'|'aussie-rules'|'badminton'|'bandy'|'baseball'|'basketball'|'beach-volley'|'cricket'|'darts'|'esports'|'floorball'|'football'|'futsal'|'handball'|'ice-hockey'|'mma'|'minifootball'|'padel'|'rugby'|'snooker'|'table-tennis'|'tennis'|'volleyball'|'waterpolo' $sport
+ * @method mixed sofascoreCategoryTournaments(array $params = [], array $options = []) sofascore-category-tournaments (GET /sofascore/category-tournaments)
+ *   params: string $id
+ * @method mixed sofascoreDraft(array $params = [], array $options = []) sofascore-draft (GET /sofascore/draft)
+ *   params: 'nba'|'nfl' $league, string $season
+ * @method mixed sofascoreDraftPicks(array $params = [], array $options = []) sofascore-draft-picks (GET /sofascore/draft-picks)
+ *   params: 'nba'|'nfl' $league, string $year, int $round
+ * @method mixed sofascoreEsportsGame(array $params = [], array $options = []) sofascore-esports-game (GET /sofascore/esports-game)
+ *   params: string $id, 'statistics'|'lineups'|'bans'|'rounds' $part
  * @method mixed sofascoreEvent(array $params = [], array $options = []) sofascore-event (GET /sofascore/event)
+ *   params: string $id
+ * @method mixed sofascoreEventAtBatPitches(array $params = [], array $options = []) sofascore-event-at-bat-pitches (GET /sofascore/event-at-bat-pitches)
+ *   params: string $id, string $at_bat_id
+ * @method mixed sofascoreEventAtBats(array $params = [], array $options = []) sofascore-event-at-bats (GET /sofascore/event-at-bats)
+ *   params: string $id
+ * @method mixed sofascoreEventAveragePositions(array $params = [], array $options = []) sofascore-event-average-positions (GET /sofascore/event-average-positions)
+ *   params: string $id
+ * @method mixed sofascoreEventBaseballTopPerformers(array $params = [], array $options = []) sofascore-event-baseball-top-performers (GET /sofascore/event-baseball-top-performers)
+ *   params: string $id
+ * @method mixed sofascoreEventBestPlayers(array $params = [], array $options = []) sofascore-event-best-players (GET /sofascore/event-best-players)
+ *   params: string $id
+ * @method mixed sofascoreEventComments(array $params = [], array $options = []) sofascore-event-comments (GET /sofascore/event-comments)
+ *   params: string $id
+ * @method mixed sofascoreEventEsportsGames(array $params = [], array $options = []) sofascore-event-esports-games (GET /sofascore/event-esports-games)
+ *   params: string $id
+ * @method mixed sofascoreEventGraph(array $params = [], array $options = []) sofascore-event-graph (GET /sofascore/event-graph)
  *   params: string $id
  * @method mixed sofascoreEventH2h(array $params = [], array $options = []) sofascore-event-h2h (GET /sofascore/event-h2h)
  *   params: string $id
+ * @method mixed sofascoreEventHighlights(array $params = [], array $options = []) sofascore-event-highlights (GET /sofascore/event-highlights)
+ *   params: string $id
  * @method mixed sofascoreEventIncidents(array $params = [], array $options = []) sofascore-event-incidents (GET /sofascore/event-incidents)
+ *   params: string $id
+ * @method mixed sofascoreEventInnings(array $params = [], array $options = []) sofascore-event-innings (GET /sofascore/event-innings)
  *   params: string $id
  * @method mixed sofascoreEventLineups(array $params = [], array $options = []) sofascore-event-lineups (GET /sofascore/event-lineups)
  *   params: string $id
+ * @method mixed sofascoreEventManagers(array $params = [], array $options = []) sofascore-event-managers (GET /sofascore/event-managers)
+ *   params: string $id
  * @method mixed sofascoreEventOdds(array $params = [], array $options = []) sofascore-event-odds (GET /sofascore/event-odds)
+ *   params: string $id
+ * @method mixed sofascoreEventPlayerHeatmap(array $params = [], array $options = []) sofascore-event-player-heatmap (GET /sofascore/event-player-heatmap)
+ *   params: string $id, string $player_id
+ * @method mixed sofascoreEventPlayerStatistics(array $params = [], array $options = []) sofascore-event-player-statistics (GET /sofascore/event-player-statistics)
+ *   params: string $id, string $player_id
+ * @method mixed sofascoreEventPointByPoint(array $params = [], array $options = []) sofascore-event-point-by-point (GET /sofascore/event-point-by-point)
+ *   params: string $id
+ * @method mixed sofascoreEventPregameForm(array $params = [], array $options = []) sofascore-event-pregame-form (GET /sofascore/event-pregame-form)
+ *   params: string $id
+ * @method mixed sofascoreEventShotmap(array $params = [], array $options = []) sofascore-event-shotmap (GET /sofascore/event-shotmap)
  *   params: string $id
  * @method mixed sofascoreEventStatistics(array $params = [], array $options = []) sofascore-event-statistics (GET /sofascore/event-statistics)
  *   params: string $id
+ * @method mixed sofascoreEventTeamHeatmap(array $params = [], array $options = []) sofascore-event-team-heatmap (GET /sofascore/event-team-heatmap)
+ *   params: string $id, string $team_id
+ * @method mixed sofascoreEventTeamStreaks(array $params = [], array $options = []) sofascore-event-team-streaks (GET /sofascore/event-team-streaks)
+ *   params: string $id
+ * @method mixed sofascoreEventTennisPower(array $params = [], array $options = []) sofascore-event-tennis-power (GET /sofascore/event-tennis-power)
+ *   params: string $id
+ * @method mixed sofascoreEventTvChannels(array $params = [], array $options = []) sofascore-event-tv-channels (GET /sofascore/event-tv-channels)
+ *   params: string $id, string $country
+ * @method mixed sofascoreEventVotes(array $params = [], array $options = []) sofascore-event-votes (GET /sofascore/event-votes)
+ *   params: string $id
  * @method mixed sofascoreLiveEvents(array $params = [], array $options = []) sofascore-live-events (GET /sofascore/live-events)
- *   params: 'football'|'basketball'|'tennis' $sport
+ *   params: 'american-football'|'aussie-rules'|'badminton'|'bandy'|'baseball'|'basketball'|'beach-volley'|'cricket'|'darts'|'esports'|'floorball'|'football'|'futsal'|'handball'|'ice-hockey'|'mma'|'minifootball'|'padel'|'rugby'|'snooker'|'table-tennis'|'tennis'|'volleyball'|'waterpolo' $sport
+ * @method mixed sofascoreManager(array $params = [], array $options = []) sofascore-manager (GET /sofascore/manager)
+ *   params: string $id
+ * @method mixed sofascoreManagerEvents(array $params = [], array $options = []) sofascore-manager-events (GET /sofascore/manager-events)
+ *   params: string $id, int $page
+ * @method mixed sofascoreMmaCard(array $params = [], array $options = []) sofascore-mma-card (GET /sofascore/mma-card)
+ *   params: string $org_id, string $card_id, 'all'|'maincard'|'prelims'|'earlyprelims' $part
+ * @method mixed sofascoreMmaSchedule(array $params = [], array $options = []) sofascore-mma-schedule (GET /sofascore/mma-schedule)
+ *   params: string $org_id, string $month
+ * @method mixed sofascoreOddsDropping(array $params = [], array $options = []) sofascore-odds-dropping (GET /sofascore/odds-dropping)
+ *   params: 'all'|'american-football'|'aussie-rules'|'badminton'|'bandy'|'baseball'|'basketball'|'beach-volley'|'cricket'|'darts'|'esports'|'floorball'|'football'|'futsal'|'handball'|'ice-hockey'|'mma'|'minifootball'|'padel'|'rugby'|'snooker'|'table-tennis'|'tennis'|'volleyball'|'waterpolo' $sport
+ * @method mixed sofascoreOddsWinning(array $params = [], array $options = []) sofascore-odds-winning (GET /sofascore/odds-winning)
+ *   params: 'all'|'american-football'|'aussie-rules'|'badminton'|'bandy'|'baseball'|'basketball'|'beach-volley'|'cricket'|'darts'|'esports'|'floorball'|'football'|'futsal'|'handball'|'ice-hockey'|'mma'|'minifootball'|'padel'|'rugby'|'snooker'|'table-tennis'|'tennis'|'volleyball'|'waterpolo' $sport
  * @method mixed sofascorePlayer(array $params = [], array $options = []) sofascore-player (GET /sofascore/player)
  *   params: string $id
+ * @method mixed sofascorePlayerAttributes(array $params = [], array $options = []) sofascore-player-attributes (GET /sofascore/player-attributes)
+ *   params: string $id
+ * @method mixed sofascorePlayerEvents(array $params = [], array $options = []) sofascore-player-events (GET /sofascore/player-events)
+ *   params: string $id, int $page
+ * @method mixed sofascorePlayerLastYearSummary(array $params = [], array $options = []) sofascore-player-last-year-summary (GET /sofascore/player-last-year-summary)
+ *   params: string $id
+ * @method mixed sofascorePlayerNationalTeamStatistics(array $params = [], array $options = []) sofascore-player-national-team-statistics (GET /sofascore/player-national-team-statistics)
+ *   params: string $id
+ * @method mixed sofascorePlayerPenaltyHistory(array $params = [], array $options = []) sofascore-player-penalty-history (GET /sofascore/player-penalty-history)
+ *   params: string $id
+ * @method mixed sofascorePlayerRatings(array $params = [], array $options = []) sofascore-player-ratings (GET /sofascore/player-ratings)
+ *   params: string $id, string $tournament_id, string $season, 'overall'|'home'|'away'|'regular_season'|'playoffs' $type
+ * @method mixed sofascorePlayerSeasonHeatmap(array $params = [], array $options = []) sofascore-player-season-heatmap (GET /sofascore/player-season-heatmap)
+ *   params: string $id, string $tournament_id, string $season
+ * @method mixed sofascorePlayerSeasonStatistics(array $params = [], array $options = []) sofascore-player-season-statistics (GET /sofascore/player-season-statistics)
+ *   params: string $id, string $tournament_id, string $season, 'overall'|'home'|'away'|'regular_season'|'playoffs' $type
+ * @method mixed sofascorePlayerStatisticalRankings(array $params = [], array $options = []) sofascore-player-statistical-rankings (GET /sofascore/player-statistical-rankings)
+ *   params: string $id, string $season, 'overall' $type
+ * @method mixed sofascorePlayerStatisticsSeasons(array $params = [], array $options = []) sofascore-player-statistics-seasons (GET /sofascore/player-statistics-seasons)
+ *   params: string $id
+ * @method mixed sofascorePlayerTournaments(array $params = [], array $options = []) sofascore-player-tournaments (GET /sofascore/player-tournaments)
+ *   params: string $id
+ * @method mixed sofascorePlayerTransfers(array $params = [], array $options = []) sofascore-player-transfers (GET /sofascore/player-transfers)
+ *   params: string $id
+ * @method mixed sofascoreRankingTypes(array $params = [], array $options = []) sofascore-ranking-types (GET /sofascore/ranking-types)
+ * @method mixed sofascoreRankings(array $params = [], array $options = []) sofascore-rankings (GET /sofascore/rankings)
+ *   params: '1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'11'|'12'|'13'|'14'|'15'|'16'|'17'|'18'|'19'|'20'|'21'|'22'|'34'|'35'|'36'|'37'|'40'|'41'|'42'|'43'|'44'|'45'|'46' $type, int $limit
+ * @method mixed sofascoreReferee(array $params = [], array $options = []) sofascore-referee (GET /sofascore/referee)
+ *   params: string $id
+ * @method mixed sofascoreRefereeEvents(array $params = [], array $options = []) sofascore-referee-events (GET /sofascore/referee-events)
+ *   params: string $id, int $page
+ * @method mixed sofascoreRefereeStatistics(array $params = [], array $options = []) sofascore-referee-statistics (GET /sofascore/referee-statistics)
+ *   params: string $id
  * @method mixed sofascoreRoundEvents(array $params = [], array $options = []) sofascore-round-events (GET /sofascore/round-events)
- *   params: string $id, string $season, int $round
+ *   params: string $id, string $season, int $round, string $slug, string $prefix
+ * @method mixed sofascoreScheduledEvents(array $params = [], array $options = []) sofascore-scheduled-events (GET /sofascore/scheduled-events)
+ *   params: string $category_id, string $date
+ * @method mixed sofascoreScheduledTournaments(array $params = [], array $options = []) sofascore-scheduled-tournaments (GET /sofascore/scheduled-tournaments)
+ *   params: 'american-football'|'aussie-rules'|'badminton'|'bandy'|'baseball'|'basketball'|'beach-volley'|'cricket'|'darts'|'esports'|'floorball'|'football'|'futsal'|'handball'|'ice-hockey'|'mma'|'minifootball'|'padel'|'rugby'|'snooker'|'table-tennis'|'tennis'|'volleyball'|'waterpolo' $sport, string $date, int $page
  * @method mixed sofascoreSearch(array $params = [], array $options = []) sofascore-search (GET /sofascore/search)
  *   params: string $q
+ * @method mixed sofascoreSearchTyped(array $params = [], array $options = []) sofascore-search-typed (GET /sofascore/search-typed)
+ *   params: 'events'|'teams'|'players'|'managers'|'referees'|'venues'|'unique_tournaments' $type, string $q, int $page, 'american-football'|'aussie-rules'|'badminton'|'bandy'|'baseball'|'basketball'|'beach-volley'|'cricket'|'darts'|'esports'|'floorball'|'football'|'futsal'|'handball'|'ice-hockey'|'mma'|'minifootball'|'padel'|'rugby'|'snooker'|'table-tennis'|'tennis'|'volleyball'|'waterpolo' $sport
+ * @method mixed sofascoreSeasonEvents(array $params = [], array $options = []) sofascore-season-events (GET /sofascore/season-events)
+ *   params: string $id, string $season, 'next'|'last' $direction, int $page
+ * @method mixed sofascoreSports(array $params = [], array $options = []) sofascore-sports (GET /sofascore/sports)
+ * @method mixed sofascoreStage(array $params = [], array $options = []) sofascore-stage (GET /sofascore/stage)
+ *   params: string $id
+ * @method mixed sofascoreStageCategories(array $params = [], array $options = []) sofascore-stage-categories (GET /sofascore/stage-categories)
+ *   params: 'motorsport'|'cycling' $sport
+ * @method mixed sofascoreStageDriverPerformance(array $params = [], array $options = []) sofascore-stage-driver-performance (GET /sofascore/stage-driver-performance)
+ *   params: string $id
+ * @method mixed sofascoreStageFeatured(array $params = [], array $options = []) sofascore-stage-featured (GET /sofascore/stage-featured)
+ *   params: 'motorsport'|'cycling' $sport
+ * @method mixed sofascoreStageSchedule(array $params = [], array $options = []) sofascore-stage-schedule (GET /sofascore/stage-schedule)
+ *   params: 'motorsport'|'cycling' $sport, string $date
+ * @method mixed sofascoreStageSeasons(array $params = [], array $options = []) sofascore-stage-seasons (GET /sofascore/stage-seasons)
+ *   params: string $id
+ * @method mixed sofascoreStageStandings(array $params = [], array $options = []) sofascore-stage-standings (GET /sofascore/stage-standings)
+ *   params: string $id, 'competitor'|'team' $type
+ * @method mixed sofascoreStageSubstages(array $params = [], array $options = []) sofascore-stage-substages (GET /sofascore/stage-substages)
+ *   params: string $id
  * @method mixed sofascoreStandings(array $params = [], array $options = []) sofascore-standings (GET /sofascore/standings)
  *   params: string $id, string $season, 'total'|'home'|'away' $type
  * @method mixed sofascoreTeam(array $params = [], array $options = []) sofascore-team (GET /sofascore/team)
  *   params: string $id
+ * @method mixed sofascoreTeamAchievements(array $params = [], array $options = []) sofascore-team-achievements (GET /sofascore/team-achievements)
+ *   params: string $id
  * @method mixed sofascoreTeamEvents(array $params = [], array $options = []) sofascore-team-events (GET /sofascore/team-events)
  *   params: string $id, 'next'|'last' $direction, int $page
+ * @method mixed sofascoreTeamGoalDistributions(array $params = [], array $options = []) sofascore-team-goal-distributions (GET /sofascore/team-goal-distributions)
+ *   params: string $id, string $tournament_id, string $season
+ * @method mixed sofascoreTeamNearEvents(array $params = [], array $options = []) sofascore-team-near-events (GET /sofascore/team-near-events)
+ *   params: string $id
+ * @method mixed sofascoreTeamOfTheWeek(array $params = [], array $options = []) sofascore-team-of-the-week (GET /sofascore/team-of-the-week)
+ *   params: string $id, string $season, string $period
+ * @method mixed sofascoreTeamOfTheWeekPeriods(array $params = [], array $options = []) sofascore-team-of-the-week-periods (GET /sofascore/team-of-the-week-periods)
+ *   params: string $id, string $season
+ * @method mixed sofascoreTeamPerformance(array $params = [], array $options = []) sofascore-team-performance (GET /sofascore/team-performance)
+ *   params: string $id
+ * @method mixed sofascoreTeamPlayerStatistics(array $params = [], array $options = []) sofascore-team-player-statistics (GET /sofascore/team-player-statistics)
+ *   params: string $id, string $tournament_id, string $season, 'overall'|'home'|'away'|'regular_season'|'playoffs' $type
+ * @method mixed sofascoreTeamPlayerStatisticsSeasons(array $params = [], array $options = []) sofascore-team-player-statistics-seasons (GET /sofascore/team-player-statistics-seasons)
+ *   params: string $id
  * @method mixed sofascoreTeamPlayers(array $params = [], array $options = []) sofascore-team-players (GET /sofascore/team-players)
  *   params: string $id
+ * @method mixed sofascoreTeamRankings(array $params = [], array $options = []) sofascore-team-rankings (GET /sofascore/team-rankings)
+ *   params: string $id
+ * @method mixed sofascoreTeamSeasonStatistics(array $params = [], array $options = []) sofascore-team-season-statistics (GET /sofascore/team-season-statistics)
+ *   params: string $id, string $tournament_id, string $season, 'overall'|'home'|'away'|'regular_season'|'playoffs' $type
+ * @method mixed sofascoreTeamStatisticsSeasons(array $params = [], array $options = []) sofascore-team-statistics-seasons (GET /sofascore/team-statistics-seasons)
+ *   params: string $id
+ * @method mixed sofascoreTeamTopPlayers(array $params = [], array $options = []) sofascore-team-top-players (GET /sofascore/team-top-players)
+ *   params: string $id, string $tournament_id, string $season, 'overall'|'regular_season'|'playoffs' $type, int $limit
+ * @method mixed sofascoreTeamTournaments(array $params = [], array $options = []) sofascore-team-tournaments (GET /sofascore/team-tournaments)
+ *   params: string $id, bool $all
+ * @method mixed sofascoreTeamTransfers(array $params = [], array $options = []) sofascore-team-transfers (GET /sofascore/team-transfers)
+ *   params: string $id
+ * @method mixed sofascoreTennisPlayerGrandSlamResults(array $params = [], array $options = []) sofascore-tennis-player-grand-slam-results (GET /sofascore/tennis-player-grand-slam-results)
+ *   params: string $id
+ * @method mixed sofascoreTournamentCuptree(array $params = [], array $options = []) sofascore-tournament-cuptree (GET /sofascore/tournament-cuptree)
+ *   params: string $id, string $season
+ * @method mixed sofascoreTournamentInfo(array $params = [], array $options = []) sofascore-tournament-info (GET /sofascore/tournament-info)
+ *   params: string $id, string $season
+ * @method mixed sofascoreTournamentPlayerOfTheSeason(array $params = [], array $options = []) sofascore-tournament-player-of-the-season (GET /sofascore/tournament-player-of-the-season)
+ *   params: string $id, string $season
+ * @method mixed sofascoreTournamentPlayerStatistics(array $params = [], array $options = []) sofascore-tournament-player-statistics (GET /sofascore/tournament-player-statistics)
+ *   params: string $id, string $season, 'rating'|'goals'|'expectedGoals'|'assists'|'successfulDribbles'|'tackles'|'accuratePassesPercentage'|'bigChancesMissed'|'totalShots'|'goalConversionPercentage'|'interceptions'|'clearances'|'errorLeadToGoal'|'outfielderBlocks'|'bigChancesCreated'|'accuratePasses'|'keyPasses'|'saves'|'cleanSheet'|'penaltySave'|'savedShotsFromInsideTheBox'|'runsOut' $order, 'desc'|'asc' $direction, 'total'|'perGame'|'per90' $accumulation, 'summary'|'attack'|'defence'|'passing'|'goalkeeper' $group, int $limit, int $offset, array<string> $team, array<string> $nationality, array<'G'|'D'|'M'|'F'> $position, int $min_appearances, int $min_minutes
+ * @method mixed sofascoreTournamentRounds(array $params = [], array $options = []) sofascore-tournament-rounds (GET /sofascore/tournament-rounds)
+ *   params: string $id, string $season
  * @method mixed sofascoreTournamentSeasons(array $params = [], array $options = []) sofascore-tournament-seasons (GET /sofascore/tournament-seasons)
  *   params: string $id
+ * @method mixed sofascoreTournamentStatisticsInfo(array $params = [], array $options = []) sofascore-tournament-statistics-info (GET /sofascore/tournament-statistics-info)
+ *   params: string $id, string $season
+ * @method mixed sofascoreTournamentTeamOfTheSeason(array $params = [], array $options = []) sofascore-tournament-team-of-the-season (GET /sofascore/tournament-team-of-the-season)
+ *   params: string $id, string $season
+ * @method mixed sofascoreTournamentTeams(array $params = [], array $options = []) sofascore-tournament-teams (GET /sofascore/tournament-teams)
+ *   params: string $id, string $season
+ * @method mixed sofascoreTournamentTopPlayers(array $params = [], array $options = []) sofascore-tournament-top-players (GET /sofascore/tournament-top-players)
+ *   params: string $id, string $season, 'overall'|'regular_season'|'playoffs' $type, int $limit
+ * @method mixed sofascoreTournamentTopTeams(array $params = [], array $options = []) sofascore-tournament-top-teams (GET /sofascore/tournament-top-teams)
+ *   params: string $id, string $season, 'overall'|'regular_season'|'playoffs' $type, int $limit
+ * @method mixed sofascoreTournamentVenues(array $params = [], array $options = []) sofascore-tournament-venues (GET /sofascore/tournament-venues)
+ *   params: string $id, string $season
+ * @method mixed sofascoreTournamentWinners(array $params = [], array $options = []) sofascore-tournament-winners (GET /sofascore/tournament-winners)
+ *   params: string $id, int $page
+ * @method mixed sofascoreTournamentsWithFeature(array $params = [], array $options = []) sofascore-tournaments-with-feature (GET /sofascore/tournaments-with-feature)
+ *   params: 'cuptree'|'standings'|'totw'|'power_rankings' $feature, 'american-football'|'aussie-rules'|'badminton'|'bandy'|'baseball'|'basketball'|'beach-volley'|'cricket'|'darts'|'esports'|'floorball'|'football'|'futsal'|'handball'|'ice-hockey'|'minifootball'|'rugby'|'snooker'|'table-tennis'|'tennis'|'volleyball'|'waterpolo' $sport
+ * @method mixed sofascoreTrendingEvents(array $params = [], array $options = []) sofascore-trending-events (GET /sofascore/trending-events)
+ *   params: string $country
+ * @method mixed sofascoreTrendingPlayers(array $params = [], array $options = []) sofascore-trending-players (GET /sofascore/trending-players)
+ *   params: 'football'|'basketball' $sport
+ * @method mixed sofascoreVenue(array $params = [], array $options = []) sofascore-venue (GET /sofascore/venue)
+ *   params: string $id
+ * @method mixed sofascoreVenueEvents(array $params = [], array $options = []) sofascore-venue-events (GET /sofascore/venue-events)
+ *   params: string $id, 'next'|'last' $direction, 'all'|'american-football'|'aussie-rules'|'badminton'|'bandy'|'baseball'|'basketball'|'beach-volley'|'cricket'|'darts'|'esports'|'floorball'|'football'|'futsal'|'handball'|'ice-hockey'|'mma'|'minifootball'|'padel'|'rugby'|'snooker'|'table-tennis'|'tennis'|'volleyball'|'waterpolo' $sport, int $page, string $tournament, string $season
  */
 abstract class SofaScoreGroup {}
 
@@ -8421,6 +8738,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\DeliverooGroup $deliveroo
  * @property-read \Crawlora\Generated\TheDenverPostGroup $theDenverPost
  * @property-read \Crawlora\Generated\DepopGroup $depop
+ * @property-read \Crawlora\Generated\RetrievalGroup $retrieval
  * @property-read \Crawlora\Generated\DiscogsGroup $discogs
  * @property-read \Crawlora\Generated\DominosGroup $dominos
  * @property-read \Crawlora\Generated\DoorDashGroup $doorDash
@@ -8633,6 +8951,8 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\RedditGroup $reddit
  * @property-read \Crawlora\Generated\RedfinGroup $redfin
  * @property-read \Crawlora\Generated\ReferralsGroup $referrals
+ * @property-read \Crawlora\Generated\ResearchJobsGroup $researchJobs
+ * @property-read \Crawlora\Generated\ResearchGroup $research
  * @property-read \Crawlora\Generated\ResyGroup $resy
  * @property-read \Crawlora\Generated\RetailMeNotGroup $retailMeNot
  * @property-read \Crawlora\Generated\ReutersGroup $reuters
