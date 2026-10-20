@@ -327,6 +327,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\ResyGroup $resy
  * @property-read \Crawlora\Generated\RetailMeNotGroup $retailMeNot
  * @property-read \Crawlora\Generated\ReutersGroup $reuters
+ * @property-read \Crawlora\Generated\ReverbGroup $reverb
  * @property-read \Crawlora\Generated\RightmoveGroup $rightmove
  * @property-read \Crawlora\Generated\RnzGroup $rnz
  * @property-read \Crawlora\Generated\RobloxGroup $roblox

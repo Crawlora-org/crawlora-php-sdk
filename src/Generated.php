@@ -574,6 +574,8 @@ abstract class BarronsGroup {}
  *   params: string $url
  * @method mixed newsTopics(array $params = [], array $options = []) bbb-news-topics (GET /bbb/news/topics)
  *   params: string $url
+ * @method mixed page(array $params = [], array $options = []) bbb-page (GET /bbb/page)
+ *   params: string $url
  * @method mixed regions(array $params = [], array $options = []) bbb-regions (GET /bbb/regions)
  * @method mixed scamtrackerSearch(array $params = [], array $options = []) bbb-scamtracker-search (GET /bbb/scamtracker/search)
  *   params: string $query, 'Advance Fee Loan'|'Bank/Credit Card Company Imposter'|'Business Email Compromise'|'Charity'|'Counterfeit Product'|'COVID-19'|'Credit Cards'|'Credit Repair/Debt Relief'|'CryptoCurrency'|'Debt Collections'|'Employment'|'Fake Check/Money Order'|'Fake Invoice/Supplier Bill'|'Family/Friend Emergency'|'Foreign Money Exchange'|'Government Agency Imposter'|'Government Grant'|'Healthcare/Medicaid/Medicare'|'Home Improvement'|'Identity Theft'|'Investment'|'Moving'|'Online Purchase'|'Other'|'Phishing'|'Rental'|'Retail Business'|'Romance'|'Scholarship'|'Sweepstakes/Lottery/Prizes'|'Tax Collection'|'Tech Support'|'Travel/Vacation/Timeshare'|'Utility'|'Vanity Award'|'Worthless Problem-solving Service'|'Yellow Pages/Directories' $scam_type, string $state, string $scammer_state, string $date_from, string $date_to, int $min_dollars_lost, int $max_dollars_lost, int $page
@@ -1594,11 +1596,11 @@ abstract class DailyWireGroup {}
  * @method mixed appsSearch(array $params = [], array $options = []) datasets-apps-search (GET /datasets/apps/search)
  *   params: string $q, 'ios'|'android'|'both' $store, array<string> $platforms, string $category, string $country, string $developer, bool $free, float $min_rating, int $min_reviews, 'relevance'|'rating_desc'|'reviews_desc'|'installs_desc'|'updated_at_desc'|'popularity_desc' $sort, int $page, int $page_size
  * @method mixed bbbBusinessesFacets(array $params = [], array $options = []) datasets-bbb-businesses-facets (GET /datasets/bbb-businesses/facets)
- *   params: 'country'|'category'|'state'|'city'|'rating'|'accredited'|'entity_type'|'run_id'|'alert_title'|'has_alerts' $facet, int $limit, int $offset, string $q, string $category, 'us'|'ca' $country, string $state, string $city, 'A+'|'A'|'A-'|'B+'|'B'|'B-'|'C+'|'C'|'C-'|'D+'|'D'|'D-'|'F' $rating, int $min_rating_rank, bool $accredited, bool $has_alerts, string $alert_title, int $min_complaints, string $entity_type, string $run_id
+ *   params: 'country'|'address_country'|'category'|'state'|'city'|'rating'|'accredited'|'entity_type'|'run_id'|'alert_title'|'has_alerts' $facet, int $limit, int $offset, string $q, string $category, 'us'|'ca' $country, 'us'|'ca' $address_country, string $state, string $city, 'A+'|'A'|'A-'|'B+'|'B'|'B-'|'C+'|'C'|'C-'|'D+'|'D'|'D-'|'F' $rating, int $min_rating_rank, bool $accredited, bool $has_alerts, string $alert_title, int $min_complaints, string $entity_type, string $run_id
  * @method mixed bbbBusinessesItem(array $params = [], array $options = []) datasets-bbb-businesses-item (GET /datasets/bbb-businesses/items/{id})
  *   params: string $id
  * @method mixed bbbBusinessesSearch(array $params = [], array $options = []) datasets-bbb-businesses-search (GET /datasets/bbb-businesses/search)
- *   params: string $q, string $category, 'us'|'ca' $country, string $state, string $city, 'A+'|'A'|'A-'|'B+'|'B'|'B-'|'C+'|'C'|'C-'|'D+'|'D'|'D-'|'F' $rating, int $min_rating_rank, bool $accredited, bool $has_alerts, string $alert_title, int $min_complaints, string $entity_type, string $run_id, 'relevance'|'rating_desc'|'rating_asc'|'accredited_first'|'name_asc'|'years_in_business_desc'|'complaints_desc' $sort, int $page, int $page_size
+ *   params: string $q, string $category, 'us'|'ca' $country, 'us'|'ca' $address_country, string $state, string $city, 'A+'|'A'|'A-'|'B+'|'B'|'B-'|'C+'|'C'|'C-'|'D+'|'D'|'D-'|'F' $rating, int $min_rating_rank, bool $accredited, bool $has_alerts, string $alert_title, int $min_complaints, string $entity_type, string $run_id, 'relevance'|'rating_desc'|'rating_asc'|'accredited_first'|'name_asc'|'years_in_business_desc'|'complaints_desc' $sort, int $page, int $page_size
  * @method mixed bbbScamtrackerReportsFacets(array $params = [], array $options = []) datasets-bbb-scamtracker-reports-facets (GET /datasets/bbb-scamtracker-reports/facets)
  *   params: 'scam_type'|'state'|'country' $facet, string $q, string $scam_type, string $state, 'USA'|'CAN' $country, string $date_from, string $date_to, float $min_loss, float $max_loss
  * @method mixed bbbScamtrackerReportsItem(array $params = [], array $options = []) datasets-bbb-scamtracker-reports-item (GET /datasets/bbb-scamtracker-reports/items/{id})
@@ -5918,6 +5920,24 @@ abstract class RetailMeNotGroup {}
 abstract class ReutersGroup {}
 
 /**
+ * @method mixed categories(array $params = [], array $options = []) reverb-categories (GET /reverb/categories)
+ * @method mixed listing(array $params = [], array $options = []) reverb-listing (GET /reverb/listing)
+ *   params: int $id
+ * @method mixed makes(array $params = [], array $options = []) reverb-makes (GET /reverb/makes)
+ * @method mixed priceGuide(array $params = [], array $options = []) reverb-price-guide (GET /reverb/price-guide)
+ *   params: string $slug, string $canonical_product_id, 'mint'|'excellent'|'very-good'|'good'|'fair'|'poor' $condition, 'months_6'|'years_1'|'years_2' $range, int $limit
+ * @method mixed priceGuideSearch(array $params = [], array $options = []) reverb-price-guide-search (GET /reverb/price-guide-search)
+ *   params: string $query, int $limit
+ * @method mixed search(array $params = [], array $options = []) reverb-search (GET /reverb/search)
+ *   params: string $query, string $category, 'accessories'|'acoustic-guitars'|'amps'|'band-and-orchestra'|'bass-guitars'|'dj-and-lighting-gear'|'drums-and-percussion'|'effects-and-pedals'|'electric-guitars'|'folk-instruments'|'home-audio'|'keyboards-and-synths'|'parts'|'pro-audio' $product_type, string $make, float $min_price, float $max_price, int $page, int $limit
+ * @method mixed shop(array $params = [], array $options = []) reverb-shop (GET /reverb/shop)
+ *   params: string $slug, string $query, int $page, int $limit
+ * @method mixed shopFeedback(array $params = [], array $options = []) reverb-shop-feedback (GET /reverb/shop-feedback)
+ *   params: string $slug, int $page
+ */
+abstract class ReverbGroup {}
+
+/**
  * @method mixed agents(array $params = [], array $options = []) rightmove-agents (GET /rightmove/agents)
  *   params: string $location, int $page
  * @method mixed agentBranch(array $params = [], array $options = []) rightmove-agent-branch (GET /rightmove/agents/{id})
@@ -7488,10 +7508,20 @@ abstract class ThisIsMoneyGroup {}
  *   params: string $username, string $code
  * @method mixed profile(array $params = [], array $options = []) threads-profile (GET /threads/profile/{username})
  *   params: string $username
+ * @method mixed profileMedia(array $params = [], array $options = []) threads-profile-media (GET /threads/profile/{username}/media)
+ *   params: string $username
  * @method mixed profilePosts(array $params = [], array $options = []) threads-profile-posts (GET /threads/profile/{username}/posts)
  *   params: string $username, string $cursor
+ * @method mixed profileReplies(array $params = [], array $options = []) threads-profile-replies (GET /threads/profile/{username}/replies)
+ *   params: string $username
+ * @method mixed profileReposts(array $params = [], array $options = []) threads-profile-reposts (GET /threads/profile/{username}/reposts)
+ *   params: string $username
+ * @method mixed profileTopics(array $params = [], array $options = []) threads-profile-topics (GET /threads/profile/{username}/topics)
+ *   params: string $username
  * @method mixed search(array $params = [], array $options = []) threads-search (GET /threads/search)
- *   params: string $q
+ *   params: string $q, 'top'|'recent' $sort
+ * @method mixed topicSearch(array $params = [], array $options = []) threads-topic-search (GET /threads/search/topics)
+ *   params: string $q, string $tag_id
  */
 abstract class ThreadsGroup {}
 
@@ -7560,16 +7590,67 @@ abstract class TiffanyCoGroup {}
  * @method mixed category(array $params = [], array $options = []) tiktok-category (GET /tiktok/category)
  * @method mixed videoComments(array $params = [], array $options = []) tiktok-video-comments (GET /tiktok/comments)
  *   params: string $aweme_id, int $cursor
+ * @method mixed creativeCenterFilters(array $params = [], array $options = []) tiktok-creative-center-filters (GET /tiktok/creative-center/filters)
  * @method mixed creativeCenterHashtags(array $params = [], array $options = []) tiktok-creative-center-hashtags (GET /tiktok/creative-center/hashtags)
- *   params: string $country_code, '7'|'30' $period
+ *   params: string $country_code, '7'|'30'|'90' $period, '10000000000'|'11000000000'|'12000000000'|'13000000000'|'14000000000'|'15000000000'|'17000000000'|'18000000000'|'19000000000'|'21000000000'|'22000000000'|'23000000000'|'24000000000'|'25000000000'|'26000000000'|'27000000000'|'28000000000'|'29000000000' $industry_id
+ * @method mixed creativeCenterTopContent(array $params = [], array $options = []) tiktok-creative-center-top-content (GET /tiktok/creative-center/top-content)
+ *   params: bool $include_comments
  * @method mixed creativeCenterVideos(array $params = [], array $options = []) tiktok-creative-center-videos (GET /tiktok/creative-center/videos)
- *   params: string $country_code, '7'|'30' $period, 'views'|'engagement'|'six_second_views' $sort_by, string $content_label_id, bool $organic_only
+ *   params: string $country_code, '7'|'30' $period, 'views'|'engagement'|'six_second_views' $sort_by, string $content_label_id, array<'11002'|'11003'|'11010'|'11013'|'11015'> $content_label_ids, bool $organic_only
  * @method mixed explore(array $params = [], array $options = []) tiktok-explore (GET /tiktok/explore/{id})
  *   params: int $id
  * @method mixed challenge(array $params = [], array $options = []) tiktok-challenge (GET /tiktok/hashtag/{name})
  *   params: string $name
  * @method mixed challengeList(array $params = [], array $options = []) tiktok-challenge-list (GET /tiktok/hashtags)
  *   params: string $id, int $cursor
+ * @method mixed mobileAnchorList(array $params = [], array $options = []) tiktok-mobile-anchor-list (GET /tiktok/mobile/anchor/list)
+ * @method mixed mobileCommentReplies(array $params = [], array $options = []) tiktok-mobile-comment-replies (GET /tiktok/mobile/comment/replies)
+ *   params: string $aweme_id, string $comment_id, int $cursor, int $count
+ * @method mixed mobileComments(array $params = [], array $options = []) tiktok-mobile-comments (GET /tiktok/mobile/comments)
+ *   params: string $aweme_id, int $cursor, int $count
+ * @method mixed mobileFeed(array $params = [], array $options = []) tiktok-mobile-feed (GET /tiktok/mobile/feed)
+ *   params: int $count, int $cursor
+ * @method mixed mobileFeedPost(array $params = [], array $options = []) tiktok-mobile-feed-post (GET /tiktok/mobile/feed/post)
+ * @method mixed mobileHashtag(array $params = [], array $options = []) tiktok-mobile-hashtag (GET /tiktok/mobile/hashtag)
+ *   params: string $name
+ * @method mixed mobileHashtagPosts(array $params = [], array $options = []) tiktok-mobile-hashtag-posts (GET /tiktok/mobile/hashtag/posts)
+ *   params: string $name, 'fresh'|'popular' $sort, int $count, int $cursor
+ * @method mixed mobileHashtags(array $params = [], array $options = []) tiktok-mobile-hashtags (GET /tiktok/mobile/hashtags)
+ *   params: string $keyword, int $count, int $cursor
+ * @method mixed mobileLiveEffects(array $params = [], array $options = []) tiktok-mobile-live-effects (GET /tiktok/mobile/live/effects)
+ * @method mixed mobileLiveGifts(array $params = [], array $options = []) tiktok-mobile-live-gifts (GET /tiktok/mobile/live/gifts)
+ * @method mixed mobileLiveSearch(array $params = [], array $options = []) tiktok-mobile-live-search (GET /tiktok/mobile/live/search)
+ *   params: string $keyword, int $count
+ * @method mixed mobileMusicBeats(array $params = [], array $options = []) tiktok-mobile-music-beats (GET /tiktok/mobile/music/beats)
+ *   params: int $count
+ * @method mixed mobileMusicCollections(array $params = [], array $options = []) tiktok-mobile-music-collections (GET /tiktok/mobile/music/collections)
+ *   params: int $count, int $cursor
+ * @method mixed mobileMusicPick(array $params = [], array $options = []) tiktok-mobile-music-pick (GET /tiktok/mobile/music/pick)
+ *   params: int $count, int $cursor
+ * @method mixed mobileMusicPosts(array $params = [], array $options = []) tiktok-mobile-music-posts (GET /tiktok/mobile/music/posts)
+ *   params: string $music_id, int $count, int $cursor
+ * @method mixed mobileMusicRelated(array $params = [], array $options = []) tiktok-mobile-music-related (GET /tiktok/mobile/music/related)
+ *   params: string $aweme_id, int $count, int $cursor
+ * @method mixed mobileMusicTrending(array $params = [], array $options = []) tiktok-mobile-music-trending (GET /tiktok/mobile/music/trending)
+ *   params: int $count, int $cursor
+ * @method mixed mobileSearch(array $params = [], array $options = []) tiktok-mobile-search (GET /tiktok/mobile/search)
+ *   params: string $keyword, int $count, int $offset
+ * @method mixed mobileSearchMusic(array $params = [], array $options = []) tiktok-mobile-search-music (GET /tiktok/mobile/search/music)
+ *   params: string $keyword, int $count, int $offset
+ * @method mixed mobileSearchPlace(array $params = [], array $options = []) tiktok-mobile-search-place (GET /tiktok/mobile/search/place)
+ *   params: string $keyword, int $count
+ * @method mixed mobileSearchPreInfo(array $params = [], array $options = []) tiktok-mobile-search-pre-info (GET /tiktok/mobile/search/pre-info)
+ *   params: string $keyword, int $count
+ * @method mixed mobileSearchSug(array $params = [], array $options = []) tiktok-mobile-search-sug (GET /tiktok/mobile/search/sug)
+ *   params: string $keyword, int $count
+ * @method mixed mobileSearchTabs(array $params = [], array $options = []) tiktok-mobile-search-tabs (GET /tiktok/mobile/search/tabs)
+ *   params: string $keyword
+ * @method mixed mobileSearchUser(array $params = [], array $options = []) tiktok-mobile-search-user (GET /tiktok/mobile/search/user)
+ *   params: string $keyword, int $count, int $cursor
+ * @method mixed mobileTrendingCategories(array $params = [], array $options = []) tiktok-mobile-trending-categories (GET /tiktok/mobile/trending/categories)
+ *   params: int $count, int $cursor
+ * @method mixed mobileTrendingEffects(array $params = [], array $options = []) tiktok-mobile-trending-effects (GET /tiktok/mobile/trending/effects)
+ *   params: int $count, int $cursor
  * @method mixed popularTrendCountryIndustryMeta(array $params = [], array $options = []) tiktok-popular-trend-country-industry-meta (GET /tiktok/popular-trend/country-industry-meta)
  * @method mixed post(array $params = [], array $options = []) tiktok-post (GET /tiktok/post/{id})
  *   params: string $id
@@ -8956,6 +9037,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\ResyGroup $resy
  * @property-read \Crawlora\Generated\RetailMeNotGroup $retailMeNot
  * @property-read \Crawlora\Generated\ReutersGroup $reuters
+ * @property-read \Crawlora\Generated\ReverbGroup $reverb
  * @property-read \Crawlora\Generated\RightmoveGroup $rightmove
  * @property-read \Crawlora\Generated\RnzGroup $rnz
  * @property-read \Crawlora\Generated\RobloxGroup $roblox
