@@ -2003,6 +2003,47 @@ abstract class DominosGroup {}
 abstract class DoorDashGroup {}
 
 /**
+ * @method mixed draftkingsCasinoDirectory(array $params = [], array $options = []) draftkings-casino-directory (GET /draftkings/casino/directory)
+ * @method mixed draftkingsCasinoSlotsGuide(array $params = [], array $options = []) draftkings-casino-slots-guide (GET /draftkings/casino/slots-guide)
+ * @method mixed draftkingsCasinoSlotsCategories(array $params = [], array $options = []) draftkings-casino-slots-categories (GET /draftkings/casino/slots/categories)
+ * @method mixed draftkingsCasinoCleopatraGuide(array $params = [], array $options = []) draftkings-casino-cleopatra-guide (GET /draftkings/casino/slots/cleopatra-guide)
+ * @method mixed draftkingsCasinoWheelOfFortuneGuide(array $params = [], array $options = []) draftkings-casino-wheel-of-fortune-guide (GET /draftkings/casino/slots/wheel-of-fortune-guide)
+ */
+abstract class DraftKingsCasinoGroup {}
+
+/**
+ * @method mixed draftkingsDfsGlossary(array $params = [], array $options = []) draftkings-dfs-glossary (GET /draftkings/dfs/glossary)
+ * @method mixed draftkingsDfsGuide(array $params = [], array $options = []) draftkings-dfs-guide (GET /draftkings/dfs/guide)
+ * @method mixed draftkingsDfsNflBestBallFeaturedContests(array $params = [], array $options = []) draftkings-dfs-nfl-best-ball-featured-contests (GET /draftkings/dfs/nfl-best-ball/featured-contests)
+ * @method mixed draftkingsDfsRulesAndScoring(array $params = [], array $options = []) draftkings-dfs-rules-and-scoring (GET /draftkings/dfs/rules-and-scoring)
+ * @method mixed draftkingsDfsSports(array $params = [], array $options = []) draftkings-dfs-sports (GET /draftkings/dfs/sports)
+ */
+abstract class DraftKingsDailyFantasySportsGroup {}
+
+/**
+ * @method mixed draftkingsPick6Rules(array $params = [], array $options = []) draftkings-pick6-rules (GET /draftkings/pick6/rules)
+ * @method mixed draftkingsPick6RulePage(array $params = [], array $options = []) draftkings-pick6-rule-page (GET /draftkings/pick6/rules/{slug})
+ *   params: 'nfl'|'nba'|'nhl'|'pga-full-tournament'|'pga-single-round'|'mlb'|'wnba'|'nascar'|'cfb'|'cbb'|'soccer'|'valorant'|'miscellaneous'|'league-of-legends'|'counter-strike'|'call-of-duty'|'nfl-season-long'|'nba-season-long' $slug
+ * @method mixed draftkingsPick6Sports(array $params = [], array $options = []) draftkings-pick6-sports (GET /draftkings/pick6/sports)
+ */
+abstract class DraftKingsPick6Group {}
+
+/**
+ * @method mixed draftkingsPredictionsAvailability(array $params = [], array $options = []) draftkings-predictions-availability (GET /draftkings/predictions/availability)
+ * @method mixed draftkingsPredictionsCategories(array $params = [], array $options = []) draftkings-predictions-categories (GET /draftkings/predictions/categories)
+ * @method mixed draftkingsPredictionsRules(array $params = [], array $options = []) draftkings-predictions-rules (GET /draftkings/predictions/rules)
+ */
+abstract class DraftKingsPredictionsGroup {}
+
+/**
+ * @method mixed draftkingsRacingRaceInfo(array $params = [], array $options = []) draftkings-racing-race-info (GET /draftkings/racing/race/{race_id})
+ *   params: int $race_id
+ * @method mixed draftkingsRacingSchedule(array $params = [], array $options = []) draftkings-racing-schedule (GET /draftkings/racing/schedule)
+ * @method mixed draftkingsRacingTracks(array $params = [], array $options = []) draftkings-racing-tracks (GET /draftkings/racing/tracks)
+ */
+abstract class DraftKingsRacingGroup {}
+
+/**
  * @method mixed draftkingsEvent(array $params = [], array $options = []) draftkings-event (GET /draftkings/sportsbook/event)
  *   params: string $event_id
  * @method mixed draftkingsEventContext(array $params = [], array $options = []) draftkings-event-context (GET /draftkings/sportsbook/event-context)
@@ -2294,6 +2335,150 @@ abstract class FanaticsCollectGroup {}
  *   params: string $id
  */
 abstract class FanaticsLiveGroup {}
+
+/**
+ * @method mixed fanduelCasinoCategories(array $params = [], array $options = []) fanduel-casino-categories (GET /fanduel/casino/categories)
+ *   params: 'mi'|'on' $region
+ * @method mixed fanduelCasinoCategory(array $params = [], array $options = []) fanduel-casino-category (GET /fanduel/casino/category)
+ *   params: 'mi'|'on' $region, 'all-games'|'new'|'slots'|'double-your-bet-category'|'jackpots'|'daily-jackpots'|'hot-slots'|'classic-reels-category'|'bonus-buy-category'|'high-limit-category'|'spooky-slots-category'|'exclusives'|'pick-play'|'arcade'|'blackjack'|'baccarat'|'roulette'|'table'|'livecasino'|'online-casino-favorites'|'explore-videos'|'motorcity-favorites'|'fallsview-favourites-category'|'the-wolf-den-category'|'sports-central' $category, string $q, string $provider, string $badge, int $limit, int $offset
+ * @method mixed fanduelCasinoGame(array $params = [], array $options = []) fanduel-casino-game (GET /fanduel/casino/game)
+ *   params: 'mi'|'on' $region, string $game
+ * @method mixed fanduelRacingCarryoverPools(array $params = [], array $options = []) fanduel-racing-carryover-pools (GET /fanduel/racing/carryover-pools)
+ *   params: 'O'|'IC'|'SK'|'RO' $status, string $track, int $page, int $limit
+ * @method mixed fanduelRacingFilters(array $params = [], array $options = []) fanduel-racing-filters (GET /fanduel/racing/filters)
+ * @method mixed fanduelRacingHorse(array $params = [], array $options = []) fanduel-racing-horse (GET /fanduel/racing/horse)
+ *   params: string $id, int $page, int $limit
+ * @method mixed fanduelRacingPastRace(array $params = [], array $options = []) fanduel-racing-past-race (GET /fanduel/racing/past-race)
+ *   params: string $date, string $track, string $number
+ * @method mixed fanduelRacingPastRaces(array $params = [], array $options = []) fanduel-racing-past-races (GET /fanduel/racing/past-races)
+ *   params: string $date, string $track, int $page, int $limit
+ * @method mixed fanduelRacingPastTracks(array $params = [], array $options = []) fanduel-racing-past-tracks (GET /fanduel/racing/past-tracks)
+ *   params: string $date, string $track, int $page, int $limit
+ * @method mixed fanduelRacingRace(array $params = [], array $options = []) fanduel-racing-race (GET /fanduel/racing/race)
+ *   params: string $track, string $number, 'handicapping'|'timeform'|'pool_grids' $include
+ * @method mixed fanduelRacingRaces(array $params = [], array $options = []) fanduel-racing-races (GET /fanduel/racing/races)
+ *   params: string $track, string $country, string $exclude_country, 'T'|'H'|'Q'|'L' $race_type, 'O'|'IC'|'SK'|'RO' $status, bool $open, int $within_minutes, 'mtp'|'post_time'|'race_number' $sort, 'asc'|'desc' $order, int $page, int $limit
+ * @method mixed fanduelRacingResults(array $params = [], array $options = []) fanduel-racing-results (GET /fanduel/racing/results)
+ *   params: string $track, string $country, string $exclude_country, 'T'|'H'|'Q'|'L' $race_type, int $page, int $limit
+ * @method mixed fanduelRacingSearch(array $params = [], array $options = []) fanduel-racing-search (GET /fanduel/racing/search)
+ *   params: string $q, 'runner'|'jockey'|'trainer'|'owner' $type, 'name'|'last_event' $sort, 'asc'|'desc' $order, int $page, int $limit
+ * @method mixed fanduelRacingTrack(array $params = [], array $options = []) fanduel-racing-track (GET /fanduel/racing/track)
+ *   params: string $code
+ * @method mixed fanduelRacingTracks(array $params = [], array $options = []) fanduel-racing-tracks (GET /fanduel/racing/tracks)
+ *   params: string $country, string $exclude_country, 'T'|'H'|'Q'|'L' $race_type, string $code, bool $finished, bool $featured, 'name'|'mtp'|'wagerable_mtp'|'ivr' $sort, 'asc'|'desc' $order, int $page, int $limit
+ * @method mixed fanduelRacingWagerTypes(array $params = [], array $options = []) fanduel-racing-wager-types (GET /fanduel/racing/wager-types)
+ * @method mixed fanduelResearch(array $params = [], array $options = []) fanduel-research (GET /fanduel/research)
+ * @method mixed fanduelResearchArticle(array $params = [], array $options = []) fanduel-research-article (GET /fanduel/research/article)
+ *   params: string $article
+ * @method mixed fanduelResearchArticles(array $params = [], array $options = []) fanduel-research-articles (GET /fanduel/research/articles)
+ *   params: 'casino'|'nascar'|'ncaab'|'f1'|'ufc'|'boxing'|'ncaaf'|'womenssoccer'|'tv-and-podcast'|'nba'|'pga'|'tennis'|'nhl'|'mma'|'soccer'|'fanduel-sportsbook-promo-codes'|'sports-betting-101'|'horse-racing'|'wnba'|'predicts'|'mlb'|'canada'|'nfl' $sport, string $exclude_sport, string $sub_category, int $team, int $player, string $author, 'IMAGE'|'JWPLAYER' $hero_type, string $published_after, string $published_before, bool $hide_deprioritized, int $limit, string $cursor
+ * @method mixed fanduelResearchAuthor(array $params = [], array $options = []) fanduel-research-author (GET /fanduel/research/author)
+ *   params: string $author
+ * @method mixed fanduelResearchAuthors(array $params = [], array $options = []) fanduel-research-authors (GET /fanduel/research/authors)
+ *   params: 'casino'|'nascar'|'ncaab'|'f1'|'ufc'|'boxing'|'ncaaf'|'womenssoccer'|'tv-and-podcast'|'nba'|'pga'|'tennis'|'nhl'|'mma'|'soccer'|'fanduel-sportsbook-promo-codes'|'sports-betting-101'|'horse-racing'|'wnba'|'predicts'|'mlb'|'canada'|'nfl' $sport, int $limit, string $cursor
+ * @method mixed fanduelResearchFeaturedArticles(array $params = [], array $options = []) fanduel-research-featured-articles (GET /fanduel/research/featured-articles)
+ *   params: 'casino'|'nascar'|'ncaab'|'f1'|'ufc'|'boxing'|'ncaaf'|'womenssoccer'|'tv-and-podcast'|'nba'|'pga'|'tennis'|'nhl'|'mma'|'soccer'|'fanduel-sportsbook-promo-codes'|'sports-betting-101'|'horse-racing'|'wnba'|'predicts'|'mlb'|'canada'|'nfl' $sport
+ * @method mixed fanduelResearchFixtures(array $params = [], array $options = []) fanduel-research-fixtures (GET /fanduel/research/fixtures)
+ *   params: 'nba'|'nfl'|'nhl'|'mlb' $sport
+ * @method mixed fanduelResearchNflSchedule(array $params = [], array $options = []) fanduel-research-nfl-schedule (GET /fanduel/research/nfl-schedule)
+ *   params: int $week, 'PRE'|'REGULAR'|'POST' $season_type
+ * @method mixed fanduelResearchPlayerNews(array $params = [], array $options = []) fanduel-research-player-news (GET /fanduel/research/player-news)
+ *   params: 'nfl'|'nba'|'mlb'|'nhl' $sport, 'INJURY'|'RECAP'|'TRANSACTION'|'LINEUP'|'GAME_UPDATE'|'OUTLOOK' $news_type, int $team, int $player, 'G'|'F'|'C'|'W'|'D'|'QB'|'DB'|'DL'|'K'|'LB'|'OL'|'P'|'RB'|'TE'|'WR'|'IF'|'OF'|'DH' $position, bool $include_non_primary, int $limit, string $cursor
+ * @method mixed fanduelResearchQuickPicksDaily(array $params = [], array $options = []) fanduel-research-quick-picks-daily (GET /fanduel/research/podcasts/quick-picks-daily)
+ *   params: string $cursor
+ * @method mixed fanduelResearchProjectionSlates(array $params = [], array $options = []) fanduel-research-projection-slates (GET /fanduel/research/projection-slates)
+ *   params: 'mlb'|'nba'|'nfl'|'nhl'|'golf' $sport, string $date, int $week, int $season
+ * @method mixed fanduelResearchProjectionTables(array $params = [], array $options = []) fanduel-research-projection-tables (GET /fanduel/research/projection-tables)
+ *   params: 'mlb'|'nba'|'nfl'|'nhl'|'golf' $sport
+ * @method mixed fanduelResearchProjections(array $params = [], array $options = []) fanduel-research-projections (GET /fanduel/research/projections)
+ *   params: 'mlb'|'nba'|'nfl'|'nhl'|'golf' $sport, 'DAILY'|'WEEKLY'|'YEARLY'|'REMAINING'|'PPR'|'SEASON_STATS' $type, 'batters'|'pitchers'|'c'|'1b'|'2b'|'3b'|'ss'|'of'|'sp'|'rp'|'qb'|'rb'|'wr'|'te'|'flex'|'k'|'defense'|'all'|'pg'|'sg'|'guards'|'sf'|'pf'|'forwards'|'centers'|'skaters'|'goalies'|'wingers'|'d'|'idp' $position, 'TOTAL'|'PER_GAME' $scope, string $slate_id, string $event_id, string $date, int $week, int $season, int $page, int $limit
+ * @method mixed fanduelResearchSports(array $params = [], array $options = []) fanduel-research-sports (GET /fanduel/research/sports)
+ *   params: 'casino'|'nascar'|'ncaab'|'f1'|'ufc'|'boxing'|'ncaaf'|'womenssoccer'|'tv-and-podcast'|'nba'|'pga'|'tennis'|'nhl'|'mma'|'soccer'|'fanduel-sportsbook-promo-codes'|'sports-betting-101'|'horse-racing'|'wnba'|'predicts'|'mlb'|'canada'|'nfl' $sport
+ * @method mixed fanduelResearchSubCategories(array $params = [], array $options = []) fanduel-research-sub-categories (GET /fanduel/research/sub-categories)
+ * @method mixed fanduelSportsbookAutocomplete(array $params = [], array $options = []) fanduel-sportsbook-autocomplete (GET /fanduel/sportsbook/autocomplete)
+ *   params: string $q, int $limit
+ * @method mixed fanduelSportsbookBuilder(array $params = [], array $options = []) fanduel-sportsbook-builder (GET /fanduel/sportsbook/builder)
+ *   params: int $event_id, 'yourway'|'head-to-head'|'player-combos'|'bullseye'|'player-podium'|'or-bets' $experience, string $state
+ * @method mixed fanduelSportsbookBuilderEvents(array $params = [], array $options = []) fanduel-sportsbook-builder-events (GET /fanduel/sportsbook/builder/events)
+ *   params: 'yourway'|'head-to-head'|'player-combos'|'bullseye'|'player-podium'|'or-bets' $experience, string $state
+ * @method mixed fanduelSportsbookBuilderQuotes(array $params = [], array $options = []) fanduel-sportsbook-builder-quotes (GET /fanduel/sportsbook/builder/quotes)
+ *   params: int $ramp_event_id, array<string> $choice_id, string $state
+ * @method mixed fanduelSportsbookCompetition(array $params = [], array $options = []) fanduel-sportsbook-competition (GET /fanduel/sportsbook/competition)
+ *   params: '6423'|'1'|'7522'|'3'|'7511'|'7524'|'2'|'26420387'|'2593174'|'3503'|'6'|'5'|'4'|'8'|'1477'|'6422'|'468328'|'28608997'|'998917'|'4726642'|'10'|'2378961' $event_type_id, int $competition_id, 'ar'|'az'|'co'|'ct'|'dc'|'ia'|'il'|'in'|'ks'|'ky'|'la'|'ma'|'md'|'mi'|'mo'|'mr'|'nc'|'nj'|'ny'|'oh'|'on'|'pa'|'pr'|'tn'|'va'|'vt'|'wv'|'wy' $state, string $tab, string $market_type, bool $exclude_markets
+ * @method mixed fanduelSportsbookEvent(array $params = [], array $options = []) fanduel-sportsbook-event (GET /fanduel/sportsbook/event)
+ *   params: int $event_id, 'ar'|'az'|'co'|'ct'|'dc'|'ia'|'il'|'in'|'ks'|'ky'|'la'|'ma'|'md'|'mi'|'mo'|'mr'|'nc'|'nj'|'ny'|'oh'|'on'|'pa'|'pr'|'tn'|'va'|'vt'|'wv'|'wy' $state, string $tab, string $market_type
+ * @method mixed fanduelSportsbookEventBoxScore(array $params = [], array $options = []) fanduel-sportsbook-event-box-score (GET /fanduel/sportsbook/event/box-score)
+ *   params: int $event_id
+ * @method mixed fanduelSportsbookEventPlayByPlay(array $params = [], array $options = []) fanduel-sportsbook-event-play-by-play (GET /fanduel/sportsbook/event/play-by-play)
+ *   params: int $event_id, bool $current
+ * @method mixed fanduelSportsbookEventPlayers(array $params = [], array $options = []) fanduel-sportsbook-event-players (GET /fanduel/sportsbook/event/players)
+ *   params: int $event_id
+ * @method mixed fanduelSportsbookEventScore(array $params = [], array $options = []) fanduel-sportsbook-event-score (GET /fanduel/sportsbook/event/score)
+ *   params: int $event_id
+ * @method mixed fanduelSportsbookEventStats(array $params = [], array $options = []) fanduel-sportsbook-event-stats (GET /fanduel/sportsbook/event/stats)
+ *   params: int $event_id
+ * @method mixed fanduelSportsbookEventsStatus(array $params = [], array $options = []) fanduel-sportsbook-events-status (GET /fanduel/sportsbook/events/status)
+ *   params: array<string> $event_id, string $state
+ * @method mixed fanduelSportsbookHome(array $params = [], array $options = []) fanduel-sportsbook-home (GET /fanduel/sportsbook/home)
+ *   params: 'ar'|'az'|'co'|'ct'|'dc'|'ia'|'il'|'in'|'ks'|'ky'|'la'|'ma'|'md'|'mi'|'mo'|'mr'|'nc'|'nj'|'ny'|'oh'|'on'|'pa'|'pr'|'tn'|'va'|'vt'|'wv'|'wy' $state, string $tab, int $competition_id, string $market_type, bool $exclude_markets
+ * @method mixed fanduelSportsbookLeague(array $params = [], array $options = []) fanduel-sportsbook-league (GET /fanduel/sportsbook/league)
+ *   params: string $custom_page_id, 'ar'|'az'|'co'|'ct'|'dc'|'ia'|'il'|'in'|'ks'|'ky'|'la'|'ma'|'md'|'mi'|'mo'|'mr'|'nc'|'nj'|'ny'|'oh'|'on'|'pa'|'pr'|'tn'|'va'|'vt'|'wv'|'wy' $state, string $tab, int $competition_id, string $market_type, bool $exclude_markets
+ * @method mixed fanduelSportsbookLive(array $params = [], array $options = []) fanduel-sportsbook-live (GET /fanduel/sportsbook/live)
+ *   params: '6423'|'1'|'7522'|'3'|'7511'|'7524'|'2'|'26420387'|'2593174'|'3503'|'6'|'5'|'4'|'8'|'1477'|'6422'|'468328'|'28608997'|'998917'|'4726642'|'10'|'2378961' $event_type_id, 'ar'|'az'|'co'|'ct'|'dc'|'ia'|'il'|'in'|'ks'|'ky'|'la'|'ma'|'md'|'mi'|'mo'|'mr'|'nc'|'nj'|'ny'|'oh'|'on'|'pa'|'pr'|'tn'|'va'|'vt'|'wv'|'wy' $state, string $market_type, bool $exclude_markets
+ * @method mixed fanduelSportsbookLiveCount(array $params = [], array $options = []) fanduel-sportsbook-live-count (GET /fanduel/sportsbook/live-count)
+ *   params: string $state
+ * @method mixed fanduelSportsbookLiveData(array $params = [], array $options = []) fanduel-sportsbook-live-data (GET /fanduel/sportsbook/live-data)
+ *   params: string $event_id
+ * @method mixed fanduelSportsbookLiveScores(array $params = [], array $options = []) fanduel-sportsbook-live-scores (GET /fanduel/sportsbook/live-scores)
+ *   params: array<string> $event_id, string $state
+ * @method mixed fanduelSportsbookMarketPrices(array $params = [], array $options = []) fanduel-sportsbook-market-prices (GET /fanduel/sportsbook/market-prices)
+ *   params: string $market_id, 'ar'|'az'|'co'|'ct'|'dc'|'ia'|'il'|'in'|'ks'|'ky'|'la'|'ma'|'md'|'mi'|'mo'|'mr'|'nc'|'nj'|'ny'|'oh'|'on'|'pa'|'pr'|'tn'|'va'|'vt'|'wv'|'wy' $state
+ * @method mixed fanduelSportsbookParlays(array $params = [], array $options = []) fanduel-sportsbook-parlays (GET /fanduel/sportsbook/parlays)
+ *   params: 'popular'|'all'|'next-to-start'|'event' $view, int $event_id, 'PARLAY'|'SGP'|'SGP_PLUS' $type, '6423'|'1'|'7522'|'3'|'7511'|'7524'|'2'|'26420387'|'2593174'|'3503'|'6'|'5'|'4'|'8'|'1477'|'6422'|'468328'|'28608997'|'998917'|'4726642'|'10'|'2378961' $event_type_id, string $competition_id, float $min_odds, float $max_odds, 'ar'|'az'|'co'|'ct'|'dc'|'ia'|'il'|'in'|'ks'|'ky'|'la'|'ma'|'md'|'mi'|'mo'|'mr'|'nc'|'nj'|'ny'|'oh'|'on'|'pa'|'pr'|'tn'|'va'|'vt'|'wv'|'wy' $state
+ * @method mixed fanduelSportsbookPlayer(array $params = [], array $options = []) fanduel-sportsbook-player (GET /fanduel/sportsbook/player)
+ *   params: 'nfl'|'nba' $league, string $player
+ * @method mixed fanduelSportsbookPlayerNews(array $params = [], array $options = []) fanduel-sportsbook-player-news (GET /fanduel/sportsbook/player/news)
+ *   params: 'nfl'|'nba' $league, string $player, string $cursor, int $limit
+ * @method mixed fanduelSportsbookPlayerProps(array $params = [], array $options = []) fanduel-sportsbook-player-props (GET /fanduel/sportsbook/player/props)
+ *   params: 'nfl'|'nba' $league, string $player
+ * @method mixed fanduelSportsbookPlayerStats(array $params = [], array $options = []) fanduel-sportsbook-player-stats (GET /fanduel/sportsbook/player/stats)
+ *   params: 'nfl'|'nba' $league, string $player
+ * @method mixed fanduelSportsbookPlayers(array $params = [], array $options = []) fanduel-sportsbook-players (GET /fanduel/sportsbook/players)
+ *   params: 'nfl'|'nba' $league, string $q, int $limit, int $offset
+ * @method mixed fanduelSportsbookPromotions(array $params = [], array $options = []) fanduel-sportsbook-promotions (GET /fanduel/sportsbook/promotions)
+ *   params: 'home'|'league'|'sport' $context, string $custom_page_id, '6423'|'1'|'7522'|'3'|'7511'|'7524'|'2'|'26420387'|'2593174'|'3503'|'6'|'5'|'4'|'8'|'1477'|'6422'|'468328'|'28608997'|'998917'|'4726642'|'10'|'2378961' $event_type_id, string $tag, 'ar'|'az'|'co'|'ct'|'dc'|'ia'|'il'|'in'|'ks'|'ky'|'la'|'ma'|'md'|'mi'|'mo'|'mr'|'nc'|'nj'|'ny'|'oh'|'on'|'pa'|'pr'|'tn'|'va'|'vt'|'wv'|'wy' $state
+ * @method mixed fanduelSportsbookSchedule(array $params = [], array $options = []) fanduel-sportsbook-schedule (GET /fanduel/sportsbook/schedule)
+ *   params: 'nfl'|'nba'|'mlb'|'college-football' $league, string $week, string $date, string $end_date
+ * @method mixed fanduelSportsbookSearch(array $params = [], array $options = []) fanduel-sportsbook-search (GET /fanduel/sportsbook/search)
+ *   params: string $q, 'all'|'event'|'competition' $type, '6423'|'1'|'7522'|'3'|'7511'|'7524'|'2'|'26420387'|'2593174'|'3503'|'6'|'5'|'4'|'8'|'1477'|'6422'|'468328'|'28608997'|'998917'|'4726642'|'10'|'2378961' $event_type_id, int $limit, 'ar'|'az'|'co'|'ct'|'dc'|'ia'|'il'|'in'|'ks'|'ky'|'la'|'ma'|'md'|'mi'|'mo'|'mr'|'nc'|'nj'|'ny'|'oh'|'on'|'pa'|'pr'|'tn'|'va'|'vt'|'wv'|'wy' $state
+ * @method mixed fanduelSportsbookSearchTabs(array $params = [], array $options = []) fanduel-sportsbook-search-tabs (GET /fanduel/sportsbook/search/tabs)
+ *   params: string $q, string $tab, string $pill, int $start_index, string $timezone, string $state
+ * @method mixed fanduelSportsbookSport(array $params = [], array $options = []) fanduel-sportsbook-sport (GET /fanduel/sportsbook/sport)
+ *   params: '6423'|'1'|'7522'|'3'|'7511'|'7524'|'2'|'26420387'|'2593174'|'3503'|'6'|'5'|'4'|'8'|'1477'|'6422'|'468328'|'28608997'|'998917'|'4726642'|'10'|'2378961' $event_type_id, 'ar'|'az'|'co'|'ct'|'dc'|'ia'|'il'|'in'|'ks'|'ky'|'la'|'ma'|'md'|'mi'|'mo'|'mr'|'nc'|'nj'|'ny'|'oh'|'on'|'pa'|'pr'|'tn'|'va'|'vt'|'wv'|'wy' $state, string $tab, int $competition_id, string $market_type, bool $exclude_markets
+ * @method mixed fanduelSportsbookSports(array $params = [], array $options = []) fanduel-sportsbook-sports (GET /fanduel/sportsbook/sports)
+ *   params: 'ar'|'az'|'co'|'ct'|'dc'|'ia'|'il'|'in'|'ks'|'ky'|'la'|'ma'|'md'|'mi'|'mo'|'mr'|'nc'|'nj'|'ny'|'oh'|'on'|'pa'|'pr'|'tn'|'va'|'vt'|'wv'|'wy' $state
+ * @method mixed fanduelSportsbookStandings(array $params = [], array $options = []) fanduel-sportsbook-standings (GET /fanduel/sportsbook/standings)
+ *   params: 'nfl'|'nba'|'mlb'|'college-football' $league
+ * @method mixed fanduelSportsbookStats(array $params = [], array $options = []) fanduel-sportsbook-stats (GET /fanduel/sportsbook/stats)
+ *   params: int $competition_id
+ * @method mixed fanduelSportsbookTeamDepthChart(array $params = [], array $options = []) fanduel-sportsbook-team-depth-chart (GET /fanduel/sportsbook/team/depth-chart)
+ *   params: 'nfl'|'nba'|'mlb'|'college-football'|'college-basketball' $league, string $team
+ * @method mixed fanduelSportsbookTeamNews(array $params = [], array $options = []) fanduel-sportsbook-team-news (GET /fanduel/sportsbook/team/news)
+ *   params: 'nfl'|'nba'|'mlb'|'college-football'|'college-basketball' $league, string $team, string $cursor, int $limit
+ * @method mixed fanduelSportsbookTeamOdds(array $params = [], array $options = []) fanduel-sportsbook-team-odds (GET /fanduel/sportsbook/team/odds)
+ *   params: 'nfl'|'nba'|'mlb'|'college-football'|'college-basketball' $league, string $team
+ * @method mixed fanduelSportsbookTeamRoster(array $params = [], array $options = []) fanduel-sportsbook-team-roster (GET /fanduel/sportsbook/team/roster)
+ *   params: 'nfl'|'nba'|'mlb'|'college-football'|'college-basketball' $league, string $team, bool $injured_only, string $status, string $position
+ * @method mixed fanduelSportsbookTeamSchedule(array $params = [], array $options = []) fanduel-sportsbook-team-schedule (GET /fanduel/sportsbook/team/schedule)
+ *   params: 'nfl'|'nba'|'mlb'|'college-football'|'college-basketball' $league, string $team
+ * @method mixed fanduelSportsbookTeamStats(array $params = [], array $options = []) fanduel-sportsbook-team-stats (GET /fanduel/sportsbook/team/stats)
+ *   params: 'nfl'|'nba'|'mlb'|'college-football'|'college-basketball' $league, string $team
+ * @method mixed fanduelSportsbookTeams(array $params = [], array $options = []) fanduel-sportsbook-teams (GET /fanduel/sportsbook/teams)
+ *   params: 'nfl'|'nba'|'mlb'|'college-football'|'college-basketball' $league
+ * @method mixed fanduelSportsbookTrending(array $params = [], array $options = []) fanduel-sportsbook-trending (GET /fanduel/sportsbook/trending)
+ *   params: bool $enriched
+ */
+abstract class FanDuelGroup {}
 
 /**
  * @method mixed categories(array $params = [], array $options = []) farfetch-categories (GET /farfetch/categories)
@@ -2705,6 +2890,64 @@ abstract class FreeMalaysiaTodayGroup {}
  *   params: string $q, int $page, 'relevance'|'date' $sort, 'now-24h'|'now-7d'|'now-30d'|'now-1y' $date_range
  */
 abstract class FtGroup {}
+
+/**
+ * @method mixed fussballdeAmateurStats(array $params = [], array $options = []) fussballde-amateur-stats (GET /fussballde/amateur-stats)
+ *   params: '1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'10' $stat, string $season, '1'|'3'|'6'|'8'|'4'|'5'|'7'|'9' $team_type, '89'|'32'|'31'|'66'|'61'|'02'|'03'|'34'|'62'|'23'|'22'|'01'|'41'|'43'|'63'|'64'|'04'|'33'|'42'|'65'|'21'|'35' $federation_id, int $limit, int $offset
+ * @method mixed fussballdeClub(array $params = [], array $options = []) fussballde-club (GET /fussballde/club)
+ *   params: string $club_id, string $season, '1'|'8'|'3'|'7'|'6'|'11'|'2'|'21'|'9' $competition_kind
+ * @method mixed fussballdeClubMatches(array $params = [], array $options = []) fussballde-club-matches (GET /fussballde/club-matches)
+ *   params: string $club_id, 'all'|'next'|'previous' $kind, string $date_from, string $date_to, '1'|'8'|'3'|'7'|'6'|'11'|'2'|'21'|'9' $competition_kind, int $limit, int $offset
+ * @method mixed fussballdeClubSearch(array $params = [], array $options = []) fussballde-club-search (GET /fussballde/club-search)
+ *   params: string $text, string $place, int $limit, int $offset
+ * @method mixed fussballdeCompetitionOptions(array $params = [], array $options = []) fussballde-competition-options (GET /fussballde/competition-options)
+ *   params: '89'|'32'|'31'|'66'|'61'|'02'|'03'|'34'|'62'|'23'|'22'|'01'|'41'|'43'|'63'|'64'|'04'|'33'|'42'|'65'|'21'|'35' $federation_id, string $season, '1'|'308'|'300'|'70'|'305'|'-300'|'-305'|'11'|'2'|'-2'|'12' $competition_type
+ * @method mixed fussballdeCompetitions(array $params = [], array $options = []) fussballde-competitions (GET /fussballde/competitions)
+ *   params: '89'|'32'|'31'|'66'|'61'|'02'|'03'|'34'|'62'|'23'|'22'|'01'|'41'|'43'|'63'|'64'|'04'|'33'|'42'|'65'|'21'|'35' $federation_id, string $season, '1'|'308'|'300'|'70'|'305'|'-300'|'-305'|'11'|'2'|'-2'|'12' $competition_type, string $team_type, string $league, string $area
+ * @method mixed fussballdeFederation(array $params = [], array $options = []) fussballde-federation (GET /fussballde/federation)
+ *   params: '89'|'32'|'31'|'66'|'61'|'02'|'03'|'34'|'62'|'23'|'22'|'01'|'41'|'43'|'63'|'64'|'04'|'33'|'42'|'65'|'21'|'35' $federation_id, 'nord'|'nordost'|'sued'|'suedwest'|'west' $regional_association
+ * @method mixed fussballdeFilters(array $params = [], array $options = []) fussballde-filters (GET /fussballde/filters)
+ *   params: '89'|'32'|'31'|'66'|'61'|'02'|'03'|'34'|'62'|'23'|'22'|'01'|'41'|'43'|'63'|'64'|'04'|'33'|'42'|'65'|'21'|'35' $federation_id
+ * @method mixed fussballdeMatch(array $params = [], array $options = []) fussballde-match (GET /fussballde/match)
+ *   params: string $match_id
+ * @method mixed fussballdeMatchCalendar(array $params = [], array $options = []) fussballde-match-calendar (GET /fussballde/match-calendar)
+ *   params: string $postal_code, string $date_from, string $date_to, string $team_types, '1'|'8'|'3'|'7'|'6'|'11'|'2'|'21'|'9' $competition_kind
+ * @method mixed fussballdeMatchComparison(array $params = [], array $options = []) fussballde-match-comparison (GET /fussballde/match-comparison)
+ *   params: string $match_id, 'history'|'meetings'|'season' $view
+ * @method mixed fussballdeMatchPlan(array $params = [], array $options = []) fussballde-match-plan (GET /fussballde/match-plan)
+ *   params: string $competition_id, string $team_id, string $date_from, string $date_to
+ * @method mixed fussballdeMatchday(array $params = [], array $options = []) fussballde-matchday (GET /fussballde/matchday)
+ *   params: string $competition_id, string $date, int $matchday
+ * @method mixed fussballdeNationalTopScorers(array $params = [], array $options = []) fussballde-national-top-scorers (GET /fussballde/national-top-scorers)
+ *   params: 'men'|'women' $team_type
+ * @method mixed fussballdeNews(array $params = [], array $options = []) fussballde-news (GET /fussballde/news)
+ *   params: 'all_news'|'magazin'|'regionalliga'|'verbaende'|'service'|'aktionen'|'helpcenter' $stream, 'nord'|'nordost'|'west'|'suedwest'|'bayern' $regional_league, 'allgemeines'|'app'|'liveticker'|'mannschaftsseite'|'profile'|'registrierung'|'training_service'|'widgets' $help_category, int $limit, int $offset
+ * @method mixed fussballdeNewsArticle(array $params = [], array $options = []) fussballde-news-article (GET /fussballde/news-article)
+ *   params: string $article_id
+ * @method mixed fussballdeNewsSearch(array $params = [], array $options = []) fussballde-news-search (GET /fussballde/news-search)
+ *   params: string $q, 'news'|'pro_news' $channel, int $limit, int $offset
+ * @method mixed fussballdePlayer(array $params = [], array $options = []) fussballde-player (GET /fussballde/player)
+ *   params: string $player_id
+ * @method mixed fussballdePlayerMatches(array $params = [], array $options = []) fussballde-player-matches (GET /fussballde/player-matches)
+ *   params: string $player_id, string $season, string $team_id
+ * @method mixed fussballdePlayerSearch(array $params = [], array $options = []) fussballde-player-search (GET /fussballde/player-search)
+ *   params: string $first_name, string $last_name, string $place, int $limit, int $offset
+ * @method mixed fussballdePositionHistory(array $params = [], array $options = []) fussballde-position-history (GET /fussballde/position-history)
+ *   params: string $competition_id
+ * @method mixed fussballdePostalCodes(array $params = [], array $options = []) fussballde-postal-codes (GET /fussballde/postal-codes)
+ *   params: string $q
+ * @method mixed fussballdeTable(array $params = [], array $options = []) fussballde-table (GET /fussballde/table)
+ *   params: string $competition_id, 'overall'|'home_away'|'rounds'|'fairness'|'cross' $view, int $matchday
+ * @method mixed fussballdeTeam(array $params = [], array $options = []) fussballde-team (GET /fussballde/team)
+ *   params: string $team_id
+ * @method mixed fussballdeTeamMatches(array $params = [], array $options = []) fussballde-team-matches (GET /fussballde/team-matches)
+ *   params: string $team_id, 'all'|'next'|'previous'|'wins'|'draws'|'losses' $kind, string $date_from, string $date_to, '1'|'8'|'3'|'7'|'6'|'11'|'2'|'21'|'9' $competition_kind, int $limit, int $offset
+ * @method mixed fussballdeTeamSquad(array $params = [], array $options = []) fussballde-team-squad (GET /fussballde/team-squad)
+ *   params: string $team_id, string $season, 'squad'|'arrivals'|'departures' $kind
+ * @method mixed fussballdeTopScorers(array $params = [], array $options = []) fussballde-top-scorers (GET /fussballde/top-scorers)
+ *   params: string $competition_id, int $limit, int $offset
+ */
+abstract class FussballDeGroup {}
 
 /**
  * @method mixed gamerantArticle(array $params = [], array $options = []) gamerant-article (GET /gamerant/article)
@@ -3623,12 +3866,16 @@ abstract class PhilippineDailyInquirerGroup {}
 abstract class InstacartGroup {}
 
 /**
+ * @method mixed comments(array $params = [], array $options = []) instagram-comments (GET /instagram/post/comments)
+ *   params: string $url, string $max_id
  * @method mixed post(array $params = [], array $options = []) instagram-post (GET /instagram/post/{id}/{post_id})
  *   params: string $id, string $post_id
  * @method mixed profile(array $params = [], array $options = []) instagram-profile (GET /instagram/profile/{username})
  *   params: string $username
  * @method mixed reels(array $params = [], array $options = []) instagram-reels (GET /instagram/reels/{id})
  *   params: string $id, string $max_id
+ * @method mixed userPosts(array $params = [], array $options = []) instagram-user-posts (GET /instagram/user/{username}/posts)
+ *   params: string $username, string $max_id
  */
 abstract class InstagramGroup {}
 
@@ -3802,6 +4049,19 @@ abstract class JimmyJohnsGroup {}
  *   params: string $tenant, string $datacenter, string $site, string $path
  */
 abstract class JobsGroup {}
+
+/**
+ * @method mixed categories(array $params = [], array $options = []) jumia-categories (GET /jumia/categories)
+ *   params: 'ci'|'eg'|'ke'|'ma'|'ng'|'sn' $country, string $category
+ * @method mixed category(array $params = [], array $options = []) jumia-category (GET /jumia/category)
+ *   params: 'ci'|'eg'|'ke'|'ma'|'ng'|'sn' $country, string $category, int $page
+ * @method mixed countries(array $params = [], array $options = []) jumia-countries (GET /jumia/countries)
+ * @method mixed product(array $params = [], array $options = []) jumia-product (GET /jumia/product)
+ *   params: string $url
+ * @method mixed search(array $params = [], array $options = []) jumia-search (GET /jumia/search)
+ *   params: 'ci'|'eg'|'ke'|'ma'|'ng'|'sn' $country, string $q, int $page
+ */
+abstract class JumiaGroup {}
 
 /**
  * @method mixed justeatRestaurant(array $params = [], array $options = []) justeat-restaurant (GET /justeat/restaurant)
@@ -5784,6 +6044,20 @@ abstract class RawStoryGroup {}
 abstract class RebagGroup {}
 
 /**
+ * @method mixed archiveCommentsIds(array $params = [], array $options = []) reddit-archive-comments-ids (GET /reddit/archive/comments/ids)
+ *   params: string $ids
+ * @method mixed archiveCommentsSearch(array $params = [], array $options = []) reddit-archive-comments-search (GET /reddit/archive/comments/search)
+ *   params: string $author, string $subreddit, string $query, string $link_id, string $parent_id, string $created_after, string $created_before, 'asc'|'desc' $sort, int $limit
+ * @method mixed archiveCommentsTree(array $params = [], array $options = []) reddit-archive-comments-tree (GET /reddit/archive/comments/{id}/tree)
+ *   params: string $id, string $parent_id, int $limit, int $start_breadth, int $start_depth
+ * @method mixed archivePostsIds(array $params = [], array $options = []) reddit-archive-posts-ids (GET /reddit/archive/posts/ids)
+ *   params: string $ids
+ * @method mixed archivePostsSearch(array $params = [], array $options = []) reddit-archive-posts-search (GET /reddit/archive/posts/search)
+ *   params: string $query, string $author, string $subreddit, string $url, bool $url_exact, string $created_after, string $created_before, 'asc'|'desc' $sort, int $limit
+ * @method mixed archiveSubredditsSearch(array $params = [], array $options = []) reddit-archive-subreddits-search (GET /reddit/archive/subreddits/search)
+ *   params: string $query, int $min_subscribers, int $max_subscribers, bool $over_18, 'created_utc'|'subscribers'|'subreddit' $sort_by, 'asc'|'desc' $sort, int $limit
+ * @method mixed archiveTimeSeries(array $params = [], array $options = []) reddit-archive-time-series (GET /reddit/archive/time-series)
+ *   params: 'posts_count'|'comments_count'|'posts_score_sum'|'comments_score_sum'|'posts_retrieval_delay_seconds_sum'|'comments_retrieval_delay_seconds_sum'|'subreddit_subscribers' $metric, string $subreddit, 'year'|'quarter'|'month'|'week'|'day'|'hour'|'minute' $precision, string $created_after, string $created_before
  * @method mixed comments(array $params = [], array $options = []) reddit-comments (GET /reddit/comments/{id})
  *   params: string $id, 'confidence'|'top'|'new'|'controversial'|'old'|'qa' $sort, int $limit, int $depth, bool $include_metrics
  * @method mixed domainPosts(array $params = [], array $options = []) reddit-domain-posts (GET /reddit/domain/{domain}/posts)
@@ -6272,12 +6546,17 @@ abstract class SfgateGroup {}
 abstract class ShakeShackGroup {}
 
 /**
+ * @method mixed brands(array $params = [], array $options = []) shein-brands (GET /shein/brands)
+ * @method mixed categories(array $params = [], array $options = []) shein-categories (GET /shein/categories)
  * @method mixed categoryFilters(array $params = [], array $options = []) shein-category-filters (GET /shein/category/filters)
  *   params: string $cat_id
  * @method mixed categoryGoods(array $params = [], array $options = []) shein-category-goods (GET /shein/category/goods)
  *   params: string $cat_id, int $page, int $page_size, string $sort
  * @method mixed categoryNav(array $params = [], array $options = []) shein-category-nav (GET /shein/category/nav)
  *   params: string $cat_id
+ * @method mixed dealsProducts(array $params = [], array $options = []) shein-deals-products (GET /shein/deals/products)
+ *   params: int $page, int $page_size
+ * @method mixed dealsTabs(array $params = [], array $options = []) shein-deals-tabs (GET /shein/deals/tabs)
  * @method mixed productsAggregationFilters(array $params = [], array $options = []) shein-products-aggregation-filters (POST /shein/products/aggregation-filters)
  *   params: string $keyword, string $cat_id
  * @method mixed productsDetail(array $params = [], array $options = []) shein-products-detail (GET /shein/products/detail)
@@ -6288,6 +6567,12 @@ abstract class ShakeShackGroup {}
  *   params: string $word
  * @method mixed searchKeywords(array $params = [], array $options = []) shein-search-keywords (POST /shein/search/keywords)
  *   params: string $scene, string $word_type
+ * @method mixed store(array $params = [], array $options = []) shein-store (GET /shein/store)
+ *   params: string $store_code
+ * @method mixed storeProducts(array $params = [], array $options = []) shein-store-products (GET /shein/store/products)
+ *   params: string $store_code, string $category_id, int $page, int $page_size
+ * @method mixed trendingCategories(array $params = [], array $options = []) shein-trending-categories (GET /shein/trending/categories)
+ * @method mixed trendingFilters(array $params = [], array $options = []) shein-trending-filters (GET /shein/trending/filters)
  */
 abstract class SheinGroup {}
 
@@ -7604,12 +7889,20 @@ abstract class TiffanyCoGroup {}
  * @method mixed challengeList(array $params = [], array $options = []) tiktok-challenge-list (GET /tiktok/hashtags)
  *   params: string $id, int $cursor
  * @method mixed mobileAnchorList(array $params = [], array $options = []) tiktok-mobile-anchor-list (GET /tiktok/mobile/anchor/list)
+ * @method mixed mobileCollectionDetail(array $params = [], array $options = []) tiktok-mobile-collection-detail (GET /tiktok/mobile/collection/detail)
+ *   params: string $collection_id
+ * @method mixed mobileCollectionList(array $params = [], array $options = []) tiktok-mobile-collection-list (GET /tiktok/mobile/collection/list)
+ *   params: string $user_id, int $cursor, int $count
+ * @method mixed mobileCollectionVideos(array $params = [], array $options = []) tiktok-mobile-collection-videos (GET /tiktok/mobile/collection/videos)
+ *   params: string $collection_id, int $cursor, int $count
  * @method mixed mobileCommentReplies(array $params = [], array $options = []) tiktok-mobile-comment-replies (GET /tiktok/mobile/comment/replies)
  *   params: string $aweme_id, string $comment_id, int $cursor, int $count
  * @method mixed mobileComments(array $params = [], array $options = []) tiktok-mobile-comments (GET /tiktok/mobile/comments)
  *   params: string $aweme_id, int $cursor, int $count
  * @method mixed mobileFeed(array $params = [], array $options = []) tiktok-mobile-feed (GET /tiktok/mobile/feed)
  *   params: int $count, int $cursor
+ * @method mixed mobileFeedOffline(array $params = [], array $options = []) tiktok-mobile-feed-offline (GET /tiktok/mobile/feed/offline)
+ *   params: int $pull_type, int $count
  * @method mixed mobileFeedPost(array $params = [], array $options = []) tiktok-mobile-feed-post (GET /tiktok/mobile/feed/post)
  * @method mixed mobileHashtag(array $params = [], array $options = []) tiktok-mobile-hashtag (GET /tiktok/mobile/hashtag)
  *   params: string $name
@@ -7619,38 +7912,101 @@ abstract class TiffanyCoGroup {}
  *   params: string $keyword, int $count, int $cursor
  * @method mixed mobileLiveEffects(array $params = [], array $options = []) tiktok-mobile-live-effects (GET /tiktok/mobile/live/effects)
  * @method mixed mobileLiveGifts(array $params = [], array $options = []) tiktok-mobile-live-gifts (GET /tiktok/mobile/live/gifts)
+ * @method mixed mobileLiveHashtags(array $params = [], array $options = []) tiktok-mobile-live-hashtags (GET /tiktok/mobile/live/hashtags)
+ * @method mixed mobileLiveRoom(array $params = [], array $options = []) tiktok-mobile-live-room (GET /tiktok/mobile/live/room)
+ *   params: string $room_id
+ * @method mixed mobileLiveRoomByUser(array $params = [], array $options = []) tiktok-mobile-live-room-by-user (GET /tiktok/mobile/live/room-by-user)
+ *   params: string $user_id
  * @method mixed mobileLiveSearch(array $params = [], array $options = []) tiktok-mobile-live-search (GET /tiktok/mobile/live/search)
  *   params: string $keyword, int $count
+ * @method mixed mobileLiveTabs(array $params = [], array $options = []) tiktok-mobile-live-tabs (GET /tiktok/mobile/live/tabs)
  * @method mixed mobileMusicBeats(array $params = [], array $options = []) tiktok-mobile-music-beats (GET /tiktok/mobile/music/beats)
  *   params: int $count
+ * @method mixed mobileMusicChart(array $params = [], array $options = []) tiktok-mobile-music-chart (GET /tiktok/mobile/music/chart)
+ *   params: string $chart_region, int $cursor, int $count
+ * @method mixed mobileMusicChoices(array $params = [], array $options = []) tiktok-mobile-music-choices (GET /tiktok/mobile/music/choices)
+ * @method mixed mobileMusicCollectionList(array $params = [], array $options = []) tiktok-mobile-music-collection-list (GET /tiktok/mobile/music/collection-list)
+ *   params: int $count, int $cursor
  * @method mixed mobileMusicCollections(array $params = [], array $options = []) tiktok-mobile-music-collections (GET /tiktok/mobile/music/collections)
  *   params: int $count, int $cursor
+ * @method mixed mobileMusicDetail(array $params = [], array $options = []) tiktok-mobile-music-detail (GET /tiktok/mobile/music/detail)
+ *   params: string $music_id
  * @method mixed mobileMusicPick(array $params = [], array $options = []) tiktok-mobile-music-pick (GET /tiktok/mobile/music/pick)
  *   params: int $count, int $cursor
  * @method mixed mobileMusicPosts(array $params = [], array $options = []) tiktok-mobile-music-posts (GET /tiktok/mobile/music/posts)
- *   params: string $music_id, int $count, int $cursor
+ *   params: string $music_id, 'fresh'|'popular' $sort, int $count, int $cursor
  * @method mixed mobileMusicRelated(array $params = [], array $options = []) tiktok-mobile-music-related (GET /tiktok/mobile/music/related)
  *   params: string $aweme_id, int $count, int $cursor
  * @method mixed mobileMusicTrending(array $params = [], array $options = []) tiktok-mobile-music-trending (GET /tiktok/mobile/music/trending)
  *   params: int $count, int $cursor
+ * @method mixed mobileMvVideos(array $params = [], array $options = []) tiktok-mobile-mv-videos (GET /tiktok/mobile/mv/videos)
+ *   params: string $mv_id, int $cursor
+ * @method mixed mobilePlaceDetail(array $params = [], array $options = []) tiktok-mobile-place-detail (GET /tiktok/mobile/place/detail)
+ *   params: string $poi_id, int $review_count, int $review_cursor, int $merged_count, int $video_cursor, string $enter_from
+ * @method mixed mobilePlaceInfo(array $params = [], array $options = []) tiktok-mobile-place-info (GET /tiktok/mobile/place/info)
+ *   params: string $poi_id
+ * @method mixed mobilePlaceMedia(array $params = [], array $options = []) tiktok-mobile-place-media (GET /tiktok/mobile/place/media)
+ *   params: string $poi_id, string $cursor, int $size, string $data_version
+ * @method mixed mobilePlacePhotos(array $params = [], array $options = []) tiktok-mobile-place-photos (GET /tiktok/mobile/place/photos)
+ *   params: string $poi_id
+ * @method mixed mobilePlaceReviews(array $params = [], array $options = []) tiktok-mobile-place-reviews (GET /tiktok/mobile/place/reviews)
+ *   params: string $poi_id, int $cursor, int $count, '1'|'2' $sort_type
+ * @method mixed mobilePlaceVideos(array $params = [], array $options = []) tiktok-mobile-place-videos (GET /tiktok/mobile/place/videos)
+ *   params: string $poi_id, int $count, int $cursor
+ * @method mixed mobilePlaylistDetail(array $params = [], array $options = []) tiktok-mobile-playlist-detail (GET /tiktok/mobile/playlist/detail)
+ *   params: string $mix_id, string $user_id, string $sec_user_id
+ * @method mixed mobilePlaylistList(array $params = [], array $options = []) tiktok-mobile-playlist-list (GET /tiktok/mobile/playlist/list)
+ *   params: string $user_id, string $sec_user_id, int $cursor
+ * @method mixed mobilePlaylistVideos(array $params = [], array $options = []) tiktok-mobile-playlist-videos (GET /tiktok/mobile/playlist/videos)
+ *   params: string $mix_id, int $cursor, int $count
  * @method mixed mobileSearch(array $params = [], array $options = []) tiktok-mobile-search (GET /tiktok/mobile/search)
- *   params: string $keyword, int $count, int $offset
+ *   params: string $keyword, int $count, int $offset, string $search_id
+ * @method mixed mobileSearchEffects(array $params = [], array $options = []) tiktok-mobile-search-effects (GET /tiktok/mobile/search/effects)
+ *   params: string $keyword, int $count, int $cursor, string $search_id
+ * @method mixed mobileSearchHashtags(array $params = [], array $options = []) tiktok-mobile-search-hashtags (GET /tiktok/mobile/search/hashtags)
+ *   params: string $keyword, int $count
  * @method mixed mobileSearchMusic(array $params = [], array $options = []) tiktok-mobile-search-music (GET /tiktok/mobile/search/music)
  *   params: string $keyword, int $count, int $offset
+ * @method mixed mobileSearchPhotos(array $params = [], array $options = []) tiktok-mobile-search-photos (GET /tiktok/mobile/search/photos)
+ *   params: string $keyword, int $count, int $offset, int $sort_type, int $publish_time, string $search_source
  * @method mixed mobileSearchPlace(array $params = [], array $options = []) tiktok-mobile-search-place (GET /tiktok/mobile/search/place)
  *   params: string $keyword, int $count
  * @method mixed mobileSearchPreInfo(array $params = [], array $options = []) tiktok-mobile-search-pre-info (GET /tiktok/mobile/search/pre-info)
  *   params: string $keyword, int $count
+ * @method mixed mobileSearchStream(array $params = [], array $options = []) tiktok-mobile-search-stream (GET /tiktok/mobile/search/stream)
+ *   params: string $keyword, int $count, int $offset, string $search_source, '0'|'1'|'3' $sort_type, int $publish_time, string $filter_selected
  * @method mixed mobileSearchSug(array $params = [], array $options = []) tiktok-mobile-search-sug (GET /tiktok/mobile/search/sug)
  *   params: string $keyword, int $count
  * @method mixed mobileSearchTabs(array $params = [], array $options = []) tiktok-mobile-search-tabs (GET /tiktok/mobile/search/tabs)
  *   params: string $keyword
  * @method mixed mobileSearchUser(array $params = [], array $options = []) tiktok-mobile-search-user (GET /tiktok/mobile/search/user)
  *   params: string $keyword, int $count, int $cursor
+ * @method mixed mobileSearchVideos(array $params = [], array $options = []) tiktok-mobile-search-videos (GET /tiktok/mobile/search/videos)
+ *   params: string $keyword, int $count, int $offset, '0'|'1'|'3' $sort_type, int $publish_time, string $search_source, string $search_id
+ * @method mixed mobileTranslationDescription(array $params = [], array $options = []) tiktok-mobile-translation-description (GET /tiktok/mobile/translation/description)
+ *   params: string $item_id, string $target_lang
  * @method mixed mobileTrendingCategories(array $params = [], array $options = []) tiktok-mobile-trending-categories (GET /tiktok/mobile/trending/categories)
  *   params: int $count, int $cursor
  * @method mixed mobileTrendingEffects(array $params = [], array $options = []) tiktok-mobile-trending-effects (GET /tiktok/mobile/trending/effects)
  *   params: int $count, int $cursor
+ * @method mixed mobileUserFollowers(array $params = [], array $options = []) tiktok-mobile-user-followers (GET /tiktok/mobile/user/followers)
+ *   params: string $user_id, int $count, int $cursor
+ * @method mixed mobileUserFollowing(array $params = [], array $options = []) tiktok-mobile-user-following (GET /tiktok/mobile/user/following)
+ *   params: string $user_id, int $count, int $cursor
+ * @method mixed mobileUserOriginalEffects(array $params = [], array $options = []) tiktok-mobile-user-original-effects (GET /tiktok/mobile/user/original-effects)
+ *   params: string $user_id, int $cursor, int $count
+ * @method mixed mobileUserOriginalMusic(array $params = [], array $options = []) tiktok-mobile-user-original-music (GET /tiktok/mobile/user/original-music)
+ *   params: string $user_id, int $cursor, int $count
+ * @method mixed mobileUserPosts(array $params = [], array $options = []) tiktok-mobile-user-posts (GET /tiktok/mobile/user/posts)
+ *   params: string $user_id, string $sec_user_id, int $count, int $cursor, int $sort_type
+ * @method mixed mobileUserProfile(array $params = [], array $options = []) tiktok-mobile-user-profile (GET /tiktok/mobile/user/profile)
+ *   params: string $user_id, string $sec_user_id
+ * @method mixed mobileUserRecommendations(array $params = [], array $options = []) tiktok-mobile-user-recommendations (GET /tiktok/mobile/user/recommendations)
+ *   params: int $count
+ * @method mixed mobileVideoDetail(array $params = [], array $options = []) tiktok-mobile-video-detail (GET /tiktok/mobile/video/detail)
+ *   params: string $aweme_id
+ * @method mixed mobileVideoSubtitles(array $params = [], array $options = []) tiktok-mobile-video-subtitles (GET /tiktok/mobile/video/subtitles)
+ *   params: string $video_id, string $language
  * @method mixed popularTrendCountryIndustryMeta(array $params = [], array $options = []) tiktok-popular-trend-country-industry-meta (GET /tiktok/popular-trend/country-industry-meta)
  * @method mixed post(array $params = [], array $options = []) tiktok-post (GET /tiktok/post/{id})
  *   params: string $id
@@ -8599,10 +8955,12 @@ abstract class YooxGroup {}
  * @method mixed channelSearch(array $params = [], array $options = []) youtube-channel-search (GET /youtube/channel/{id}/search)
  *   params: string $id, string $q, string $continuation_token
  * @method mixed channelShorts(array $params = [], array $options = []) youtube-channel-shorts (GET /youtube/channel/{id}/shorts)
- *   params: string $id
+ *   params: string $id, string $continuation_token
  * @method mixed channelVideos(array $params = [], array $options = []) youtube-channel-videos (GET /youtube/channel/{id}/videos)
  *   params: string $id, string $continuation_token
  * @method mixed comments(array $params = [], array $options = []) youtube-comments (GET /youtube/comments/{id})
+ *   params: string $id, string $continuation_token
+ * @method mixed commentReplies(array $params = [], array $options = []) youtube-comment-replies (GET /youtube/comments/{id}/replies)
  *   params: string $id, string $continuation_token
  * @method mixed playlist(array $params = [], array $options = []) youtube-playlist (GET /youtube/playlist/{id})
  *   params: string $id, string $continuation_token
@@ -8823,6 +9181,11 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\DiscogsGroup $discogs
  * @property-read \Crawlora\Generated\DominosGroup $dominos
  * @property-read \Crawlora\Generated\DoorDashGroup $doorDash
+ * @property-read \Crawlora\Generated\DraftKingsCasinoGroup $draftKingsCasino
+ * @property-read \Crawlora\Generated\DraftKingsDailyFantasySportsGroup $draftKingsDailyFantasySports
+ * @property-read \Crawlora\Generated\DraftKingsPick6Group $draftKingsPick6
+ * @property-read \Crawlora\Generated\DraftKingsPredictionsGroup $draftKingsPredictions
+ * @property-read \Crawlora\Generated\DraftKingsRacingGroup $draftKingsRacing
  * @property-read \Crawlora\Generated\DraftKingsSportsbookGroup $draftKingsSportsbook
  * @property-read \Crawlora\Generated\DuckDuckGoSearchGroup $duckDuckGoSearch
  * @property-read \Crawlora\Generated\DunkinGroup $dunkin
@@ -8842,6 +9205,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\FanaticsGroup $fanatics
  * @property-read \Crawlora\Generated\FanaticsCollectGroup $fanaticsCollect
  * @property-read \Crawlora\Generated\FanaticsLiveGroup $fanaticsLive
+ * @property-read \Crawlora\Generated\FanDuelGroup $fanDuel
  * @property-read \Crawlora\Generated\FarfetchGroup $farfetch
  * @property-read \Crawlora\Generated\FashionNovaGroup $fashionNova
  * @property-read \Crawlora\Generated\FashionphileGroup $fashionphile
@@ -8860,6 +9224,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\France24Group $france24
  * @property-read \Crawlora\Generated\FreeMalaysiaTodayGroup $freeMalaysiaToday
  * @property-read \Crawlora\Generated\FtGroup $ft
+ * @property-read \Crawlora\Generated\FussballDeGroup $fussballDe
  * @property-read \Crawlora\Generated\GameRantGroup $gameRant
  * @property-read \Crawlora\Generated\GamesRadarGroup $gamesRadar
  * @property-read \Crawlora\Generated\GbNewsGroup $gbNews
@@ -8920,6 +9285,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\JerusalemPostGroup $jerusalemPost
  * @property-read \Crawlora\Generated\JimmyJohnsGroup $jimmyJohns
  * @property-read \Crawlora\Generated\JobsGroup $jobs
+ * @property-read \Crawlora\Generated\JumiaGroup $jumia
  * @property-read \Crawlora\Generated\JustEatGroup $justEat
  * @property-read \Crawlora\Generated\JustWatchGroup $justWatch
  * @property-read \Crawlora\Generated\KalshiGroup $kalshi

@@ -113,6 +113,11 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\DiscogsGroup $discogs
  * @property-read \Crawlora\Generated\DominosGroup $dominos
  * @property-read \Crawlora\Generated\DoorDashGroup $doorDash
+ * @property-read \Crawlora\Generated\DraftKingsCasinoGroup $draftKingsCasino
+ * @property-read \Crawlora\Generated\DraftKingsDailyFantasySportsGroup $draftKingsDailyFantasySports
+ * @property-read \Crawlora\Generated\DraftKingsPick6Group $draftKingsPick6
+ * @property-read \Crawlora\Generated\DraftKingsPredictionsGroup $draftKingsPredictions
+ * @property-read \Crawlora\Generated\DraftKingsRacingGroup $draftKingsRacing
  * @property-read \Crawlora\Generated\DraftKingsSportsbookGroup $draftKingsSportsbook
  * @property-read \Crawlora\Generated\DuckDuckGoSearchGroup $duckDuckGoSearch
  * @property-read \Crawlora\Generated\DunkinGroup $dunkin
@@ -132,6 +137,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\FanaticsGroup $fanatics
  * @property-read \Crawlora\Generated\FanaticsCollectGroup $fanaticsCollect
  * @property-read \Crawlora\Generated\FanaticsLiveGroup $fanaticsLive
+ * @property-read \Crawlora\Generated\FanDuelGroup $fanDuel
  * @property-read \Crawlora\Generated\FarfetchGroup $farfetch
  * @property-read \Crawlora\Generated\FashionNovaGroup $fashionNova
  * @property-read \Crawlora\Generated\FashionphileGroup $fashionphile
@@ -150,6 +156,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\France24Group $france24
  * @property-read \Crawlora\Generated\FreeMalaysiaTodayGroup $freeMalaysiaToday
  * @property-read \Crawlora\Generated\FtGroup $ft
+ * @property-read \Crawlora\Generated\FussballDeGroup $fussballDe
  * @property-read \Crawlora\Generated\GameRantGroup $gameRant
  * @property-read \Crawlora\Generated\GamesRadarGroup $gamesRadar
  * @property-read \Crawlora\Generated\GbNewsGroup $gbNews
@@ -210,6 +217,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\JerusalemPostGroup $jerusalemPost
  * @property-read \Crawlora\Generated\JimmyJohnsGroup $jimmyJohns
  * @property-read \Crawlora\Generated\JobsGroup $jobs
+ * @property-read \Crawlora\Generated\JumiaGroup $jumia
  * @property-read \Crawlora\Generated\JustEatGroup $justEat
  * @property-read \Crawlora\Generated\JustWatchGroup $justWatch
  * @property-read \Crawlora\Generated\KalshiGroup $kalshi
