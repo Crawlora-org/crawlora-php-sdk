@@ -2070,6 +2070,104 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'aliexpress-categories' => [
+            'id' => 'aliexpress-categories',
+            'method' => 'GET',
+            'path' => '/aliexpress/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category_tab',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'aliexpress-category-ids' => [
+            'id' => 'aliexpress-category-ids',
+            'method' => 'GET',
+            'path' => '/aliexpress/category-ids',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'aliexpress-category-products' => [
+            'id' => 'aliexpress-category-products',
+            'method' => 'GET',
+            'path' => '/aliexpress/category-products',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'aliexpress-reviews' => [
             'id' => 'aliexpress-reviews',
             'method' => 'GET',
@@ -2155,6 +2253,11 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                 ],
+                [
+                    'name' => 'cat_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -2181,6 +2284,62 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'aliexpress-suggest' => [
+            'id' => 'aliexpress-suggest',
+            'method' => 'GET',
+            'path' => '/aliexpress/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'aliexpress-trending-searches' => [
+            'id' => 'aliexpress-trending-searches',
+            'method' => 'GET',
+            'path' => '/aliexpress/trending-searches',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
                 ],
             ],
             'formParams' => [],
@@ -23522,6 +23681,298 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'datasets-apple-maps-places-facets' => [
+            'id' => 'datasets-apple-maps-places-facets',
+            'method' => 'GET',
+            'path' => '/datasets/apple-maps-places/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'category',
+                        'country_code',
+                        'state',
+                        'city',
+                        'price_symbol',
+                        'catalog_country',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'postal_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_rating_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'has_website',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_phone',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lon',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'radius_m',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-apple-maps-places-item' => [
+            'id' => 'datasets-apple-maps-places-item',
+            'method' => 'GET',
+            'path' => '/datasets/apple-maps-places/items/{place_id}',
+            'pathParams' => [
+                'place_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-apple-maps-places-nearby' => [
+            'id' => 'datasets-apple-maps-places-nearby',
+            'method' => 'GET',
+            'path' => '/datasets/apple-maps-places/nearby',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'lon',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'radius_m',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_rating_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-apple-maps-places-search' => [
+            'id' => 'datasets-apple-maps-places-search',
+            'method' => 'GET',
+            'path' => '/datasets/apple-maps-places/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'postal_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_rating_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'has_website',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_phone',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lon',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'radius_m',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'rating_desc',
+                        'review_count_desc',
+                        'updated_at_desc',
+                        'distance_asc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'datasets-apple-podcasts-shows-facets' => [
             'id' => 'datasets-apple-podcasts-shows-facets',
             'method' => 'GET',
@@ -36734,6 +37185,606 @@ final class Operations
                     ],
                 ],
             ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'dramabox-browse' => [
+            'id' => 'dramabox-browse',
+            'method' => 'GET',
+            'path' => '/dramabox/browse',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'genre_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'ko',
+                        'zhHans',
+                        'zh',
+                        'es',
+                        'ja',
+                        'de',
+                        'in',
+                        'th',
+                        'tl',
+                        'pt',
+                        'fr',
+                        'ar',
+                        'it',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'dramabox-categories' => [
+            'id' => 'dramabox-categories',
+            'method' => 'GET',
+            'path' => '/dramabox/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'dramabox-category-books' => [
+            'id' => 'dramabox-category-books',
+            'method' => 'GET',
+            'path' => '/dramabox/category-books',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'production',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '3',
+                        '1',
+                        '2',
+                    ],
+                ],
+                [
+                    'name' => 'dub',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '1',
+                        '0',
+                    ],
+                ],
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre_2',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'dramabox-channels' => [
+            'id' => 'dramabox-channels',
+            'method' => 'GET',
+            'path' => '/dramabox/channels',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'dramabox-drama' => [
+            'id' => 'dramabox-drama',
+            'method' => 'GET',
+            'path' => '/dramabox/drama',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'dramabox-genres' => [
+            'id' => 'dramabox-genres',
+            'method' => 'GET',
+            'path' => '/dramabox/genres',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'ko',
+                        'zhHans',
+                        'zh',
+                        'es',
+                        'ja',
+                        'de',
+                        'in',
+                        'th',
+                        'tl',
+                        'pt',
+                        'fr',
+                        'ar',
+                        'it',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'dramabox-home' => [
+            'id' => 'dramabox-home',
+            'method' => 'GET',
+            'path' => '/dramabox/home',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'ko',
+                        'zhHans',
+                        'zh',
+                        'es',
+                        'ja',
+                        'de',
+                        'in',
+                        'th',
+                        'tl',
+                        'pt',
+                        'fr',
+                        'ar',
+                        'it',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'dramabox-more' => [
+            'id' => 'dramabox-more',
+            'method' => 'GET',
+            'path' => '/dramabox/more',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'position',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'trending',
+                        'must-sees',
+                        'hidden-gems',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'ko',
+                        'zhHans',
+                        'zh',
+                        'es',
+                        'ja',
+                        'de',
+                        'in',
+                        'th',
+                        'tl',
+                        'pt',
+                        'fr',
+                        'ar',
+                        'it',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'dramabox-performer' => [
+            'id' => 'dramabox-performer',
+            'method' => 'GET',
+            'path' => '/dramabox/performer',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'performer_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'dramabox-rank' => [
+            'id' => 'dramabox-rank',
+            'method' => 'GET',
+            'path' => '/dramabox/rank',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'rank_type',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'dramabox-recommend' => [
+            'id' => 'dramabox-recommend',
+            'method' => 'GET',
+            'path' => '/dramabox/recommend',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'dramabox-search' => [
+            'id' => 'dramabox-search',
+            'method' => 'GET',
+            'path' => '/dramabox/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'keyword',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'dramabox-suggest' => [
+            'id' => 'dramabox-suggest',
+            'method' => 'GET',
+            'path' => '/dramabox/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'keyword',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'dramabox-tag' => [
+            'id' => 'dramabox-tag',
+            'method' => 'GET',
+            'path' => '/dramabox/tag',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tag_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'dramabox-theater' => [
+            'id' => 'dramabox-theater',
+            'method' => 'GET',
+            'path' => '/dramabox/theater',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'channel',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'popular',
+                        'new',
+                        'rankings',
+                        'categories',
+                        'anime',
+                        'live-action',
+                        'vip',
+                        'original',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'dramabox-trending' => [
+            'id' => 'dramabox-trending',
+            'method' => 'GET',
+            'path' => '/dramabox/trending',
+            'pathParams' => [],
+            'queryParams' => [],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -69844,6 +70895,50 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'jumia-reviews' => [
+            'id' => 'jumia-reviews',
+            'method' => 'GET',
+            'path' => '/jumia/reviews',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'ci',
+                        'eg',
+                        'ke',
+                        'ma',
+                        'ng',
+                        'sn',
+                    ],
+                ],
+                [
+                    'name' => 'sku',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'jumia-search' => [
             'id' => 'jumia-search',
             'method' => 'GET',
@@ -69887,6 +70982,98 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'jumia-sitemap-urls' => [
+            'id' => 'jumia-sitemap-urls',
+            'method' => 'GET',
+            'path' => '/jumia/sitemap-urls',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'ci',
+                        'eg',
+                        'ke',
+                        'ma',
+                        'ng',
+                        'sn',
+                    ],
+                ],
+                [
+                    'name' => 'sitemap',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'jumia-sitemaps' => [
+            'id' => 'jumia-sitemaps',
+            'method' => 'GET',
+            'path' => '/jumia/sitemaps',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'ci',
+                        'eg',
+                        'ke',
+                        'ma',
+                        'ng',
+                        'sn',
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'products',
+                        'brands',
+                        'categories',
+                        'mlps',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'justeat-restaurant' => [
             'id' => 'justeat-restaurant',
@@ -72147,6 +73334,626 @@ final class Operations
             'bodyParam' => null,
             'bodyRequired' => false,
             'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kick-categories' => [
+            'id' => 'kick-categories',
+            'method' => 'GET',
+            'path' => '/kick/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kick-category-clips' => [
+            'id' => 'kick-category-clips',
+            'method' => 'GET',
+            'path' => '/kick/category-clips',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'kick-channel' => [
+            'id' => 'kick-channel',
+            'method' => 'GET',
+            'path' => '/kick/channel',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kick-channel-chatroom' => [
+            'id' => 'kick-channel-chatroom',
+            'method' => 'GET',
+            'path' => '/kick/channel-chatroom',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kick-channel-clips' => [
+            'id' => 'kick-channel-clips',
+            'method' => 'GET',
+            'path' => '/kick/channel-clips',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'kick-channel-emotes' => [
+            'id' => 'kick-channel-emotes',
+            'method' => 'GET',
+            'path' => '/kick/channel-emotes',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kick-channel-links' => [
+            'id' => 'kick-channel-links',
+            'method' => 'GET',
+            'path' => '/kick/channel-links',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kick-channel-streams' => [
+            'id' => 'kick-channel-streams',
+            'method' => 'GET',
+            'path' => '/kick/channel-streams',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kick-channel-videos' => [
+            'id' => 'kick-channel-videos',
+            'method' => 'GET',
+            'path' => '/kick/channel-videos',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kick-clip' => [
+            'id' => 'kick-clip',
+            'method' => 'GET',
+            'path' => '/kick/clip',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kick-clips' => [
+            'id' => 'kick-clips',
+            'method' => 'GET',
+            'path' => '/kick/clips',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'date',
+                        'views',
+                    ],
+                ],
+                [
+                    'name' => 'time',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'day',
+                        'week',
+                        'month',
+                        'all',
+                    ],
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'kick-drops' => [
+            'id' => 'kick-drops',
+            'method' => 'GET',
+            'path' => '/kick/drops',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'active',
+                        'expired',
+                        'all',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kick-gifts' => [
+            'id' => 'kick-gifts',
+            'method' => 'GET',
+            'path' => '/kick/gifts',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kick-languages' => [
+            'id' => 'kick-languages',
+            'method' => 'GET',
+            'path' => '/kick/languages',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kick-livestreams' => [
+            'id' => 'kick-livestreams',
+            'method' => 'GET',
+            'path' => '/kick/livestreams',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'viewer_count_desc',
+                        'featured',
+                    ],
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kick-search-categories' => [
+            'id' => 'kick-search-categories',
+            'method' => 'GET',
+            'path' => '/kick/search-categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kick-search-channels' => [
+            'id' => 'kick-search-channels',
+            'method' => 'GET',
+            'path' => '/kick/search-channels',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'live',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kick-subcategories' => [
+            'id' => 'kick-subcategories',
+            'method' => 'GET',
+            'path' => '/kick/subcategories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'games',
+                        'irl',
+                        'music',
+                        'gambling',
+                        'creative',
+                        'alternative',
+                        'chat-roulette',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'kick-subcategory' => [
+            'id' => 'kick-subcategory',
+            'method' => 'GET',
+            'path' => '/kick/subcategory',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kick-top-channels' => [
+            'id' => 'kick-top-channels',
+            'method' => 'GET',
+            'path' => '/kick/top-channels',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'kick-video' => [
+            'id' => 'kick-video',
+            'method' => 'GET',
+            'path' => '/kick/video',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
             'produces' => [
                 'application/json',
             ],
@@ -101658,6 +103465,268 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'pricecharting-big-movers' => [
+            'id' => 'pricecharting-big-movers',
+            'method' => 'GET',
+            'path' => '/pricecharting/big-movers',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'video-games',
+                        'coins',
+                        'comic-books',
+                        'funko-pops',
+                        'pokemon-cards',
+                        'dragon-ball-cards',
+                        'lorcana-cards',
+                        'magic-cards',
+                        'marvel-cards',
+                        'one-piece-cards',
+                        'star-wars-cards',
+                        'yugioh-cards',
+                        'garbage-pail-cards',
+                        'other-tcg-cards',
+                        'other-cards',
+                        'lego-sets',
+                    ],
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'dollar-increase',
+                        'dollar-decrease',
+                        'percent-increase',
+                        'percent-decrease',
+                    ],
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'japan',
+                        'ntsc',
+                        'pal',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pricecharting-categories' => [
+            'id' => 'pricecharting-categories',
+            'method' => 'GET',
+            'path' => '/pricecharting/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pricecharting-console' => [
+            'id' => 'pricecharting-console',
+            'method' => 'GET',
+            'path' => '/pricecharting/console',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'console',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'popularity',
+                        'highest-price',
+                        'lowest-price',
+                        'name',
+                    ],
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'pricecharting-price-history' => [
+            'id' => 'pricecharting-price-history',
+            'method' => 'GET',
+            'path' => '/pricecharting/price-history',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'console',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pricecharting-product' => [
+            'id' => 'pricecharting-product',
+            'method' => 'GET',
+            'path' => '/pricecharting/product',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'console',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pricecharting-search' => [
+            'id' => 'pricecharting-search',
+            'method' => 'GET',
+            'path' => '/pricecharting/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'console_uid',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'exclude_variants',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'popularity',
+                        'highest-price',
+                        'name',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'pristine-auction-categories' => [
             'id' => 'pristine-auction-categories',
             'method' => 'GET',
@@ -103061,6 +105130,66 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'psa-price-guide-sets' => [
+            'id' => 'psa-price-guide-sets',
+            'method' => 'GET',
+            'path' => '/psa/price-guide/sets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category_path',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'baseball-card-values',
+                        'basketball-card-values',
+                        'boxing-card-values',
+                        'football-card-values',
+                        'golf-card-values',
+                        'hockey-card-values',
+                        'soccer-card-values',
+                        'non-sports-tcg-card-values',
+                        'racing-card-values',
+                        'sports-ticket-values',
+                        'tennis-card-values',
+                        'unopened-pack-values',
+                        'presidential-autograph-values',
+                        'sports-autograph-values',
+                        'game-used-bat-values',
+                        'graded-baseball-values',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'psa-probatfacts-categories' => [
             'id' => 'psa-probatfacts-categories',
@@ -106097,6 +108226,486 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reelshort-fandom-categories' => [
+            'id' => 'reelshort-fandom-categories',
+            'method' => 'GET',
+            'path' => '/reelshort/fandom-categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reelshort-fandom-post' => [
+            'id' => 'reelshort-fandom-post',
+            'method' => 'GET',
+            'path' => '/reelshort/fandom-post',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reelshort-fandom-posts' => [
+            'id' => 'reelshort-fandom-posts',
+            'method' => 'GET',
+            'path' => '/reelshort/fandom-posts',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'search',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'general-topic',
+                        'movie-cast-list',
+                        'top-movie-stories',
+                        'where-to-watch',
+                        'where-to-watch-2',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'reelshort-home' => [
+            'id' => 'reelshort-home',
+            'method' => 'GET',
+            'path' => '/reelshort/home',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'es',
+                        'pt',
+                        'fr',
+                        'de',
+                        'it',
+                        'ja',
+                        'ko',
+                        'th',
+                        'id',
+                        'tr',
+                        'ar',
+                        'ru',
+                        'pl',
+                        'ro',
+                        'cs',
+                        'bg',
+                        'vi',
+                        'zh-TW',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reelshort-movie' => [
+            'id' => 'reelshort-movie',
+            'method' => 'GET',
+            'path' => '/reelshort/movie',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reelshort-new-releases' => [
+            'id' => 'reelshort-new-releases',
+            'method' => 'GET',
+            'path' => '/reelshort/new-releases',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'book_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'es',
+                        'pt',
+                        'fr',
+                        'de',
+                        'it',
+                        'ja',
+                        'ko',
+                        'th',
+                        'id',
+                        'tr',
+                        'ar',
+                        'ru',
+                        'pl',
+                        'ro',
+                        'cs',
+                        'bg',
+                        'vi',
+                        'zh-TW',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reelshort-search' => [
+            'id' => 'reelshort-search',
+            'method' => 'GET',
+            'path' => '/reelshort/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'keywords',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'es',
+                        'pt',
+                        'fr',
+                        'de',
+                        'it',
+                        'ja',
+                        'ko',
+                        'th',
+                        'id',
+                        'tr',
+                        'ar',
+                        'ru',
+                        'pl',
+                        'ro',
+                        'cs',
+                        'bg',
+                        'vi',
+                        'zh-TW',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'reelshort-shelf' => [
+            'id' => 'reelshort-shelf',
+            'method' => 'GET',
+            'path' => '/reelshort/shelf',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reelshort-tag-books' => [
+            'id' => 'reelshort-tag-books',
+            'method' => 'GET',
+            'path' => '/reelshort/tag-books',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tag_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'es',
+                        'pt',
+                        'fr',
+                        'de',
+                        'it',
+                        'ja',
+                        'ko',
+                        'th',
+                        'id',
+                        'tr',
+                        'ar',
+                        'ru',
+                        'pl',
+                        'ro',
+                        'cs',
+                        'bg',
+                        'vi',
+                        'zh-TW',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'reelshort-tag-search' => [
+            'id' => 'reelshort-tag-search',
+            'method' => 'GET',
+            'path' => '/reelshort/tag-search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'word',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'es',
+                        'pt',
+                        'fr',
+                        'de',
+                        'it',
+                        'ja',
+                        'ko',
+                        'th',
+                        'id',
+                        'tr',
+                        'ar',
+                        'ru',
+                        'pl',
+                        'ro',
+                        'cs',
+                        'bg',
+                        'vi',
+                        'zh-TW',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'reelshort-tags' => [
+            'id' => 'reelshort-tags',
+            'method' => 'GET',
+            'path' => '/reelshort/tags',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'actor',
+                        'actress',
+                        'identity',
+                        'trope',
+                    ],
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'es',
+                        'pt',
+                        'fr',
+                        'de',
+                        'it',
+                        'ja',
+                        'ko',
+                        'th',
+                        'id',
+                        'tr',
+                        'ar',
+                        'ru',
+                        'pl',
+                        'ro',
+                        'cs',
+                        'bg',
+                        'vi',
+                        'zh-TW',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -129009,6 +131618,411 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'tcgplayer-filters' => [
+            'id' => 'tcgplayer-filters',
+            'method' => 'GET',
+            'path' => '/tcgplayer/filters',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'product_line',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'tcgplayer-listings' => [
+            'id' => 'tcgplayer-listings',
+            'method' => 'GET',
+            'path' => '/tcgplayer/listings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'condition',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'near-mint',
+                        'lightly-played',
+                        'moderately-played',
+                        'heavily-played',
+                        'damaged',
+                    ],
+                ],
+                [
+                    'name' => 'printing',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'price',
+                        'price-with-shipping',
+                    ],
+                ],
+                [
+                    'name' => 'order',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'tcgplayer-price-guide' => [
+            'id' => 'tcgplayer-price-guide',
+            'method' => 'GET',
+            'path' => '/tcgplayer/price-guide',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'set_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'tcgplayer-price-history' => [
+            'id' => 'tcgplayer-price-history',
+            'method' => 'GET',
+            'path' => '/tcgplayer/price-history',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'range',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'month',
+                        'quarter',
+                        'semi-annual',
+                        'annual',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'tcgplayer-product' => [
+            'id' => 'tcgplayer-product',
+            'method' => 'GET',
+            'path' => '/tcgplayer/product',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'tcgplayer-product-lines' => [
+            'id' => 'tcgplayer-product-lines',
+            'method' => 'GET',
+            'path' => '/tcgplayer/product-lines',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'tcgplayer-sales' => [
+            'id' => 'tcgplayer-sales',
+            'method' => 'GET',
+            'path' => '/tcgplayer/sales',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'condition',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'near-mint',
+                        'lightly-played',
+                        'moderately-played',
+                        'heavily-played',
+                        'damaged',
+                        'unopened',
+                    ],
+                ],
+                [
+                    'name' => 'variant',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'listing_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'with-photos',
+                        'without-photos',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'tcgplayer-search' => [
+            'id' => 'tcgplayer-search',
+            'method' => 'GET',
+            'path' => '/tcgplayer/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'product_line',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'set',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'product_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'rarity',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'card_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_price',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_price',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'market-price',
+                        'lowest-price',
+                        'lowest-price-with-shipping',
+                        'median-price',
+                        'listings',
+                        'sales',
+                        'product-name',
+                    ],
+                ],
+                [
+                    'name' => 'order',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'tcgplayer-sets' => [
+            'id' => 'tcgplayer-sets',
+            'method' => 'GET',
+            'path' => '/tcgplayer/sets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'product_line',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'techcrunch-article' => [
             'id' => 'techcrunch-article',
             'method' => 'GET',
@@ -129281,6 +132295,152 @@ final class Operations
             'bodyParam' => null,
             'bodyRequired' => false,
             'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'telegram-bot' => [
+            'id' => 'telegram-bot',
+            'method' => 'GET',
+            'path' => '/telegram/bot',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'username',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'telegram-channel' => [
+            'id' => 'telegram-channel',
+            'method' => 'GET',
+            'path' => '/telegram/channel',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'username',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'telegram-channel-posts' => [
+            'id' => 'telegram-channel-posts',
+            'method' => 'GET',
+            'path' => '/telegram/channel-posts',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'username',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'before',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'telegram-group' => [
+            'id' => 'telegram-group',
+            'method' => 'GET',
+            'path' => '/telegram/group',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'username',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'telegram-post' => [
+            'id' => 'telegram-post',
+            'method' => 'GET',
+            'path' => '/telegram/post',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'username',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
             'produces' => [
                 'application/json',
             ],
@@ -134168,6 +137328,23 @@ final class Operations
                     'name' => 'chart_region',
                     'in' => 'query',
                     'type' => 'string',
+                    'enum' => [
+                        'AE',
+                        'BR',
+                        'CA',
+                        'DE',
+                        'EG',
+                        'FR',
+                        'JP',
+                        'KR',
+                        'LB',
+                        'MX',
+                        'NG',
+                        'SA',
+                        'TR',
+                        'US',
+                        'ZA',
+                    ],
                 ],
                 [
                     'name' => 'cursor',
@@ -142045,6 +145222,257 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'wallapop-categories' => [
+            'id' => 'wallapop-categories',
+            'method' => 'GET',
+            'path' => '/wallapop/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wallapop-filter-options' => [
+            'id' => 'wallapop-filter-options',
+            'method' => 'GET',
+            'path' => '/wallapop/filter-options',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'filter_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'brand',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'closest',
+                        'most_relevance',
+                        'newest',
+                        'price_low_to_high',
+                        'price_high_to_low',
+                    ],
+                ],
+                [
+                    'name' => 'options_query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'wallapop-filters' => [
+            'id' => 'wallapop-filters',
+            'method' => 'GET',
+            'path' => '/wallapop/filters',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wallapop-item-detail' => [
+            'id' => 'wallapop-item-detail',
+            'method' => 'GET',
+            'path' => '/wallapop/item',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wallapop-search' => [
+            'id' => 'wallapop-search',
+            'method' => 'GET',
+            'path' => '/wallapop/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'closest',
+                        'most_relevance',
+                        'newest',
+                        'price_low_to_high',
+                        'price_high_to_low',
+                    ],
+                ],
+                [
+                    'name' => 'min_price',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_price',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'condition',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'is_shippable',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'true',
+                    ],
+                ],
+                [
+                    'name' => 'time_filter',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'today',
+                        'lastWeek',
+                        'lastMonth',
+                    ],
+                ],
+                [
+                    'name' => 'distance_in_km',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
         'walmart-product' => [
             'id' => 'walmart-product',
             'method' => 'GET',
@@ -142247,6 +145675,398 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'wattpad-categories' => [
+            'id' => 'wattpad-categories',
+            'method' => 'GET',
+            'path' => '/wattpad/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wattpad-languages' => [
+            'id' => 'wattpad-languages',
+            'method' => 'GET',
+            'path' => '/wattpad/languages',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wattpad-part' => [
+            'id' => 'wattpad-part',
+            'method' => 'GET',
+            'path' => '/wattpad/part',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'part_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wattpad-part-comments' => [
+            'id' => 'wattpad-part-comments',
+            'method' => 'GET',
+            'path' => '/wattpad/part-comments',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'part_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'wattpad-search' => [
+            'id' => 'wattpad-search',
+            'method' => 'GET',
+            'path' => '/wattpad/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'hot',
+                        'new',
+                        'featured',
+                    ],
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                        '5',
+                        '6',
+                        '7',
+                        '8',
+                        '9',
+                        '10',
+                        '11',
+                        '12',
+                        '13',
+                        '14',
+                        '15',
+                        '16',
+                        '17',
+                        '18',
+                        '19',
+                        '20',
+                        '21',
+                        '22',
+                        '23',
+                        '24',
+                        '25',
+                        '26',
+                        '27',
+                        '28',
+                        '29',
+                        '30',
+                        '32',
+                        '33',
+                        '34',
+                        '35',
+                        '36',
+                        '37',
+                        '38',
+                        '39',
+                        '40',
+                        '41',
+                        '42',
+                        '43',
+                        '44',
+                        '46',
+                        '47',
+                        '48',
+                        '49',
+                        '50',
+                        '51',
+                        '53',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'wattpad-search-users' => [
+            'id' => 'wattpad-search-users',
+            'method' => 'GET',
+            'path' => '/wattpad/search-users',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'wattpad-story' => [
+            'id' => 'wattpad-story',
+            'method' => 'GET',
+            'path' => '/wattpad/story',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'story_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wattpad-story-parts' => [
+            'id' => 'wattpad-story-parts',
+            'method' => 'GET',
+            'path' => '/wattpad/story-parts',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'story_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wattpad-story-recommendations' => [
+            'id' => 'wattpad-story-recommendations',
+            'method' => 'GET',
+            'path' => '/wattpad/story-recommendations',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'story_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wattpad-user' => [
+            'id' => 'wattpad-user',
+            'method' => 'GET',
+            'path' => '/wattpad/user',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'username',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wattpad-user-stories' => [
+            'id' => 'wattpad-user-stories',
+            'method' => 'GET',
+            'path' => '/wattpad/user-stories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'username',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'wayfair-categories' => [
             'id' => 'wayfair-categories',
@@ -150028,9 +153848,14 @@ final class Operations
             'alcomSections' => 'alcom-sections',
         ],
         'aliExpress' => [
+            'aliexpressCategories' => 'aliexpress-categories',
+            'aliexpressCategoryIds' => 'aliexpress-category-ids',
+            'aliexpressCategoryProducts' => 'aliexpress-category-products',
             'aliexpressReviews' => 'aliexpress-reviews',
             'aliexpressSearch' => 'aliexpress-search',
             'aliexpressSearchFilters' => 'aliexpress-search-filters',
+            'aliexpressSuggest' => 'aliexpress-suggest',
+            'aliexpressTrendingSearches' => 'aliexpress-trending-searches',
         ],
         'alJazeera' => [
             'aljazeeraArticle' => 'aljazeera-article',
@@ -150798,6 +154623,10 @@ final class Operations
             'airbnbMarketsItem' => 'datasets-airbnb-markets-item',
             'airbnbMarketsNearby' => 'datasets-airbnb-markets-nearby',
             'airbnbMarketsSearch' => 'datasets-airbnb-markets-search',
+            'appleMapsPlacesFacets' => 'datasets-apple-maps-places-facets',
+            'appleMapsPlacesItem' => 'datasets-apple-maps-places-item',
+            'appleMapsPlacesNearby' => 'datasets-apple-maps-places-nearby',
+            'appleMapsPlacesSearch' => 'datasets-apple-maps-places-search',
             'applePodcastsShowsFacets' => 'datasets-apple-podcasts-shows-facets',
             'applePodcastsShowsItem' => 'datasets-apple-podcasts-shows-item',
             'applePodcastsShowsSearch' => 'datasets-apple-podcasts-shows-search',
@@ -151054,6 +154883,24 @@ final class Operations
             'draftkingsQuickLinks' => 'draftkings-quick-links',
             'draftkingsTeam' => 'draftkings-team',
             'draftkingsTeams' => 'draftkings-teams',
+        ],
+        'dramaBox' => [
+            'dramaboxBrowse' => 'dramabox-browse',
+            'dramaboxCategories' => 'dramabox-categories',
+            'dramaboxCategoryBooks' => 'dramabox-category-books',
+            'dramaboxChannels' => 'dramabox-channels',
+            'dramaboxDrama' => 'dramabox-drama',
+            'dramaboxGenres' => 'dramabox-genres',
+            'dramaboxHome' => 'dramabox-home',
+            'dramaboxMore' => 'dramabox-more',
+            'dramaboxPerformer' => 'dramabox-performer',
+            'dramaboxRank' => 'dramabox-rank',
+            'dramaboxRecommend' => 'dramabox-recommend',
+            'dramaboxSearch' => 'dramabox-search',
+            'dramaboxSuggest' => 'dramabox-suggest',
+            'dramaboxTag' => 'dramabox-tag',
+            'dramaboxTheater' => 'dramabox-theater',
+            'dramaboxTrending' => 'dramabox-trending',
         ],
         'duckDuckGoSearch' => [
             'duckduckgoImage' => 'duckduckgo-image',
@@ -152130,7 +155977,10 @@ final class Operations
             'category' => 'jumia-category',
             'countries' => 'jumia-countries',
             'product' => 'jumia-product',
+            'reviews' => 'jumia-reviews',
             'search' => 'jumia-search',
+            'sitemapUrls' => 'jumia-sitemap-urls',
+            'sitemaps' => 'jumia-sitemaps',
         ],
         'justEat' => [
             'justeatRestaurant' => 'justeat-restaurant',
@@ -152199,6 +156049,29 @@ final class Operations
             'khaleejtimesHeadlines' => 'khaleejtimes-headlines',
             'khaleejtimesNews' => 'khaleejtimes-news',
             'khaleejtimesSections' => 'khaleejtimes-sections',
+        ],
+        'kick' => [
+            'categories' => 'kick-categories',
+            'categoryClips' => 'kick-category-clips',
+            'channel' => 'kick-channel',
+            'channelChatroom' => 'kick-channel-chatroom',
+            'channelClips' => 'kick-channel-clips',
+            'channelEmotes' => 'kick-channel-emotes',
+            'channelLinks' => 'kick-channel-links',
+            'channelStreams' => 'kick-channel-streams',
+            'channelVideos' => 'kick-channel-videos',
+            'clip' => 'kick-clip',
+            'clips' => 'kick-clips',
+            'drops' => 'kick-drops',
+            'gifts' => 'kick-gifts',
+            'languages' => 'kick-languages',
+            'livestreams' => 'kick-livestreams',
+            'searchCategories' => 'kick-search-categories',
+            'searchChannels' => 'kick-search-channels',
+            'subcategories' => 'kick-subcategories',
+            'subcategory' => 'kick-subcategory',
+            'topChannels' => 'kick-top-channels',
+            'video' => 'kick-video',
         ],
         'kickstarter' => [
             'comments' => 'kickstarter-comments',
@@ -153070,6 +156943,14 @@ final class Operations
             'stores' => 'prada-stores',
             'suggest' => 'prada-suggest',
         ],
+        'priceCharting' => [
+            'pricechartingBigMovers' => 'pricecharting-big-movers',
+            'pricechartingCategories' => 'pricecharting-categories',
+            'pricechartingConsole' => 'pricecharting-console',
+            'pricechartingPriceHistory' => 'pricecharting-price-history',
+            'pricechartingProduct' => 'pricecharting-product',
+            'pricechartingSearch' => 'pricecharting-search',
+        ],
         'pristineAuction' => [
             'categories' => 'pristine-auction-categories',
             'lotDetail' => 'pristine-auction-lot-detail',
@@ -153122,6 +157003,7 @@ final class Operations
             'priceGuideCategories' => 'psa-price-guide-categories',
             'priceGuideSearch' => 'psa-price-guide-search',
             'priceGuideSet' => 'psa-price-guide-set',
+            'priceGuideSets' => 'psa-price-guide-sets',
             'probatfactsCategories' => 'psa-probatfacts-categories',
             'probatfactsGallery' => 'psa-probatfacts-gallery',
             'probatfactsSubject' => 'psa-probatfacts-subject',
@@ -153228,6 +157110,19 @@ final class Operations
             'regionTrends' => 'redfin-region-trends',
             'search' => 'redfin-search',
             'similar' => 'redfin-similar',
+        ],
+        'reelShort' => [
+            'reelshortFandomCategories' => 'reelshort-fandom-categories',
+            'reelshortFandomPost' => 'reelshort-fandom-post',
+            'reelshortFandomPosts' => 'reelshort-fandom-posts',
+            'reelshortHome' => 'reelshort-home',
+            'reelshortMovie' => 'reelshort-movie',
+            'reelshortNewReleases' => 'reelshort-new-releases',
+            'reelshortSearch' => 'reelshort-search',
+            'reelshortShelf' => 'reelshort-shelf',
+            'reelshortTagBooks' => 'reelshort-tag-books',
+            'reelshortTagSearch' => 'reelshort-tag-search',
+            'reelshortTags' => 'reelshort-tags',
         ],
         'referrals' => [
             'click' => 'referrals-click',
@@ -154001,6 +157896,17 @@ final class Operations
             'search' => 'target-search',
             'stores' => 'target-stores',
         ],
+        'tcgplayer' => [
+            'filters' => 'tcgplayer-filters',
+            'listings' => 'tcgplayer-listings',
+            'priceGuide' => 'tcgplayer-price-guide',
+            'priceHistory' => 'tcgplayer-price-history',
+            'product' => 'tcgplayer-product',
+            'productLines' => 'tcgplayer-product-lines',
+            'sales' => 'tcgplayer-sales',
+            'search' => 'tcgplayer-search',
+            'sets' => 'tcgplayer-sets',
+        ],
         'techCrunch' => [
             'techcrunchArticle' => 'techcrunch-article',
             'techcrunchAuthor' => 'techcrunch-author',
@@ -154014,6 +157920,13 @@ final class Operations
             'techradarHeadlines' => 'techradar-headlines',
             'techradarNews' => 'techradar-news',
             'techradarSections' => 'techradar-sections',
+        ],
+        'telegram' => [
+            'bot' => 'telegram-bot',
+            'channel' => 'telegram-channel',
+            'channelPosts' => 'telegram-channel-posts',
+            'group' => 'telegram-group',
+            'post' => 'telegram-post',
         ],
         'theTelegraph' => [
             'telegraphArticle' => 'telegraph-article',
@@ -154529,6 +158442,13 @@ final class Operations
         'walgreens' => [
             'stores' => 'walgreens-stores',
         ],
+        'wallapop' => [
+            'categories' => 'wallapop-categories',
+            'filterOptions' => 'wallapop-filter-options',
+            'filters' => 'wallapop-filters',
+            'itemDetail' => 'wallapop-item-detail',
+            'search' => 'wallapop-search',
+        ],
         'walmart' => [
             'product' => 'walmart-product',
             'productReviews' => 'walmart-product-reviews',
@@ -154540,6 +158460,19 @@ final class Operations
             'wapoHeadlines' => 'wapo-headlines',
             'wapoNews' => 'wapo-news',
             'wapoSections' => 'wapo-sections',
+        ],
+        'wattpad' => [
+            'categories' => 'wattpad-categories',
+            'languages' => 'wattpad-languages',
+            'part' => 'wattpad-part',
+            'partComments' => 'wattpad-part-comments',
+            'search' => 'wattpad-search',
+            'searchUsers' => 'wattpad-search-users',
+            'story' => 'wattpad-story',
+            'storyParts' => 'wattpad-story-parts',
+            'storyRecommendations' => 'wattpad-story-recommendations',
+            'user' => 'wattpad-user',
+            'userStories' => 'wattpad-user-stories',
         ],
         'wayfair' => [
             'categories' => 'wayfair-categories',
@@ -154836,7 +158769,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 3915;
+    public const OPERATION_COUNT = 4012;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -154900,9 +158833,14 @@ final class Operations
         'alcom-headlines',
         'alcom-news',
         'alcom-sections',
+        'aliexpress-categories',
+        'aliexpress-category-ids',
+        'aliexpress-category-products',
         'aliexpress-reviews',
         'aliexpress-search',
         'aliexpress-search-filters',
+        'aliexpress-suggest',
+        'aliexpress-trending-searches',
         'aljazeera-article',
         'aljazeera-author',
         'aljazeera-categories',
@@ -155487,6 +159425,10 @@ final class Operations
         'datasets-airbnb-markets-item',
         'datasets-airbnb-markets-nearby',
         'datasets-airbnb-markets-search',
+        'datasets-apple-maps-places-facets',
+        'datasets-apple-maps-places-item',
+        'datasets-apple-maps-places-nearby',
+        'datasets-apple-maps-places-search',
         'datasets-apple-podcasts-shows-facets',
         'datasets-apple-podcasts-shows-item',
         'datasets-apple-podcasts-shows-search',
@@ -155707,6 +159649,22 @@ final class Operations
         'draftkings-quick-links',
         'draftkings-team',
         'draftkings-teams',
+        'dramabox-browse',
+        'dramabox-categories',
+        'dramabox-category-books',
+        'dramabox-channels',
+        'dramabox-drama',
+        'dramabox-genres',
+        'dramabox-home',
+        'dramabox-more',
+        'dramabox-performer',
+        'dramabox-rank',
+        'dramabox-recommend',
+        'dramabox-search',
+        'dramabox-suggest',
+        'dramabox-tag',
+        'dramabox-theater',
+        'dramabox-trending',
         'duckduckgo-image',
         'duckduckgo-news',
         'duckduckgo-search',
@@ -156587,7 +160545,10 @@ final class Operations
         'jumia-category',
         'jumia-countries',
         'jumia-product',
+        'jumia-reviews',
         'jumia-search',
+        'jumia-sitemap-urls',
+        'jumia-sitemaps',
         'justeat-restaurant',
         'justeat-restaurant-menu',
         'justeat-search',
@@ -156646,6 +160607,27 @@ final class Operations
         'khaleejtimes-headlines',
         'khaleejtimes-news',
         'khaleejtimes-sections',
+        'kick-categories',
+        'kick-category-clips',
+        'kick-channel',
+        'kick-channel-chatroom',
+        'kick-channel-clips',
+        'kick-channel-emotes',
+        'kick-channel-links',
+        'kick-channel-streams',
+        'kick-channel-videos',
+        'kick-clip',
+        'kick-clips',
+        'kick-drops',
+        'kick-gifts',
+        'kick-languages',
+        'kick-livestreams',
+        'kick-search-categories',
+        'kick-search-channels',
+        'kick-subcategories',
+        'kick-subcategory',
+        'kick-top-channels',
+        'kick-video',
         'kickstarter-comments',
         'kickstarter-discover',
         'kickstarter-project',
@@ -157333,6 +161315,12 @@ final class Operations
         'prada-search',
         'prada-stores',
         'prada-suggest',
+        'pricecharting-big-movers',
+        'pricecharting-categories',
+        'pricecharting-console',
+        'pricecharting-price-history',
+        'pricecharting-product',
+        'pricecharting-search',
         'pristine-auction-categories',
         'pristine-auction-lot-detail',
         'pristine-auction-search',
@@ -157376,6 +161364,7 @@ final class Operations
         'psa-price-guide-categories',
         'psa-price-guide-search',
         'psa-price-guide-set',
+        'psa-price-guide-sets',
         'psa-probatfacts-categories',
         'psa-probatfacts-gallery',
         'psa-probatfacts-subject',
@@ -157463,6 +161452,17 @@ final class Operations
         'redfin-region-trends',
         'redfin-search',
         'redfin-similar',
+        'reelshort-fandom-categories',
+        'reelshort-fandom-post',
+        'reelshort-fandom-posts',
+        'reelshort-home',
+        'reelshort-movie',
+        'reelshort-new-releases',
+        'reelshort-search',
+        'reelshort-shelf',
+        'reelshort-tag-books',
+        'reelshort-tag-search',
+        'reelshort-tags',
         'referrals-click',
         'referrals-me',
         'referrals-me-events',
@@ -158103,6 +162103,15 @@ final class Operations
         'target-reviews',
         'target-search',
         'target-stores',
+        'tcgplayer-filters',
+        'tcgplayer-listings',
+        'tcgplayer-price-guide',
+        'tcgplayer-price-history',
+        'tcgplayer-product',
+        'tcgplayer-product-lines',
+        'tcgplayer-sales',
+        'tcgplayer-search',
+        'tcgplayer-sets',
         'techcrunch-article',
         'techcrunch-author',
         'techcrunch-headlines',
@@ -158113,6 +162122,11 @@ final class Operations
         'techradar-headlines',
         'techradar-news',
         'techradar-sections',
+        'telegram-bot',
+        'telegram-channel',
+        'telegram-channel-posts',
+        'telegram-group',
+        'telegram-post',
         'telegraph-article',
         'telegraph-author',
         'telegraph-headlines',
@@ -158515,6 +162529,11 @@ final class Operations
         'walesonline-news',
         'walesonline-sections',
         'walgreens-stores',
+        'wallapop-categories',
+        'wallapop-filter-options',
+        'wallapop-filters',
+        'wallapop-item-detail',
+        'wallapop-search',
         'walmart-product',
         'walmart-product-reviews',
         'walmart-search',
@@ -158523,6 +162542,17 @@ final class Operations
         'wapo-headlines',
         'wapo-news',
         'wapo-sections',
+        'wattpad-categories',
+        'wattpad-languages',
+        'wattpad-part',
+        'wattpad-part-comments',
+        'wattpad-search',
+        'wattpad-search-users',
+        'wattpad-story',
+        'wattpad-story-parts',
+        'wattpad-story-recommendations',
+        'wattpad-user',
+        'wattpad-user-stories',
         'wayfair-categories',
         'wayfair-category',
         'wayfair-product',
@@ -158849,9 +162879,14 @@ final class OperationId
     public const AL_JAZEERA_ALJAZEERA_CATEGORIES = 'aljazeera-categories';
     public const AL_JAZEERA_ALJAZEERA_HEADLINES = 'aljazeera-headlines';
     public const AL_JAZEERA_ALJAZEERA_TOPIC = 'aljazeera-topic';
+    public const ALI_EXPRESS_ALIEXPRESS_CATEGORIES = 'aliexpress-categories';
+    public const ALI_EXPRESS_ALIEXPRESS_CATEGORY_IDS = 'aliexpress-category-ids';
+    public const ALI_EXPRESS_ALIEXPRESS_CATEGORY_PRODUCTS = 'aliexpress-category-products';
     public const ALI_EXPRESS_ALIEXPRESS_REVIEWS = 'aliexpress-reviews';
     public const ALI_EXPRESS_ALIEXPRESS_SEARCH = 'aliexpress-search';
     public const ALI_EXPRESS_ALIEXPRESS_SEARCH_FILTERS = 'aliexpress-search-filters';
+    public const ALI_EXPRESS_ALIEXPRESS_SUGGEST = 'aliexpress-suggest';
+    public const ALI_EXPRESS_ALIEXPRESS_TRENDING_SEARCHES = 'aliexpress-trending-searches';
     public const ALLBIRDS_COLLECTION_PRODUCTS = 'allbirds-collection-products';
     public const ALLBIRDS_COLLECTIONS = 'allbirds-collections';
     public const ALLBIRDS_PAGE = 'allbirds-page';
@@ -159424,6 +163459,10 @@ final class OperationId
     public const DATASETS_AIRBNB_MARKETS_ITEM = 'datasets-airbnb-markets-item';
     public const DATASETS_AIRBNB_MARKETS_NEARBY = 'datasets-airbnb-markets-nearby';
     public const DATASETS_AIRBNB_MARKETS_SEARCH = 'datasets-airbnb-markets-search';
+    public const DATASETS_APPLE_MAPS_PLACES_FACETS = 'datasets-apple-maps-places-facets';
+    public const DATASETS_APPLE_MAPS_PLACES_ITEM = 'datasets-apple-maps-places-item';
+    public const DATASETS_APPLE_MAPS_PLACES_NEARBY = 'datasets-apple-maps-places-nearby';
+    public const DATASETS_APPLE_MAPS_PLACES_SEARCH = 'datasets-apple-maps-places-search';
     public const DATASETS_APPLE_PODCASTS_SHOWS_FACETS = 'datasets-apple-podcasts-shows-facets';
     public const DATASETS_APPLE_PODCASTS_SHOWS_ITEM = 'datasets-apple-podcasts-shows-item';
     public const DATASETS_APPLE_PODCASTS_SHOWS_SEARCH = 'datasets-apple-podcasts-shows-search';
@@ -159637,6 +163676,22 @@ final class OperationId
     public const DRAFT_KINGS_SPORTSBOOK_DRAFTKINGS_QUICK_LINKS = 'draftkings-quick-links';
     public const DRAFT_KINGS_SPORTSBOOK_DRAFTKINGS_TEAM = 'draftkings-team';
     public const DRAFT_KINGS_SPORTSBOOK_DRAFTKINGS_TEAMS = 'draftkings-teams';
+    public const DRAMA_BOX_DRAMABOX_BROWSE = 'dramabox-browse';
+    public const DRAMA_BOX_DRAMABOX_CATEGORIES = 'dramabox-categories';
+    public const DRAMA_BOX_DRAMABOX_CATEGORY_BOOKS = 'dramabox-category-books';
+    public const DRAMA_BOX_DRAMABOX_CHANNELS = 'dramabox-channels';
+    public const DRAMA_BOX_DRAMABOX_DRAMA = 'dramabox-drama';
+    public const DRAMA_BOX_DRAMABOX_GENRES = 'dramabox-genres';
+    public const DRAMA_BOX_DRAMABOX_HOME = 'dramabox-home';
+    public const DRAMA_BOX_DRAMABOX_MORE = 'dramabox-more';
+    public const DRAMA_BOX_DRAMABOX_PERFORMER = 'dramabox-performer';
+    public const DRAMA_BOX_DRAMABOX_RANK = 'dramabox-rank';
+    public const DRAMA_BOX_DRAMABOX_RECOMMEND = 'dramabox-recommend';
+    public const DRAMA_BOX_DRAMABOX_SEARCH = 'dramabox-search';
+    public const DRAMA_BOX_DRAMABOX_SUGGEST = 'dramabox-suggest';
+    public const DRAMA_BOX_DRAMABOX_TAG = 'dramabox-tag';
+    public const DRAMA_BOX_DRAMABOX_THEATER = 'dramabox-theater';
+    public const DRAMA_BOX_DRAMABOX_TRENDING = 'dramabox-trending';
     public const DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_IMAGE = 'duckduckgo-image';
     public const DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_NEWS = 'duckduckgo-news';
     public const DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_SEARCH = 'duckduckgo-search';
@@ -160499,7 +164554,10 @@ final class OperationId
     public const JUMIA_CATEGORY = 'jumia-category';
     public const JUMIA_COUNTRIES = 'jumia-countries';
     public const JUMIA_PRODUCT = 'jumia-product';
+    public const JUMIA_REVIEWS = 'jumia-reviews';
     public const JUMIA_SEARCH = 'jumia-search';
+    public const JUMIA_SITEMAP_URLS = 'jumia-sitemap-urls';
+    public const JUMIA_SITEMAPS = 'jumia-sitemaps';
     public const JUST_EAT_JUSTEAT_RESTAURANT = 'justeat-restaurant';
     public const JUST_EAT_JUSTEAT_RESTAURANT_MENU = 'justeat-restaurant-menu';
     public const JUST_EAT_JUSTEAT_SEARCH = 'justeat-search';
@@ -160558,6 +164616,27 @@ final class OperationId
     public const KHALEEJ_TIMES_KHALEEJTIMES_HEADLINES = 'khaleejtimes-headlines';
     public const KHALEEJ_TIMES_KHALEEJTIMES_NEWS = 'khaleejtimes-news';
     public const KHALEEJ_TIMES_KHALEEJTIMES_SECTIONS = 'khaleejtimes-sections';
+    public const KICK_CATEGORIES = 'kick-categories';
+    public const KICK_CATEGORY_CLIPS = 'kick-category-clips';
+    public const KICK_CHANNEL = 'kick-channel';
+    public const KICK_CHANNEL_CHATROOM = 'kick-channel-chatroom';
+    public const KICK_CHANNEL_CLIPS = 'kick-channel-clips';
+    public const KICK_CHANNEL_EMOTES = 'kick-channel-emotes';
+    public const KICK_CHANNEL_LINKS = 'kick-channel-links';
+    public const KICK_CHANNEL_STREAMS = 'kick-channel-streams';
+    public const KICK_CHANNEL_VIDEOS = 'kick-channel-videos';
+    public const KICK_CLIP = 'kick-clip';
+    public const KICK_CLIPS = 'kick-clips';
+    public const KICK_DROPS = 'kick-drops';
+    public const KICK_GIFTS = 'kick-gifts';
+    public const KICK_LANGUAGES = 'kick-languages';
+    public const KICK_LIVESTREAMS = 'kick-livestreams';
+    public const KICK_SEARCH_CATEGORIES = 'kick-search-categories';
+    public const KICK_SEARCH_CHANNELS = 'kick-search-channels';
+    public const KICK_SUBCATEGORIES = 'kick-subcategories';
+    public const KICK_SUBCATEGORY = 'kick-subcategory';
+    public const KICK_TOP_CHANNELS = 'kick-top-channels';
+    public const KICK_VIDEO = 'kick-video';
     public const KICKSTARTER_COMMENTS = 'kickstarter-comments';
     public const KICKSTARTER_DISCOVER = 'kickstarter-discover';
     public const KICKSTARTER_PROJECT = 'kickstarter-project';
@@ -161242,6 +165321,12 @@ final class OperationId
     public const PRADA_SEARCH = 'prada-search';
     public const PRADA_STORES = 'prada-stores';
     public const PRADA_SUGGEST = 'prada-suggest';
+    public const PRICE_CHARTING_PRICECHARTING_BIG_MOVERS = 'pricecharting-big-movers';
+    public const PRICE_CHARTING_PRICECHARTING_CATEGORIES = 'pricecharting-categories';
+    public const PRICE_CHARTING_PRICECHARTING_CONSOLE = 'pricecharting-console';
+    public const PRICE_CHARTING_PRICECHARTING_PRICE_HISTORY = 'pricecharting-price-history';
+    public const PRICE_CHARTING_PRICECHARTING_PRODUCT = 'pricecharting-product';
+    public const PRICE_CHARTING_PRICECHARTING_SEARCH = 'pricecharting-search';
     public const PRISTINE_AUCTION_CATEGORIES = 'pristine-auction-categories';
     public const PRISTINE_AUCTION_LOT_DETAIL = 'pristine-auction-lot-detail';
     public const PRISTINE_AUCTION_SEARCH = 'pristine-auction-search';
@@ -161285,6 +165370,7 @@ final class OperationId
     public const PSA_PRICE_GUIDE_CATEGORIES = 'psa-price-guide-categories';
     public const PSA_PRICE_GUIDE_SEARCH = 'psa-price-guide-search';
     public const PSA_PRICE_GUIDE_SET = 'psa-price-guide-set';
+    public const PSA_PRICE_GUIDE_SETS = 'psa-price-guide-sets';
     public const PSA_PROBATFACTS_CATEGORIES = 'psa-probatfacts-categories';
     public const PSA_PROBATFACTS_GALLERY = 'psa-probatfacts-gallery';
     public const PSA_PROBATFACTS_SUBJECT = 'psa-probatfacts-subject';
@@ -161371,6 +165457,17 @@ final class OperationId
     public const REDFIN_REGION_TRENDS = 'redfin-region-trends';
     public const REDFIN_SEARCH = 'redfin-search';
     public const REDFIN_SIMILAR = 'redfin-similar';
+    public const REEL_SHORT_REELSHORT_FANDOM_CATEGORIES = 'reelshort-fandom-categories';
+    public const REEL_SHORT_REELSHORT_FANDOM_POST = 'reelshort-fandom-post';
+    public const REEL_SHORT_REELSHORT_FANDOM_POSTS = 'reelshort-fandom-posts';
+    public const REEL_SHORT_REELSHORT_HOME = 'reelshort-home';
+    public const REEL_SHORT_REELSHORT_MOVIE = 'reelshort-movie';
+    public const REEL_SHORT_REELSHORT_NEW_RELEASES = 'reelshort-new-releases';
+    public const REEL_SHORT_REELSHORT_SEARCH = 'reelshort-search';
+    public const REEL_SHORT_REELSHORT_SHELF = 'reelshort-shelf';
+    public const REEL_SHORT_REELSHORT_TAG_BOOKS = 'reelshort-tag-books';
+    public const REEL_SHORT_REELSHORT_TAG_SEARCH = 'reelshort-tag-search';
+    public const REEL_SHORT_REELSHORT_TAGS = 'reelshort-tags';
     public const REFERRALS_CLICK = 'referrals-click';
     public const REFERRALS_ME = 'referrals-me';
     public const REFERRALS_ME_EVENTS = 'referrals-me-events';
@@ -162007,6 +166104,15 @@ final class OperationId
     public const TARGET_REVIEWS = 'target-reviews';
     public const TARGET_SEARCH = 'target-search';
     public const TARGET_STORES = 'target-stores';
+    public const TCGPLAYER_FILTERS = 'tcgplayer-filters';
+    public const TCGPLAYER_LISTINGS = 'tcgplayer-listings';
+    public const TCGPLAYER_PRICE_GUIDE = 'tcgplayer-price-guide';
+    public const TCGPLAYER_PRICE_HISTORY = 'tcgplayer-price-history';
+    public const TCGPLAYER_PRODUCT = 'tcgplayer-product';
+    public const TCGPLAYER_PRODUCT_LINES = 'tcgplayer-product-lines';
+    public const TCGPLAYER_SALES = 'tcgplayer-sales';
+    public const TCGPLAYER_SEARCH = 'tcgplayer-search';
+    public const TCGPLAYER_SETS = 'tcgplayer-sets';
     public const TECH_CRUNCH_TECHCRUNCH_ARTICLE = 'techcrunch-article';
     public const TECH_CRUNCH_TECHCRUNCH_AUTHOR = 'techcrunch-author';
     public const TECH_CRUNCH_TECHCRUNCH_HEADLINES = 'techcrunch-headlines';
@@ -162017,6 +166123,11 @@ final class OperationId
     public const TECH_RADAR_TECHRADAR_HEADLINES = 'techradar-headlines';
     public const TECH_RADAR_TECHRADAR_NEWS = 'techradar-news';
     public const TECH_RADAR_TECHRADAR_SECTIONS = 'techradar-sections';
+    public const TELEGRAM_BOT = 'telegram-bot';
+    public const TELEGRAM_CHANNEL = 'telegram-channel';
+    public const TELEGRAM_CHANNEL_POSTS = 'telegram-channel-posts';
+    public const TELEGRAM_GROUP = 'telegram-group';
+    public const TELEGRAM_POST = 'telegram-post';
     public const TES_JOB_DETAIL = 'tes-job-detail';
     public const TES_JOB_EMPLOYER = 'tes-job-employer';
     public const TES_JOB_SEARCH = 'tes-job-search';
@@ -162478,6 +166589,11 @@ final class OperationId
     public const WALGREENS_STORES = 'walgreens-stores';
     public const WALL_STREET_JOURNAL_WSJ_ARTICLE = 'wsj-article';
     public const WALL_STREET_JOURNAL_WSJ_AUTHOR = 'wsj-author';
+    public const WALLAPOP_CATEGORIES = 'wallapop-categories';
+    public const WALLAPOP_FILTER_OPTIONS = 'wallapop-filter-options';
+    public const WALLAPOP_FILTERS = 'wallapop-filters';
+    public const WALLAPOP_ITEM_DETAIL = 'wallapop-item-detail';
+    public const WALLAPOP_SEARCH = 'wallapop-search';
     public const WALMART_PRODUCT = 'walmart-product';
     public const WALMART_PRODUCT_REVIEWS = 'walmart-product-reviews';
     public const WALMART_SEARCH = 'walmart-search';
@@ -162486,6 +166602,17 @@ final class OperationId
     public const WASHINGTON_POST_WAPO_HEADLINES = 'wapo-headlines';
     public const WASHINGTON_POST_WAPO_NEWS = 'wapo-news';
     public const WASHINGTON_POST_WAPO_SECTIONS = 'wapo-sections';
+    public const WATTPAD_CATEGORIES = 'wattpad-categories';
+    public const WATTPAD_LANGUAGES = 'wattpad-languages';
+    public const WATTPAD_PART = 'wattpad-part';
+    public const WATTPAD_PART_COMMENTS = 'wattpad-part-comments';
+    public const WATTPAD_SEARCH = 'wattpad-search';
+    public const WATTPAD_SEARCH_USERS = 'wattpad-search-users';
+    public const WATTPAD_STORY = 'wattpad-story';
+    public const WATTPAD_STORY_PARTS = 'wattpad-story-parts';
+    public const WATTPAD_STORY_RECOMMENDATIONS = 'wattpad-story-recommendations';
+    public const WATTPAD_USER = 'wattpad-user';
+    public const WATTPAD_USER_STORIES = 'wattpad-user-stories';
     public const WAYFAIR_CATEGORIES = 'wayfair-categories';
     public const WAYFAIR_CATEGORY = 'wayfair-category';
     public const WAYFAIR_PRODUCT = 'wayfair-product';
