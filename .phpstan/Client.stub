@@ -119,6 +119,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\DraftKingsPredictionsGroup $draftKingsPredictions
  * @property-read \Crawlora\Generated\DraftKingsRacingGroup $draftKingsRacing
  * @property-read \Crawlora\Generated\DraftKingsSportsbookGroup $draftKingsSportsbook
+ * @property-read \Crawlora\Generated\DramaBoxGroup $dramaBox
  * @property-read \Crawlora\Generated\DuckDuckGoSearchGroup $duckDuckGoSearch
  * @property-read \Crawlora\Generated\DunkinGroup $dunkin
  * @property-read \Crawlora\Generated\DwGroup $dw
@@ -223,6 +224,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\KalshiGroup $kalshi
  * @property-read \Crawlora\Generated\KfcGroup $kfc
  * @property-read \Crawlora\Generated\KhaleejTimesGroup $khaleejTimes
+ * @property-read \Crawlora\Generated\KickGroup $kick
  * @property-read \Crawlora\Generated\KickstarterGroup $kickstarter
  * @property-read \Crawlora\Generated\KohlSGroup $kohlS
  * @property-read \Crawlora\Generated\KotakuGroup $kotaku
@@ -314,6 +316,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\PopularMechanicsGroup $popularMechanics
  * @property-read \Crawlora\Generated\PoshmarkGroup $poshmark
  * @property-read \Crawlora\Generated\PradaGroup $prada
+ * @property-read \Crawlora\Generated\PriceChartingGroup $priceCharting
  * @property-read \Crawlora\Generated\PristineAuctionGroup $pristineAuction
  * @property-read \Crawlora\Generated\PristineMarketplaceGroup $pristineMarketplace
  * @property-read \Crawlora\Generated\ProductHuntGroup $productHunt
@@ -329,6 +332,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\RebagGroup $rebag
  * @property-read \Crawlora\Generated\RedditGroup $reddit
  * @property-read \Crawlora\Generated\RedfinGroup $redfin
+ * @property-read \Crawlora\Generated\ReelShortGroup $reelShort
  * @property-read \Crawlora\Generated\ReferralsGroup $referrals
  * @property-read \Crawlora\Generated\ResearchJobsGroup $researchJobs
  * @property-read \Crawlora\Generated\ResearchGroup $research
@@ -395,8 +399,10 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\SwiggyGroup $swiggy
  * @property-read \Crawlora\Generated\TacoBellGroup $tacoBell
  * @property-read \Crawlora\Generated\TargetGroup $target
+ * @property-read \Crawlora\Generated\TcgplayerGroup $tcgplayer
  * @property-read \Crawlora\Generated\TechCrunchGroup $techCrunch
  * @property-read \Crawlora\Generated\TechRadarGroup $techRadar
+ * @property-read \Crawlora\Generated\TelegramGroup $telegram
  * @property-read \Crawlora\Generated\TheTelegraphGroup $theTelegraph
  * @property-read \Crawlora\Generated\TesGroup $tes
  * @property-read \Crawlora\Generated\TeslaJobsGroup $teslaJobs
@@ -453,8 +459,10 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\VrboGroup $vrbo
  * @property-read \Crawlora\Generated\WalesOnlineGroup $walesOnline
  * @property-read \Crawlora\Generated\WalgreensGroup $walgreens
+ * @property-read \Crawlora\Generated\WallapopGroup $wallapop
  * @property-read \Crawlora\Generated\WalmartGroup $walmart
  * @property-read \Crawlora\Generated\WashingtonPostGroup $washingtonPost
+ * @property-read \Crawlora\Generated\WattpadGroup $wattpad
  * @property-read \Crawlora\Generated\WayfairGroup $wayfair
  * @property-read \Crawlora\Generated\WccftechGroup $wccftech
  * @property-read \Crawlora\Generated\WendysGroup $wendys
