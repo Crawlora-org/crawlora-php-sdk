@@ -10,12 +10,10 @@ plus retries, pagination, middleware hooks, and client-side rate limiting.
 - Operation reference: [`docs/operations.md`](docs/operations.md) · recipes: [`docs/recipes.md`](docs/recipes.md)
 
 ## Install
-
-Published on [Packagist](https://packagist.org/packages/crawlora/sdk). Composer
-uses a semver-compatible beta tag for the shared SDK beta release:
+Published on [Packagist](https://packagist.org/packages/crawlora/sdk). Install the stable release:
 
 ```sh
-composer require crawlora/sdk:^1.18@beta
+composer require crawlora/sdk:1.50
 ```
 
 ## Quick start
