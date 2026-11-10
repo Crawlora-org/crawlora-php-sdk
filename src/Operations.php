@@ -3238,6 +3238,144 @@ final class Operations
                     ],
                 ],
                 [
+                    'name' => 'listing_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'AUCTION',
+                        'FIXED_PRICE',
+                        'EXTERNAL_AUCTION',
+                        'EXTERNAL_FIXED_PRICE',
+                    ],
+                ],
+                [
+                    'name' => 'grade',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '1',
+                        '1.5',
+                        '2',
+                        '2.5',
+                        '3',
+                        '3.5',
+                        '4',
+                        '4.5',
+                        '5',
+                        '5.5',
+                        '6',
+                        '6.5',
+                        '7',
+                        '7.5',
+                        '8',
+                        '8.5',
+                        '9',
+                        '9.5',
+                        '10',
+                        'Auth',
+                        'PRI',
+                        'BL',
+                    ],
+                ],
+                [
+                    'name' => 'subject',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'brand',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'card_number',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sold_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sold_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'added_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'added_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'year_min',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'year_max',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'price_min',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'price_max',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'pop_min',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'pop_max',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'has_serial',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_print_run',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'rookie_year_card',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'recommended',
+                        'sold_date_desc',
+                        'sold_date_asc',
+                        'added_desc',
+                        'added_asc',
+                        'price_desc',
+                        'price_asc',
+                        'pop_desc',
+                        'pop_asc',
+                        'year_desc',
+                        'year_asc',
+                    ],
+                ],
+                [
                     'name' => 'page',
                     'in' => 'query',
                     'type' => 'integer',
@@ -4562,6 +4700,50 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'apple-books-audiobook-charts' => [
+            'id' => 'apple-books-audiobook-charts',
+            'method' => 'GET',
+            'path' => '/apple-books/audiobook/charts',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '50000042',
+                        '50000043',
+                        '50000040',
+                        '50000049',
+                        '50000044',
+                        '50000051',
+                        '50000052',
+                        '50000053',
+                        '50000069',
+                        '50000055',
+                        '50000054',
+                        '50000056',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'apple-books-audiobook-search' => [
             'id' => 'apple-books-audiobook-search',
             'method' => 'GET',
@@ -4874,6 +5056,25 @@ final class Operations
                     'name' => 'genre',
                     'in' => 'query',
                     'type' => 'integer',
+                    'enum' => [
+                        '9008',
+                        '9009',
+                        '9026',
+                        '9027',
+                        '9028',
+                        '9031',
+                        '9025',
+                        '9015',
+                        '11086',
+                        '9032',
+                        '9002',
+                        '9034',
+                        '9018',
+                        '9003',
+                        '9020',
+                        '9035',
+                        '11165',
+                    ],
                 ],
                 [
                     'name' => 'country',
@@ -4884,6 +5085,41 @@ final class Operations
                     'name' => 'limit',
                     'in' => 'query',
                     'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'apple-books-genres' => [
+            'id' => 'apple-books-genres',
+            'method' => 'GET',
+            'path' => '/apple-books/genres',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'media',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'book',
+                        'audiobook',
+                    ],
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
                 ],
             ],
             'formParams' => [],
@@ -8095,6 +8331,203 @@ final class Operations
             'consumes' => [
                 'application/json',
             ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'bandcamp-artist' => [
+            'id' => 'bandcamp-artist',
+            'method' => 'GET',
+            'path' => '/bandcamp/artist',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'artist',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'bandcamp-discover' => [
+            'id' => 'bandcamp-discover',
+            'method' => 'GET',
+            'path' => '/bandcamp/discover',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tags',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'vinyl',
+                        'cd',
+                        'cassette',
+                    ],
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'best_selling',
+                        'new',
+                        'random',
+                    ],
+                ],
+                [
+                    'name' => 'time_facet',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'geoname_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'bandcamp-filters' => [
+            'id' => 'bandcamp-filters',
+            'method' => 'GET',
+            'path' => '/bandcamp/filters',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'bandcamp-related-tags' => [
+            'id' => 'bandcamp-related-tags',
+            'method' => 'GET',
+            'path' => '/bandcamp/related-tags',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tag',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'bandcamp-release' => [
+            'id' => 'bandcamp-release',
+            'method' => 'GET',
+            'path' => '/bandcamp/release',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'bandcamp-search' => [
+            'id' => 'bandcamp-search',
+            'method' => 'GET',
+            'path' => '/bandcamp/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'artists',
+                        'albums',
+                        'tracks',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
             'produces' => [
                 'application/json',
             ],
@@ -11425,6 +11858,8 @@ final class Operations
                         'defwin',
                         'upcoming',
                         'current',
+                        'canceled',
+                        'postponed',
                     ],
                 ],
                 [
@@ -11545,6 +11980,7 @@ final class Operations
                         'dota2',
                         'r6siege',
                         'mlbb',
+                        'games',
                     ],
                 ],
                 [
@@ -11556,6 +11992,35 @@ final class Operations
                         'article',
                         'wiki',
                         'predictions',
+                        'reviews',
+                    ],
+                ],
+                [
+                    'name' => 'tag',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'locale',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'ru',
+                        'pt',
+                        'es',
+                        'de',
+                        'fr',
+                        'tr',
+                        'pl',
+                        'id',
+                        'vi',
+                        'ja',
+                        'ko',
+                        'ua',
+                        'ms',
+                        'tl',
+                        'da',
                     ],
                 ],
                 [
@@ -12345,6 +12810,8 @@ final class Operations
                         'current',
                         'upcoming',
                         'finished',
+                        'canceled',
+                        'postponed',
                     ],
                 ],
                 [
@@ -12538,6 +13005,602 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'boardgamegeek-cardsets' => [
+            'id' => 'boardgamegeek-cardsets',
+            'method' => 'GET',
+            'path' => '/boardgamegeek/cardsets/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'boardgamegeek-entity' => [
+            'id' => 'boardgamegeek-entity',
+            'method' => 'GET',
+            'path' => '/boardgamegeek/entity/{type}/{id}',
+            'pathParams' => [
+                'type',
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'boardgamegeek-game' => [
+            'id' => 'boardgamegeek-game',
+            'method' => 'GET',
+            'path' => '/boardgamegeek/game/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'boardgamegeek-geeklist' => [
+            'id' => 'boardgamegeek-geeklist',
+            'method' => 'GET',
+            'path' => '/boardgamegeek/geeklist/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'boardgamegeek-geeklist-items' => [
+            'id' => 'boardgamegeek-geeklist-items',
+            'method' => 'GET',
+            'path' => '/boardgamegeek/geeklist/{id}/items',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'boardgamegeek-geeklists' => [
+            'id' => 'boardgamegeek-geeklists',
+            'method' => 'GET',
+            'path' => '/boardgamegeek/geeklists',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'objecttype',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'thing',
+                        'family',
+                        'person',
+                        'company',
+                        'property',
+                        'version',
+                    ],
+                ],
+                [
+                    'name' => 'objectid',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'trade',
+                        'general',
+                    ],
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'hot',
+                        'recent',
+                    ],
+                ],
+                [
+                    'name' => 'showcount',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'pageid',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'boardgamegeek-hotness' => [
+            'id' => 'boardgamegeek-hotness',
+            'method' => 'GET',
+            'path' => '/boardgamegeek/hotness',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'objecttype',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'thing',
+                        'person',
+                        'company',
+                    ],
+                ],
+                [
+                    'name' => 'showcount',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'boardgamegeek-links' => [
+            'id' => 'boardgamegeek-links',
+            'method' => 'GET',
+            'path' => '/boardgamegeek/links',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'objecttype',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'thing',
+                        'family',
+                        'person',
+                        'company',
+                        'property',
+                        'version',
+                    ],
+                ],
+                [
+                    'name' => 'objectid',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'linktype',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'boardgame',
+                        'boardgameaccessory',
+                        'boardgameaccessoryartist',
+                        'boardgameaccessorydesigner',
+                        'boardgameartist',
+                        'boardgamecategory',
+                        'boardgamedesigner',
+                        'boardgamedeveloper',
+                        'boardgameeditor',
+                        'boardgameexpansion',
+                        'boardgamefamily',
+                        'boardgamegraphicdesigner',
+                        'boardgamehonor',
+                        'boardgameinsertdesigner',
+                        'boardgameintegration',
+                        'boardgameissue',
+                        'boardgameissueartist',
+                        'boardgameissueauthor',
+                        'boardgamemechanic',
+                        'boardgamepublisher',
+                        'boardgamesculptor',
+                        'boardgamesolodesigner',
+                        'boardgamesubdomain',
+                        'boardgameversion',
+                        'boardgameversionartist',
+                        'boardgamewriter',
+                        'cardset',
+                        'containedin',
+                        'contains',
+                        'expandsboardgame',
+                        'expandsvideogame',
+                        'languages',
+                        'reimplementation',
+                        'reimplements',
+                        'rpgartist',
+                        'rpgdesigner',
+                        'rpghonor',
+                        'rpgissuearticleauthor',
+                        'rpgissueartist',
+                        'rpgissuedesigner',
+                        'rpgissueproducer',
+                        'rpgproducer',
+                        'videogamebg',
+                        'videogamedeveloper',
+                        'videogameexpansion',
+                        'videogamefranchise',
+                        'videogamegenre',
+                        'videogamemode',
+                        'videogameplatform',
+                        'videogamepublisher',
+                        'videogameseries',
+                        'videogametheme',
+                    ],
+                ],
+                [
+                    'name' => 'showcount',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'pageid',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'boardgamegeek-media' => [
+            'id' => 'boardgamegeek-media',
+            'method' => 'GET',
+            'path' => '/boardgamegeek/media/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'image',
+                        'video',
+                        'file',
+                    ],
+                ],
+                [
+                    'name' => 'showcount',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'pageid',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'hot',
+                        'recent',
+                    ],
+                ],
+                [
+                    'name' => 'interval',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'alltime',
+                        'today',
+                        'twodays',
+                        'last7',
+                        'last30',
+                        'year',
+                    ],
+                ],
+                [
+                    'name' => 'gallery',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'game',
+                        'person',
+                        'creative',
+                        'review',
+                        'session',
+                        'instructional',
+                        'interview',
+                        'unboxing',
+                        'humor',
+                        'other',
+                    ],
+                ],
+                [
+                    'name' => 'tag',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'BoxFront',
+                        'BoxBack',
+                        'Components',
+                        'Customized',
+                        'Play',
+                        'Miscellaneous',
+                        'uncat',
+                    ],
+                ],
+                [
+                    'name' => 'license',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'reuse',
+                        'commercial',
+                        'modify',
+                    ],
+                ],
+                [
+                    'name' => 'languageid',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'boardgamegeek-recommendations' => [
+            'id' => 'boardgamegeek-recommendations',
+            'method' => 'GET',
+            'path' => '/boardgamegeek/recommendations/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'showcount',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'boardgamegeek-reviews' => [
+            'id' => 'boardgamegeek-reviews',
+            'method' => 'GET',
+            'path' => '/boardgamegeek/reviews/{type}/{id}',
+            'pathParams' => [
+                'type',
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'boardgamegeek-taxonomy' => [
+            'id' => 'boardgamegeek-taxonomy',
+            'method' => 'GET',
+            'path' => '/boardgamegeek/taxonomy',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'boardgamegeek-thread' => [
+            'id' => 'boardgamegeek-thread',
+            'method' => 'GET',
+            'path' => '/boardgamegeek/thread/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'pageid',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'boardgamegeek-threads' => [
+            'id' => 'boardgamegeek-threads',
+            'method' => 'GET',
+            'path' => '/boardgamegeek/threads',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'objecttype',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'thing',
+                        'family',
+                        'person',
+                        'company',
+                        'property',
+                        'version',
+                    ],
+                ],
+                [
+                    'name' => 'objectid',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'forumid',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'hot',
+                        'recent',
+                        'active',
+                    ],
+                ],
+                [
+                    'name' => 'showcount',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'pageid',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'bonhams-auction-search' => [
             'id' => 'bonhams-auction-search',
@@ -13155,6 +14218,270 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'booksy-business' => [
+            'id' => 'booksy-business',
+            'method' => 'GET',
+            'path' => '/booksy/business',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ar',
+                        'au',
+                        'br',
+                        'ca',
+                        'cl',
+                        'co',
+                        'de',
+                        'es',
+                        'fr',
+                        'gb',
+                        'ie',
+                        'it',
+                        'mx',
+                        'nl',
+                        'pl',
+                        'pt',
+                        'us',
+                        'za',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'booksy-businesses' => [
+            'id' => 'booksy-businesses',
+            'method' => 'GET',
+            'path' => '/booksy/businesses',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ar',
+                        'au',
+                        'br',
+                        'ca',
+                        'cl',
+                        'co',
+                        'de',
+                        'es',
+                        'fr',
+                        'gb',
+                        'ie',
+                        'it',
+                        'mx',
+                        'nl',
+                        'pl',
+                        'pt',
+                        'us',
+                        'za',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'treatment',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'location_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'location_name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort_order',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'distance',
+                        'score',
+                        'top_rated',
+                        'by_ids',
+                    ],
+                ],
+                [
+                    'name' => 'gender',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'M',
+                        'F',
+                        'R',
+                    ],
+                ],
+                [
+                    'name' => 'open_now',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'has_special_offers',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'business_ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'booksy-categories' => [
+            'id' => 'booksy-categories',
+            'method' => 'GET',
+            'path' => '/booksy/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ar',
+                        'au',
+                        'br',
+                        'ca',
+                        'cl',
+                        'co',
+                        'de',
+                        'es',
+                        'fr',
+                        'gb',
+                        'ie',
+                        'it',
+                        'mx',
+                        'nl',
+                        'pl',
+                        'pt',
+                        'us',
+                        'za',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'booksy-treatment-hints' => [
+            'id' => 'booksy-treatment-hints',
+            'method' => 'GET',
+            'path' => '/booksy/treatment-hints',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ar',
+                        'au',
+                        'br',
+                        'ca',
+                        'cl',
+                        'co',
+                        'de',
+                        'es',
+                        'fr',
+                        'gb',
+                        'ie',
+                        'it',
+                        'mx',
+                        'nl',
+                        'pl',
+                        'pt',
+                        'us',
+                        'za',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'boots-search' => [
             'id' => 'boots-search',
@@ -14789,6 +16116,462 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'bringatrailer-filters' => [
+            'id' => 'bringatrailer-filters',
+            'method' => 'GET',
+            'path' => '/bringatrailer/filters',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'bringatrailer-listing' => [
+            'id' => 'bringatrailer-listing',
+            'method' => 'GET',
+            'path' => '/bringatrailer/listing',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'bid_history',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'bringatrailer-live' => [
+            'id' => 'bringatrailer-live',
+            'method' => 'GET',
+            'path' => '/bringatrailer/live',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'era',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'ending_within',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '1',
+                        '4',
+                        '24',
+                        '120',
+                        '168',
+                    ],
+                ],
+                [
+                    'name' => 'max_bid',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'no_reserve',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'premium',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ending_soon',
+                        'highest_bid',
+                        'lowest_bid',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'bringatrailer-makes' => [
+            'id' => 'bringatrailer-makes',
+            'method' => 'GET',
+            'path' => '/bringatrailer/makes',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'make',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'bringatrailer-price-history' => [
+            'id' => 'bringatrailer-price-history',
+            'method' => 'GET',
+            'path' => '/bringatrailer/price-history',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'make',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'model_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'exclude',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'era',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'origin',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'premium',
+                        'noreserve',
+                    ],
+                ],
+                [
+                    'name' => 'recency',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '7D',
+                        '30D',
+                        '1Y',
+                        '2Y',
+                        '5Y',
+                    ],
+                ],
+                [
+                    'name' => 'min_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_bid',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'points_limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'bringatrailer-results' => [
+            'id' => 'bringatrailer-results',
+            'method' => 'GET',
+            'path' => '/bringatrailer/results',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'make',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'model_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'exclude',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'era',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'origin',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'result',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'sold',
+                        'unsold',
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'premium',
+                        'noreserve',
+                    ],
+                ],
+                [
+                    'name' => 'recency',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '7D',
+                        '30D',
+                        '1Y',
+                        '2Y',
+                        '5Y',
+                    ],
+                ],
+                [
+                    'name' => 'min_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_bid',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'recent',
+                        'oldest',
+                        'popular',
+                        'highest_bid',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'bringatrailer-search' => [
+            'id' => 'bringatrailer-search',
+            'method' => 'GET',
+            'path' => '/bringatrailer/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'phrase',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'section',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'live_listings',
+                        'models',
+                        'previous_auctions',
+                        'events',
+                        'stories',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'bringatrailer-suggest' => [
+            'id' => 'bringatrailer-suggest',
+            'method' => 'GET',
+            'path' => '/bringatrailer/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'term',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'brisbanetimes-article' => [
             'id' => 'brisbanetimes-article',
             'method' => 'GET',
@@ -16009,6 +17792,316 @@ final class Operations
             'consumes' => [
                 'application/json',
             ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cardmarket-catalog' => [
+            'id' => 'cardmarket-catalog',
+            'method' => 'GET',
+            'path' => '/cardmarket/catalog',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'kind',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'singles',
+                        'nonsingles',
+                        'accessories',
+                    ],
+                ],
+                [
+                    'name' => 'game_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '5',
+                        '6',
+                        '7',
+                        '8',
+                        '9',
+                        '10',
+                        '11',
+                        '12',
+                        '13',
+                        '15',
+                        '16',
+                        '17',
+                        '18',
+                        '19',
+                        '20',
+                        '21',
+                        '22',
+                        '23',
+                        '24',
+                        '25',
+                    ],
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'expansion_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'cardmarket-catalog-categories' => [
+            'id' => 'cardmarket-catalog-categories',
+            'method' => 'GET',
+            'path' => '/cardmarket/catalog/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'kind',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'singles',
+                        'nonsingles',
+                        'accessories',
+                    ],
+                ],
+                [
+                    'name' => 'game_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '5',
+                        '6',
+                        '7',
+                        '8',
+                        '9',
+                        '10',
+                        '11',
+                        '12',
+                        '13',
+                        '15',
+                        '16',
+                        '17',
+                        '18',
+                        '19',
+                        '20',
+                        '21',
+                        '22',
+                        '23',
+                        '24',
+                        '25',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cardmarket-games' => [
+            'id' => 'cardmarket-games',
+            'method' => 'GET',
+            'path' => '/cardmarket/games',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cardmarket-price-guide' => [
+            'id' => 'cardmarket-price-guide',
+            'method' => 'GET',
+            'path' => '/cardmarket/price-guide',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'kind',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'game',
+                        'accessories',
+                    ],
+                ],
+                [
+                    'name' => 'game_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '5',
+                        '6',
+                        '7',
+                        '8',
+                        '9',
+                        '10',
+                        '11',
+                        '12',
+                        '13',
+                        '15',
+                        '16',
+                        '17',
+                        '18',
+                        '19',
+                        '20',
+                        '21',
+                        '22',
+                        '23',
+                        '24',
+                        '25',
+                        '26',
+                        '27',
+                        '28',
+                        '29',
+                        '30',
+                        '31',
+                        '32',
+                        '33',
+                    ],
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'product_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'cardmarket-price-guide-categories' => [
+            'id' => 'cardmarket-price-guide-categories',
+            'method' => 'GET',
+            'path' => '/cardmarket/price-guide/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'kind',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'game',
+                        'accessories',
+                    ],
+                ],
+                [
+                    'name' => 'game_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '5',
+                        '6',
+                        '7',
+                        '8',
+                        '9',
+                        '10',
+                        '11',
+                        '12',
+                        '13',
+                        '15',
+                        '16',
+                        '17',
+                        '18',
+                        '19',
+                        '20',
+                        '21',
+                        '22',
+                        '23',
+                        '24',
+                        '25',
+                        '26',
+                        '27',
+                        '28',
+                        '29',
+                        '30',
+                        '31',
+                        '32',
+                        '33',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
             'produces' => [
                 'application/json',
             ],
@@ -22460,6 +24553,1215 @@ final class Operations
                 'cursor',
             ],
         ],
+        'cricbuzz-archives' => [
+            'id' => 'cricbuzz-archives',
+            'method' => 'GET',
+            'path' => '/cricbuzz/archives',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'international',
+                        'league',
+                        'domestic',
+                        'women',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-auction-info' => [
+            'id' => 'cricbuzz-auction-info',
+            'method' => 'GET',
+            'path' => '/cricbuzz/auction/info',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tournament',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-auction-live' => [
+            'id' => 'cricbuzz-auction-live',
+            'method' => 'GET',
+            'path' => '/cricbuzz/auction/live',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tournament',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'currency',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-auction-live-blog' => [
+            'id' => 'cricbuzz-auction-live-blog',
+            'method' => 'GET',
+            'path' => '/cricbuzz/auction/live-blog',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tournament',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-auction-news' => [
+            'id' => 'cricbuzz-auction-news',
+            'method' => 'GET',
+            'path' => '/cricbuzz/auction/news',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tournament',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-auction-options' => [
+            'id' => 'cricbuzz-auction-options',
+            'method' => 'GET',
+            'path' => '/cricbuzz/auction/options',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tournament',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-auction-player-detail' => [
+            'id' => 'cricbuzz-auction-player-detail',
+            'method' => 'GET',
+            'path' => '/cricbuzz/auction/player',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tournament',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'currency',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'player_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-auction-player-search' => [
+            'id' => 'cricbuzz-auction-player-search',
+            'method' => 'GET',
+            'path' => '/cricbuzz/auction/player-search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tournament',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-auction-results' => [
+            'id' => 'cricbuzz-auction-results',
+            'method' => 'GET',
+            'path' => '/cricbuzz/auction/results',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tournament',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'currency',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'country_ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'statuses',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'role',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cap',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'cricbuzz-auction-seasons' => [
+            'id' => 'cricbuzz-auction-seasons',
+            'method' => 'GET',
+            'path' => '/cricbuzz/auction/seasons',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-auction-team-detail' => [
+            'id' => 'cricbuzz-auction-team-detail',
+            'method' => 'GET',
+            'path' => '/cricbuzz/auction/team',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tournament',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'currency',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-auction-teams' => [
+            'id' => 'cricbuzz-auction-teams',
+            'method' => 'GET',
+            'path' => '/cricbuzz/auction/teams',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tournament',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'currency',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-auction-teams-options' => [
+            'id' => 'cricbuzz-auction-teams-options',
+            'method' => 'GET',
+            'path' => '/cricbuzz/auction/teams/options',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tournament',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-auction-upcoming' => [
+            'id' => 'cricbuzz-auction-upcoming',
+            'method' => 'GET',
+            'path' => '/cricbuzz/auction/upcoming',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tournament',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'currency',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'country_ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'role',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cap',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'cricbuzz-auction-upcoming-options' => [
+            'id' => 'cricbuzz-auction-upcoming-options',
+            'method' => 'GET',
+            'path' => '/cricbuzz/auction/upcoming/options',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tournament',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-auction-videos' => [
+            'id' => 'cricbuzz-auction-videos',
+            'method' => 'GET',
+            'path' => '/cricbuzz/auction/videos',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tournament',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-match-facts' => [
+            'id' => 'cricbuzz-match-facts',
+            'method' => 'GET',
+            'path' => '/cricbuzz/match-facts',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'match_url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-match-graphs' => [
+            'id' => 'cricbuzz-match-graphs',
+            'method' => 'GET',
+            'path' => '/cricbuzz/match-graphs',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'match_url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-match-overs' => [
+            'id' => 'cricbuzz-match-overs',
+            'method' => 'GET',
+            'path' => '/cricbuzz/match-overs',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'match_url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-matches' => [
+            'id' => 'cricbuzz-matches',
+            'method' => 'GET',
+            'path' => '/cricbuzz/matches',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'live',
+                        'recent',
+                        'upcoming',
+                    ],
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'international',
+                        'league',
+                        'domestic',
+                        'women',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-navigation' => [
+            'id' => 'cricbuzz-navigation',
+            'method' => 'GET',
+            'path' => '/cricbuzz/navigation',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-news-story' => [
+            'id' => 'cricbuzz-news-story',
+            'method' => 'GET',
+            'path' => '/cricbuzz/news/story',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-news-topics' => [
+            'id' => 'cricbuzz-news-topics',
+            'method' => 'GET',
+            'path' => '/cricbuzz/news/topics',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-rankings' => [
+            'id' => 'cricbuzz-rankings',
+            'method' => 'GET',
+            'path' => '/cricbuzz/rankings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'gender',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'men',
+                        'women',
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'batting',
+                        'bowling',
+                        'all-rounder',
+                        'teams',
+                    ],
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'test',
+                        'odi',
+                        't20',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-records' => [
+            'id' => 'cricbuzz-records',
+            'method' => 'GET',
+            'path' => '/cricbuzz/records',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'stat',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'mostRuns',
+                        'highestScore',
+                        'highestAvg',
+                        'highestSr',
+                        'mostHundreds',
+                        'mostFifties',
+                        'mostFours',
+                        'mostSixes',
+                        'mostNineties',
+                        'mostWickets',
+                        'lowestAvg',
+                        'bestBowlingInnings',
+                        'mostFiveWickets',
+                        'lowestEcon',
+                        'lowestSr',
+                    ],
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'test',
+                        'odi',
+                        't20',
+                    ],
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'team',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'opponent',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-schedule' => [
+            'id' => 'cricbuzz-schedule',
+            'method' => 'GET',
+            'path' => '/cricbuzz/schedule',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'international',
+                        'league',
+                        'domestic',
+                        'women',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-scorecard' => [
+            'id' => 'cricbuzz-scorecard',
+            'method' => 'GET',
+            'path' => '/cricbuzz/scorecard',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'match_url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-series' => [
+            'id' => 'cricbuzz-series',
+            'method' => 'GET',
+            'path' => '/cricbuzz/series',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'international',
+                        'domestic',
+                        'league',
+                        'women',
+                    ],
+                ],
+                [
+                    'name' => 'live_stream',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-series-stats' => [
+            'id' => 'cricbuzz-series-stats',
+            'method' => 'GET',
+            'path' => '/cricbuzz/series/stats',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'series_url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'stat',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'mostRuns',
+                        'highestScore',
+                        'highestAvg',
+                        'highestSr',
+                        'mostHundreds',
+                        'mostFifties',
+                        'mostFours',
+                        'mostSixes',
+                        'mostNineties',
+                        'mostWickets',
+                        'lowestAvg',
+                        'bestBowlingInnings',
+                        'mostFiveWickets',
+                        'lowestEcon',
+                        'lowestSr',
+                    ],
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-team-stats' => [
+            'id' => 'cricbuzz-team-stats',
+            'method' => 'GET',
+            'path' => '/cricbuzz/team/stats',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'international',
+                        'domestic',
+                        'league',
+                        'women',
+                    ],
+                ],
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'stat',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'format_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'opponent_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-team-stats-options' => [
+            'id' => 'cricbuzz-team-stats-options',
+            'method' => 'GET',
+            'path' => '/cricbuzz/team/stats/options',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'international',
+                        'domestic',
+                        'league',
+                        'women',
+                    ],
+                ],
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-teams' => [
+            'id' => 'cricbuzz-teams',
+            'method' => 'GET',
+            'path' => '/cricbuzz/teams',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'international',
+                        'domestic',
+                        'league',
+                        'women',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-video-categories' => [
+            'id' => 'cricbuzz-video-categories',
+            'method' => 'GET',
+            'path' => '/cricbuzz/videos/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-video-playlists' => [
+            'id' => 'cricbuzz-video-playlists',
+            'method' => 'GET',
+            'path' => '/cricbuzz/videos/playlists',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-wtc' => [
+            'id' => 'cricbuzz-wtc',
+            'method' => 'GET',
+            'path' => '/cricbuzz/wtc',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'cricinfo-calendar' => [
             'id' => 'cricinfo-calendar',
             'method' => 'GET',
@@ -24710,6 +28012,214 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'datasets-airbnb-hosts-facets' => [
+            'id' => 'datasets-airbnb-hosts-facets',
+            'method' => 'GET',
+            'path' => '/datasets/airbnb-hosts/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'superhost',
+                        'identity_verified',
+                        'listing_count_band',
+                        'hosting_years_band',
+                        'interest',
+                        'verification',
+                        'location',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'interest',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'verification',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'is_superhost',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'is_home_host',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'identity_verified',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_listings',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_listings',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_reviews',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_hosting_years',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-airbnb-hosts-item' => [
+            'id' => 'datasets-airbnb-hosts-item',
+            'method' => 'GET',
+            'path' => '/datasets/airbnb-hosts/items/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-airbnb-hosts-search' => [
+            'id' => 'datasets-airbnb-hosts-search',
+            'method' => 'GET',
+            'path' => '/datasets/airbnb-hosts/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'interest',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'verification',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'is_superhost',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'is_home_host',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'identity_verified',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_listings',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_listings',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_reviews',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_hosting_years',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'review_count_desc',
+                        'listing_count_desc',
+                        'hosting_years_desc',
+                        'relevance',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'datasets-airbnb-markets-facets' => [
             'id' => 'datasets-airbnb-markets-facets',
             'method' => 'GET',
@@ -24960,6 +28470,275 @@ final class Operations
                         'superhost_pct_desc',
                         'rating_desc',
                         'key_asc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-apple-books-facets' => [
+            'id' => 'datasets-apple-books-facets',
+            'method' => 'GET',
+            'path' => '/datasets/apple-books/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'kind',
+                        'genres',
+                        'artist_name',
+                        'publisher',
+                        'series_name',
+                        'narrator',
+                        'provider',
+                        'currency',
+                        'discovery_country',
+                        'discovery_source',
+                        'free',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'kind',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'book',
+                        'audiobook',
+                        'author',
+                        'series',
+                        'audiobook_series',
+                    ],
+                ],
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'artist',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'artist_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'publisher',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'series',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'narrator',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'provider',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'currency',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'discovery_source',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'free',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_rating_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-apple-books-item' => [
+            'id' => 'datasets-apple-books-item',
+            'method' => 'GET',
+            'path' => '/datasets/apple-books/items/{kind}/{id}',
+            'pathParams' => [
+                'kind',
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-apple-books-search' => [
+            'id' => 'datasets-apple-books-search',
+            'method' => 'GET',
+            'path' => '/datasets/apple-books/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'kind',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'book',
+                        'audiobook',
+                        'author',
+                        'series',
+                        'audiobook_series',
+                    ],
+                ],
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'artist',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'artist_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'publisher',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'series',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'narrator',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'provider',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'currency',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'discovery_source',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'free',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_rating_count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'rating_count_desc',
+                        'rating_desc',
+                        'release_date_desc',
+                        'name_asc',
+                        'crawled_at_desc',
                     ],
                 ],
                 [
@@ -25446,6 +29225,150 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'datasets-apps-charts-facets' => [
+            'id' => 'datasets-apps-charts-facets',
+            'method' => 'GET',
+            'path' => '/datasets/apps-charts/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'store',
+                        'collection',
+                        'chart_type',
+                        'platform',
+                        'category',
+                        'country',
+                        'app_id',
+                        'snapshot_date',
+                        'free',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'store',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ios',
+                        'android',
+                    ],
+                ],
+                [
+                    'name' => 'collection',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'chart_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'top_free',
+                        'top_paid',
+                        'top_grossing',
+                        'new',
+                    ],
+                ],
+                [
+                    'name' => 'platform',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'phone',
+                        'pad',
+                        'mac',
+                    ],
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'app_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'free',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'rank',
+                        'rank_desc',
+                        'date_desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-apps-charts-item' => [
+            'id' => 'datasets-apps-charts-item',
+            'method' => 'GET',
+            'path' => '/datasets/apps-charts/items/{chart_uid}',
+            'pathParams' => [
+                'chart_uid',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'datasets-apps-charts-search' => [
             'id' => 'datasets-apps-charts-search',
             'method' => 'GET',
@@ -25542,6 +29465,110 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'datasets-apps-reviews-facets' => [
+            'id' => 'datasets-apps-reviews-facets',
+            'method' => 'GET',
+            'path' => '/datasets/apps-reviews/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'store',
+                        'app_id',
+                        'country',
+                        'score',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'store',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ios',
+                        'android',
+                    ],
+                ],
+                [
+                    'name' => 'app_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_score',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'recent',
+                        'score_desc',
+                        'score_asc',
+                        'helpful_desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-apps-reviews-item' => [
+            'id' => 'datasets-apps-reviews-item',
+            'method' => 'GET',
+            'path' => '/datasets/apps-reviews/items/{review_uid}',
+            'pathParams' => [
+                'review_uid',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'datasets-apps-reviews-search' => [
             'id' => 'datasets-apps-reviews-search',
             'method' => 'GET',
@@ -25613,6 +29640,149 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'datasets-apps-facets' => [
+            'id' => 'datasets-apps-facets',
+            'method' => 'GET',
+            'path' => '/datasets/apps/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'store',
+                        'platforms',
+                        'category',
+                        'country',
+                        'developer',
+                        'free',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'store',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ios',
+                        'android',
+                        'both',
+                    ],
+                ],
+                [
+                    'name' => 'platforms',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'phone',
+                        'pad',
+                        'tablet',
+                        'mac',
+                        'tv',
+                        'chromebook',
+                        'watch',
+                        'vision',
+                        'xr',
+                        'car',
+                        'windows',
+                    ],
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'developer',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'free',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_reviews',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'rating_desc',
+                        'reviews_desc',
+                        'installs_desc',
+                        'updated_at_desc',
+                        'popularity_desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-apps-item' => [
+            'id' => 'datasets-apps-item',
+            'method' => 'GET',
+            'path' => '/datasets/apps/items/{app_uid}',
+            'pathParams' => [
+                'app_uid',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'datasets-apps-search' => [
             'id' => 'datasets-apps-search',
             'method' => 'GET',
@@ -25639,6 +29809,19 @@ final class Operations
                     'in' => 'query',
                     'collectionFormat' => 'csv',
                     'type' => 'array',
+                    'enum' => [
+                        'phone',
+                        'pad',
+                        'tablet',
+                        'mac',
+                        'tv',
+                        'chromebook',
+                        'watch',
+                        'vision',
+                        'xr',
+                        'car',
+                        'windows',
+                    ],
                 ],
                 [
                     'name' => 'category',
@@ -26943,6 +31126,132 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'datasets-creators-facets' => [
+            'id' => 'datasets-creators-facets',
+            'method' => 'GET',
+            'path' => '/datasets/creators/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'niche',
+                        'country',
+                        'verified',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'handle',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'niche',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'verified',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'min_followers',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'has_email',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'include_inactive',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'followers_desc',
+                        'engagement_desc',
+                        'engagement_qualified_desc',
+                        'likes_desc',
+                        'relevance',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-creators-item' => [
+            'id' => 'datasets-creators-item',
+            'method' => 'GET',
+            'path' => '/datasets/creators/items/{creator_uid}',
+            'pathParams' => [
+                'creator_uid',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'include_inactive',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'include_email',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'datasets-creators-search' => [
             'id' => 'datasets-creators-search',
@@ -32808,6 +37117,93 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'datasets-reddit-trending-facets' => [
+            'id' => 'datasets-reddit-trending-facets',
+            'method' => 'GET',
+            'path' => '/datasets/reddit-trending/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'subreddit',
+                        'domain',
+                        'snapshot_date',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'subreddit',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'rank',
+                        'date_desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-reddit-trending-item' => [
+            'id' => 'datasets-reddit-trending-item',
+            'method' => 'GET',
+            'path' => '/datasets/reddit-trending/items/{post_uid}',
+            'pathParams' => [
+                'post_uid',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'datasets-reddit-trending-search' => [
             'id' => 'datasets-reddit-trending-search',
             'method' => 'GET',
@@ -33529,6 +37925,83 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'datasets-steam-achievements-facets' => [
+            'id' => 'datasets-steam-achievements-facets',
+            'method' => 'GET',
+            'path' => '/datasets/steam-achievements/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'app_id',
+                    ],
+                ],
+                [
+                    'name' => 'app_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'percent_desc',
+                        'percent_asc',
+                        'rank_asc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-steam-achievements-item' => [
+            'id' => 'datasets-steam-achievements-item',
+            'method' => 'GET',
+            'path' => '/datasets/steam-achievements/items/{app_id}/{name}',
+            'pathParams' => [
+                'app_id',
+                'name',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'datasets-steam-achievements-search' => [
             'id' => 'datasets-steam-achievements-search',
             'method' => 'GET',
@@ -33574,6 +38047,110 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'datasets-steam-charts-facets' => [
+            'id' => 'datasets-steam-charts-facets',
+            'method' => 'GET',
+            'path' => '/datasets/steam-charts/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'chart',
+                        'country',
+                        'app_id',
+                        'snapshot_date',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'chart',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'most_played',
+                        'concurrent',
+                        'top_sellers',
+                    ],
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'app_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'rank',
+                        'rank_desc',
+                        'date_desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-steam-charts-item' => [
+            'id' => 'datasets-steam-charts-item',
+            'method' => 'GET',
+            'path' => '/datasets/steam-charts/items/{chart_uid}',
+            'pathParams' => [
+                'chart_uid',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'datasets-steam-charts-search' => [
             'id' => 'datasets-steam-charts-search',
@@ -34060,6 +38637,87 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'datasets-steam-news-facets' => [
+            'id' => 'datasets-steam-news-facets',
+            'method' => 'GET',
+            'path' => '/datasets/steam-news/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'app_id',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'app_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'date_desc',
+                        'date_asc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-steam-news-item' => [
+            'id' => 'datasets-steam-news-item',
+            'method' => 'GET',
+            'path' => '/datasets/steam-news/items/{app_id}/{gid}',
+            'pathParams' => [
+                'app_id',
+                'gid',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'datasets-steam-news-search' => [
             'id' => 'datasets-steam-news-search',
             'method' => 'GET',
@@ -34109,6 +38767,89 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'datasets-steam-playercounts-facets' => [
+            'id' => 'datasets-steam-playercounts-facets',
+            'method' => 'GET',
+            'path' => '/datasets/steam-playercounts/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'app_id',
+                        'snapshot_date',
+                    ],
+                ],
+                [
+                    'name' => 'app_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'date_desc',
+                        'date_asc',
+                        'players_desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-steam-playercounts-item' => [
+            'id' => 'datasets-steam-playercounts-item',
+            'method' => 'GET',
+            'path' => '/datasets/steam-playercounts/items/{app_id}/{snapshot_date}',
+            'pathParams' => [
+                'app_id',
+                'snapshot_date',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'datasets-steam-playercounts-search' => [
             'id' => 'datasets-steam-playercounts-search',
@@ -34160,6 +38901,91 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'datasets-steam-prices-facets' => [
+            'id' => 'datasets-steam-prices-facets',
+            'method' => 'GET',
+            'path' => '/datasets/steam-prices/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'app_id',
+                        'snapshot_date',
+                    ],
+                ],
+                [
+                    'name' => 'app_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'date_desc',
+                        'date_asc',
+                        'price_asc',
+                        'price_desc',
+                        'discount_desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-steam-prices-item' => [
+            'id' => 'datasets-steam-prices-item',
+            'method' => 'GET',
+            'path' => '/datasets/steam-prices/items/{app_id}/{snapshot_date}',
+            'pathParams' => [
+                'app_id',
+                'snapshot_date',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'datasets-steam-prices-search' => [
             'id' => 'datasets-steam-prices-search',
@@ -34214,6 +39040,100 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'datasets-steam-reviews-facets' => [
+            'id' => 'datasets-steam-reviews-facets',
+            'method' => 'GET',
+            'path' => '/datasets/steam-reviews/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'app_id',
+                        'language',
+                        'voted_up',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'app_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'voted_up',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'votes_desc',
+                        'weighted_desc',
+                        'date_desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-steam-reviews-item' => [
+            'id' => 'datasets-steam-reviews-item',
+            'method' => 'GET',
+            'path' => '/datasets/steam-reviews/items/{app_id}/{recommendation_id}',
+            'pathParams' => [
+                'app_id',
+                'recommendation_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'datasets-steam-reviews-search' => [
             'id' => 'datasets-steam-reviews-search',
             'method' => 'GET',
@@ -34248,6 +39168,169 @@ final class Operations
                         'votes_desc',
                         'weighted_desc',
                         'date_desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-substack-facets' => [
+            'id' => 'datasets-substack-facets',
+            'method' => 'GET',
+            'path' => '/datasets/substack/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'kind',
+                        'language',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'kind',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'user',
+                        'publication',
+                    ],
+                ],
+                [
+                    'name' => 'identifier',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'name_asc',
+                        'hydrated_at_desc',
+                        'hydrated_at_asc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'datasets-substack-item' => [
+            'id' => 'datasets-substack-item',
+            'method' => 'GET',
+            'path' => '/datasets/substack/items/{uid}',
+            'pathParams' => [
+                'uid',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'datasets-substack-search' => [
+            'id' => 'datasets-substack-search',
+            'method' => 'GET',
+            'path' => '/datasets/substack/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'kind',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'user',
+                        'publication',
+                    ],
+                ],
+                [
+                    'name' => 'identifier',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'name_asc',
+                        'hydrated_at_desc',
+                        'hydrated_at_asc',
                     ],
                 ],
                 [
@@ -37145,6 +42228,504 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'dollartree-blog-article' => [
+            'id' => 'dollartree-blog-article',
+            'method' => 'GET',
+            'path' => '/dollartree/blog/article',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'article_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'dollartree-categories' => [
+            'id' => 'dollartree-categories',
+            'method' => 'GET',
+            'path' => '/dollartree/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'dollartree-price' => [
+            'id' => 'dollartree-price',
+            'method' => 'GET',
+            'path' => '/dollartree/price',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'product_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'dollartree-product' => [
+            'id' => 'dollartree-product',
+            'method' => 'GET',
+            'path' => '/dollartree/product',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'product_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'dollartree-products' => [
+            'id' => 'dollartree-products',
+            'method' => 'GET',
+            'path' => '/dollartree/products',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'product_ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'dollartree-search' => [
+            'id' => 'dollartree-search',
+            'method' => 'GET',
+            'path' => '/dollartree/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'navigation_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'navigation_state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '48',
+                        '72',
+                        '96',
+                    ],
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'product.x_unitPriceNumeric|0',
+                        'product.x_unitPriceNumeric|1',
+                        'DollarProductType.new|1',
+                        'DollarProductType.averageRating|1',
+                        'product.displayName|0',
+                        'product.displayName|1',
+                        'product.casePrice|1',
+                        'DollarProductType.numberOfReviews|1',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'dollartree-stock-status' => [
+            'id' => 'dollartree-stock-status',
+            'method' => 'GET',
+            'path' => '/dollartree/stock-status',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'product_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sku_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'dollartree-keyword-typeahead' => [
+            'id' => 'dollartree-keyword-typeahead',
+            'method' => 'GET',
+            'path' => '/dollartree/typeahead/keywords',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'viewport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'xs',
+                        'sm',
+                        'md',
+                        'lg',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'dollartree-product-typeahead' => [
+            'id' => 'dollartree-product-typeahead',
+            'method' => 'GET',
+            'path' => '/dollartree/typeahead/products',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'viewport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'xs',
+                        'sm',
+                        'md',
+                        'lg',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'domain-dns-record-types' => [
+            'id' => 'domain-dns-record-types',
+            'method' => 'GET',
+            'path' => '/domain/dns/record-types',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'domain-dns-resolve' => [
+            'id' => 'domain-dns-resolve',
+            'method' => 'GET',
+            'path' => '/domain/dns/resolve',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'A',
+                        'AAAA',
+                        'CAA',
+                        'CNAME',
+                        'DS',
+                        'HTTPS',
+                        'MX',
+                        'NS',
+                        'SOA',
+                        'TXT',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'domain-rdap-domain' => [
+            'id' => 'domain-rdap-domain',
+            'method' => 'GET',
+            'path' => '/domain/rdap/domain/{domain}',
+            'pathParams' => [
+                'domain',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'domain-rdap-ip' => [
+            'id' => 'domain-rdap-ip',
+            'method' => 'GET',
+            'path' => '/domain/rdap/ip',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'ip',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'domain-robots' => [
+            'id' => 'domain-robots',
+            'method' => 'GET',
+            'path' => '/domain/robots/{domain}',
+            'pathParams' => [
+                'domain',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'domain-site' => [
+            'id' => 'domain-site',
+            'method' => 'GET',
+            'path' => '/domain/site/{domain}',
+            'pathParams' => [
+                'domain',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'domain-subdomains' => [
+            'id' => 'domain-subdomains',
+            'method' => 'GET',
+            'path' => '/domain/subdomains/{domain}',
+            'pathParams' => [
+                'domain',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'domain-wayback-availability' => [
+            'id' => 'domain-wayback-availability',
+            'method' => 'GET',
+            'path' => '/domain/wayback/availability/{domain}',
+            'pathParams' => [
+                'domain',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'domain-wayback-cdx' => [
+            'id' => 'domain-wayback-cdx',
+            'method' => 'GET',
+            'path' => '/domain/wayback/cdx/{domain}',
+            'pathParams' => [
+                'domain',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'dominos-coupons' => [
             'id' => 'dominos-coupons',
@@ -42192,6 +47773,1391 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'faceit-ban-reasons' => [
+            'id' => 'faceit-ban-reasons',
+            'method' => 'GET',
+            'path' => '/faceit/ban-reasons',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-banlist' => [
+            'id' => 'faceit-banlist',
+            'method' => 'GET',
+            'path' => '/faceit/banlist',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'reason',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'faceit-banlist-stats' => [
+            'id' => 'faceit-banlist-stats',
+            'method' => 'GET',
+            'path' => '/faceit/banlist-stats',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-best-clips' => [
+            'id' => 'faceit-best-clips',
+            'method' => 'GET',
+            'path' => '/faceit/best-clips',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'cs2',
+                    ],
+                ],
+                [
+                    'name' => 'user_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'to',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-championship' => [
+            'id' => 'faceit-championship',
+            'method' => 'GET',
+            'path' => '/faceit/championship',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-championship-bracket' => [
+            'id' => 'faceit-championship-bracket',
+            'method' => 'GET',
+            'path' => '/faceit/championship-bracket',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'group',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'round',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'start',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'end',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'start',
+            ],
+        ],
+        'faceit-championship-participants' => [
+            'id' => 'faceit-championship-participants',
+            'method' => 'GET',
+            'path' => '/faceit/championship-participants',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'faceit-championship-search' => [
+            'id' => 'faceit-championship-search',
+            'method' => 'GET',
+            'path' => '/faceit/championship-search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'entity_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ONGOING',
+                        'UPCOMING',
+                        'FINISHED',
+                    ],
+                ],
+                [
+                    'name' => 'subtype',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'game',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'cs2',
+                        'csgo',
+                        'ow2',
+                        'valorant',
+                        'pubg',
+                        'tf2',
+                        'krunker',
+                        'pubgmobile',
+                        'apex',
+                        'fortnite',
+                        'wow',
+                        'brawl_stars',
+                        'insidia',
+                        'dota2',
+                        'hearthstone',
+                        'wildrift',
+                        'clash_royale',
+                        'smite',
+                        'lol_NA',
+                        'lol_EUW',
+                        'lol_EUN',
+                        'overwatch_EU',
+                        'wot_EU',
+                        'wot_RU',
+                        'rainbow_6',
+                        'csdz',
+                        'battalion',
+                    ],
+                ],
+                [
+                    'name' => 'has_drops',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'faceit-clip' => [
+            'id' => 'faceit-clip',
+            'method' => 'GET',
+            'path' => '/faceit/clip',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-clips' => [
+            'id' => 'faceit-clips',
+            'method' => 'GET',
+            'path' => '/faceit/clips',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'cs2',
+                    ],
+                ],
+                [
+                    'name' => 'user_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'faceit-competition-matches' => [
+            'id' => 'faceit-competition-matches',
+            'method' => 'GET',
+            'path' => '/faceit/competition-matches',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'player_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'faceit-fpl' => [
+            'id' => 'faceit-fpl',
+            'method' => 'GET',
+            'path' => '/faceit/fpl',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'cs2',
+                        'csgo',
+                        'ow2',
+                        'valorant',
+                        'pubg',
+                        'tf2',
+                        'krunker',
+                        'pubgmobile',
+                        'apex',
+                        'fortnite',
+                        'wow',
+                        'brawl_stars',
+                        'insidia',
+                        'dota2',
+                        'hearthstone',
+                        'wildrift',
+                        'clash_royale',
+                        'smite',
+                        'lol_NA',
+                        'lol_EUW',
+                        'lol_EUN',
+                        'overwatch_EU',
+                        'wot_EU',
+                        'wot_RU',
+                        'rainbow_6',
+                        'csdz',
+                        'battalion',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'faceit-game-modes' => [
+            'id' => 'faceit-game-modes',
+            'method' => 'GET',
+            'path' => '/faceit/game-modes',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'cs2',
+                        'csgo',
+                        'ow2',
+                        'valorant',
+                        'pubg',
+                        'tf2',
+                        'krunker',
+                        'pubgmobile',
+                        'apex',
+                        'fortnite',
+                        'wow',
+                        'brawl_stars',
+                        'insidia',
+                        'dota2',
+                        'hearthstone',
+                        'wildrift',
+                        'clash_royale',
+                        'smite',
+                        'lol_NA',
+                        'lol_EUW',
+                        'lol_EUN',
+                        'overwatch_EU',
+                        'wot_EU',
+                        'wot_RU',
+                        'rainbow_6',
+                        'csdz',
+                        'battalion',
+                    ],
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-games' => [
+            'id' => 'faceit-games',
+            'method' => 'GET',
+            'path' => '/faceit/games',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-hub' => [
+            'id' => 'faceit-hub',
+            'method' => 'GET',
+            'path' => '/faceit/hub',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-hub-categories' => [
+            'id' => 'faceit-hub-categories',
+            'method' => 'GET',
+            'path' => '/faceit/hub-categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-hub-memberships' => [
+            'id' => 'faceit-hub-memberships',
+            'method' => 'GET',
+            'path' => '/faceit/hub-memberships',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'user_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'community',
+                        'chat',
+                        'ihl',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'faceit-hubs' => [
+            'id' => 'faceit-hubs',
+            'method' => 'GET',
+            'path' => '/faceit/hubs',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'ids',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-hubs-detailed' => [
+            'id' => 'faceit-hubs-detailed',
+            'method' => 'GET',
+            'path' => '/faceit/hubs-detailed',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'ids',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-leaderboard' => [
+            'id' => 'faceit-leaderboard',
+            'method' => 'GET',
+            'path' => '/faceit/leaderboard',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'cs2',
+                        'csgo',
+                        'ow2',
+                        'valorant',
+                        'pubg',
+                        'tf2',
+                        'krunker',
+                        'pubgmobile',
+                        'apex',
+                        'fortnite',
+                        'wow',
+                        'brawl_stars',
+                        'insidia',
+                        'dota2',
+                        'hearthstone',
+                        'wildrift',
+                        'clash_royale',
+                        'smite',
+                        'lol_NA',
+                        'lol_EUW',
+                        'lol_EUN',
+                        'overwatch_EU',
+                        'wot_EU',
+                        'wot_RU',
+                        'rainbow_6',
+                        'csdz',
+                        'battalion',
+                    ],
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'faceit-leaderboard-detail' => [
+            'id' => 'faceit-leaderboard-detail',
+            'method' => 'GET',
+            'path' => '/faceit/leaderboard-detail',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-leaderboard-statuses' => [
+            'id' => 'faceit-leaderboard-statuses',
+            'method' => 'GET',
+            'path' => '/faceit/leaderboard-statuses',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-maps' => [
+            'id' => 'faceit-maps',
+            'method' => 'GET',
+            'path' => '/faceit/maps',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'cs2',
+                        'csgo',
+                        'ow2',
+                        'valorant',
+                        'pubg',
+                        'tf2',
+                        'krunker',
+                        'pubgmobile',
+                        'apex',
+                        'fortnite',
+                        'wow',
+                        'brawl_stars',
+                        'insidia',
+                        'dota2',
+                        'hearthstone',
+                        'wildrift',
+                        'clash_royale',
+                        'smite',
+                        'lol_NA',
+                        'lol_EUW',
+                        'lol_EUN',
+                        'overwatch_EU',
+                        'wot_EU',
+                        'wot_RU',
+                        'rainbow_6',
+                        'csdz',
+                        'battalion',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-match-clips' => [
+            'id' => 'faceit-match-clips',
+            'method' => 'GET',
+            'path' => '/faceit/match-clips',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'cs2',
+                    ],
+                ],
+                [
+                    'name' => 'match_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'faceit-organizer' => [
+            'id' => 'faceit-organizer',
+            'method' => 'GET',
+            'path' => '/faceit/organizer',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-player' => [
+            'id' => 'faceit-player',
+            'method' => 'GET',
+            'path' => '/faceit/player',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'nickname',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'user_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-player-rank' => [
+            'id' => 'faceit-player-rank',
+            'method' => 'GET',
+            'path' => '/faceit/player-rank',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'cs2',
+                        'csgo',
+                        'ow2',
+                        'valorant',
+                        'pubg',
+                        'tf2',
+                        'krunker',
+                        'pubgmobile',
+                        'apex',
+                        'fortnite',
+                        'wow',
+                        'brawl_stars',
+                        'insidia',
+                        'dota2',
+                        'hearthstone',
+                        'wildrift',
+                        'clash_royale',
+                        'smite',
+                        'lol_NA',
+                        'lol_EUW',
+                        'lol_EUN',
+                        'overwatch_EU',
+                        'wot_EU',
+                        'wot_RU',
+                        'rainbow_6',
+                        'csdz',
+                        'battalion',
+                    ],
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'nickname',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'user_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-regions' => [
+            'id' => 'faceit-regions',
+            'method' => 'GET',
+            'path' => '/faceit/regions',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-rule' => [
+            'id' => 'faceit-rule',
+            'method' => 'GET',
+            'path' => '/faceit/rule',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-rules' => [
+            'id' => 'faceit-rules',
+            'method' => 'GET',
+            'path' => '/faceit/rules',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'faceit-skill-levels' => [
+            'id' => 'faceit-skill-levels',
+            'method' => 'GET',
+            'path' => '/faceit/skill-levels',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'cs2',
+                        'csgo',
+                        'ow2',
+                        'valorant',
+                        'pubg',
+                        'tf2',
+                        'krunker',
+                        'pubgmobile',
+                        'apex',
+                        'fortnite',
+                        'wow',
+                        'brawl_stars',
+                        'insidia',
+                        'dota2',
+                        'hearthstone',
+                        'wildrift',
+                        'clash_royale',
+                        'smite',
+                        'lol_NA',
+                        'lol_EUW',
+                        'lol_EUN',
+                        'overwatch_EU',
+                        'wot_EU',
+                        'wot_RU',
+                        'rainbow_6',
+                        'csdz',
+                        'battalion',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-standings' => [
+            'id' => 'faceit-standings',
+            'method' => 'GET',
+            'path' => '/faceit/standings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'entity_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'group',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'round',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'segment',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'match',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-team' => [
+            'id' => 'faceit-team',
+            'method' => 'GET',
+            'path' => '/faceit/team',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'faceit-tournaments-past' => [
+            'id' => 'faceit-tournaments-past',
+            'method' => 'GET',
+            'path' => '/faceit/tournaments-past',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'nickname',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'faceit-user-skills' => [
+            'id' => 'faceit-user-skills',
+            'method' => 'GET',
+            'path' => '/faceit/user-skills',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'user_ids',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'game',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'fanatics-categories' => [
             'id' => 'fanatics-categories',
             'method' => 'GET',
@@ -42357,12 +49323,172 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'fanaticscollect-instant-pack-release' => [
+            'id' => 'fanaticscollect-instant-pack-release',
+            'method' => 'GET',
+            'path' => '/fanaticscollect/instant-packs/release',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'checklist_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fanaticscollect-instant-pack-releases' => [
+            'id' => 'fanaticscollect-instant-pack-releases',
+            'method' => 'GET',
+            'path' => '/fanaticscollect/instant-packs/releases',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'fanaticscollect-instant-rips-categories' => [
             'id' => 'fanaticscollect-instant-rips-categories',
             'method' => 'GET',
             'path' => '/fanaticscollect/instant-rips/categories',
             'pathParams' => [],
             'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fanaticscollect-instant-rips-pack-categories' => [
+            'id' => 'fanaticscollect-instant-rips-pack-categories',
+            'method' => 'GET',
+            'path' => '/fanaticscollect/instant-rips/pack-categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fanaticscollect-instant-rips-pack-checklist' => [
+            'id' => 'fanaticscollect-instant-rips-pack-checklist',
+            'method' => 'GET',
+            'path' => '/fanaticscollect/instant-rips/pack-checklist',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'checklist_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'tier',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'BASE',
+                        'CHASE',
+                        'GRAIL',
+                    ],
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'fanaticscollect-instant-rips-packs' => [
+            'id' => 'fanaticscollect-instant-rips-packs',
+            'method' => 'GET',
+            'path' => '/fanaticscollect/instant-rips/packs',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fanaticscollect-recently-ripped' => [
+            'id' => 'fanaticscollect-recently-ripped',
+            'method' => 'GET',
+            'path' => '/fanaticscollect/instant-rips/recently-ripped',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'checklist_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -42395,6 +49521,70 @@ final class Operations
                     ],
                 ],
             ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fanaticscollect-newsroom' => [
+            'id' => 'fanaticscollect-newsroom',
+            'method' => 'GET',
+            'path' => '/fanaticscollect/newsroom',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'tags',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort_by',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'newest',
+                        'oldest',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'fanaticscollect-newsroom-filters' => [
+            'id' => 'fanaticscollect-newsroom-filters',
+            'method' => 'GET',
+            'path' => '/fanaticscollect/newsroom/filters',
+            'pathParams' => [],
+            'queryParams' => [],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -47492,6 +54682,225 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'fever-cities' => [
+            'id' => 'fever-cities',
+            'method' => 'GET',
+            'path' => '/fever/cities',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'locale',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fever-feed' => [
+            'id' => 'fever-feed',
+            'method' => 'GET',
+            'path' => '/fever/feed',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'city_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'pill_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fever-filters' => [
+            'id' => 'fever-filters',
+            'method' => 'GET',
+            'path' => '/fever/filters',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'city_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fever-plan' => [
+            'id' => 'fever-plan',
+            'method' => 'GET',
+            'path' => '/fever/plan',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'plan_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fever-plans' => [
+            'id' => 'fever-plans',
+            'method' => 'GET',
+            'path' => '/fever/plans',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'city_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'locale',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'whatplanfilter_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_start',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'date_end',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'popularity',
+                        'price',
+                        'rating',
+                        'closest_session',
+                        'distance',
+                        'random',
+                        'id',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'fever-top-cities' => [
+            'id' => 'fever-top-cities',
+            'method' => 'GET',
+            'path' => '/fever/top-cities',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'fiveguys-directory' => [
             'id' => 'fiveguys-directory',
             'method' => 'GET',
@@ -48107,6 +55516,32 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'flashscore-match-commentary' => [
+            'id' => 'flashscore-match-commentary',
+            'method' => 'GET',
+            'path' => '/flashscore/match-commentary',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'flashscore-match-darts' => [
             'id' => 'flashscore-match-darts',
             'method' => 'GET',
@@ -48163,6 +55598,32 @@ final class Operations
             'id' => 'flashscore-match-highlights',
             'method' => 'GET',
             'path' => '/flashscore/match-highlights',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-match-incidents' => [
+            'id' => 'flashscore-match-incidents',
+            'method' => 'GET',
+            'path' => '/flashscore/match-incidents',
             'pathParams' => [],
             'queryParams' => [
                 [
@@ -48650,6 +56111,32 @@ final class Operations
             'id' => 'flashscore-match-predicted-lineups',
             'method' => 'GET',
             'path' => '/flashscore/match-predicted-lineups',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flashscore-match-prematch-scorers' => [
+            'id' => 'flashscore-match-prematch-scorers',
+            'method' => 'GET',
+            'path' => '/flashscore/match-prematch-scorers',
             'pathParams' => [],
             'queryParams' => [
                 [
@@ -50005,6 +57492,38 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'flashscore-tournament-draw' => [
+            'id' => 'flashscore-tournament-draw',
+            'method' => 'GET',
+            'path' => '/flashscore/tournament-draw',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tournament_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'stage_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'flashscore-tournament-events' => [
             'id' => 'flashscore-tournament-events',
             'method' => 'GET',
@@ -50356,6 +57875,238 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'flickreels-classify' => [
+            'id' => 'flickreels-classify',
+            'method' => 'GET',
+            'path' => '/flickreels/classify',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tag_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'ja',
+                        'ko',
+                        'tc',
+                        'es',
+                        'id',
+                        'th',
+                        'de',
+                        'pt',
+                        'fr',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'flickreels-genres' => [
+            'id' => 'flickreels-genres',
+            'method' => 'GET',
+            'path' => '/flickreels/genres',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'ja',
+                        'ko',
+                        'tc',
+                        'es',
+                        'id',
+                        'th',
+                        'de',
+                        'pt',
+                        'fr',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flickreels-home' => [
+            'id' => 'flickreels-home',
+            'method' => 'GET',
+            'path' => '/flickreels/home',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'ja',
+                        'ko',
+                        'tc',
+                        'es',
+                        'id',
+                        'th',
+                        'de',
+                        'pt',
+                        'fr',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flickreels-movie' => [
+            'id' => 'flickreels-movie',
+            'method' => 'GET',
+            'path' => '/flickreels/movie',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'title_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'ja',
+                        'ko',
+                        'tc',
+                        'es',
+                        'id',
+                        'th',
+                        'de',
+                        'pt',
+                        'fr',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'flickreels-shelf' => [
+            'id' => 'flickreels-shelf',
+            'method' => 'GET',
+            'path' => '/flickreels/shelf',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'shelf_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'ja',
+                        'ko',
+                        'tc',
+                        'es',
+                        'id',
+                        'th',
+                        'de',
+                        'pt',
+                        'fr',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'foodpanda-restaurant' => [
             'id' => 'foodpanda-restaurant',
@@ -51070,6 +58821,823 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'formula1-driver' => [
+            'id' => 'formula1-driver',
+            'method' => 'GET',
+            'path' => '/formula1/driver',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'driver_slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-driver-grid' => [
+            'id' => 'formula1-driver-grid',
+            'method' => 'GET',
+            'path' => '/formula1/driver-grid',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-driver-season-results' => [
+            'id' => 'formula1-driver-season-results',
+            'method' => 'GET',
+            'path' => '/formula1/driver-season-results',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'driver_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'driver_slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-driver-standings' => [
+            'id' => 'formula1-driver-standings',
+            'method' => 'GET',
+            'path' => '/formula1/driver-standings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-filters' => [
+            'id' => 'formula1-filters',
+            'method' => 'GET',
+            'path' => '/formula1/filters',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-json-awards' => [
+            'id' => 'formula1-json-awards',
+            'method' => 'GET',
+            'path' => '/formula1/json/awards',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-json-constructors' => [
+            'id' => 'formula1-json-constructors',
+            'method' => 'GET',
+            'path' => '/formula1/json/constructors',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-json-driver-assembly' => [
+            'id' => 'formula1-json-driver-assembly',
+            'method' => 'GET',
+            'path' => '/formula1/json/driver-assembly',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'reference',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'identifier',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-json-drivers' => [
+            'id' => 'formula1-json-drivers',
+            'method' => 'GET',
+            'path' => '/formula1/json/drivers',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-json-editorial' => [
+            'id' => 'formula1-json-editorial',
+            'method' => 'GET',
+            'path' => '/formula1/json/editorial',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'resource',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'events',
+                        'driver-listing',
+                        'constructor-listing',
+                        'race-calendar',
+                        'results-archive',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-json-event-tracker' => [
+            'id' => 'formula1-json-event-tracker',
+            'method' => 'GET',
+            'path' => '/formula1/json/event-tracker',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-json-meeting-datasets' => [
+            'id' => 'formula1-json-meeting-datasets',
+            'method' => 'GET',
+            'path' => '/formula1/json/meeting-datasets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'meeting',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-json-meetings' => [
+            'id' => 'formula1-json-meetings',
+            'method' => 'GET',
+            'path' => '/formula1/json/meetings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-json-race-assembly' => [
+            'id' => 'formula1-json-race-assembly',
+            'method' => 'GET',
+            'path' => '/formula1/json/race-assembly',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'meeting',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'identifier',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-json-results' => [
+            'id' => 'formula1-json-results',
+            'method' => 'GET',
+            'path' => '/formula1/json/results',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'meeting',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'dataset',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'race',
+                        'qualifying',
+                        'starting-grid',
+                        'pitstops',
+                        'fastestlaps',
+                        'sprint',
+                        'sprint-grid',
+                        'sprint-shootout',
+                        'practice',
+                    ],
+                ],
+                [
+                    'name' => 'session',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-json-season-award' => [
+            'id' => 'formula1-json-season-award',
+            'method' => 'GET',
+            'path' => '/formula1/json/season-award',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'award',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'fastest-laps',
+                        'pole-positions',
+                        'fastest-pit-stops',
+                        'driver-of-the-day',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-json-team-assembly' => [
+            'id' => 'formula1-json-team-assembly',
+            'method' => 'GET',
+            'path' => '/formula1/json/team-assembly',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'identifier',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-meetings' => [
+            'id' => 'formula1-meetings',
+            'method' => 'GET',
+            'path' => '/formula1/meetings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-race-calendar' => [
+            'id' => 'formula1-race-calendar',
+            'method' => 'GET',
+            'path' => '/formula1/race-calendar',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-race-hub' => [
+            'id' => 'formula1-race-hub',
+            'method' => 'GET',
+            'path' => '/formula1/race-hub',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'event_slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-season-awards' => [
+            'id' => 'formula1-season-awards',
+            'method' => 'GET',
+            'path' => '/formula1/season-awards',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'award',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'fastest-laps',
+                        'pole-positions',
+                        'fastest-pit-stops',
+                        'driver-of-the-day',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-season-results' => [
+            'id' => 'formula1-season-results',
+            'method' => 'GET',
+            'path' => '/formula1/season-results',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-seasons' => [
+            'id' => 'formula1-seasons',
+            'method' => 'GET',
+            'path' => '/formula1/seasons',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-session-results' => [
+            'id' => 'formula1-session-results',
+            'method' => 'GET',
+            'path' => '/formula1/session-results',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'meeting_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'session',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'race-result',
+                        'qualifying',
+                        'starting-grid',
+                        'practice-1',
+                        'practice-2',
+                        'practice-3',
+                        'pit-stop-summary',
+                        'fastest-laps',
+                        'sprint-results',
+                        'sprint-grid',
+                        'sprint-qualifying',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'meeting_slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-team' => [
+            'id' => 'formula1-team',
+            'method' => 'GET',
+            'path' => '/formula1/team',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'team_slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-team-grid' => [
+            'id' => 'formula1-team-grid',
+            'method' => 'GET',
+            'path' => '/formula1/team-grid',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-team-season-results' => [
+            'id' => 'formula1-team-season-results',
+            'method' => 'GET',
+            'path' => '/formula1/team-season-results',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'team',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'formula1-team-standings' => [
+            'id' => 'formula1-team-standings',
+            'method' => 'GET',
+            'path' => '/formula1/team-standings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'fortune-article' => [
             'id' => 'fortune-article',
@@ -53070,6 +61638,201 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'fresha-landing-venues' => [
+            'id' => 'fresha-landing-venues',
+            'method' => 'GET',
+            'path' => '/fresha/landing-venues',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'business_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'treatment_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fresha-search-venues' => [
+            'id' => 'fresha-search-venues',
+            'method' => 'GET',
+            'path' => '/fresha/search-venues',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'DISTANCE',
+                        'RATING',
+                        'RECOMMENDED',
+                    ],
+                ],
+                [
+                    'name' => 'min_price',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'service_gender',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'EVERYONE',
+                        'MALE',
+                        'FEMALE',
+                    ],
+                ],
+                [
+                    'name' => 'awards',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'BEST_IN_CLASS',
+                        'HIGHLY_RECOMMENDED',
+                    ],
+                ],
+                [
+                    'name' => 'treatment_category_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'treatment_tag_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'treatment_type_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'first',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fresha-taxonomy' => [
+            'id' => 'fresha-taxonomy',
+            'method' => 'GET',
+            'path' => '/fresha/taxonomy',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'first',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'start',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'start',
+            ],
+        ],
+        'fresha-venue' => [
+            'id' => 'fresha-venue',
+            'method' => 'GET',
+            'path' => '/fresha/venue',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'ft-article' => [
             'id' => 'ft-article',
             'method' => 'GET',
@@ -54528,6 +63291,1005 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'futgg-fc27-catalog' => [
+            'id' => 'futgg-fc27-catalog',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/catalog',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-definitions' => [
+            'id' => 'futgg-fc27-definitions',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/definitions',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-evolutions' => [
+            'id' => 'futgg-fc27-evolutions',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/evolutions',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'only_expired',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'include_cosmetics',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'no_pagination',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'futgg-fc27-evolution' => [
+            'id' => 'futgg-fc27-evolution',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/evolutions/{slug}',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-gg-rating-ranks' => [
+            'id' => 'futgg-fc27-gg-rating-ranks',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/gg-rating-ranks',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-gg-ratings' => [
+            'id' => 'futgg-fc27-gg-ratings',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/gg-ratings',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-objective-categories' => [
+            'id' => 'futgg-fc27-objective-categories',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/objective-categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-objective-groups' => [
+            'id' => 'futgg-fc27-objective-groups',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/objectives',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'category_slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'coming-soon',
+                        'foundations',
+                        'seasonal',
+                        'campaigns',
+                        'live-events',
+                        'milestones',
+                        'mastery',
+                        'fc-pro',
+                    ],
+                ],
+                [
+                    'name' => 'no_pagination',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'hide_expired',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'include_unreleased',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'futgg-fc27-objective-group-by-ea' => [
+            'id' => 'futgg-fc27-objective-group-by-ea',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/objectives/by-ea/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-objective-group-by-objective' => [
+            'id' => 'futgg-fc27-objective-group-by-objective',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/objectives/by-objective/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-objective-group' => [
+            'id' => 'futgg-fc27-objective-group',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/objectives/{slug}',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-player-sorts' => [
+            'id' => 'futgg-fc27-player-sorts',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/player-sorts',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'platform',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'console',
+                        'pc',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-players' => [
+            'id' => 'futgg-fc27-players',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/players',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'nation_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'club_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'rarity_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'positions',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        '0',
+                        '3',
+                        '5',
+                        '7',
+                        '10',
+                        '12',
+                        '14',
+                        '16',
+                        '18',
+                        '23',
+                        '25',
+                        '27',
+                    ],
+                ],
+                [
+                    'name' => 'foot',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        '1',
+                        '2',
+                    ],
+                ],
+                [
+                    'name' => 'gender',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        '1',
+                        '2',
+                    ],
+                ],
+                [
+                    'name' => 'body_types',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                        '5',
+                        '6',
+                        '7',
+                        '8',
+                        '9',
+                        '10',
+                    ],
+                ],
+                [
+                    'name' => 'accelerate_types',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'skill_moves',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                        '5',
+                    ],
+                ],
+                [
+                    'name' => 'weak_foot',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                        '5',
+                    ],
+                ],
+                [
+                    'name' => 'holographic_type',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        '1',
+                        '2',
+                    ],
+                ],
+                [
+                    'name' => 'show_holographics',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'true',
+                        'only',
+                    ],
+                ],
+                [
+                    'name' => 'overall__gte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'overall__lte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'grading_score__gte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'grading_score__lte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'price__gte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'price__lte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'number_of_positions__gte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'number_of_positions__lte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'playstyles_count__gte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'playstyles_count__lte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'playstyles_plus_count__gte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'playstyles_plus_count__lte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'role_plus_count__gte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'role_plus_count__lte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'role_plus_plus_count__gte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'role_plus_plus_count__lte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'pc_price__gte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'pc_price__lte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sorts',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '-attribute_acceleration',
+                        '-attribute_aggression',
+                        '-attribute_agility',
+                        '-attribute_balance',
+                        '-attribute_ball_control',
+                        '-attribute_composure',
+                        '-attribute_crossing',
+                        '-attribute_curve',
+                        '-attribute_defensive_awareness',
+                        '-attribute_dribbling',
+                        '-attribute_finishing',
+                        '-attribute_fk_accuracy',
+                        '-attribute_gk_diving',
+                        '-attribute_gk_handling',
+                        '-attribute_gk_kicking',
+                        '-attribute_gk_positioning',
+                        '-attribute_gk_reflexes',
+                        '-attribute_heading_accuracy',
+                        '-attribute_interceptions',
+                        '-attribute_jumping',
+                        '-attribute_long_passing',
+                        '-attribute_long_shots',
+                        '-attribute_penalties',
+                        '-attribute_positioning',
+                        '-attribute_reactions',
+                        '-attribute_short_passing',
+                        '-attribute_shot_power',
+                        '-attribute_sliding_tackle',
+                        '-attribute_sprint_speed',
+                        '-attribute_stamina',
+                        '-attribute_standing_tackle',
+                        '-attribute_strength',
+                        '-attribute_vision',
+                        '-attribute_volleys',
+                        '-created_at',
+                        '-current_price',
+                        '-face_defending',
+                        '-face_dribbling',
+                        '-face_pace',
+                        '-face_passing',
+                        '-face_physicality',
+                        '-face_shooting',
+                        '-gg_rating',
+                        '-gk_face_diving',
+                        '-gk_face_handling',
+                        '-gk_face_kicking',
+                        '-gk_face_positioning',
+                        '-gk_face_reflexes',
+                        '-gk_face_speed',
+                        '-grading_score',
+                        '-number_of_all_playstyles',
+                        '-number_of_playstyles',
+                        '-number_of_playstyles_plus',
+                        '-overall',
+                        '-pc_current_price',
+                        '-pos_0_gg_rating',
+                        '-pos_10_gg_rating',
+                        '-pos_12_gg_rating',
+                        '-pos_14_gg_rating',
+                        '-pos_16_gg_rating',
+                        '-pos_18_gg_rating',
+                        '-pos_23_gg_rating',
+                        '-pos_25_gg_rating',
+                        '-pos_27_gg_rating',
+                        '-pos_3_gg_rating',
+                        '-pos_5_gg_rating',
+                        '-pos_7_gg_rating',
+                        '-role_10_gg_rating',
+                        '-role_11_gg_rating',
+                        '-role_12_gg_rating',
+                        '-role_13_gg_rating',
+                        '-role_14_gg_rating',
+                        '-role_15_gg_rating',
+                        '-role_16_gg_rating',
+                        '-role_17_gg_rating',
+                        '-role_1_gg_rating',
+                        '-role_23_gg_rating',
+                        '-role_24_gg_rating',
+                        '-role_25_gg_rating',
+                        '-role_26_gg_rating',
+                        '-role_27_gg_rating',
+                        '-role_2_gg_rating',
+                        '-role_37_gg_rating',
+                        '-role_38_gg_rating',
+                        '-role_39_gg_rating',
+                        '-role_3_gg_rating',
+                        '-role_40_gg_rating',
+                        '-role_45_gg_rating',
+                        '-role_46_gg_rating',
+                        '-role_47_gg_rating',
+                        '-role_48_gg_rating',
+                        '-role_49_gg_rating',
+                        '-role_4_gg_rating',
+                        '-role_50_gg_rating',
+                        '-role_51_gg_rating',
+                        '-role_52_gg_rating',
+                        '-role_53_gg_rating',
+                        '-role_54_gg_rating',
+                        '-role_55_gg_rating',
+                        '-role_56_gg_rating',
+                        '-role_57_gg_rating',
+                        '-role_58_gg_rating',
+                        '-role_5_gg_rating',
+                        '-role_63_gg_rating',
+                        '-role_64_gg_rating',
+                        '-role_65_gg_rating',
+                        '-role_66_gg_rating',
+                        '-role_6_gg_rating',
+                        '-role_71_gg_rating',
+                        '-role_72_gg_rating',
+                        '-role_74_gg_rating',
+                        '-role_75_gg_rating',
+                        '-role_7_gg_rating',
+                        '-role_8_gg_rating',
+                        '-role_9_gg_rating',
+                        '-total_face_stats',
+                        '-total_igs',
+                        'attribute_acceleration',
+                        'attribute_aggression',
+                        'attribute_agility',
+                        'attribute_balance',
+                        'attribute_ball_control',
+                        'attribute_composure',
+                        'attribute_crossing',
+                        'attribute_curve',
+                        'attribute_defensive_awareness',
+                        'attribute_dribbling',
+                        'attribute_finishing',
+                        'attribute_fk_accuracy',
+                        'attribute_gk_diving',
+                        'attribute_gk_handling',
+                        'attribute_gk_kicking',
+                        'attribute_gk_positioning',
+                        'attribute_gk_reflexes',
+                        'attribute_heading_accuracy',
+                        'attribute_interceptions',
+                        'attribute_jumping',
+                        'attribute_long_passing',
+                        'attribute_long_shots',
+                        'attribute_penalties',
+                        'attribute_positioning',
+                        'attribute_reactions',
+                        'attribute_short_passing',
+                        'attribute_shot_power',
+                        'attribute_sliding_tackle',
+                        'attribute_sprint_speed',
+                        'attribute_stamina',
+                        'attribute_standing_tackle',
+                        'attribute_strength',
+                        'attribute_vision',
+                        'attribute_volleys',
+                        'created_at',
+                        'current_price',
+                        'face_defending',
+                        'face_dribbling',
+                        'face_pace',
+                        'face_passing',
+                        'face_physicality',
+                        'face_shooting',
+                        'gg_rating',
+                        'gk_face_diving',
+                        'gk_face_handling',
+                        'gk_face_kicking',
+                        'gk_face_positioning',
+                        'gk_face_reflexes',
+                        'gk_face_speed',
+                        'grading_score',
+                        'number_of_all_playstyles',
+                        'number_of_playstyles',
+                        'number_of_playstyles_plus',
+                        'overall',
+                        'pc_current_price',
+                        'pos_0_gg_rating',
+                        'pos_10_gg_rating',
+                        'pos_12_gg_rating',
+                        'pos_14_gg_rating',
+                        'pos_16_gg_rating',
+                        'pos_18_gg_rating',
+                        'pos_23_gg_rating',
+                        'pos_25_gg_rating',
+                        'pos_27_gg_rating',
+                        'pos_3_gg_rating',
+                        'pos_5_gg_rating',
+                        'pos_7_gg_rating',
+                        'role_10_gg_rating',
+                        'role_11_gg_rating',
+                        'role_12_gg_rating',
+                        'role_13_gg_rating',
+                        'role_14_gg_rating',
+                        'role_15_gg_rating',
+                        'role_16_gg_rating',
+                        'role_17_gg_rating',
+                        'role_1_gg_rating',
+                        'role_23_gg_rating',
+                        'role_24_gg_rating',
+                        'role_25_gg_rating',
+                        'role_26_gg_rating',
+                        'role_27_gg_rating',
+                        'role_2_gg_rating',
+                        'role_37_gg_rating',
+                        'role_38_gg_rating',
+                        'role_39_gg_rating',
+                        'role_3_gg_rating',
+                        'role_40_gg_rating',
+                        'role_45_gg_rating',
+                        'role_46_gg_rating',
+                        'role_47_gg_rating',
+                        'role_48_gg_rating',
+                        'role_49_gg_rating',
+                        'role_4_gg_rating',
+                        'role_50_gg_rating',
+                        'role_51_gg_rating',
+                        'role_52_gg_rating',
+                        'role_53_gg_rating',
+                        'role_54_gg_rating',
+                        'role_55_gg_rating',
+                        'role_56_gg_rating',
+                        'role_57_gg_rating',
+                        'role_58_gg_rating',
+                        'role_5_gg_rating',
+                        'role_63_gg_rating',
+                        'role_64_gg_rating',
+                        'role_65_gg_rating',
+                        'role_66_gg_rating',
+                        'role_6_gg_rating',
+                        'role_71_gg_rating',
+                        'role_72_gg_rating',
+                        'role_74_gg_rating',
+                        'role_75_gg_rating',
+                        'role_7_gg_rating',
+                        'role_8_gg_rating',
+                        'role_9_gg_rating',
+                        'total_face_stats',
+                        'total_igs',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'futgg-fc27-price-index' => [
+            'id' => 'futgg-fc27-price-index',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/price-index',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-prices' => [
+            'id' => 'futgg-fc27-prices',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/prices',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'dataset',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'player-prices-ps5',
+                        'player-prices-pc',
+                        'player-prices-ps5-dyn',
+                        'player-prices-pc-dyn',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-sbc-categories' => [
+            'id' => 'futgg-fc27-sbc-categories',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/sbc/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-sbc-sets' => [
+            'id' => 'futgg-fc27-sbc-sets',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/sbc/sets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'category_slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'players',
+                        'upgrades',
+                        'challenges',
+                        'foundations',
+                    ],
+                ],
+                [
+                    'name' => 'search',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'expired_only',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'expiring_soon',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'no_pagination',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'futgg-fc27-sbc-set-by-challenge' => [
+            'id' => 'futgg-fc27-sbc-set-by-challenge',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/sbc/sets/by-challenge/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-sbc-set-by-ea' => [
+            'id' => 'futgg-fc27-sbc-set-by-ea',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/sbc/sets/by-ea/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-sbc-set' => [
+            'id' => 'futgg-fc27-sbc-set',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/sbc/sets/{slug}',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-season-pass' => [
+            'id' => 'futgg-fc27-season-pass',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/season-pass',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'gamerant-article' => [
             'id' => 'gamerant-article',
@@ -57864,6 +67626,457 @@ final class Operations
             'bodyParam' => null,
             'bodyRequired' => false,
             'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'glovo-categories' => [
+            'id' => 'glovo-categories',
+            'method' => 'GET',
+            'path' => '/glovo/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'glovo-cities' => [
+            'id' => 'glovo-cities',
+            'method' => 'GET',
+            'path' => '/glovo/cities',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'glovo-city' => [
+            'id' => 'glovo-city',
+            'method' => 'GET',
+            'path' => '/glovo/city',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'glovo-store' => [
+            'id' => 'glovo-store',
+            'method' => 'GET',
+            'path' => '/glovo/store',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'store_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'glovo-store-fees' => [
+            'id' => 'glovo-store-fees',
+            'method' => 'GET',
+            'path' => '/glovo/store/fees',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'store_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'address_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'glovo-store-menu' => [
+            'id' => 'glovo-store-menu',
+            'method' => 'GET',
+            'path' => '/glovo/store/menu',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'store_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'address_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'glovo-store-products' => [
+            'id' => 'glovo-store-products',
+            'method' => 'GET',
+            'path' => '/glovo/store/products',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'store_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'address_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'collection',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'glovo-store-search' => [
+            'id' => 'glovo-store-search',
+            'method' => 'GET',
+            'path' => '/glovo/store/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'store_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'address_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'glovo-stores' => [
+            'id' => 'glovo-stores',
+            'method' => 'GET',
+            'path' => '/glovo/stores',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'filter_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'glovo-stores-filters' => [
+            'id' => 'glovo-stores-filters',
+            'method' => 'GET',
+            'path' => '/glovo/stores/filters',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
             'produces' => [
                 'application/json',
             ],
@@ -61614,6 +71827,94 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'gosugamers-article' => [
+            'id' => 'gosugamers-article',
+            'method' => 'GET',
+            'path' => '/gosugamers/article',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'gosugamers-articles' => [
+            'id' => 'gosugamers-articles',
+            'method' => 'GET',
+            'path' => '/gosugamers/articles',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'section',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'dota2',
+                        'counterstrike',
+                        'lol',
+                        'valorant',
+                        'mobile-legends',
+                        'pubg-mobile',
+                        'wild-rift',
+                        'free-fire',
+                        'battlegrounds-mobile-india',
+                        'entertainment',
+                        'genshin-impact',
+                        'honkai-star-rail',
+                        'zenless-zone-zero',
+                        'honor-of-kings',
+                        'umamusume-pretty-derby',
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'news',
+                        'features',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'gosugamers-encounters' => [
             'id' => 'gosugamers-encounters',
@@ -66003,6 +76304,237 @@ final class Operations
             'path' => '/hindustantimes/sections',
             'pathParams' => [],
             'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'hltv-event' => [
+            'id' => 'hltv-event',
+            'method' => 'GET',
+            'path' => '/hltv/event',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'hltv-events' => [
+            'id' => 'hltv-events',
+            'method' => 'GET',
+            'path' => '/hltv/events',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'hltv-match' => [
+            'id' => 'hltv-match',
+            'method' => 'GET',
+            'path' => '/hltv/match',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'hltv-matches' => [
+            'id' => 'hltv-matches',
+            'method' => 'GET',
+            'path' => '/hltv/matches',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'hltv-player' => [
+            'id' => 'hltv-player',
+            'method' => 'GET',
+            'path' => '/hltv/player',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'hltv-rankings' => [
+            'id' => 'hltv-rankings',
+            'method' => 'GET',
+            'path' => '/hltv/rankings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'hltv-results' => [
+            'id' => 'hltv-results',
+            'method' => 'GET',
+            'path' => '/hltv/results',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'event',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'hltv-search' => [
+            'id' => 'hltv-search',
+            'method' => 'GET',
+            'path' => '/hltv/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'hltv-team' => [
+            'id' => 'hltv-team',
+            'method' => 'GET',
+            'path' => '/hltv/team',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -70669,6 +81201,341 @@ final class Operations
             'method' => 'GET',
             'path' => '/irishtimes/sections',
             'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'itchio-browse' => [
+            'id' => 'itchio-browse',
+            'method' => 'GET',
+            'path' => '/itchio/browse',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'itchio-browse-options' => [
+            'id' => 'itchio-browse-options',
+            'method' => 'GET',
+            'path' => '/itchio/browse/options',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'itchio-catalog' => [
+            'id' => 'itchio-catalog',
+            'method' => 'GET',
+            'path' => '/itchio/catalogs/{classification}',
+            'pathParams' => [
+                'classification',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'itchio-top-rated' => [
+            'id' => 'itchio-top-rated',
+            'method' => 'GET',
+            'path' => '/itchio/games/top-rated',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'itchio-jams-browse' => [
+            'id' => 'itchio-jams-browse',
+            'method' => 'GET',
+            'path' => '/itchio/jams/browse',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'itchio-jam-calendar' => [
+            'id' => 'itchio-jam-calendar',
+            'method' => 'GET',
+            'path' => '/itchio/jams/calendar',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'itchio-jams-entries' => [
+            'id' => 'itchio-jams-entries',
+            'method' => 'GET',
+            'path' => '/itchio/jams/entries',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'itchio-jams-options' => [
+            'id' => 'itchio-jams-options',
+            'method' => 'GET',
+            'path' => '/itchio/jams/options',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'itchio-jams-overview' => [
+            'id' => 'itchio-jams-overview',
+            'method' => 'GET',
+            'path' => '/itchio/jams/overview',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'itchio-jams-results' => [
+            'id' => 'itchio-jams-results',
+            'method' => 'GET',
+            'path' => '/itchio/jams/results',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'itchio-jams-results-options' => [
+            'id' => 'itchio-jams-results-options',
+            'method' => 'GET',
+            'path' => '/itchio/jams/results/options',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'itchio-jams-submission' => [
+            'id' => 'itchio-jams-submission',
+            'method' => 'GET',
+            'path' => '/itchio/jams/submission',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'itchio-project' => [
+            'id' => 'itchio-project',
+            'method' => 'GET',
+            'path' => '/itchio/project',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'itchio-tags' => [
+            'id' => 'itchio-tags',
+            'method' => 'GET',
+            'path' => '/itchio/tags/{classification}',
+            'pathParams' => [
+                'classification',
+            ],
             'queryParams' => [],
             'formParams' => [],
             'bodyParam' => null,
@@ -76061,6 +86928,557 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'klook-activity' => [
+            'id' => 'klook-activity',
+            'method' => 'GET',
+            'path' => '/klook/activities/{activity_id}',
+            'pathParams' => [
+                'activity_id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'klook-attractions-categories' => [
+            'id' => 'klook-attractions-categories',
+            'method' => 'GET',
+            'path' => '/klook/attractions/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'klook-attractions-destinations' => [
+            'id' => 'klook-attractions-destinations',
+            'method' => 'GET',
+            'path' => '/klook/attractions/destinations',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'city_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'country_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'klook-attractions-highlights' => [
+            'id' => 'klook-attractions-highlights',
+            'method' => 'GET',
+            'path' => '/klook/attractions/highlights',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'city_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'country_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'city',
+                        'country',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'klook-attractions-search' => [
+            'id' => 'klook-attractions-search',
+            'method' => 'GET',
+            'path' => '/klook/attractions/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'city_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'recommended',
+                        'bestselling',
+                        'top_rated',
+                        'price_low_to_high',
+                        'newest',
+                    ],
+                ],
+                [
+                    'name' => 'price_min',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'price_max',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'service_lang_tag',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'duration_tag',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'other_filters_tag',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'klook-attractions-suggest' => [
+            'id' => 'klook-attractions-suggest',
+            'method' => 'GET',
+            'path' => '/klook/attractions/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'klook-categories' => [
+            'id' => 'klook-categories',
+            'method' => 'GET',
+            'path' => '/klook/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'klook-destinations' => [
+            'id' => 'klook-destinations',
+            'method' => 'GET',
+            'path' => '/klook/destinations',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'klook-hot' => [
+            'id' => 'klook-hot',
+            'method' => 'GET',
+            'path' => '/klook/hot',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'klook-interests' => [
+            'id' => 'klook-interests',
+            'method' => 'GET',
+            'path' => '/klook/interests',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'klook-recommendations' => [
+            'id' => 'klook-recommendations',
+            'method' => 'GET',
+            'path' => '/klook/recommendations',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'city_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'klook-reviews' => [
+            'id' => 'klook-reviews',
+            'method' => 'GET',
+            'path' => '/klook/reviews',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'city_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'vertical',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'experiences',
+                        'attractions',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'klook-search' => [
+            'id' => 'klook-search',
+            'method' => 'GET',
+            'path' => '/klook/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'city_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'recommended',
+                        'bestselling',
+                        'top_rated',
+                        'price_low_to_high',
+                        'newest',
+                    ],
+                ],
+                [
+                    'name' => 'price_min',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'price_max',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'interest_tag',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'service_lang_tag',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'duration_tag',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'other_filters_tag',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'klook-search-filters' => [
+            'id' => 'klook-search-filters',
+            'method' => 'GET',
+            'path' => '/klook/search/filters',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'vertical',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'experiences',
+                        'attractions',
+                    ],
+                ],
+                [
+                    'name' => 'city_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'klook-search-hot-keywords' => [
+            'id' => 'klook-search-hot-keywords',
+            'method' => 'GET',
+            'path' => '/klook/search/hot-keywords',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'city_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'country_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'klook-search-unified' => [
+            'id' => 'klook-search-unified',
+            'method' => 'GET',
+            'path' => '/klook/search/unified',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'klook-suggest' => [
+            'id' => 'klook-suggest',
+            'method' => 'GET',
+            'path' => '/klook/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'klook-verticals' => [
+            'id' => 'klook-verticals',
+            'method' => 'GET',
+            'path' => '/klook/verticals',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'kohls-category' => [
             'id' => 'kohls-category',
             'method' => 'GET',
@@ -78872,11 +90290,6 @@ final class Operations
                     'name' => 'season',
                     'in' => 'query',
                     'type' => 'string',
-                    'enum' => [
-                        'current',
-                        '2025',
-                        '2024',
-                    ],
                 ],
                 [
                     'name' => 'league',
@@ -79194,6 +90607,15 @@ final class Operations
                     'type' => 'string',
                     'required' => true,
                 ],
+                [
+                    'name' => 'rounds',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                    'enum' => [
+                        'True',
+                        'False',
+                    ],
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -79496,6 +90918,313 @@ final class Operations
             'consumes' => [
                 'application/json',
             ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'luma-calendar' => [
+            'id' => 'luma-calendar',
+            'method' => 'GET',
+            'path' => '/luma/calendar',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'luma-calendar-events' => [
+            'id' => 'luma-calendar-events',
+            'method' => 'GET',
+            'path' => '/luma/calendar-events',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'calendar_api_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'period',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'future',
+                        'past',
+                        'specific',
+                    ],
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'before',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'pagination_limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'pagination_cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'luma-categories' => [
+            'id' => 'luma-categories',
+            'method' => 'GET',
+            'path' => '/luma/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'luma-category' => [
+            'id' => 'luma-category',
+            'method' => 'GET',
+            'path' => '/luma/category',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'family',
+                        'books',
+                        'games',
+                        'tech',
+                        'food',
+                        'ai',
+                        'running',
+                        'arts',
+                        'climate',
+                        'fitness',
+                        'wellness',
+                        'crypto',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'luma-category-events' => [
+            'id' => 'luma-category-events',
+            'method' => 'GET',
+            'path' => '/luma/category-events',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'family',
+                        'books',
+                        'games',
+                        'tech',
+                        'food',
+                        'ai',
+                        'running',
+                        'arts',
+                        'climate',
+                        'fitness',
+                        'wellness',
+                        'crypto',
+                    ],
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'pagination_limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'pagination_cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'luma-event' => [
+            'id' => 'luma-event',
+            'method' => 'GET',
+            'path' => '/luma/event',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'event_api_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'luma-place' => [
+            'id' => 'luma-place',
+            'method' => 'GET',
+            'path' => '/luma/place',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'luma-place-calendars' => [
+            'id' => 'luma-place-calendars',
+            'method' => 'GET',
+            'path' => '/luma/place-calendars',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'luma-place-events' => [
+            'id' => 'luma-place-events',
+            'method' => 'GET',
+            'path' => '/luma/place-events',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'place_slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'pagination_limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'pagination_cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
             'produces' => [
                 'application/json',
             ],
@@ -80435,6 +92164,968 @@ final class Operations
             'bodyParam' => null,
             'bodyRequired' => false,
             'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-rankings-groupings' => [
+            'id' => 'maxpreps-rankings-groupings',
+            'method' => 'GET',
+            'path' => '/maxpreps/rankings-groupings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'stateCode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'AL',
+                        'AK',
+                        'AZ',
+                        'AR',
+                        'CA',
+                        'CO',
+                        'CT',
+                        'DE',
+                        'FL',
+                        'GA',
+                        'HI',
+                        'ID',
+                        'IL',
+                        'IN',
+                        'IA',
+                        'KS',
+                        'KY',
+                        'LA',
+                        'ME',
+                        'MD',
+                        'MA',
+                        'MI',
+                        'MN',
+                        'MS',
+                        'MO',
+                        'MT',
+                        'NE',
+                        'NV',
+                        'NH',
+                        'NJ',
+                        'NM',
+                        'NY',
+                        'NC',
+                        'ND',
+                        'OH',
+                        'OK',
+                        'OR',
+                        'PA',
+                        'RI',
+                        'SC',
+                        'SD',
+                        'TN',
+                        'TX',
+                        'UT',
+                        'VT',
+                        'VA',
+                        'WA',
+                        'DC',
+                        'WV',
+                        'WI',
+                        'WY',
+                        'NN',
+                        'PS',
+                    ],
+                ],
+                [
+                    'name' => 'sportSeasonId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-request-enums' => [
+            'id' => 'maxpreps-request-enums',
+            'method' => 'GET',
+            'path' => '/maxpreps/request-enums',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-school' => [
+            'id' => 'maxpreps-school',
+            'method' => 'GET',
+            'path' => '/maxpreps/school',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'schoolId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-school-contests' => [
+            'id' => 'maxpreps-school-contests',
+            'method' => 'GET',
+            'path' => '/maxpreps/school-contests',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'schoolId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'maxLimit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-school-proximal' => [
+            'id' => 'maxpreps-school-proximal',
+            'method' => 'GET',
+            'path' => '/maxpreps/school-proximal',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'schoolId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'searchText',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'maxDistance',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sortOrder',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Distance',
+                        'Name',
+                    ],
+                ],
+                [
+                    'name' => 'allSeasonId',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sportSeasonId',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'zipCode',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'byState',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'includeDeleted',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'historicalOnly',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'publishedOnly',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'startFrom',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-school-search' => [
+            'id' => 'maxpreps-school-search',
+            'method' => 'GET',
+            'path' => '/maxpreps/school-search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sortOrder',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Distance',
+                        'Name',
+                    ],
+                ],
+                [
+                    'name' => 'schoolId',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'allSeasonId',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'zipCode',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'includeDeleted',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'historicalOnly',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'publishedOnly',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'startFrom',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-school-seasons' => [
+            'id' => 'maxpreps-school-seasons',
+            'method' => 'GET',
+            'path' => '/maxpreps/school-seasons',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'schoolId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-school-zip-search' => [
+            'id' => 'maxpreps-school-zip-search',
+            'method' => 'GET',
+            'path' => '/maxpreps/school-zip-search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'zipCode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'searchText',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'maxDistance',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'allSeasonId',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sportSeasonId',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'searchByState',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'searchCity',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'includeDeleted',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'historicalOnly',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'publishedOnly',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'startFrom',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-scoreboard' => [
+            'id' => 'maxpreps-scoreboard',
+            'method' => 'GET',
+            'path' => '/maxpreps/scoreboard',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'context',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'National',
+                        'State',
+                        'Section',
+                        'StateDivision',
+                        'Association',
+                        'League',
+                        'DMA',
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genderSport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'level',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'Varsity',
+                        'JV',
+                        'Freshman',
+                    ],
+                ],
+                [
+                    'name' => 'excludeTbaDate',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'nationalTeamCount',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-season-navigation' => [
+            'id' => 'maxpreps-season-navigation',
+            'method' => 'GET',
+            'path' => '/maxpreps/season-navigation',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'allSeasonId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-sports' => [
+            'id' => 'maxpreps-sports',
+            'method' => 'GET',
+            'path' => '/maxpreps/sports',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-states' => [
+            'id' => 'maxpreps-states',
+            'method' => 'GET',
+            'path' => '/maxpreps/states',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-team' => [
+            'id' => 'maxpreps-team',
+            'method' => 'GET',
+            'path' => '/maxpreps/team',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'teamId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sportSeasonId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-team-context' => [
+            'id' => 'maxpreps-team-context',
+            'method' => 'GET',
+            'path' => '/maxpreps/team-context',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'teamId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sportSeasonId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-team-next-contest' => [
+            'id' => 'maxpreps-team-next-contest',
+            'method' => 'GET',
+            'path' => '/maxpreps/team-next-contest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'teamId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sportSeasonId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-team-rankings' => [
+            'id' => 'maxpreps-team-rankings',
+            'method' => 'GET',
+            'path' => '/maxpreps/team-rankings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'national',
+                        'state',
+                        'section',
+                    ],
+                ],
+                [
+                    'name' => 'allSeasonId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sportSeasonId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'stateCode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'AL',
+                        'AK',
+                        'AZ',
+                        'AR',
+                        'CA',
+                        'CO',
+                        'CT',
+                        'DE',
+                        'FL',
+                        'GA',
+                        'HI',
+                        'ID',
+                        'IL',
+                        'IN',
+                        'IA',
+                        'KS',
+                        'KY',
+                        'LA',
+                        'ME',
+                        'MD',
+                        'MA',
+                        'MI',
+                        'MN',
+                        'MS',
+                        'MO',
+                        'MT',
+                        'NE',
+                        'NV',
+                        'NH',
+                        'NJ',
+                        'NM',
+                        'NY',
+                        'NC',
+                        'ND',
+                        'OH',
+                        'OK',
+                        'OR',
+                        'PA',
+                        'RI',
+                        'SC',
+                        'SD',
+                        'TN',
+                        'TX',
+                        'UT',
+                        'VT',
+                        'VA',
+                        'WA',
+                        'DC',
+                        'WV',
+                        'WI',
+                        'WY',
+                        'NN',
+                        'PS',
+                    ],
+                ],
+                [
+                    'name' => 'sectionId',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'teamSize',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'maxpreps-team-roster-summary' => [
+            'id' => 'maxpreps-team-roster-summary',
+            'method' => 'GET',
+            'path' => '/maxpreps/team-roster-summary',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'teamId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sportSeasonId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-team-schedule' => [
+            'id' => 'maxpreps-team-schedule',
+            'method' => 'GET',
+            'path' => '/maxpreps/team-schedule',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'teamId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sportSeasonId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-team-stat-leaders' => [
+            'id' => 'maxpreps-team-stat-leaders',
+            'method' => 'GET',
+            'path' => '/maxpreps/team-stat-leaders',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'teamId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sportSeasonId',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'maxpreps-tournament-sports' => [
+            'id' => 'maxpreps-tournament-sports',
+            'method' => 'GET',
+            'path' => '/maxpreps/tournament-sports',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'stateCode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'AL',
+                        'AK',
+                        'AZ',
+                        'AR',
+                        'CA',
+                        'CO',
+                        'CT',
+                        'DE',
+                        'FL',
+                        'GA',
+                        'HI',
+                        'ID',
+                        'IL',
+                        'IN',
+                        'IA',
+                        'KS',
+                        'KY',
+                        'LA',
+                        'ME',
+                        'MD',
+                        'MA',
+                        'MI',
+                        'MN',
+                        'MS',
+                        'MO',
+                        'MT',
+                        'NE',
+                        'NV',
+                        'NH',
+                        'NJ',
+                        'NM',
+                        'NY',
+                        'NC',
+                        'ND',
+                        'OH',
+                        'OK',
+                        'OR',
+                        'PA',
+                        'RI',
+                        'SC',
+                        'SD',
+                        'TN',
+                        'TX',
+                        'UT',
+                        'VT',
+                        'VA',
+                        'WA',
+                        'DC',
+                        'WV',
+                        'WI',
+                        'WY',
+                        'NN',
+                        'PS',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
             'produces' => [
                 'application/json',
             ],
@@ -92764,6 +105455,834 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'modrinth-collection' => [
+            'id' => 'modrinth-collection',
+            'method' => 'GET',
+            'path' => '/modrinth/collection/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-collections' => [
+            'id' => 'modrinth-collections',
+            'method' => 'GET',
+            'path' => '/modrinth/collections',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-metadata-link-platforms' => [
+            'id' => 'modrinth-metadata-link-platforms',
+            'method' => 'GET',
+            'path' => '/modrinth/metadata/link-platforms',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-metadata-loader-fields' => [
+            'id' => 'modrinth-metadata-loader-fields',
+            'method' => 'GET',
+            'path' => '/modrinth/metadata/loader-fields',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-metadata-loader-field-values' => [
+            'id' => 'modrinth-metadata-loader-field-values',
+            'method' => 'GET',
+            'path' => '/modrinth/metadata/loader-fields/{field}',
+            'pathParams' => [
+                'field',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-metadata-loaders' => [
+            'id' => 'modrinth-metadata-loaders',
+            'method' => 'GET',
+            'path' => '/modrinth/metadata/loaders',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-organization' => [
+            'id' => 'modrinth-organization',
+            'method' => 'GET',
+            'path' => '/modrinth/organization/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-organization-projects' => [
+            'id' => 'modrinth-organization-projects',
+            'method' => 'GET',
+            'path' => '/modrinth/organization/{id}/projects',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-organizations' => [
+            'id' => 'modrinth-organizations',
+            'method' => 'GET',
+            'path' => '/modrinth/organizations',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-project' => [
+            'id' => 'modrinth-project',
+            'method' => 'GET',
+            'path' => '/modrinth/project/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-check-project' => [
+            'id' => 'modrinth-check-project',
+            'method' => 'GET',
+            'path' => '/modrinth/project/{id}/check',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-dependencies' => [
+            'id' => 'modrinth-dependencies',
+            'method' => 'GET',
+            'path' => '/modrinth/project/{id}/dependencies',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-project-disclosures' => [
+            'id' => 'modrinth-project-disclosures',
+            'method' => 'GET',
+            'path' => '/modrinth/project/{id}/disclosures',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-project-versions' => [
+            'id' => 'modrinth-project-versions',
+            'method' => 'GET',
+            'path' => '/modrinth/project/{id}/version',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'loaders',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'game_versions',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'featured',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'include_changelog',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-project-version' => [
+            'id' => 'modrinth-project-version',
+            'method' => 'GET',
+            'path' => '/modrinth/project/{id}/version/{number}',
+            'pathParams' => [
+                'id',
+                'number',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-projects' => [
+            'id' => 'modrinth-projects',
+            'method' => 'GET',
+            'path' => '/modrinth/projects',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-random-projects' => [
+            'id' => 'modrinth-random-projects',
+            'method' => 'GET',
+            'path' => '/modrinth/projects_random',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-search' => [
+            'id' => 'modrinth-search',
+            'method' => 'GET',
+            'path' => '/modrinth/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'facets',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'index',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'downloads',
+                        'follows',
+                        'newest',
+                        'updated',
+                    ],
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'modrinth-statistics' => [
+            'id' => 'modrinth-statistics',
+            'method' => 'GET',
+            'path' => '/modrinth/statistics',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-license' => [
+            'id' => 'modrinth-license',
+            'method' => 'GET',
+            'path' => '/modrinth/tag/license/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-tags' => [
+            'id' => 'modrinth-tags',
+            'method' => 'GET',
+            'path' => '/modrinth/tag/{type}',
+            'pathParams' => [
+                'type',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-forge-updates' => [
+            'id' => 'modrinth-forge-updates',
+            'method' => 'GET',
+            'path' => '/modrinth/updates/{id}/forge_updates.json',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'neoforge',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'include',
+                        'only',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-search-v3' => [
+            'id' => 'modrinth-search-v3',
+            'method' => 'GET',
+            'path' => '/modrinth/v3/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'index',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'downloads',
+                        'follows',
+                        'newest',
+                        'updated',
+                        'date_created',
+                        'date_modified',
+                        'minecraft_java_server.verified_plays_2w',
+                        'minecraft_java_server.ping.data.players_online',
+                    ],
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'new_filters',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'facets',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'filters',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'version',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'modrinth-search-v3-body' => [
+            'id' => 'modrinth-search-v3-body',
+            'method' => 'POST',
+            'path' => '/modrinth/v3/search',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'body',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-search-v3-options' => [
+            'id' => 'modrinth-search-v3-options',
+            'method' => 'GET',
+            'path' => '/modrinth/v3/search/options',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-version' => [
+            'id' => 'modrinth-version',
+            'method' => 'GET',
+            'path' => '/modrinth/version/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-file-projects' => [
+            'id' => 'modrinth-file-projects',
+            'method' => 'POST',
+            'path' => '/modrinth/version_file/project',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'body',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-file-version' => [
+            'id' => 'modrinth-file-version',
+            'method' => 'GET',
+            'path' => '/modrinth/version_file/{hash}',
+            'pathParams' => [
+                'hash',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'algorithm',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'sha1',
+                        'sha512',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-file-update' => [
+            'id' => 'modrinth-file-update',
+            'method' => 'POST',
+            'path' => '/modrinth/version_file/{hash}/update',
+            'pathParams' => [
+                'hash',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'algorithm',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'sha1',
+                        'sha512',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => 'body',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-file-versions' => [
+            'id' => 'modrinth-file-versions',
+            'method' => 'POST',
+            'path' => '/modrinth/version_files',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'body',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-files-update' => [
+            'id' => 'modrinth-files-update',
+            'method' => 'POST',
+            'path' => '/modrinth/version_files/update',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'body',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-files-update-individual' => [
+            'id' => 'modrinth-files-update-individual',
+            'method' => 'POST',
+            'path' => '/modrinth/version_files/update_individual',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'body',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-files-update-many' => [
+            'id' => 'modrinth-files-update-many',
+            'method' => 'POST',
+            'path' => '/modrinth/version_files/update_many',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => 'body',
+            'bodyRequired' => true,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'modrinth-versions' => [
+            'id' => 'modrinth-versions',
+            'method' => 'GET',
+            'path' => '/modrinth/versions',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'moncler-categories' => [
             'id' => 'moncler-categories',
             'method' => 'GET',
@@ -93364,6 +106883,669 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'motogp-bmw-award' => [
+            'id' => 'motogp-bmw-award',
+            'method' => 'GET',
+            'path' => '/motogp/bmw-award',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-categories' => [
+            'id' => 'motogp-categories',
+            'method' => 'GET',
+            'path' => '/motogp/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'event_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-circuit-poles' => [
+            'id' => 'motogp-circuit-poles',
+            'method' => 'GET',
+            'path' => '/motogp/circuit-poles',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'circuit_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category_name',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'motogp',
+                        'moto2',
+                        'moto3',
+                        'motoe',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-circuit-records' => [
+            'id' => 'motogp-circuit-records',
+            'method' => 'GET',
+            'path' => '/motogp/circuit-records',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'circuit_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-circuit-wins' => [
+            'id' => 'motogp-circuit-wins',
+            'method' => 'GET',
+            'path' => '/motogp/circuit-wins',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'circuit_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category_name',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'motogp',
+                        'moto2',
+                        'moto3',
+                        'motoe',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-classifications' => [
+            'id' => 'motogp-classifications',
+            'method' => 'GET',
+            'path' => '/motogp/classifications',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'session_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'test',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-content-categories' => [
+            'id' => 'motogp-content-categories',
+            'method' => 'GET',
+            'path' => '/motogp/content/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-content-events' => [
+            'id' => 'motogp-content-events',
+            'method' => 'GET',
+            'path' => '/motogp/content/events',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-content-event' => [
+            'id' => 'motogp-content-event',
+            'method' => 'GET',
+            'path' => '/motogp/content/events/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-latest-session' => [
+            'id' => 'motogp-latest-session',
+            'method' => 'GET',
+            'path' => '/motogp/content/sessions/latest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category_legacy_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '-1',
+                        '1',
+                        '2',
+                        '3',
+                        '5',
+                        '7',
+                        '8',
+                        '9',
+                        '10',
+                        '19',
+                    ],
+                ],
+                [
+                    'name' => 'event_kind',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'gp',
+                        'test',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-next-live-session' => [
+            'id' => 'motogp-next-live-session',
+            'method' => 'GET',
+            'path' => '/motogp/content/sessions/next-live',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-entry-list' => [
+            'id' => 'motogp-entry-list',
+            'method' => 'GET',
+            'path' => '/motogp/entries',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'event_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-entry-grid-options' => [
+            'id' => 'motogp-entry-grid-options',
+            'method' => 'GET',
+            'path' => '/motogp/entry-grid-options/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-event-files' => [
+            'id' => 'motogp-event-files',
+            'method' => 'GET',
+            'path' => '/motogp/event-files',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'event_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-events' => [
+            'id' => 'motogp-events',
+            'method' => 'GET',
+            'path' => '/motogp/events',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'is_finished',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-seasons' => [
+            'id' => 'motogp-seasons',
+            'method' => 'GET',
+            'path' => '/motogp/seasons',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-sessions' => [
+            'id' => 'motogp-sessions',
+            'method' => 'GET',
+            'path' => '/motogp/sessions',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'event_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-standings' => [
+            'id' => 'motogp-standings',
+            'method' => 'GET',
+            'path' => '/motogp/standings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-standings-files' => [
+            'id' => 'motogp-standings-files',
+            'method' => 'GET',
+            'path' => '/motogp/standings-files',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'motogp-starting-grid' => [
+            'id' => 'motogp-starting-grid',
+            'method' => 'GET',
+            'path' => '/motogp/starting-grid',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season_year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'shortname',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category_name',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nascar-live-feed' => [
+            'id' => 'nascar-live-feed',
+            'method' => 'GET',
+            'path' => '/nascar/live-feed',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nascar-races' => [
+            'id' => 'nascar-races',
+            'method' => 'GET',
+            'path' => '/nascar/races',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nascar-season-races' => [
+            'id' => 'nascar-season-races',
+            'method' => 'GET',
+            'path' => '/nascar/races/{season}',
+            'pathParams' => [
+                'season',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nascar-series' => [
+            'id' => 'nascar-series',
+            'method' => 'GET',
+            'path' => '/nascar/series',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nascar-race-weekend' => [
+            'id' => 'nascar-race-weekend',
+            'method' => 'GET',
+            'path' => '/nascar/weekend/{season}/{series}/{race}',
+            'pathParams' => [
+                'season',
+                'series',
+                'race',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'nationafrica-article' => [
             'id' => 'nationafrica-article',
             'method' => 'GET',
@@ -93849,6 +108031,1643 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'nba-box-score' => [
+            'id' => 'nba-box-score',
+            'method' => 'GET',
+            'path' => '/nba/box-score',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'start_period',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'end_period',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-box-score-advanced' => [
+            'id' => 'nba-box-score-advanced',
+            'method' => 'GET',
+            'path' => '/nba/box-score-advanced',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'start_period',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'end_period',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-box-score-four-factors' => [
+            'id' => 'nba-box-score-four-factors',
+            'method' => 'GET',
+            'path' => '/nba/box-score-four-factors',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'start_period',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'end_period',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-box-score-misc' => [
+            'id' => 'nba-box-score-misc',
+            'method' => 'GET',
+            'path' => '/nba/box-score-misc',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'start_period',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'end_period',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-box-score-player-track' => [
+            'id' => 'nba-box-score-player-track',
+            'method' => 'GET',
+            'path' => '/nba/box-score-player-track',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-box-score-scoring' => [
+            'id' => 'nba-box-score-scoring',
+            'method' => 'GET',
+            'path' => '/nba/box-score-scoring',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'start_period',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'end_period',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-box-score-usage' => [
+            'id' => 'nba-box-score-usage',
+            'method' => 'GET',
+            'path' => '/nba/box-score-usage',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'start_period',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'end_period',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-common-all-players' => [
+            'id' => 'nba-common-all-players',
+            'method' => 'GET',
+            'path' => '/nba/common-all-players',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'is_only_current_season',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-draft-combine-anthro' => [
+            'id' => 'nba-draft-combine-anthro',
+            'method' => 'GET',
+            'path' => '/nba/draft-combine-anthro',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season_year',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-enums' => [
+            'id' => 'nba-enums',
+            'method' => 'GET',
+            'path' => '/nba/enums',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-franchise-history' => [
+            'id' => 'nba-franchise-history',
+            'method' => 'GET',
+            'path' => '/nba/franchise-history',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-game-detail' => [
+            'id' => 'nba-game-detail',
+            'method' => 'GET',
+            'path' => '/nba/game-detail',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-games' => [
+            'id' => 'nba-games',
+            'method' => 'GET',
+            'path' => '/nba/games',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-homepage-leaders' => [
+            'id' => 'nba-homepage-leaders',
+            'method' => 'GET',
+            'path' => '/nba/homepage-leaders',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'stat_category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Points',
+                        'Rebounds',
+                    ],
+                ],
+                [
+                    'name' => 'player_or_team',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Team',
+                    ],
+                ],
+                [
+                    'name' => 'player_scope',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'game_scope',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Season',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-hustle-stats' => [
+            'id' => 'nba-hustle-stats',
+            'method' => 'GET',
+            'path' => '/nba/hustle-stats',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-league-game-log' => [
+            'id' => 'nba-league-game-log',
+            'method' => 'GET',
+            'path' => '/nba/league-game-log',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'DESC',
+                    ],
+                ],
+                [
+                    'name' => 'player_or_team',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'T',
+                    ],
+                ],
+                [
+                    'name' => 'sorter',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'DATE',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-lineups' => [
+            'id' => 'nba-lineups',
+            'method' => 'GET',
+            'path' => '/nba/lineups',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'measure_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Base',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
+                ],
+                [
+                    'name' => 'group_quantity',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '5',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-news' => [
+            'id' => 'nba-news',
+            'method' => 'GET',
+            'path' => '/nba/news',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-play-by-play' => [
+            'id' => 'nba-play-by-play',
+            'method' => 'GET',
+            'path' => '/nba/play-by-play',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'start_period',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'end_period',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-player-awards' => [
+            'id' => 'nba-player-awards',
+            'method' => 'GET',
+            'path' => '/nba/player-awards',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'player_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-player-bio-stats' => [
+            'id' => 'nba-player-bio-stats',
+            'method' => 'GET',
+            'path' => '/nba/player-bio-stats',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-player-career-stats' => [
+            'id' => 'nba-player-career-stats',
+            'method' => 'GET',
+            'path' => '/nba/player-career-stats',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'player_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-player-dash-pt-shots' => [
+            'id' => 'nba-player-dash-pt-shots',
+            'method' => 'GET',
+            'path' => '/nba/player-dash-pt-shots',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'player_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-player-info' => [
+            'id' => 'nba-player-info',
+            'method' => 'GET',
+            'path' => '/nba/player-info',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'player_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-player-stats' => [
+            'id' => 'nba-player-stats',
+            'method' => 'GET',
+            'path' => '/nba/player-stats',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                        'Playoffs',
+                        'Pre Season',
+                        'All Star',
+                    ],
+                ],
+                [
+                    'name' => 'measure_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Base',
+                        'Advanced',
+                        'Misc',
+                        'Scoring',
+                        'Defense',
+                        'Opponent',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                        'Totals',
+                        'Per36',
+                        'Per48',
+                        'Per100Possessions',
+                        'MinutesPer',
+                        'PerPossession',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-players' => [
+            'id' => 'nba-players',
+            'method' => 'GET',
+            'path' => '/nba/players',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'active',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-playoff-picture' => [
+            'id' => 'nba-playoff-picture',
+            'method' => 'GET',
+            'path' => '/nba/playoff-picture',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-pt-defend' => [
+            'id' => 'nba-pt-defend',
+            'method' => 'GET',
+            'path' => '/nba/pt-defend',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
+                ],
+                [
+                    'name' => 'defense_category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Overall',
+                        '3 Pointers',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-pt-stats' => [
+            'id' => 'nba-pt-stats',
+            'method' => 'GET',
+            'path' => '/nba/pt-stats',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
+                ],
+                [
+                    'name' => 'pt_measure_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'SpeedDistance',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-scoreboard' => [
+            'id' => 'nba-scoreboard',
+            'method' => 'GET',
+            'path' => '/nba/scoreboard',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'game_date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'day_offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-standings' => [
+            'id' => 'nba-standings',
+            'method' => 'GET',
+            'path' => '/nba/standings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                        'Playoffs',
+                        'Pre Season',
+                        'All Star',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-synergy-play-types' => [
+            'id' => 'nba-synergy-play-types',
+            'method' => 'GET',
+            'path' => '/nba/synergy-play-types',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season_year',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'play_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Isolation',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
+                ],
+                [
+                    'name' => 'player_or_team',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'T',
+                    ],
+                ],
+                [
+                    'name' => 'type_grouping',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'offensive',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-team-details' => [
+            'id' => 'nba-team-details',
+            'method' => 'GET',
+            'path' => '/nba/team-details',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-team-roster' => [
+            'id' => 'nba-team-roster',
+            'method' => 'GET',
+            'path' => '/nba/team-roster',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-team-shot-locations' => [
+            'id' => 'nba-team-shot-locations',
+            'method' => 'GET',
+            'path' => '/nba/team-shot-locations',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'measure_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Base',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
+                ],
+                [
+                    'name' => 'distance_range',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-team-stats' => [
+            'id' => 'nba-team-stats',
+            'method' => 'GET',
+            'path' => '/nba/team-stats',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                        'Playoffs',
+                        'Pre Season',
+                        'All Star',
+                    ],
+                ],
+                [
+                    'name' => 'measure_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Base',
+                        'Advanced',
+                        'Misc',
+                        'Scoring',
+                        'Defense',
+                        'Opponent',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                        'Totals',
+                        'Per36',
+                        'Per48',
+                        'Per100Possessions',
+                        'MinutesPer',
+                        'PerPossession',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-team-stats-leaders' => [
+            'id' => 'nba-team-stats-leaders',
+            'method' => 'GET',
+            'path' => '/nba/team-stats-leaders',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'stat_category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'PTS',
+                        'REB',
+                        'AST',
+                        'BLK',
+                        'STL',
+                        'TOV',
+                    ],
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                        'Playoffs',
+                        'Pre Season',
+                        'All Star',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                        'Totals',
+                        'Per36',
+                        'Per48',
+                        'Per100Possessions',
+                        'MinutesPer',
+                        'PerPossession',
+                    ],
+                ],
+                [
+                    'name' => 'scope',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'S',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'nbc-article' => [
             'id' => 'nbc-article',
             'method' => 'GET',
@@ -94324,6 +110143,341 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'netshort-browse' => [
+            'id' => 'netshort-browse',
+            'method' => 'GET',
+            'path' => '/netshort/browse',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'ar',
+                        'cn',
+                        'de',
+                        'es',
+                        'fr',
+                        'hi',
+                        'id',
+                        'it',
+                        'ja',
+                        'ko',
+                        'ms',
+                        'pt',
+                        'th',
+                        'tr',
+                        'vi',
+                        'zh',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'netshort-genres' => [
+            'id' => 'netshort-genres',
+            'method' => 'GET',
+            'path' => '/netshort/genres',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'ar',
+                        'cn',
+                        'de',
+                        'es',
+                        'fr',
+                        'hi',
+                        'id',
+                        'it',
+                        'ja',
+                        'ko',
+                        'ms',
+                        'pt',
+                        'th',
+                        'tr',
+                        'vi',
+                        'zh',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'netshort-home' => [
+            'id' => 'netshort-home',
+            'method' => 'GET',
+            'path' => '/netshort/home',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'ar',
+                        'cn',
+                        'de',
+                        'es',
+                        'fr',
+                        'hi',
+                        'id',
+                        'it',
+                        'ja',
+                        'ko',
+                        'ms',
+                        'pt',
+                        'th',
+                        'tr',
+                        'vi',
+                        'zh',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'netshort-label' => [
+            'id' => 'netshort-label',
+            'method' => 'GET',
+            'path' => '/netshort/label',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'label_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'netshort-plots' => [
+            'id' => 'netshort-plots',
+            'method' => 'GET',
+            'path' => '/netshort/plots',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'ar',
+                        'cn',
+                        'de',
+                        'es',
+                        'fr',
+                        'hi',
+                        'id',
+                        'it',
+                        'ja',
+                        'ko',
+                        'ms',
+                        'pt',
+                        'th',
+                        'tr',
+                        'vi',
+                        'zh',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'netshort-search' => [
+            'id' => 'netshort-search',
+            'method' => 'GET',
+            'path' => '/netshort/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en_US',
+                        'ja_JP',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'netshort-title' => [
+            'id' => 'netshort-title',
+            'method' => 'GET',
+            'path' => '/netshort/title',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'title_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'netshort-toplist' => [
+            'id' => 'netshort-toplist',
+            'method' => 'GET',
+            'path' => '/netshort/toplist',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'board',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'trending-short-dramas',
+                        'new-short-drama-releases',
+                        'recommended-short-dramas',
+                        'exclusive-original-short-dramas',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'news18-article' => [
             'id' => 'news18-article',
@@ -95095,6 +111249,653 @@ final class Operations
             'bodyParam' => null,
             'bodyRequired' => false,
             'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nfhs-activities' => [
+            'id' => 'nfhs-activities',
+            'method' => 'GET',
+            'path' => '/nfhs/activities',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'is_sport',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'is_top_sport',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nfhs-affiliates' => [
+            'id' => 'nfhs-affiliates',
+            'method' => 'GET',
+            'path' => '/nfhs/affiliates',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'search_term',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'is_network',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'start',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'start',
+            ],
+        ],
+        'nfhs-affiliate' => [
+            'id' => 'nfhs-affiliate',
+            'method' => 'GET',
+            'path' => '/nfhs/affiliates/{key}',
+            'pathParams' => [
+                'key',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nfhs-associations' => [
+            'id' => 'nfhs-associations',
+            'method' => 'GET',
+            'path' => '/nfhs/associations',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'search_term',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'is_network',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'start',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'start',
+            ],
+        ],
+        'nfhs-association' => [
+            'id' => 'nfhs-association',
+            'method' => 'GET',
+            'path' => '/nfhs/associations/{key}',
+            'pathParams' => [
+                'key',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nfhs-events' => [
+            'id' => 'nfhs-events',
+            'method' => 'GET',
+            'path' => '/nfhs/events',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'activity',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'gender',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'level',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'school_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'publisher_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'is_postseason',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'download_to_own',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'search_term',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'start',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'start',
+                'cursor',
+            ],
+        ],
+        'nfhs-event' => [
+            'id' => 'nfhs-event',
+            'method' => 'GET',
+            'path' => '/nfhs/events/{key}',
+            'pathParams' => [
+                'key',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nfhs-filters' => [
+            'id' => 'nfhs-filters',
+            'method' => 'GET',
+            'path' => '/nfhs/filters',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nfhs-highlights' => [
+            'id' => 'nfhs-highlights',
+            'method' => 'GET',
+            'path' => '/nfhs/highlights',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'activity',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'gender',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'level',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'school_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'search_term',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'start',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'start',
+                'cursor',
+            ],
+        ],
+        'nfhs-producer' => [
+            'id' => 'nfhs-producer',
+            'method' => 'GET',
+            'path' => '/nfhs/producers/{key}',
+            'pathParams' => [
+                'key',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nfhs-publisher' => [
+            'id' => 'nfhs-publisher',
+            'method' => 'GET',
+            'path' => '/nfhs/publishers/{key}',
+            'pathParams' => [
+                'key',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nfhs-schools' => [
+            'id' => 'nfhs-schools',
+            'method' => 'GET',
+            'path' => '/nfhs/schools',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'search_term',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'is_network',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'start',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'start',
+            ],
+        ],
+        'nfhs-school' => [
+            'id' => 'nfhs-school',
+            'method' => 'GET',
+            'path' => '/nfhs/schools/{key}',
+            'pathParams' => [
+                'key',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nfhs-search' => [
+            'id' => 'nfhs-search',
+            'method' => 'GET',
+            'path' => '/nfhs/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'search_term',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'activity',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'start',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'start',
+                'cursor',
+            ],
+        ],
+        'nfhs-sports' => [
+            'id' => 'nfhs-sports',
+            'method' => 'GET',
+            'path' => '/nfhs/sports',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nfhs-states' => [
+            'id' => 'nfhs-states',
+            'method' => 'GET',
+            'path' => '/nfhs/states',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nfhs-suggest' => [
+            'id' => 'nfhs-suggest',
+            'method' => 'GET',
+            'path' => '/nfhs/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'search_term',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'scope',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
             'produces' => [
                 'application/json',
             ],
@@ -97415,6 +114216,20 @@ final class Operations
                     'type' => 'integer',
                     'required' => true,
                 ],
+                [
+                    'name' => 'bracket',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'role',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'core',
+                        'support',
+                    ],
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -97453,7 +114268,71 @@ final class Operations
                         'countries',
                         'order_types',
                         'player_colors',
+                        'chat_wheel',
+                        'item_colors',
+                        'ancients',
+                        'skillshots',
                     ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'opendota-find-matches' => [
+            'id' => 'opendota-find-matches',
+            'method' => 'GET',
+            'path' => '/opendota/find-matches',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'team_a',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'team_b',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'opendota-hero-descriptions' => [
+            'id' => 'opendota-hero-descriptions',
+            'method' => 'GET',
+            'path' => '/opendota/hero-descriptions',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'hero_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'include_lore',
+                    'in' => 'query',
+                    'type' => 'boolean',
                 ],
             ],
             'formParams' => [],
@@ -97499,6 +114378,32 @@ final class Operations
             'id' => 'opendota-hero-items',
             'method' => 'GET',
             'path' => '/opendota/hero-items',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'hero_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'opendota-hero-matches' => [
+            'id' => 'opendota-hero-matches',
+            'method' => 'GET',
+            'path' => '/opendota/hero-matches',
             'pathParams' => [],
             'queryParams' => [
                 [
@@ -97935,6 +114840,125 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'opendota-public-matches' => [
+            'id' => 'opendota-public-matches',
+            'method' => 'GET',
+            'path' => '/opendota/public-matches',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'min_rank',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '11',
+                        '12',
+                        '13',
+                        '14',
+                        '15',
+                        '21',
+                        '22',
+                        '23',
+                        '24',
+                        '25',
+                        '31',
+                        '32',
+                        '33',
+                        '34',
+                        '35',
+                        '41',
+                        '42',
+                        '43',
+                        '44',
+                        '45',
+                        '51',
+                        '52',
+                        '53',
+                        '54',
+                        '55',
+                        '61',
+                        '62',
+                        '63',
+                        '64',
+                        '65',
+                        '71',
+                        '72',
+                        '73',
+                        '74',
+                        '75',
+                        '81',
+                        '82',
+                        '83',
+                        '84',
+                        '85',
+                    ],
+                ],
+                [
+                    'name' => 'max_rank',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '11',
+                        '12',
+                        '13',
+                        '14',
+                        '15',
+                        '21',
+                        '22',
+                        '23',
+                        '24',
+                        '25',
+                        '31',
+                        '32',
+                        '33',
+                        '34',
+                        '35',
+                        '41',
+                        '42',
+                        '43',
+                        '44',
+                        '45',
+                        '51',
+                        '52',
+                        '53',
+                        '54',
+                        '55',
+                        '61',
+                        '62',
+                        '63',
+                        '64',
+                        '65',
+                        '71',
+                        '72',
+                        '73',
+                        '74',
+                        '75',
+                        '81',
+                        '82',
+                        '83',
+                        '84',
+                        '85',
+                    ],
+                ],
+                [
+                    'name' => 'less_than_match_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'opendota-rank-distribution' => [
             'id' => 'opendota-rank-distribution',
             'method' => 'GET',
@@ -98184,6 +115208,1939 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'openf1-car-data' => [
+            'id' => 'openf1-car-data',
+            'method' => 'GET',
+            'path' => '/openf1/car-data',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'session_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'meeting_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'driver_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'speed_gte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'speed_lte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'rpm_gte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'rpm_lte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'throttle_gte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'throttle_lte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'n_gear',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'drs',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'brake',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openf1-championship-drivers' => [
+            'id' => 'openf1-championship-drivers',
+            'method' => 'GET',
+            'path' => '/openf1/championship-drivers',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'session_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'meeting_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'driver_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openf1-championship-teams' => [
+            'id' => 'openf1-championship-teams',
+            'method' => 'GET',
+            'path' => '/openf1/championship-teams',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'session_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'meeting_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'team_name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openf1-drivers' => [
+            'id' => 'openf1-drivers',
+            'method' => 'GET',
+            'path' => '/openf1/drivers',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'session_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'meeting_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'driver_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'team_name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'name_acronym',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'full_name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openf1-intervals' => [
+            'id' => 'openf1-intervals',
+            'method' => 'GET',
+            'path' => '/openf1/intervals',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'session_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'meeting_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'driver_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'interval_gt',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'interval_lt',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'gap_to_leader_gt',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'gap_to_leader_lt',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openf1-laps' => [
+            'id' => 'openf1-laps',
+            'method' => 'GET',
+            'path' => '/openf1/laps',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'session_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'meeting_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'driver_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'lap_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'is_pit_out_lap',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'lap_duration_gte',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lap_duration_lte',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openf1-location' => [
+            'id' => 'openf1-location',
+            'method' => 'GET',
+            'path' => '/openf1/location',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'session_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'meeting_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'driver_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openf1-meetings' => [
+            'id' => 'openf1-meetings',
+            'method' => 'GET',
+            'path' => '/openf1/meetings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'country_name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'meeting_name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'circuit_key',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'circuit_short_name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'circuit_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Permanent',
+                        'Temporary - Road',
+                        'Temporary - Street',
+                    ],
+                ],
+                [
+                    'name' => 'location',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'is_cancelled',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openf1-overtakes' => [
+            'id' => 'openf1-overtakes',
+            'method' => 'GET',
+            'path' => '/openf1/overtakes',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'session_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'meeting_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'overtaking_driver_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'overtaken_driver_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'position',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openf1-pit' => [
+            'id' => 'openf1-pit',
+            'method' => 'GET',
+            'path' => '/openf1/pit',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'session_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'meeting_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'driver_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'lap_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'stop_duration_lt',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'stop_duration_lte',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lane_duration_gte',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lane_duration_lte',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openf1-position' => [
+            'id' => 'openf1-position',
+            'method' => 'GET',
+            'path' => '/openf1/position',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'session_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'meeting_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'driver_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'position_gte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'position_lte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openf1-race-control' => [
+            'id' => 'openf1-race-control',
+            'method' => 'GET',
+            'path' => '/openf1/race-control',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'session_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'meeting_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'driver_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'CarEvent',
+                        'Drs',
+                        'Flag',
+                        'Other',
+                        'SafetyCar',
+                        'SessionStatus',
+                    ],
+                ],
+                [
+                    'name' => 'flag',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'BLACK AND WHITE',
+                        'BLUE',
+                        'CHEQUERED',
+                        'CLEAR',
+                        'DOUBLE YELLOW',
+                        'GREEN',
+                        'RED',
+                        'YELLOW',
+                    ],
+                ],
+                [
+                    'name' => 'scope',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Track',
+                        'Driver',
+                        'Sector',
+                    ],
+                ],
+                [
+                    'name' => 'sector',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'lap_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'qualifying_phase',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openf1-session-result' => [
+            'id' => 'openf1-session-result',
+            'method' => 'GET',
+            'path' => '/openf1/session-result',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'session_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'meeting_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'driver_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'position_gte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'position_lte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'dnf',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'dns',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'dsq',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openf1-sessions' => [
+            'id' => 'openf1-sessions',
+            'method' => 'GET',
+            'path' => '/openf1/sessions',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'country_name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country_code',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'session_name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'session_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Practice',
+                        'Qualifying',
+                        'Race',
+                    ],
+                ],
+                [
+                    'name' => 'meeting_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'circuit_key',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'is_cancelled',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openf1-starting-grid' => [
+            'id' => 'openf1-starting-grid',
+            'method' => 'GET',
+            'path' => '/openf1/starting-grid',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'session_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'meeting_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'driver_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'position_gte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'position_lte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openf1-stints' => [
+            'id' => 'openf1-stints',
+            'method' => 'GET',
+            'path' => '/openf1/stints',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'session_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'meeting_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'driver_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'compound',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'SOFT',
+                        'MEDIUM',
+                        'HARD',
+                        'INTERMEDIATE',
+                        'WET',
+                    ],
+                ],
+                [
+                    'name' => 'stint_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'tyre_age_at_start_gte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'tyre_age_at_start_lte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'lap_start_gte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'lap_start_lte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'lap_end_gte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'lap_end_lte',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openf1-team-radio' => [
+            'id' => 'openf1-team-radio',
+            'method' => 'GET',
+            'path' => '/openf1/team-radio',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'session_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'meeting_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'driver_number',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openf1-weather' => [
+            'id' => 'openf1-weather',
+            'method' => 'GET',
+            'path' => '/openf1/weather',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'session_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'meeting_key',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'air_temperature_gte',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'air_temperature_lte',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'track_temperature_gte',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'track_temperature_lte',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'humidity_gte',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'humidity_lte',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'pressure_gte',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'pressure_lte',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'wind_direction_gte',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'wind_direction_lte',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'wind_speed_gte',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'wind_speed_lte',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'rainfall',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-current-group' => [
+            'id' => 'openligadb-current-group',
+            'method' => 'GET',
+            'path' => '/openligadb/current-group',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_shortcut',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-current-matchday' => [
+            'id' => 'openligadb-current-matchday',
+            'method' => 'GET',
+            'path' => '/openligadb/current-matchday',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_shortcut',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-goal-getters' => [
+            'id' => 'openligadb-goal-getters',
+            'method' => 'GET',
+            'path' => '/openligadb/goal-getters',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_shortcut',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-groups' => [
+            'id' => 'openligadb-groups',
+            'method' => 'GET',
+            'path' => '/openligadb/groups',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_shortcut',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-last-changed' => [
+            'id' => 'openligadb-last-changed',
+            'method' => 'GET',
+            'path' => '/openligadb/last-changed',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_shortcut',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'group_order_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-last-match' => [
+            'id' => 'openligadb-last-match',
+            'method' => 'GET',
+            'path' => '/openligadb/last-match',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_shortcut',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-last-team-match' => [
+            'id' => 'openligadb-last-team-match',
+            'method' => 'GET',
+            'path' => '/openligadb/last-team-match',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-league-team-matches' => [
+            'id' => 'openligadb-league-team-matches',
+            'method' => 'GET',
+            'path' => '/openligadb/league-team-matches',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_shortcut',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'team_filter',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-leagues' => [
+            'id' => 'openligadb-leagues',
+            'method' => 'GET',
+            'path' => '/openligadb/leagues',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-match' => [
+            'id' => 'openligadb-match',
+            'method' => 'GET',
+            'path' => '/openligadb/match',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'match_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-matchday-matches' => [
+            'id' => 'openligadb-matchday-matches',
+            'method' => 'GET',
+            'path' => '/openligadb/matchday-matches',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_shortcut',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'group_order_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-league-matches' => [
+            'id' => 'openligadb-league-matches',
+            'method' => 'GET',
+            'path' => '/openligadb/matches',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_shortcut',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-matches-by-team' => [
+            'id' => 'openligadb-matches-by-team',
+            'method' => 'GET',
+            'path' => '/openligadb/matches-by-team',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'team_filter',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'weeks_past',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'weeks_future',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-matches-by-team-id' => [
+            'id' => 'openligadb-matches-by-team-id',
+            'method' => 'GET',
+            'path' => '/openligadb/matches-by-team-id',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'weeks_past',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'weeks_future',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-next-match' => [
+            'id' => 'openligadb-next-match',
+            'method' => 'GET',
+            'path' => '/openligadb/next-match',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_shortcut',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-next-team-match' => [
+            'id' => 'openligadb-next-team-match',
+            'method' => 'GET',
+            'path' => '/openligadb/next-team-match',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-result-infos' => [
+            'id' => 'openligadb-result-infos',
+            'method' => 'GET',
+            'path' => '/openligadb/result-infos',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-result-types' => [
+            'id' => 'openligadb-result-types',
+            'method' => 'GET',
+            'path' => '/openligadb/result-types',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-sports' => [
+            'id' => 'openligadb-sports',
+            'method' => 'GET',
+            'path' => '/openligadb/sports',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-table' => [
+            'id' => 'openligadb-table',
+            'method' => 'GET',
+            'path' => '/openligadb/table',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_shortcut',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-team-pair-matches' => [
+            'id' => 'openligadb-team-pair-matches',
+            'method' => 'GET',
+            'path' => '/openligadb/team-pair-matches',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'team_id_1',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'team_id_2',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'openligadb-teams' => [
+            'id' => 'openligadb-teams',
+            'method' => 'GET',
+            'path' => '/openligadb/teams',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_shortcut',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'opensea-activity' => [
             'id' => 'opensea-activity',
@@ -101239,6 +120196,148 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'partiful-city-facets' => [
+            'id' => 'partiful-city-facets',
+            'method' => 'GET',
+            'path' => '/partiful/city-facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'NYC',
+                        'LA',
+                        'SF',
+                        'CHI',
+                        'ATX',
+                        'BOS',
+                        'DC',
+                        'MIA',
+                        'LON',
+                    ],
+                ],
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'events',
+                        'today',
+                        'tomorrow',
+                        'this-week',
+                        'this-weekend',
+                        'thanksgiving',
+                        'fall',
+                        'popups',
+                        'food',
+                        'free-events',
+                        'live-music',
+                        'parties',
+                        'run-clubs',
+                        'trivia',
+                        'lgbtq',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'partiful-city-feed' => [
+            'id' => 'partiful-city-feed',
+            'method' => 'GET',
+            'path' => '/partiful/city-feed',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'NYC',
+                        'LA',
+                        'SF',
+                        'CHI',
+                        'ATX',
+                        'BOS',
+                        'DC',
+                        'MIA',
+                        'LON',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'partiful-event' => [
+            'id' => 'partiful-event',
+            'method' => 'GET',
+            'path' => '/partiful/event',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'event_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'partiful-explore-cities' => [
+            'id' => 'partiful-explore-cities',
+            'method' => 'GET',
+            'path' => '/partiful/explore-cities',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'patreon-creator' => [
             'id' => 'patreon-creator',
             'method' => 'GET',
@@ -101925,6 +121024,744 @@ final class Operations
             'method' => 'GET',
             'path' => '/people/sections',
             'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'petsmart-categories' => [
+            'id' => 'petsmart-categories',
+            'method' => 'GET',
+            'path' => '/petsmart/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'us',
+                        'ca',
+                    ],
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'parent',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'depth',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'petsmart-product' => [
+            'id' => 'petsmart-product',
+            'method' => 'GET',
+            'path' => '/petsmart/product',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'us',
+                        'ca',
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'petsmart-product-inventory' => [
+            'id' => 'petsmart-product-inventory',
+            'method' => 'GET',
+            'path' => '/petsmart/product/inventory',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'store_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_quantity',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'petsmart-search' => [
+            'id' => 'petsmart-search',
+            'method' => 'GET',
+            'path' => '/petsmart/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'us',
+                        'ca',
+                    ],
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'brand',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_price',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_price',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'price_asc',
+                        'price_desc',
+                        'best_sellers',
+                        'top_rated',
+                        'new_arrivals',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'petsmart-search-filters' => [
+            'id' => 'petsmart-search-filters',
+            'method' => 'GET',
+            'path' => '/petsmart/search/filters',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'us',
+                        'ca',
+                    ],
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'brand',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_price',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_price',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'min_rating',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'facet',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'facet_query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'petsmart-suggest' => [
+            'id' => 'petsmart-suggest',
+            'method' => 'GET',
+            'path' => '/petsmart/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'us',
+                        'ca',
+                    ],
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pgatour-leaderboard' => [
+            'id' => 'pgatour-leaderboard',
+            'method' => 'GET',
+            'path' => '/pgatour/leaderboard',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tour',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'R',
+                        'S',
+                        'H',
+                        'Y',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pgatour-players' => [
+            'id' => 'pgatour-players',
+            'method' => 'GET',
+            'path' => '/pgatour/players',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tour',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'R',
+                        'S',
+                        'H',
+                        'Y',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pgatour-schedule' => [
+            'id' => 'pgatour-schedule',
+            'method' => 'GET',
+            'path' => '/pgatour/schedule',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tour',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'R',
+                        'S',
+                        'H',
+                        'Y',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pgatour-schedule-seasons' => [
+            'id' => 'pgatour-schedule-seasons',
+            'method' => 'GET',
+            'path' => '/pgatour/schedule/seasons',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tour',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'R',
+                        'S',
+                        'H',
+                        'Y',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pgatour-stats' => [
+            'id' => 'pgatour-stats',
+            'method' => 'GET',
+            'path' => '/pgatour/stats',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tour',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'R',
+                        'S',
+                        'H',
+                        'Y',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pgatour-stat-detail' => [
+            'id' => 'pgatour-stat-detail',
+            'method' => 'GET',
+            'path' => '/pgatour/stats/{stat_id}',
+            'pathParams' => [
+                'stat_id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'tour',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'R',
+                        'S',
+                        'H',
+                        'Y',
+                    ],
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'query_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'THROUGH_EVENT',
+                        'EVENT_ONLY',
+                    ],
+                ],
+                [
+                    'name' => 'tournament_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pgatour-stat-options' => [
+            'id' => 'pgatour-stat-options',
+            'method' => 'GET',
+            'path' => '/pgatour/stats/{stat_id}/options',
+            'pathParams' => [
+                'stat_id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'tour',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'R',
+                        'S',
+                        'H',
+                        'Y',
+                    ],
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pgatour-tournament-links' => [
+            'id' => 'pgatour-tournament-links',
+            'method' => 'GET',
+            'path' => '/pgatour/tournament-links',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pgatour-tournament-broadcast' => [
+            'id' => 'pgatour-tournament-broadcast',
+            'method' => 'GET',
+            'path' => '/pgatour/tournaments/{year}/{slug}/{id}/broadcast',
+            'pathParams' => [
+                'year',
+                'slug',
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pgatour-tournament-course-stats' => [
+            'id' => 'pgatour-tournament-course-stats',
+            'method' => 'GET',
+            'path' => '/pgatour/tournaments/{year}/{slug}/{id}/course-stats',
+            'pathParams' => [
+                'year',
+                'slug',
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pgatour-tournament-field' => [
+            'id' => 'pgatour-tournament-field',
+            'method' => 'GET',
+            'path' => '/pgatour/tournaments/{year}/{slug}/{id}/field',
+            'pathParams' => [
+                'year',
+                'slug',
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pgatour-tournament-overview' => [
+            'id' => 'pgatour-tournament-overview',
+            'method' => 'GET',
+            'path' => '/pgatour/tournaments/{year}/{slug}/{id}/overview',
+            'pathParams' => [
+                'year',
+                'slug',
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pgatour-tournament-past-results' => [
+            'id' => 'pgatour-tournament-past-results',
+            'method' => 'GET',
+            'path' => '/pgatour/tournaments/{year}/{slug}/{id}/past-results',
+            'pathParams' => [
+                'year',
+                'slug',
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pgatour-tournament-tee-times' => [
+            'id' => 'pgatour-tournament-tee-times',
+            'method' => 'GET',
+            'path' => '/pgatour/tournaments/{year}/{slug}/{id}/tee-times',
+            'pathParams' => [
+                'year',
+                'slug',
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pgatour-tournament-weather' => [
+            'id' => 'pgatour-tournament-weather',
+            'method' => 'GET',
+            'path' => '/pgatour/tournaments/{year}/{slug}/{id}/weather',
+            'pathParams' => [
+                'year',
+                'slug',
+                'id',
+            ],
             'queryParams' => [],
             'formParams' => [],
             'bodyParam' => null,
@@ -115208,6 +135045,106 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'rottentomatoes-critic' => [
+            'id' => 'rottentomatoes-critic',
+            'method' => 'GET',
+            'path' => '/rottentomatoes/critic',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'rottentomatoes-critic-publications' => [
+            'id' => 'rottentomatoes-critic-publications',
+            'method' => 'GET',
+            'path' => '/rottentomatoes/critic/publications',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'rottentomatoes-critic-reviews' => [
+            'id' => 'rottentomatoes-critic-reviews',
+            'method' => 'GET',
+            'path' => '/rottentomatoes/critic/reviews',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'rottentomatoes-critics-authors' => [
             'id' => 'rottentomatoes-critics-authors',
             'method' => 'GET',
@@ -115654,6 +135591,56 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'rottentomatoes-episode-reviews' => [
+            'id' => 'rottentomatoes-episode-reviews',
+            'method' => 'GET',
+            'path' => '/rottentomatoes/episode/reviews',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'critics',
+                        'top-critics',
+                        'audience',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'rottentomatoes-movie' => [
             'id' => 'rottentomatoes-movie',
             'method' => 'GET',
@@ -115735,6 +135722,66 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'rottentomatoes-movie-videos' => [
+            'id' => 'rottentomatoes-movie-videos',
+            'method' => 'GET',
+            'path' => '/rottentomatoes/movie/videos',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'rottentomatoes-movies' => [
+            'id' => 'rottentomatoes-movies',
+            'method' => 'GET',
+            'path' => '/rottentomatoes/movies',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'paths',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'rottentomatoes-person' => [
             'id' => 'rottentomatoes-person',
             'method' => 'GET',
@@ -115748,6 +135795,100 @@ final class Operations
                 ],
                 [
                     'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'media_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'movie',
+                        'tv',
+                    ],
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'newest',
+                        'oldest',
+                        'audience_highest',
+                        'audience_lowest',
+                        'critic_highest',
+                        'critic_lowest',
+                    ],
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'rottentomatoes-publication' => [
+            'id' => 'rottentomatoes-publication',
+            'method' => 'GET',
+            'path' => '/rottentomatoes/publication',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'rottentomatoes-publication-reviews' => [
+            'id' => 'rottentomatoes-publication-reviews',
+            'method' => 'GET',
+            'path' => '/rottentomatoes/publication/reviews',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'after',
                     'in' => 'query',
                     'type' => 'string',
                 ],
@@ -115809,6 +135950,56 @@ final class Operations
                 ],
                 [
                     'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'rottentomatoes-season-reviews' => [
+            'id' => 'rottentomatoes-season-reviews',
+            'method' => 'GET',
+            'path' => '/rottentomatoes/season/reviews',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'critics',
+                        'top-critics',
+                        'audience',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'after',
                     'in' => 'query',
                     'type' => 'string',
                 ],
@@ -122958,6 +143149,38 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'sofascore-event-player-actions' => [
+            'id' => 'sofascore-event-player-actions',
+            'method' => 'GET',
+            'path' => '/sofascore/event-player-actions',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'player_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'sofascore-event-player-heatmap' => [
             'id' => 'sofascore-event-player-heatmap',
             'method' => 'GET',
@@ -123130,6 +143353,38 @@ final class Operations
             'id' => 'sofascore-event-team-heatmap',
             'method' => 'GET',
             'path' => '/sofascore/event-team-heatmap',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sofascore-event-team-shotmap' => [
+            'id' => 'sofascore-event-team-shotmap',
+            'method' => 'GET',
+            'path' => '/sofascore/event-team-shotmap',
             'pathParams' => [],
             'queryParams' => [
                 [
@@ -126907,6 +147162,910 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+        ],
+        'speedrun-catalog' => [
+            'id' => 'speedrun-catalog',
+            'method' => 'GET',
+            'path' => '/speedrun/catalogs/{kind}',
+            'pathParams' => [
+                'kind',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'max',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'speedrun-category-detail' => [
+            'id' => 'speedrun-category-detail',
+            'method' => 'GET',
+            'path' => '/speedrun/categories/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'embed',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'game',
+                        'variables',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'speedrun-category-records' => [
+            'id' => 'speedrun-category-records',
+            'method' => 'GET',
+            'path' => '/speedrun/categories/{id}/records',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'embed',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'game',
+                        'category',
+                        'level',
+                        'platforms',
+                        'regions',
+                        'variables',
+                    ],
+                ],
+                [
+                    'name' => 'top',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'skip_empty',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'max',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'speedrun-category-variables' => [
+            'id' => 'speedrun-category-variables',
+            'method' => 'GET',
+            'path' => '/speedrun/categories/{id}/variables',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'embed',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'game',
+                    ],
+                ],
+                [
+                    'name' => 'orderby',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'name',
+                        'mandatory',
+                        'user-defined',
+                        'pos',
+                    ],
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'speedrun-games' => [
+            'id' => 'speedrun-games',
+            'method' => 'GET',
+            'path' => '/speedrun/games',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'platform',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'gametype',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'max',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'abbreviation',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'released',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'engine',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'developer',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'publisher',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'orderby',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'name.int',
+                        'name.jap',
+                        'abbreviation',
+                        'released',
+                        'created',
+                        'similarity',
+                    ],
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => '_bulk',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'romhack',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'embed',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'categories',
+                        'levels',
+                        'variables',
+                        'platforms',
+                        'regions',
+                        'gametypes',
+                        'genres',
+                        'engines',
+                        'developers',
+                        'publishers',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'speedrun-game-detail' => [
+            'id' => 'speedrun-game-detail',
+            'method' => 'GET',
+            'path' => '/speedrun/games/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'embed',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'categories',
+                        'levels',
+                        'variables',
+                        'platforms',
+                        'regions',
+                        'gametypes',
+                        'genres',
+                        'engines',
+                        'developers',
+                        'publishers',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'speedrun-categories' => [
+            'id' => 'speedrun-categories',
+            'method' => 'GET',
+            'path' => '/speedrun/games/{id}/categories',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'miscellaneous',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'orderby',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'name',
+                        'miscellaneous',
+                        'pos',
+                    ],
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'embed',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'game',
+                        'variables',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'speedrun-levels' => [
+            'id' => 'speedrun-levels',
+            'method' => 'GET',
+            'path' => '/speedrun/games/{id}/levels',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'orderby',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'name',
+                        'pos',
+                    ],
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'embed',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'categories',
+                        'variables',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'speedrun-records' => [
+            'id' => 'speedrun-records',
+            'method' => 'GET',
+            'path' => '/speedrun/games/{id}/records',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'max',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'top',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'skip_empty',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'embed',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'game',
+                        'category',
+                        'level',
+                        'platforms',
+                        'regions',
+                        'variables',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'speedrun-variables' => [
+            'id' => 'speedrun-variables',
+            'method' => 'GET',
+            'path' => '/speedrun/games/{id}/variables',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'orderby',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'name',
+                        'mandatory',
+                        'user-defined',
+                        'pos',
+                    ],
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'embed',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'game',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'speedrun-game-leaderboard' => [
+            'id' => 'speedrun-game-leaderboard',
+            'method' => 'GET',
+            'path' => '/speedrun/leaderboards/{game}/category/{category}',
+            'pathParams' => [
+                'game',
+                'category',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'embed',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'game',
+                        'category',
+                        'level',
+                        'platforms',
+                        'regions',
+                        'variables',
+                    ],
+                ],
+                [
+                    'name' => 'top',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'platform',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'emulators',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'video_only',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'timing',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'realtime',
+                        'realtime_noloads',
+                        'ingame',
+                    ],
+                ],
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'variables',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'speedrun-level-leaderboard' => [
+            'id' => 'speedrun-level-leaderboard',
+            'method' => 'GET',
+            'path' => '/speedrun/leaderboards/{game}/level/{level}/{category}',
+            'pathParams' => [
+                'game',
+                'category',
+                'level',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'embed',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'game',
+                        'category',
+                        'level',
+                        'platforms',
+                        'regions',
+                        'variables',
+                    ],
+                ],
+                [
+                    'name' => 'top',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'platform',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'emulators',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'video_only',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'timing',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'realtime',
+                        'realtime_noloads',
+                        'ingame',
+                    ],
+                ],
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'variables',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'speedrun-level-detail' => [
+            'id' => 'speedrun-level-detail',
+            'method' => 'GET',
+            'path' => '/speedrun/levels/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'embed',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'categories',
+                        'variables',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'speedrun-level-categories' => [
+            'id' => 'speedrun-level-categories',
+            'method' => 'GET',
+            'path' => '/speedrun/levels/{id}/categories',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'embed',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'game',
+                        'variables',
+                    ],
+                ],
+                [
+                    'name' => 'orderby',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'name',
+                        'miscellaneous',
+                        'pos',
+                    ],
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'miscellaneous',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'speedrun-level-records' => [
+            'id' => 'speedrun-level-records',
+            'method' => 'GET',
+            'path' => '/speedrun/levels/{id}/records',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'embed',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'game',
+                        'category',
+                        'level',
+                        'platforms',
+                        'regions',
+                        'variables',
+                    ],
+                ],
+                [
+                    'name' => 'top',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'skip_empty',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'max',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'speedrun-level-variables' => [
+            'id' => 'speedrun-level-variables',
+            'method' => 'GET',
+            'path' => '/speedrun/levels/{id}/variables',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'embed',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'game',
+                    ],
+                ],
+                [
+                    'name' => 'orderby',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'name',
+                        'mandatory',
+                        'user-defined',
+                        'pos',
+                    ],
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'speedrun-resource-options' => [
+            'id' => 'speedrun-resource-options',
+            'method' => 'GET',
+            'path' => '/speedrun/options',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
         ],
         'sportingnews-article' => [
             'id' => 'sportingnews-article',
@@ -148956,6 +170115,20 @@ final class Operations
                     'type' => 'string',
                     'required' => true,
                 ],
+                [
+                    'name' => 'series_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'group',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'completed',
+                        'upcoming',
+                    ],
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -148990,6 +170163,45 @@ final class Operations
                         'all',
                         't',
                         'ct',
+                    ],
+                ],
+                [
+                    'name' => 'role',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'agent',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'map',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'stage',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_rounds',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'dir',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'desc',
+                        'asc',
                     ],
                 ],
             ],
@@ -149097,6 +170309,16 @@ final class Operations
                     'name' => 'page',
                     'in' => 'query',
                     'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'hot',
+                        'new',
+                        'top',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -149307,6 +170529,17 @@ final class Operations
                     'type' => 'string',
                     'required' => true,
                 ],
+                [
+                    'name' => 'timespan',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        '30d',
+                        '60d',
+                        '90d',
+                    ],
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -149481,19 +170714,6 @@ final class Operations
                     'name' => 'timespan',
                     'in' => 'query',
                     'type' => 'string',
-                    'enum' => [
-                        'all',
-                        '30d',
-                        '60d',
-                        '90d',
-                        '2026',
-                        '2025',
-                        '2024',
-                        '2023',
-                        '2022',
-                        '2021',
-                        '2020',
-                    ],
                 ],
                 [
                     'name' => 'side',
@@ -149675,6 +170895,15 @@ final class Operations
                     'name' => 'page',
                     'in' => 'query',
                     'type' => 'integer',
+                ],
+                [
+                    'name' => 'group',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'completed',
+                        'upcoming',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -151397,6 +172626,231 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'webtoon-genre' => [
+            'id' => 'webtoon-genre',
+            'method' => 'GET',
+            'path' => '/webtoon/genre',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'action',
+                        'comedy',
+                        'drama',
+                        'fantasy',
+                        'graphic_novel',
+                        'heartwarming',
+                        'historical',
+                        'horror',
+                        'mystery',
+                        'romance',
+                        'sf',
+                        'slice_of_life',
+                        'super_hero',
+                        'sports',
+                        'supernatural',
+                        'thriller',
+                        'tiptoon',
+                    ],
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'MANA',
+                        'LIKEIT',
+                        'UPDATE',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'webtoon-genres' => [
+            'id' => 'webtoon-genres',
+            'method' => 'GET',
+            'path' => '/webtoon/genres',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'webtoon-originals' => [
+            'id' => 'webtoon-originals',
+            'method' => 'GET',
+            'path' => '/webtoon/originals',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'day',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'monday',
+                        'tuesday',
+                        'wednesday',
+                        'thursday',
+                        'friday',
+                        'saturday',
+                        'sunday',
+                        'complete',
+                    ],
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'MANA',
+                        'LIKEIT',
+                        'UPDATE',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'webtoon-rankings' => [
+            'id' => 'webtoon-rankings',
+            'method' => 'GET',
+            'path' => '/webtoon/rankings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tab',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'trending',
+                        'popular',
+                        'originals',
+                        'canvas',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'webtoon-search' => [
+            'id' => 'webtoon-search',
+            'method' => 'GET',
+            'path' => '/webtoon/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'keyword',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'scope',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'originals',
+                        'canvas',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'webtoon-series' => [
+            'id' => 'webtoon-series',
+            'method' => 'GET',
+            'path' => '/webtoon/series',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'title_no',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'wendys-categories' => [
             'id' => 'wendys-categories',
             'method' => 'GET',
@@ -152666,6 +174120,308 @@ final class Operations
                     'type' => 'string',
                 ],
             ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wta-countries' => [
+            'id' => 'wta-countries',
+            'method' => 'GET',
+            'path' => '/wta/countries',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wta-match-states' => [
+            'id' => 'wta-match-states',
+            'method' => 'GET',
+            'path' => '/wta/match-states',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wta-rankings' => [
+            'id' => 'wta-rankings',
+            'method' => 'GET',
+            'path' => '/wta/rankings/{view}',
+            'pathParams' => [
+                'view',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'at',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'rankSingles',
+                        'rankDoubles',
+                        'RankChampSingles',
+                        'LastName',
+                        'BirthDate',
+                        'TournCountSingles',
+                        'TournCountDoubles',
+                        'TournCountChamps',
+                        'PointsSingles',
+                        'PointsDoubles',
+                        'PointsChamps',
+                        'rank',
+                        'points',
+                    ],
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'wta-tournament-seasons' => [
+            'id' => 'wta-tournament-seasons',
+            'method' => 'GET',
+            'path' => '/wta/tournament-seasons',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wta-tournaments' => [
+            'id' => 'wta-tournaments',
+            'method' => 'GET',
+            'path' => '/wta/tournaments',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'level',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'WTA 500',
+                        'WTA 250',
+                        'Grand Slam',
+                        'WTA 1000',
+                        'Finals',
+                        'International',
+                        'Premier',
+                        'Premier 5',
+                        'Premier Mandatory',
+                        'ITF',
+                        'WTA 125',
+                    ],
+                ],
+                [
+                    'name' => 'surface',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'Hard',
+                        'Clay',
+                        'Grass',
+                        'Carpet',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'wta-tournament' => [
+            'id' => 'wta-tournament',
+            'method' => 'GET',
+            'path' => '/wta/tournaments/{group_id}/{year}',
+            'pathParams' => [
+                'group_id',
+                'year',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wta-tournament-draws' => [
+            'id' => 'wta-tournament-draws',
+            'method' => 'GET',
+            'path' => '/wta/tournaments/{group_id}/{year}/draws',
+            'pathParams' => [
+                'group_id',
+                'year',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wta-tournament-matches' => [
+            'id' => 'wta-tournament-matches',
+            'method' => 'GET',
+            'path' => '/wta/tournaments/{group_id}/{year}/matches',
+            'pathParams' => [
+                'group_id',
+                'year',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'states',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wta-tournament-order-of-play' => [
+            'id' => 'wta-tournament-order-of-play',
+            'method' => 'GET',
+            'path' => '/wta/tournaments/{group_id}/{year}/order-of-play',
+            'pathParams' => [
+                'group_id',
+                'year',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wta-tournament-players' => [
+            'id' => 'wta-tournament-players',
+            'method' => 'GET',
+            'path' => '/wta/tournaments/{group_id}/{year}/players',
+            'pathParams' => [
+                'group_id',
+                'year',
+            ],
+            'queryParams' => [],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -155522,25 +177278,17 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
-        'yahoo-shopping-category' => [
-            'id' => 'yahoo-shopping-category',
+        'yahoo-shopping-author' => [
+            'id' => 'yahoo-shopping-author',
             'method' => 'GET',
-            'path' => '/yahoo-shopping/category',
+            'path' => '/yahoo-shopping/author',
             'pathParams' => [],
             'queryParams' => [
                 [
-                    'name' => 'category',
+                    'name' => 'author',
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
-                    'enum' => [
-                        'beauty',
-                        'deals',
-                        'general',
-                        'gift-ideas',
-                        'home-garden',
-                        'style',
-                    ],
                 ],
                 [
                     'name' => 'page',
@@ -155562,10 +177310,10 @@ final class Operations
             ],
             'paginatable' => true,
         ],
-        'yahoo-shopping-home' => [
-            'id' => 'yahoo-shopping-home',
+        'yahoo-shopping-categories' => [
+            'id' => 'yahoo-shopping-categories',
             'method' => 'GET',
-            'path' => '/yahoo-shopping/home',
+            'path' => '/yahoo-shopping/categories',
             'pathParams' => [],
             'queryParams' => [],
             'formParams' => [],
@@ -155580,6 +177328,102 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'yahoo-shopping-category' => [
+            'id' => 'yahoo-shopping-category',
+            'method' => 'GET',
+            'path' => '/yahoo-shopping/category',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'style',
+                        'beauty',
+                        'health',
+                        'home-garden',
+                        'tech',
+                        'gift-ideas',
+                        'guides',
+                        'code-orange',
+                        'deals',
+                        'toys-games',
+                        'general',
+                        'pets',
+                    ],
+                ],
+                [
+                    'name' => 'subcategory',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'yahoo-shopping-experts' => [
+            'id' => 'yahoo-shopping-experts',
+            'method' => 'GET',
+            'path' => '/yahoo-shopping/experts',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-shopping-home' => [
+            'id' => 'yahoo-shopping-home',
+            'method' => 'GET',
+            'path' => '/yahoo-shopping/home',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'yahoo-shopping-shopping-list' => [
             'id' => 'yahoo-shopping-shopping-list',
@@ -155611,6 +177455,51 @@ final class Operations
             'id' => 'yahoo-shopping-shopping-lists',
             'method' => 'GET',
             'path' => '/yahoo-shopping/shopping-lists',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-shopping-sitemap' => [
+            'id' => 'yahoo-shopping-sitemap',
+            'method' => 'GET',
+            'path' => '/yahoo-shopping/sitemap',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-shopping-sitemaps' => [
+            'id' => 'yahoo-shopping-sitemaps',
+            'method' => 'GET',
+            'path' => '/yahoo-shopping/sitemaps',
             'pathParams' => [],
             'queryParams' => [],
             'formParams' => [],
@@ -155671,6 +177560,143 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'yahoo-shopping-suggest' => [
+            'id' => 'yahoo-shopping-suggest',
+            'method' => 'GET',
+            'path' => '/yahoo-shopping/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-college-rankings' => [
+            'id' => 'yahoo-sports-college-rankings',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/college-rankings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'college-football',
+                        'college-basketball',
+                        'college-womens-basketball',
+                    ],
+                ],
+                [
+                    'name' => 'poll_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'tz',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-draft' => [
+            'id' => 'yahoo-sports-draft',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/draft',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'nba',
+                    ],
+                ],
+                [
+                    'name' => 'view',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'results',
+                        'mock',
+                        'big-board',
+                        'news',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-dropdown-catalog' => [
+            'id' => 'yahoo-sports-dropdown-catalog',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/dropdown-catalog',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'yahoo-sports-game' => [
             'id' => 'yahoo-sports-game',
             'method' => 'GET',
@@ -155691,6 +177717,7 @@ final class Operations
                         'college-football',
                         'college-basketball',
                         'college-womens-basketball',
+                        'soccer',
                         'mls',
                         'premier-league',
                         'la-liga',
@@ -155707,13 +177734,20 @@ final class Operations
                         'concacaf-champions-cup',
                         'concacaf-gold-cup',
                         'concacaf-league',
+                        'womens-world-cup',
+                        'europa-league',
+                        'euro-championship',
                     ],
                 ],
                 [
                     'name' => 'game',
                     'in' => 'query',
                     'type' => 'string',
-                    'required' => true,
+                ],
+                [
+                    'name' => 'game_url',
+                    'in' => 'query',
+                    'type' => 'string',
                 ],
             ],
             'formParams' => [],
@@ -155760,6 +177794,95 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'yahoo-sports-golf-player' => [
+            'id' => 'yahoo-sports-golf-player',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/golf-player',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'player_url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-golf-player-news' => [
+            'id' => 'yahoo-sports-golf-player-news',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/golf-player-news',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'player_url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'top',
+                        'latest',
+                    ],
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'yahoo-sports-golf-players' => [
+            'id' => 'yahoo-sports-golf-players',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/golf-players',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'yahoo-sports-golf-schedule' => [
             'id' => 'yahoo-sports-golf-schedule',
             'method' => 'GET',
@@ -155777,6 +177900,7 @@ final class Operations
                         'lpga-tour',
                         'champions-tour',
                         'european-tour',
+                        'korn-ferry-tour',
                     ],
                 ],
                 [
@@ -155785,6 +177909,147 @@ final class Operations
                     'type' => 'integer',
                 ],
             ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-home' => [
+            'id' => 'yahoo-sports-home',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/home',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-injury-report' => [
+            'id' => 'yahoo-sports-injury-report',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/injury-report',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'nba',
+                        'mlb',
+                        'nhl',
+                    ],
+                ],
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-league-schedule' => [
+            'id' => 'yahoo-sports-league-schedule',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/league-schedule',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'nba',
+                        'mlb',
+                        'nhl',
+                        'wnba',
+                        'college-football',
+                        'college-basketball',
+                        'college-womens-basketball',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'week',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'seasonPhase',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PRESEASON',
+                        'REGULAR_SEASON',
+                        'POSTSEASON',
+                    ],
+                ],
+                [
+                    'name' => 'leagueFilter',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-leagues' => [
+            'id' => 'yahoo-sports-leagues',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/leagues',
+            'pathParams' => [],
+            'queryParams' => [],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -155835,6 +178100,32 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'yahoo-sports-more-news' => [
+            'id' => 'yahoo-sports-more-news',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/more-news',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'yahoo-sports-motorsports-race' => [
             'id' => 'yahoo-sports-motorsports-race',
@@ -155907,6 +178198,50 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'yahoo-sports-navigation' => [
+            'id' => 'yahoo-sports-navigation',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/navigation',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'section_url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-network-catalog' => [
+            'id' => 'yahoo-sports-network-catalog',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/network-catalog',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'yahoo-sports-news' => [
             'id' => 'yahoo-sports-news',
             'method' => 'GET',
@@ -155927,6 +178262,7 @@ final class Operations
                         'college-football',
                         'college-basketball',
                         'college-womens-basketball',
+                        'soccer',
                         'mls',
                         'premier-league',
                         'la-liga',
@@ -155943,9 +178279,175 @@ final class Operations
                         'concacaf-champions-cup',
                         'concacaf-gold-cup',
                         'concacaf-league',
+                        'womens-world-cup',
+                        'europa-league',
+                        'euro-championship',
                     ],
                 ],
             ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-newsletter-archive' => [
+            'id' => 'yahoo-sports-newsletter-archive',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/newsletter-archive',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'newsletter',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'yahoo-sports-newsletters' => [
+            'id' => 'yahoo-sports-newsletters',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/newsletters',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-odds-featured' => [
+            'id' => 'yahoo-sports-odds-featured',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/odds-featured',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-odds-game' => [
+            'id' => 'yahoo-sports-odds-game',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/odds-game',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'tz',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-odds-games' => [
+            'id' => 'yahoo-sports-odds-games',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/odds-games',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'ncaaf',
+                        'nba',
+                        'mlb',
+                        'nhl',
+                        'ncaab',
+                        'ncaaw',
+                        'wnba',
+                        'soccer.l.fbgb',
+                        'soccer.l.fbchampions',
+                        'soccer.l.mls',
+                        'soccer.l.fbes',
+                        'soccer.l.fbwcup',
+                        'golf',
+                        'ten',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-odds-trending' => [
+            'id' => 'yahoo-sports-odds-trending',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/odds-trending',
+            'pathParams' => [],
+            'queryParams' => [],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -155998,6 +178500,7 @@ final class Operations
                         'college-football',
                         'college-basketball',
                         'college-womens-basketball',
+                        'soccer',
                         'mls',
                         'premier-league',
                         'la-liga',
@@ -156014,6 +178517,9 @@ final class Operations
                         'concacaf-champions-cup',
                         'concacaf-gold-cup',
                         'concacaf-league',
+                        'womens-world-cup',
+                        'europa-league',
+                        'euro-championship',
                     ],
                 ],
                 [
@@ -156021,6 +178527,200 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-player-search' => [
+            'id' => 'yahoo-sports-player-search',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/player-search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'nba',
+                        'mlb',
+                        'golf',
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-playoff-bracket' => [
+            'id' => 'yahoo-sports-playoff-bracket',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/playoff-bracket',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'nba',
+                        'mlb',
+                        'wnba',
+                        'college-football',
+                        'college-basketball',
+                        'college-womens-basketball',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-playoff-bracket-catalog' => [
+            'id' => 'yahoo-sports-playoff-bracket-catalog',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/playoff-bracket-catalog',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'nba',
+                        'mlb',
+                        'wnba',
+                        'college-football',
+                        'college-basketball',
+                        'college-womens-basketball',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-rss-catalog' => [
+            'id' => 'yahoo-sports-rss-catalog',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/rss-catalog',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-rss-feed' => [
+            'id' => 'yahoo-sports-rss-feed',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/rss-feed',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'feed',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-schedule-catalog' => [
+            'id' => 'yahoo-sports-schedule-catalog',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/schedule-catalog',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'nba',
+                        'mlb',
+                        'nhl',
+                        'wnba',
+                        'college-football',
+                        'college-basketball',
+                        'college-womens-basketball',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -156056,6 +178756,7 @@ final class Operations
                         'college-football',
                         'college-basketball',
                         'college-womens-basketball',
+                        'soccer',
                         'mls',
                         'premier-league',
                         'la-liga',
@@ -156072,6 +178773,9 @@ final class Operations
                         'concacaf-champions-cup',
                         'concacaf-gold-cup',
                         'concacaf-league',
+                        'womens-world-cup',
+                        'europa-league',
+                        'euro-championship',
                     ],
                 ],
                 [
@@ -156079,7 +178783,107 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                 ],
+                [
+                    'name' => 'month',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'competition_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
             ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-section-stream' => [
+            'id' => 'yahoo-sports-section-stream',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/section-stream',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'section_url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page_offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-soccer-scoreboard' => [
+            'id' => 'yahoo-sports-soccer-scoreboard',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/soccer-scoreboard',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'month',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'competition_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-sportsbook-catalog' => [
+            'id' => 'yahoo-sports-sportsbook-catalog',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/sportsbook-catalog',
+            'pathParams' => [],
+            'queryParams' => [],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -156123,6 +178927,181 @@ final class Operations
                         'ligamx-apertura',
                         'ligamx-clausura',
                         'world-cup',
+                        'europa-league',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-stats' => [
+            'id' => 'yahoo-sports-stats',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/stats',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'nba',
+                        'mlb',
+                        'nhl',
+                        'wnba',
+                        'college-football',
+                        'college-basketball',
+                        'mls',
+                        'premier-league',
+                        'la-liga',
+                        'serie-a',
+                        'bundesliga',
+                        'ligue-1',
+                        'ligamx-clausura',
+                        'world-cup',
+                        'concacaf-gold-cup',
+                        'golf',
+                    ],
+                ],
+                [
+                    'name' => 'pageType',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'individual',
+                        'weekly',
+                        'team',
+                    ],
+                ],
+                [
+                    'name' => 'selectedTable',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'qualified',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'leagueStructure',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'positionIds',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cutTypeIds',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sortStatId',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'week',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'weekSeasonPhase',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-stats-catalog' => [
+            'id' => 'yahoo-sports-stats-catalog',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/stats-catalog',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-stats-discovery' => [
+            'id' => 'yahoo-sports-stats-discovery',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/stats-discovery',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'nba',
+                        'mlb',
+                        'nhl',
+                        'wnba',
+                        'college-football',
+                        'college-basketball',
+                        'mls',
+                        'premier-league',
+                        'la-liga',
+                        'serie-a',
+                        'bundesliga',
+                        'ligue-1',
+                        'ligamx-clausura',
+                        'world-cup',
+                        'concacaf-gold-cup',
+                        'golf',
+                    ],
+                ],
+                [
+                    'name' => 'pageType',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'individual',
+                        'weekly',
+                        'team',
                     ],
                 ],
             ],
@@ -156159,6 +179138,7 @@ final class Operations
                         'college-football',
                         'college-basketball',
                         'college-womens-basketball',
+                        'soccer',
                         'mls',
                         'premier-league',
                         'la-liga',
@@ -156175,6 +179155,9 @@ final class Operations
                         'concacaf-champions-cup',
                         'concacaf-gold-cup',
                         'concacaf-league',
+                        'womens-world-cup',
+                        'europa-league',
+                        'euro-championship',
                     ],
                 ],
                 [
@@ -156217,6 +179200,7 @@ final class Operations
                         'college-football',
                         'college-basketball',
                         'college-womens-basketball',
+                        'soccer',
                         'mls',
                         'premier-league',
                         'la-liga',
@@ -156233,6 +179217,9 @@ final class Operations
                         'concacaf-champions-cup',
                         'concacaf-gold-cup',
                         'concacaf-league',
+                        'womens-world-cup',
+                        'europa-league',
+                        'euro-championship',
                     ],
                 ],
                 [
@@ -156275,6 +179262,7 @@ final class Operations
                         'college-football',
                         'college-basketball',
                         'college-womens-basketball',
+                        'soccer',
                         'mls',
                         'premier-league',
                         'la-liga',
@@ -156291,6 +179279,9 @@ final class Operations
                         'concacaf-champions-cup',
                         'concacaf-gold-cup',
                         'concacaf-league',
+                        'womens-world-cup',
+                        'europa-league',
+                        'euro-championship',
                     ],
                 ],
                 [
@@ -156368,6 +179359,109 @@ final class Operations
             'id' => 'yahoo-sports-tennis-scoreboard',
             'method' => 'GET',
             'path' => '/yahoo-sports/tennis-scoreboard',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-topic-news' => [
+            'id' => 'yahoo-sports-topic-news',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/topic-news',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'topic',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'topic_url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-video-headlines' => [
+            'id' => 'yahoo-sports-video-headlines',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/video-headlines',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'list_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '1',
+                        '6',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-video-list-catalog' => [
+            'id' => 'yahoo-sports-video-list-catalog',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/video-list-catalog',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'yahoo-sports-watch-schedule' => [
+            'id' => 'yahoo-sports-watch-schedule',
+            'method' => 'GET',
+            'path' => '/yahoo-sports/watch-schedule',
             'pathParams' => [],
             'queryParams' => [],
             'formParams' => [],
@@ -159018,6 +182112,7 @@ final class Operations
         ],
         'appleBooks' => [
             'audiobookSeries' => 'apple-books-audiobook-series',
+            'audiobookCharts' => 'apple-books-audiobook-charts',
             'audiobookSearch' => 'apple-books-audiobook-search',
             'audiobook' => 'apple-books-audiobook',
             'audiobookReviews' => 'apple-books-audiobook-reviews',
@@ -159027,6 +182122,7 @@ final class Operations
             'bookReviews' => 'apple-books-book-reviews',
             'bookSimilar' => 'apple-books-book-similar',
             'charts' => 'apple-books-charts',
+            'genres' => 'apple-books-genres',
             'search' => 'apple-books-search',
             'series' => 'apple-books-series',
         ],
@@ -159132,6 +182228,14 @@ final class Operations
             'search' => 'balenciaga-search',
             'storeCountries' => 'balenciaga-store-countries',
             'stores' => 'balenciaga-stores',
+        ],
+        'bandcamp' => [
+            'artist' => 'bandcamp-artist',
+            'discover' => 'bandcamp-discover',
+            'filters' => 'bandcamp-filters',
+            'relatedTags' => 'bandcamp-related-tags',
+            'release' => 'bandcamp-release',
+            'search' => 'bandcamp-search',
         ],
         'barrons' => [
             'article' => 'barrons-article',
@@ -159293,6 +182397,22 @@ final class Operations
             'transfers' => 'bo3-transfers',
             'valorantLeaderboard' => 'bo3-valorant-leaderboard',
         ],
+        'boardGameGeek' => [
+            'boardgamegeekCardsets' => 'boardgamegeek-cardsets',
+            'boardgamegeekEntity' => 'boardgamegeek-entity',
+            'boardgamegeekGame' => 'boardgamegeek-game',
+            'boardgamegeekGeeklist' => 'boardgamegeek-geeklist',
+            'boardgamegeekGeeklistItems' => 'boardgamegeek-geeklist-items',
+            'boardgamegeekGeeklists' => 'boardgamegeek-geeklists',
+            'boardgamegeekHotness' => 'boardgamegeek-hotness',
+            'boardgamegeekLinks' => 'boardgamegeek-links',
+            'boardgamegeekMedia' => 'boardgamegeek-media',
+            'boardgamegeekRecommendations' => 'boardgamegeek-recommendations',
+            'boardgamegeekReviews' => 'boardgamegeek-reviews',
+            'boardgamegeekTaxonomy' => 'boardgamegeek-taxonomy',
+            'boardgamegeekThread' => 'boardgamegeek-thread',
+            'boardgamegeekThreads' => 'boardgamegeek-threads',
+        ],
         'bonhams' => [
             'auctionSearch' => 'bonhams-auction-search',
             'auctionDetail' => 'bonhams-auction-detail',
@@ -159309,6 +182429,12 @@ final class Operations
             'hotelDetail' => 'booking-hotel-detail',
             'reviews' => 'booking-reviews',
             'search' => 'booking-search',
+        ],
+        'booksy' => [
+            'business' => 'booksy-business',
+            'businesses' => 'booksy-businesses',
+            'categories' => 'booksy-categories',
+            'treatmentHints' => 'booksy-treatment-hints',
         ],
         'boots' => [
             'search' => 'boots-search',
@@ -159356,6 +182482,16 @@ final class Operations
             'headlines' => 'breitbart-headlines',
             'news' => 'breitbart-news',
             'sections' => 'breitbart-sections',
+        ],
+        'bringATrailer' => [
+            'bringatrailerFilters' => 'bringatrailer-filters',
+            'bringatrailerListing' => 'bringatrailer-listing',
+            'bringatrailerLive' => 'bringatrailer-live',
+            'bringatrailerMakes' => 'bringatrailer-makes',
+            'bringatrailerPriceHistory' => 'bringatrailer-price-history',
+            'bringatrailerResults' => 'bringatrailer-results',
+            'bringatrailerSearch' => 'bringatrailer-search',
+            'bringatrailerSuggest' => 'bringatrailer-suggest',
         ],
         'brisbaneTimes' => [
             'brisbanetimesArticle' => 'brisbanetimes-article',
@@ -159409,6 +182545,13 @@ final class Operations
             'product' => 'capterra-product',
             'reviews' => 'capterra-reviews',
             'search' => 'capterra-search',
+        ],
+        'cardmarket' => [
+            'catalog' => 'cardmarket-catalog',
+            'catalogCategories' => 'cardmarket-catalog-categories',
+            'games' => 'cardmarket-games',
+            'priceGuide' => 'cardmarket-price-guide',
+            'priceGuideCategories' => 'cardmarket-price-guide-categories',
         ],
         'carMax' => [
             'carmaxSearch' => 'carmax-search',
@@ -159620,6 +182763,43 @@ final class Operations
             'courtlistenerPeople' => 'courtlistener-people',
             'courtlistenerSearch' => 'courtlistener-search',
         ],
+        'cricbuzz' => [
+            'archives' => 'cricbuzz-archives',
+            'auctionInfo' => 'cricbuzz-auction-info',
+            'auctionLive' => 'cricbuzz-auction-live',
+            'auctionLiveBlog' => 'cricbuzz-auction-live-blog',
+            'auctionNews' => 'cricbuzz-auction-news',
+            'auctionOptions' => 'cricbuzz-auction-options',
+            'auctionPlayerDetail' => 'cricbuzz-auction-player-detail',
+            'auctionPlayerSearch' => 'cricbuzz-auction-player-search',
+            'auctionResults' => 'cricbuzz-auction-results',
+            'auctionSeasons' => 'cricbuzz-auction-seasons',
+            'auctionTeamDetail' => 'cricbuzz-auction-team-detail',
+            'auctionTeams' => 'cricbuzz-auction-teams',
+            'auctionTeamsOptions' => 'cricbuzz-auction-teams-options',
+            'auctionUpcoming' => 'cricbuzz-auction-upcoming',
+            'auctionUpcomingOptions' => 'cricbuzz-auction-upcoming-options',
+            'auctionVideos' => 'cricbuzz-auction-videos',
+            'matchFacts' => 'cricbuzz-match-facts',
+            'matchGraphs' => 'cricbuzz-match-graphs',
+            'matchOvers' => 'cricbuzz-match-overs',
+            'matches' => 'cricbuzz-matches',
+            'navigation' => 'cricbuzz-navigation',
+            'newsStory' => 'cricbuzz-news-story',
+            'newsTopics' => 'cricbuzz-news-topics',
+            'rankings' => 'cricbuzz-rankings',
+            'records' => 'cricbuzz-records',
+            'schedule' => 'cricbuzz-schedule',
+            'scorecard' => 'cricbuzz-scorecard',
+            'series' => 'cricbuzz-series',
+            'seriesStats' => 'cricbuzz-series-stats',
+            'teamStats' => 'cricbuzz-team-stats',
+            'teamStatsOptions' => 'cricbuzz-team-stats-options',
+            'teams' => 'cricbuzz-teams',
+            'videoCategories' => 'cricbuzz-video-categories',
+            'videoPlaylists' => 'cricbuzz-video-playlists',
+            'wtc' => 'cricbuzz-wtc',
+        ],
         'cricinfo' => [
             'calendar' => 'cricinfo-calendar',
             'commentary' => 'cricinfo-commentary',
@@ -159725,10 +182905,16 @@ final class Operations
         ],
         'datasets' => [
             'list_' => 'datasets-list',
+            'airbnbHostsFacets' => 'datasets-airbnb-hosts-facets',
+            'airbnbHostsItem' => 'datasets-airbnb-hosts-item',
+            'airbnbHostsSearch' => 'datasets-airbnb-hosts-search',
             'airbnbMarketsFacets' => 'datasets-airbnb-markets-facets',
             'airbnbMarketsItem' => 'datasets-airbnb-markets-item',
             'airbnbMarketsNearby' => 'datasets-airbnb-markets-nearby',
             'airbnbMarketsSearch' => 'datasets-airbnb-markets-search',
+            'appleBooksFacets' => 'datasets-apple-books-facets',
+            'appleBooksItem' => 'datasets-apple-books-item',
+            'appleBooksSearch' => 'datasets-apple-books-search',
             'appleMapsPlacesFacets' => 'datasets-apple-maps-places-facets',
             'appleMapsPlacesItem' => 'datasets-apple-maps-places-item',
             'appleMapsPlacesNearby' => 'datasets-apple-maps-places-nearby',
@@ -159736,8 +182922,14 @@ final class Operations
             'applePodcastsShowsFacets' => 'datasets-apple-podcasts-shows-facets',
             'applePodcastsShowsItem' => 'datasets-apple-podcasts-shows-item',
             'applePodcastsShowsSearch' => 'datasets-apple-podcasts-shows-search',
+            'appsChartsFacets' => 'datasets-apps-charts-facets',
+            'appsChartsItem' => 'datasets-apps-charts-item',
             'appsChartsSearch' => 'datasets-apps-charts-search',
+            'appsReviewsFacets' => 'datasets-apps-reviews-facets',
+            'appsReviewsItem' => 'datasets-apps-reviews-item',
             'appsReviewsSearch' => 'datasets-apps-reviews-search',
+            'appsFacets' => 'datasets-apps-facets',
+            'appsItem' => 'datasets-apps-item',
             'appsSearch' => 'datasets-apps-search',
             'bbbBusinessesFacets' => 'datasets-bbb-businesses-facets',
             'bbbBusinessesItem' => 'datasets-bbb-businesses-item',
@@ -159755,6 +182947,8 @@ final class Operations
             'chromeExtensionsMetrics' => 'datasets-chrome-extensions-metrics',
             'chromeExtensionsSearch' => 'datasets-chrome-extensions-search',
             'chromeExtensionsTrending' => 'datasets-chrome-extensions-trending',
+            'creatorsFacets' => 'datasets-creators-facets',
+            'creatorsItem' => 'datasets-creators-item',
             'creatorsSearch' => 'datasets-creators-search',
             'doordashStoresFacets' => 'datasets-doordash-stores-facets',
             'doordashStoresItem' => 'datasets-doordash-stores-item',
@@ -159826,6 +183020,8 @@ final class Operations
             'producthuntProductsSearch' => 'datasets-producthunt-products-search',
             'producthuntTrendsFacets' => 'datasets-producthunt-trends-facets',
             'producthuntTrendsSearch' => 'datasets-producthunt-trends-search',
+            'redditTrendingFacets' => 'datasets-reddit-trending-facets',
+            'redditTrendingItem' => 'datasets-reddit-trending-item',
             'redditTrendingSearch' => 'datasets-reddit-trending-search',
             'secCompaniesFacets' => 'datasets-sec-companies-facets',
             'secCompaniesFinancials' => 'datasets-sec-companies-financials',
@@ -159838,15 +183034,30 @@ final class Operations
             'starbucksStoresItem' => 'datasets-starbucks-stores-item',
             'starbucksStoresNearby' => 'datasets-starbucks-stores-nearby',
             'starbucksStoresSearch' => 'datasets-starbucks-stores-search',
+            'steamAchievementsFacets' => 'datasets-steam-achievements-facets',
+            'steamAchievementsItem' => 'datasets-steam-achievements-item',
             'steamAchievementsSearch' => 'datasets-steam-achievements-search',
+            'steamChartsFacets' => 'datasets-steam-charts-facets',
+            'steamChartsItem' => 'datasets-steam-charts-item',
             'steamChartsSearch' => 'datasets-steam-charts-search',
             'steamGamesFacets' => 'datasets-steam-games-facets',
             'steamGamesItem' => 'datasets-steam-games-item',
             'steamGamesSearch' => 'datasets-steam-games-search',
+            'steamNewsFacets' => 'datasets-steam-news-facets',
+            'steamNewsItem' => 'datasets-steam-news-item',
             'steamNewsSearch' => 'datasets-steam-news-search',
+            'steamPlayercountsFacets' => 'datasets-steam-playercounts-facets',
+            'steamPlayercountsItem' => 'datasets-steam-playercounts-item',
             'steamPlayercountsSearch' => 'datasets-steam-playercounts-search',
+            'steamPricesFacets' => 'datasets-steam-prices-facets',
+            'steamPricesItem' => 'datasets-steam-prices-item',
             'steamPricesSearch' => 'datasets-steam-prices-search',
+            'steamReviewsFacets' => 'datasets-steam-reviews-facets',
+            'steamReviewsItem' => 'datasets-steam-reviews-item',
             'steamReviewsSearch' => 'datasets-steam-reviews-search',
+            'substackFacets' => 'datasets-substack-facets',
+            'substackItem' => 'datasets-substack-item',
+            'substackSearch' => 'datasets-substack-search',
             'techstackFacets' => 'datasets-techstack-facets',
             'techstackItem' => 'datasets-techstack-item',
             'techstackSearch' => 'datasets-techstack-search',
@@ -159924,6 +183135,28 @@ final class Operations
             'master' => 'discogs-master',
             'release' => 'discogs-release',
             'search' => 'discogs-search',
+        ],
+        'dollarTree' => [
+            'dollartreeBlogArticle' => 'dollartree-blog-article',
+            'dollartreeCategories' => 'dollartree-categories',
+            'dollartreePrice' => 'dollartree-price',
+            'dollartreeProduct' => 'dollartree-product',
+            'dollartreeProducts' => 'dollartree-products',
+            'dollartreeSearch' => 'dollartree-search',
+            'dollartreeStockStatus' => 'dollartree-stock-status',
+            'dollartreeKeywordTypeahead' => 'dollartree-keyword-typeahead',
+            'dollartreeProductTypeahead' => 'dollartree-product-typeahead',
+        ],
+        'domain' => [
+            'dnsRecordTypes' => 'domain-dns-record-types',
+            'dnsResolve' => 'domain-dns-resolve',
+            'rdapDomain' => 'domain-rdap-domain',
+            'rdapIp' => 'domain-rdap-ip',
+            'robots' => 'domain-robots',
+            'site' => 'domain-site',
+            'subdomains' => 'domain-subdomains',
+            'waybackAvailability' => 'domain-wayback-availability',
+            'waybackCdx' => 'domain-wayback-cdx',
         ],
         'dominos' => [
             'coupons' => 'dominos-coupons',
@@ -160129,6 +183362,43 @@ final class Operations
             'marketplaceSearch' => 'facebook-marketplace-search',
             'page' => 'facebook-page',
         ],
+        'faceit' => [
+            'banReasons' => 'faceit-ban-reasons',
+            'banlist' => 'faceit-banlist',
+            'banlistStats' => 'faceit-banlist-stats',
+            'bestClips' => 'faceit-best-clips',
+            'championship' => 'faceit-championship',
+            'championshipBracket' => 'faceit-championship-bracket',
+            'championshipParticipants' => 'faceit-championship-participants',
+            'championshipSearch' => 'faceit-championship-search',
+            'clip' => 'faceit-clip',
+            'clips' => 'faceit-clips',
+            'competitionMatches' => 'faceit-competition-matches',
+            'fpl' => 'faceit-fpl',
+            'gameModes' => 'faceit-game-modes',
+            'games' => 'faceit-games',
+            'hub' => 'faceit-hub',
+            'hubCategories' => 'faceit-hub-categories',
+            'hubMemberships' => 'faceit-hub-memberships',
+            'hubs' => 'faceit-hubs',
+            'hubsDetailed' => 'faceit-hubs-detailed',
+            'leaderboard' => 'faceit-leaderboard',
+            'leaderboardDetail' => 'faceit-leaderboard-detail',
+            'leaderboardStatuses' => 'faceit-leaderboard-statuses',
+            'maps' => 'faceit-maps',
+            'matchClips' => 'faceit-match-clips',
+            'organizer' => 'faceit-organizer',
+            'player' => 'faceit-player',
+            'playerRank' => 'faceit-player-rank',
+            'regions' => 'faceit-regions',
+            'rule' => 'faceit-rule',
+            'rules' => 'faceit-rules',
+            'skillLevels' => 'faceit-skill-levels',
+            'standings' => 'faceit-standings',
+            'team' => 'faceit-team',
+            'tournamentsPast' => 'faceit-tournaments-past',
+            'userSkills' => 'faceit-user-skills',
+        ],
         'fanatics' => [
             'categories' => 'fanatics-categories',
             'category' => 'fanatics-category',
@@ -160138,8 +183408,16 @@ final class Operations
         'fanaticsCollect' => [
             'fanaticscollectAuctions' => 'fanaticscollect-auctions',
             'fanaticscollectCategories' => 'fanaticscollect-categories',
+            'fanaticscollectInstantPackRelease' => 'fanaticscollect-instant-pack-release',
+            'fanaticscollectInstantPackReleases' => 'fanaticscollect-instant-pack-releases',
             'fanaticscollectInstantRipsCategories' => 'fanaticscollect-instant-rips-categories',
+            'fanaticscollectInstantRipsPackCategories' => 'fanaticscollect-instant-rips-pack-categories',
+            'fanaticscollectInstantRipsPackChecklist' => 'fanaticscollect-instant-rips-pack-checklist',
+            'fanaticscollectInstantRipsPacks' => 'fanaticscollect-instant-rips-packs',
+            'fanaticscollectRecentlyRipped' => 'fanaticscollect-recently-ripped',
             'fanaticscollectListing' => 'fanaticscollect-listing',
+            'fanaticscollectNewsroom' => 'fanaticscollect-newsroom',
+            'fanaticscollectNewsroomFilters' => 'fanaticscollect-newsroom-filters',
             'fanaticscollectSearch' => 'fanaticscollect-search',
             'fanaticscollectSoldItems' => 'fanaticscollect-sold-items',
             'fanaticscollectTrendingSearches' => 'fanaticscollect-trending-searches',
@@ -160268,6 +183546,14 @@ final class Operations
             'fastcompanyNews' => 'fastcompany-news',
             'fastcompanySections' => 'fastcompany-sections',
         ],
+        'fever' => [
+            'cities' => 'fever-cities',
+            'feed' => 'fever-feed',
+            'filters' => 'fever-filters',
+            'plan' => 'fever-plan',
+            'plans' => 'fever-plans',
+            'topCities' => 'fever-top-cities',
+        ],
         'fiveGuys' => [
             'fiveguysDirectory' => 'fiveguys-directory',
             'fiveguysFaq' => 'fiveguys-faq',
@@ -160291,9 +183577,11 @@ final class Operations
             'competitions' => 'flashscore-competitions',
             'entityNews' => 'flashscore-entity-news',
             'matchBoxScore' => 'flashscore-match-box-score',
+            'matchCommentary' => 'flashscore-match-commentary',
             'matchDarts' => 'flashscore-match-darts',
             'matchH2h' => 'flashscore-match-h2h',
             'matchHighlights' => 'flashscore-match-highlights',
+            'matchIncidents' => 'flashscore-match-incidents',
             'matchInfo' => 'flashscore-match-info',
             'matchLineups' => 'flashscore-match-lineups',
             'matchMissingPlayers' => 'flashscore-match-missing-players',
@@ -160303,6 +183591,7 @@ final class Operations
             'matchPlayerStats' => 'flashscore-match-player-stats',
             'matchPointByPoint' => 'flashscore-match-point-by-point',
             'matchPredictedLineups' => 'flashscore-match-predicted-lineups',
+            'matchPrematchScorers' => 'flashscore-match-prematch-scorers',
             'matchReport' => 'flashscore-match-report',
             'matchStandings' => 'flashscore-match-standings',
             'matchStats' => 'flashscore-match-stats',
@@ -160335,11 +183624,19 @@ final class Operations
             'teamTransfers' => 'flashscore-team-transfers',
             'topSearch' => 'flashscore-top-search',
             'tournamentArchiveSeasons' => 'flashscore-tournament-archive-seasons',
+            'tournamentDraw' => 'flashscore-tournament-draw',
             'tournamentEvents' => 'flashscore-tournament-events',
             'tournamentOutrightOdds' => 'flashscore-tournament-outright-odds',
             'tournamentSeasons' => 'flashscore-tournament-seasons',
             'tournamentStandings' => 'flashscore-tournament-standings',
             'tournamentStandingsViews' => 'flashscore-tournament-standings-views',
+        ],
+        'flickReels' => [
+            'flickreelsClassify' => 'flickreels-classify',
+            'flickreelsGenres' => 'flickreels-genres',
+            'flickreelsHome' => 'flickreels-home',
+            'flickreelsMovie' => 'flickreels-movie',
+            'flickreelsShelf' => 'flickreels-shelf',
         ],
         'foodpanda' => [
             'restaurant' => 'foodpanda-restaurant',
@@ -160372,6 +183669,36 @@ final class Operations
             'foreignpolicyProject' => 'foreignpolicy-project',
             'foreignpolicyProjects' => 'foreignpolicy-projects',
             'foreignpolicyTopic' => 'foreignpolicy-topic',
+        ],
+        'formula1' => [
+            'driver' => 'formula1-driver',
+            'driverGrid' => 'formula1-driver-grid',
+            'driverSeasonResults' => 'formula1-driver-season-results',
+            'driverStandings' => 'formula1-driver-standings',
+            'filters' => 'formula1-filters',
+            'jsonAwards' => 'formula1-json-awards',
+            'jsonConstructors' => 'formula1-json-constructors',
+            'jsonDriverAssembly' => 'formula1-json-driver-assembly',
+            'jsonDrivers' => 'formula1-json-drivers',
+            'jsonEditorial' => 'formula1-json-editorial',
+            'jsonEventTracker' => 'formula1-json-event-tracker',
+            'jsonMeetingDatasets' => 'formula1-json-meeting-datasets',
+            'jsonMeetings' => 'formula1-json-meetings',
+            'jsonRaceAssembly' => 'formula1-json-race-assembly',
+            'jsonResults' => 'formula1-json-results',
+            'jsonSeasonAward' => 'formula1-json-season-award',
+            'jsonTeamAssembly' => 'formula1-json-team-assembly',
+            'meetings' => 'formula1-meetings',
+            'raceCalendar' => 'formula1-race-calendar',
+            'raceHub' => 'formula1-race-hub',
+            'seasonAwards' => 'formula1-season-awards',
+            'seasonResults' => 'formula1-season-results',
+            'seasons' => 'formula1-seasons',
+            'sessionResults' => 'formula1-session-results',
+            'team' => 'formula1-team',
+            'teamGrid' => 'formula1-team-grid',
+            'teamSeasonResults' => 'formula1-team-season-results',
+            'teamStandings' => 'formula1-team-standings',
         ],
         'fortune' => [
             'article' => 'fortune-article',
@@ -160445,6 +183772,12 @@ final class Operations
             'freemalaysiatodayNews' => 'freemalaysiatoday-news',
             'freemalaysiatodaySections' => 'freemalaysiatoday-sections',
         ],
+        'fresha' => [
+            'landingVenues' => 'fresha-landing-venues',
+            'searchVenues' => 'fresha-search-venues',
+            'taxonomy' => 'fresha-taxonomy',
+            'venue' => 'fresha-venue',
+        ],
         'ft' => [
             'article' => 'ft-article',
             'author' => 'ft-author',
@@ -160481,6 +183814,29 @@ final class Operations
             'fussballdeTeamMatches' => 'fussballde-team-matches',
             'fussballdeTeamSquad' => 'fussballde-team-squad',
             'fussballdeTopScorers' => 'fussballde-top-scorers',
+        ],
+        'futGg' => [
+            'futggFc27Catalog' => 'futgg-fc27-catalog',
+            'futggFc27Definitions' => 'futgg-fc27-definitions',
+            'futggFc27Evolutions' => 'futgg-fc27-evolutions',
+            'futggFc27Evolution' => 'futgg-fc27-evolution',
+            'futggFc27GgRatingRanks' => 'futgg-fc27-gg-rating-ranks',
+            'futggFc27GgRatings' => 'futgg-fc27-gg-ratings',
+            'futggFc27ObjectiveCategories' => 'futgg-fc27-objective-categories',
+            'futggFc27ObjectiveGroups' => 'futgg-fc27-objective-groups',
+            'futggFc27ObjectiveGroupByEa' => 'futgg-fc27-objective-group-by-ea',
+            'futggFc27ObjectiveGroupByObjective' => 'futgg-fc27-objective-group-by-objective',
+            'futggFc27ObjectiveGroup' => 'futgg-fc27-objective-group',
+            'futggFc27PlayerSorts' => 'futgg-fc27-player-sorts',
+            'futggFc27Players' => 'futgg-fc27-players',
+            'futggFc27PriceIndex' => 'futgg-fc27-price-index',
+            'futggFc27Prices' => 'futgg-fc27-prices',
+            'futggFc27SbcCategories' => 'futgg-fc27-sbc-categories',
+            'futggFc27SbcSets' => 'futgg-fc27-sbc-sets',
+            'futggFc27SbcSetByChallenge' => 'futgg-fc27-sbc-set-by-challenge',
+            'futggFc27SbcSetByEa' => 'futgg-fc27-sbc-set-by-ea',
+            'futggFc27SbcSet' => 'futgg-fc27-sbc-set',
+            'futggFc27SeasonPass' => 'futgg-fc27-season-pass',
         ],
         'gameRant' => [
             'gamerantArticle' => 'gamerant-article',
@@ -160572,6 +183928,18 @@ final class Operations
             'globeandmailHeadlines' => 'globeandmail-headlines',
             'globeandmailNews' => 'globeandmail-news',
             'globeandmailSections' => 'globeandmail-sections',
+        ],
+        'glovo' => [
+            'categories' => 'glovo-categories',
+            'cities' => 'glovo-cities',
+            'city' => 'glovo-city',
+            'store' => 'glovo-store',
+            'storeFees' => 'glovo-store-fees',
+            'storeMenu' => 'glovo-store-menu',
+            'storeProducts' => 'glovo-store-products',
+            'storeSearch' => 'glovo-store-search',
+            'stores' => 'glovo-stores',
+            'storesFilters' => 'glovo-stores-filters',
         ],
         'gmaNews' => [
             'gmanewsArticle' => 'gmanews-article',
@@ -160700,6 +184068,8 @@ final class Operations
             'suggest' => 'googleplay-suggest',
         ],
         'gosuGamers' => [
+            'gosugamersArticle' => 'gosugamers-article',
+            'gosugamersArticles' => 'gosugamers-articles',
             'gosugamersEncounters' => 'gosugamers-encounters',
             'gosugamersGames' => 'gosugamers-games',
             'gosugamersMatch' => 'gosugamers-match',
@@ -160836,6 +184206,17 @@ final class Operations
             'hindustantimesHeadlines' => 'hindustantimes-headlines',
             'hindustantimesNews' => 'hindustantimes-news',
             'hindustantimesSections' => 'hindustantimes-sections',
+        ],
+        'hltv' => [
+            'event' => 'hltv-event',
+            'events' => 'hltv-events',
+            'match_' => 'hltv-match',
+            'matches' => 'hltv-matches',
+            'player' => 'hltv-player',
+            'rankings' => 'hltv-rankings',
+            'results' => 'hltv-results',
+            'search' => 'hltv-search',
+            'team' => 'hltv-team',
         ],
         'hM' => [
             'hmCategories' => 'hm-categories',
@@ -161031,6 +184412,22 @@ final class Operations
             'irishtimesNews' => 'irishtimes-news',
             'irishtimesSections' => 'irishtimes-sections',
         ],
+        'itchIo' => [
+            'itchioBrowse' => 'itchio-browse',
+            'itchioBrowseOptions' => 'itchio-browse-options',
+            'itchioCatalog' => 'itchio-catalog',
+            'itchioTopRated' => 'itchio-top-rated',
+            'itchioJamsBrowse' => 'itchio-jams-browse',
+            'itchioJamCalendar' => 'itchio-jam-calendar',
+            'itchioJamsEntries' => 'itchio-jams-entries',
+            'itchioJamsOptions' => 'itchio-jams-options',
+            'itchioJamsOverview' => 'itchio-jams-overview',
+            'itchioJamsResults' => 'itchio-jams-results',
+            'itchioJamsResultsOptions' => 'itchio-jams-results-options',
+            'itchioJamsSubmission' => 'itchio-jams-submission',
+            'itchioProject' => 'itchio-project',
+            'itchioTags' => 'itchio-tags',
+        ],
         'theJapanTimes' => [
             'japantimesArticle' => 'japantimes-article',
             'japantimesAuthor' => 'japantimes-author',
@@ -161202,6 +184599,26 @@ final class Operations
             'project' => 'kickstarter-project',
             'updates' => 'kickstarter-updates',
         ],
+        'klook' => [
+            'activity' => 'klook-activity',
+            'attractionsCategories' => 'klook-attractions-categories',
+            'attractionsDestinations' => 'klook-attractions-destinations',
+            'attractionsHighlights' => 'klook-attractions-highlights',
+            'attractionsSearch' => 'klook-attractions-search',
+            'attractionsSuggest' => 'klook-attractions-suggest',
+            'categories' => 'klook-categories',
+            'destinations' => 'klook-destinations',
+            'hot' => 'klook-hot',
+            'interests' => 'klook-interests',
+            'recommendations' => 'klook-recommendations',
+            'reviews' => 'klook-reviews',
+            'search' => 'klook-search',
+            'searchFilters' => 'klook-search-filters',
+            'searchHotKeywords' => 'klook-search-hot-keywords',
+            'searchUnified' => 'klook-search-unified',
+            'suggest' => 'klook-suggest',
+            'verticals' => 'klook-verticals',
+        ],
         'kohlS' => [
             'kohlsCategory' => 'kohls-category',
             'kohlsProductReviews' => 'kohls-product-reviews',
@@ -161335,6 +184752,17 @@ final class Operations
             'product' => 'lululemon-product',
             'stores' => 'lululemon-stores',
         ],
+        'luma' => [
+            'calendar' => 'luma-calendar',
+            'calendarEvents' => 'luma-calendar-events',
+            'categories' => 'luma-categories',
+            'category' => 'luma-category',
+            'categoryEvents' => 'luma-category-events',
+            'event' => 'luma-event',
+            'place' => 'luma-place',
+            'placeCalendars' => 'luma-place-calendars',
+            'placeEvents' => 'luma-place-events',
+        ],
         'macRumors' => [
             'macrumorsArticle' => 'macrumors-article',
             'macrumorsAuthor' => 'macrumors-author',
@@ -161381,6 +184809,28 @@ final class Operations
             'headlines' => 'mashable-headlines',
             'news' => 'mashable-news',
             'sections' => 'mashable-sections',
+        ],
+        'maxPreps' => [
+            'maxprepsRankingsGroupings' => 'maxpreps-rankings-groupings',
+            'maxprepsRequestEnums' => 'maxpreps-request-enums',
+            'maxprepsSchool' => 'maxpreps-school',
+            'maxprepsSchoolContests' => 'maxpreps-school-contests',
+            'maxprepsSchoolProximal' => 'maxpreps-school-proximal',
+            'maxprepsSchoolSearch' => 'maxpreps-school-search',
+            'maxprepsSchoolSeasons' => 'maxpreps-school-seasons',
+            'maxprepsSchoolZipSearch' => 'maxpreps-school-zip-search',
+            'maxprepsScoreboard' => 'maxpreps-scoreboard',
+            'maxprepsSeasonNavigation' => 'maxpreps-season-navigation',
+            'maxprepsSports' => 'maxpreps-sports',
+            'maxprepsStates' => 'maxpreps-states',
+            'maxprepsTeam' => 'maxpreps-team',
+            'maxprepsTeamContext' => 'maxpreps-team-context',
+            'maxprepsTeamNextContest' => 'maxpreps-team-next-contest',
+            'maxprepsTeamRankings' => 'maxpreps-team-rankings',
+            'maxprepsTeamRosterSummary' => 'maxpreps-team-roster-summary',
+            'maxprepsTeamSchedule' => 'maxpreps-team-schedule',
+            'maxprepsTeamStatLeaders' => 'maxpreps-team-stat-leaders',
+            'maxprepsTournamentSports' => 'maxpreps-tournament-sports',
         ],
         'mcDonalds' => [
             'mcdonaldsCategories' => 'mcdonalds-categories',
@@ -161555,6 +185005,42 @@ final class Operations
             'modaoperandiProduct' => 'modaoperandi-product',
             'modaoperandiSearch' => 'modaoperandi-search',
         ],
+        'modrinth' => [
+            'collection' => 'modrinth-collection',
+            'collections' => 'modrinth-collections',
+            'metadataLinkPlatforms' => 'modrinth-metadata-link-platforms',
+            'metadataLoaderFields' => 'modrinth-metadata-loader-fields',
+            'metadataLoaderFieldValues' => 'modrinth-metadata-loader-field-values',
+            'metadataLoaders' => 'modrinth-metadata-loaders',
+            'organization' => 'modrinth-organization',
+            'organizationProjects' => 'modrinth-organization-projects',
+            'organizations' => 'modrinth-organizations',
+            'project' => 'modrinth-project',
+            'checkProject' => 'modrinth-check-project',
+            'dependencies' => 'modrinth-dependencies',
+            'projectDisclosures' => 'modrinth-project-disclosures',
+            'projectVersions' => 'modrinth-project-versions',
+            'projectVersion' => 'modrinth-project-version',
+            'projects' => 'modrinth-projects',
+            'randomProjects' => 'modrinth-random-projects',
+            'search' => 'modrinth-search',
+            'statistics' => 'modrinth-statistics',
+            'license' => 'modrinth-license',
+            'tags' => 'modrinth-tags',
+            'forgeUpdates' => 'modrinth-forge-updates',
+            'searchV3' => 'modrinth-search-v3',
+            'searchV3Body' => 'modrinth-search-v3-body',
+            'searchV3Options' => 'modrinth-search-v3-options',
+            'version' => 'modrinth-version',
+            'fileProjects' => 'modrinth-file-projects',
+            'fileVersion' => 'modrinth-file-version',
+            'fileUpdate' => 'modrinth-file-update',
+            'fileVersions' => 'modrinth-file-versions',
+            'filesUpdate' => 'modrinth-files-update',
+            'filesUpdateIndividual' => 'modrinth-files-update-individual',
+            'filesUpdateMany' => 'modrinth-files-update-many',
+            'versions' => 'modrinth-versions',
+        ],
         'moncler' => [
             'categories' => 'moncler-categories',
             'category' => 'moncler-category',
@@ -161585,6 +185071,35 @@ final class Operations
             'motleyfoolNews' => 'motleyfool-news',
             'motleyfoolSections' => 'motleyfool-sections',
         ],
+        'motoGp' => [
+            'motogpBmwAward' => 'motogp-bmw-award',
+            'motogpCategories' => 'motogp-categories',
+            'motogpCircuitPoles' => 'motogp-circuit-poles',
+            'motogpCircuitRecords' => 'motogp-circuit-records',
+            'motogpCircuitWins' => 'motogp-circuit-wins',
+            'motogpClassifications' => 'motogp-classifications',
+            'motogpContentCategories' => 'motogp-content-categories',
+            'motogpContentEvents' => 'motogp-content-events',
+            'motogpContentEvent' => 'motogp-content-event',
+            'motogpLatestSession' => 'motogp-latest-session',
+            'motogpNextLiveSession' => 'motogp-next-live-session',
+            'motogpEntryList' => 'motogp-entry-list',
+            'motogpEntryGridOptions' => 'motogp-entry-grid-options',
+            'motogpEventFiles' => 'motogp-event-files',
+            'motogpEvents' => 'motogp-events',
+            'motogpSeasons' => 'motogp-seasons',
+            'motogpSessions' => 'motogp-sessions',
+            'motogpStandings' => 'motogp-standings',
+            'motogpStandingsFiles' => 'motogp-standings-files',
+            'motogpStartingGrid' => 'motogp-starting-grid',
+        ],
+        'nascar' => [
+            'liveFeed' => 'nascar-live-feed',
+            'races' => 'nascar-races',
+            'seasonRaces' => 'nascar-season-races',
+            'series' => 'nascar-series',
+            'raceWeekend' => 'nascar-race-weekend',
+        ],
         'nationAfrica' => [
             'nationafricaArticle' => 'nationafrica-article',
             'nationafricaAuthor' => 'nationafrica-author',
@@ -161606,6 +185121,45 @@ final class Operations
             'nationalpostNews' => 'nationalpost-news',
             'nationalpostSections' => 'nationalpost-sections',
         ],
+        'nba' => [
+            'boxScore' => 'nba-box-score',
+            'boxScoreAdvanced' => 'nba-box-score-advanced',
+            'boxScoreFourFactors' => 'nba-box-score-four-factors',
+            'boxScoreMisc' => 'nba-box-score-misc',
+            'boxScorePlayerTrack' => 'nba-box-score-player-track',
+            'boxScoreScoring' => 'nba-box-score-scoring',
+            'boxScoreUsage' => 'nba-box-score-usage',
+            'commonAllPlayers' => 'nba-common-all-players',
+            'draftCombineAnthro' => 'nba-draft-combine-anthro',
+            'enums' => 'nba-enums',
+            'franchiseHistory' => 'nba-franchise-history',
+            'gameDetail' => 'nba-game-detail',
+            'games' => 'nba-games',
+            'homepageLeaders' => 'nba-homepage-leaders',
+            'hustleStats' => 'nba-hustle-stats',
+            'leagueGameLog' => 'nba-league-game-log',
+            'lineups' => 'nba-lineups',
+            'news' => 'nba-news',
+            'playByPlay' => 'nba-play-by-play',
+            'playerAwards' => 'nba-player-awards',
+            'playerBioStats' => 'nba-player-bio-stats',
+            'playerCareerStats' => 'nba-player-career-stats',
+            'playerDashPtShots' => 'nba-player-dash-pt-shots',
+            'playerInfo' => 'nba-player-info',
+            'playerStats' => 'nba-player-stats',
+            'players' => 'nba-players',
+            'playoffPicture' => 'nba-playoff-picture',
+            'ptDefend' => 'nba-pt-defend',
+            'ptStats' => 'nba-pt-stats',
+            'scoreboard' => 'nba-scoreboard',
+            'standings' => 'nba-standings',
+            'synergyPlayTypes' => 'nba-synergy-play-types',
+            'teamDetails' => 'nba-team-details',
+            'teamRoster' => 'nba-team-roster',
+            'teamShotLocations' => 'nba-team-shot-locations',
+            'teamStats' => 'nba-team-stats',
+            'teamStatsLeaders' => 'nba-team-stats-leaders',
+        ],
         'nbcNews' => [
             'nbcArticle' => 'nbc-article',
             'nbcAuthor' => 'nbc-author',
@@ -161626,6 +185180,16 @@ final class Operations
             'video' => 'ndtv-video',
             'videoCategories' => 'ndtv-video-categories',
             'videos' => 'ndtv-videos',
+        ],
+        'netShort' => [
+            'netshortBrowse' => 'netshort-browse',
+            'netshortGenres' => 'netshort-genres',
+            'netshortHome' => 'netshort-home',
+            'netshortLabel' => 'netshort-label',
+            'netshortPlots' => 'netshort-plots',
+            'netshortSearch' => 'netshort-search',
+            'netshortTitle' => 'netshort-title',
+            'netshortToplist' => 'netshort-toplist',
         ],
         'news18' => [
             'article' => 'news18-article',
@@ -161667,6 +185231,25 @@ final class Operations
             'newyorkerHeadlines' => 'newyorker-headlines',
             'newyorkerNews' => 'newyorker-news',
             'newyorkerSections' => 'newyorker-sections',
+        ],
+        'nfhs' => [
+            'activities' => 'nfhs-activities',
+            'affiliates' => 'nfhs-affiliates',
+            'affiliate' => 'nfhs-affiliate',
+            'associations' => 'nfhs-associations',
+            'association' => 'nfhs-association',
+            'events' => 'nfhs-events',
+            'event' => 'nfhs-event',
+            'filters' => 'nfhs-filters',
+            'highlights' => 'nfhs-highlights',
+            'producer' => 'nfhs-producer',
+            'publisher' => 'nfhs-publisher',
+            'schools' => 'nfhs-schools',
+            'school' => 'nfhs-school',
+            'search' => 'nfhs-search',
+            'sports' => 'nfhs-sports',
+            'states' => 'nfhs-states',
+            'suggest' => 'nfhs-suggest',
         ],
         'nike' => [
             'categories' => 'nike-categories',
@@ -161774,8 +185357,11 @@ final class Operations
             'opendotaAbilities' => 'opendota-abilities',
             'opendotaBenchmarks' => 'opendota-benchmarks',
             'opendotaConstants' => 'opendota-constants',
+            'opendotaFindMatches' => 'opendota-find-matches',
+            'opendotaHeroDescriptions' => 'opendota-hero-descriptions',
             'opendotaHeroDurations' => 'opendota-hero-durations',
             'opendotaHeroItems' => 'opendota-hero-items',
+            'opendotaHeroMatches' => 'opendota-hero-matches',
             'opendotaHeroMatchups' => 'opendota-hero-matchups',
             'opendotaHeroStats' => 'opendota-hero-stats',
             'opendotaHeroes' => 'opendota-heroes',
@@ -161789,6 +185375,7 @@ final class Operations
             'opendotaPatchNotes' => 'opendota-patch-notes',
             'opendotaProMatches' => 'opendota-pro-matches',
             'opendotaProPlayers' => 'opendota-pro-players',
+            'opendotaPublicMatches' => 'opendota-public-matches',
             'opendotaRankDistribution' => 'opendota-rank-distribution',
             'opendotaRecords' => 'opendota-records',
             'opendotaScenarios' => 'opendota-scenarios',
@@ -161797,6 +185384,50 @@ final class Operations
             'opendotaTeamMatches' => 'opendota-team-matches',
             'opendotaTeamPlayers' => 'opendota-team-players',
             'opendotaTeams' => 'opendota-teams',
+        ],
+        'openF1' => [
+            'openf1CarData' => 'openf1-car-data',
+            'openf1ChampionshipDrivers' => 'openf1-championship-drivers',
+            'openf1ChampionshipTeams' => 'openf1-championship-teams',
+            'openf1Drivers' => 'openf1-drivers',
+            'openf1Intervals' => 'openf1-intervals',
+            'openf1Laps' => 'openf1-laps',
+            'openf1Location' => 'openf1-location',
+            'openf1Meetings' => 'openf1-meetings',
+            'openf1Overtakes' => 'openf1-overtakes',
+            'openf1Pit' => 'openf1-pit',
+            'openf1Position' => 'openf1-position',
+            'openf1RaceControl' => 'openf1-race-control',
+            'openf1SessionResult' => 'openf1-session-result',
+            'openf1Sessions' => 'openf1-sessions',
+            'openf1StartingGrid' => 'openf1-starting-grid',
+            'openf1Stints' => 'openf1-stints',
+            'openf1TeamRadio' => 'openf1-team-radio',
+            'openf1Weather' => 'openf1-weather',
+        ],
+        'openLigaDb' => [
+            'openligadbCurrentGroup' => 'openligadb-current-group',
+            'openligadbCurrentMatchday' => 'openligadb-current-matchday',
+            'openligadbGoalGetters' => 'openligadb-goal-getters',
+            'openligadbGroups' => 'openligadb-groups',
+            'openligadbLastChanged' => 'openligadb-last-changed',
+            'openligadbLastMatch' => 'openligadb-last-match',
+            'openligadbLastTeamMatch' => 'openligadb-last-team-match',
+            'openligadbLeagueTeamMatches' => 'openligadb-league-team-matches',
+            'openligadbLeagues' => 'openligadb-leagues',
+            'openligadbMatch' => 'openligadb-match',
+            'openligadbMatchdayMatches' => 'openligadb-matchday-matches',
+            'openligadbLeagueMatches' => 'openligadb-league-matches',
+            'openligadbMatchesByTeam' => 'openligadb-matches-by-team',
+            'openligadbMatchesByTeamId' => 'openligadb-matches-by-team-id',
+            'openligadbNextMatch' => 'openligadb-next-match',
+            'openligadbNextTeamMatch' => 'openligadb-next-team-match',
+            'openligadbResultInfos' => 'openligadb-result-infos',
+            'openligadbResultTypes' => 'openligadb-result-types',
+            'openligadbSports' => 'openligadb-sports',
+            'openligadbTable' => 'openligadb-table',
+            'openligadbTeamPairMatches' => 'openligadb-team-pair-matches',
+            'openligadbTeams' => 'openligadb-teams',
         ],
         'openSea' => [
             'openseaActivity' => 'opensea-activity',
@@ -161902,6 +185533,12 @@ final class Operations
             'papajohnsRussiaMenu' => 'papajohns-russia-menu',
             'papajohnsStore' => 'papajohns-store',
         ],
+        'partiful' => [
+            'cityFacets' => 'partiful-city-facets',
+            'cityFeed' => 'partiful-city-feed',
+            'event' => 'partiful-event',
+            'exploreCities' => 'partiful-explore-cities',
+        ],
         'patreon' => [
             'creator' => 'patreon-creator',
             'creatorTiers' => 'patreon-creator-tiers',
@@ -161928,6 +185565,31 @@ final class Operations
             'headlines' => 'people-headlines',
             'news' => 'people-news',
             'sections' => 'people-sections',
+        ],
+        'petSmart' => [
+            'petsmartCategories' => 'petsmart-categories',
+            'petsmartProduct' => 'petsmart-product',
+            'petsmartProductInventory' => 'petsmart-product-inventory',
+            'petsmartSearch' => 'petsmart-search',
+            'petsmartSearchFilters' => 'petsmart-search-filters',
+            'petsmartSuggest' => 'petsmart-suggest',
+        ],
+        'pgaTour' => [
+            'pgatourLeaderboard' => 'pgatour-leaderboard',
+            'pgatourPlayers' => 'pgatour-players',
+            'pgatourSchedule' => 'pgatour-schedule',
+            'pgatourScheduleSeasons' => 'pgatour-schedule-seasons',
+            'pgatourStats' => 'pgatour-stats',
+            'pgatourStatDetail' => 'pgatour-stat-detail',
+            'pgatourStatOptions' => 'pgatour-stat-options',
+            'pgatourTournamentLinks' => 'pgatour-tournament-links',
+            'pgatourTournamentBroadcast' => 'pgatour-tournament-broadcast',
+            'pgatourTournamentCourseStats' => 'pgatour-tournament-course-stats',
+            'pgatourTournamentField' => 'pgatour-tournament-field',
+            'pgatourTournamentOverview' => 'pgatour-tournament-overview',
+            'pgatourTournamentPastResults' => 'pgatour-tournament-past-results',
+            'pgatourTournamentTeeTimes' => 'pgatour-tournament-tee-times',
+            'pgatourTournamentWeather' => 'pgatour-tournament-weather',
         ],
         'philadelphiaInquirer' => [
             'phillyinquirerArticle' => 'phillyinquirer-article',
@@ -162404,6 +186066,9 @@ final class Operations
             'rottentomatoesBrowseFilters' => 'rottentomatoes-browse-filters',
             'rottentomatoesBrowseMovies' => 'rottentomatoes-browse-movies',
             'rottentomatoesBrowseTv' => 'rottentomatoes-browse-tv',
+            'rottentomatoesCritic' => 'rottentomatoes-critic',
+            'rottentomatoesCriticPublications' => 'rottentomatoes-critic-publications',
+            'rottentomatoesCriticReviews' => 'rottentomatoes-critic-reviews',
             'rottentomatoesCriticsAuthors' => 'rottentomatoes-critics-authors',
             'rottentomatoesEditorialContent' => 'rottentomatoes-editorial-content',
             'rottentomatoesEditorialDetail' => 'rottentomatoes-editorial-detail',
@@ -162413,11 +186078,17 @@ final class Operations
             'rottentomatoesEditorialTerms' => 'rottentomatoes-editorial-terms',
             'rottentomatoesEditorialTypes' => 'rottentomatoes-editorial-types',
             'rottentomatoesEpisode' => 'rottentomatoes-episode',
+            'rottentomatoesEpisodeReviews' => 'rottentomatoes-episode-reviews',
             'rottentomatoesMovie' => 'rottentomatoes-movie',
             'rottentomatoesMovieReviews' => 'rottentomatoes-movie-reviews',
+            'rottentomatoesMovieVideos' => 'rottentomatoes-movie-videos',
+            'rottentomatoesMovies' => 'rottentomatoes-movies',
             'rottentomatoesPerson' => 'rottentomatoes-person',
+            'rottentomatoesPublication' => 'rottentomatoes-publication',
+            'rottentomatoesPublicationReviews' => 'rottentomatoes-publication-reviews',
             'rottentomatoesSearch' => 'rottentomatoes-search',
             'rottentomatoesSeason' => 'rottentomatoes-season',
+            'rottentomatoesSeasonReviews' => 'rottentomatoes-season-reviews',
             'rottentomatoesSeries' => 'rottentomatoes-series',
             'rottentomatoesSitemapUrls' => 'rottentomatoes-sitemap-urls',
             'rottentomatoesSitemaps' => 'rottentomatoes-sitemaps',
@@ -162692,6 +186363,7 @@ final class Operations
             'sofascoreEventLineups' => 'sofascore-event-lineups',
             'sofascoreEventManagers' => 'sofascore-event-managers',
             'sofascoreEventOdds' => 'sofascore-event-odds',
+            'sofascoreEventPlayerActions' => 'sofascore-event-player-actions',
             'sofascoreEventPlayerHeatmap' => 'sofascore-event-player-heatmap',
             'sofascoreEventPlayerStatistics' => 'sofascore-event-player-statistics',
             'sofascoreEventPointByPoint' => 'sofascore-event-point-by-point',
@@ -162699,6 +186371,7 @@ final class Operations
             'sofascoreEventShotmap' => 'sofascore-event-shotmap',
             'sofascoreEventStatistics' => 'sofascore-event-statistics',
             'sofascoreEventTeamHeatmap' => 'sofascore-event-team-heatmap',
+            'sofascoreEventTeamShotmap' => 'sofascore-event-team-shotmap',
             'sofascoreEventTeamStreaks' => 'sofascore-event-team-streaks',
             'sofascoreEventTennisPower' => 'sofascore-event-tennis-power',
             'sofascoreEventTvChannels' => 'sofascore-event-tv-channels',
@@ -162814,6 +186487,25 @@ final class Operations
             'sparkfunCategory' => 'sparkfun-category',
             'sparkfunProduct' => 'sparkfun-product',
             'sparkfunSearch' => 'sparkfun-search',
+        ],
+        'speedrunCom' => [
+            'speedrunCatalog' => 'speedrun-catalog',
+            'speedrunCategoryDetail' => 'speedrun-category-detail',
+            'speedrunCategoryRecords' => 'speedrun-category-records',
+            'speedrunCategoryVariables' => 'speedrun-category-variables',
+            'speedrunGames' => 'speedrun-games',
+            'speedrunGameDetail' => 'speedrun-game-detail',
+            'speedrunCategories' => 'speedrun-categories',
+            'speedrunLevels' => 'speedrun-levels',
+            'speedrunRecords' => 'speedrun-records',
+            'speedrunVariables' => 'speedrun-variables',
+            'speedrunGameLeaderboard' => 'speedrun-game-leaderboard',
+            'speedrunLevelLeaderboard' => 'speedrun-level-leaderboard',
+            'speedrunLevelDetail' => 'speedrun-level-detail',
+            'speedrunLevelCategories' => 'speedrun-level-categories',
+            'speedrunLevelRecords' => 'speedrun-level-records',
+            'speedrunLevelVariables' => 'speedrun-level-variables',
+            'speedrunResourceOptions' => 'speedrun-resource-options',
         ],
         'sportingNews' => [
             'sportingnewsArticle' => 'sportingnews-article',
@@ -163700,6 +187392,14 @@ final class Operations
             'news' => 'wccftech-news',
             'sections' => 'wccftech-sections',
         ],
+        'webtoon' => [
+            'genre' => 'webtoon-genre',
+            'genres' => 'webtoon-genres',
+            'originals' => 'webtoon-originals',
+            'rankings' => 'webtoon-rankings',
+            'search' => 'webtoon-search',
+            'series' => 'webtoon-series',
+        ],
         'wendys' => [
             'categories' => 'wendys-categories',
             'directory' => 'wendys-directory',
@@ -163758,6 +187458,18 @@ final class Operations
         'wallStreetJournal' => [
             'wsjArticle' => 'wsj-article',
             'wsjAuthor' => 'wsj-author',
+        ],
+        'wta' => [
+            'countries' => 'wta-countries',
+            'matchStates' => 'wta-match-states',
+            'rankings' => 'wta-rankings',
+            'tournamentSeasons' => 'wta-tournament-seasons',
+            'tournaments' => 'wta-tournaments',
+            'tournament' => 'wta-tournament',
+            'tournamentDraws' => 'wta-tournament-draws',
+            'tournamentMatches' => 'wta-tournament-matches',
+            'tournamentOrderOfPlay' => 'wta-tournament-order-of-play',
+            'tournamentPlayers' => 'wta-tournament-players',
         ],
         'x' => [
             'post' => 'x-post',
@@ -163863,32 +187575,73 @@ final class Operations
         ],
         'yahooShopping' => [
             'article' => 'yahoo-shopping-article',
+            'author' => 'yahoo-shopping-author',
+            'categories' => 'yahoo-shopping-categories',
             'category' => 'yahoo-shopping-category',
+            'experts' => 'yahoo-shopping-experts',
             'home' => 'yahoo-shopping-home',
             'shoppingList' => 'yahoo-shopping-shopping-list',
             'shoppingLists' => 'yahoo-shopping-shopping-lists',
+            'sitemap' => 'yahoo-shopping-sitemap',
+            'sitemaps' => 'yahoo-shopping-sitemaps',
             'store' => 'yahoo-shopping-store',
             'stores' => 'yahoo-shopping-stores',
+            'suggest' => 'yahoo-shopping-suggest',
         ],
         'yahooSports' => [
+            'collegeRankings' => 'yahoo-sports-college-rankings',
+            'draft' => 'yahoo-sports-draft',
+            'dropdownCatalog' => 'yahoo-sports-dropdown-catalog',
             'game' => 'yahoo-sports-game',
             'golfLeaderboard' => 'yahoo-sports-golf-leaderboard',
+            'golfPlayer' => 'yahoo-sports-golf-player',
+            'golfPlayerNews' => 'yahoo-sports-golf-player-news',
+            'golfPlayers' => 'yahoo-sports-golf-players',
             'golfSchedule' => 'yahoo-sports-golf-schedule',
+            'home' => 'yahoo-sports-home',
+            'injuryReport' => 'yahoo-sports-injury-report',
+            'leagueSchedule' => 'yahoo-sports-league-schedule',
+            'leagues' => 'yahoo-sports-leagues',
             'mmaFightCard' => 'yahoo-sports-mma-fight-card',
             'mmaSchedule' => 'yahoo-sports-mma-schedule',
+            'moreNews' => 'yahoo-sports-more-news',
             'motorsportsRace' => 'yahoo-sports-motorsports-race',
             'motorsportsSchedule' => 'yahoo-sports-motorsports-schedule',
+            'navigation' => 'yahoo-sports-navigation',
+            'networkCatalog' => 'yahoo-sports-network-catalog',
             'news' => 'yahoo-sports-news',
+            'newsletterArchive' => 'yahoo-sports-newsletter-archive',
+            'newsletters' => 'yahoo-sports-newsletters',
+            'oddsFeatured' => 'yahoo-sports-odds-featured',
+            'oddsGame' => 'yahoo-sports-odds-game',
+            'oddsGames' => 'yahoo-sports-odds-games',
+            'oddsTrending' => 'yahoo-sports-odds-trending',
             'olympicsMedals' => 'yahoo-sports-olympics-medals',
             'player' => 'yahoo-sports-player',
+            'playerSearch' => 'yahoo-sports-player-search',
+            'playoffBracket' => 'yahoo-sports-playoff-bracket',
+            'playoffBracketCatalog' => 'yahoo-sports-playoff-bracket-catalog',
+            'rssCatalog' => 'yahoo-sports-rss-catalog',
+            'rssFeed' => 'yahoo-sports-rss-feed',
+            'scheduleCatalog' => 'yahoo-sports-schedule-catalog',
             'scoreboard' => 'yahoo-sports-scoreboard',
+            'sectionStream' => 'yahoo-sports-section-stream',
+            'soccerScoreboard' => 'yahoo-sports-soccer-scoreboard',
+            'sportsbookCatalog' => 'yahoo-sports-sportsbook-catalog',
             'standings' => 'yahoo-sports-standings',
+            'stats' => 'yahoo-sports-stats',
+            'statsCatalog' => 'yahoo-sports-stats-catalog',
+            'statsDiscovery' => 'yahoo-sports-stats-discovery',
             'team' => 'yahoo-sports-team',
             'teamRoster' => 'yahoo-sports-team-roster',
             'teamSchedule' => 'yahoo-sports-team-schedule',
             'tennisRankings' => 'yahoo-sports-tennis-rankings',
             'tennisSchedule' => 'yahoo-sports-tennis-schedule',
             'tennisScoreboard' => 'yahoo-sports-tennis-scoreboard',
+            'topicNews' => 'yahoo-sports-topic-news',
+            'videoHeadlines' => 'yahoo-sports-video-headlines',
+            'videoListCatalog' => 'yahoo-sports-video-list-catalog',
+            'watchSchedule' => 'yahoo-sports-watch-schedule',
         ],
         'yahooTech' => [
             'article' => 'yahoo-tech-article',
@@ -163989,7 +187742,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 4140;
+    public const OPERATION_COUNT = 4731;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -164125,6 +187878,7 @@ final class Operations
         'apnews-news',
         'apnews-sections',
         'apple-books-audiobook-series',
+        'apple-books-audiobook-charts',
         'apple-books-audiobook-search',
         'apple-books-audiobook',
         'apple-books-audiobook-reviews',
@@ -164134,6 +187888,7 @@ final class Operations
         'apple-books-book-reviews',
         'apple-books-book-similar',
         'apple-books-charts',
+        'apple-books-genres',
         'apple-books-search',
         'apple-books-series',
         'apple-jobs-job',
@@ -164217,6 +187972,12 @@ final class Operations
         'balenciaga-search',
         'balenciaga-store-countries',
         'balenciaga-stores',
+        'bandcamp-artist',
+        'bandcamp-discover',
+        'bandcamp-filters',
+        'bandcamp-related-tags',
+        'bandcamp-release',
+        'bandcamp-search',
         'barrons-article',
         'barrons-headlines',
         'barrons-news',
@@ -164347,6 +188108,20 @@ final class Operations
         'bo3-tournaments',
         'bo3-transfers',
         'bo3-valorant-leaderboard',
+        'boardgamegeek-cardsets',
+        'boardgamegeek-entity',
+        'boardgamegeek-game',
+        'boardgamegeek-geeklist',
+        'boardgamegeek-geeklist-items',
+        'boardgamegeek-geeklists',
+        'boardgamegeek-hotness',
+        'boardgamegeek-links',
+        'boardgamegeek-media',
+        'boardgamegeek-recommendations',
+        'boardgamegeek-reviews',
+        'boardgamegeek-taxonomy',
+        'boardgamegeek-thread',
+        'boardgamegeek-threads',
         'bonhams-auction-search',
         'bonhams-auction-detail',
         'bonhams-auction-lots',
@@ -164360,6 +188135,10 @@ final class Operations
         'booking-hotel-detail',
         'booking-reviews',
         'booking-search',
+        'booksy-business',
+        'booksy-businesses',
+        'booksy-categories',
+        'booksy-treatment-hints',
         'boots-search',
         'boots-suggest',
         'bostonglobe-news',
@@ -164395,6 +188174,14 @@ final class Operations
         'breitbart-headlines',
         'breitbart-news',
         'breitbart-sections',
+        'bringatrailer-filters',
+        'bringatrailer-listing',
+        'bringatrailer-live',
+        'bringatrailer-makes',
+        'bringatrailer-price-history',
+        'bringatrailer-results',
+        'bringatrailer-search',
+        'bringatrailer-suggest',
         'brisbanetimes-article',
         'brisbanetimes-author',
         'brisbanetimes-headlines',
@@ -164434,6 +188221,11 @@ final class Operations
         'capterra-product',
         'capterra-reviews',
         'capterra-search',
+        'cardmarket-catalog',
+        'cardmarket-catalog-categories',
+        'cardmarket-games',
+        'cardmarket-price-guide',
+        'cardmarket-price-guide-categories',
         'carmax-search',
         'carmax-search-suggestions',
         'carmax-shop-by-brand',
@@ -164589,6 +188381,41 @@ final class Operations
         'courtlistener-courts',
         'courtlistener-people',
         'courtlistener-search',
+        'cricbuzz-archives',
+        'cricbuzz-auction-info',
+        'cricbuzz-auction-live',
+        'cricbuzz-auction-live-blog',
+        'cricbuzz-auction-news',
+        'cricbuzz-auction-options',
+        'cricbuzz-auction-player-detail',
+        'cricbuzz-auction-player-search',
+        'cricbuzz-auction-results',
+        'cricbuzz-auction-seasons',
+        'cricbuzz-auction-team-detail',
+        'cricbuzz-auction-teams',
+        'cricbuzz-auction-teams-options',
+        'cricbuzz-auction-upcoming',
+        'cricbuzz-auction-upcoming-options',
+        'cricbuzz-auction-videos',
+        'cricbuzz-match-facts',
+        'cricbuzz-match-graphs',
+        'cricbuzz-match-overs',
+        'cricbuzz-matches',
+        'cricbuzz-navigation',
+        'cricbuzz-news-story',
+        'cricbuzz-news-topics',
+        'cricbuzz-rankings',
+        'cricbuzz-records',
+        'cricbuzz-schedule',
+        'cricbuzz-scorecard',
+        'cricbuzz-series',
+        'cricbuzz-series-stats',
+        'cricbuzz-team-stats',
+        'cricbuzz-team-stats-options',
+        'cricbuzz-teams',
+        'cricbuzz-video-categories',
+        'cricbuzz-video-playlists',
+        'cricbuzz-wtc',
         'cricinfo-calendar',
         'cricinfo-commentary',
         'cricinfo-grounds',
@@ -164669,10 +188496,16 @@ final class Operations
         'dailywire-news',
         'dailywire-sections',
         'datasets-list',
+        'datasets-airbnb-hosts-facets',
+        'datasets-airbnb-hosts-item',
+        'datasets-airbnb-hosts-search',
         'datasets-airbnb-markets-facets',
         'datasets-airbnb-markets-item',
         'datasets-airbnb-markets-nearby',
         'datasets-airbnb-markets-search',
+        'datasets-apple-books-facets',
+        'datasets-apple-books-item',
+        'datasets-apple-books-search',
         'datasets-apple-maps-places-facets',
         'datasets-apple-maps-places-item',
         'datasets-apple-maps-places-nearby',
@@ -164680,8 +188513,14 @@ final class Operations
         'datasets-apple-podcasts-shows-facets',
         'datasets-apple-podcasts-shows-item',
         'datasets-apple-podcasts-shows-search',
+        'datasets-apps-charts-facets',
+        'datasets-apps-charts-item',
         'datasets-apps-charts-search',
+        'datasets-apps-reviews-facets',
+        'datasets-apps-reviews-item',
         'datasets-apps-reviews-search',
+        'datasets-apps-facets',
+        'datasets-apps-item',
         'datasets-apps-search',
         'datasets-bbb-businesses-facets',
         'datasets-bbb-businesses-item',
@@ -164699,6 +188538,8 @@ final class Operations
         'datasets-chrome-extensions-metrics',
         'datasets-chrome-extensions-search',
         'datasets-chrome-extensions-trending',
+        'datasets-creators-facets',
+        'datasets-creators-item',
         'datasets-creators-search',
         'datasets-doordash-stores-facets',
         'datasets-doordash-stores-item',
@@ -164770,6 +188611,8 @@ final class Operations
         'datasets-producthunt-products-search',
         'datasets-producthunt-trends-facets',
         'datasets-producthunt-trends-search',
+        'datasets-reddit-trending-facets',
+        'datasets-reddit-trending-item',
         'datasets-reddit-trending-search',
         'datasets-sec-companies-facets',
         'datasets-sec-companies-financials',
@@ -164782,15 +188625,30 @@ final class Operations
         'datasets-starbucks-stores-item',
         'datasets-starbucks-stores-nearby',
         'datasets-starbucks-stores-search',
+        'datasets-steam-achievements-facets',
+        'datasets-steam-achievements-item',
         'datasets-steam-achievements-search',
+        'datasets-steam-charts-facets',
+        'datasets-steam-charts-item',
         'datasets-steam-charts-search',
         'datasets-steam-games-facets',
         'datasets-steam-games-item',
         'datasets-steam-games-search',
+        'datasets-steam-news-facets',
+        'datasets-steam-news-item',
         'datasets-steam-news-search',
+        'datasets-steam-playercounts-facets',
+        'datasets-steam-playercounts-item',
         'datasets-steam-playercounts-search',
+        'datasets-steam-prices-facets',
+        'datasets-steam-prices-item',
         'datasets-steam-prices-search',
+        'datasets-steam-reviews-facets',
+        'datasets-steam-reviews-item',
         'datasets-steam-reviews-search',
+        'datasets-substack-facets',
+        'datasets-substack-item',
+        'datasets-substack-search',
         'datasets-techstack-facets',
         'datasets-techstack-item',
         'datasets-techstack-search',
@@ -164848,6 +188706,24 @@ final class Operations
         'discogs-master',
         'discogs-release',
         'discogs-search',
+        'dollartree-blog-article',
+        'dollartree-categories',
+        'dollartree-price',
+        'dollartree-product',
+        'dollartree-products',
+        'dollartree-search',
+        'dollartree-stock-status',
+        'dollartree-keyword-typeahead',
+        'dollartree-product-typeahead',
+        'domain-dns-record-types',
+        'domain-dns-resolve',
+        'domain-rdap-domain',
+        'domain-rdap-ip',
+        'domain-robots',
+        'domain-site',
+        'domain-subdomains',
+        'domain-wayback-availability',
+        'domain-wayback-cdx',
         'dominos-coupons',
         'dominos-customization',
         'dominos-menu',
@@ -165006,14 +188882,57 @@ final class Operations
         'extract',
         'facebook-marketplace-search',
         'facebook-page',
+        'faceit-ban-reasons',
+        'faceit-banlist',
+        'faceit-banlist-stats',
+        'faceit-best-clips',
+        'faceit-championship',
+        'faceit-championship-bracket',
+        'faceit-championship-participants',
+        'faceit-championship-search',
+        'faceit-clip',
+        'faceit-clips',
+        'faceit-competition-matches',
+        'faceit-fpl',
+        'faceit-game-modes',
+        'faceit-games',
+        'faceit-hub',
+        'faceit-hub-categories',
+        'faceit-hub-memberships',
+        'faceit-hubs',
+        'faceit-hubs-detailed',
+        'faceit-leaderboard',
+        'faceit-leaderboard-detail',
+        'faceit-leaderboard-statuses',
+        'faceit-maps',
+        'faceit-match-clips',
+        'faceit-organizer',
+        'faceit-player',
+        'faceit-player-rank',
+        'faceit-regions',
+        'faceit-rule',
+        'faceit-rules',
+        'faceit-skill-levels',
+        'faceit-standings',
+        'faceit-team',
+        'faceit-tournaments-past',
+        'faceit-user-skills',
         'fanatics-categories',
         'fanatics-category',
         'fanatics-product',
         'fanatics-search',
         'fanaticscollect-auctions',
         'fanaticscollect-categories',
+        'fanaticscollect-instant-pack-release',
+        'fanaticscollect-instant-pack-releases',
         'fanaticscollect-instant-rips-categories',
+        'fanaticscollect-instant-rips-pack-categories',
+        'fanaticscollect-instant-rips-pack-checklist',
+        'fanaticscollect-instant-rips-packs',
+        'fanaticscollect-recently-ripped',
         'fanaticscollect-listing',
+        'fanaticscollect-newsroom',
+        'fanaticscollect-newsroom-filters',
         'fanaticscollect-search',
         'fanaticscollect-sold-items',
         'fanaticscollect-trending-searches',
@@ -165129,6 +189048,12 @@ final class Operations
         'fastcompany-headlines',
         'fastcompany-news',
         'fastcompany-sections',
+        'fever-cities',
+        'fever-feed',
+        'fever-filters',
+        'fever-plan',
+        'fever-plans',
+        'fever-top-cities',
         'fiveguys-directory',
         'fiveguys-faq',
         'fiveguys-faq-categories',
@@ -165147,9 +189072,11 @@ final class Operations
         'flashscore-competitions',
         'flashscore-entity-news',
         'flashscore-match-box-score',
+        'flashscore-match-commentary',
         'flashscore-match-darts',
         'flashscore-match-h2h',
         'flashscore-match-highlights',
+        'flashscore-match-incidents',
         'flashscore-match-info',
         'flashscore-match-lineups',
         'flashscore-match-missing-players',
@@ -165159,6 +189086,7 @@ final class Operations
         'flashscore-match-player-stats',
         'flashscore-match-point-by-point',
         'flashscore-match-predicted-lineups',
+        'flashscore-match-prematch-scorers',
         'flashscore-match-report',
         'flashscore-match-standings',
         'flashscore-match-stats',
@@ -165191,11 +189119,17 @@ final class Operations
         'flashscore-team-transfers',
         'flashscore-top-search',
         'flashscore-tournament-archive-seasons',
+        'flashscore-tournament-draw',
         'flashscore-tournament-events',
         'flashscore-tournament-outright-odds',
         'flashscore-tournament-seasons',
         'flashscore-tournament-standings',
         'flashscore-tournament-standings-views',
+        'flickreels-classify',
+        'flickreels-genres',
+        'flickreels-home',
+        'flickreels-movie',
+        'flickreels-shelf',
         'foodpanda-restaurant',
         'foodpanda-restaurant-menu',
         'foodpanda-restaurant-reviews',
@@ -165220,6 +189154,34 @@ final class Operations
         'foreignpolicy-project',
         'foreignpolicy-projects',
         'foreignpolicy-topic',
+        'formula1-driver',
+        'formula1-driver-grid',
+        'formula1-driver-season-results',
+        'formula1-driver-standings',
+        'formula1-filters',
+        'formula1-json-awards',
+        'formula1-json-constructors',
+        'formula1-json-driver-assembly',
+        'formula1-json-drivers',
+        'formula1-json-editorial',
+        'formula1-json-event-tracker',
+        'formula1-json-meeting-datasets',
+        'formula1-json-meetings',
+        'formula1-json-race-assembly',
+        'formula1-json-results',
+        'formula1-json-season-award',
+        'formula1-json-team-assembly',
+        'formula1-meetings',
+        'formula1-race-calendar',
+        'formula1-race-hub',
+        'formula1-season-awards',
+        'formula1-season-results',
+        'formula1-seasons',
+        'formula1-session-results',
+        'formula1-team',
+        'formula1-team-grid',
+        'formula1-team-season-results',
+        'formula1-team-standings',
         'fortune-article',
         'fortune-author',
         'fortune-companies',
@@ -165280,6 +189242,10 @@ final class Operations
         'france24-sections',
         'freemalaysiatoday-news',
         'freemalaysiatoday-sections',
+        'fresha-landing-venues',
+        'fresha-search-venues',
+        'fresha-taxonomy',
+        'fresha-venue',
         'ft-article',
         'ft-author',
         'ft-categories',
@@ -165313,6 +189279,27 @@ final class Operations
         'fussballde-team-matches',
         'fussballde-team-squad',
         'fussballde-top-scorers',
+        'futgg-fc27-catalog',
+        'futgg-fc27-definitions',
+        'futgg-fc27-evolutions',
+        'futgg-fc27-evolution',
+        'futgg-fc27-gg-rating-ranks',
+        'futgg-fc27-gg-ratings',
+        'futgg-fc27-objective-categories',
+        'futgg-fc27-objective-groups',
+        'futgg-fc27-objective-group-by-ea',
+        'futgg-fc27-objective-group-by-objective',
+        'futgg-fc27-objective-group',
+        'futgg-fc27-player-sorts',
+        'futgg-fc27-players',
+        'futgg-fc27-price-index',
+        'futgg-fc27-prices',
+        'futgg-fc27-sbc-categories',
+        'futgg-fc27-sbc-sets',
+        'futgg-fc27-sbc-set-by-challenge',
+        'futgg-fc27-sbc-set-by-ea',
+        'futgg-fc27-sbc-set',
+        'futgg-fc27-season-pass',
         'gamerant-article',
         'gamerant-author',
         'gamerant-headlines',
@@ -165384,6 +189371,16 @@ final class Operations
         'globeandmail-headlines',
         'globeandmail-news',
         'globeandmail-sections',
+        'glovo-categories',
+        'glovo-cities',
+        'glovo-city',
+        'glovo-store',
+        'glovo-store-fees',
+        'glovo-store-menu',
+        'glovo-store-products',
+        'glovo-store-search',
+        'glovo-stores',
+        'glovo-stores-filters',
         'gmanews-article',
         'gmanews-headlines',
         'gmanews-news',
@@ -165492,6 +189489,8 @@ final class Operations
         'googleplay-search',
         'googleplay-similar',
         'googleplay-suggest',
+        'gosugamers-article',
+        'gosugamers-articles',
         'gosugamers-encounters',
         'gosugamers-games',
         'gosugamers-match',
@@ -165604,6 +189603,15 @@ final class Operations
         'hindustantimes-headlines',
         'hindustantimes-news',
         'hindustantimes-sections',
+        'hltv-event',
+        'hltv-events',
+        'hltv-match',
+        'hltv-matches',
+        'hltv-player',
+        'hltv-rankings',
+        'hltv-results',
+        'hltv-search',
+        'hltv-team',
         'hm-categories',
         'hm-listing',
         'hm-product',
@@ -165750,6 +189758,20 @@ final class Operations
         'irishtimes-headlines',
         'irishtimes-news',
         'irishtimes-sections',
+        'itchio-browse',
+        'itchio-browse-options',
+        'itchio-catalog',
+        'itchio-top-rated',
+        'itchio-jams-browse',
+        'itchio-jam-calendar',
+        'itchio-jams-entries',
+        'itchio-jams-options',
+        'itchio-jams-overview',
+        'itchio-jams-results',
+        'itchio-jams-results-options',
+        'itchio-jams-submission',
+        'itchio-project',
+        'itchio-tags',
         'japantimes-article',
         'japantimes-author',
         'japantimes-headlines',
@@ -165895,6 +189917,24 @@ final class Operations
         'kickstarter-discover',
         'kickstarter-project',
         'kickstarter-updates',
+        'klook-activity',
+        'klook-attractions-categories',
+        'klook-attractions-destinations',
+        'klook-attractions-highlights',
+        'klook-attractions-search',
+        'klook-attractions-suggest',
+        'klook-categories',
+        'klook-destinations',
+        'klook-hot',
+        'klook-interests',
+        'klook-recommendations',
+        'klook-reviews',
+        'klook-search',
+        'klook-search-filters',
+        'klook-search-hot-keywords',
+        'klook-search-unified',
+        'klook-suggest',
+        'klook-verticals',
         'kohls-category',
         'kohls-product-reviews',
         'kohls-stores',
@@ -165998,6 +190038,15 @@ final class Operations
         'lululemon-outfit',
         'lululemon-product',
         'lululemon-stores',
+        'luma-calendar',
+        'luma-calendar-events',
+        'luma-categories',
+        'luma-category',
+        'luma-category-events',
+        'luma-event',
+        'luma-place',
+        'luma-place-calendars',
+        'luma-place-events',
         'macrumors-article',
         'macrumors-author',
         'macrumors-headlines',
@@ -166031,6 +190080,26 @@ final class Operations
         'mashable-headlines',
         'mashable-news',
         'mashable-sections',
+        'maxpreps-rankings-groupings',
+        'maxpreps-request-enums',
+        'maxpreps-school',
+        'maxpreps-school-contests',
+        'maxpreps-school-proximal',
+        'maxpreps-school-search',
+        'maxpreps-school-seasons',
+        'maxpreps-school-zip-search',
+        'maxpreps-scoreboard',
+        'maxpreps-season-navigation',
+        'maxpreps-sports',
+        'maxpreps-states',
+        'maxpreps-team',
+        'maxpreps-team-context',
+        'maxpreps-team-next-contest',
+        'maxpreps-team-rankings',
+        'maxpreps-team-roster-summary',
+        'maxpreps-team-schedule',
+        'maxpreps-team-stat-leaders',
+        'maxpreps-tournament-sports',
         'mcdonalds-categories',
         'mcdonalds-item',
         'mcdonalds-item-list',
@@ -166176,6 +190245,40 @@ final class Operations
         'modaoperandi-designers',
         'modaoperandi-product',
         'modaoperandi-search',
+        'modrinth-collection',
+        'modrinth-collections',
+        'modrinth-metadata-link-platforms',
+        'modrinth-metadata-loader-fields',
+        'modrinth-metadata-loader-field-values',
+        'modrinth-metadata-loaders',
+        'modrinth-organization',
+        'modrinth-organization-projects',
+        'modrinth-organizations',
+        'modrinth-project',
+        'modrinth-check-project',
+        'modrinth-dependencies',
+        'modrinth-project-disclosures',
+        'modrinth-project-versions',
+        'modrinth-project-version',
+        'modrinth-projects',
+        'modrinth-random-projects',
+        'modrinth-search',
+        'modrinth-statistics',
+        'modrinth-license',
+        'modrinth-tags',
+        'modrinth-forge-updates',
+        'modrinth-search-v3',
+        'modrinth-search-v3-body',
+        'modrinth-search-v3-options',
+        'modrinth-version',
+        'modrinth-file-projects',
+        'modrinth-file-version',
+        'modrinth-file-update',
+        'modrinth-file-versions',
+        'modrinth-files-update',
+        'modrinth-files-update-individual',
+        'modrinth-files-update-many',
+        'modrinth-versions',
         'moncler-categories',
         'moncler-category',
         'moncler-product',
@@ -166198,6 +190301,31 @@ final class Operations
         'motleyfool-headlines',
         'motleyfool-news',
         'motleyfool-sections',
+        'motogp-bmw-award',
+        'motogp-categories',
+        'motogp-circuit-poles',
+        'motogp-circuit-records',
+        'motogp-circuit-wins',
+        'motogp-classifications',
+        'motogp-content-categories',
+        'motogp-content-events',
+        'motogp-content-event',
+        'motogp-latest-session',
+        'motogp-next-live-session',
+        'motogp-entry-list',
+        'motogp-entry-grid-options',
+        'motogp-event-files',
+        'motogp-events',
+        'motogp-seasons',
+        'motogp-sessions',
+        'motogp-standings',
+        'motogp-standings-files',
+        'motogp-starting-grid',
+        'nascar-live-feed',
+        'nascar-races',
+        'nascar-season-races',
+        'nascar-series',
+        'nascar-race-weekend',
         'nationafrica-article',
         'nationafrica-author',
         'nationafrica-headlines',
@@ -166213,6 +190341,43 @@ final class Operations
         'nationalpost-headlines',
         'nationalpost-news',
         'nationalpost-sections',
+        'nba-box-score',
+        'nba-box-score-advanced',
+        'nba-box-score-four-factors',
+        'nba-box-score-misc',
+        'nba-box-score-player-track',
+        'nba-box-score-scoring',
+        'nba-box-score-usage',
+        'nba-common-all-players',
+        'nba-draft-combine-anthro',
+        'nba-enums',
+        'nba-franchise-history',
+        'nba-game-detail',
+        'nba-games',
+        'nba-homepage-leaders',
+        'nba-hustle-stats',
+        'nba-league-game-log',
+        'nba-lineups',
+        'nba-news',
+        'nba-play-by-play',
+        'nba-player-awards',
+        'nba-player-bio-stats',
+        'nba-player-career-stats',
+        'nba-player-dash-pt-shots',
+        'nba-player-info',
+        'nba-player-stats',
+        'nba-players',
+        'nba-playoff-picture',
+        'nba-pt-defend',
+        'nba-pt-stats',
+        'nba-scoreboard',
+        'nba-standings',
+        'nba-synergy-play-types',
+        'nba-team-details',
+        'nba-team-roster',
+        'nba-team-shot-locations',
+        'nba-team-stats',
+        'nba-team-stats-leaders',
         'nbc-article',
         'nbc-author',
         'nbc-headlines',
@@ -166230,6 +190395,14 @@ final class Operations
         'ndtv-video',
         'ndtv-video-categories',
         'ndtv-videos',
+        'netshort-browse',
+        'netshort-genres',
+        'netshort-home',
+        'netshort-label',
+        'netshort-plots',
+        'netshort-search',
+        'netshort-title',
+        'netshort-toplist',
         'news18-article',
         'news18-author',
         'news18-headlines',
@@ -166259,6 +190432,23 @@ final class Operations
         'newyorker-headlines',
         'newyorker-news',
         'newyorker-sections',
+        'nfhs-activities',
+        'nfhs-affiliates',
+        'nfhs-affiliate',
+        'nfhs-associations',
+        'nfhs-association',
+        'nfhs-events',
+        'nfhs-event',
+        'nfhs-filters',
+        'nfhs-highlights',
+        'nfhs-producer',
+        'nfhs-publisher',
+        'nfhs-schools',
+        'nfhs-school',
+        'nfhs-search',
+        'nfhs-sports',
+        'nfhs-states',
+        'nfhs-suggest',
         'nike-categories',
         'nike-product',
         'nike-product-availability',
@@ -166338,8 +190528,11 @@ final class Operations
         'opendota-abilities',
         'opendota-benchmarks',
         'opendota-constants',
+        'opendota-find-matches',
+        'opendota-hero-descriptions',
         'opendota-hero-durations',
         'opendota-hero-items',
+        'opendota-hero-matches',
         'opendota-hero-matchups',
         'opendota-hero-stats',
         'opendota-heroes',
@@ -166353,6 +190546,7 @@ final class Operations
         'opendota-patch-notes',
         'opendota-pro-matches',
         'opendota-pro-players',
+        'opendota-public-matches',
         'opendota-rank-distribution',
         'opendota-records',
         'opendota-scenarios',
@@ -166361,6 +190555,46 @@ final class Operations
         'opendota-team-matches',
         'opendota-team-players',
         'opendota-teams',
+        'openf1-car-data',
+        'openf1-championship-drivers',
+        'openf1-championship-teams',
+        'openf1-drivers',
+        'openf1-intervals',
+        'openf1-laps',
+        'openf1-location',
+        'openf1-meetings',
+        'openf1-overtakes',
+        'openf1-pit',
+        'openf1-position',
+        'openf1-race-control',
+        'openf1-session-result',
+        'openf1-sessions',
+        'openf1-starting-grid',
+        'openf1-stints',
+        'openf1-team-radio',
+        'openf1-weather',
+        'openligadb-current-group',
+        'openligadb-current-matchday',
+        'openligadb-goal-getters',
+        'openligadb-groups',
+        'openligadb-last-changed',
+        'openligadb-last-match',
+        'openligadb-last-team-match',
+        'openligadb-league-team-matches',
+        'openligadb-leagues',
+        'openligadb-match',
+        'openligadb-matchday-matches',
+        'openligadb-league-matches',
+        'openligadb-matches-by-team',
+        'openligadb-matches-by-team-id',
+        'openligadb-next-match',
+        'openligadb-next-team-match',
+        'openligadb-result-infos',
+        'openligadb-result-types',
+        'openligadb-sports',
+        'openligadb-table',
+        'openligadb-team-pair-matches',
+        'openligadb-teams',
         'opensea-activity',
         'opensea-categories',
         'opensea-chains',
@@ -166451,6 +190685,10 @@ final class Operations
         'papajohns-poland-menu',
         'papajohns-russia-menu',
         'papajohns-store',
+        'partiful-city-facets',
+        'partiful-city-feed',
+        'partiful-event',
+        'partiful-explore-cities',
         'patreon-creator',
         'patreon-creator-tiers',
         'patreon-explore',
@@ -166470,6 +190708,27 @@ final class Operations
         'people-headlines',
         'people-news',
         'people-sections',
+        'petsmart-categories',
+        'petsmart-product',
+        'petsmart-product-inventory',
+        'petsmart-search',
+        'petsmart-search-filters',
+        'petsmart-suggest',
+        'pgatour-leaderboard',
+        'pgatour-players',
+        'pgatour-schedule',
+        'pgatour-schedule-seasons',
+        'pgatour-stats',
+        'pgatour-stat-detail',
+        'pgatour-stat-options',
+        'pgatour-tournament-links',
+        'pgatour-tournament-broadcast',
+        'pgatour-tournament-course-stats',
+        'pgatour-tournament-field',
+        'pgatour-tournament-overview',
+        'pgatour-tournament-past-results',
+        'pgatour-tournament-tee-times',
+        'pgatour-tournament-weather',
         'phillyinquirer-article',
         'phillyinquirer-author',
         'phillyinquirer-headlines',
@@ -166852,6 +191111,9 @@ final class Operations
         'rottentomatoes-browse-filters',
         'rottentomatoes-browse-movies',
         'rottentomatoes-browse-tv',
+        'rottentomatoes-critic',
+        'rottentomatoes-critic-publications',
+        'rottentomatoes-critic-reviews',
         'rottentomatoes-critics-authors',
         'rottentomatoes-editorial-content',
         'rottentomatoes-editorial-detail',
@@ -166861,11 +191123,17 @@ final class Operations
         'rottentomatoes-editorial-terms',
         'rottentomatoes-editorial-types',
         'rottentomatoes-episode',
+        'rottentomatoes-episode-reviews',
         'rottentomatoes-movie',
         'rottentomatoes-movie-reviews',
+        'rottentomatoes-movie-videos',
+        'rottentomatoes-movies',
         'rottentomatoes-person',
+        'rottentomatoes-publication',
+        'rottentomatoes-publication-reviews',
         'rottentomatoes-search',
         'rottentomatoes-season',
+        'rottentomatoes-season-reviews',
         'rottentomatoes-series',
         'rottentomatoes-sitemap-urls',
         'rottentomatoes-sitemaps',
@@ -167084,6 +191352,7 @@ final class Operations
         'sofascore-event-lineups',
         'sofascore-event-managers',
         'sofascore-event-odds',
+        'sofascore-event-player-actions',
         'sofascore-event-player-heatmap',
         'sofascore-event-player-statistics',
         'sofascore-event-point-by-point',
@@ -167091,6 +191360,7 @@ final class Operations
         'sofascore-event-shotmap',
         'sofascore-event-statistics',
         'sofascore-event-team-heatmap',
+        'sofascore-event-team-shotmap',
         'sofascore-event-team-streaks',
         'sofascore-event-tennis-power',
         'sofascore-event-tv-channels',
@@ -167198,6 +191468,23 @@ final class Operations
         'sparkfun-category',
         'sparkfun-product',
         'sparkfun-search',
+        'speedrun-catalog',
+        'speedrun-category-detail',
+        'speedrun-category-records',
+        'speedrun-category-variables',
+        'speedrun-games',
+        'speedrun-game-detail',
+        'speedrun-categories',
+        'speedrun-levels',
+        'speedrun-records',
+        'speedrun-variables',
+        'speedrun-game-leaderboard',
+        'speedrun-level-leaderboard',
+        'speedrun-level-detail',
+        'speedrun-level-categories',
+        'speedrun-level-records',
+        'speedrun-level-variables',
+        'speedrun-resource-options',
         'sportingnews-article',
         'sportingnews-author',
         'sportingnews-headlines',
@@ -167914,6 +192201,12 @@ final class Operations
         'web-scrape',
         'web-search',
         'web-techstack',
+        'webtoon-genre',
+        'webtoon-genres',
+        'webtoon-originals',
+        'webtoon-rankings',
+        'webtoon-search',
+        'webtoon-series',
         'wendys-categories',
         'wendys-directory',
         'wendys-item',
@@ -167957,6 +192250,16 @@ final class Operations
         'wolt-search-filters',
         'wsj-article',
         'wsj-author',
+        'wta-countries',
+        'wta-match-states',
+        'wta-rankings',
+        'wta-tournament-seasons',
+        'wta-tournaments',
+        'wta-tournament',
+        'wta-tournament-draws',
+        'wta-tournament-matches',
+        'wta-tournament-order-of-play',
+        'wta-tournament-players',
         'x-post',
         'x-profile',
         'x-profile-posts',
@@ -168038,30 +192341,71 @@ final class Operations
         'yahoo-search-suggest',
         'yahoo-search-videos',
         'yahoo-shopping-article',
+        'yahoo-shopping-author',
+        'yahoo-shopping-categories',
         'yahoo-shopping-category',
+        'yahoo-shopping-experts',
         'yahoo-shopping-home',
         'yahoo-shopping-shopping-list',
         'yahoo-shopping-shopping-lists',
+        'yahoo-shopping-sitemap',
+        'yahoo-shopping-sitemaps',
         'yahoo-shopping-store',
         'yahoo-shopping-stores',
+        'yahoo-shopping-suggest',
+        'yahoo-sports-college-rankings',
+        'yahoo-sports-draft',
+        'yahoo-sports-dropdown-catalog',
         'yahoo-sports-game',
         'yahoo-sports-golf-leaderboard',
+        'yahoo-sports-golf-player',
+        'yahoo-sports-golf-player-news',
+        'yahoo-sports-golf-players',
         'yahoo-sports-golf-schedule',
+        'yahoo-sports-home',
+        'yahoo-sports-injury-report',
+        'yahoo-sports-league-schedule',
+        'yahoo-sports-leagues',
         'yahoo-sports-mma-fight-card',
         'yahoo-sports-mma-schedule',
+        'yahoo-sports-more-news',
         'yahoo-sports-motorsports-race',
         'yahoo-sports-motorsports-schedule',
+        'yahoo-sports-navigation',
+        'yahoo-sports-network-catalog',
         'yahoo-sports-news',
+        'yahoo-sports-newsletter-archive',
+        'yahoo-sports-newsletters',
+        'yahoo-sports-odds-featured',
+        'yahoo-sports-odds-game',
+        'yahoo-sports-odds-games',
+        'yahoo-sports-odds-trending',
         'yahoo-sports-olympics-medals',
         'yahoo-sports-player',
+        'yahoo-sports-player-search',
+        'yahoo-sports-playoff-bracket',
+        'yahoo-sports-playoff-bracket-catalog',
+        'yahoo-sports-rss-catalog',
+        'yahoo-sports-rss-feed',
+        'yahoo-sports-schedule-catalog',
         'yahoo-sports-scoreboard',
+        'yahoo-sports-section-stream',
+        'yahoo-sports-soccer-scoreboard',
+        'yahoo-sports-sportsbook-catalog',
         'yahoo-sports-standings',
+        'yahoo-sports-stats',
+        'yahoo-sports-stats-catalog',
+        'yahoo-sports-stats-discovery',
         'yahoo-sports-team',
         'yahoo-sports-team-roster',
         'yahoo-sports-team-schedule',
         'yahoo-sports-tennis-rankings',
         'yahoo-sports-tennis-schedule',
         'yahoo-sports-tennis-scoreboard',
+        'yahoo-sports-topic-news',
+        'yahoo-sports-video-headlines',
+        'yahoo-sports-video-list-catalog',
+        'yahoo-sports-watch-schedule',
         'yahoo-tech-article',
         'yahoo-tech-category',
         'yahoo-tech-home',
@@ -168309,6 +192653,7 @@ final class OperationId
     public const APP_STORE_SUGGEST = 'appstore-suggest';
     public const APP_STORE_VERSION_HISTORY = 'appstore-version-history';
     public const APPLE_BOOKS_AUDIOBOOK = 'apple-books-audiobook';
+    public const APPLE_BOOKS_AUDIOBOOK_CHARTS = 'apple-books-audiobook-charts';
     public const APPLE_BOOKS_AUDIOBOOK_REVIEWS = 'apple-books-audiobook-reviews';
     public const APPLE_BOOKS_AUDIOBOOK_SEARCH = 'apple-books-audiobook-search';
     public const APPLE_BOOKS_AUDIOBOOK_SERIES = 'apple-books-audiobook-series';
@@ -168318,6 +192663,7 @@ final class OperationId
     public const APPLE_BOOKS_BOOK_REVIEWS = 'apple-books-book-reviews';
     public const APPLE_BOOKS_BOOK_SIMILAR = 'apple-books-book-similar';
     public const APPLE_BOOKS_CHARTS = 'apple-books-charts';
+    public const APPLE_BOOKS_GENRES = 'apple-books-genres';
     public const APPLE_BOOKS_SEARCH = 'apple-books-search';
     public const APPLE_BOOKS_SERIES = 'apple-books-series';
     public const APPLE_JOBS_JOB = 'apple-jobs-job';
@@ -168386,6 +192732,12 @@ final class OperationId
     public const BALENCIAGA_SEARCH = 'balenciaga-search';
     public const BALENCIAGA_STORE_COUNTRIES = 'balenciaga-store-countries';
     public const BALENCIAGA_STORES = 'balenciaga-stores';
+    public const BANDCAMP_ARTIST = 'bandcamp-artist';
+    public const BANDCAMP_DISCOVER = 'bandcamp-discover';
+    public const BANDCAMP_FILTERS = 'bandcamp-filters';
+    public const BANDCAMP_RELATED_TAGS = 'bandcamp-related-tags';
+    public const BANDCAMP_RELEASE = 'bandcamp-release';
+    public const BANDCAMP_SEARCH = 'bandcamp-search';
     public const BARRONS_ARTICLE = 'barrons-article';
     public const BARRONS_HEADLINES = 'barrons-headlines';
     public const BARRONS_NEWS = 'barrons-news';
@@ -168516,6 +192868,20 @@ final class OperationId
     public const BO3_TOURNAMENTS = 'bo3-tournaments';
     public const BO3_TRANSFERS = 'bo3-transfers';
     public const BO3_VALORANT_LEADERBOARD = 'bo3-valorant-leaderboard';
+    public const BOARD_GAME_GEEK_BOARDGAMEGEEK_CARDSETS = 'boardgamegeek-cardsets';
+    public const BOARD_GAME_GEEK_BOARDGAMEGEEK_ENTITY = 'boardgamegeek-entity';
+    public const BOARD_GAME_GEEK_BOARDGAMEGEEK_GAME = 'boardgamegeek-game';
+    public const BOARD_GAME_GEEK_BOARDGAMEGEEK_GEEKLIST = 'boardgamegeek-geeklist';
+    public const BOARD_GAME_GEEK_BOARDGAMEGEEK_GEEKLIST_ITEMS = 'boardgamegeek-geeklist-items';
+    public const BOARD_GAME_GEEK_BOARDGAMEGEEK_GEEKLISTS = 'boardgamegeek-geeklists';
+    public const BOARD_GAME_GEEK_BOARDGAMEGEEK_HOTNESS = 'boardgamegeek-hotness';
+    public const BOARD_GAME_GEEK_BOARDGAMEGEEK_LINKS = 'boardgamegeek-links';
+    public const BOARD_GAME_GEEK_BOARDGAMEGEEK_MEDIA = 'boardgamegeek-media';
+    public const BOARD_GAME_GEEK_BOARDGAMEGEEK_RECOMMENDATIONS = 'boardgamegeek-recommendations';
+    public const BOARD_GAME_GEEK_BOARDGAMEGEEK_REVIEWS = 'boardgamegeek-reviews';
+    public const BOARD_GAME_GEEK_BOARDGAMEGEEK_TAXONOMY = 'boardgamegeek-taxonomy';
+    public const BOARD_GAME_GEEK_BOARDGAMEGEEK_THREAD = 'boardgamegeek-thread';
+    public const BOARD_GAME_GEEK_BOARDGAMEGEEK_THREADS = 'boardgamegeek-threads';
     public const BONHAMS_AUCTION_DETAIL = 'bonhams-auction-detail';
     public const BONHAMS_AUCTION_LOTS = 'bonhams-auction-lots';
     public const BONHAMS_AUCTION_SEARCH = 'bonhams-auction-search';
@@ -168529,6 +192895,10 @@ final class OperationId
     public const BOOKING_HOTEL_DETAIL = 'booking-hotel-detail';
     public const BOOKING_REVIEWS = 'booking-reviews';
     public const BOOKING_SEARCH = 'booking-search';
+    public const BOOKSY_BUSINESS = 'booksy-business';
+    public const BOOKSY_BUSINESSES = 'booksy-businesses';
+    public const BOOKSY_CATEGORIES = 'booksy-categories';
+    public const BOOKSY_TREATMENT_HINTS = 'booksy-treatment-hints';
     public const BOOTS_SEARCH = 'boots-search';
     public const BOOTS_SUGGEST = 'boots-suggest';
     public const BOSTON_GLOBE_BOSTONGLOBE_NEWS = 'bostonglobe-news';
@@ -168564,6 +192934,14 @@ final class OperationId
     public const BREITBART_HEADLINES = 'breitbart-headlines';
     public const BREITBART_NEWS = 'breitbart-news';
     public const BREITBART_SECTIONS = 'breitbart-sections';
+    public const BRING_ATRAILER_BRINGATRAILER_FILTERS = 'bringatrailer-filters';
+    public const BRING_ATRAILER_BRINGATRAILER_LISTING = 'bringatrailer-listing';
+    public const BRING_ATRAILER_BRINGATRAILER_LIVE = 'bringatrailer-live';
+    public const BRING_ATRAILER_BRINGATRAILER_MAKES = 'bringatrailer-makes';
+    public const BRING_ATRAILER_BRINGATRAILER_PRICE_HISTORY = 'bringatrailer-price-history';
+    public const BRING_ATRAILER_BRINGATRAILER_RESULTS = 'bringatrailer-results';
+    public const BRING_ATRAILER_BRINGATRAILER_SEARCH = 'bringatrailer-search';
+    public const BRING_ATRAILER_BRINGATRAILER_SUGGEST = 'bringatrailer-suggest';
     public const BRISBANE_TIMES_BRISBANETIMES_ARTICLE = 'brisbanetimes-article';
     public const BRISBANE_TIMES_BRISBANETIMES_AUTHOR = 'brisbanetimes-author';
     public const BRISBANE_TIMES_BRISBANETIMES_HEADLINES = 'brisbanetimes-headlines';
@@ -168610,6 +192988,11 @@ final class OperationId
     public const CAR_MAX_CARMAX_STORES = 'carmax-stores';
     public const CAR_MAX_CARMAX_VEHICLE = 'carmax-vehicle';
     public const CAR_MAX_CARMAX_VEHICLE_RECOMMENDATIONS = 'carmax-vehicle-recommendations';
+    public const CARDMARKET_CATALOG = 'cardmarket-catalog';
+    public const CARDMARKET_CATALOG_CATEGORIES = 'cardmarket-catalog-categories';
+    public const CARDMARKET_GAMES = 'cardmarket-games';
+    public const CARDMARKET_PRICE_GUIDE = 'cardmarket-price-guide';
+    public const CARDMARKET_PRICE_GUIDE_CATEGORIES = 'cardmarket-price-guide-categories';
     public const CARS_COM_CARSDOTCOM_SEARCH = 'carsdotcom-search';
     public const CARS_COM_CARSDOTCOM_VEHICLE = 'carsdotcom-vehicle';
     public const CBC_NEWS_CALL = 'cbc-news';
@@ -168757,6 +193140,41 @@ final class OperationId
     public const COURT_LISTENER_COURTLISTENER_COURTS = 'courtlistener-courts';
     public const COURT_LISTENER_COURTLISTENER_PEOPLE = 'courtlistener-people';
     public const COURT_LISTENER_COURTLISTENER_SEARCH = 'courtlistener-search';
+    public const CRICBUZZ_ARCHIVES = 'cricbuzz-archives';
+    public const CRICBUZZ_AUCTION_INFO = 'cricbuzz-auction-info';
+    public const CRICBUZZ_AUCTION_LIVE = 'cricbuzz-auction-live';
+    public const CRICBUZZ_AUCTION_LIVE_BLOG = 'cricbuzz-auction-live-blog';
+    public const CRICBUZZ_AUCTION_NEWS = 'cricbuzz-auction-news';
+    public const CRICBUZZ_AUCTION_OPTIONS = 'cricbuzz-auction-options';
+    public const CRICBUZZ_AUCTION_PLAYER_DETAIL = 'cricbuzz-auction-player-detail';
+    public const CRICBUZZ_AUCTION_PLAYER_SEARCH = 'cricbuzz-auction-player-search';
+    public const CRICBUZZ_AUCTION_RESULTS = 'cricbuzz-auction-results';
+    public const CRICBUZZ_AUCTION_SEASONS = 'cricbuzz-auction-seasons';
+    public const CRICBUZZ_AUCTION_TEAM_DETAIL = 'cricbuzz-auction-team-detail';
+    public const CRICBUZZ_AUCTION_TEAMS = 'cricbuzz-auction-teams';
+    public const CRICBUZZ_AUCTION_TEAMS_OPTIONS = 'cricbuzz-auction-teams-options';
+    public const CRICBUZZ_AUCTION_UPCOMING = 'cricbuzz-auction-upcoming';
+    public const CRICBUZZ_AUCTION_UPCOMING_OPTIONS = 'cricbuzz-auction-upcoming-options';
+    public const CRICBUZZ_AUCTION_VIDEOS = 'cricbuzz-auction-videos';
+    public const CRICBUZZ_MATCH_FACTS = 'cricbuzz-match-facts';
+    public const CRICBUZZ_MATCH_GRAPHS = 'cricbuzz-match-graphs';
+    public const CRICBUZZ_MATCH_OVERS = 'cricbuzz-match-overs';
+    public const CRICBUZZ_MATCHES = 'cricbuzz-matches';
+    public const CRICBUZZ_NAVIGATION = 'cricbuzz-navigation';
+    public const CRICBUZZ_NEWS_STORY = 'cricbuzz-news-story';
+    public const CRICBUZZ_NEWS_TOPICS = 'cricbuzz-news-topics';
+    public const CRICBUZZ_RANKINGS = 'cricbuzz-rankings';
+    public const CRICBUZZ_RECORDS = 'cricbuzz-records';
+    public const CRICBUZZ_SCHEDULE = 'cricbuzz-schedule';
+    public const CRICBUZZ_SCORECARD = 'cricbuzz-scorecard';
+    public const CRICBUZZ_SERIES = 'cricbuzz-series';
+    public const CRICBUZZ_SERIES_STATS = 'cricbuzz-series-stats';
+    public const CRICBUZZ_TEAM_STATS = 'cricbuzz-team-stats';
+    public const CRICBUZZ_TEAM_STATS_OPTIONS = 'cricbuzz-team-stats-options';
+    public const CRICBUZZ_TEAMS = 'cricbuzz-teams';
+    public const CRICBUZZ_VIDEO_CATEGORIES = 'cricbuzz-video-categories';
+    public const CRICBUZZ_VIDEO_PLAYLISTS = 'cricbuzz-video-playlists';
+    public const CRICBUZZ_WTC = 'cricbuzz-wtc';
     public const CRICINFO_CALENDAR = 'cricinfo-calendar';
     public const CRICINFO_COMMENTARY = 'cricinfo-commentary';
     public const CRICINFO_GROUNDS = 'cricinfo-grounds';
@@ -168831,10 +193249,16 @@ final class OperationId
     public const DAILY_WIRE_DAILYWIRE_HEADLINES = 'dailywire-headlines';
     public const DAILY_WIRE_DAILYWIRE_NEWS = 'dailywire-news';
     public const DAILY_WIRE_DAILYWIRE_SECTIONS = 'dailywire-sections';
+    public const DATASETS_AIRBNB_HOSTS_FACETS = 'datasets-airbnb-hosts-facets';
+    public const DATASETS_AIRBNB_HOSTS_ITEM = 'datasets-airbnb-hosts-item';
+    public const DATASETS_AIRBNB_HOSTS_SEARCH = 'datasets-airbnb-hosts-search';
     public const DATASETS_AIRBNB_MARKETS_FACETS = 'datasets-airbnb-markets-facets';
     public const DATASETS_AIRBNB_MARKETS_ITEM = 'datasets-airbnb-markets-item';
     public const DATASETS_AIRBNB_MARKETS_NEARBY = 'datasets-airbnb-markets-nearby';
     public const DATASETS_AIRBNB_MARKETS_SEARCH = 'datasets-airbnb-markets-search';
+    public const DATASETS_APPLE_BOOKS_FACETS = 'datasets-apple-books-facets';
+    public const DATASETS_APPLE_BOOKS_ITEM = 'datasets-apple-books-item';
+    public const DATASETS_APPLE_BOOKS_SEARCH = 'datasets-apple-books-search';
     public const DATASETS_APPLE_MAPS_PLACES_FACETS = 'datasets-apple-maps-places-facets';
     public const DATASETS_APPLE_MAPS_PLACES_ITEM = 'datasets-apple-maps-places-item';
     public const DATASETS_APPLE_MAPS_PLACES_NEARBY = 'datasets-apple-maps-places-nearby';
@@ -168842,7 +193266,13 @@ final class OperationId
     public const DATASETS_APPLE_PODCASTS_SHOWS_FACETS = 'datasets-apple-podcasts-shows-facets';
     public const DATASETS_APPLE_PODCASTS_SHOWS_ITEM = 'datasets-apple-podcasts-shows-item';
     public const DATASETS_APPLE_PODCASTS_SHOWS_SEARCH = 'datasets-apple-podcasts-shows-search';
+    public const DATASETS_APPS_CHARTS_FACETS = 'datasets-apps-charts-facets';
+    public const DATASETS_APPS_CHARTS_ITEM = 'datasets-apps-charts-item';
     public const DATASETS_APPS_CHARTS_SEARCH = 'datasets-apps-charts-search';
+    public const DATASETS_APPS_FACETS = 'datasets-apps-facets';
+    public const DATASETS_APPS_ITEM = 'datasets-apps-item';
+    public const DATASETS_APPS_REVIEWS_FACETS = 'datasets-apps-reviews-facets';
+    public const DATASETS_APPS_REVIEWS_ITEM = 'datasets-apps-reviews-item';
     public const DATASETS_APPS_REVIEWS_SEARCH = 'datasets-apps-reviews-search';
     public const DATASETS_APPS_SEARCH = 'datasets-apps-search';
     public const DATASETS_BBB_BUSINESSES_FACETS = 'datasets-bbb-businesses-facets';
@@ -168861,6 +193291,8 @@ final class OperationId
     public const DATASETS_CHROME_EXTENSIONS_METRICS = 'datasets-chrome-extensions-metrics';
     public const DATASETS_CHROME_EXTENSIONS_SEARCH = 'datasets-chrome-extensions-search';
     public const DATASETS_CHROME_EXTENSIONS_TRENDING = 'datasets-chrome-extensions-trending';
+    public const DATASETS_CREATORS_FACETS = 'datasets-creators-facets';
+    public const DATASETS_CREATORS_ITEM = 'datasets-creators-item';
     public const DATASETS_CREATORS_SEARCH = 'datasets-creators-search';
     public const DATASETS_DOORDASH_STORES_FACETS = 'datasets-doordash-stores-facets';
     public const DATASETS_DOORDASH_STORES_ITEM = 'datasets-doordash-stores-item';
@@ -168933,6 +193365,8 @@ final class OperationId
     public const DATASETS_PRODUCTHUNT_PRODUCTS_SEARCH = 'datasets-producthunt-products-search';
     public const DATASETS_PRODUCTHUNT_TRENDS_FACETS = 'datasets-producthunt-trends-facets';
     public const DATASETS_PRODUCTHUNT_TRENDS_SEARCH = 'datasets-producthunt-trends-search';
+    public const DATASETS_REDDIT_TRENDING_FACETS = 'datasets-reddit-trending-facets';
+    public const DATASETS_REDDIT_TRENDING_ITEM = 'datasets-reddit-trending-item';
     public const DATASETS_REDDIT_TRENDING_SEARCH = 'datasets-reddit-trending-search';
     public const DATASETS_SEC_COMPANIES_FACETS = 'datasets-sec-companies-facets';
     public const DATASETS_SEC_COMPANIES_FINANCIALS = 'datasets-sec-companies-financials';
@@ -168945,15 +193379,30 @@ final class OperationId
     public const DATASETS_STARBUCKS_STORES_ITEM = 'datasets-starbucks-stores-item';
     public const DATASETS_STARBUCKS_STORES_NEARBY = 'datasets-starbucks-stores-nearby';
     public const DATASETS_STARBUCKS_STORES_SEARCH = 'datasets-starbucks-stores-search';
+    public const DATASETS_STEAM_ACHIEVEMENTS_FACETS = 'datasets-steam-achievements-facets';
+    public const DATASETS_STEAM_ACHIEVEMENTS_ITEM = 'datasets-steam-achievements-item';
     public const DATASETS_STEAM_ACHIEVEMENTS_SEARCH = 'datasets-steam-achievements-search';
+    public const DATASETS_STEAM_CHARTS_FACETS = 'datasets-steam-charts-facets';
+    public const DATASETS_STEAM_CHARTS_ITEM = 'datasets-steam-charts-item';
     public const DATASETS_STEAM_CHARTS_SEARCH = 'datasets-steam-charts-search';
     public const DATASETS_STEAM_GAMES_FACETS = 'datasets-steam-games-facets';
     public const DATASETS_STEAM_GAMES_ITEM = 'datasets-steam-games-item';
     public const DATASETS_STEAM_GAMES_SEARCH = 'datasets-steam-games-search';
+    public const DATASETS_STEAM_NEWS_FACETS = 'datasets-steam-news-facets';
+    public const DATASETS_STEAM_NEWS_ITEM = 'datasets-steam-news-item';
     public const DATASETS_STEAM_NEWS_SEARCH = 'datasets-steam-news-search';
+    public const DATASETS_STEAM_PLAYERCOUNTS_FACETS = 'datasets-steam-playercounts-facets';
+    public const DATASETS_STEAM_PLAYERCOUNTS_ITEM = 'datasets-steam-playercounts-item';
     public const DATASETS_STEAM_PLAYERCOUNTS_SEARCH = 'datasets-steam-playercounts-search';
+    public const DATASETS_STEAM_PRICES_FACETS = 'datasets-steam-prices-facets';
+    public const DATASETS_STEAM_PRICES_ITEM = 'datasets-steam-prices-item';
     public const DATASETS_STEAM_PRICES_SEARCH = 'datasets-steam-prices-search';
+    public const DATASETS_STEAM_REVIEWS_FACETS = 'datasets-steam-reviews-facets';
+    public const DATASETS_STEAM_REVIEWS_ITEM = 'datasets-steam-reviews-item';
     public const DATASETS_STEAM_REVIEWS_SEARCH = 'datasets-steam-reviews-search';
+    public const DATASETS_SUBSTACK_FACETS = 'datasets-substack-facets';
+    public const DATASETS_SUBSTACK_ITEM = 'datasets-substack-item';
+    public const DATASETS_SUBSTACK_SEARCH = 'datasets-substack-search';
     public const DATASETS_TECHSTACK_FACETS = 'datasets-techstack-facets';
     public const DATASETS_TECHSTACK_ITEM = 'datasets-techstack-item';
     public const DATASETS_TECHSTACK_SEARCH = 'datasets-techstack-search';
@@ -169003,6 +193452,24 @@ final class OperationId
     public const DISCOGS_MASTER = 'discogs-master';
     public const DISCOGS_RELEASE = 'discogs-release';
     public const DISCOGS_SEARCH = 'discogs-search';
+    public const DOLLAR_TREE_DOLLARTREE_BLOG_ARTICLE = 'dollartree-blog-article';
+    public const DOLLAR_TREE_DOLLARTREE_CATEGORIES = 'dollartree-categories';
+    public const DOLLAR_TREE_DOLLARTREE_KEYWORD_TYPEAHEAD = 'dollartree-keyword-typeahead';
+    public const DOLLAR_TREE_DOLLARTREE_PRICE = 'dollartree-price';
+    public const DOLLAR_TREE_DOLLARTREE_PRODUCT = 'dollartree-product';
+    public const DOLLAR_TREE_DOLLARTREE_PRODUCT_TYPEAHEAD = 'dollartree-product-typeahead';
+    public const DOLLAR_TREE_DOLLARTREE_PRODUCTS = 'dollartree-products';
+    public const DOLLAR_TREE_DOLLARTREE_SEARCH = 'dollartree-search';
+    public const DOLLAR_TREE_DOLLARTREE_STOCK_STATUS = 'dollartree-stock-status';
+    public const DOMAIN_DNS_RECORD_TYPES = 'domain-dns-record-types';
+    public const DOMAIN_DNS_RESOLVE = 'domain-dns-resolve';
+    public const DOMAIN_RDAP_DOMAIN = 'domain-rdap-domain';
+    public const DOMAIN_RDAP_IP = 'domain-rdap-ip';
+    public const DOMAIN_ROBOTS = 'domain-robots';
+    public const DOMAIN_SITE = 'domain-site';
+    public const DOMAIN_SUBDOMAINS = 'domain-subdomains';
+    public const DOMAIN_WAYBACK_AVAILABILITY = 'domain-wayback-availability';
+    public const DOMAIN_WAYBACK_CDX = 'domain-wayback-cdx';
     public const DOMINOS_COUPONS = 'dominos-coupons';
     public const DOMINOS_CUSTOMIZATION = 'dominos-customization';
     public const DOMINOS_MENU = 'dominos-menu';
@@ -169159,6 +193626,41 @@ final class OperationId
     public const EXPEDIA_PROPERTIES_SEARCH = 'expedia-properties-search';
     public const FACEBOOK_MARKETPLACE_SEARCH = 'facebook-marketplace-search';
     public const FACEBOOK_PAGE = 'facebook-page';
+    public const FACEIT_BAN_REASONS = 'faceit-ban-reasons';
+    public const FACEIT_BANLIST = 'faceit-banlist';
+    public const FACEIT_BANLIST_STATS = 'faceit-banlist-stats';
+    public const FACEIT_BEST_CLIPS = 'faceit-best-clips';
+    public const FACEIT_CHAMPIONSHIP = 'faceit-championship';
+    public const FACEIT_CHAMPIONSHIP_BRACKET = 'faceit-championship-bracket';
+    public const FACEIT_CHAMPIONSHIP_PARTICIPANTS = 'faceit-championship-participants';
+    public const FACEIT_CHAMPIONSHIP_SEARCH = 'faceit-championship-search';
+    public const FACEIT_CLIP = 'faceit-clip';
+    public const FACEIT_CLIPS = 'faceit-clips';
+    public const FACEIT_COMPETITION_MATCHES = 'faceit-competition-matches';
+    public const FACEIT_FPL = 'faceit-fpl';
+    public const FACEIT_GAME_MODES = 'faceit-game-modes';
+    public const FACEIT_GAMES = 'faceit-games';
+    public const FACEIT_HUB = 'faceit-hub';
+    public const FACEIT_HUB_CATEGORIES = 'faceit-hub-categories';
+    public const FACEIT_HUB_MEMBERSHIPS = 'faceit-hub-memberships';
+    public const FACEIT_HUBS = 'faceit-hubs';
+    public const FACEIT_HUBS_DETAILED = 'faceit-hubs-detailed';
+    public const FACEIT_LEADERBOARD = 'faceit-leaderboard';
+    public const FACEIT_LEADERBOARD_DETAIL = 'faceit-leaderboard-detail';
+    public const FACEIT_LEADERBOARD_STATUSES = 'faceit-leaderboard-statuses';
+    public const FACEIT_MAPS = 'faceit-maps';
+    public const FACEIT_MATCH_CLIPS = 'faceit-match-clips';
+    public const FACEIT_ORGANIZER = 'faceit-organizer';
+    public const FACEIT_PLAYER = 'faceit-player';
+    public const FACEIT_PLAYER_RANK = 'faceit-player-rank';
+    public const FACEIT_REGIONS = 'faceit-regions';
+    public const FACEIT_RULE = 'faceit-rule';
+    public const FACEIT_RULES = 'faceit-rules';
+    public const FACEIT_SKILL_LEVELS = 'faceit-skill-levels';
+    public const FACEIT_STANDINGS = 'faceit-standings';
+    public const FACEIT_TEAM = 'faceit-team';
+    public const FACEIT_TOURNAMENTS_PAST = 'faceit-tournaments-past';
+    public const FACEIT_USER_SKILLS = 'faceit-user-skills';
     public const FAN_DUEL_FANDUEL_CASINO_CATEGORIES = 'fanduel-casino-categories';
     public const FAN_DUEL_FANDUEL_CASINO_CATEGORY = 'fanduel-casino-category';
     public const FAN_DUEL_FANDUEL_CASINO_GAME = 'fanduel-casino-game';
@@ -169235,8 +193737,16 @@ final class OperationId
     public const FANATICS_CATEGORY = 'fanatics-category';
     public const FANATICS_COLLECT_FANATICSCOLLECT_AUCTIONS = 'fanaticscollect-auctions';
     public const FANATICS_COLLECT_FANATICSCOLLECT_CATEGORIES = 'fanaticscollect-categories';
+    public const FANATICS_COLLECT_FANATICSCOLLECT_INSTANT_PACK_RELEASE = 'fanaticscollect-instant-pack-release';
+    public const FANATICS_COLLECT_FANATICSCOLLECT_INSTANT_PACK_RELEASES = 'fanaticscollect-instant-pack-releases';
     public const FANATICS_COLLECT_FANATICSCOLLECT_INSTANT_RIPS_CATEGORIES = 'fanaticscollect-instant-rips-categories';
+    public const FANATICS_COLLECT_FANATICSCOLLECT_INSTANT_RIPS_PACK_CATEGORIES = 'fanaticscollect-instant-rips-pack-categories';
+    public const FANATICS_COLLECT_FANATICSCOLLECT_INSTANT_RIPS_PACK_CHECKLIST = 'fanaticscollect-instant-rips-pack-checklist';
+    public const FANATICS_COLLECT_FANATICSCOLLECT_INSTANT_RIPS_PACKS = 'fanaticscollect-instant-rips-packs';
     public const FANATICS_COLLECT_FANATICSCOLLECT_LISTING = 'fanaticscollect-listing';
+    public const FANATICS_COLLECT_FANATICSCOLLECT_NEWSROOM = 'fanaticscollect-newsroom';
+    public const FANATICS_COLLECT_FANATICSCOLLECT_NEWSROOM_FILTERS = 'fanaticscollect-newsroom-filters';
+    public const FANATICS_COLLECT_FANATICSCOLLECT_RECENTLY_RIPPED = 'fanaticscollect-recently-ripped';
     public const FANATICS_COLLECT_FANATICSCOLLECT_SEARCH = 'fanaticscollect-search';
     public const FANATICS_COLLECT_FANATICSCOLLECT_SOLD_ITEMS = 'fanaticscollect-sold-items';
     public const FANATICS_COLLECT_FANATICSCOLLECT_TRENDING_SEARCHES = 'fanaticscollect-trending-searches';
@@ -169282,6 +193792,12 @@ final class OperationId
     public const FAST_COMPANY_FASTCOMPANY_HEADLINES = 'fastcompany-headlines';
     public const FAST_COMPANY_FASTCOMPANY_NEWS = 'fastcompany-news';
     public const FAST_COMPANY_FASTCOMPANY_SECTIONS = 'fastcompany-sections';
+    public const FEVER_CITIES = 'fever-cities';
+    public const FEVER_FEED = 'fever-feed';
+    public const FEVER_FILTERS = 'fever-filters';
+    public const FEVER_PLAN = 'fever-plan';
+    public const FEVER_PLANS = 'fever-plans';
+    public const FEVER_TOP_CITIES = 'fever-top-cities';
     public const FIRST_DIBS_CATEGORIES = 'firstdibs-categories';
     public const FIRST_DIBS_DESIGNERS = 'firstdibs-designers';
     public const FIRST_DIBS_PRODUCT = 'firstdibs-product';
@@ -169304,9 +193820,11 @@ final class OperationId
     public const FLASHSCORE_COMPETITIONS = 'flashscore-competitions';
     public const FLASHSCORE_ENTITY_NEWS = 'flashscore-entity-news';
     public const FLASHSCORE_MATCH_BOX_SCORE = 'flashscore-match-box-score';
+    public const FLASHSCORE_MATCH_COMMENTARY = 'flashscore-match-commentary';
     public const FLASHSCORE_MATCH_DARTS = 'flashscore-match-darts';
     public const FLASHSCORE_MATCH_H2H = 'flashscore-match-h2h';
     public const FLASHSCORE_MATCH_HIGHLIGHTS = 'flashscore-match-highlights';
+    public const FLASHSCORE_MATCH_INCIDENTS = 'flashscore-match-incidents';
     public const FLASHSCORE_MATCH_INFO = 'flashscore-match-info';
     public const FLASHSCORE_MATCH_LINEUPS = 'flashscore-match-lineups';
     public const FLASHSCORE_MATCH_MISSING_PLAYERS = 'flashscore-match-missing-players';
@@ -169316,6 +193834,7 @@ final class OperationId
     public const FLASHSCORE_MATCH_PLAYER_STATS = 'flashscore-match-player-stats';
     public const FLASHSCORE_MATCH_POINT_BY_POINT = 'flashscore-match-point-by-point';
     public const FLASHSCORE_MATCH_PREDICTED_LINEUPS = 'flashscore-match-predicted-lineups';
+    public const FLASHSCORE_MATCH_PREMATCH_SCORERS = 'flashscore-match-prematch-scorers';
     public const FLASHSCORE_MATCH_REPORT = 'flashscore-match-report';
     public const FLASHSCORE_MATCH_STANDINGS = 'flashscore-match-standings';
     public const FLASHSCORE_MATCH_STATS = 'flashscore-match-stats';
@@ -169348,11 +193867,17 @@ final class OperationId
     public const FLASHSCORE_TEAM_TRANSFERS = 'flashscore-team-transfers';
     public const FLASHSCORE_TOP_SEARCH = 'flashscore-top-search';
     public const FLASHSCORE_TOURNAMENT_ARCHIVE_SEASONS = 'flashscore-tournament-archive-seasons';
+    public const FLASHSCORE_TOURNAMENT_DRAW = 'flashscore-tournament-draw';
     public const FLASHSCORE_TOURNAMENT_EVENTS = 'flashscore-tournament-events';
     public const FLASHSCORE_TOURNAMENT_OUTRIGHT_ODDS = 'flashscore-tournament-outright-odds';
     public const FLASHSCORE_TOURNAMENT_SEASONS = 'flashscore-tournament-seasons';
     public const FLASHSCORE_TOURNAMENT_STANDINGS = 'flashscore-tournament-standings';
     public const FLASHSCORE_TOURNAMENT_STANDINGS_VIEWS = 'flashscore-tournament-standings-views';
+    public const FLICK_REELS_FLICKREELS_CLASSIFY = 'flickreels-classify';
+    public const FLICK_REELS_FLICKREELS_GENRES = 'flickreels-genres';
+    public const FLICK_REELS_FLICKREELS_HOME = 'flickreels-home';
+    public const FLICK_REELS_FLICKREELS_MOVIE = 'flickreels-movie';
+    public const FLICK_REELS_FLICKREELS_SHELF = 'flickreels-shelf';
     public const FOODPANDA_RESTAURANT = 'foodpanda-restaurant';
     public const FOODPANDA_RESTAURANT_MENU = 'foodpanda-restaurant-menu';
     public const FOODPANDA_RESTAURANT_REVIEWS = 'foodpanda-restaurant-reviews';
@@ -169377,6 +193902,34 @@ final class OperationId
     public const FOREIGN_POLICY_FOREIGNPOLICY_PROJECT = 'foreignpolicy-project';
     public const FOREIGN_POLICY_FOREIGNPOLICY_PROJECTS = 'foreignpolicy-projects';
     public const FOREIGN_POLICY_FOREIGNPOLICY_TOPIC = 'foreignpolicy-topic';
+    public const FORMULA1_DRIVER = 'formula1-driver';
+    public const FORMULA1_DRIVER_GRID = 'formula1-driver-grid';
+    public const FORMULA1_DRIVER_SEASON_RESULTS = 'formula1-driver-season-results';
+    public const FORMULA1_DRIVER_STANDINGS = 'formula1-driver-standings';
+    public const FORMULA1_FILTERS = 'formula1-filters';
+    public const FORMULA1_JSON_AWARDS = 'formula1-json-awards';
+    public const FORMULA1_JSON_CONSTRUCTORS = 'formula1-json-constructors';
+    public const FORMULA1_JSON_DRIVER_ASSEMBLY = 'formula1-json-driver-assembly';
+    public const FORMULA1_JSON_DRIVERS = 'formula1-json-drivers';
+    public const FORMULA1_JSON_EDITORIAL = 'formula1-json-editorial';
+    public const FORMULA1_JSON_EVENT_TRACKER = 'formula1-json-event-tracker';
+    public const FORMULA1_JSON_MEETING_DATASETS = 'formula1-json-meeting-datasets';
+    public const FORMULA1_JSON_MEETINGS = 'formula1-json-meetings';
+    public const FORMULA1_JSON_RACE_ASSEMBLY = 'formula1-json-race-assembly';
+    public const FORMULA1_JSON_RESULTS = 'formula1-json-results';
+    public const FORMULA1_JSON_SEASON_AWARD = 'formula1-json-season-award';
+    public const FORMULA1_JSON_TEAM_ASSEMBLY = 'formula1-json-team-assembly';
+    public const FORMULA1_MEETINGS = 'formula1-meetings';
+    public const FORMULA1_RACE_CALENDAR = 'formula1-race-calendar';
+    public const FORMULA1_RACE_HUB = 'formula1-race-hub';
+    public const FORMULA1_SEASON_AWARDS = 'formula1-season-awards';
+    public const FORMULA1_SEASON_RESULTS = 'formula1-season-results';
+    public const FORMULA1_SEASONS = 'formula1-seasons';
+    public const FORMULA1_SESSION_RESULTS = 'formula1-session-results';
+    public const FORMULA1_TEAM = 'formula1-team';
+    public const FORMULA1_TEAM_GRID = 'formula1-team-grid';
+    public const FORMULA1_TEAM_SEASON_RESULTS = 'formula1-team-season-results';
+    public const FORMULA1_TEAM_STANDINGS = 'formula1-team-standings';
     public const FORTUNE_ARTICLE = 'fortune-article';
     public const FORTUNE_AUTHOR = 'fortune-author';
     public const FORTUNE_COMPANIES = 'fortune-companies';
@@ -169437,6 +193990,10 @@ final class OperationId
     public const FRANCE24_FRANCE24_SECTIONS = 'france24-sections';
     public const FREE_MALAYSIA_TODAY_FREEMALAYSIATODAY_NEWS = 'freemalaysiatoday-news';
     public const FREE_MALAYSIA_TODAY_FREEMALAYSIATODAY_SECTIONS = 'freemalaysiatoday-sections';
+    public const FRESHA_LANDING_VENUES = 'fresha-landing-venues';
+    public const FRESHA_SEARCH_VENUES = 'fresha-search-venues';
+    public const FRESHA_TAXONOMY = 'fresha-taxonomy';
+    public const FRESHA_VENUE = 'fresha-venue';
     public const FT_ARTICLE = 'ft-article';
     public const FT_AUTHOR = 'ft-author';
     public const FT_CATEGORIES = 'ft-categories';
@@ -169470,6 +194027,27 @@ final class OperationId
     public const FUSSBALL_DE_FUSSBALLDE_TEAM_MATCHES = 'fussballde-team-matches';
     public const FUSSBALL_DE_FUSSBALLDE_TEAM_SQUAD = 'fussballde-team-squad';
     public const FUSSBALL_DE_FUSSBALLDE_TOP_SCORERS = 'fussballde-top-scorers';
+    public const FUT_GG_FUTGG_FC27_CATALOG = 'futgg-fc27-catalog';
+    public const FUT_GG_FUTGG_FC27_DEFINITIONS = 'futgg-fc27-definitions';
+    public const FUT_GG_FUTGG_FC27_EVOLUTION = 'futgg-fc27-evolution';
+    public const FUT_GG_FUTGG_FC27_EVOLUTIONS = 'futgg-fc27-evolutions';
+    public const FUT_GG_FUTGG_FC27_GG_RATING_RANKS = 'futgg-fc27-gg-rating-ranks';
+    public const FUT_GG_FUTGG_FC27_GG_RATINGS = 'futgg-fc27-gg-ratings';
+    public const FUT_GG_FUTGG_FC27_OBJECTIVE_CATEGORIES = 'futgg-fc27-objective-categories';
+    public const FUT_GG_FUTGG_FC27_OBJECTIVE_GROUP = 'futgg-fc27-objective-group';
+    public const FUT_GG_FUTGG_FC27_OBJECTIVE_GROUP_BY_EA = 'futgg-fc27-objective-group-by-ea';
+    public const FUT_GG_FUTGG_FC27_OBJECTIVE_GROUP_BY_OBJECTIVE = 'futgg-fc27-objective-group-by-objective';
+    public const FUT_GG_FUTGG_FC27_OBJECTIVE_GROUPS = 'futgg-fc27-objective-groups';
+    public const FUT_GG_FUTGG_FC27_PLAYER_SORTS = 'futgg-fc27-player-sorts';
+    public const FUT_GG_FUTGG_FC27_PLAYERS = 'futgg-fc27-players';
+    public const FUT_GG_FUTGG_FC27_PRICE_INDEX = 'futgg-fc27-price-index';
+    public const FUT_GG_FUTGG_FC27_PRICES = 'futgg-fc27-prices';
+    public const FUT_GG_FUTGG_FC27_SBC_CATEGORIES = 'futgg-fc27-sbc-categories';
+    public const FUT_GG_FUTGG_FC27_SBC_SET = 'futgg-fc27-sbc-set';
+    public const FUT_GG_FUTGG_FC27_SBC_SET_BY_CHALLENGE = 'futgg-fc27-sbc-set-by-challenge';
+    public const FUT_GG_FUTGG_FC27_SBC_SET_BY_EA = 'futgg-fc27-sbc-set-by-ea';
+    public const FUT_GG_FUTGG_FC27_SBC_SETS = 'futgg-fc27-sbc-sets';
+    public const FUT_GG_FUTGG_FC27_SEASON_PASS = 'futgg-fc27-season-pass';
     public const GAME_RANT_GAMERANT_ARTICLE = 'gamerant-article';
     public const GAME_RANT_GAMERANT_AUTHOR = 'gamerant-author';
     public const GAME_RANT_GAMERANT_HEADLINES = 'gamerant-headlines';
@@ -169541,6 +194119,16 @@ final class OperationId
     public const GLOBE_AND_MAIL_GLOBEANDMAIL_HEADLINES = 'globeandmail-headlines';
     public const GLOBE_AND_MAIL_GLOBEANDMAIL_NEWS = 'globeandmail-news';
     public const GLOBE_AND_MAIL_GLOBEANDMAIL_SECTIONS = 'globeandmail-sections';
+    public const GLOVO_CATEGORIES = 'glovo-categories';
+    public const GLOVO_CITIES = 'glovo-cities';
+    public const GLOVO_CITY = 'glovo-city';
+    public const GLOVO_STORE = 'glovo-store';
+    public const GLOVO_STORE_FEES = 'glovo-store-fees';
+    public const GLOVO_STORE_MENU = 'glovo-store-menu';
+    public const GLOVO_STORE_PRODUCTS = 'glovo-store-products';
+    public const GLOVO_STORE_SEARCH = 'glovo-store-search';
+    public const GLOVO_STORES = 'glovo-stores';
+    public const GLOVO_STORES_FILTERS = 'glovo-stores-filters';
     public const GMA_NEWS_GMANEWS_ARTICLE = 'gmanews-article';
     public const GMA_NEWS_GMANEWS_HEADLINES = 'gmanews-headlines';
     public const GMA_NEWS_GMANEWS_NEWS = 'gmanews-news';
@@ -169649,6 +194237,8 @@ final class OperationId
     public const GOOGLE_TRENDS_TRENDING = 'google-trends-trending';
     public const GOOGLE_TRENDS_TRENDING_DETAIL = 'google-trends-trending-detail';
     public const GOOGLE_VIDEOS = 'google-videos';
+    public const GOSU_GAMERS_GOSUGAMERS_ARTICLE = 'gosugamers-article';
+    public const GOSU_GAMERS_GOSUGAMERS_ARTICLES = 'gosugamers-articles';
     public const GOSU_GAMERS_GOSUGAMERS_ENCOUNTERS = 'gosugamers-encounters';
     public const GOSU_GAMERS_GOSUGAMERS_GAMES = 'gosugamers-games';
     public const GOSU_GAMERS_GOSUGAMERS_MATCH = 'gosugamers-match';
@@ -169768,6 +194358,15 @@ final class OperationId
     public const HINDUSTAN_TIMES_HINDUSTANTIMES_HEADLINES = 'hindustantimes-headlines';
     public const HINDUSTAN_TIMES_HINDUSTANTIMES_NEWS = 'hindustantimes-news';
     public const HINDUSTAN_TIMES_HINDUSTANTIMES_SECTIONS = 'hindustantimes-sections';
+    public const HLTV_EVENT = 'hltv-event';
+    public const HLTV_EVENTS = 'hltv-events';
+    public const HLTV_MATCH = 'hltv-match';
+    public const HLTV_MATCHES = 'hltv-matches';
+    public const HLTV_PLAYER = 'hltv-player';
+    public const HLTV_RANKINGS = 'hltv-rankings';
+    public const HLTV_RESULTS = 'hltv-results';
+    public const HLTV_SEARCH = 'hltv-search';
+    public const HLTV_TEAM = 'hltv-team';
     public const HOLLYWOOD_REPORTER_HOLLYWOODREPORTER_ARTICLE = 'hollywoodreporter-article';
     public const HOLLYWOOD_REPORTER_HOLLYWOODREPORTER_AUTHOR = 'hollywoodreporter-author';
     public const HOLLYWOOD_REPORTER_HOLLYWOODREPORTER_HEADLINES = 'hollywoodreporter-headlines';
@@ -169892,6 +194491,20 @@ final class OperationId
     public const IRISH_TIMES_IRISHTIMES_HEADLINES = 'irishtimes-headlines';
     public const IRISH_TIMES_IRISHTIMES_NEWS = 'irishtimes-news';
     public const IRISH_TIMES_IRISHTIMES_SECTIONS = 'irishtimes-sections';
+    public const ITCH_IO_ITCHIO_BROWSE = 'itchio-browse';
+    public const ITCH_IO_ITCHIO_BROWSE_OPTIONS = 'itchio-browse-options';
+    public const ITCH_IO_ITCHIO_CATALOG = 'itchio-catalog';
+    public const ITCH_IO_ITCHIO_JAM_CALENDAR = 'itchio-jam-calendar';
+    public const ITCH_IO_ITCHIO_JAMS_BROWSE = 'itchio-jams-browse';
+    public const ITCH_IO_ITCHIO_JAMS_ENTRIES = 'itchio-jams-entries';
+    public const ITCH_IO_ITCHIO_JAMS_OPTIONS = 'itchio-jams-options';
+    public const ITCH_IO_ITCHIO_JAMS_OVERVIEW = 'itchio-jams-overview';
+    public const ITCH_IO_ITCHIO_JAMS_RESULTS = 'itchio-jams-results';
+    public const ITCH_IO_ITCHIO_JAMS_RESULTS_OPTIONS = 'itchio-jams-results-options';
+    public const ITCH_IO_ITCHIO_JAMS_SUBMISSION = 'itchio-jams-submission';
+    public const ITCH_IO_ITCHIO_PROJECT = 'itchio-project';
+    public const ITCH_IO_ITCHIO_TAGS = 'itchio-tags';
+    public const ITCH_IO_ITCHIO_TOP_RATED = 'itchio-top-rated';
     public const JCREW_JCREW_CATEGORIES = 'jcrew-categories';
     public const JCREW_JCREW_CATEGORY = 'jcrew-category';
     public const JCREW_JCREW_PRODUCT = 'jcrew-product';
@@ -170032,6 +194645,24 @@ final class OperationId
     public const KICKSTARTER_DISCOVER = 'kickstarter-discover';
     public const KICKSTARTER_PROJECT = 'kickstarter-project';
     public const KICKSTARTER_UPDATES = 'kickstarter-updates';
+    public const KLOOK_ACTIVITY = 'klook-activity';
+    public const KLOOK_ATTRACTIONS_CATEGORIES = 'klook-attractions-categories';
+    public const KLOOK_ATTRACTIONS_DESTINATIONS = 'klook-attractions-destinations';
+    public const KLOOK_ATTRACTIONS_HIGHLIGHTS = 'klook-attractions-highlights';
+    public const KLOOK_ATTRACTIONS_SEARCH = 'klook-attractions-search';
+    public const KLOOK_ATTRACTIONS_SUGGEST = 'klook-attractions-suggest';
+    public const KLOOK_CATEGORIES = 'klook-categories';
+    public const KLOOK_DESTINATIONS = 'klook-destinations';
+    public const KLOOK_HOT = 'klook-hot';
+    public const KLOOK_INTERESTS = 'klook-interests';
+    public const KLOOK_RECOMMENDATIONS = 'klook-recommendations';
+    public const KLOOK_REVIEWS = 'klook-reviews';
+    public const KLOOK_SEARCH = 'klook-search';
+    public const KLOOK_SEARCH_FILTERS = 'klook-search-filters';
+    public const KLOOK_SEARCH_HOT_KEYWORDS = 'klook-search-hot-keywords';
+    public const KLOOK_SEARCH_UNIFIED = 'klook-search-unified';
+    public const KLOOK_SUGGEST = 'klook-suggest';
+    public const KLOOK_VERTICALS = 'klook-verticals';
     public const KOHL_SKOHLS_CATEGORY = 'kohls-category';
     public const KOHL_SKOHLS_PRODUCT_REVIEWS = 'kohls-product-reviews';
     public const KOHL_SKOHLS_STORES = 'kohls-stores';
@@ -170130,6 +194761,15 @@ final class OperationId
     public const LULULEMON_OUTFIT = 'lululemon-outfit';
     public const LULULEMON_PRODUCT = 'lululemon-product';
     public const LULULEMON_STORES = 'lululemon-stores';
+    public const LUMA_CALENDAR = 'luma-calendar';
+    public const LUMA_CALENDAR_EVENTS = 'luma-calendar-events';
+    public const LUMA_CATEGORIES = 'luma-categories';
+    public const LUMA_CATEGORY = 'luma-category';
+    public const LUMA_CATEGORY_EVENTS = 'luma-category-events';
+    public const LUMA_EVENT = 'luma-event';
+    public const LUMA_PLACE = 'luma-place';
+    public const LUMA_PLACE_CALENDARS = 'luma-place-calendars';
+    public const LUMA_PLACE_EVENTS = 'luma-place-events';
     public const MAC_RUMORS_MACRUMORS_ARTICLE = 'macrumors-article';
     public const MAC_RUMORS_MACRUMORS_AUTHOR = 'macrumors-author';
     public const MAC_RUMORS_MACRUMORS_HEADLINES = 'macrumors-headlines';
@@ -170168,6 +194808,26 @@ final class OperationId
     public const MASHABLE_HEADLINES = 'mashable-headlines';
     public const MASHABLE_NEWS = 'mashable-news';
     public const MASHABLE_SECTIONS = 'mashable-sections';
+    public const MAX_PREPS_MAXPREPS_RANKINGS_GROUPINGS = 'maxpreps-rankings-groupings';
+    public const MAX_PREPS_MAXPREPS_REQUEST_ENUMS = 'maxpreps-request-enums';
+    public const MAX_PREPS_MAXPREPS_SCHOOL = 'maxpreps-school';
+    public const MAX_PREPS_MAXPREPS_SCHOOL_CONTESTS = 'maxpreps-school-contests';
+    public const MAX_PREPS_MAXPREPS_SCHOOL_PROXIMAL = 'maxpreps-school-proximal';
+    public const MAX_PREPS_MAXPREPS_SCHOOL_SEARCH = 'maxpreps-school-search';
+    public const MAX_PREPS_MAXPREPS_SCHOOL_SEASONS = 'maxpreps-school-seasons';
+    public const MAX_PREPS_MAXPREPS_SCHOOL_ZIP_SEARCH = 'maxpreps-school-zip-search';
+    public const MAX_PREPS_MAXPREPS_SCOREBOARD = 'maxpreps-scoreboard';
+    public const MAX_PREPS_MAXPREPS_SEASON_NAVIGATION = 'maxpreps-season-navigation';
+    public const MAX_PREPS_MAXPREPS_SPORTS = 'maxpreps-sports';
+    public const MAX_PREPS_MAXPREPS_STATES = 'maxpreps-states';
+    public const MAX_PREPS_MAXPREPS_TEAM = 'maxpreps-team';
+    public const MAX_PREPS_MAXPREPS_TEAM_CONTEXT = 'maxpreps-team-context';
+    public const MAX_PREPS_MAXPREPS_TEAM_NEXT_CONTEST = 'maxpreps-team-next-contest';
+    public const MAX_PREPS_MAXPREPS_TEAM_RANKINGS = 'maxpreps-team-rankings';
+    public const MAX_PREPS_MAXPREPS_TEAM_ROSTER_SUMMARY = 'maxpreps-team-roster-summary';
+    public const MAX_PREPS_MAXPREPS_TEAM_SCHEDULE = 'maxpreps-team-schedule';
+    public const MAX_PREPS_MAXPREPS_TEAM_STAT_LEADERS = 'maxpreps-team-stat-leaders';
+    public const MAX_PREPS_MAXPREPS_TOURNAMENT_SPORTS = 'maxpreps-tournament-sports';
     public const MC_DONALDS_MCDONALDS_CATEGORIES = 'mcdonalds-categories';
     public const MC_DONALDS_MCDONALDS_ITEM = 'mcdonalds-item';
     public const MC_DONALDS_MCDONALDS_ITEM_LIST = 'mcdonalds-item-list';
@@ -170321,6 +194981,40 @@ final class OperationId
     public const MODA_OPERANDI_MODAOPERANDI_DESIGNERS = 'modaoperandi-designers';
     public const MODA_OPERANDI_MODAOPERANDI_PRODUCT = 'modaoperandi-product';
     public const MODA_OPERANDI_MODAOPERANDI_SEARCH = 'modaoperandi-search';
+    public const MODRINTH_CHECK_PROJECT = 'modrinth-check-project';
+    public const MODRINTH_COLLECTION = 'modrinth-collection';
+    public const MODRINTH_COLLECTIONS = 'modrinth-collections';
+    public const MODRINTH_DEPENDENCIES = 'modrinth-dependencies';
+    public const MODRINTH_FILE_PROJECTS = 'modrinth-file-projects';
+    public const MODRINTH_FILE_UPDATE = 'modrinth-file-update';
+    public const MODRINTH_FILE_VERSION = 'modrinth-file-version';
+    public const MODRINTH_FILE_VERSIONS = 'modrinth-file-versions';
+    public const MODRINTH_FILES_UPDATE = 'modrinth-files-update';
+    public const MODRINTH_FILES_UPDATE_INDIVIDUAL = 'modrinth-files-update-individual';
+    public const MODRINTH_FILES_UPDATE_MANY = 'modrinth-files-update-many';
+    public const MODRINTH_FORGE_UPDATES = 'modrinth-forge-updates';
+    public const MODRINTH_LICENSE = 'modrinth-license';
+    public const MODRINTH_METADATA_LINK_PLATFORMS = 'modrinth-metadata-link-platforms';
+    public const MODRINTH_METADATA_LOADER_FIELD_VALUES = 'modrinth-metadata-loader-field-values';
+    public const MODRINTH_METADATA_LOADER_FIELDS = 'modrinth-metadata-loader-fields';
+    public const MODRINTH_METADATA_LOADERS = 'modrinth-metadata-loaders';
+    public const MODRINTH_ORGANIZATION = 'modrinth-organization';
+    public const MODRINTH_ORGANIZATION_PROJECTS = 'modrinth-organization-projects';
+    public const MODRINTH_ORGANIZATIONS = 'modrinth-organizations';
+    public const MODRINTH_PROJECT = 'modrinth-project';
+    public const MODRINTH_PROJECT_DISCLOSURES = 'modrinth-project-disclosures';
+    public const MODRINTH_PROJECT_VERSION = 'modrinth-project-version';
+    public const MODRINTH_PROJECT_VERSIONS = 'modrinth-project-versions';
+    public const MODRINTH_PROJECTS = 'modrinth-projects';
+    public const MODRINTH_RANDOM_PROJECTS = 'modrinth-random-projects';
+    public const MODRINTH_SEARCH = 'modrinth-search';
+    public const MODRINTH_SEARCH_V3 = 'modrinth-search-v3';
+    public const MODRINTH_SEARCH_V3_BODY = 'modrinth-search-v3-body';
+    public const MODRINTH_SEARCH_V3_OPTIONS = 'modrinth-search-v3-options';
+    public const MODRINTH_STATISTICS = 'modrinth-statistics';
+    public const MODRINTH_TAGS = 'modrinth-tags';
+    public const MODRINTH_VERSION = 'modrinth-version';
+    public const MODRINTH_VERSIONS = 'modrinth-versions';
     public const MONCLER_CATEGORIES = 'moncler-categories';
     public const MONCLER_CATEGORY = 'moncler-category';
     public const MONCLER_PRODUCT = 'moncler-product';
@@ -170338,6 +195032,31 @@ final class OperationId
     public const MONITORS_GET = 'monitors-get';
     public const MONITORS_LIST = 'monitors-list';
     public const MONITORS_UPDATE = 'monitors-update';
+    public const MOTO_GP_MOTOGP_BMW_AWARD = 'motogp-bmw-award';
+    public const MOTO_GP_MOTOGP_CATEGORIES = 'motogp-categories';
+    public const MOTO_GP_MOTOGP_CIRCUIT_POLES = 'motogp-circuit-poles';
+    public const MOTO_GP_MOTOGP_CIRCUIT_RECORDS = 'motogp-circuit-records';
+    public const MOTO_GP_MOTOGP_CIRCUIT_WINS = 'motogp-circuit-wins';
+    public const MOTO_GP_MOTOGP_CLASSIFICATIONS = 'motogp-classifications';
+    public const MOTO_GP_MOTOGP_CONTENT_CATEGORIES = 'motogp-content-categories';
+    public const MOTO_GP_MOTOGP_CONTENT_EVENT = 'motogp-content-event';
+    public const MOTO_GP_MOTOGP_CONTENT_EVENTS = 'motogp-content-events';
+    public const MOTO_GP_MOTOGP_ENTRY_GRID_OPTIONS = 'motogp-entry-grid-options';
+    public const MOTO_GP_MOTOGP_ENTRY_LIST = 'motogp-entry-list';
+    public const MOTO_GP_MOTOGP_EVENT_FILES = 'motogp-event-files';
+    public const MOTO_GP_MOTOGP_EVENTS = 'motogp-events';
+    public const MOTO_GP_MOTOGP_LATEST_SESSION = 'motogp-latest-session';
+    public const MOTO_GP_MOTOGP_NEXT_LIVE_SESSION = 'motogp-next-live-session';
+    public const MOTO_GP_MOTOGP_SEASONS = 'motogp-seasons';
+    public const MOTO_GP_MOTOGP_SESSIONS = 'motogp-sessions';
+    public const MOTO_GP_MOTOGP_STANDINGS = 'motogp-standings';
+    public const MOTO_GP_MOTOGP_STANDINGS_FILES = 'motogp-standings-files';
+    public const MOTO_GP_MOTOGP_STARTING_GRID = 'motogp-starting-grid';
+    public const NASCAR_LIVE_FEED = 'nascar-live-feed';
+    public const NASCAR_RACE_WEEKEND = 'nascar-race-weekend';
+    public const NASCAR_RACES = 'nascar-races';
+    public const NASCAR_SEASON_RACES = 'nascar-season-races';
+    public const NASCAR_SERIES = 'nascar-series';
     public const NATION_AFRICA_NATIONAFRICA_ARTICLE = 'nationafrica-article';
     public const NATION_AFRICA_NATIONAFRICA_AUTHOR = 'nationafrica-author';
     public const NATION_AFRICA_NATIONAFRICA_HEADLINES = 'nationafrica-headlines';
@@ -170348,6 +195067,43 @@ final class OperationId
     public const NATIONAL_POST_NATIONALPOST_HEADLINES = 'nationalpost-headlines';
     public const NATIONAL_POST_NATIONALPOST_NEWS = 'nationalpost-news';
     public const NATIONAL_POST_NATIONALPOST_SECTIONS = 'nationalpost-sections';
+    public const NBA_BOX_SCORE = 'nba-box-score';
+    public const NBA_BOX_SCORE_ADVANCED = 'nba-box-score-advanced';
+    public const NBA_BOX_SCORE_FOUR_FACTORS = 'nba-box-score-four-factors';
+    public const NBA_BOX_SCORE_MISC = 'nba-box-score-misc';
+    public const NBA_BOX_SCORE_PLAYER_TRACK = 'nba-box-score-player-track';
+    public const NBA_BOX_SCORE_SCORING = 'nba-box-score-scoring';
+    public const NBA_BOX_SCORE_USAGE = 'nba-box-score-usage';
+    public const NBA_COMMON_ALL_PLAYERS = 'nba-common-all-players';
+    public const NBA_DRAFT_COMBINE_ANTHRO = 'nba-draft-combine-anthro';
+    public const NBA_ENUMS = 'nba-enums';
+    public const NBA_FRANCHISE_HISTORY = 'nba-franchise-history';
+    public const NBA_GAME_DETAIL = 'nba-game-detail';
+    public const NBA_GAMES = 'nba-games';
+    public const NBA_HOMEPAGE_LEADERS = 'nba-homepage-leaders';
+    public const NBA_HUSTLE_STATS = 'nba-hustle-stats';
+    public const NBA_LEAGUE_GAME_LOG = 'nba-league-game-log';
+    public const NBA_LINEUPS = 'nba-lineups';
+    public const NBA_NEWS = 'nba-news';
+    public const NBA_PLAY_BY_PLAY = 'nba-play-by-play';
+    public const NBA_PLAYER_AWARDS = 'nba-player-awards';
+    public const NBA_PLAYER_BIO_STATS = 'nba-player-bio-stats';
+    public const NBA_PLAYER_CAREER_STATS = 'nba-player-career-stats';
+    public const NBA_PLAYER_DASH_PT_SHOTS = 'nba-player-dash-pt-shots';
+    public const NBA_PLAYER_INFO = 'nba-player-info';
+    public const NBA_PLAYER_STATS = 'nba-player-stats';
+    public const NBA_PLAYERS = 'nba-players';
+    public const NBA_PLAYOFF_PICTURE = 'nba-playoff-picture';
+    public const NBA_PT_DEFEND = 'nba-pt-defend';
+    public const NBA_PT_STATS = 'nba-pt-stats';
+    public const NBA_SCOREBOARD = 'nba-scoreboard';
+    public const NBA_STANDINGS = 'nba-standings';
+    public const NBA_SYNERGY_PLAY_TYPES = 'nba-synergy-play-types';
+    public const NBA_TEAM_DETAILS = 'nba-team-details';
+    public const NBA_TEAM_ROSTER = 'nba-team-roster';
+    public const NBA_TEAM_SHOT_LOCATIONS = 'nba-team-shot-locations';
+    public const NBA_TEAM_STATS = 'nba-team-stats';
+    public const NBA_TEAM_STATS_LEADERS = 'nba-team-stats-leaders';
     public const NBC_NEWS_CALL = 'nbc-news';
     public const NBC_NEWS_NBC_ARTICLE = 'nbc-article';
     public const NBC_NEWS_NBC_AUTHOR = 'nbc-author';
@@ -170365,6 +195121,14 @@ final class OperationId
     public const NDTV_VIDEO = 'ndtv-video';
     public const NDTV_VIDEO_CATEGORIES = 'ndtv-video-categories';
     public const NDTV_VIDEOS = 'ndtv-videos';
+    public const NET_SHORT_NETSHORT_BROWSE = 'netshort-browse';
+    public const NET_SHORT_NETSHORT_GENRES = 'netshort-genres';
+    public const NET_SHORT_NETSHORT_HOME = 'netshort-home';
+    public const NET_SHORT_NETSHORT_LABEL = 'netshort-label';
+    public const NET_SHORT_NETSHORT_PLOTS = 'netshort-plots';
+    public const NET_SHORT_NETSHORT_SEARCH = 'netshort-search';
+    public const NET_SHORT_NETSHORT_TITLE = 'netshort-title';
+    public const NET_SHORT_NETSHORT_TOPLIST = 'netshort-toplist';
     public const NEW_YORK_DAILY_NEWS_NYDAILYNEWS_ARTICLE = 'nydailynews-article';
     public const NEW_YORK_DAILY_NEWS_NYDAILYNEWS_AUTHOR = 'nydailynews-author';
     public const NEW_YORK_DAILY_NEWS_NYDAILYNEWS_HEADLINES = 'nydailynews-headlines';
@@ -170409,6 +195173,23 @@ final class OperationId
     public const NEWSWEEK_HEADLINES = 'newsweek-headlines';
     public const NEWSWEEK_NEWS = 'newsweek-news';
     public const NEWSWEEK_SECTIONS = 'newsweek-sections';
+    public const NFHS_ACTIVITIES = 'nfhs-activities';
+    public const NFHS_AFFILIATE = 'nfhs-affiliate';
+    public const NFHS_AFFILIATES = 'nfhs-affiliates';
+    public const NFHS_ASSOCIATION = 'nfhs-association';
+    public const NFHS_ASSOCIATIONS = 'nfhs-associations';
+    public const NFHS_EVENT = 'nfhs-event';
+    public const NFHS_EVENTS = 'nfhs-events';
+    public const NFHS_FILTERS = 'nfhs-filters';
+    public const NFHS_HIGHLIGHTS = 'nfhs-highlights';
+    public const NFHS_PRODUCER = 'nfhs-producer';
+    public const NFHS_PUBLISHER = 'nfhs-publisher';
+    public const NFHS_SCHOOL = 'nfhs-school';
+    public const NFHS_SCHOOLS = 'nfhs-schools';
+    public const NFHS_SEARCH = 'nfhs-search';
+    public const NFHS_SPORTS = 'nfhs-sports';
+    public const NFHS_STATES = 'nfhs-states';
+    public const NFHS_SUGGEST = 'nfhs-suggest';
     public const NIKE_CATEGORIES = 'nike-categories';
     public const NIKE_PRODUCT = 'nike-product';
     public const NIKE_PRODUCT_AVAILABILITY = 'nike-product-availability';
@@ -170468,8 +195249,11 @@ final class OperationId
     public const OPEN_DOTA_OPENDOTA_ABILITIES = 'opendota-abilities';
     public const OPEN_DOTA_OPENDOTA_BENCHMARKS = 'opendota-benchmarks';
     public const OPEN_DOTA_OPENDOTA_CONSTANTS = 'opendota-constants';
+    public const OPEN_DOTA_OPENDOTA_FIND_MATCHES = 'opendota-find-matches';
+    public const OPEN_DOTA_OPENDOTA_HERO_DESCRIPTIONS = 'opendota-hero-descriptions';
     public const OPEN_DOTA_OPENDOTA_HERO_DURATIONS = 'opendota-hero-durations';
     public const OPEN_DOTA_OPENDOTA_HERO_ITEMS = 'opendota-hero-items';
+    public const OPEN_DOTA_OPENDOTA_HERO_MATCHES = 'opendota-hero-matches';
     public const OPEN_DOTA_OPENDOTA_HERO_MATCHUPS = 'opendota-hero-matchups';
     public const OPEN_DOTA_OPENDOTA_HERO_STATS = 'opendota-hero-stats';
     public const OPEN_DOTA_OPENDOTA_HEROES = 'opendota-heroes';
@@ -170483,6 +195267,7 @@ final class OperationId
     public const OPEN_DOTA_OPENDOTA_PATCH_NOTES = 'opendota-patch-notes';
     public const OPEN_DOTA_OPENDOTA_PRO_MATCHES = 'opendota-pro-matches';
     public const OPEN_DOTA_OPENDOTA_PRO_PLAYERS = 'opendota-pro-players';
+    public const OPEN_DOTA_OPENDOTA_PUBLIC_MATCHES = 'opendota-public-matches';
     public const OPEN_DOTA_OPENDOTA_RANK_DISTRIBUTION = 'opendota-rank-distribution';
     public const OPEN_DOTA_OPENDOTA_RECORDS = 'opendota-records';
     public const OPEN_DOTA_OPENDOTA_SCENARIOS = 'opendota-scenarios';
@@ -170491,6 +195276,46 @@ final class OperationId
     public const OPEN_DOTA_OPENDOTA_TEAM_MATCHES = 'opendota-team-matches';
     public const OPEN_DOTA_OPENDOTA_TEAM_PLAYERS = 'opendota-team-players';
     public const OPEN_DOTA_OPENDOTA_TEAMS = 'opendota-teams';
+    public const OPEN_F1_OPENF1_CAR_DATA = 'openf1-car-data';
+    public const OPEN_F1_OPENF1_CHAMPIONSHIP_DRIVERS = 'openf1-championship-drivers';
+    public const OPEN_F1_OPENF1_CHAMPIONSHIP_TEAMS = 'openf1-championship-teams';
+    public const OPEN_F1_OPENF1_DRIVERS = 'openf1-drivers';
+    public const OPEN_F1_OPENF1_INTERVALS = 'openf1-intervals';
+    public const OPEN_F1_OPENF1_LAPS = 'openf1-laps';
+    public const OPEN_F1_OPENF1_LOCATION = 'openf1-location';
+    public const OPEN_F1_OPENF1_MEETINGS = 'openf1-meetings';
+    public const OPEN_F1_OPENF1_OVERTAKES = 'openf1-overtakes';
+    public const OPEN_F1_OPENF1_PIT = 'openf1-pit';
+    public const OPEN_F1_OPENF1_POSITION = 'openf1-position';
+    public const OPEN_F1_OPENF1_RACE_CONTROL = 'openf1-race-control';
+    public const OPEN_F1_OPENF1_SESSION_RESULT = 'openf1-session-result';
+    public const OPEN_F1_OPENF1_SESSIONS = 'openf1-sessions';
+    public const OPEN_F1_OPENF1_STARTING_GRID = 'openf1-starting-grid';
+    public const OPEN_F1_OPENF1_STINTS = 'openf1-stints';
+    public const OPEN_F1_OPENF1_TEAM_RADIO = 'openf1-team-radio';
+    public const OPEN_F1_OPENF1_WEATHER = 'openf1-weather';
+    public const OPEN_LIGA_DB_OPENLIGADB_CURRENT_GROUP = 'openligadb-current-group';
+    public const OPEN_LIGA_DB_OPENLIGADB_CURRENT_MATCHDAY = 'openligadb-current-matchday';
+    public const OPEN_LIGA_DB_OPENLIGADB_GOAL_GETTERS = 'openligadb-goal-getters';
+    public const OPEN_LIGA_DB_OPENLIGADB_GROUPS = 'openligadb-groups';
+    public const OPEN_LIGA_DB_OPENLIGADB_LAST_CHANGED = 'openligadb-last-changed';
+    public const OPEN_LIGA_DB_OPENLIGADB_LAST_MATCH = 'openligadb-last-match';
+    public const OPEN_LIGA_DB_OPENLIGADB_LAST_TEAM_MATCH = 'openligadb-last-team-match';
+    public const OPEN_LIGA_DB_OPENLIGADB_LEAGUE_MATCHES = 'openligadb-league-matches';
+    public const OPEN_LIGA_DB_OPENLIGADB_LEAGUE_TEAM_MATCHES = 'openligadb-league-team-matches';
+    public const OPEN_LIGA_DB_OPENLIGADB_LEAGUES = 'openligadb-leagues';
+    public const OPEN_LIGA_DB_OPENLIGADB_MATCH = 'openligadb-match';
+    public const OPEN_LIGA_DB_OPENLIGADB_MATCHDAY_MATCHES = 'openligadb-matchday-matches';
+    public const OPEN_LIGA_DB_OPENLIGADB_MATCHES_BY_TEAM = 'openligadb-matches-by-team';
+    public const OPEN_LIGA_DB_OPENLIGADB_MATCHES_BY_TEAM_ID = 'openligadb-matches-by-team-id';
+    public const OPEN_LIGA_DB_OPENLIGADB_NEXT_MATCH = 'openligadb-next-match';
+    public const OPEN_LIGA_DB_OPENLIGADB_NEXT_TEAM_MATCH = 'openligadb-next-team-match';
+    public const OPEN_LIGA_DB_OPENLIGADB_RESULT_INFOS = 'openligadb-result-infos';
+    public const OPEN_LIGA_DB_OPENLIGADB_RESULT_TYPES = 'openligadb-result-types';
+    public const OPEN_LIGA_DB_OPENLIGADB_SPORTS = 'openligadb-sports';
+    public const OPEN_LIGA_DB_OPENLIGADB_TABLE = 'openligadb-table';
+    public const OPEN_LIGA_DB_OPENLIGADB_TEAM_PAIR_MATCHES = 'openligadb-team-pair-matches';
+    public const OPEN_LIGA_DB_OPENLIGADB_TEAMS = 'openligadb-teams';
     public const OPEN_SEA_OPENSEA_ACTIVITY = 'opensea-activity';
     public const OPEN_SEA_OPENSEA_CATEGORIES = 'opensea-categories';
     public const OPEN_SEA_OPENSEA_CHAINS = 'opensea-chains';
@@ -170581,6 +195406,10 @@ final class OperationId
     public const PAPA_JOHN_SPAPAJOHNS_POLAND_MENU = 'papajohns-poland-menu';
     public const PAPA_JOHN_SPAPAJOHNS_RUSSIA_MENU = 'papajohns-russia-menu';
     public const PAPA_JOHN_SPAPAJOHNS_STORE = 'papajohns-store';
+    public const PARTIFUL_CITY_FACETS = 'partiful-city-facets';
+    public const PARTIFUL_CITY_FEED = 'partiful-city-feed';
+    public const PARTIFUL_EVENT = 'partiful-event';
+    public const PARTIFUL_EXPLORE_CITIES = 'partiful-explore-cities';
     public const PATREON_CREATOR = 'patreon-creator';
     public const PATREON_CREATOR_TIERS = 'patreon-creator-tiers';
     public const PATREON_EXPLORE = 'patreon-explore';
@@ -170600,6 +195429,27 @@ final class OperationId
     public const PEOPLE_HEADLINES = 'people-headlines';
     public const PEOPLE_NEWS = 'people-news';
     public const PEOPLE_SECTIONS = 'people-sections';
+    public const PET_SMART_PETSMART_CATEGORIES = 'petsmart-categories';
+    public const PET_SMART_PETSMART_PRODUCT = 'petsmart-product';
+    public const PET_SMART_PETSMART_PRODUCT_INVENTORY = 'petsmart-product-inventory';
+    public const PET_SMART_PETSMART_SEARCH = 'petsmart-search';
+    public const PET_SMART_PETSMART_SEARCH_FILTERS = 'petsmart-search-filters';
+    public const PET_SMART_PETSMART_SUGGEST = 'petsmart-suggest';
+    public const PGA_TOUR_PGATOUR_LEADERBOARD = 'pgatour-leaderboard';
+    public const PGA_TOUR_PGATOUR_PLAYERS = 'pgatour-players';
+    public const PGA_TOUR_PGATOUR_SCHEDULE = 'pgatour-schedule';
+    public const PGA_TOUR_PGATOUR_SCHEDULE_SEASONS = 'pgatour-schedule-seasons';
+    public const PGA_TOUR_PGATOUR_STAT_DETAIL = 'pgatour-stat-detail';
+    public const PGA_TOUR_PGATOUR_STAT_OPTIONS = 'pgatour-stat-options';
+    public const PGA_TOUR_PGATOUR_STATS = 'pgatour-stats';
+    public const PGA_TOUR_PGATOUR_TOURNAMENT_BROADCAST = 'pgatour-tournament-broadcast';
+    public const PGA_TOUR_PGATOUR_TOURNAMENT_COURSE_STATS = 'pgatour-tournament-course-stats';
+    public const PGA_TOUR_PGATOUR_TOURNAMENT_FIELD = 'pgatour-tournament-field';
+    public const PGA_TOUR_PGATOUR_TOURNAMENT_LINKS = 'pgatour-tournament-links';
+    public const PGA_TOUR_PGATOUR_TOURNAMENT_OVERVIEW = 'pgatour-tournament-overview';
+    public const PGA_TOUR_PGATOUR_TOURNAMENT_PAST_RESULTS = 'pgatour-tournament-past-results';
+    public const PGA_TOUR_PGATOUR_TOURNAMENT_TEE_TIMES = 'pgatour-tournament-tee-times';
+    public const PGA_TOUR_PGATOUR_TOURNAMENT_WEATHER = 'pgatour-tournament-weather';
     public const PHILADELPHIA_INQUIRER_PHILLYINQUIRER_ARTICLE = 'phillyinquirer-article';
     public const PHILADELPHIA_INQUIRER_PHILLYINQUIRER_AUTHOR = 'phillyinquirer-author';
     public const PHILADELPHIA_INQUIRER_PHILLYINQUIRER_HEADLINES = 'phillyinquirer-headlines';
@@ -170994,6 +195844,9 @@ final class OperationId
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_BROWSE_FILTERS = 'rottentomatoes-browse-filters';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_BROWSE_MOVIES = 'rottentomatoes-browse-movies';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_BROWSE_TV = 'rottentomatoes-browse-tv';
+    public const ROTTEN_TOMATOES_ROTTENTOMATOES_CRITIC = 'rottentomatoes-critic';
+    public const ROTTEN_TOMATOES_ROTTENTOMATOES_CRITIC_PUBLICATIONS = 'rottentomatoes-critic-publications';
+    public const ROTTEN_TOMATOES_ROTTENTOMATOES_CRITIC_REVIEWS = 'rottentomatoes-critic-reviews';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_CRITICS_AUTHORS = 'rottentomatoes-critics-authors';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_EDITORIAL_CONTENT = 'rottentomatoes-editorial-content';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_EDITORIAL_DETAIL = 'rottentomatoes-editorial-detail';
@@ -171003,11 +195856,17 @@ final class OperationId
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_EDITORIAL_TERMS = 'rottentomatoes-editorial-terms';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_EDITORIAL_TYPES = 'rottentomatoes-editorial-types';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_EPISODE = 'rottentomatoes-episode';
+    public const ROTTEN_TOMATOES_ROTTENTOMATOES_EPISODE_REVIEWS = 'rottentomatoes-episode-reviews';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_MOVIE = 'rottentomatoes-movie';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_MOVIE_REVIEWS = 'rottentomatoes-movie-reviews';
+    public const ROTTEN_TOMATOES_ROTTENTOMATOES_MOVIE_VIDEOS = 'rottentomatoes-movie-videos';
+    public const ROTTEN_TOMATOES_ROTTENTOMATOES_MOVIES = 'rottentomatoes-movies';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_PERSON = 'rottentomatoes-person';
+    public const ROTTEN_TOMATOES_ROTTENTOMATOES_PUBLICATION = 'rottentomatoes-publication';
+    public const ROTTEN_TOMATOES_ROTTENTOMATOES_PUBLICATION_REVIEWS = 'rottentomatoes-publication-reviews';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_SEARCH = 'rottentomatoes-search';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_SEASON = 'rottentomatoes-season';
+    public const ROTTEN_TOMATOES_ROTTENTOMATOES_SEASON_REVIEWS = 'rottentomatoes-season-reviews';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_SERIES = 'rottentomatoes-series';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_SITEMAP_URLS = 'rottentomatoes-sitemap-urls';
     public const ROTTEN_TOMATOES_ROTTENTOMATOES_SITEMAPS = 'rottentomatoes-sitemaps';
@@ -171229,6 +196088,7 @@ final class OperationId
     public const SOFA_SCORE_SOFASCORE_EVENT_LINEUPS = 'sofascore-event-lineups';
     public const SOFA_SCORE_SOFASCORE_EVENT_MANAGERS = 'sofascore-event-managers';
     public const SOFA_SCORE_SOFASCORE_EVENT_ODDS = 'sofascore-event-odds';
+    public const SOFA_SCORE_SOFASCORE_EVENT_PLAYER_ACTIONS = 'sofascore-event-player-actions';
     public const SOFA_SCORE_SOFASCORE_EVENT_PLAYER_HEATMAP = 'sofascore-event-player-heatmap';
     public const SOFA_SCORE_SOFASCORE_EVENT_PLAYER_STATISTICS = 'sofascore-event-player-statistics';
     public const SOFA_SCORE_SOFASCORE_EVENT_POINT_BY_POINT = 'sofascore-event-point-by-point';
@@ -171236,6 +196096,7 @@ final class OperationId
     public const SOFA_SCORE_SOFASCORE_EVENT_SHOTMAP = 'sofascore-event-shotmap';
     public const SOFA_SCORE_SOFASCORE_EVENT_STATISTICS = 'sofascore-event-statistics';
     public const SOFA_SCORE_SOFASCORE_EVENT_TEAM_HEATMAP = 'sofascore-event-team-heatmap';
+    public const SOFA_SCORE_SOFASCORE_EVENT_TEAM_SHOTMAP = 'sofascore-event-team-shotmap';
     public const SOFA_SCORE_SOFASCORE_EVENT_TEAM_STREAKS = 'sofascore-event-team-streaks';
     public const SOFA_SCORE_SOFASCORE_EVENT_TENNIS_POWER = 'sofascore-event-tennis-power';
     public const SOFA_SCORE_SOFASCORE_EVENT_TV_CHANNELS = 'sofascore-event-tv-channels';
@@ -171343,6 +196204,23 @@ final class OperationId
     public const SPARK_FUN_SPARKFUN_CATEGORY = 'sparkfun-category';
     public const SPARK_FUN_SPARKFUN_PRODUCT = 'sparkfun-product';
     public const SPARK_FUN_SPARKFUN_SEARCH = 'sparkfun-search';
+    public const SPEEDRUN_COM_SPEEDRUN_CATALOG = 'speedrun-catalog';
+    public const SPEEDRUN_COM_SPEEDRUN_CATEGORIES = 'speedrun-categories';
+    public const SPEEDRUN_COM_SPEEDRUN_CATEGORY_DETAIL = 'speedrun-category-detail';
+    public const SPEEDRUN_COM_SPEEDRUN_CATEGORY_RECORDS = 'speedrun-category-records';
+    public const SPEEDRUN_COM_SPEEDRUN_CATEGORY_VARIABLES = 'speedrun-category-variables';
+    public const SPEEDRUN_COM_SPEEDRUN_GAME_DETAIL = 'speedrun-game-detail';
+    public const SPEEDRUN_COM_SPEEDRUN_GAME_LEADERBOARD = 'speedrun-game-leaderboard';
+    public const SPEEDRUN_COM_SPEEDRUN_GAMES = 'speedrun-games';
+    public const SPEEDRUN_COM_SPEEDRUN_LEVEL_CATEGORIES = 'speedrun-level-categories';
+    public const SPEEDRUN_COM_SPEEDRUN_LEVEL_DETAIL = 'speedrun-level-detail';
+    public const SPEEDRUN_COM_SPEEDRUN_LEVEL_LEADERBOARD = 'speedrun-level-leaderboard';
+    public const SPEEDRUN_COM_SPEEDRUN_LEVEL_RECORDS = 'speedrun-level-records';
+    public const SPEEDRUN_COM_SPEEDRUN_LEVEL_VARIABLES = 'speedrun-level-variables';
+    public const SPEEDRUN_COM_SPEEDRUN_LEVELS = 'speedrun-levels';
+    public const SPEEDRUN_COM_SPEEDRUN_RECORDS = 'speedrun-records';
+    public const SPEEDRUN_COM_SPEEDRUN_RESOURCE_OPTIONS = 'speedrun-resource-options';
+    public const SPEEDRUN_COM_SPEEDRUN_VARIABLES = 'speedrun-variables';
     public const SPORTING_NEWS_SPORTINGNEWS_ARTICLE = 'sportingnews-article';
     public const SPORTING_NEWS_SPORTINGNEWS_AUTHOR = 'sportingnews-author';
     public const SPORTING_NEWS_SPORTINGNEWS_HEADLINES = 'sportingnews-headlines';
@@ -172099,6 +196977,12 @@ final class OperationId
     public const WEB_EXTRACT = 'extract';
     public const WEB_SCRAPE = 'web-scrape';
     public const WEB_TECHSTACK = 'web-techstack';
+    public const WEBTOON_GENRE = 'webtoon-genre';
+    public const WEBTOON_GENRES = 'webtoon-genres';
+    public const WEBTOON_ORIGINALS = 'webtoon-originals';
+    public const WEBTOON_RANKINGS = 'webtoon-rankings';
+    public const WEBTOON_SEARCH = 'webtoon-search';
+    public const WEBTOON_SERIES = 'webtoon-series';
     public const WENDYS_CATEGORIES = 'wendys-categories';
     public const WENDYS_DIRECTORY = 'wendys-directory';
     public const WENDYS_ITEM = 'wendys-item';
@@ -172140,6 +197024,16 @@ final class OperationId
     public const WOLT_RESTAURANT_MENU_SEARCH = 'wolt-restaurant-menu-search';
     public const WOLT_SEARCH = 'wolt-search';
     public const WOLT_SEARCH_FILTERS = 'wolt-search-filters';
+    public const WTA_COUNTRIES = 'wta-countries';
+    public const WTA_MATCH_STATES = 'wta-match-states';
+    public const WTA_RANKINGS = 'wta-rankings';
+    public const WTA_TOURNAMENT = 'wta-tournament';
+    public const WTA_TOURNAMENT_DRAWS = 'wta-tournament-draws';
+    public const WTA_TOURNAMENT_MATCHES = 'wta-tournament-matches';
+    public const WTA_TOURNAMENT_ORDER_OF_PLAY = 'wta-tournament-order-of-play';
+    public const WTA_TOURNAMENT_PLAYERS = 'wta-tournament-players';
+    public const WTA_TOURNAMENT_SEASONS = 'wta-tournament-seasons';
+    public const WTA_TOURNAMENTS = 'wta-tournaments';
     public const XPOST = 'x-post';
     public const XPROFILE = 'x-profile';
     public const XPROFILE_POSTS = 'x-profile-posts';
@@ -172221,30 +197115,71 @@ final class OperationId
     public const YAHOO_SEARCH_SUGGEST = 'yahoo-search-suggest';
     public const YAHOO_SEARCH_VIDEOS = 'yahoo-search-videos';
     public const YAHOO_SHOPPING_ARTICLE = 'yahoo-shopping-article';
+    public const YAHOO_SHOPPING_AUTHOR = 'yahoo-shopping-author';
+    public const YAHOO_SHOPPING_CATEGORIES = 'yahoo-shopping-categories';
     public const YAHOO_SHOPPING_CATEGORY = 'yahoo-shopping-category';
+    public const YAHOO_SHOPPING_EXPERTS = 'yahoo-shopping-experts';
     public const YAHOO_SHOPPING_HOME = 'yahoo-shopping-home';
     public const YAHOO_SHOPPING_SHOPPING_LIST = 'yahoo-shopping-shopping-list';
     public const YAHOO_SHOPPING_SHOPPING_LISTS = 'yahoo-shopping-shopping-lists';
+    public const YAHOO_SHOPPING_SITEMAP = 'yahoo-shopping-sitemap';
+    public const YAHOO_SHOPPING_SITEMAPS = 'yahoo-shopping-sitemaps';
     public const YAHOO_SHOPPING_STORE = 'yahoo-shopping-store';
     public const YAHOO_SHOPPING_STORES = 'yahoo-shopping-stores';
+    public const YAHOO_SHOPPING_SUGGEST = 'yahoo-shopping-suggest';
+    public const YAHOO_SPORTS_COLLEGE_RANKINGS = 'yahoo-sports-college-rankings';
+    public const YAHOO_SPORTS_DRAFT = 'yahoo-sports-draft';
+    public const YAHOO_SPORTS_DROPDOWN_CATALOG = 'yahoo-sports-dropdown-catalog';
     public const YAHOO_SPORTS_GAME = 'yahoo-sports-game';
     public const YAHOO_SPORTS_GOLF_LEADERBOARD = 'yahoo-sports-golf-leaderboard';
+    public const YAHOO_SPORTS_GOLF_PLAYER = 'yahoo-sports-golf-player';
+    public const YAHOO_SPORTS_GOLF_PLAYER_NEWS = 'yahoo-sports-golf-player-news';
+    public const YAHOO_SPORTS_GOLF_PLAYERS = 'yahoo-sports-golf-players';
     public const YAHOO_SPORTS_GOLF_SCHEDULE = 'yahoo-sports-golf-schedule';
+    public const YAHOO_SPORTS_HOME = 'yahoo-sports-home';
+    public const YAHOO_SPORTS_INJURY_REPORT = 'yahoo-sports-injury-report';
+    public const YAHOO_SPORTS_LEAGUE_SCHEDULE = 'yahoo-sports-league-schedule';
+    public const YAHOO_SPORTS_LEAGUES = 'yahoo-sports-leagues';
     public const YAHOO_SPORTS_MMA_FIGHT_CARD = 'yahoo-sports-mma-fight-card';
     public const YAHOO_SPORTS_MMA_SCHEDULE = 'yahoo-sports-mma-schedule';
+    public const YAHOO_SPORTS_MORE_NEWS = 'yahoo-sports-more-news';
     public const YAHOO_SPORTS_MOTORSPORTS_RACE = 'yahoo-sports-motorsports-race';
     public const YAHOO_SPORTS_MOTORSPORTS_SCHEDULE = 'yahoo-sports-motorsports-schedule';
+    public const YAHOO_SPORTS_NAVIGATION = 'yahoo-sports-navigation';
+    public const YAHOO_SPORTS_NETWORK_CATALOG = 'yahoo-sports-network-catalog';
     public const YAHOO_SPORTS_NEWS = 'yahoo-sports-news';
+    public const YAHOO_SPORTS_NEWSLETTER_ARCHIVE = 'yahoo-sports-newsletter-archive';
+    public const YAHOO_SPORTS_NEWSLETTERS = 'yahoo-sports-newsletters';
+    public const YAHOO_SPORTS_ODDS_FEATURED = 'yahoo-sports-odds-featured';
+    public const YAHOO_SPORTS_ODDS_GAME = 'yahoo-sports-odds-game';
+    public const YAHOO_SPORTS_ODDS_GAMES = 'yahoo-sports-odds-games';
+    public const YAHOO_SPORTS_ODDS_TRENDING = 'yahoo-sports-odds-trending';
     public const YAHOO_SPORTS_OLYMPICS_MEDALS = 'yahoo-sports-olympics-medals';
     public const YAHOO_SPORTS_PLAYER = 'yahoo-sports-player';
+    public const YAHOO_SPORTS_PLAYER_SEARCH = 'yahoo-sports-player-search';
+    public const YAHOO_SPORTS_PLAYOFF_BRACKET = 'yahoo-sports-playoff-bracket';
+    public const YAHOO_SPORTS_PLAYOFF_BRACKET_CATALOG = 'yahoo-sports-playoff-bracket-catalog';
+    public const YAHOO_SPORTS_RSS_CATALOG = 'yahoo-sports-rss-catalog';
+    public const YAHOO_SPORTS_RSS_FEED = 'yahoo-sports-rss-feed';
+    public const YAHOO_SPORTS_SCHEDULE_CATALOG = 'yahoo-sports-schedule-catalog';
     public const YAHOO_SPORTS_SCOREBOARD = 'yahoo-sports-scoreboard';
+    public const YAHOO_SPORTS_SECTION_STREAM = 'yahoo-sports-section-stream';
+    public const YAHOO_SPORTS_SOCCER_SCOREBOARD = 'yahoo-sports-soccer-scoreboard';
+    public const YAHOO_SPORTS_SPORTSBOOK_CATALOG = 'yahoo-sports-sportsbook-catalog';
     public const YAHOO_SPORTS_STANDINGS = 'yahoo-sports-standings';
+    public const YAHOO_SPORTS_STATS = 'yahoo-sports-stats';
+    public const YAHOO_SPORTS_STATS_CATALOG = 'yahoo-sports-stats-catalog';
+    public const YAHOO_SPORTS_STATS_DISCOVERY = 'yahoo-sports-stats-discovery';
     public const YAHOO_SPORTS_TEAM = 'yahoo-sports-team';
     public const YAHOO_SPORTS_TEAM_ROSTER = 'yahoo-sports-team-roster';
     public const YAHOO_SPORTS_TEAM_SCHEDULE = 'yahoo-sports-team-schedule';
     public const YAHOO_SPORTS_TENNIS_RANKINGS = 'yahoo-sports-tennis-rankings';
     public const YAHOO_SPORTS_TENNIS_SCHEDULE = 'yahoo-sports-tennis-schedule';
     public const YAHOO_SPORTS_TENNIS_SCOREBOARD = 'yahoo-sports-tennis-scoreboard';
+    public const YAHOO_SPORTS_TOPIC_NEWS = 'yahoo-sports-topic-news';
+    public const YAHOO_SPORTS_VIDEO_HEADLINES = 'yahoo-sports-video-headlines';
+    public const YAHOO_SPORTS_VIDEO_LIST_CATALOG = 'yahoo-sports-video-list-catalog';
+    public const YAHOO_SPORTS_WATCH_SCHEDULE = 'yahoo-sports-watch-schedule';
     public const YAHOO_TECH_ARTICLE = 'yahoo-tech-article';
     public const YAHOO_TECH_CATEGORY = 'yahoo-tech-category';
     public const YAHOO_TECH_HOME = 'yahoo-tech-home';
