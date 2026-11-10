@@ -13,7 +13,7 @@ plus retries, pagination, middleware hooks, and client-side rate limiting.
 Published on [Packagist](https://packagist.org/packages/crawlora/sdk). Install the stable release:
 
 ```sh
-composer require crawlora/sdk:1.50
+composer require crawlora/sdk:1.51
 ```
 
 ## Quick start
