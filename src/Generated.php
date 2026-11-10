@@ -2543,6 +2543,12 @@ abstract class EngadgetGroup {}
 abstract class ENewsGroup {}
 
 /**
+ * @method mixed epicgamesFreePromotions(array $params = [], array $options = []) epicgames-free-promotions (GET /epicgames/free-promotions)
+ *   params: string $locale, string $country, string $allowCountries
+ */
+abstract class EpicGamesStoreGroup {}
+
+/**
  * @method mixed athlete(array $params = [], array $options = []) espn-athlete (GET /espn/athlete)
  *   params: 'football'|'basketball'|'baseball'|'hockey'|'soccer' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl'|'eng.1'|'esp.1'|'ita.1'|'ger.1'|'fra.1'|'usa.1'|'uefa.champions' $league, string $athlete
  * @method mixed gameSummary(array $params = [], array $options = []) espn-game-summary (GET /espn/game-summary)
@@ -4198,6 +4204,15 @@ abstract class HarvardBusinessReviewGroup {}
  * @method mixed topSearches(array $params = [], array $options = []) healthgrades-top-searches (GET /healthgrades/top-searches)
  */
 abstract class HealthgradesGroup {}
+
+/**
+ * @method mixed card(array $params = [], array $options = []) hearthstone-card (GET /hearthstone/card)
+ *   params: string $id
+ * @method mixed cards(array $params = [], array $options = []) hearthstone-cards (GET /hearthstone/cards)
+ *   params: int $page, int $pageSize, string $locale, string $class, string $set, string $sort, 'asc'|'desc' $order, string $gameMode, array<'0'|'1'> $collectible, string $textFilter, string $filterLocale, string $deckcode, array<int> $cardSetId, array<int> $spellSchoolId, array<int> $rarityId, array<int> $cardTypeId, array<string> $manaCost, array<string> $attack, array<string> $health, array<string> $armor, string $rarity, array<string> $type, string $bgCardType, string $keyword, string $minionType, string $deckFormat, array<'1'|'2'|'3'|'4'|'5'|'6'|'7'> $tier, string $mercenaryRole, string $mercenaryFaction, 'grid'|'table' $viewMode, string $cardBackCategory, string $spellSchool, string $faction, string $bgGameMode, bool $zilliaxMod
+ * @method mixed filters(array $params = [], array $options = []) hearthstone-filters (GET /hearthstone/filters)
+ */
+abstract class HearthstoneGroup {}
 
 /**
  * @method mixed categories(array $params = [], array $options = []) hermes-categories (GET /hermes/categories)
@@ -5967,11 +5982,15 @@ abstract class NationalPostGroup {}
  *   params: '00' $league_id, 'Points'|'Rebounds' $stat_category, 'Team' $player_or_team, string $player_scope, 'Season' $game_scope
  * @method mixed hustleStats(array $params = [], array $options = []) nba-hustle-stats (GET /nba/hustle-stats)
  *   params: string $game_id
+ * @method mixed hustleTeam(array $params = [], array $options = []) nba-hustle-team (GET /nba/hustle-team)
+ *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, 'PerGame'|'Totals'|'Per36'|'Per48'|'Per100Possessions'|'MinutesPer'|'PerPossession' $per_mode
  * @method mixed leagueGameLog(array $params = [], array $options = []) nba-league-game-log (GET /nba/league-game-log)
  *   params: '00' $league_id, string $season, 'Regular Season' $season_type, 'DESC' $direction, 'T' $player_or_team, 'DATE' $sorter
  * @method mixed lineups(array $params = [], array $options = []) nba-lineups (GET /nba/lineups)
  *   params: '00' $league_id, string $season, 'Regular Season' $season_type, 'Base' $measure_type, 'PerGame' $per_mode, '5' $group_quantity
  * @method mixed news(array $params = [], array $options = []) nba-news (GET /nba/news)
+ * @method mixed oppPtShot(array $params = [], array $options = []) nba-opp-pt-shot (GET /nba/opp-pt-shot)
+ *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, 'PerGame'|'Totals'|'Per36'|'Per48'|'Per100Possessions'|'MinutesPer'|'PerPossession' $per_mode
  * @method mixed playByPlay(array $params = [], array $options = []) nba-play-by-play (GET /nba/play-by-play)
  *   params: string $game_id, int $start_period, int $end_period
  * @method mixed playerAwards(array $params = [], array $options = []) nba-player-awards (GET /nba/player-awards)
@@ -5980,12 +5999,22 @@ abstract class NationalPostGroup {}
  *   params: '00' $league_id, string $season, 'Regular Season' $season_type, 'PerGame' $per_mode
  * @method mixed playerCareerStats(array $params = [], array $options = []) nba-player-career-stats (GET /nba/player-career-stats)
  *   params: int $player_id, 'PerGame' $per_mode, '00' $league_id
+ * @method mixed playerClutch(array $params = [], array $options = []) nba-player-clutch (GET /nba/player-clutch)
+ *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, 'PerGame'|'Totals'|'Per36'|'Per48'|'Per100Possessions'|'MinutesPer'|'PerPossession' $per_mode, 'Base'|'Advanced'|'Misc'|'Scoring'|'Defense'|'Opponent' $measure_type, 'Last 5 Minutes' $clutch_time, 'Ahead or Behind' $ahead_behind, '5' $point_diff
  * @method mixed playerDashPtShots(array $params = [], array $options = []) nba-player-dash-pt-shots (GET /nba/player-dash-pt-shots)
  *   params: int $player_id, '00' $league_id, string $season, 'Regular Season' $season_type, 'PerGame' $per_mode
+ * @method mixed playerGameLogs(array $params = [], array $options = []) nba-player-game-logs (GET /nba/player-game-logs)
+ *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, int $player_id
  * @method mixed playerInfo(array $params = [], array $options = []) nba-player-info (GET /nba/player-info)
  *   params: int $player_id, '00' $league_id
+ * @method mixed playerProfileV2(array $params = [], array $options = []) nba-player-profile-v2 (GET /nba/player-profile-v2)
+ *   params: int $player_id, 'PerGame'|'Totals'|'Per36'|'Per48'|'Per100Possessions'|'MinutesPer'|'PerPossession' $per_mode
+ * @method mixed playerPtShot(array $params = [], array $options = []) nba-player-pt-shot (GET /nba/player-pt-shot)
+ *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, 'PerGame'|'Totals'|'Per36'|'Per48'|'Per100Possessions'|'MinutesPer'|'PerPossession' $per_mode
  * @method mixed playerStats(array $params = [], array $options = []) nba-player-stats (GET /nba/player-stats)
  *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, 'Base'|'Advanced'|'Misc'|'Scoring'|'Defense'|'Opponent' $measure_type, 'PerGame'|'Totals'|'Per36'|'Per48'|'Per100Possessions'|'MinutesPer'|'PerPossession' $per_mode
+ * @method mixed playerStreakFinder(array $params = [], array $options = []) nba-player-streak-finder (GET /nba/player-streak-finder)
+ *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, int $player_id, int $min_games
  * @method mixed players(array $params = [], array $options = []) nba-players (GET /nba/players)
  *   params: '00' $league_id, string $season, int $team_id, bool $active
  * @method mixed playoffPicture(array $params = [], array $options = []) nba-playoff-picture (GET /nba/playoff-picture)
@@ -6000,8 +6029,20 @@ abstract class NationalPostGroup {}
  *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type
  * @method mixed synergyPlayTypes(array $params = [], array $options = []) nba-synergy-play-types (GET /nba/synergy-play-types)
  *   params: '00' $league_id, string $season_year, 'Regular Season' $season_type, 'Isolation' $play_type, 'PerGame' $per_mode, 'T' $player_or_team, 'offensive' $type_grouping
+ * @method mixed teamDashPtPass(array $params = [], array $options = []) nba-team-dash-pt-pass (GET /nba/team-dash-pt-pass)
+ *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, 'PerGame'|'Totals'|'Per36'|'Per48'|'Per100Possessions'|'MinutesPer'|'PerPossession' $per_mode, int $team_id
+ * @method mixed teamDashPtShots(array $params = [], array $options = []) nba-team-dash-pt-shots (GET /nba/team-dash-pt-shots)
+ *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, 'PerGame'|'Totals'|'Per36'|'Per48'|'Per100Possessions'|'MinutesPer'|'PerPossession' $per_mode, int $team_id
  * @method mixed teamDetails(array $params = [], array $options = []) nba-team-details (GET /nba/team-details)
  *   params: int $team_id, '00' $league_id
+ * @method mixed teamGameLogs(array $params = [], array $options = []) nba-team-game-logs (GET /nba/team-game-logs)
+ *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, int $team_id
+ * @method mixed teamInfoCommon(array $params = [], array $options = []) nba-team-info-common (GET /nba/team-info-common)
+ *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, int $team_id
+ * @method mixed teamOnOff(array $params = [], array $options = []) nba-team-on-off (GET /nba/team-on-off)
+ *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, 'PerGame'|'Totals'|'Per36'|'Per48'|'Per100Possessions'|'MinutesPer'|'PerPossession' $per_mode, 'Base'|'Advanced'|'Misc'|'Scoring'|'Defense'|'Opponent' $measure_type, int $team_id
+ * @method mixed teamPtShot(array $params = [], array $options = []) nba-team-pt-shot (GET /nba/team-pt-shot)
+ *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, 'PerGame'|'Totals'|'Per36'|'Per48'|'Per100Possessions'|'MinutesPer'|'PerPossession' $per_mode
  * @method mixed teamRoster(array $params = [], array $options = []) nba-team-roster (GET /nba/team-roster)
  *   params: int $team_id, '00' $league_id, string $season
  * @method mixed teamShotLocations(array $params = [], array $options = []) nba-team-shot-locations (GET /nba/team-shot-locations)
@@ -6010,6 +6051,8 @@ abstract class NationalPostGroup {}
  *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, 'Base'|'Advanced'|'Misc'|'Scoring'|'Defense'|'Opponent' $measure_type, 'PerGame'|'Totals'|'Per36'|'Per48'|'Per100Possessions'|'MinutesPer'|'PerPossession' $per_mode
  * @method mixed teamStatsLeaders(array $params = [], array $options = []) nba-team-stats-leaders (GET /nba/team-stats-leaders)
  *   params: 'PTS'|'REB'|'AST'|'BLK'|'STL'|'TOV' $stat_category, '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, 'PerGame'|'Totals'|'Per36'|'Per48'|'Per100Possessions'|'MinutesPer'|'PerPossession' $per_mode, 'S' $scope
+ * @method mixed teamYears(array $params = [], array $options = []) nba-team-years (GET /nba/team-years)
+ *   params: '00' $league_id
  */
 abstract class NbaGroup {}
 
@@ -6174,6 +6217,19 @@ abstract class TheNewYorkerGroup {}
  *   params: string $search_term, string $scope, int $size
  */
 abstract class NfhsGroup {}
+
+/**
+ * @method mixed gamecenterBoxscore(array $params = [], array $options = []) nhl-gamecenter-boxscore (GET /nhl/gamecenter/boxscore)
+ *   params: string $game_id
+ * @method mixed gamecenterPlayByPlay(array $params = [], array $options = []) nhl-gamecenter-play-by-play (GET /nhl/gamecenter/play-by-play)
+ *   params: string $game_id
+ * @method mixed schedule(array $params = [], array $options = []) nhl-schedule (GET /nhl/schedule)
+ *   params: string $date
+ * @method mixed seasons(array $params = [], array $options = []) nhl-seasons (GET /nhl/seasons)
+ * @method mixed standings(array $params = [], array $options = []) nhl-standings (GET /nhl/standings)
+ *   params: string $date
+ */
+abstract class NhlGroup {}
 
 /**
  * @method mixed categories(array $params = [], array $options = []) nike-categories (GET /nike/categories)
@@ -7925,6 +7981,35 @@ abstract class SecEdgarGroup {}
  *   params: string $query
  */
 abstract class SephoraGroup {}
+
+/**
+ * @method mixed pokemongoEventDetailCommunityDay(array $params = [], array $options = []) serebii-pokemongo-event-detail-community-day (GET /serebii/pokemongo/communityday/{filename})
+ *   params: string $filename
+ * @method mixed pokemongoEventCategories(array $params = [], array $options = []) serebii-pokemongo-event-categories (GET /serebii/pokemongo/event-categories)
+ * @method mixed pokemongoEventOnlyMoves(array $params = [], array $options = []) serebii-pokemongo-event-only-moves (GET /serebii/pokemongo/event-only-moves)
+ * @method mixed pokemongoEventOnlyResearch(array $params = [], array $options = []) serebii-pokemongo-event-only-research (GET /serebii/pokemongo/event-only-research)
+ * @method mixed pokemongoEvents(array $params = [], array $options = []) serebii-pokemongo-events (GET /serebii/pokemongo/events)
+ *   params: 'events.shtml'|'reallifeevents.shtml'|'ticketevents.shtml'|'communityday.shtml'|'raidday.shtml'|'maxbattleday.shtml'|'incenseday.shtml'|'limitedresearchday.shtml'|'hatchday.shtml' $category
+ * @method mixed pokemongoEventDetailGlobal(array $params = [], array $options = []) serebii-pokemongo-event-detail-global (GET /serebii/pokemongo/events/{filename})
+ *   params: string $filename
+ * @method mixed pokemongoEventDetailHatchDay(array $params = [], array $options = []) serebii-pokemongo-event-detail-hatch-day (GET /serebii/pokemongo/hatchday/{filename})
+ *   params: string $filename
+ * @method mixed pokemongoEventDetailIncenseDay(array $params = [], array $options = []) serebii-pokemongo-event-detail-incense-day (GET /serebii/pokemongo/incenseday/{filename})
+ *   params: string $filename
+ * @method mixed pokemongoEventDetailResearchDay(array $params = [], array $options = []) serebii-pokemongo-event-detail-research-day (GET /serebii/pokemongo/limitedresearchday/{filename})
+ *   params: string $filename
+ * @method mixed pokemongoEventDetailMaxBattleDay(array $params = [], array $options = []) serebii-pokemongo-event-detail-max-battle-day (GET /serebii/pokemongo/maxbattleday/{filename})
+ *   params: string $filename
+ * @method mixed pokemongoEventDetailRaidDay(array $params = [], array $options = []) serebii-pokemongo-event-detail-raid-day (GET /serebii/pokemongo/raidday/{filename})
+ *   params: string $filename
+ * @method mixed pokemongoEventDetailRealLife(array $params = [], array $options = []) serebii-pokemongo-event-detail-real-life (GET /serebii/pokemongo/reallifeevents/{filename})
+ *   params: string $filename
+ * @method mixed pokemongoSpotlightHours(array $params = [], array $options = []) serebii-pokemongo-spotlight-hours (GET /serebii/pokemongo/spotlight-hours)
+ * @method mixed pokemongoEventDetailTicket(array $params = [], array $options = []) serebii-pokemongo-event-detail-ticket (GET /serebii/pokemongo/ticketevents/{filename})
+ *   params: string $filename
+ * @method mixed pokemongoUnownEvents(array $params = [], array $options = []) serebii-pokemongo-unown-events (GET /serebii/pokemongo/unown-events)
+ */
+abstract class SerebiiGroup {}
 
 /**
  * @method mixed article(array $params = [], array $options = []) sevennewsau-article (GET /sevennewsau/article)
@@ -10932,6 +11017,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\EconomicTimesGroup $economicTimes
  * @property-read \Crawlora\Generated\EngadgetGroup $engadget
  * @property-read \Crawlora\Generated\ENewsGroup $eNews
+ * @property-read \Crawlora\Generated\EpicGamesStoreGroup $epicGamesStore
  * @property-read \Crawlora\Generated\EspnGroup $espn
  * @property-read \Crawlora\Generated\EtsyGroup $etsy
  * @property-read \Crawlora\Generated\EuronewsGroup $euronews
@@ -11000,6 +11086,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\GymsharkGroup $gymshark
  * @property-read \Crawlora\Generated\HarvardBusinessReviewGroup $harvardBusinessReview
  * @property-read \Crawlora\Generated\HealthgradesGroup $healthgrades
+ * @property-read \Crawlora\Generated\HearthstoneGroup $hearthstone
  * @property-read \Crawlora\Generated\HermesGroup $hermes
  * @property-read \Crawlora\Generated\HindustanTimesGroup $hindustanTimes
  * @property-read \Crawlora\Generated\HltvGroup $hltv
@@ -11101,6 +11188,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\NewsweekGroup $newsweek
  * @property-read \Crawlora\Generated\TheNewYorkerGroup $theNewYorker
  * @property-read \Crawlora\Generated\NfhsGroup $nfhs
+ * @property-read \Crawlora\Generated\NhlGroup $nhl
  * @property-read \Crawlora\Generated\NikeGroup $nike
  * @property-read \Crawlora\Generated\NineToFiveGoogleGroup $nineToFiveGoogle
  * @property-read \Crawlora\Generated\NineToFiveMacGroup $nineToFiveMac
@@ -11190,6 +11278,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\SeattleTimesGroup $seattleTimes
  * @property-read \Crawlora\Generated\SecEdgarGroup $secEdgar
  * @property-read \Crawlora\Generated\SephoraGroup $sephora
+ * @property-read \Crawlora\Generated\SerebiiGroup $serebii
  * @property-read \Crawlora\Generated\SevenNewsAustraliaGroup $sevenNewsAustralia
  * @property-read \Crawlora\Generated\SfgateGroup $sfgate
  * @property-read \Crawlora\Generated\ShakeShackGroup $shakeShack

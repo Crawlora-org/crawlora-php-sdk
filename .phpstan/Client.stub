@@ -136,6 +136,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\EconomicTimesGroup $economicTimes
  * @property-read \Crawlora\Generated\EngadgetGroup $engadget
  * @property-read \Crawlora\Generated\ENewsGroup $eNews
+ * @property-read \Crawlora\Generated\EpicGamesStoreGroup $epicGamesStore
  * @property-read \Crawlora\Generated\EspnGroup $espn
  * @property-read \Crawlora\Generated\EtsyGroup $etsy
  * @property-read \Crawlora\Generated\EuronewsGroup $euronews
@@ -204,6 +205,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\GymsharkGroup $gymshark
  * @property-read \Crawlora\Generated\HarvardBusinessReviewGroup $harvardBusinessReview
  * @property-read \Crawlora\Generated\HealthgradesGroup $healthgrades
+ * @property-read \Crawlora\Generated\HearthstoneGroup $hearthstone
  * @property-read \Crawlora\Generated\HermesGroup $hermes
  * @property-read \Crawlora\Generated\HindustanTimesGroup $hindustanTimes
  * @property-read \Crawlora\Generated\HltvGroup $hltv
@@ -305,6 +307,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\NewsweekGroup $newsweek
  * @property-read \Crawlora\Generated\TheNewYorkerGroup $theNewYorker
  * @property-read \Crawlora\Generated\NfhsGroup $nfhs
+ * @property-read \Crawlora\Generated\NhlGroup $nhl
  * @property-read \Crawlora\Generated\NikeGroup $nike
  * @property-read \Crawlora\Generated\NineToFiveGoogleGroup $nineToFiveGoogle
  * @property-read \Crawlora\Generated\NineToFiveMacGroup $nineToFiveMac
@@ -394,6 +397,7 @@ namespace Crawlora;
  * @property-read \Crawlora\Generated\SeattleTimesGroup $seattleTimes
  * @property-read \Crawlora\Generated\SecEdgarGroup $secEdgar
  * @property-read \Crawlora\Generated\SephoraGroup $sephora
+ * @property-read \Crawlora\Generated\SerebiiGroup $serebii
  * @property-read \Crawlora\Generated\SevenNewsAustraliaGroup $sevenNewsAustralia
  * @property-read \Crawlora\Generated\SfgateGroup $sfgate
  * @property-read \Crawlora\Generated\ShakeShackGroup $shakeShack

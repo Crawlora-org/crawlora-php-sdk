@@ -49,6 +49,29 @@ $taxonomy = $client->request('boardgamegeek-taxonomy', []);
 $navigation = $client->request('cricbuzz-navigation', []);
 ```
 
+## Epic Games, Hearthstone, NHL, and Serebii
+
+The contract now includes free-game promotions, card filters, NHL season discovery,
+and Pokémon GO event listings. See [`operations.md`](operations.md) for the full
+operation reference.
+
+```php
+$promotions = $client->request('epicgames-free-promotions', []);
+$filters = $client->request('hearthstone-filters', []);
+$seasons = $client->request('nhl-seasons', []);
+$events = $client->request('serebii-pokemongo-events', ['category' => 'events.shtml']);
+```
+
+## NBA and HLTV
+
+Use the new basketball catalog/standings endpoints alongside competitive Counter-Strike rankings.
+
+```php
+$enums = $client->request('nba-enums', []);
+$standings = $client->request('nba-standings', []);
+$rankings = $client->request('hltv-rankings', []);
+```
+
 ## Company Job Searches
 
 Search public job listings directly from employer career sites:
