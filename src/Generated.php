@@ -18,6 +18,22 @@ namespace Crawlora\Generated;
 abstract class FirstDibsGroup {}
 
 /**
+ * @method mixed categories(array $params = [], array $options = []) 7brew-categories (GET /7brew/categories)
+ * @method mixed directory(array $params = [], array $options = []) 7brew-directory (GET /7brew/directory)
+ *   params: string $state, string $city
+ * @method mixed item(array $params = [], array $options = []) 7brew-item (GET /7brew/item)
+ *   params: string $path
+ * @method mixed menu(array $params = [], array $options = []) 7brew-menu (GET /7brew/menu)
+ *   params: string $category, string $menu, string $section
+ * @method mixed nearby(array $params = [], array $options = []) 7brew-nearby (GET /7brew/nearby)
+ *   params: float $lat, float $lng, int $radius, string $state, string $query, int $limit, int $offset
+ * @method mixed options(array $params = [], array $options = []) 7brew-options (GET /7brew/options)
+ * @method mixed store(array $params = [], array $options = []) 7brew-store (GET /7brew/store)
+ *   params: string $slug
+ */
+abstract class Platform7BrewGroup {}
+
+/**
  * @method mixed catalog(array $params = [], array $options = []) 7now-catalog (GET /7now/catalog)
  *   params: string $store_id, float $lat, float $lon, int $skip, int $limit
  * @method mixed categories(array $params = [], array $options = []) 7now-categories (GET /7now/categories)
@@ -464,6 +480,28 @@ abstract class ApplePodcastsGroup {}
 abstract class AppStoreGroup {}
 
 /**
+ * @method mixed app(array $params = [], array $options = []) aptoide-app (GET /aptoide/app)
+ *   params: string $package, int $app_id, string $md5, string $store, 'en_US'|'ar_SA'|'bg_BG'|'bn_BD'|'de_DE'|'el_GR'|'es_ES'|'fa_IR'|'fr_FR'|'hi_IN'|'hu_HU'|'id_ID'|'it_IT'|'mr_IN'|'ms_MY'|'my_MM'|'nl_NL'|'pa_IN'|'pl_PL'|'pt_BR'|'pt_PT'|'ro_RO'|'ru_RU'|'sr_CS'|'th_TH'|'tr_TR'|'vi_VN'|'zh_CN'|'es_MX'|'ja_JP'|'ko_KR'|'uk_UA' $language
+ * @method mixed categories(array $params = [], array $options = []) aptoide-categories (GET /aptoide/categories)
+ *   params: 'applications'|'games' $type
+ * @method mixed collections(array $params = [], array $options = []) aptoide-collections (GET /aptoide/collections)
+ *   params: int $offset, int $limit
+ * @method mixed list_(array $params = [], array $options = []) aptoide-list (GET /aptoide/list)
+ *   params: string $category, string $collection, 'latest'|'added'|'downloads'|'rating'|'trending7d'|'trending30d'|'trending90d' $sort, 'asc'|'desc' $order, int $offset, int $limit
+ * @method mixed reviews(array $params = [], array $options = []) aptoide-reviews (GET /aptoide/reviews)
+ *   params: string $package, 'reviews'|'comments' $source, 'relevance'|'latest'|'points'|'rating' $sort, int $offset, int $limit
+ * @method mixed search(array $params = [], array $options = []) aptoide-search (GET /aptoide/search)
+ *   params: string $query, 'apps'|'stores' $type, bool $trusted, int $offset, int $limit
+ * @method mixed similar(array $params = [], array $options = []) aptoide-similar (GET /aptoide/similar)
+ *   params: string $package, int $app_id, int $offset, int $limit
+ * @method mixed store(array $params = [], array $options = []) aptoide-store (GET /aptoide/store)
+ *   params: string $store, 'latest'|'added'|'downloads'|'rating'|'trending7d'|'trending30d'|'trending90d' $sort, 'asc'|'desc' $order, int $offset, int $limit
+ * @method mixed versions(array $params = [], array $options = []) aptoide-versions (GET /aptoide/versions)
+ *   params: string $package, int $app_id, string $store, int $offset, int $limit
+ */
+abstract class AptoideGroup {}
+
+/**
  * @method mixed categories(array $params = [], array $options = []) arbys-categories (GET /arbys/categories)
  *   params: int $store_id
  * @method mixed directory(array $params = [], array $options = []) arbys-directory (GET /arbys/directory)
@@ -513,6 +551,24 @@ abstract class ArsTechnicaGroup {}
  *   params: string $asin
  */
 abstract class AudibleGroup {}
+
+/**
+ * @method mixed autoscout24Dealer(array $params = [], array $options = []) autoscout24-dealer (GET /autoscout24/dealer)
+ *   params: 'com'|'de'|'at'|'it'|'fr'|'es'|'nl'|'lu'|'be-fr'|'be-nl' $site, string $slug, string $url, int $page
+ * @method mixed autoscout24Filters(array $params = [], array $options = []) autoscout24-filters (GET /autoscout24/filters)
+ *   params: 'com'|'de'|'at'|'it'|'fr'|'es'|'nl'|'lu'|'be-fr'|'be-nl' $site
+ * @method mixed autoscout24Listing(array $params = [], array $options = []) autoscout24-listing (GET /autoscout24/listing)
+ *   params: 'com'|'de'|'at'|'it'|'fr'|'es'|'nl'|'lu'|'be-fr'|'be-nl' $site, string $id, string $url
+ * @method mixed autoscout24Makes(array $params = [], array $options = []) autoscout24-makes (GET /autoscout24/makes)
+ *   params: 'com'|'de'|'at'|'it'|'fr'|'es'|'nl'|'lu'|'be-fr'|'be-nl' $site
+ * @method mixed autoscout24Models(array $params = [], array $options = []) autoscout24-models (GET /autoscout24/models)
+ *   params: 'com'|'de'|'at'|'it'|'fr'|'es'|'nl'|'lu'|'be-fr'|'be-nl' $site, int $make
+ * @method mixed autoscout24Search(array $params = [], array $options = []) autoscout24-search (GET /autoscout24/search)
+ *   params: 'com'|'de'|'at'|'it'|'fr'|'es'|'nl'|'lu'|'be-fr'|'be-nl' $site, int $make, int $model, int $model_line, string $version, string $category, string $keyword, 'A'|'B'|'D'|'E'|'F'|'I'|'L'|'NL' $country, string $zip, int $radius, float $lat, float $lon, int $price_from, int $price_to, int $year_from, int $year_to, int $mileage_from, int $mileage_to, int $power_from, int $power_to, int $engine_size_from, int $engine_size_to, int $electric_range_from, int $electric_range_to, int $doors_from, int $doors_to, int $seats_from, int $seats_to, '2'|'3'|'B'|'C'|'D'|'E'|'H'|'L'|'M'|'O' $fuel, 'A'|'M'|'S' $gear, '4'|'F'|'R' $drivetrain, '3'|'4'|'6'|'8'|'10plus' $cylinders, '1'|'2'|'3'|'4'|'5'|'6'|'7'|'12'|'13' $body, '1'|'2'|'3'|'4'|'5'|'6'|'7'|'10'|'11'|'12'|'13'|'14'|'15'|'16' $body_color, 'M'|'O' $paint, '1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'10'|'11' $interior_color, 'AL'|'CL'|'FL'|'OT'|'PL'|'VL' $upholstery, 'N'|'U'|'J'|'O'|'D'|'S' $offer, string $equipment, string $seals, '1'|'2'|'3'|'4'|'5'|'99' $price_evaluation, '1'|'2'|'3'|'4'|'5'|'6'|'11'|'7'|'8'|'9'|'10' $emission_class, '2'|'3'|'4' $emission_sticker, 'D'|'P' $seller_type, int $dealer_id, 'exclude'|'include'|'only' $damage, '1'|'2'|'3'|'4' $previous_owners, '1'|'2'|'3'|'4'|'5'|'6'|'7'|'14' $online_since, '1'|'2'|'3' $battery_ownership, bool $vat_deductible, bool $super_deal, bool $new_driver, int $finance_rate_from, int $finance_rate_to, bool $leasing, int $leasing_rate_from, int $leasing_rate_to, int $leasing_duration_from, int $leasing_duration_to, int $leasing_mileage_from, 'P'|'B' $leasing_target_group, bool $leasing_available_now, bool $leasing_trade_in_bonus, bool $leasing_environment_bonus, 'standard'|'price'|'financerate'|'leasing_rate'|'year'|'model_year'|'mileage'|'power'|'age'|'distance' $sort, 'asc'|'desc' $order, int $page
+ * @method mixed autoscout24Suggest(array $params = [], array $options = []) autoscout24-suggest (GET /autoscout24/suggest)
+ *   params: 'com'|'de'|'at'|'it'|'fr'|'es'|'nl'|'lu'|'be-fr'|'be-nl' $site, string $q, string $category, int $limit
+ */
+abstract class AutoScout24Group {}
 
 /**
  * @method mixed dealer(array $params = [], array $options = []) autotrader-dealer (GET /autotrader/dealer/{id})
@@ -1236,6 +1292,60 @@ abstract class CbsNewsGroup {}
 abstract class CbsSportsGroup {}
 
 /**
+ * @method mixed chesscomClub(array $params = [], array $options = []) chesscom-club (GET /chesscom/club/{slug})
+ *   params: string $slug
+ * @method mixed chesscomClubMatches(array $params = [], array $options = []) chesscom-club-matches (GET /chesscom/club/{slug}/matches)
+ *   params: string $slug
+ * @method mixed chesscomClubMembers(array $params = [], array $options = []) chesscom-club-members (GET /chesscom/club/{slug}/members)
+ *   params: string $slug
+ * @method mixed chesscomCountry(array $params = [], array $options = []) chesscom-country (GET /chesscom/country/{iso})
+ *   params: string $iso
+ * @method mixed chesscomMatchLive(array $params = [], array $options = []) chesscom-match-live (GET /chesscom/live-match/{id})
+ *   params: int $id
+ * @method mixed chesscomMatchLiveBoard(array $params = [], array $options = []) chesscom-match-live-board (GET /chesscom/live-match/{id}/{board})
+ *   params: int $id, int $board
+ * @method mixed chesscomMatch(array $params = [], array $options = []) chesscom-match (GET /chesscom/match/{id})
+ *   params: int $id
+ * @method mixed chesscomMatchBoard(array $params = [], array $options = []) chesscom-match-board (GET /chesscom/match/{id}/{board})
+ *   params: int $id, int $board
+ * @method mixed chesscomPlayer(array $params = [], array $options = []) chesscom-player (GET /chesscom/player/{username})
+ *   params: string $username
+ * @method mixed chesscomPlayerClubs(array $params = [], array $options = []) chesscom-player-clubs (GET /chesscom/player/{username}/clubs)
+ *   params: string $username
+ * @method mixed chesscomPlayerGames(array $params = [], array $options = []) chesscom-player-games (GET /chesscom/player/{username}/games)
+ *   params: string $username
+ * @method mixed chesscomPlayerGameMonth(array $params = [], array $options = []) chesscom-player-game-month (GET /chesscom/player/{username}/games/archive/{year}/{month})
+ *   params: string $username, string $year, string $month
+ * @method mixed chesscomPlayerGameMonthPgn(array $params = [], array $options = []) chesscom-player-game-month-pgn (GET /chesscom/player/{username}/games/archive/{year}/{month}/pgn)
+ *   params: string $username, string $year, string $month
+ * @method mixed chesscomPlayerGameArchives(array $params = [], array $options = []) chesscom-player-game-archives (GET /chesscom/player/{username}/games/archives)
+ *   params: string $username
+ * @method mixed chesscomPlayerLiveGamesBaseTime(array $params = [], array $options = []) chesscom-player-live-games-base-time (GET /chesscom/player/{username}/games/live/{base_time})
+ *   params: string $username, int $base_time
+ * @method mixed chesscomPlayerLiveGames(array $params = [], array $options = []) chesscom-player-live-games (GET /chesscom/player/{username}/games/live/{base_time}/{increment})
+ *   params: string $username, int $base_time, int $increment
+ * @method mixed chesscomPlayerGamesToMove(array $params = [], array $options = []) chesscom-player-games-to-move (GET /chesscom/player/{username}/games/to-move)
+ *   params: string $username
+ * @method mixed chesscomPlayerIsOnline(array $params = [], array $options = []) chesscom-player-is-online (GET /chesscom/player/{username}/is-online)
+ *   params: string $username
+ * @method mixed chesscomPlayerMatches(array $params = [], array $options = []) chesscom-player-matches (GET /chesscom/player/{username}/matches)
+ *   params: string $username
+ * @method mixed chesscomPlayerStats(array $params = [], array $options = []) chesscom-player-stats (GET /chesscom/player/{username}/stats)
+ *   params: string $username
+ * @method mixed chesscomPlayerTournaments(array $params = [], array $options = []) chesscom-player-tournaments (GET /chesscom/player/{username}/tournaments)
+ *   params: string $username
+ * @method mixed chesscomPuzzle(array $params = [], array $options = []) chesscom-puzzle (GET /chesscom/puzzle)
+ * @method mixed chesscomPuzzleRandom(array $params = [], array $options = []) chesscom-puzzle-random (GET /chesscom/puzzle/random)
+ * @method mixed chesscomTournament(array $params = [], array $options = []) chesscom-tournament (GET /chesscom/tournament/{slug})
+ *   params: string $slug
+ * @method mixed chesscomTournamentRound(array $params = [], array $options = []) chesscom-tournament-round (GET /chesscom/tournament/{slug}/{round})
+ *   params: string $slug, int $round
+ * @method mixed chesscomTournamentRoundGroup(array $params = [], array $options = []) chesscom-tournament-round-group (GET /chesscom/tournament/{slug}/{round}/{group})
+ *   params: string $slug, int $round, int $group
+ */
+abstract class ChessComGroup {}
+
+/**
  * @method mixed brands(array $params = [], array $options = []) chewy-brands (GET /chewy/brands)
  *   params: int $page, int $limit, string $name
  * @method mixed categories(array $params = [], array $options = []) chewy-categories (GET /chewy/categories)
@@ -1367,6 +1477,28 @@ abstract class Chrono24Group {}
  * @method mixed clevelandcomNews(array $params = [], array $options = []) clevelandcom-news (GET /clevelandcom/news)
  */
 abstract class ClevelandComGroup {}
+
+/**
+ * @method mixed clinicaltrialsStatsFieldSizes(array $params = [], array $options = []) clinicaltrials-stats-field-sizes (GET /clinicaltrials/stats/field-sizes)
+ *   params: string $fields
+ * @method mixed clinicaltrialsStatsFieldValues(array $params = [], array $options = []) clinicaltrials-stats-field-values (GET /clinicaltrials/stats/field-values)
+ *   params: string $fields, 'ENUM'|'STRING'|'DATE'|'INTEGER'|'NUMBER'|'BOOLEAN' $types
+ * @method mixed clinicaltrialsStatsSize(array $params = [], array $options = []) clinicaltrials-stats-size (GET /clinicaltrials/stats/size)
+ * @method mixed clinicaltrialsStudies(array $params = [], array $options = []) clinicaltrials-studies (GET /clinicaltrials/studies)
+ *   params: string $cond, string $term, string $locn, string $titles, string $intr, string $outc, string $spons, string $lead, string $id, string $patient, 'ACTIVE_NOT_RECRUITING'|'COMPLETED'|'ENROLLING_BY_INVITATION'|'NOT_YET_RECRUITING'|'RECRUITING'|'SUSPENDED'|'TERMINATED'|'WITHDRAWN'|'AVAILABLE'|'NO_LONGER_AVAILABLE'|'TEMPORARILY_NOT_AVAILABLE'|'APPROVED_FOR_MARKETING'|'WITHHELD'|'UNKNOWN' $overall_status, float $latitude, float $longitude, string $distance, string $geo_decay, string $ids, string $advanced, string $synonyms, string $agg_filters, string $country, string $state, string $city, string $start_from, string $start_to, string $primary_completion_from, string $primary_completion_to, string $completion_from, string $completion_to, string $first_posted_from, string $first_posted_to, string $results_first_posted_from, string $results_first_posted_to, string $last_update_posted_from, string $last_update_posted_to, string $age_from, string $age_to, string $fields, string $sort, bool $count_total, int $page_size, string $page_token, 'markdown'|'legacy' $markup_format
+ * @method mixed clinicaltrialsStudiesEnums(array $params = [], array $options = []) clinicaltrials-studies-enums (GET /clinicaltrials/studies/enums)
+ * @method mixed clinicaltrialsStudiesFacets(array $params = [], array $options = []) clinicaltrials-studies-facets (GET /clinicaltrials/studies/facets)
+ *   params: string $cond, string $term, string $locn, string $titles, string $intr, string $outc, string $spons, string $lead, string $id, string $patient, 'ACTIVE_NOT_RECRUITING'|'COMPLETED'|'ENROLLING_BY_INVITATION'|'NOT_YET_RECRUITING'|'RECRUITING'|'SUSPENDED'|'TERMINATED'|'WITHDRAWN'|'AVAILABLE'|'NO_LONGER_AVAILABLE'|'TEMPORARILY_NOT_AVAILABLE'|'APPROVED_FOR_MARKETING'|'WITHHELD'|'UNKNOWN' $overall_status, float $latitude, float $longitude, string $distance, string $geo_decay, string $ids, string $advanced, string $synonyms, string $agg_filters, string $country, string $state, string $city, string $start_from, string $start_to, string $primary_completion_from, string $primary_completion_to, string $completion_from, string $completion_to, string $first_posted_from, string $first_posted_to, string $results_first_posted_from, string $results_first_posted_to, string $last_update_posted_from, string $last_update_posted_to, string $age_from, string $age_to
+ * @method mixed clinicaltrialsStudiesMetadata(array $params = [], array $options = []) clinicaltrials-studies-metadata (GET /clinicaltrials/studies/metadata)
+ *   params: bool $include_indexed_only, bool $include_historic_only
+ * @method mixed clinicaltrialsStudiesSearchAreas(array $params = [], array $options = []) clinicaltrials-studies-search-areas (GET /clinicaltrials/studies/search-areas)
+ * @method mixed clinicaltrialsStudy(array $params = [], array $options = []) clinicaltrials-study (GET /clinicaltrials/study)
+ *   params: string $nct_id, string $fields, 'markdown'|'legacy' $markup_format
+ * @method mixed clinicaltrialsSuggest(array $params = [], array $options = []) clinicaltrials-suggest (GET /clinicaltrials/suggest)
+ *   params: string $input, 'Condition'|'InterventionName'|'LeadSponsorName'|'LocationFacility' $dictionary
+ * @method mixed clinicaltrialsVersion(array $params = [], array $options = []) clinicaltrials-version (GET /clinicaltrials/version)
+ */
+abstract class ClinicalTrialsGovGroup {}
 
 /**
  * @method mixed article(array $params = [], array $options = []) cna-article (GET /cna/article)
@@ -1530,6 +1662,22 @@ abstract class CongressGroup {}
 abstract class WebGroup {}
 
 /**
+ * @method mixed auctions(array $params = [], array $options = []) copart-auctions (GET /copart/auctions)
+ * @method mixed filters(array $params = [], array $options = []) copart-filters (GET /copart/filters)
+ *   params: array<string> $make, array<string> $model, array<string> $yard, array<string> $vehicle_type, string $query
+ * @method mixed locations(array $params = [], array $options = []) copart-locations (GET /copart/locations)
+ * @method mixed lot(array $params = [], array $options = []) copart-lot (GET /copart/lot)
+ *   params: string $lot_number
+ * @method mixed lotImages(array $params = [], array $options = []) copart-lot-images (GET /copart/lot-images)
+ *   params: string $lot_number
+ * @method mixed search(array $params = [], array $options = []) copart-search (GET /copart/search)
+ *   params: string $query, array<string> $make, array<string> $model, array<string> $model_group, array<string> $year, array<string> $engine, array<string> $transmission, array<string> $fuel, array<string> $drive, array<string> $cylinders, array<string> $body_style, array<string> $yard, array<string> $auction_name, array<string> $sale_date, array<string> $featured, array<string> $title, array<string> $damage, array<string> $vehicle_type, array<string> $source, array<string> $odometer_band, 'last-24-hours'|'last-7-days' $newly_added, bool $wholesale, int $year_from, int $year_to, int $odometer_min, int $odometer_max, string $sale_date_from, string $sale_date_to, float $autograde_min, float $autograde_max, array<'green'|'yellow'|'red'> $sale_light, float $latitude, float $longitude, '25'|'50'|'75'|'100'|'125'|'150'|'175'|'200' $radius_miles, 'auction_date'|'odometer'|'year'|'make'|'model'|'item_number'|'buy_it_now'|'current_bid'|'sale_light'|'damage' $sort, 'asc'|'desc' $sort_order, int $page, int $size
+ * @method mixed suggest(array $params = [], array $options = []) copart-suggest (GET /copart/suggest)
+ *   params: string $query
+ */
+abstract class CopartGroup {}
+
+/**
  * @method mixed categories(array $params = [], array $options = []) costco-categories (GET /costco/categories)
  *   params: string $query
  * @method mixed product(array $params = [], array $options = []) costco-product (GET /costco/product/{id})
@@ -1554,6 +1702,28 @@ abstract class CostcoGroup {}
  *   params: string $q, string $cursor
  */
 abstract class CourtListenerGroup {}
+
+/**
+ * @method mixed areas(array $params = [], array $options = []) craigslist-areas (GET /craigslist/areas)
+ *   params: 'US'|'Canada'|'Europe'|'Asia/Pacific/Middle East'|'Oceania'|'Latin America'|'Africa' $group, string $region, string $q
+ * @method mixed categories(array $params = [], array $options = []) craigslist-categories (GET /craigslist/categories)
+ *   params: string $area
+ * @method mixed categoryCounts(array $params = [], array $options = []) craigslist-category-counts (GET /craigslist/category-counts)
+ *   params: string $area, string $q, string $postal, float $lat, float $lon, int $search_distance, string $subarea
+ * @method mixed categoryFilters(array $params = [], array $options = []) craigslist-category-filters (GET /craigslist/category-filters)
+ *   params: string $category, string $area
+ * @method mixed likelyCategories(array $params = [], array $options = []) craigslist-likely-categories (GET /craigslist/likely-categories)
+ *   params: string $area, string $q
+ * @method mixed locations(array $params = [], array $options = []) craigslist-locations (GET /craigslist/locations)
+ *   params: float $lat, float $lon
+ * @method mixed posting(array $params = [], array $options = []) craigslist-posting (GET /craigslist/posting)
+ *   params: string $url, string $slug, string $uuid
+ * @method mixed search(array $params = [], array $options = []) craigslist-search (GET /craigslist/search)
+ *   params: string $area, string $category, string $q, 'date'|'dateoldest'|'rel'|'priceasc'|'pricedsc'|'dist' $sort, int $min_price, int $max_price, bool $has_pic, bool $posted_today, bool $title_only, string $postal, int $search_distance, float $lat, float $lon
+ * @method mixed suggest(array $params = [], array $options = []) craigslist-suggest (GET /craigslist/suggest)
+ *   params: 'search'|'makemodel'|'location' $type, string $q, string $area, string $category, float $lat, float $lon
+ */
+abstract class CraigslistGroup {}
 
 /**
  * @method mixed archives(array $params = [], array $options = []) cricbuzz-archives (GET /cricbuzz/archives)
@@ -1587,6 +1757,8 @@ abstract class CourtListenerGroup {}
  *   params: string $tournament, string $year
  * @method mixed auctionVideos(array $params = [], array $options = []) cricbuzz-auction-videos (GET /cricbuzz/auction/videos)
  *   params: string $tournament, string $year
+ * @method mixed commentary(array $params = [], array $options = []) cricbuzz-commentary (GET /cricbuzz/commentary)
+ *   params: string $match_url, int $innings_id
  * @method mixed matchFacts(array $params = [], array $options = []) cricbuzz-match-facts (GET /cricbuzz/match-facts)
  *   params: string $match_url
  * @method mixed matchGraphs(array $params = [], array $options = []) cricbuzz-match-graphs (GET /cricbuzz/match-graphs)
@@ -1600,6 +1772,8 @@ abstract class CourtListenerGroup {}
  *   params: string $url
  * @method mixed newsTopics(array $params = [], array $options = []) cricbuzz-news-topics (GET /cricbuzz/news/topics)
  *   params: string $q
+ * @method mixed player(array $params = [], array $options = []) cricbuzz-player (GET /cricbuzz/player)
+ *   params: string $player_url
  * @method mixed rankings(array $params = [], array $options = []) cricbuzz-rankings (GET /cricbuzz/rankings)
  *   params: 'men'|'women' $gender, 'batting'|'bowling'|'all-rounder'|'teams' $type, 'test'|'odi'|'t20' $format
  * @method mixed records(array $params = [], array $options = []) cricbuzz-records (GET /cricbuzz/records)
@@ -1610,8 +1784,12 @@ abstract class CourtListenerGroup {}
  *   params: string $match_url
  * @method mixed series(array $params = [], array $options = []) cricbuzz-series (GET /cricbuzz/series)
  *   params: 'all'|'international'|'domestic'|'league'|'women' $category, bool $live_stream, string $q
+ * @method mixed seriesSquads(array $params = [], array $options = []) cricbuzz-series-squads (GET /cricbuzz/series/squads)
+ *   params: string $series_url, int $squad_id
  * @method mixed seriesStats(array $params = [], array $options = []) cricbuzz-series-stats (GET /cricbuzz/series/stats)
  *   params: string $series_url, 'mostRuns'|'highestScore'|'highestAvg'|'highestSr'|'mostHundreds'|'mostFifties'|'mostFours'|'mostSixes'|'mostNineties'|'mostWickets'|'lowestAvg'|'bestBowlingInnings'|'mostFiveWickets'|'lowestEcon'|'lowestSr' $stat, string $format
+ * @method mixed teamPlayers(array $params = [], array $options = []) cricbuzz-team-players (GET /cricbuzz/team/players)
+ *   params: 'international'|'domestic'|'league'|'women' $category, int $team_id
  * @method mixed teamStats(array $params = [], array $options = []) cricbuzz-team-stats (GET /cricbuzz/team/stats)
  *   params: 'international'|'domestic'|'league'|'women' $category, int $team_id, string $stat, string $format_id, string $year, string $opponent_id
  * @method mixed teamStatsOptions(array $params = [], array $options = []) cricbuzz-team-stats-options (GET /cricbuzz/team/stats/options)
@@ -1625,6 +1803,8 @@ abstract class CourtListenerGroup {}
 abstract class CricbuzzGroup {}
 
 /**
+ * @method mixed ballByBall(array $params = [], array $options = []) cricinfo-ball-by-ball (GET /cricinfo/ball-by-ball)
+ *   params: string $url
  * @method mixed calendar(array $params = [], array $options = []) cricinfo-calendar (GET /cricinfo/calendar)
  * @method mixed commentary(array $params = [], array $options = []) cricinfo-commentary (GET /cricinfo/commentary)
  *   params: string $url, int $limit
@@ -1632,6 +1812,10 @@ abstract class CricbuzzGroup {}
  *   params: int $limit
  * @method mixed liveMatches(array $params = [], array $options = []) cricinfo-live-matches (GET /cricinfo/live)
  * @method mixed match_(array $params = [], array $options = []) cricinfo-match (GET /cricinfo/match)
+ *   params: string $url
+ * @method mixed matchImpactPlayer(array $params = [], array $options = []) cricinfo-match-impact-player (GET /cricinfo/match-impact-player)
+ *   params: string $url
+ * @method mixed matchStatistics(array $params = [], array $options = []) cricinfo-match-statistics (GET /cricinfo/match-statistics)
  *   params: string $url
  * @method mixed news(array $params = [], array $options = []) cricinfo-news (GET /cricinfo/news)
  *   params: int $limit
@@ -1951,7 +2135,7 @@ abstract class DailyWireGroup {}
  * @method mixed instagramUsersSearch(array $params = [], array $options = []) datasets-instagram-users-search (GET /datasets/instagram-users/search)
  *   params: string $q, string $username, string $category_name, string $source_tier, bool $is_verified, bool $is_business_account, bool $has_bio, bool $has_external_url, int $min_followers, int $max_followers, float $min_ratio, float $max_ratio, string $created_after, string $created_before, string $crawled_after, string $crawled_before, 'relevance'|'followers_desc'|'followers_asc'|'crawled_at_desc'|'crawled_at_asc'|'created_at_desc'|'created_at_asc' $sort, int $page, int $page_size
  * @method mixed jobsCompanies(array $params = [], array $options = []) datasets-jobs-companies (GET /datasets/jobs/companies)
- *   params: string $q, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint'|'amazon-jobs'|'apple-jobs'|'google-jobs'|'meta-jobs'|'tesla-jobs' $provider, 'active'|'empty'|'gone'|'blocked'|'pending'|'invalid' $status, int $min_open_roles, bool $sponsors_visa, 'open_desc'|'company_asc'|'crawled_desc' $sort, int $page, int $page_size
+ *   params: string $q, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint'|'amazon-jobs'|'apple-jobs'|'google-jobs'|'meta-jobs'|'tesla-jobs'|'breezy'|'jazzhr'|'phenom'|'ibm-jobs'|'adp'|'successfactors'|'talentbrew' $provider, 'active'|'empty'|'gone'|'blocked'|'pending'|'invalid' $status, int $min_open_roles, bool $sponsors_visa, 'open_desc'|'company_asc'|'crawled_desc' $sort, int $page, int $page_size
  * @method mixed jobsCompanyItem(array $params = [], array $options = []) datasets-jobs-company-item (GET /datasets/jobs/companies/{id})
  *   params: string $id
  * @method mixed jobsFacets(array $params = [], array $options = []) datasets-jobs-facets (GET /datasets/jobs/facets)
@@ -1959,9 +2143,9 @@ abstract class DailyWireGroup {}
  * @method mixed jobsItem(array $params = [], array $options = []) datasets-jobs-item (GET /datasets/jobs/items/{id})
  *   params: string $id
  * @method mixed jobsNearby(array $params = [], array $options = []) datasets-jobs-nearby (GET /datasets/jobs/nearby)
- *   params: float $lat, float $lon, float $radius_km, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint'|'amazon-jobs'|'apple-jobs'|'google-jobs'|'meta-jobs'|'tesla-jobs' $provider, bool $include_closed, int $page, int $page_size
+ *   params: float $lat, float $lon, float $radius_km, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint'|'amazon-jobs'|'apple-jobs'|'google-jobs'|'meta-jobs'|'tesla-jobs'|'breezy'|'jazzhr'|'phenom'|'ibm-jobs'|'adp'|'successfactors'|'talentbrew' $provider, bool $include_closed, int $page, int $page_size
  * @method mixed jobsSearch(array $params = [], array $options = []) datasets-jobs-search (GET /datasets/jobs/search)
- *   params: string $q, string $company, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint'|'amazon-jobs'|'apple-jobs'|'google-jobs'|'meta-jobs'|'tesla-jobs' $provider, string $department, string $location, string $city, string $state, string $country, string $employment_type, string $job_family, bool $remote, 'onsite'|'hybrid'|'remote' $workplace_type, bool $include_closed, float $min_salary, float $max_salary, string $salary_currency, 'relevance'|'posted_desc'|'company_asc' $sort, int $page, int $page_size
+ *   params: string $q, string $company, 'greenhouse'|'lever'|'ashby'|'workday'|'smartrecruiters'|'workable'|'recruitee'|'rippling'|'personio'|'teamtailor'|'oracle'|'ukg'|'icims'|'eightfold'|'gem'|'pinpoint'|'amazon-jobs'|'apple-jobs'|'google-jobs'|'meta-jobs'|'tesla-jobs'|'breezy'|'jazzhr'|'phenom'|'ibm-jobs'|'adp'|'successfactors'|'talentbrew' $provider, string $department, string $location, string $city, string $state, string $country, string $employment_type, string $job_family, bool $remote, 'onsite'|'hybrid'|'remote' $workplace_type, bool $include_closed, float $min_salary, float $max_salary, string $salary_currency, 'relevance'|'posted_desc'|'company_asc' $sort, int $page, int $page_size
  * @method mixed journalistsFacets(array $params = [], array $options = []) datasets-journalists-facets (GET /datasets/journalists/facets)
  *   params: 'outlet'|'vertical'|'topic'|'contact_type'|'record_type'|'role_type'|'email_kind'|'outreach_readiness_band' $facet, string $q, string $outlet, 'tech'|'crypto'|'marketing'|'consumer_tech'|'consumer_policy'|'cybersecurity'|'health'|'gaming'|'climate'|'business'|'entertainment'|'sports'|'legal'|'science'|'politics'|'real_estate'|'automotive'|'travel'|'food'|'education'|'design'|'film_tv'|'fashion'|'music'|'personal_finance'|'tech_independent'|'culture_independent'|'local_news'|'construction'|'banking'|'retail'|'aerospace_defense'|'energy'|'agriculture'|'local_business'|'general_news' $vertical, string $topic, 'email'|'social'|'none' $contact_type, 'person'|'desk'|'organization'|'syndicated_byline'|'unknown' $record_type, 'staff'|'editor'|'reporter'|'contributor'|'freelancer'|'columnist'|'non_editorial'|'unknown' $role_type, 'individual_work'|'individual_personal_public'|'shared_desk'|'tips_or_submissions'|'outlet_generic'|'unknown' $email_kind, int $min_outreach_readiness
  * @method mixed journalistsItem(array $params = [], array $options = []) datasets-journalists-item (GET /datasets/journalists/items/{outlet}/{slug})
@@ -2260,6 +2444,16 @@ abstract class RetrievalGroup {}
 abstract class DiscogsGroup {}
 
 /**
+ * @method mixed invite(array $params = [], array $options = []) discord-invite (GET /discord/invite)
+ *   params: string $code
+ * @method mixed server(array $params = [], array $options = []) discord-server (GET /discord/server)
+ *   params: string $guild_id
+ * @method mixed servers(array $params = [], array $options = []) discord-servers (GET /discord/servers)
+ *   params: 'all'|'gaming'|'music'|'education'|'science_tech'|'entertainment' $category, string $query, int $offset
+ */
+abstract class DiscordGroup {}
+
+/**
  * @method mixed dollartreeBlogArticle(array $params = [], array $options = []) dollartree-blog-article (GET /dollartree/blog/article)
  *   params: string $slug, string $article_id
  * @method mixed dollartreeCategories(array $params = [], array $options = []) dollartree-categories (GET /dollartree/categories)
@@ -2551,6 +2745,10 @@ abstract class EpicGamesStoreGroup {}
 /**
  * @method mixed athlete(array $params = [], array $options = []) espn-athlete (GET /espn/athlete)
  *   params: 'football'|'basketball'|'baseball'|'hockey'|'soccer' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl'|'eng.1'|'esp.1'|'ita.1'|'ger.1'|'fra.1'|'usa.1'|'uefa.champions' $league, string $athlete
+ * @method mixed athleteGamelog(array $params = [], array $options = []) espn-athlete-gamelog (GET /espn/athlete-gamelog)
+ *   params: 'football'|'basketball'|'baseball'|'hockey'|'soccer' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl'|'eng.1'|'esp.1'|'ita.1'|'ger.1'|'fra.1'|'usa.1'|'uefa.champions' $league, string $athlete, int $season, 'batting'|'pitching' $category
+ * @method mixed athleteSplits(array $params = [], array $options = []) espn-athlete-splits (GET /espn/athlete-splits)
+ *   params: 'football'|'basketball'|'baseball'|'hockey' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl' $league, string $athlete, int $season, 'batting'|'pitching'|'per_game'|'total'|'per_48' $category
  * @method mixed gameSummary(array $params = [], array $options = []) espn-game-summary (GET /espn/game-summary)
  *   params: 'football'|'basketball'|'baseball'|'hockey'|'soccer' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl'|'eng.1'|'esp.1'|'ita.1'|'ger.1'|'fra.1'|'usa.1'|'uefa.champions' $league, string $event
  * @method mixed news(array $params = [], array $options = []) espn-news (GET /espn/news)
@@ -2565,8 +2763,14 @@ abstract class EpicGamesStoreGroup {}
  *   params: 'football'|'basketball'|'baseball'|'hockey'|'soccer' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl'|'eng.1'|'esp.1'|'ita.1'|'ger.1'|'fra.1'|'usa.1'|'uefa.champions' $league, string $team
  * @method mixed teamRoster(array $params = [], array $options = []) espn-team-roster (GET /espn/team-roster)
  *   params: 'football'|'basketball'|'baseball'|'hockey'|'soccer' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl'|'eng.1'|'esp.1'|'ita.1'|'ger.1'|'fra.1'|'usa.1'|'uefa.champions' $league, string $team
+ * @method mixed teamSchedule(array $params = [], array $options = []) espn-team-schedule (GET /espn/team-schedule)
+ *   params: 'football'|'basketball'|'baseball'|'hockey'|'soccer' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl'|'eng.1'|'esp.1'|'ita.1'|'ger.1'|'fra.1'|'usa.1'|'uefa.champions' $league, string $team, int $season, '1'|'2'|'3'|'4' $seasontype, bool $fixture
+ * @method mixed teamStats(array $params = [], array $options = []) espn-team-stats (GET /espn/team-stats)
+ *   params: 'football'|'basketball'|'baseball'|'hockey' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl' $league, string $team, int $season, '1'|'2'|'3'|'4' $seasontype
  * @method mixed teams(array $params = [], array $options = []) espn-teams (GET /espn/teams)
  *   params: 'football'|'basketball'|'baseball'|'hockey'|'soccer' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl'|'eng.1'|'esp.1'|'ita.1'|'ger.1'|'fra.1'|'usa.1'|'uefa.champions' $league
+ * @method mixed transactions(array $params = [], array $options = []) espn-transactions (GET /espn/transactions)
+ *   params: 'football'|'basketball'|'baseball'|'hockey'|'soccer' $sport, 'nfl'|'college-football'|'nba'|'wnba'|'mens-college-basketball'|'womens-college-basketball'|'mlb'|'nhl'|'eng.1'|'esp.1'|'ita.1'|'ger.1'|'fra.1'|'usa.1'|'uefa.champions' $league, string $team, int $season, int $page, int $limit
  */
 abstract class EspnGroup {}
 
@@ -3017,6 +3221,21 @@ abstract class FashionphileGroup {}
 abstract class FastCompanyGroup {}
 
 /**
+ * @method mixed fdroidAntiFeatures(array $params = [], array $options = []) fdroid-anti-features (GET /fdroid/anti-features)
+ *   params: string $lang
+ * @method mixed fdroidApp(array $params = [], array $options = []) fdroid-app (GET /fdroid/app)
+ *   params: string $package, string $lang
+ * @method mixed fdroidApps(array $params = [], array $options = []) fdroid-apps (GET /fdroid/apps)
+ *   params: string $category, string $license, array<'Ads'|'DisabledAlgorithm'|'KnownVuln'|'NoSourceSince'|'NonFreeAdd'|'NonFreeAssets'|'NonFreeDep'|'NonFreeNet'|'TetheredNet'|'Tracking'> $anti_feature, array<'any'|'Ads'|'DisabledAlgorithm'|'KnownVuln'|'NoSourceSince'|'NonFreeAdd'|'NonFreeAssets'|'NonFreeDep'|'NonFreeNet'|'TetheredNet'|'Tracking'> $exclude_anti_feature, string $added_since, string $updated_since, 'last_updated'|'added'|'name' $sort, 'asc'|'desc' $order, int $page, int $page_size, string $lang
+ * @method mixed fdroidCategories(array $params = [], array $options = []) fdroid-categories (GET /fdroid/categories)
+ *   params: string $lang
+ * @method mixed fdroidLicenses(array $params = [], array $options = []) fdroid-licenses (GET /fdroid/licenses)
+ * @method mixed fdroidSearch(array $params = [], array $options = []) fdroid-search (GET /fdroid/search)
+ *   params: string $q, int $page, string $lang
+ */
+abstract class FDroidGroup {}
+
+/**
  * @method mixed cities(array $params = [], array $options = []) fever-cities (GET /fever/cities)
  *   params: string $query, string $locale
  * @method mixed feed(array $params = [], array $options = []) fever-feed (GET /fever/feed)
@@ -3078,7 +3297,7 @@ abstract class FiverrGroup {}
  *   params: string $id
  * @method mixed matchDarts(array $params = [], array $options = []) flashscore-match-darts (GET /flashscore/match-darts)
  *   params: string $id
- * @method mixed matchH2h(array $params = [], array $options = []) flashscore-match-h2h (GET /flashscore/match-h2h)
+ * @method mixed matchH2H(array $params = [], array $options = []) flashscore-match-h2h (GET /flashscore/match-h2h)
  *   params: string $id
  * @method mixed matchHighlights(array $params = [], array $options = []) flashscore-match-highlights (GET /flashscore/match-highlights)
  *   params: string $id
@@ -3306,6 +3525,28 @@ abstract class ForeignPolicyGroup {}
 abstract class Formula1Group {}
 
 /**
+ * @method mixed ecosystemMetric(array $params = [], array $options = []) fortnite-ecosystem-metric (GET /fortnite/ecosystem-metric)
+ *   params: 'day'|'hour'|'minute' $interval, 'in-client-peak-ccu'|'in-match-peak-ccu' $metric, string $from, string $to
+ * @method mixed ecosystemMetrics(array $params = [], array $options = []) fortnite-ecosystem-metrics (GET /fortnite/ecosystem-metrics)
+ *   params: 'day'|'hour'|'minute' $interval, array<'inMatchPeakCCU'|'inClientPeakCCU'> $metrics, string $from, string $to
+ * @method mixed enums(array $params = [], array $options = []) fortnite-enums (GET /fortnite/enums)
+ * @method mixed genreRankings(array $params = [], array $options = []) fortnite-genre-rankings (GET /fortnite/genre-rankings)
+ *   params: string $slug, string $at, string $after, string $before, int $size
+ * @method mixed genres(array $params = [], array $options = []) fortnite-genres (GET /fortnite/genres)
+ * @method mixed island(array $params = [], array $options = []) fortnite-island (GET /fortnite/island)
+ *   params: string $code
+ * @method mixed islandMetric(array $params = [], array $options = []) fortnite-island-metric (GET /fortnite/island-metric)
+ *   params: string $code, 'day'|'hour'|'minute' $interval, 'peak-ccu'|'favorites'|'minutes-played'|'average-minutes-per-player'|'recommendations'|'unique-players'|'plays'|'retention' $metric, string $from, string $to
+ * @method mixed islandMetrics(array $params = [], array $options = []) fortnite-island-metrics (GET /fortnite/island-metrics)
+ *   params: string $code, 'day'|'hour'|'minute' $interval, array<'averageMinutesPerPlayer'|'peakCCU'|'favorites'|'minutesPlayed'|'recommendations'|'plays'|'uniquePlayers'|'retention'> $metrics, string $from, string $to
+ * @method mixed islandRankings(array $params = [], array $options = []) fortnite-island-rankings (GET /fortnite/island-rankings)
+ *   params: string $code, string $from, string $to
+ * @method mixed islands(array $params = [], array $options = []) fortnite-islands (GET /fortnite/islands)
+ *   params: string $after, string $before, int $size
+ */
+abstract class FortniteGroup {}
+
+/**
  * @method mixed article(array $params = [], array $options = []) fortune-article (GET /fortune/article)
  *   params: string $url
  * @method mixed author(array $params = [], array $options = []) fortune-author (GET /fortune/author)
@@ -3346,6 +3587,8 @@ abstract class FortuneGroup {}
  *   params: string $team_id
  * @method mixed fotmobMatch(array $params = [], array $options = []) fotmob-match (GET /fotmob/match)
  *   params: string $id
+ * @method mixed fotmobMatchHeatmap(array $params = [], array $options = []) fotmob-match-heatmap (GET /fotmob/match-heatmap)
+ *   params: string $match_id
  * @method mixed fotmobMatchMedia(array $params = [], array $options = []) fotmob-match-media (GET /fotmob/match-media)
  *   params: string $id
  * @method mixed fotmobMatches(array $params = [], array $options = []) fotmob-matches (GET /fotmob/matches)
@@ -3356,6 +3599,8 @@ abstract class FortuneGroup {}
  *   params: string $id
  * @method mixed fotmobPlayer(array $params = [], array $options = []) fotmob-player (GET /fotmob/player)
  *   params: string $id, bool $include_market_values
+ * @method mixed fotmobPlayerInjuries(array $params = [], array $options = []) fotmob-player-injuries (GET /fotmob/player-injuries)
+ *   params: string $player_id
  * @method mixed fotmobPlayerMatchStats(array $params = [], array $options = []) fotmob-player-match-stats (GET /fotmob/player-match-stats)
  *   params: string $player_id, string $match_id
  * @method mixed fotmobPlayerMatches(array $params = [], array $options = []) fotmob-player-matches (GET /fotmob/player-matches)
@@ -3517,7 +3762,9 @@ abstract class FtGroup {}
 abstract class FussballDeGroup {}
 
 /**
+ * @method mixed futggFc27CampaignSquads(array $params = [], array $options = []) futgg-fc27-campaign-squads (GET /futgg/fc27/campaign-squads)
  * @method mixed futggFc27Catalog(array $params = [], array $options = []) futgg-fc27-catalog (GET /futgg/fc27/catalog)
+ * @method mixed futggFc27ChemistryStyleRoles(array $params = [], array $options = []) futgg-fc27-chemistry-style-roles (GET /futgg/fc27/chemistry-style-roles)
  * @method mixed futggFc27Definitions(array $params = [], array $options = []) futgg-fc27-definitions (GET /futgg/fc27/definitions)
  *   params: string $ids
  * @method mixed futggFc27Evolutions(array $params = [], array $options = []) futgg-fc27-evolutions (GET /futgg/fc27/evolutions)
@@ -3526,6 +3773,14 @@ abstract class FussballDeGroup {}
  *   params: string $slug
  * @method mixed futggFc27GgRatingRanks(array $params = [], array $options = []) futgg-fc27-gg-rating-ranks (GET /futgg/fc27/gg-rating-ranks)
  * @method mixed futggFc27GgRatings(array $params = [], array $options = []) futgg-fc27-gg-ratings (GET /futgg/fc27/gg-ratings)
+ * @method mixed futggFc27ManagerFacets(array $params = [], array $options = []) futgg-fc27-manager-facets (GET /futgg/fc27/manager-facets)
+ * @method mixed futggFc27ManagerLeagues(array $params = [], array $options = []) futgg-fc27-manager-leagues (GET /futgg/fc27/manager-leagues)
+ * @method mixed futggFc27Managers(array $params = [], array $options = []) futgg-fc27-managers (GET /futgg/fc27/managers)
+ *   params: 'ps5'|'pc' $platform, 'all'|'bronze'|'silver'|'gold' $quality, 'all'|'only'|'hide' $extinct, string $q, int $nation, int $league, int $min_price, int $max_price, int $page, int $page_size
+ * @method mixed futggFc27Manager(array $params = [], array $options = []) futgg-fc27-manager (GET /futgg/fc27/managers/{id})
+ *   params: int $id
+ * @method mixed futggFc27MiscPrices(array $params = [], array $options = []) futgg-fc27-misc-prices (GET /futgg/fc27/misc-prices)
+ *   params: 'ps5'|'pc' $platform
  * @method mixed futggFc27ObjectiveCategories(array $params = [], array $options = []) futgg-fc27-objective-categories (GET /futgg/fc27/objective-categories)
  * @method mixed futggFc27ObjectiveGroups(array $params = [], array $options = []) futgg-fc27-objective-groups (GET /futgg/fc27/objectives)
  *   params: int $page, int $page_size, 'coming-soon'|'foundations'|'seasonal'|'campaigns'|'live-events'|'milestones'|'mastery'|'fc-pro' $category_slug, bool $no_pagination, bool $hide_expired, bool $include_unreleased
@@ -3538,8 +3793,10 @@ abstract class FussballDeGroup {}
  * @method mixed futggFc27PlayerSorts(array $params = [], array $options = []) futgg-fc27-player-sorts (GET /futgg/fc27/player-sorts)
  *   params: 'console'|'pc' $platform
  * @method mixed futggFc27Players(array $params = [], array $options = []) futgg-fc27-players (GET /futgg/fc27/players)
- *   params: int $nation_id, int $league_id, int $club_id, int $rarity_id, array<'0'|'3'|'5'|'7'|'10'|'12'|'14'|'16'|'18'|'23'|'25'|'27'> $positions, array<'1'|'2'> $foot, array<'1'|'2'> $gender, array<'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'10'> $body_types, array<'1'|'2'|'3'> $accelerate_types, string $name, array<'1'|'2'|'3'|'4'|'5'> $skill_moves, array<'1'|'2'|'3'|'4'|'5'> $weak_foot, array<'1'|'2'> $holographic_type, 'true'|'only' $show_holographics, int $overall__gte, int $overall__lte, int $grading_score__gte, int $grading_score__lte, int $price__gte, int $price__lte, int $number_of_positions__gte, int $number_of_positions__lte, int $playstyles_count__gte, int $playstyles_count__lte, int $playstyles_plus_count__gte, int $playstyles_plus_count__lte, int $role_plus_count__gte, int $role_plus_count__lte, int $role_plus_plus_count__gte, int $role_plus_plus_count__lte, int $pc_price__gte, int $pc_price__lte, int $page, int $count, '-attribute_acceleration'|'-attribute_aggression'|'-attribute_agility'|'-attribute_balance'|'-attribute_ball_control'|'-attribute_composure'|'-attribute_crossing'|'-attribute_curve'|'-attribute_defensive_awareness'|'-attribute_dribbling'|'-attribute_finishing'|'-attribute_fk_accuracy'|'-attribute_gk_diving'|'-attribute_gk_handling'|'-attribute_gk_kicking'|'-attribute_gk_positioning'|'-attribute_gk_reflexes'|'-attribute_heading_accuracy'|'-attribute_interceptions'|'-attribute_jumping'|'-attribute_long_passing'|'-attribute_long_shots'|'-attribute_penalties'|'-attribute_positioning'|'-attribute_reactions'|'-attribute_short_passing'|'-attribute_shot_power'|'-attribute_sliding_tackle'|'-attribute_sprint_speed'|'-attribute_stamina'|'-attribute_standing_tackle'|'-attribute_strength'|'-attribute_vision'|'-attribute_volleys'|'-created_at'|'-current_price'|'-face_defending'|'-face_dribbling'|'-face_pace'|'-face_passing'|'-face_physicality'|'-face_shooting'|'-gg_rating'|'-gk_face_diving'|'-gk_face_handling'|'-gk_face_kicking'|'-gk_face_positioning'|'-gk_face_reflexes'|'-gk_face_speed'|'-grading_score'|'-number_of_all_playstyles'|'-number_of_playstyles'|'-number_of_playstyles_plus'|'-overall'|'-pc_current_price'|'-pos_0_gg_rating'|'-pos_10_gg_rating'|'-pos_12_gg_rating'|'-pos_14_gg_rating'|'-pos_16_gg_rating'|'-pos_18_gg_rating'|'-pos_23_gg_rating'|'-pos_25_gg_rating'|'-pos_27_gg_rating'|'-pos_3_gg_rating'|'-pos_5_gg_rating'|'-pos_7_gg_rating'|'-role_10_gg_rating'|'-role_11_gg_rating'|'-role_12_gg_rating'|'-role_13_gg_rating'|'-role_14_gg_rating'|'-role_15_gg_rating'|'-role_16_gg_rating'|'-role_17_gg_rating'|'-role_1_gg_rating'|'-role_23_gg_rating'|'-role_24_gg_rating'|'-role_25_gg_rating'|'-role_26_gg_rating'|'-role_27_gg_rating'|'-role_2_gg_rating'|'-role_37_gg_rating'|'-role_38_gg_rating'|'-role_39_gg_rating'|'-role_3_gg_rating'|'-role_40_gg_rating'|'-role_45_gg_rating'|'-role_46_gg_rating'|'-role_47_gg_rating'|'-role_48_gg_rating'|'-role_49_gg_rating'|'-role_4_gg_rating'|'-role_50_gg_rating'|'-role_51_gg_rating'|'-role_52_gg_rating'|'-role_53_gg_rating'|'-role_54_gg_rating'|'-role_55_gg_rating'|'-role_56_gg_rating'|'-role_57_gg_rating'|'-role_58_gg_rating'|'-role_5_gg_rating'|'-role_63_gg_rating'|'-role_64_gg_rating'|'-role_65_gg_rating'|'-role_66_gg_rating'|'-role_6_gg_rating'|'-role_71_gg_rating'|'-role_72_gg_rating'|'-role_74_gg_rating'|'-role_75_gg_rating'|'-role_7_gg_rating'|'-role_8_gg_rating'|'-role_9_gg_rating'|'-total_face_stats'|'-total_igs'|'attribute_acceleration'|'attribute_aggression'|'attribute_agility'|'attribute_balance'|'attribute_ball_control'|'attribute_composure'|'attribute_crossing'|'attribute_curve'|'attribute_defensive_awareness'|'attribute_dribbling'|'attribute_finishing'|'attribute_fk_accuracy'|'attribute_gk_diving'|'attribute_gk_handling'|'attribute_gk_kicking'|'attribute_gk_positioning'|'attribute_gk_reflexes'|'attribute_heading_accuracy'|'attribute_interceptions'|'attribute_jumping'|'attribute_long_passing'|'attribute_long_shots'|'attribute_penalties'|'attribute_positioning'|'attribute_reactions'|'attribute_short_passing'|'attribute_shot_power'|'attribute_sliding_tackle'|'attribute_sprint_speed'|'attribute_stamina'|'attribute_standing_tackle'|'attribute_strength'|'attribute_vision'|'attribute_volleys'|'created_at'|'current_price'|'face_defending'|'face_dribbling'|'face_pace'|'face_passing'|'face_physicality'|'face_shooting'|'gg_rating'|'gk_face_diving'|'gk_face_handling'|'gk_face_kicking'|'gk_face_positioning'|'gk_face_reflexes'|'gk_face_speed'|'grading_score'|'number_of_all_playstyles'|'number_of_playstyles'|'number_of_playstyles_plus'|'overall'|'pc_current_price'|'pos_0_gg_rating'|'pos_10_gg_rating'|'pos_12_gg_rating'|'pos_14_gg_rating'|'pos_16_gg_rating'|'pos_18_gg_rating'|'pos_23_gg_rating'|'pos_25_gg_rating'|'pos_27_gg_rating'|'pos_3_gg_rating'|'pos_5_gg_rating'|'pos_7_gg_rating'|'role_10_gg_rating'|'role_11_gg_rating'|'role_12_gg_rating'|'role_13_gg_rating'|'role_14_gg_rating'|'role_15_gg_rating'|'role_16_gg_rating'|'role_17_gg_rating'|'role_1_gg_rating'|'role_23_gg_rating'|'role_24_gg_rating'|'role_25_gg_rating'|'role_26_gg_rating'|'role_27_gg_rating'|'role_2_gg_rating'|'role_37_gg_rating'|'role_38_gg_rating'|'role_39_gg_rating'|'role_3_gg_rating'|'role_40_gg_rating'|'role_45_gg_rating'|'role_46_gg_rating'|'role_47_gg_rating'|'role_48_gg_rating'|'role_49_gg_rating'|'role_4_gg_rating'|'role_50_gg_rating'|'role_51_gg_rating'|'role_52_gg_rating'|'role_53_gg_rating'|'role_54_gg_rating'|'role_55_gg_rating'|'role_56_gg_rating'|'role_57_gg_rating'|'role_58_gg_rating'|'role_5_gg_rating'|'role_63_gg_rating'|'role_64_gg_rating'|'role_65_gg_rating'|'role_66_gg_rating'|'role_6_gg_rating'|'role_71_gg_rating'|'role_72_gg_rating'|'role_74_gg_rating'|'role_75_gg_rating'|'role_7_gg_rating'|'role_8_gg_rating'|'role_9_gg_rating'|'total_face_stats'|'total_igs' $sorts
+ *   params: int $nation_id, int $league_id, int $club_id, int $rarity_id, array<int> $rarity_squad_id, array<int> $excluded_rarity_squad_id, array<'0'|'3'|'5'|'7'|'10'|'12'|'14'|'16'|'18'|'23'|'25'|'27'> $positions, array<'1'|'2'> $foot, array<'1'|'2'> $gender, array<'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'10'> $body_types, array<'1'|'2'|'3'> $accelerate_types, string $name, array<'1'|'2'|'3'|'4'|'5'> $skill_moves, array<'1'|'2'|'3'|'4'|'5'> $weak_foot, array<'1'|'2'> $holographic_type, 'true'|'only' $show_holographics, int $overall__gte, int $overall__lte, int $grading_score__gte, int $grading_score__lte, int $price__gte, int $price__lte, int $number_of_positions__gte, int $number_of_positions__lte, int $playstyles_count__gte, int $playstyles_count__lte, int $playstyles_plus_count__gte, int $playstyles_plus_count__lte, int $role_plus_count__gte, int $role_plus_count__lte, int $role_plus_plus_count__gte, int $role_plus_plus_count__lte, int $pc_price__gte, int $pc_price__lte, int $page, int $count, '-attribute_acceleration'|'-attribute_aggression'|'-attribute_agility'|'-attribute_balance'|'-attribute_ball_control'|'-attribute_composure'|'-attribute_crossing'|'-attribute_curve'|'-attribute_defensive_awareness'|'-attribute_dribbling'|'-attribute_finishing'|'-attribute_fk_accuracy'|'-attribute_gk_diving'|'-attribute_gk_handling'|'-attribute_gk_kicking'|'-attribute_gk_positioning'|'-attribute_gk_reflexes'|'-attribute_heading_accuracy'|'-attribute_interceptions'|'-attribute_jumping'|'-attribute_long_passing'|'-attribute_long_shots'|'-attribute_penalties'|'-attribute_positioning'|'-attribute_reactions'|'-attribute_short_passing'|'-attribute_shot_power'|'-attribute_sliding_tackle'|'-attribute_sprint_speed'|'-attribute_stamina'|'-attribute_standing_tackle'|'-attribute_strength'|'-attribute_vision'|'-attribute_volleys'|'-created_at'|'-current_price'|'-face_defending'|'-face_dribbling'|'-face_pace'|'-face_passing'|'-face_physicality'|'-face_shooting'|'-gg_rating'|'-gk_face_diving'|'-gk_face_handling'|'-gk_face_kicking'|'-gk_face_positioning'|'-gk_face_reflexes'|'-gk_face_speed'|'-grading_score'|'-number_of_all_playstyles'|'-number_of_playstyles'|'-number_of_playstyles_plus'|'-overall'|'-pc_current_price'|'-pos_0_gg_rating'|'-pos_10_gg_rating'|'-pos_12_gg_rating'|'-pos_14_gg_rating'|'-pos_16_gg_rating'|'-pos_18_gg_rating'|'-pos_23_gg_rating'|'-pos_25_gg_rating'|'-pos_27_gg_rating'|'-pos_3_gg_rating'|'-pos_5_gg_rating'|'-pos_7_gg_rating'|'-role_10_gg_rating'|'-role_11_gg_rating'|'-role_12_gg_rating'|'-role_13_gg_rating'|'-role_14_gg_rating'|'-role_15_gg_rating'|'-role_16_gg_rating'|'-role_17_gg_rating'|'-role_1_gg_rating'|'-role_23_gg_rating'|'-role_24_gg_rating'|'-role_25_gg_rating'|'-role_26_gg_rating'|'-role_27_gg_rating'|'-role_2_gg_rating'|'-role_37_gg_rating'|'-role_38_gg_rating'|'-role_39_gg_rating'|'-role_3_gg_rating'|'-role_40_gg_rating'|'-role_45_gg_rating'|'-role_46_gg_rating'|'-role_47_gg_rating'|'-role_48_gg_rating'|'-role_49_gg_rating'|'-role_4_gg_rating'|'-role_50_gg_rating'|'-role_51_gg_rating'|'-role_52_gg_rating'|'-role_53_gg_rating'|'-role_54_gg_rating'|'-role_55_gg_rating'|'-role_56_gg_rating'|'-role_57_gg_rating'|'-role_58_gg_rating'|'-role_5_gg_rating'|'-role_63_gg_rating'|'-role_64_gg_rating'|'-role_65_gg_rating'|'-role_66_gg_rating'|'-role_6_gg_rating'|'-role_71_gg_rating'|'-role_72_gg_rating'|'-role_74_gg_rating'|'-role_75_gg_rating'|'-role_7_gg_rating'|'-role_8_gg_rating'|'-role_9_gg_rating'|'-total_face_stats'|'-total_igs'|'attribute_acceleration'|'attribute_aggression'|'attribute_agility'|'attribute_balance'|'attribute_ball_control'|'attribute_composure'|'attribute_crossing'|'attribute_curve'|'attribute_defensive_awareness'|'attribute_dribbling'|'attribute_finishing'|'attribute_fk_accuracy'|'attribute_gk_diving'|'attribute_gk_handling'|'attribute_gk_kicking'|'attribute_gk_positioning'|'attribute_gk_reflexes'|'attribute_heading_accuracy'|'attribute_interceptions'|'attribute_jumping'|'attribute_long_passing'|'attribute_long_shots'|'attribute_penalties'|'attribute_positioning'|'attribute_reactions'|'attribute_short_passing'|'attribute_shot_power'|'attribute_sliding_tackle'|'attribute_sprint_speed'|'attribute_stamina'|'attribute_standing_tackle'|'attribute_strength'|'attribute_vision'|'attribute_volleys'|'created_at'|'current_price'|'face_defending'|'face_dribbling'|'face_pace'|'face_passing'|'face_physicality'|'face_shooting'|'gg_rating'|'gk_face_diving'|'gk_face_handling'|'gk_face_kicking'|'gk_face_positioning'|'gk_face_reflexes'|'gk_face_speed'|'grading_score'|'number_of_all_playstyles'|'number_of_playstyles'|'number_of_playstyles_plus'|'overall'|'pc_current_price'|'pos_0_gg_rating'|'pos_10_gg_rating'|'pos_12_gg_rating'|'pos_14_gg_rating'|'pos_16_gg_rating'|'pos_18_gg_rating'|'pos_23_gg_rating'|'pos_25_gg_rating'|'pos_27_gg_rating'|'pos_3_gg_rating'|'pos_5_gg_rating'|'pos_7_gg_rating'|'role_10_gg_rating'|'role_11_gg_rating'|'role_12_gg_rating'|'role_13_gg_rating'|'role_14_gg_rating'|'role_15_gg_rating'|'role_16_gg_rating'|'role_17_gg_rating'|'role_1_gg_rating'|'role_23_gg_rating'|'role_24_gg_rating'|'role_25_gg_rating'|'role_26_gg_rating'|'role_27_gg_rating'|'role_2_gg_rating'|'role_37_gg_rating'|'role_38_gg_rating'|'role_39_gg_rating'|'role_3_gg_rating'|'role_40_gg_rating'|'role_45_gg_rating'|'role_46_gg_rating'|'role_47_gg_rating'|'role_48_gg_rating'|'role_49_gg_rating'|'role_4_gg_rating'|'role_50_gg_rating'|'role_51_gg_rating'|'role_52_gg_rating'|'role_53_gg_rating'|'role_54_gg_rating'|'role_55_gg_rating'|'role_56_gg_rating'|'role_57_gg_rating'|'role_58_gg_rating'|'role_5_gg_rating'|'role_63_gg_rating'|'role_64_gg_rating'|'role_65_gg_rating'|'role_66_gg_rating'|'role_6_gg_rating'|'role_71_gg_rating'|'role_72_gg_rating'|'role_74_gg_rating'|'role_75_gg_rating'|'role_7_gg_rating'|'role_8_gg_rating'|'role_9_gg_rating'|'total_face_stats'|'total_igs' $sorts
  * @method mixed futggFc27PriceIndex(array $params = [], array $options = []) futgg-fc27-price-index (GET /futgg/fc27/price-index)
+ * @method mixed futggFc27PriceRangeChanges(array $params = [], array $options = []) futgg-fc27-price-range-changes (GET /futgg/fc27/price-range-changes)
+ *   params: 'ps5'|'pc' $platform, 'yes' $extinct, int $before
  * @method mixed futggFc27Prices(array $params = [], array $options = []) futgg-fc27-prices (GET /futgg/fc27/prices)
  *   params: 'player-prices-ps5'|'player-prices-pc'|'player-prices-ps5-dyn'|'player-prices-pc-dyn' $dataset
  * @method mixed futggFc27SbcCategories(array $params = [], array $options = []) futgg-fc27-sbc-categories (GET /futgg/fc27/sbc/categories)
@@ -3617,6 +3874,29 @@ abstract class GbNewsGroup {}
  *   params: 'transcript'|'caption'|'concept'|'onscreen_text'|'visual' $channel, array<string> $transcript, array<string> $caption, array<string> $concept, array<string> $onscreen_text, array<string> $visual, array<string> $exclude_transcript, array<string> $exclude_caption, array<string> $exclude_concept, array<string> $exclude_onscreen_text, array<string> $exclude_visual, 'CNN'|'MSNBC'|'FOXNEWS'|'BBCNEWS'|'KGO'|'KPIX'|'KNTV' $station, string $show, string $day_of_week, string $timespan, string $from, string $to
  */
 abstract class GdeltGroup {}
+
+/**
+ * @method mixed gemrateCard(array $params = [], array $options = []) gemrate-card (GET /gemrate/card)
+ *   params: string $gemrate_id
+ * @method mixed gemrateCategories(array $params = [], array $options = []) gemrate-categories (GET /gemrate/categories)
+ * @method mixed gemrateGradingTrends(array $params = [], array $options = []) gemrate-grading-trends (GET /gemrate/grading-trends)
+ * @method mixed gemrateLeaders(array $params = [], array $options = []) gemrate-leaders (GET /gemrate/leaders)
+ *   params: 'sports'|'tcg'|'combined' $segment, 'athletes'|'sets'|'cards' $type, string $category, int $limit
+ * @method mixed gemrateReport(array $params = [], array $options = []) gemrate-report (GET /gemrate/report)
+ *   params: string $slug, string $category, string $q, int $limit, int $offset
+ * @method mixed gemrateReports(array $params = [], array $options = []) gemrate-reports (GET /gemrate/reports)
+ * @method mixed gemrateSalesTrends(array $params = [], array $options = []) gemrate-sales-trends (GET /gemrate/sales-trends)
+ *   params: 'athletes'|'pokemon' $segment, string $category, string $q, string $year, 'ytd'|'latest_month'|'name' $sort, int $limit, int $offset
+ * @method mixed gemrateSearchPresets(array $params = [], array $options = []) gemrate-search-presets (GET /gemrate/search/presets)
+ * @method mixed gemratePopCollection(array $params = [], array $options = []) gemrate-pop-collection (GET /gemrate/universal-pop-report/collection)
+ *   params: string $slug, string $q, int $limit, int $offset
+ * @method mixed gemratePopCollections(array $params = [], array $options = []) gemrate-pop-collections (GET /gemrate/universal-pop-report/collections)
+ * @method mixed gemratePopSet(array $params = [], array $options = []) gemrate-pop-set (GET /gemrate/universal-pop-report/set)
+ *   params: string $set_id, string $q, int $limit, int $offset
+ * @method mixed gemratePopSets(array $params = [], array $options = []) gemrate-pop-sets (GET /gemrate/universal-pop-report/sets)
+ *   params: string $category, string $year, string $q, int $limit, int $offset
+ */
+abstract class GemRateGroup {}
 
 /**
  * @method mixed lookup(array $params = [], array $options = []) geocoding-lookup (GET /geocoding/lookup)
@@ -4247,6 +4527,20 @@ abstract class HermesGroup {}
 abstract class HindustanTimesGroup {}
 
 /**
+ * @method mixed hltbFilters(array $params = [], array $options = []) hltb-filters (GET /hltb/filters)
+ * @method mixed hltbGame(array $params = [], array $options = []) hltb-game (GET /hltb/game/{id})
+ *   params: int $id
+ * @method mixed hltbPopular(array $params = [], array $options = []) hltb-popular (GET /hltb/popular)
+ * @method mixed hltbSearch(array $params = [], array $options = []) hltb-search (GET /hltb/search)
+ *   params: string $q, int $page, int $size, string $sort, string $range_category, int $min_hours, int $max_hours, string $platform, string $platform_mode, string $genre, string $genre_mode, string $perspective, string $perspective_mode, string $flow, string $flow_mode, string $year, string $year_mode, string $modifier, bool $game_pass
+ * @method mixed hltbStats(array $params = [], array $options = []) hltb-stats (GET /hltb/stats)
+ *   params: string $genre, string $genre_mode, string $perspective, string $perspective_mode, string $flow, string $flow_mode, string $platform, string $platform_mode, string $year, string $year_mode
+ */
+abstract class HowLongToBeatGroup {}
+
+/**
+ * @method mixed coach(array $params = [], array $options = []) hltv-coach (GET /hltv/coach)
+ *   params: int $id, string $slug
  * @method mixed event(array $params = [], array $options = []) hltv-event (GET /hltv/event)
  *   params: int $id, string $slug
  * @method mixed events(array $params = [], array $options = []) hltv-events (GET /hltv/events)
@@ -4258,11 +4552,17 @@ abstract class HindustanTimesGroup {}
  * @method mixed rankings(array $params = [], array $options = []) hltv-rankings (GET /hltv/rankings)
  *   params: string $date, string $country
  * @method mixed results(array $params = [], array $options = []) hltv-results (GET /hltv/results)
- *   params: int $offset, int $event
+ *   params: int $offset, int $event, int $team, string $map, '1'|'2'|'3'|'4'|'5' $stars
  * @method mixed search(array $params = [], array $options = []) hltv-search (GET /hltv/search)
  *   params: string $query
  * @method mixed team(array $params = [], array $options = []) hltv-team (GET /hltv/team)
  *   params: int $id, string $slug
+ * @method mixed transfers(array $params = [], array $options = []) hltv-transfers (GET /hltv/transfers)
+ *   params: int $page
+ * @method mixed valveRanking(array $params = [], array $options = []) hltv-valve-ranking (GET /hltv/valve-ranking)
+ *   params: string $date, string $region
+ * @method mixed valveRankingDetails(array $params = [], array $options = []) hltv-valve-ranking-details (GET /hltv/valve-ranking-details)
+ *   params: string $date, int $team_id, string $lineup
  */
 abstract class HltvGroup {}
 
@@ -4357,6 +4657,15 @@ abstract class HowToGeekGroup {}
  * @method mixed huffpostSections(array $params = [], array $options = []) huffpost-sections (GET /huffpost/sections)
  */
 abstract class HuffPostGroup {}
+
+/**
+ * @method mixed filters(array $params = [], array $options = []) ibm-jobs-filters (GET /ibm-jobs/filters)
+ * @method mixed job(array $params = [], array $options = []) ibm-jobs-job (GET /ibm-jobs/job)
+ *   params: string $id
+ * @method mixed search(array $params = [], array $options = []) ibm-jobs-search (GET /ibm-jobs/search)
+ *   params: string $q, array<'Cloud'|'Consulting'|'Data & Analytics'|'Design & UX'|'Enterprise Operations'|'Infrastructure & Technology'|'Product Management'|'Project Management'|'Research'|'Sales'|'Security'|'Software Engineering'> $team, array<'Entry Level'|'Internship'|'Professional'> $experience_level, array<'Hybrid'|'Remote'> $work_arrangement, array<string> $country, 'relevance'|'newest'|'oldest'|'title_asc'|'title_desc' $sort, int $page, int $page_size
+ */
+abstract class IbmJobsGroup {}
 
 /**
  * @method mixed article(array $params = [], array $options = []) ign-article (GET /ign/article)
@@ -5140,6 +5449,65 @@ abstract class LeboncoinGroup {}
 abstract class LetterboxdGroup {}
 
 /**
+ * @method mixed cloudEval(array $params = [], array $options = []) lichess-cloud-eval (GET /lichess/cloud-eval)
+ *   params: string $fen, int $multiPv, 'standard'|'chess960'|'crazyhouse'|'antichess'|'atomic'|'horde'|'kingOfTheHill'|'racingKings'|'threeCheck'|'fromPosition' $variant
+ * @method mixed enums(array $params = [], array $options = []) lichess-enums (GET /lichess/enums)
+ * @method mixed puzzle(array $params = [], array $options = []) lichess-puzzle (GET /lichess/puzzle)
+ *   params: string $id
+ * @method mixed puzzleBatch(array $params = [], array $options = []) lichess-puzzle-batch (GET /lichess/puzzle/batch)
+ *   params: string $angle, 'easiest'|'easier'|'normal'|'harder'|'hardest' $difficulty, int $nb, 'white'|'black' $color
+ * @method mixed puzzleDaily(array $params = [], array $options = []) lichess-puzzle-daily (GET /lichess/puzzle/daily)
+ * @method mixed puzzleMany(array $params = [], array $options = []) lichess-puzzle-many (GET /lichess/puzzle/many)
+ *   params: string $ids
+ * @method mixed puzzleNext(array $params = [], array $options = []) lichess-puzzle-next (GET /lichess/puzzle/next)
+ *   params: string $angle, 'easiest'|'easier'|'normal'|'harder'|'hardest' $difficulty, 'white'|'black' $color
+ * @method mixed puzzleThemes(array $params = [], array $options = []) lichess-puzzle-themes (GET /lichess/puzzle/themes)
+ * @method mixed simuls(array $params = [], array $options = []) lichess-simuls (GET /lichess/simuls)
+ * @method mixed tablebase(array $params = [], array $options = []) lichess-tablebase (GET /lichess/tablebase)
+ *   params: 'standard'|'atomic'|'antichess' $variant, string $fen, 'never'|'auxiliary'|'always' $dtc
+ * @method mixed version(array $params = [], array $options = []) lichess-version (GET /lichess/version)
+ */
+abstract class LichessGroup {}
+
+/**
+ * @method mixed limitlessCard(array $params = [], array $options = []) limitless-card (GET /limitless/card)
+ *   params: string $set, string $number, 'en'|'de'|'fr'|'it'|'es'|'la'|'pt'|'jp'|'jp-en' $lang
+ * @method mixed limitlessCards(array $params = [], array $options = []) limitless-cards (GET /limitless/cards)
+ *   params: string $q, 'en'|'de'|'fr'|'it'|'es'|'la'|'pt'|'jp'|'jp-en'|'all' $lang, 'prints'|'cards'|'text' $unique, 'set'|'name'|'type'|'usd'|'eur'|'pokedex'|'rarity' $sort, int $page, '25'|'50'|'100' $per_page
+ * @method mixed limitlessDeck(array $params = [], array $options = []) limitless-deck (GET /limitless/deck)
+ *   params: string $id, string $variant, string $format
+ * @method mixed limitlessDecklist(array $params = [], array $options = []) limitless-decklist (GET /limitless/decklist)
+ *   params: string $id, 'global'|'japan' $source, 'en'|'jp'|'de'|'fr'|'it'|'es'|'la'|'pt' $lang, 'regular'|'bling'|'cheapest'|'chaos' $mode
+ * @method mixed limitlessDecklists(array $params = [], array $options = []) limitless-decklists (GET /limitless/decklists)
+ *   params: 'last'|'rank' $sort, string $time, array<'regional'|'international'|'worlds'|'special'|'national'|'cl'|'rl'|'pbl'|'mbl'|'online'|'players_cup'|'invitational'> $type, string $format, array<'eu'|'na'|'la'|'oc'|'asia'|'other'> $region, array<'ma'|'sr'|'jr'> $division, int $page, '25'|'50'|'100' $per_page
+ * @method mixed limitlessDecks(array $params = [], array $options = []) limitless-decks (GET /limitless/decks)
+ *   params: string $q, 'points'|'money'|'day2s'|'cuts'|'wins' $rank, string $time, array<'regional'|'international'|'worlds'|'special'|'national'|'cl'|'rl'|'pbl'|'mbl'|'online'|'players_cup'|'invitational'> $type, string $format, array<'eu'|'na'|'la'|'oc'|'asia'|'other'> $region, array<'ma'|'sr'|'jr'> $division, bool $variants, int $page, '25'|'50'|'100' $per_page
+ * @method mixed limitlessFilters(array $params = [], array $options = []) limitless-filters (GET /limitless/filters)
+ * @method mixed limitlessGames(array $params = [], array $options = []) limitless-games (GET /limitless/games)
+ * @method mixed limitlessOnlinePairings(array $params = [], array $options = []) limitless-online-pairings (GET /limitless/online/pairings)
+ *   params: string $id
+ * @method mixed limitlessOnlineStandings(array $params = [], array $options = []) limitless-online-standings (GET /limitless/online/standings)
+ *   params: string $id
+ * @method mixed limitlessOnlineTournament(array $params = [], array $options = []) limitless-online-tournament (GET /limitless/online/tournament)
+ *   params: string $id
+ * @method mixed limitlessOnlineTournaments(array $params = [], array $options = []) limitless-online-tournaments (GET /limitless/online/tournaments)
+ *   params: 'PTCG'|'VGC'|'OP'|'DCG'|'FW'|'DBS'|'BSS'|'GUNDAM'|'LORCANA'|'SWU'|'RB'|'POCKET'|'PGO'|'other' $game, string $format, int $organizer_id, int $limit, int $page
+ * @method mixed limitlessPlayer(array $params = [], array $options = []) limitless-player (GET /limitless/player)
+ *   params: string $id, 'global'|'japan' $source, bool $all_results, string $time, array<'regional'|'international'|'worlds'|'special'|'national'|'cl'|'rl'|'pbl'|'mbl'|'online'|'players_cup'|'invitational'> $type, string $format, array<'eu'|'na'|'la'|'oc'|'asia'|'other'> $region, array<'ma'|'sr'|'jr'> $division
+ * @method mixed limitlessPlayers(array $params = [], array $options = []) limitless-players (GET /limitless/players)
+ *   params: string $q, 'points'|'money'|'day2s'|'cuts'|'wins'|'awards' $rank, string $zone, string $time, array<'regional'|'international'|'worlds'|'special'|'national'|'cl'|'rl'|'pbl'|'mbl'|'online'|'players_cup'|'invitational'> $type, string $format, array<'eu'|'na'|'la'|'oc'|'asia'|'other'> $region, array<'ma'|'sr'|'jr'> $division, int $page, '25'|'50'|'100' $per_page
+ * @method mixed limitlessTournament(array $params = [], array $options = []) limitless-tournament (GET /limitless/tournament)
+ *   params: string $id, 'global'|'japan' $source, 'masters'|'seniors'|'juniors' $division
+ * @method mixed limitlessTournaments(array $params = [], array $options = []) limitless-tournaments (GET /limitless/tournaments)
+ *   params: string $q, string $time, array<'regional'|'international'|'worlds'|'special'|'national'|'cl'|'rl'|'pbl'|'mbl'|'online'|'players_cup'|'invitational'> $type, string $format, array<'eu'|'na'|'la'|'oc'|'asia'|'other'> $region, int $page, '25'|'50'|'100' $per_page
+ * @method mixed limitlessTournamentsJapan(array $params = [], array $options = []) limitless-tournaments-japan (GET /limitless/tournaments/japan)
+ *   params: int $page, '25'|'50'|'100' $per_page
+ * @method mixed limitlessTournamentsUpcoming(array $params = [], array $options = []) limitless-tournaments-upcoming (GET /limitless/tournaments/upcoming)
+ *   params: array<'regional'|'international'|'worlds'|'special'|'national'|'cl'|'rl'|'pbl'|'mbl'|'online'|'players_cup'|'invitational'> $type, string $format, array<'eu'|'na'|'la'|'oc'|'asia'|'other'> $region
+ */
+abstract class LimitlessTcgGroup {}
+
+/**
  * @method mixed linkedinCompany(array $params = [], array $options = []) linkedin-company (GET /linkedin/company/{id})
  *   params: string $id
  * @method mixed linkedinProductCategories(array $params = [], array $options = []) linkedin-product-categories (GET /linkedin/product/categories)
@@ -5152,6 +5520,33 @@ abstract class LetterboxdGroup {}
  *   params: string $id
  */
 abstract class LinkedInGroup {}
+
+/**
+ * @method mixed allPages(array $params = [], array $options = []) liquipedia-all-pages (GET /liquipedia/all-pages)
+ *   params: string $wiki, string $apfrom, string $apto, string $apprefix, int $apnamespace, 'all'|'nonredirects'|'redirects' $apfilterredir, 'all'|'withlanglinks'|'withoutlanglinks' $apfilterlanglinks, int $apminsize, int $apmaxsize, array<'edit'|'move'|'upload'> $apprtype, 'autoconfirmed'|'sysop' $apprlevel, 'all'|'cascading'|'noncascading' $apprfiltercascade, 'all'|'definite'|'indefinite' $apprexpiry, string $aplimit, 'ascending'|'descending' $apdir, string $apcontinue, string $continue
+ * @method mixed backlinks(array $params = [], array $options = []) liquipedia-backlinks (GET /liquipedia/backlinks)
+ *   params: string $wiki, string $bltitle, int $blpageid, array<string> $blnamespace, 'ascending'|'descending' $bldir, 'all'|'nonredirects'|'redirects' $blfilterredir, string $bllimit, bool $blredirect, string $blcontinue, string $continue
+ * @method mixed categories(array $params = [], array $options = []) liquipedia-categories (GET /liquipedia/categories)
+ *   params: string $wiki, string $acfrom, string $acto, string $acprefix, 'ascending'|'descending' $acdir, int $acmin, int $acmax, string $aclimit, array<'size'|'hidden'> $acprop, string $accontinue, string $continue
+ * @method mixed categoryMembers(array $params = [], array $options = []) liquipedia-category-members (GET /liquipedia/category-members)
+ *   params: string $wiki, string $cmtitle, int $cmpageid, array<string> $cmnamespace, array<'file'|'page'|'subcat'> $cmtype, array<'ids'|'title'|'sortkey'|'sortkeyprefix'|'type'|'timestamp'> $cmprop, string $cmlimit, string $continue, string $cmcontinue, 'sortkey'|'timestamp' $cmsort, 'asc'|'ascending'|'desc'|'descending'|'newer'|'older' $cmdir, string $cmstart, string $cmend, string $cmstarthexsortkey, string $cmendhexsortkey, string $cmstartsortkeyprefix, string $cmendsortkeyprefix
+ * @method mixed enums(array $params = [], array $options = []) liquipedia-enums (GET /liquipedia/enums)
+ *   params: string $wiki
+ * @method mixed links(array $params = [], array $options = []) liquipedia-links (GET /liquipedia/links)
+ *   params: string $wiki, array<string> $titles, array<int> $pageids, array<int> $revids, array<string> $plnamespace, string $pllimit, string $plcontinue, array<string> $pltitles, 'ascending'|'descending' $pldir, bool $redirects, string $continue
+ * @method mixed page(array $params = [], array $options = []) liquipedia-page (GET /liquipedia/page)
+ *   params: string $wiki, string $page, int $pageid, int $oldid, string $section, bool $redirects
+ * @method mixed prefixSearch(array $params = [], array $options = []) liquipedia-prefix-search (GET /liquipedia/prefix-search)
+ *   params: string $wiki, string $pssearch, array<string> $psnamespace, string $pslimit, int $psoffset, 'classic'|'engine_autoselect'|'fast-fuzzy'|'fuzzy'|'fuzzy-subphrases'|'normal'|'normal-subphrases'|'strict' $psprofile, string $continue
+ * @method mixed recentChanges(array $params = [], array $options = []) liquipedia-recent-changes (GET /liquipedia/recent-changes)
+ *   params: string $wiki, string $rcstart, string $rcend, 'newer'|'older' $rcdir, array<string> $rcnamespace, string $rctag, array<'flags'|'ids'|'redirect'|'sha1'|'sizes'|'tags'|'timestamp'|'title'> $rcprop, array<'!anon'|'!autopatrolled'|'!bot'|'!minor'|'!patrolled'|'!redirect'|'anon'|'autopatrolled'|'bot'|'minor'|'patrolled'|'redirect'|'unpatrolled'> $rcshow, string $rclimit, array<'categorize'|'edit'|'external'|'log'|'new'> $rctype, bool $rctoponly, string $rctitle, string $rccontinue, string $continue, 'main' $rcslot
+ * @method mixed search(array $params = [], array $options = []) liquipedia-search (GET /liquipedia/search)
+ *   params: string $wiki, string $q, array<string> $srnamespace, 'nearmatch'|'text'|'title' $srwhat, string $srlimit, int $sroffset, string $continue, 'create_timestamp_asc'|'create_timestamp_desc'|'incoming_links_asc'|'incoming_links_desc'|'just_match'|'last_edit_asc'|'last_edit_desc'|'none'|'random'|'relevance'|'title_natural_asc'|'title_natural_desc'|'user_random' $srsort, array<'rewrittenquery'|'suggestion'|'totalhits'> $srinfo, array<'size'|'wordcount'|'timestamp'|'snippet'|'titlesnippet'|'redirecttitle'|'redirectsnippet'|'sectiontitle'|'sectionsnippet'|'isfilematch'|'categorysnippet'|'extensiondata'> $srprop, bool $srinterwiki, bool $srenablerewrites, 'classic'|'classic_noboostlinks'|'empty'|'wsum_inclinks'|'wsum_inclinks_pv'|'popular_inclinks_pv'|'popular_inclinks'|'engine_autoselect' $srqiprofile, 'default'|'perfield_builder'|'perfield_builder_relaxed'|'perfield_builder_title_filter'|'engine_autoselect' $srqdprofile
+ * @method mixed tags(array $params = [], array $options = []) liquipedia-tags (GET /liquipedia/tags)
+ *   params: string $wiki, array<'active'|'defined'|'description'|'displayname'|'hitcount'|'source'> $tgprop, string $tglimit, string $tgcontinue, string $continue
+ * @method mixed wikis(array $params = [], array $options = []) liquipedia-wikis (GET /liquipedia/wikis)
+ */
+abstract class LiquipediaGroup {}
 
 /**
  * @method mixed livemintArticle(array $params = [], array $options = []) livemint-article (GET /livemint/article)
@@ -5902,8 +6297,44 @@ abstract class TheMotleyFoolGroup {}
  *   params: string $season_uuid, string $category_uuid
  * @method mixed motogpStartingGrid(array $params = [], array $options = []) motogp-starting-grid (GET /motogp/starting-grid)
  *   params: int $season_year, string $shortname, string $category_name
+ * @method mixed motogpWorldStandings(array $params = [], array $options = []) motogp-world-standings (GET /motogp/world-standings)
+ *   params: 'team'|'constructor' $type, string $season_uuid, string $category_uuid
  */
 abstract class MotoGpGroup {}
+
+/**
+ * @method mixed archetype(array $params = [], array $options = []) mtggoldfish-archetype (GET /mtggoldfish/archetype)
+ *   params: string $archetype
+ * @method mixed autocomplete(array $params = [], array $options = []) mtggoldfish-autocomplete (GET /mtggoldfish/autocomplete)
+ *   params: string $q
+ * @method mixed card(array $params = [], array $options = []) mtggoldfish-card (GET /mtggoldfish/card)
+ *   params: string $path
+ * @method mixed deck(array $params = [], array $options = []) mtggoldfish-deck (GET /mtggoldfish/deck)
+ *   params: string $id, 'paper'|'online'|'arena' $type
+ * @method mixed deckSearch(array $params = [], array $options = []) mtggoldfish-deck-search (GET /mtggoldfish/deck-search)
+ *   params: string $name, 'standard'|'modern'|'pioneer'|'historic'|'explorer'|'timeless'|'alchemy'|'pauper'|'legacy'|'vintage'|'penny_dreadful'|'premodern'|'duel_commander'|'commander'|'brawl'|'arena_singleton'|'gladiator'|'artisan_historic'|'cascade'|'oathbreaker'|'canadian_highlander'|'old_school'|'no_banned_list_modern'|'frontier'|'tiny_leaders'|'limited'|'block'|'free_form' $format, string $types, string $player, string $date_from, string $date_to, string $card, int $card_quantity, 'maindeck'|'sideboard'|'commander' $card_board, string $card2, int $card2_quantity, 'maindeck'|'sideboard'|'commander' $card2_board, int $page
+ * @method mixed filters(array $params = [], array $options = []) mtggoldfish-filters (GET /mtggoldfish/filters)
+ * @method mixed metagame(array $params = [], array $options = []) mtggoldfish-metagame (GET /mtggoldfish/metagame)
+ *   params: 'standard'|'modern'|'pioneer'|'historic'|'explorer'|'timeless'|'alchemy'|'pauper'|'legacy'|'vintage'|'penny_dreadful'|'premodern'|'duel_commander'|'commander'|'brawl' $format, int $page
+ * @method mixed movers(array $params = [], array $options = []) mtggoldfish-movers (GET /mtggoldfish/movers)
+ *   params: 'paper'|'online' $type, string $scope, 'winners'|'losers' $direction, 'dod'|'wow' $period
+ * @method mixed priceHistory(array $params = [], array $options = []) mtggoldfish-price-history (GET /mtggoldfish/price-history)
+ *   params: string $id, 'card'|'set' $kind, 'paper'|'online' $type
+ * @method mixed priceIndex(array $params = [], array $options = []) mtggoldfish-price-index (GET /mtggoldfish/price-index)
+ *   params: 'WOE_EOE'|'pioneer'|'modern'|'legacy'|'vintage'|'PAUPER'|'RESERVED_LIST' $index, 'paper'|'online' $type
+ * @method mixed priceList(array $params = [], array $options = []) mtggoldfish-price-list (GET /mtggoldfish/price-list)
+ *   params: 'standard'|'pioneer'|'modern_one'|'modern_two'|'legacy_one'|'legacy_two'|'special'|'boosters' $list, 'paper'|'online' $type
+ * @method mixed set(array $params = [], array $options = []) mtggoldfish-set (GET /mtggoldfish/set)
+ *   params: string $set, string $subset
+ * @method mixed sets(array $params = [], array $options = []) mtggoldfish-sets (GET /mtggoldfish/sets)
+ * @method mixed staples(array $params = [], array $options = []) mtggoldfish-staples (GET /mtggoldfish/staples)
+ *   params: 'standard'|'modern'|'pioneer'|'historic'|'explorer'|'timeless'|'alchemy'|'pauper'|'legacy'|'vintage'|'penny_dreadful'|'premodern'|'duel_commander' $format, 'all'|'creatures'|'spells'|'lands' $category
+ * @method mixed tournament(array $params = [], array $options = []) mtggoldfish-tournament (GET /mtggoldfish/tournament)
+ *   params: string $id
+ * @method mixed tournaments(array $params = [], array $options = []) mtggoldfish-tournaments (GET /mtggoldfish/tournaments)
+ *   params: string $name, 'standard'|'modern'|'pioneer'|'historic'|'explorer'|'timeless'|'alchemy'|'pauper'|'legacy'|'vintage'|'penny_dreadful'|'premodern' $format, string $date_from, string $date_to, int $page
+ */
+abstract class MtggoldfishGroup {}
 
 /**
  * @method mixed liveFeed(array $params = [], array $options = []) nascar-live-feed (GET /nascar/live-feed)
@@ -5958,6 +6389,8 @@ abstract class NationalPostGroup {}
  *   params: string $game_id, '00' $league_id, int $start_period, int $end_period
  * @method mixed boxScoreAdvanced(array $params = [], array $options = []) nba-box-score-advanced (GET /nba/box-score-advanced)
  *   params: string $game_id, '00' $league_id, int $start_period, int $end_period
+ * @method mixed boxScoreDefensive(array $params = [], array $options = []) nba-box-score-defensive (GET /nba/box-score-defensive)
+ *   params: string $game_id
  * @method mixed boxScoreFourFactors(array $params = [], array $options = []) nba-box-score-four-factors (GET /nba/box-score-four-factors)
  *   params: string $game_id, '00' $league_id, int $start_period, int $end_period
  * @method mixed boxScoreMisc(array $params = [], array $options = []) nba-box-score-misc (GET /nba/box-score-misc)
@@ -5966,6 +6399,8 @@ abstract class NationalPostGroup {}
  *   params: string $game_id
  * @method mixed boxScoreScoring(array $params = [], array $options = []) nba-box-score-scoring (GET /nba/box-score-scoring)
  *   params: string $game_id, '00' $league_id, int $start_period, int $end_period
+ * @method mixed boxScoreSummary(array $params = [], array $options = []) nba-box-score-summary (GET /nba/box-score-summary)
+ *   params: string $game_id
  * @method mixed boxScoreUsage(array $params = [], array $options = []) nba-box-score-usage (GET /nba/box-score-usage)
  *   params: string $game_id, '00' $league_id, int $start_period, int $end_period
  * @method mixed commonAllPlayers(array $params = [], array $options = []) nba-common-all-players (GET /nba/common-all-players)
@@ -5980,12 +6415,18 @@ abstract class NationalPostGroup {}
  * @method mixed games(array $params = [], array $options = []) nba-games (GET /nba/games)
  * @method mixed homepageLeaders(array $params = [], array $options = []) nba-homepage-leaders (GET /nba/homepage-leaders)
  *   params: '00' $league_id, 'Points'|'Rebounds' $stat_category, 'Team' $player_or_team, string $player_scope, 'Season' $game_scope
+ * @method mixed homepageV2(array $params = [], array $options = []) nba-homepage-v2 (GET /nba/homepage-v2)
+ *   params: '00' $league_id, string $season, 'Regular Season' $season_type, 'Season' $game_scope, string $player_scope, 'Player' $player_or_team, 'Traditional' $stat_type
+ * @method mixed hustlePlayer(array $params = [], array $options = []) nba-hustle-player (GET /nba/hustle-player)
+ *   params: '00' $league_id, string $season, 'Regular Season' $season_type, 'PerGame' $per_mode
  * @method mixed hustleStats(array $params = [], array $options = []) nba-hustle-stats (GET /nba/hustle-stats)
  *   params: string $game_id
  * @method mixed hustleTeam(array $params = [], array $options = []) nba-hustle-team (GET /nba/hustle-team)
  *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, 'PerGame'|'Totals'|'Per36'|'Per48'|'Per100Possessions'|'MinutesPer'|'PerPossession' $per_mode
  * @method mixed leagueGameLog(array $params = [], array $options = []) nba-league-game-log (GET /nba/league-game-log)
  *   params: '00' $league_id, string $season, 'Regular Season' $season_type, 'DESC' $direction, 'T' $player_or_team, 'DATE' $sorter
+ * @method mixed lineupShotChart(array $params = [], array $options = []) nba-lineup-shot-chart (GET /nba/lineup-shot-chart)
+ *   params: int $team_id, '00' $league_id, string $season, 'Regular Season' $season_type, 'FGA'|'FG_PCT' $context_measure, '5' $group_quantity, int $period
  * @method mixed lineups(array $params = [], array $options = []) nba-lineups (GET /nba/lineups)
  *   params: '00' $league_id, string $season, 'Regular Season' $season_type, 'Base' $measure_type, 'PerGame' $per_mode, '5' $group_quantity
  * @method mixed news(array $params = [], array $options = []) nba-news (GET /nba/news)
@@ -6001,6 +6442,20 @@ abstract class NationalPostGroup {}
  *   params: int $player_id, 'PerGame' $per_mode, '00' $league_id
  * @method mixed playerClutch(array $params = [], array $options = []) nba-player-clutch (GET /nba/player-clutch)
  *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, 'PerGame'|'Totals'|'Per36'|'Per48'|'Per100Possessions'|'MinutesPer'|'PerPossession' $per_mode, 'Base'|'Advanced'|'Misc'|'Scoring'|'Defense'|'Opponent' $measure_type, 'Last 5 Minutes' $clutch_time, 'Ahead or Behind' $ahead_behind, '5' $point_diff
+ * @method mixed playerCompare(array $params = [], array $options = []) nba-player-compare (GET /nba/player-compare)
+ *   params: array<string> $player_ids, array<string> $vs_player_ids, '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, 'PerGame'|'Totals'|'Per36'|'Per48'|'Per100Possessions'|'MinutesPer'|'PerPossession' $per_mode, 'Base'|'Advanced'|'Misc'|'Scoring'|'Defense'|'Opponent' $measure_type
+ * @method mixed playerDashByClutch(array $params = [], array $options = []) nba-player-dash-by-clutch (GET /nba/player-dash-by-clutch)
+ *   params: int $player_id, '00' $league_id, string $season, 'Regular Season' $season_type, 'PerGame' $per_mode, 'Base'|'Advanced'|'Misc'|'Scoring'|'Defense'|'Opponent' $measure_type
+ * @method mixed playerDashByGameSplits(array $params = [], array $options = []) nba-player-dash-by-game-splits (GET /nba/player-dash-by-game-splits)
+ *   params: int $player_id, '00' $league_id, string $season, 'Regular Season' $season_type, 'PerGame' $per_mode, 'Base'|'Advanced'|'Misc'|'Scoring'|'Defense'|'Opponent' $measure_type
+ * @method mixed playerDashByLastNGames(array $params = [], array $options = []) nba-player-dash-by-last-n-games (GET /nba/player-dash-by-last-n-games)
+ *   params: int $player_id, '00' $league_id, string $season, 'Regular Season' $season_type, 'PerGame' $per_mode, 'Base'|'Advanced'|'Misc'|'Scoring'|'Defense'|'Opponent' $measure_type
+ * @method mixed playerDashByOpponent(array $params = [], array $options = []) nba-player-dash-by-opponent (GET /nba/player-dash-by-opponent)
+ *   params: int $player_id, '00' $league_id, string $season, 'Regular Season' $season_type, 'PerGame' $per_mode, 'Base'|'Advanced'|'Misc'|'Scoring'|'Defense'|'Opponent' $measure_type
+ * @method mixed playerDashPtPass(array $params = [], array $options = []) nba-player-dash-pt-pass (GET /nba/player-dash-pt-pass)
+ *   params: int $player_id, '00' $league_id, string $season, 'Regular Season' $season_type, 'PerGame' $per_mode
+ * @method mixed playerDashPtReb(array $params = [], array $options = []) nba-player-dash-pt-reb (GET /nba/player-dash-pt-reb)
+ *   params: int $player_id, '00' $league_id, string $season, 'Regular Season' $season_type, 'PerGame' $per_mode
  * @method mixed playerDashPtShots(array $params = [], array $options = []) nba-player-dash-pt-shots (GET /nba/player-dash-pt-shots)
  *   params: int $player_id, '00' $league_id, string $season, 'Regular Season' $season_type, 'PerGame' $per_mode
  * @method mixed playerGameLogs(array $params = [], array $options = []) nba-player-game-logs (GET /nba/player-game-logs)
@@ -6019,18 +6474,32 @@ abstract class NationalPostGroup {}
  *   params: '00' $league_id, string $season, int $team_id, bool $active
  * @method mixed playoffPicture(array $params = [], array $options = []) nba-playoff-picture (GET /nba/playoff-picture)
  *   params: '00' $league_id, string $season_id
+ * @method mixed playoffSeries(array $params = [], array $options = []) nba-playoff-series (GET /nba/playoff-series)
+ *   params: '00' $league_id, string $season
  * @method mixed ptDefend(array $params = [], array $options = []) nba-pt-defend (GET /nba/pt-defend)
  *   params: '00' $league_id, string $season, 'Regular Season' $season_type, 'PerGame' $per_mode, 'Overall'|'3 Pointers' $defense_category
  * @method mixed ptStats(array $params = [], array $options = []) nba-pt-stats (GET /nba/pt-stats)
  *   params: '00' $league_id, string $season, 'Regular Season' $season_type, 'PerGame' $per_mode, 'SpeedDistance' $pt_measure_type
  * @method mixed scoreboard(array $params = [], array $options = []) nba-scoreboard (GET /nba/scoreboard)
  *   params: '00' $league_id, string $game_date, int $day_offset
+ * @method mixed shotChart(array $params = [], array $options = []) nba-shot-chart (GET /nba/shot-chart)
+ *   params: int $player_id, int $team_id, '00' $league_id, string $season, 'Regular Season' $season_type, 'FGA'|'FG_PCT' $context_measure
  * @method mixed standings(array $params = [], array $options = []) nba-standings (GET /nba/standings)
  *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type
  * @method mixed synergyPlayTypes(array $params = [], array $options = []) nba-synergy-play-types (GET /nba/synergy-play-types)
  *   params: '00' $league_id, string $season_year, 'Regular Season' $season_type, 'Isolation' $play_type, 'PerGame' $per_mode, 'T' $player_or_team, 'offensive' $type_grouping
+ * @method mixed teamDashByClutch(array $params = [], array $options = []) nba-team-dash-by-clutch (GET /nba/team-dash-by-clutch)
+ *   params: int $team_id, '00' $league_id, string $season, 'Regular Season' $season_type, 'PerGame' $per_mode, 'Base'|'Advanced'|'Misc'|'Scoring'|'Defense'|'Opponent' $measure_type
+ * @method mixed teamDashByGameSplits(array $params = [], array $options = []) nba-team-dash-by-game-splits (GET /nba/team-dash-by-game-splits)
+ *   params: int $team_id, '00' $league_id, string $season, 'Regular Season' $season_type, 'PerGame' $per_mode, 'Base'|'Advanced'|'Misc'|'Scoring'|'Defense'|'Opponent' $measure_type
+ * @method mixed teamDashByLastNGames(array $params = [], array $options = []) nba-team-dash-by-last-n-games (GET /nba/team-dash-by-last-n-games)
+ *   params: int $team_id, '00' $league_id, string $season, 'Regular Season' $season_type, 'PerGame' $per_mode, 'Base'|'Advanced'|'Misc'|'Scoring'|'Defense'|'Opponent' $measure_type
+ * @method mixed teamDashByOpponent(array $params = [], array $options = []) nba-team-dash-by-opponent (GET /nba/team-dash-by-opponent)
+ *   params: int $team_id, '00' $league_id, string $season, 'Regular Season' $season_type, 'PerGame' $per_mode, 'Base'|'Advanced'|'Misc'|'Scoring'|'Defense'|'Opponent' $measure_type
  * @method mixed teamDashPtPass(array $params = [], array $options = []) nba-team-dash-pt-pass (GET /nba/team-dash-pt-pass)
  *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, 'PerGame'|'Totals'|'Per36'|'Per48'|'Per100Possessions'|'MinutesPer'|'PerPossession' $per_mode, int $team_id
+ * @method mixed teamDashPtReb(array $params = [], array $options = []) nba-team-dash-pt-reb (GET /nba/team-dash-pt-reb)
+ *   params: int $team_id, '00' $league_id, string $season, 'Regular Season' $season_type, 'PerGame' $per_mode
  * @method mixed teamDashPtShots(array $params = [], array $options = []) nba-team-dash-pt-shots (GET /nba/team-dash-pt-shots)
  *   params: '00' $league_id, string $season, 'Regular Season'|'Playoffs'|'Pre Season'|'All Star' $season_type, 'PerGame'|'Totals'|'Per36'|'Per48'|'Per100Possessions'|'MinutesPer'|'PerPossession' $per_mode, int $team_id
  * @method mixed teamDetails(array $params = [], array $options = []) nba-team-details (GET /nba/team-details)
@@ -6669,6 +7138,22 @@ abstract class OttoGroup {}
 abstract class PageSixGroup {}
 
 /**
+ * @method mixed pandaexpressCategories(array $params = [], array $options = []) pandaexpress-categories (GET /pandaexpress/categories)
+ *   params: int $store_id, bool $include_single_use
+ * @method mixed pandaexpressDirectory(array $params = [], array $options = []) pandaexpress-directory (GET /pandaexpress/directory)
+ *   params: string $country, string $state, int $page, int $limit
+ * @method mixed pandaexpressItem(array $params = [], array $options = []) pandaexpress-item (GET /pandaexpress/item)
+ *   params: int $store_id, int $product_id
+ * @method mixed pandaexpressMenu(array $params = [], array $options = []) pandaexpress-menu (GET /pandaexpress/menu)
+ *   params: int $store_id, int $category_id, bool $include_single_use
+ * @method mixed pandaexpressNearby(array $params = [], array $options = []) pandaexpress-nearby (GET /pandaexpress/nearby)
+ *   params: float $lat, float $lng, float $radius, int $limit
+ * @method mixed pandaexpressStore(array $params = [], array $options = []) pandaexpress-store (GET /pandaexpress/store)
+ *   params: int $store_id, string $store_number, bool $include_hours
+ */
+abstract class PandaExpressGroup {}
+
+/**
  * @method mixed search(array $params = [], array $options = []) pandamart-search (GET /pandamart/search)
  *   params: 'sg'|'pk'|'bd'|'hk'|'my'|'ph' $market, float $latitude, float $longitude, int $limit, int $offset
  * @method mixed store(array $params = [], array $options = []) pandamart-store (GET /pandamart/store)
@@ -6810,6 +7295,21 @@ abstract class PcGamerGroup {}
 abstract class PcmagGroup {}
 
 /**
+ * @method mixed channels(array $params = [], array $options = []) peacock-channels (GET /peacock/channels)
+ * @method mixed collection(array $params = [], array $options = []) peacock-collection (GET /peacock/collection)
+ *   params: string $slug, int $page, '24'|'30'|'100' $per_page
+ * @method mixed genres(array $params = [], array $options = []) peacock-genres (GET /peacock/genres)
+ *   params: 'tv'|'movies'|'kids'|'latino'|'news' $category
+ * @method mixed page(array $params = [], array $options = []) peacock-page (GET /peacock/page)
+ *   params: string $slug
+ * @method mixed season(array $params = [], array $options = []) peacock-season (GET /peacock/season)
+ *   params: string $slug, int $season
+ * @method mixed title(array $params = [], array $options = []) peacock-title (GET /peacock/title)
+ *   params: string $slug
+ */
+abstract class PeacockGroup {}
+
+/**
  * @method mixed article(array $params = [], array $options = []) people-article (GET /people/article)
  *   params: string $url
  * @method mixed author(array $params = [], array $options = []) people-author (GET /people/author)
@@ -6838,6 +7338,11 @@ abstract class PeopleGroup {}
 abstract class PetSmartGroup {}
 
 /**
+ * @method mixed pgatourCups(array $params = [], array $options = []) pgatour-cups (GET /pgatour/cups)
+ * @method mixed pgatourCupStandings(array $params = [], array $options = []) pgatour-cup-standings (GET /pgatour/cups/{cup_id})
+ *   params: string $cup_id, int $year, 'THROUGH_EVENT'|'EVENT_ONLY' $query_type, string $tournament_id
+ * @method mixed pgatourCupOptions(array $params = [], array $options = []) pgatour-cup-options (GET /pgatour/cups/{cup_id}/options)
+ *   params: string $cup_id, int $year
  * @method mixed pgatourLeaderboard(array $params = [], array $options = []) pgatour-leaderboard (GET /pgatour/leaderboard)
  *   params: 'R'|'S'|'H'|'Y' $tour
  * @method mixed pgatourPlayers(array $params = [], array $options = []) pgatour-players (GET /pgatour/players)
@@ -6996,6 +7501,55 @@ abstract class PizzaHutGroup {}
 abstract class PlayStationGroup {}
 
 /**
+ * @method mixed pokedataCardSales(array $params = [], array $options = []) pokedata-card-sales (GET /pokedata/card/sales)
+ *   params: int $card_id, int $page
+ * @method mixed pokedataCardStats(array $params = [], array $options = []) pokedata-card-stats (GET /pokedata/card/stats)
+ *   params: string $card_ids
+ * @method mixed pokedataMarketplaceListing(array $params = [], array $options = []) pokedata-marketplace-listing (GET /pokedata/marketplace/listing)
+ *   params: string $listing_id
+ * @method mixed pokedataMarketplaceSearch(array $params = [], array $options = []) pokedata-marketplace-search (GET /pokedata/marketplace/search)
+ *   params: string $q
+ * @method mixed pokedataPortfolio(array $params = [], array $options = []) pokedata-portfolio (GET /pokedata/portfolio)
+ *   params: string $portfolio_id
+ * @method mixed pokedataPortfolioValue(array $params = [], array $options = []) pokedata-portfolio-value (GET /pokedata/portfolio/value)
+ *   params: string $portfolio_id
+ * @method mixed pokedataPortfolios(array $params = [], array $options = []) pokedata-portfolios (GET /pokedata/portfolios)
+ *   params: string $q, 'featured'|'value'|'views' $sort, int $page, int $limit
+ * @method mixed pokedataProductSales(array $params = [], array $options = []) pokedata-product-sales (GET /pokedata/product/sales)
+ *   params: int $product_id
+ * @method mixed pokedataProductStats(array $params = [], array $options = []) pokedata-product-stats (GET /pokedata/product/stats)
+ *   params: string $product_ids
+ * @method mixed pokedataProducts(array $params = [], array $options = []) pokedata-products (GET /pokedata/products)
+ *   params: 'Pokemon'|'Magic the Gathering'|'Yugioh'|'One Piece'|'Digimon Card Game'|'Flesh and Blood'|'Union Arena'|'MetaZoo'|'Lorcana'|'Dragon Ball Super Fusion World'|'Gundam Card Game'|'Star Wars Unlimited'|'Sorcery Contested Realm'|'Dragon Ball Z TCG'|'Grand Archive' $tcg, 'ENGLISH'|'JAPANESE'|'CHINESE' $language, 'BATTLEBOX'|'BLISTERPACK'|'BOOSTERBOX'|'BOOSTERPACK'|'COLLECTIONBOX'|'COLLECTIONCHEST'|'DECK'|'DECKBUILDBOX'|'ELITETRAINERBOX'|'JUMBOPACK'|'LIMITEDSET'|'MISCELLANEOUS'|'PINCOLLECTION'|'PREMIUMTRAINERBOX'|'SHEET'|'SPECIALBOX'|'SPECIALPACK'|'SPECIALSET'|'STARTERSET'|'STARTPACK'|'TIN'|'TRAINERCARDCOLLECTION' $type, int $year, int $limit, int $offset
+ * @method mixed pokedataProductsFacets(array $params = [], array $options = []) pokedata-products-facets (GET /pokedata/products/facets)
+ *   params: 'Pokemon'|'Magic the Gathering'|'Yugioh'|'One Piece'|'Digimon Card Game'|'Flesh and Blood'|'Union Arena'|'MetaZoo'|'Lorcana'|'Dragon Ball Super Fusion World'|'Gundam Card Game'|'Star Wars Unlimited'|'Sorcery Contested Realm'|'Dragon Ball Z TCG'|'Grand Archive' $tcg
+ * @method mixed pokedataSearch(array $params = [], array $options = []) pokedata-search (GET /pokedata/search)
+ *   params: string $q, 'cards'|'products' $type, 'Pokemon'|'Magic the Gathering'|'Yugioh'|'One Piece'|'Digimon Card Game'|'Flesh and Blood'|'Union Arena'|'MetaZoo'|'Lorcana'|'Dragon Ball Super Fusion World'|'Gundam Card Game'|'Star Wars Unlimited'|'Sorcery Contested Realm'|'Dragon Ball Z TCG'|'Grand Archive' $tcg, 'ENGLISH'|'JAPANESE'|'CHINESE' $language, int $set_id, 'true'|'false' $secret, 'BATTLEBOX'|'BLISTERPACK'|'BOOSTERBOX'|'BOOSTERPACK'|'COLLECTIONBOX'|'COLLECTIONCHEST'|'DECK'|'DECKBUILDBOX'|'ELITETRAINERBOX'|'JUMBOPACK'|'LIMITEDSET'|'MISCELLANEOUS'|'PINCOLLECTION'|'PREMIUMTRAINERBOX'|'SHEET'|'SPECIALBOX'|'SPECIALPACK'|'SPECIALSET'|'STARTERSET'|'STARTPACK'|'TIN'|'TRAINERCARDCOLLECTION' $product_type, int $year, 'relevance'|'name_asc'|'name_desc'|'release_date_desc'|'release_date_asc' $sort, int $page, int $limit
+ * @method mixed pokedataSet(array $params = [], array $options = []) pokedata-set (GET /pokedata/set)
+ *   params: int $set_id
+ * @method mixed pokedataSetCards(array $params = [], array $options = []) pokedata-set-cards (GET /pokedata/set/cards)
+ *   params: int $set_id, int $limit, int $offset
+ * @method mixed pokedataSetProducts(array $params = [], array $options = []) pokedata-set-products (GET /pokedata/set/products)
+ *   params: int $set_id
+ * @method mixed pokedataSets(array $params = [], array $options = []) pokedata-sets (GET /pokedata/sets)
+ *   params: 'Pokemon'|'Magic the Gathering'|'Yugioh'|'One Piece'|'Digimon Card Game'|'Flesh and Blood'|'Union Arena'|'MetaZoo'|'Lorcana'|'Dragon Ball Super Fusion World'|'Gundam Card Game'|'Star Wars Unlimited'|'Sorcery Contested Realm'|'Dragon Ball Z TCG'|'Grand Archive' $tcg, 'ENGLISH'|'JAPANESE'|'CHINESE' $language, string $series, int $limit, int $offset
+ * @method mixed pokedataSources(array $params = [], array $options = []) pokedata-sources (GET /pokedata/sources)
+ * @method mixed pokedataTcgs(array $params = [], array $options = []) pokedata-tcgs (GET /pokedata/tcgs)
+ */
+abstract class PokeDataGroup {}
+
+/**
+ * @method mixed poketraceCard(array $params = [], array $options = []) poketrace-card (GET /poketrace/card)
+ *   params: string $slug
+ * @method mixed poketraceCatalog(array $params = [], array $options = []) poketrace-catalog (GET /poketrace/catalog)
+ *   params: string $q, string $set, 'US'|'EU' $market, 'single'|'sealed'|'code_card'|'accessory' $product_type, 'card'|'code_card'|'booster_box'|'booster_pack'|'booster_bundle'|'elite_trainer_box'|'tin'|'deck'|'box_collection'|'blister'|'sealed_case'|'other_sealed'|'coin'|'accessory'|'other' $product_family, string $tier, 'up'|'down'|'stable' $trend, 'very_low'|'low'|'medium'|'high'|'very_high' $confidence, float $min_price, float $max_price, 'true'|'false' $graded, 'Normal'|'Holofoil'|'Reverse_Holofoil'|'1st_Edition'|'1st_Edition_Holofoil'|'Unlimited'|'Unlimited_Holofoil' $variant, 'pokemon'|'pokemon-japanese'|'pokemon-chinese'|'pokemon-thai'|'pokemon-indonesian' $game, 'recent'|'sale_count'|'price_desc'|'price_asc'|'name' $sort, int $limit, string $cursor
+ * @method mixed poketraceFilters(array $params = [], array $options = []) poketrace-filters (GET /poketrace/filters)
+ * @method mixed poketraceSets(array $params = [], array $options = []) poketrace-sets (GET /poketrace/sets)
+ *   params: 'pokemon'|'pokemon-japanese'|'pokemon-chinese'|'pokemon-thai'|'pokemon-indonesian' $game, 'US'|'EU' $market, 'single'|'sealed'|'code_card'|'accessory' $product_type, 'card'|'code_card'|'booster_box'|'booster_pack'|'booster_bundle'|'elite_trainer_box'|'tin'|'deck'|'box_collection'|'blister'|'sealed_case'|'other_sealed'|'coin'|'accessory'|'other' $product_family, 'true'|'false' $graded, 'Normal'|'Holofoil'|'Reverse_Holofoil'|'1st_Edition'|'1st_Edition_Holofoil'|'Unlimited'|'Unlimited_Holofoil' $variant
+ */
+abstract class PokeTraceGroup {}
+
+/**
  * @method mixed article(array $params = [], array $options = []) politico-article (GET /politico/article)
  *   params: string $url
  * @method mixed author(array $params = [], array $options = []) politico-author (GET /politico/author)
@@ -7021,7 +7575,7 @@ abstract class PolygonGroup {}
 
 /**
  * @method mixed activityTrades(array $params = [], array $options = []) polymarket-activity-trades (GET /polymarket/activity/trades)
- *   params: int $limit, int $offset, 'true'|'false' $taker_only, 'CASH' $filter_type, '1'|'5'|'10'|'100'|'1000'|'10000'|'100000' $filter_amount, string $event_id, string $market
+ *   params: int $limit, int $offset, string $cursor, 'true'|'false' $taker_only, 'CASH' $filter_type, '1'|'5'|'10'|'100'|'1000'|'10000'|'100000' $filter_amount, string $event_id, string $market
  * @method mixed clobMarket(array $params = [], array $options = []) polymarket-clob-market (GET /polymarket/clob/market/{condition_id})
  *   params: string $condition_id
  * @method mixed dashboardMacro(array $params = [], array $options = []) polymarket-dashboard-macro (GET /polymarket/dashboards/macro)
@@ -7035,11 +7589,11 @@ abstract class PolygonGroup {}
  * @method mixed eventDetailById(array $params = [], array $options = []) polymarket-event-detail-by-id (GET /polymarket/event/id/{id})
  *   params: string $id
  * @method mixed eventActivityById(array $params = [], array $options = []) polymarket-event-activity-by-id (GET /polymarket/event/id/{id}/activity)
- *   params: string $id, int $limit, int $offset, 'true'|'false' $taker_only, 'CASH' $filter_type, '1'|'5'|'10'|'100'|'1000'|'10000'|'100000' $filter_amount
+ *   params: string $id, int $limit, int $offset, string $cursor, 'true'|'false' $taker_only, 'CASH' $filter_type, '1'|'5'|'10'|'100'|'1000'|'10000'|'100000' $filter_amount
  * @method mixed eventDetail(array $params = [], array $options = []) polymarket-event-detail (GET /polymarket/event/{slug})
  *   params: string $slug
  * @method mixed eventActivity(array $params = [], array $options = []) polymarket-event-activity (GET /polymarket/event/{slug}/activity)
- *   params: string $slug, int $limit, int $offset, 'true'|'false' $taker_only, 'CASH' $filter_type, '1'|'5'|'10'|'100'|'1000'|'10000'|'100000' $filter_amount
+ *   params: string $slug, int $limit, int $offset, string $cursor, 'true'|'false' $taker_only, 'CASH' $filter_type, '1'|'5'|'10'|'100'|'1000'|'10000'|'100000' $filter_amount
  * @method mixed events(array $params = [], array $options = []) polymarket-events (GET /polymarket/events)
  *   params: int $limit, int $offset, 'volume24hr'|'volume'|'liquidity'|'endDate'|'updatedAt'|'createdAt'|'id'|'slug'|'title'|'question'|'label' $order, bool $ascending, 'true'|'false' $closed
  * @method mixed eventsSimilar(array $params = [], array $options = []) polymarket-events-similar (GET /polymarket/events/similar)
@@ -7059,7 +7613,7 @@ abstract class PolygonGroup {}
  * @method mixed marketDetailByCondition(array $params = [], array $options = []) polymarket-market-detail-by-condition (GET /polymarket/market/condition/{condition_id})
  *   params: string $condition_id
  * @method mixed marketActivityByCondition(array $params = [], array $options = []) polymarket-market-activity-by-condition (GET /polymarket/market/condition/{condition_id}/activity)
- *   params: string $condition_id, int $limit, int $offset, 'true'|'false' $taker_only, 'CASH' $filter_type, '1'|'5'|'10'|'100'|'1000'|'10000'|'100000' $filter_amount
+ *   params: string $condition_id, int $limit, int $offset, string $cursor, 'true'|'false' $taker_only, 'CASH' $filter_type, '1'|'5'|'10'|'100'|'1000'|'10000'|'100000' $filter_amount
  * @method mixed marketLiquidityByCondition(array $params = [], array $options = []) polymarket-market-liquidity-by-condition (GET /polymarket/market/condition/{condition_id}/liquidity)
  *   params: string $condition_id
  * @method mixed marketDetailBySlug(array $params = [], array $options = []) polymarket-market-detail-by-slug (GET /polymarket/market/slug/{slug})
@@ -7476,30 +8030,69 @@ abstract class RebagGroup {}
  *   params: string $query, int $min_subscribers, int $max_subscribers, bool $over_18, 'created_utc'|'subscribers'|'subreddit' $sort_by, 'asc'|'desc' $sort, int $limit
  * @method mixed archiveTimeSeries(array $params = [], array $options = []) reddit-archive-time-series (GET /reddit/archive/time-series)
  *   params: 'posts_count'|'comments_count'|'posts_score_sum'|'comments_score_sum'|'posts_retrieval_delay_seconds_sum'|'comments_retrieval_delay_seconds_sum'|'subreddit_subscribers' $metric, string $subreddit, 'year'|'quarter'|'month'|'week'|'day'|'hour'|'minute' $precision, string $created_after, string $created_before
+ * @method mixed comment(array $params = [], array $options = []) reddit-comment (GET /reddit/comment/{id})
+ *   params: string $id
+ * @method mixed commentAwards(array $params = [], array $options = []) reddit-comment-awards (GET /reddit/comment/{id}/awards)
+ *   params: string $id
  * @method mixed comments(array $params = [], array $options = []) reddit-comments (GET /reddit/comments/{id})
- *   params: string $id, 'confidence'|'top'|'new'|'controversial'|'old'|'qa' $sort, int $limit, int $depth, bool $include_metrics
+ *   params: string $id, 'confidence'|'top'|'new'|'controversial'|'old'|'qa' $sort, int $limit, int $depth
  * @method mixed domainPosts(array $params = [], array $options = []) reddit-domain-posts (GET /reddit/domain/{domain}/posts)
  *   params: string $domain, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
  * @method mixed leads(array $params = [], array $options = []) reddit-leads (GET /reddit/leads)
  *   params: string $q, string $subreddit, 'relevance'|'hot'|'new'|'top'|'comments' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, int $min_score, 'auto'|'heuristic'|'llm' $classifier
+ * @method mixed popular(array $params = [], array $options = []) reddit-popular (GET /reddit/popular)
+ *   params: 'hot'|'top' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
  * @method mixed post(array $params = [], array $options = []) reddit-post (GET /reddit/post/{id})
- *   params: string $id, bool $include_metrics
+ *   params: string $id
+ * @method mixed postAwards(array $params = [], array $options = []) reddit-post-awards (GET /reddit/post/{id}/awards)
+ *   params: string $id
+ * @method mixed postsByIds(array $params = [], array $options = []) reddit-posts-by-ids (GET /reddit/posts/ids)
+ *   params: string $ids
  * @method mixed search(array $params = [], array $options = []) reddit-search (GET /reddit/search)
  *   params: string $q, string $subreddit, 'relevance'|'hot'|'new'|'top'|'comments' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
+ * @method mixed searchComments(array $params = [], array $options = []) reddit-search-comments (GET /reddit/search/comments)
+ *   params: string $q, string $subreddit, 'relevance'|'hot'|'new'|'top'|'comments' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
+ * @method mixed searchPeople(array $params = [], array $options = []) reddit-search-people (GET /reddit/search/people)
+ *   params: string $q, 'relevance'|'hot'|'new'|'top'|'comments' $sort, int $limit, string $after
  * @method mixed subredditAbout(array $params = [], array $options = []) reddit-subreddit-about (GET /reddit/subreddit/{subreddit}/about)
  *   params: string $subreddit, int $limit
  * @method mixed subredditComments(array $params = [], array $options = []) reddit-subreddit-comments (GET /reddit/subreddit/{subreddit}/comments)
  *   params: string $subreddit, int $limit, string $after
+ * @method mixed subredditFlairs(array $params = [], array $options = []) reddit-subreddit-flairs (GET /reddit/subreddit/{subreddit}/flairs)
+ *   params: string $subreddit
+ * @method mixed subredditHighlights(array $params = [], array $options = []) reddit-subreddit-highlights (GET /reddit/subreddit/{subreddit}/highlights)
+ *   params: string $subreddit
+ * @method mixed subredditLeaderboardCategories(array $params = [], array $options = []) reddit-subreddit-leaderboard-categories (GET /reddit/subreddit/{subreddit}/leaderboard/categories)
+ *   params: string $subreddit
  * @method mixed subredditPosts(array $params = [], array $options = []) reddit-subreddit-posts (GET /reddit/subreddit/{subreddit}/posts)
- *   params: string $subreddit, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
+ *   params: string $subreddit, 'hot'|'new'|'top'|'rising'|'controversial' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
+ * @method mixed subredditRules(array $params = [], array $options = []) reddit-subreddit-rules (GET /reddit/subreddit/{subreddit}/rules)
+ *   params: string $subreddit
+ * @method mixed subredditUserFlairs(array $params = [], array $options = []) reddit-subreddit-user-flairs (GET /reddit/subreddit/{subreddit}/user-flairs)
+ *   params: string $subreddit
+ * @method mixed subredditWiki(array $params = [], array $options = []) reddit-subreddit-wiki (GET /reddit/subreddit/{subreddit}/wiki)
+ *   params: string $subreddit, string $page
+ * @method mixed subredditsDiscover(array $params = [], array $options = []) reddit-subreddits-discover (GET /reddit/subreddits/discover)
+ *   params: 'popular'|'new'|'default' $feed, int $limit, string $after
  * @method mixed subredditsPosts(array $params = [], array $options = []) reddit-subreddits-posts (GET /reddit/subreddits/posts)
  *   params: string $subreddits, 'hot'|'new'|'top'|'rising' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
+ * @method mixed subredditsSearch(array $params = [], array $options = []) reddit-subreddits-search (GET /reddit/subreddits/search)
+ *   params: string $q, int $limit, string $after
+ * @method mixed subredditsSuggest(array $params = [], array $options = []) reddit-subreddits-suggest (GET /reddit/subreddits/suggest)
+ *   params: string $q
+ * @method mixed topics(array $params = [], array $options = []) reddit-topics (GET /reddit/topics)
+ *   params: int $limit, string $after
+ * @method mixed topicsBroad(array $params = [], array $options = []) reddit-topics-broad (GET /reddit/topics/broad)
+ * @method mixed topicsSearch(array $params = [], array $options = []) reddit-topics-search (GET /reddit/topics/search)
+ *   params: string $q
  * @method mixed trends(array $params = [], array $options = []) reddit-trends (GET /reddit/trends)
  *   params: 'hot'|'new'|'rising'|'top' $sort, 'hour'|'day'|'week'|'month'|'year'|'all' $time, int $limit, string $after
  * @method mixed userComments(array $params = [], array $options = []) reddit-user-comments (GET /reddit/user/{username}/comments)
  *   params: string $username, int $limit, string $after
  * @method mixed userPosts(array $params = [], array $options = []) reddit-user-posts (GET /reddit/user/{username}/posts)
  *   params: string $username, int $limit, string $after
+ * @method mixed userProfile(array $params = [], array $options = []) reddit-user-profile (GET /reddit/user/{username}/profile)
+ *   params: string $username
  */
 abstract class RedditGroup {}
 
@@ -7985,6 +8578,7 @@ abstract class SephoraGroup {}
 /**
  * @method mixed pokemongoEventDetailCommunityDay(array $params = [], array $options = []) serebii-pokemongo-event-detail-community-day (GET /serebii/pokemongo/communityday/{filename})
  *   params: string $filename
+ * @method mixed pokemongoEggs(array $params = [], array $options = []) serebii-pokemongo-eggs (GET /serebii/pokemongo/eggs)
  * @method mixed pokemongoEventCategories(array $params = [], array $options = []) serebii-pokemongo-event-categories (GET /serebii/pokemongo/event-categories)
  * @method mixed pokemongoEventOnlyMoves(array $params = [], array $options = []) serebii-pokemongo-event-only-moves (GET /serebii/pokemongo/event-only-moves)
  * @method mixed pokemongoEventOnlyResearch(array $params = [], array $options = []) serebii-pokemongo-event-only-research (GET /serebii/pokemongo/event-only-research)
@@ -8000,6 +8594,7 @@ abstract class SephoraGroup {}
  *   params: string $filename
  * @method mixed pokemongoEventDetailMaxBattleDay(array $params = [], array $options = []) serebii-pokemongo-event-detail-max-battle-day (GET /serebii/pokemongo/maxbattleday/{filename})
  *   params: string $filename
+ * @method mixed pokemongoRaidBosses(array $params = [], array $options = []) serebii-pokemongo-raid-bosses (GET /serebii/pokemongo/raid-bosses)
  * @method mixed pokemongoEventDetailRaidDay(array $params = [], array $options = []) serebii-pokemongo-event-detail-raid-day (GET /serebii/pokemongo/raidday/{filename})
  *   params: string $filename
  * @method mixed pokemongoEventDetailRealLife(array $params = [], array $options = []) serebii-pokemongo-event-detail-real-life (GET /serebii/pokemongo/reallifeevents/{filename})
@@ -8221,6 +8816,25 @@ abstract class SkimsGroup {}
 abstract class SkyNewsGroup {}
 
 /**
+ * @method mixed currencies(array $params = [], array $options = []) skyscanner-currencies (GET /skyscanner/currencies)
+ * @method mixed flightsExplore(array $params = [], array $options = []) skyscanner-flights-explore (GET /skyscanner/flights/explore)
+ *   params: string $origin, string $destination, string $depart, string $return, int $adults, string $child_ages, 'economy'|'premium_economy'|'business'|'first' $cabin_class, 'CHEAPEST_FLIGHTS'|'DIRECT'|'POPULAR'|'UNDERRATED_DESTINATIONS'|'BEACH'|'ART_AND_CULTURE'|'GREAT_FOOD'|'OUTDOOR_ADVENTURES'|'NIGHTLIFE_AND_ENTERTAINMENT' $bucket, string $market, string $locale, string $currency, int $limit, int $offset
+ * @method mixed flightsOptions(array $params = [], array $options = []) skyscanner-flights-options (GET /skyscanner/flights/options)
+ * @method mixed flightsPriceCalendar(array $params = [], array $options = []) skyscanner-flights-price-calendar (GET /skyscanner/flights/price-calendar)
+ *   params: string $origin, string $destination, string $from, string $to, string $market, string $locale, string $currency
+ * @method mixed flightsPriceCalendarMonths(array $params = [], array $options = []) skyscanner-flights-price-calendar-months (GET /skyscanner/flights/price-calendar/months)
+ *   params: string $origin, string $destination, bool $direct_only, string $market, string $locale, string $currency
+ * @method mixed flightsSearch(array $params = [], array $options = []) skyscanner-flights-search (GET /skyscanner/flights/search)
+ *   params: string $origin, string $destination, string $depart_date, string $return_date, string $legs, int $adults, string $child_ages, 'economy'|'premium_economy'|'business'|'first' $cabin_class, bool $nearby_origin_airports, bool $nearby_destination_airports, string $bags, string $market, string $locale, string $currency, 'best'|'cheapest'|'fastest'|'departure_outbound_asc'|'departure_inbound_asc' $sort, string $stops, string $airlines, string $alliances, int $max_duration, string $outbound_departure, string $inbound_departure, string $layover_airports, int $max_layover, bool $greener_only, int $limit, int $offset
+ * @method mixed locales(array $params = [], array $options = []) skyscanner-locales (GET /skyscanner/locales)
+ * @method mixed markets(array $params = [], array $options = []) skyscanner-markets (GET /skyscanner/markets)
+ *   params: string $locale
+ * @method mixed placesAutosuggest(array $params = [], array $options = []) skyscanner-places-autosuggest (GET /skyscanner/places/autosuggest)
+ *   params: string $query, bool $destination, bool $cities_airports_only, string $market, string $locale
+ */
+abstract class SkyscannerGroup {}
+
+/**
  * @method mixed skysportsArticle(array $params = [], array $options = []) skysports-article (GET /skysports/article)
  *   params: string $url
  * @method mixed skysportsAuthor(array $params = [], array $options = []) skysports-author (GET /skysports/author)
@@ -8292,6 +8906,33 @@ abstract class MitSloanManagementReviewGroup {}
 abstract class TheSydneyMorningHeraldGroup {}
 
 /**
+ * @method mixed brands(array $params = [], array $options = []) snkrdunk-brands (GET /snkrdunk/brands)
+ *   params: string $q
+ * @method mixed categories(array $params = [], array $options = []) snkrdunk-categories (GET /snkrdunk/categories)
+ *   params: string $q
+ * @method mixed filters(array $params = [], array $options = []) snkrdunk-filters (GET /snkrdunk/filters)
+ * @method mixed product(array $params = [], array $options = []) snkrdunk-product (GET /snkrdunk/product)
+ *   params: string $code
+ * @method mixed productListings(array $params = [], array $options = []) snkrdunk-product-listings (GET /snkrdunk/product/listings)
+ *   params: string $code, 'used'|'new' $type, 'like_new'|'minor_scratches'|'moderate_scratches'|'significant_damage'|'psa_10'|'psa_9'|'psa_8_below'|'bgs_10_black'|'bgs_10_gold'|'bgs_9_5'|'bgs_9_below'|'ars_10_plus'|'ars_10'|'ars_9'|'ars_8_below'|'other_grading_company' $condition, string $size_id, 'latest'|'price_asc' $sort, bool $on_sale_only, int $page, int $per_page
+ * @method mixed priceChart(array $params = [], array $options = []) snkrdunk-price-chart (GET /snkrdunk/product/price-chart)
+ *   params: string $code, 'used'|'new' $market, 'all'|'oneWeek'|'oneMonth'|'threeMonths' $range, 'like_new'|'minor_scratches'|'moderate_scratches'|'significant_damage'|'psa_10'|'psa_9'|'psa_8_below'|'bgs_10_black'|'bgs_10_gold'|'bgs_9_5'|'bgs_9_below'|'ars_10_plus'|'ars_10'|'ars_9'|'ars_8_below'|'other_grading_company' $condition, string $size_id
+ * @method mixed productRelated(array $params = [], array $options = []) snkrdunk-product-related (GET /snkrdunk/product/related)
+ *   params: string $code, 'single'|'box' $type, int $page, int $per_page
+ * @method mixed salesHistory(array $params = [], array $options = []) snkrdunk-sales-history (GET /snkrdunk/product/sales-history)
+ *   params: string $code, 'like_new'|'minor_scratches'|'moderate_scratches'|'significant_damage'|'psa_10'|'psa_9'|'psa_8_below'|'bgs_10_black'|'bgs_10_gold'|'bgs_9_5'|'bgs_9_below'|'ars_10_plus'|'ars_10'|'ars_9'|'ars_8_below'|'other_grading_company' $condition, string $size_id, int $page, int $per_page
+ * @method mixed search(array $params = [], array $options = []) snkrdunk-search (GET /snkrdunk/search)
+ *   params: string $q, string $brand_ids, string $category_ids, string $conditions, 'any'|'in_stock' $stock, 'default'|'conversion'|'registered_at'|'launched_at'|'favorite_count' $sort, int $page, int $per_page
+ * @method mixed suggest(array $params = [], array $options = []) snkrdunk-suggest (GET /snkrdunk/suggest)
+ *   params: string $q, int $limit
+ * @method mixed tradingCards(array $params = [], array $options = []) snkrdunk-trading-cards (GET /snkrdunk/trading-cards)
+ *   params: string $brand_id, '0'|'14'|'25' $category_id, 'popular'|'release' $order, int $page, int $per_page
+ * @method mixed tradingCardsUsed(array $params = [], array $options = []) snkrdunk-trading-cards-used (GET /snkrdunk/trading-cards/used)
+ *   params: string $brand_id, '0'|'14'|'25' $category_id, 'latest'|'price_asc' $sort, bool $on_sale_only, int $page, int $per_page
+ */
+abstract class SnkrdunkGroup {}
+
+/**
  * @method mixed sofascoreCategories(array $params = [], array $options = []) sofascore-categories (GET /sofascore/categories)
  *   params: 'american-football'|'aussie-rules'|'badminton'|'bandy'|'baseball'|'basketball'|'beach-volley'|'cricket'|'darts'|'esports'|'floorball'|'football'|'futsal'|'handball'|'ice-hockey'|'mma'|'minifootball'|'padel'|'rugby'|'snooker'|'table-tennis'|'tennis'|'volleyball'|'waterpolo' $sport
  * @method mixed sofascoreCategoryTournaments(array $params = [], array $options = []) sofascore-category-tournaments (GET /sofascore/category-tournaments)
@@ -8320,7 +8961,7 @@ abstract class TheSydneyMorningHeraldGroup {}
  *   params: string $id
  * @method mixed sofascoreEventGraph(array $params = [], array $options = []) sofascore-event-graph (GET /sofascore/event-graph)
  *   params: string $id
- * @method mixed sofascoreEventH2h(array $params = [], array $options = []) sofascore-event-h2h (GET /sofascore/event-h2h)
+ * @method mixed sofascoreEventH2H(array $params = [], array $options = []) sofascore-event-h2h (GET /sofascore/event-h2h)
  *   params: string $id
  * @method mixed sofascoreEventHighlights(array $params = [], array $options = []) sofascore-event-highlights (GET /sofascore/event-highlights)
  *   params: string $id
@@ -8394,8 +9035,12 @@ abstract class TheSydneyMorningHeraldGroup {}
  *   params: string $id, string $tournament_id, string $season, 'overall'|'home'|'away'|'regular_season'|'playoffs' $type
  * @method mixed sofascorePlayerStatisticalRankings(array $params = [], array $options = []) sofascore-player-statistical-rankings (GET /sofascore/player-statistical-rankings)
  *   params: string $id, string $season, 'overall' $type
+ * @method mixed sofascorePlayerStatistics(array $params = [], array $options = []) sofascore-player-statistics (GET /sofascore/player-statistics)
+ *   params: string $id, 'overall'|'home'|'away' $match_type
  * @method mixed sofascorePlayerStatisticsSeasons(array $params = [], array $options = []) sofascore-player-statistics-seasons (GET /sofascore/player-statistics-seasons)
  *   params: string $id
+ * @method mixed sofascorePlayerTournamentEvents(array $params = [], array $options = []) sofascore-player-tournament-events (GET /sofascore/player-tournament-events)
+ *   params: string $id, string $tournament_id, int $page
  * @method mixed sofascorePlayerTournaments(array $params = [], array $options = []) sofascore-player-tournaments (GET /sofascore/player-tournaments)
  *   params: string $id
  * @method mixed sofascorePlayerTransfers(array $params = [], array $options = []) sofascore-player-transfers (GET /sofascore/player-transfers)
@@ -8610,6 +9255,11 @@ abstract class SparkFunGroup {}
  * @method mixed speedrunLevelVariables(array $params = [], array $options = []) speedrun-level-variables (GET /speedrun/levels/{id}/variables)
  *   params: string $id, array<'game'> $embed, 'name'|'mandatory'|'user-defined'|'pos' $orderby, 'asc'|'desc' $direction
  * @method mixed speedrunResourceOptions(array $params = [], array $options = []) speedrun-resource-options (GET /speedrun/options)
+ * @method mixed speedrunRuns(array $params = [], array $options = []) speedrun-runs (GET /speedrun/runs)
+ *   params: string $game, string $category, string $level, string $platform, string $region, bool $emulated, 'new'|'verified'|'rejected' $status, 'game'|'category'|'level'|'platform'|'region'|'emulated'|'date'|'submitted'|'status'|'verify-date' $orderby, 'asc'|'desc' $direction, int $max, int $offset, array<'game'|'category'|'level'|'platform'|'region'> $embed
+ * @method mixed speedrunRunsOptions(array $params = [], array $options = []) speedrun-runs-options (GET /speedrun/runs/options)
+ * @method mixed speedrunRun(array $params = [], array $options = []) speedrun-run (GET /speedrun/runs/{id})
+ *   params: string $id, array<'game'|'category'|'level'|'platform'|'region'> $embed
  */
 abstract class SpeedrunComGroup {}
 
@@ -8624,6 +9274,22 @@ abstract class SpeedrunComGroup {}
  * @method mixed sportingnewsSections(array $params = [], array $options = []) sportingnews-sections (GET /sportingnews/sections)
  */
 abstract class SportingNewsGroup {}
+
+/**
+ * @method mixed sportscardsproBrand(array $params = [], array $options = []) sportscardspro-brand (GET /sportscardspro/brand)
+ *   params: 'baseball-cards'|'basketball-cards'|'football-cards'|'hockey-cards'|'racing-cards'|'soccer-cards'|'ufc-cards'|'wrestling-cards'|'tennis-cards'|'golf-cards'|'boxing-cards' $category, string $brand
+ * @method mixed sportscardsproCategories(array $params = [], array $options = []) sportscardspro-categories (GET /sportscardspro/categories)
+ *   params: 'baseball-cards'|'basketball-cards'|'football-cards'|'hockey-cards'|'racing-cards'|'soccer-cards'|'ufc-cards'|'wrestling-cards'|'tennis-cards'|'golf-cards'|'boxing-cards' $category
+ * @method mixed sportscardsproPriceHistory(array $params = [], array $options = []) sportscardspro-price-history (GET /sportscardspro/price-history)
+ *   params: int $id, string $url, string $set, string $slug
+ * @method mixed sportscardsproProduct(array $params = [], array $options = []) sportscardspro-product (GET /sportscardspro/product)
+ *   params: int $id, string $set, string $slug, string $url
+ * @method mixed sportscardsproSearch(array $params = [], array $options = []) sportscardspro-search (GET /sportscardspro/search)
+ *   params: string $q, string $set_uid, 'baseball-cards'|'basketball-cards'|'football-cards'|'hockey-cards'|'racing-cards'|'soccer-cards'|'ufc-cards'|'wrestling-cards'|'tennis-cards'|'golf-cards'|'boxing-cards' $category, bool $exclude_variants, 'popularity'|'highest-price'|'name' $sort
+ * @method mixed sportscardsproSet(array $params = [], array $options = []) sportscardspro-set (GET /sportscardspro/set)
+ *   params: string $set, 'popularity'|'name'|'card-number'|'highest-price'|'lowest-price' $sort, bool $rookies_only, bool $exclude_variants, 'include'|'exclude'|'only' $sealed, string $card_number, int $cursor
+ */
+abstract class SportsCardsProGroup {}
 
 /**
  * @method mixed article(array $params = [], array $options = []) sportskeeda-article (GET /sportskeeda/article)
@@ -8717,6 +9383,14 @@ abstract class SportingNewsGroup {}
  *   params: string $slug
  */
 abstract class SportskeedaGroup {}
+
+/**
+ * @method mixed spotheroMonthlySearch(array $params = [], array $options = []) spothero-monthly-search (GET /spothero/monthly-search)
+ *   params: string $oversize, string $page_size, string $include_walking_distance, string $sort_by, string $lat, string $lon, string $starts, string $show_unavailable, string $max_distance_meters
+ * @method mixed spotheroTransientSearch(array $params = [], array $options = []) spothero-transient-search (GET /spothero/transient-search)
+ *   params: string $oversize, string $page_size, string $max_distance_meters, string $lat, string $lon, string $include_walking_distance, string $starts, string $ends
+ */
+abstract class SpotHeroGroup {}
 
 /**
  * @method mixed categories(array $params = [], array $options = []) spotify-podcasts-categories (GET /spotify-podcasts/categories)
@@ -9074,6 +9748,24 @@ abstract class SubwayGroup {}
 abstract class TheSunGroup {}
 
 /**
+ * @method mixed contest(array $params = [], array $options = []) suno-contest (GET /suno/contest)
+ *   params: string $contest_id
+ * @method mixed contests(array $params = [], array $options = []) suno-contests (GET /suno/contests)
+ * @method mixed explore(array $params = [], array $options = []) suno-explore (GET /suno/explore)
+ *   params: 'explore'|'combined'|'homepage'|'mobile' $collection, string $cursor, int $page_size
+ * @method mixed feed(array $params = [], array $options = []) suno-feed (GET /suno/feed)
+ *   params: string $feed_id, string $cursor, int $page_size, string $target_user_id, 'created_at'|'upvote_count'|'play_count' $sort_by
+ * @method mixed genres(array $params = [], array $options = []) suno-genres (GET /suno/genres)
+ * @method mixed playlist(array $params = [], array $options = []) suno-playlist (GET /suno/playlist)
+ *   params: string $playlist_id, int $page
+ * @method mixed profile(array $params = [], array $options = []) suno-profile (GET /suno/profile)
+ *   params: string $handle, int $page, 'created_at'|'upvote_count'|'play_count' $clips_sort_by
+ * @method mixed song(array $params = [], array $options = []) suno-song (GET /suno/song)
+ *   params: string $song_id
+ */
+abstract class SunoGroup {}
+
+/**
  * @method mixed collections(array $params = [], array $options = []) swiggy-collections (GET /swiggy/collections)
  *   params: float $latitude, float $longitude
  * @method mixed restaurant(array $params = [], array $options = []) swiggy-restaurant (GET /swiggy/restaurant)
@@ -9103,6 +9795,17 @@ abstract class SwiggyGroup {}
  *   params: float $latitude, float $longitude, int $page_size, int $page
  */
 abstract class TacoBellGroup {}
+
+/**
+ * @method mixed taptapApp(array $params = [], array $options = []) taptap-app (GET /taptap/app/{id})
+ *   params: string $id
+ * @method mixed taptapGenres(array $params = [], array $options = []) taptap-genres (GET /taptap/genres)
+ * @method mixed taptapTagGames(array $params = [], array $options = []) taptap-tag-games (GET /taptap/tag/{tag_slug})
+ *   params: string $tag_slug, int $page
+ * @method mixed taptapTopCharts(array $params = [], array $options = []) taptap-top-charts (GET /taptap/top-charts)
+ *   params: int $page
+ */
+abstract class TapTapGroup {}
 
 /**
  * @method mixed categories(array $params = [], array $options = []) target-categories (GET /target/categories)
@@ -9891,6 +10594,12 @@ abstract class TwitchGroup {}
 abstract class UberEatsGroup {}
 
 /**
+ * @method mixed statLeaders(array $params = [], array $options = []) ufcstats-stat-leaders (GET /ufcstats/stat-leaders/{category})
+ *   params: 'career'|'fight'|'fight-comb'|'round'|'round-comb'|'event' $category, '0'|'1' $fighter_status, 'HW'|'LHW'|'MW'|'WW'|'LW'|'FTW'|'BW'|'FLW'|'WBW'|'WFLW'|'WSW' $weight_class, 'aus'|'bra'|'can'|'chn'|'jpn'|'kor'|'mex'|'nzl'|'rus'|'swe'|'gbr'|'usa' $country
+ */
+abstract class UfcstatsGroup {}
+
+/**
  * @method mixed ultaCategories(array $params = [], array $options = []) ulta-categories (GET /ulta/categories)
  *   params: 'makeup-nails'|'skin-care'|'hair-care'|'fragrance'|'body-care'|'wellness'|'mens-care'|'tools-brushes' $department
  * @method mixed ultaCategory(array $params = [], array $options = []) ulta-category (GET /ulta/category)
@@ -10374,6 +11083,9 @@ abstract class WallStreetJournalGroup {}
  * @method mixed matchStates(array $params = [], array $options = []) wta-match-states (GET /wta/match-states)
  * @method mixed rankings(array $params = [], array $options = []) wta-rankings (GET /wta/rankings/{view})
  *   params: 'singles'|'doubles'|'race-singles'|'race-doubles' $view, string $country, string $at, 'rankSingles'|'rankDoubles'|'RankChampSingles'|'LastName'|'BirthDate'|'TournCountSingles'|'TournCountDoubles'|'TournCountChamps'|'PointsSingles'|'PointsDoubles'|'PointsChamps'|'rank'|'points' $type, 'asc'|'desc' $sort, int $page, int $page_size
+ * @method mixed seasonStatsOptions(array $params = [], array $options = []) wta-season-stats-options (GET /wta/season-stats/options)
+ * @method mixed seasonStats(array $params = [], array $options = []) wta-season-stats (GET /wta/season-stats/{year}/{metric})
+ *   params: int $year, 'Current_Rank'|'MatchCount'|'Aces'|'Double_Faults'|'first_serve_percent'|'first_serve_won_percent'|'second_serve_won_percent'|'service_points_won_percent'|'breakpoint_saved_percent'|'service_games_won_percent'|'first_return_percent'|'second_return_percent'|'return_games_won_percent'|'breakpoint_converted_percent'|'return_points_won_percent' $metric, int $page, int $page_size, 'asc'|'desc' $sort
  * @method mixed tournamentSeasons(array $params = [], array $options = []) wta-tournament-seasons (GET /wta/tournament-seasons)
  * @method mixed tournaments(array $params = [], array $options = []) wta-tournaments (GET /wta/tournaments)
  *   params: int $season, string $from, string $to, int $page_size, array<'WTA 500'|'WTA 250'|'Grand Slam'|'WTA 1000'|'Finals'|'International'|'Premier'|'Premier 5'|'Premier Mandatory'|'ITF'|'WTA 125'> $level, array<'Hard'|'Clay'|'Grass'|'Carpet'> $surface, int $page
@@ -10393,10 +11105,19 @@ abstract class WtaGroup {}
 /**
  * @method mixed post(array $params = [], array $options = []) x-post (GET /x/post/{id})
  *   params: string $id, string $username
+ * @method mixed postDetail(array $params = [], array $options = []) x-post-detail (GET /x/post/{id}/detail)
+ *   params: string $id
  * @method mixed profile(array $params = [], array $options = []) x-profile (GET /x/profile/{username})
  *   params: string $username
+ * @method mixed profileHighlights(array $params = [], array $options = []) x-profile-highlights (GET /x/profile/{username}/highlights)
+ *   params: string $username, int $limit, string $cursor
  * @method mixed profilePosts(array $params = [], array $options = []) x-profile-posts (GET /x/profile/{username}/posts)
  *   params: string $username, int $limit
+ * @method mixed trending(array $params = [], array $options = []) x-trending (GET /x/trending)
+ * @method mixed trends(array $params = [], array $options = []) x-trends (GET /x/trends)
+ *   params: int $woeid
+ * @method mixed trendsLocations(array $params = [], array $options = []) x-trends-locations (GET /x/trends/locations)
+ *   params: float $lat, float $long
  */
 abstract class XGroup {}
 
@@ -10428,7 +11149,7 @@ abstract class XdaGroup {}
 
 /**
  * @method mixed explore(array $params = [], array $options = []) xiaohongshu-explore (GET /xiaohongshu/explore)
- *   params: string $channel_id
+ *   params: string $channel_id, 'mainland'|'international'|'auto' $source
  * @method mixed note(array $params = [], array $options = []) xiaohongshu-note (GET /xiaohongshu/note)
  *   params: string $url, string $note_id, string $xsec_token
  * @method mixed noteComments(array $params = [], array $options = []) xiaohongshu-note-comments (GET /xiaohongshu/note-comments)
@@ -10860,6 +11581,21 @@ abstract class ZaxbysGroup {}
 abstract class ZdnetGroup {}
 
 /**
+ * @method mixed browse(array $params = [], array $options = []) zedge-browse (GET /zedge/browse)
+ *   params: 'wallpaper'|'ringtone'|'notification_sound' $item_type, string $categories, string $tags, string $colors, 'relevant'|'newest'|'popular'|'price_asc'|'price_desc' $sort, 'free'|'paid' $price, int $min_price, int $max_price, int $min_duration, int $max_duration, 'any'|'premium'|'ugc' $profile_type, int $size, string $next
+ * @method mixed categories(array $params = [], array $options = []) zedge-categories (GET /zedge/categories)
+ *   params: 'wallpaper'|'ringtone'|'notification_sound' $item_type
+ * @method mixed creators(array $params = [], array $options = []) zedge-creators (GET /zedge/creators)
+ *   params: string $keyword, int $size, string $next
+ * @method mixed item(array $params = [], array $options = []) zedge-item (GET /zedge/item)
+ *   params: string $id
+ * @method mixed tags(array $params = [], array $options = []) zedge-tags (GET /zedge/tags)
+ *   params: string $keyword
+ * @method mixed trendingSearches(array $params = [], array $options = []) zedge-trending-searches (GET /zedge/trending-searches)
+ */
+abstract class ZedgeGroup {}
+
+/**
  * @method mixed autocomplete(array $params = [], array $options = []) zillow-autocomplete (GET /zillow/autocomplete)
  *   params: string $query, int $limit, 'for_sale'|'sale'|'for-sale'|'for_rent'|'rent'|'for-rent'|'sold' $status
  * @method mixed property(array $params = [], array $options = []) zillow-property (GET /zillow/property/{zpid})
@@ -10887,6 +11623,7 @@ abstract class ZomatoGroup {}
 
 /**
  * @property-read \Crawlora\Generated\FirstDibsGroup $firstDibs
+ * @property-read \Crawlora\Generated\Platform7BrewGroup $Platform7Brew
  * @property-read \Crawlora\Generated\SevenNowGroup $sevenNow
  * @property-read \Crawlora\Generated\AbcNewsAustraliaGroup $abcNewsAustralia
  * @property-read \Crawlora\Generated\AbcNewsGroup $abcNews
@@ -10911,9 +11648,11 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\AppleMapsGroup $appleMaps
  * @property-read \Crawlora\Generated\ApplePodcastsGroup $applePodcasts
  * @property-read \Crawlora\Generated\AppStoreGroup $appStore
+ * @property-read \Crawlora\Generated\AptoideGroup $aptoide
  * @property-read \Crawlora\Generated\ArbysGroup $arbys
  * @property-read \Crawlora\Generated\ArsTechnicaGroup $arsTechnica
  * @property-read \Crawlora\Generated\AudibleGroup $audible
+ * @property-read \Crawlora\Generated\AutoScout24Group $autoScout24
  * @property-read \Crawlora\Generated\AutotraderGroup $autotrader
  * @property-read \Crawlora\Generated\AxiosGroup $axios
  * @property-read \Crawlora\Generated\BaiduGroup $baidu
@@ -10959,6 +11698,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\CbrGroup $cbr
  * @property-read \Crawlora\Generated\CbsNewsGroup $cbsNews
  * @property-read \Crawlora\Generated\CbsSportsGroup $cbsSports
+ * @property-read \Crawlora\Generated\ChessComGroup $chessCom
  * @property-read \Crawlora\Generated\ChewyGroup $chewy
  * @property-read \Crawlora\Generated\ChicagoTribuneGroup $chicagoTribune
  * @property-read \Crawlora\Generated\ChickFilAGroup $chickFilA
@@ -10966,6 +11706,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\ChromeWebStoreGroup $chromeWebStore
  * @property-read \Crawlora\Generated\Chrono24Group $chrono24
  * @property-read \Crawlora\Generated\ClevelandComGroup $clevelandCom
+ * @property-read \Crawlora\Generated\ClinicalTrialsGovGroup $clinicalTrialsGov
  * @property-read \Crawlora\Generated\CnaGroup $cna
  * @property-read \Crawlora\Generated\CnbcGroup $cnbc
  * @property-read \Crawlora\Generated\CnetGroup $cnet
@@ -10976,8 +11717,10 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\ComcGroup $comc
  * @property-read \Crawlora\Generated\CongressGroup $congress
  * @property-read \Crawlora\Generated\WebGroup $web
+ * @property-read \Crawlora\Generated\CopartGroup $copart
  * @property-read \Crawlora\Generated\CostcoGroup $costco
  * @property-read \Crawlora\Generated\CourtListenerGroup $courtListener
+ * @property-read \Crawlora\Generated\CraigslistGroup $craigslist
  * @property-read \Crawlora\Generated\CricbuzzGroup $cricbuzz
  * @property-read \Crawlora\Generated\CricinfoGroup $cricinfo
  * @property-read \Crawlora\Generated\CtvNewsGroup $ctvNews
@@ -10999,6 +11742,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\DepopGroup $depop
  * @property-read \Crawlora\Generated\RetrievalGroup $retrieval
  * @property-read \Crawlora\Generated\DiscogsGroup $discogs
+ * @property-read \Crawlora\Generated\DiscordGroup $discord
  * @property-read \Crawlora\Generated\DollarTreeGroup $dollarTree
  * @property-read \Crawlora\Generated\DomainGroup $domain
  * @property-read \Crawlora\Generated\DominosGroup $dominos
@@ -11035,6 +11779,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\FashionNovaGroup $fashionNova
  * @property-read \Crawlora\Generated\FashionphileGroup $fashionphile
  * @property-read \Crawlora\Generated\FastCompanyGroup $fastCompany
+ * @property-read \Crawlora\Generated\FDroidGroup $fDroid
  * @property-read \Crawlora\Generated\FeverGroup $fever
  * @property-read \Crawlora\Generated\FiveGuysGroup $fiveGuys
  * @property-read \Crawlora\Generated\FiverrGroup $fiverr
@@ -11045,6 +11790,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\ForeignAffairsGroup $foreignAffairs
  * @property-read \Crawlora\Generated\ForeignPolicyGroup $foreignPolicy
  * @property-read \Crawlora\Generated\Formula1Group $formula1
+ * @property-read \Crawlora\Generated\FortniteGroup $fortnite
  * @property-read \Crawlora\Generated\FortuneGroup $fortune
  * @property-read \Crawlora\Generated\FotMobGroup $fotMob
  * @property-read \Crawlora\Generated\FoxNewsGroup $foxNews
@@ -11059,6 +11805,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\GamesRadarGroup $gamesRadar
  * @property-read \Crawlora\Generated\GbNewsGroup $gbNews
  * @property-read \Crawlora\Generated\GdeltGroup $gdelt
+ * @property-read \Crawlora\Generated\GemRateGroup $gemRate
  * @property-read \Crawlora\Generated\GeocodingGroup $geocoding
  * @property-read \Crawlora\Generated\GhanaWebGroup $ghanaWeb
  * @property-read \Crawlora\Generated\GitHubGroup $gitHub
@@ -11089,6 +11836,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\HearthstoneGroup $hearthstone
  * @property-read \Crawlora\Generated\HermesGroup $hermes
  * @property-read \Crawlora\Generated\HindustanTimesGroup $hindustanTimes
+ * @property-read \Crawlora\Generated\HowLongToBeatGroup $howLongToBeat
  * @property-read \Crawlora\Generated\HltvGroup $hltv
  * @property-read \Crawlora\Generated\HMGroup $hM
  * @property-read \Crawlora\Generated\HollywoodReporterGroup $hollywoodReporter
@@ -11097,6 +11845,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\HoustonChronicleGroup $houstonChronicle
  * @property-read \Crawlora\Generated\HowToGeekGroup $howToGeek
  * @property-read \Crawlora\Generated\HuffPostGroup $huffPost
+ * @property-read \Crawlora\Generated\IbmJobsGroup $ibmJobs
  * @property-read \Crawlora\Generated\IgnGroup $ign
  * @property-read \Crawlora\Generated\IkeaGroup $ikea
  * @property-read \Crawlora\Generated\ImdbGroup $imdb
@@ -11137,7 +11886,10 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\LazadaGroup $lazada
  * @property-read \Crawlora\Generated\LeboncoinGroup $leboncoin
  * @property-read \Crawlora\Generated\LetterboxdGroup $letterboxd
+ * @property-read \Crawlora\Generated\LichessGroup $lichess
+ * @property-read \Crawlora\Generated\LimitlessTcgGroup $limitlessTcg
  * @property-read \Crawlora\Generated\LinkedInGroup $linkedIn
+ * @property-read \Crawlora\Generated\LiquipediaGroup $liquipedia
  * @property-read \Crawlora\Generated\MintGroup $mint
  * @property-read \Crawlora\Generated\LiverpoolEchoGroup $liverpoolEcho
  * @property-read \Crawlora\Generated\LiveScienceGroup $liveScience
@@ -11173,6 +11925,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\MonitorsGroup $monitors
  * @property-read \Crawlora\Generated\TheMotleyFoolGroup $theMotleyFool
  * @property-read \Crawlora\Generated\MotoGpGroup $motoGp
+ * @property-read \Crawlora\Generated\MtggoldfishGroup $mtggoldfish
  * @property-read \Crawlora\Generated\NascarGroup $nascar
  * @property-read \Crawlora\Generated\NationAfricaGroup $nationAfrica
  * @property-read \Crawlora\Generated\TheNationalGroup $theNational
@@ -11209,6 +11962,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\OpenTableGroup $openTable
  * @property-read \Crawlora\Generated\OttoGroup $otto
  * @property-read \Crawlora\Generated\PageSixGroup $pageSix
+ * @property-read \Crawlora\Generated\PandaExpressGroup $pandaExpress
  * @property-read \Crawlora\Generated\PandamartGroup $pandamart
  * @property-read \Crawlora\Generated\PaneraGroup $panera
  * @property-read \Crawlora\Generated\PapaJohnSGroup $papaJohnS
@@ -11216,6 +11970,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\PatreonGroup $patreon
  * @property-read \Crawlora\Generated\PcGamerGroup $pcGamer
  * @property-read \Crawlora\Generated\PcmagGroup $pcmag
+ * @property-read \Crawlora\Generated\PeacockGroup $peacock
  * @property-read \Crawlora\Generated\PeopleGroup $people
  * @property-read \Crawlora\Generated\PetSmartGroup $petSmart
  * @property-read \Crawlora\Generated\PgaTourGroup $pgaTour
@@ -11228,6 +11983,8 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\PitchBookGroup $pitchBook
  * @property-read \Crawlora\Generated\PizzaHutGroup $pizzaHut
  * @property-read \Crawlora\Generated\PlayStationGroup $playStation
+ * @property-read \Crawlora\Generated\PokeDataGroup $pokeData
+ * @property-read \Crawlora\Generated\PokeTraceGroup $pokeTrace
  * @property-read \Crawlora\Generated\PoliticoGroup $politico
  * @property-read \Crawlora\Generated\PolygonGroup $polygon
  * @property-read \Crawlora\Generated\PolymarketGroup $polymarket
@@ -11289,11 +12046,13 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\SimilarWebGroup $similarWeb
  * @property-read \Crawlora\Generated\SkimsGroup $skims
  * @property-read \Crawlora\Generated\SkyNewsGroup $skyNews
+ * @property-read \Crawlora\Generated\SkyscannerGroup $skyscanner
  * @property-read \Crawlora\Generated\SkySportsGroup $skySports
  * @property-read \Crawlora\Generated\SlateGroup $slate
  * @property-read \Crawlora\Generated\SlickdealsGroup $slickdeals
  * @property-read \Crawlora\Generated\MitSloanManagementReviewGroup $mitSloanManagementReview
  * @property-read \Crawlora\Generated\TheSydneyMorningHeraldGroup $theSydneyMorningHerald
+ * @property-read \Crawlora\Generated\SnkrdunkGroup $snkrdunk
  * @property-read \Crawlora\Generated\SofaScoreGroup $sofaScore
  * @property-read \Crawlora\Generated\SonicGroup $sonic
  * @property-read \Crawlora\Generated\SoundCloudGroup $soundCloud
@@ -11301,7 +12060,9 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\SparkFunGroup $sparkFun
  * @property-read \Crawlora\Generated\SpeedrunComGroup $speedrunCom
  * @property-read \Crawlora\Generated\SportingNewsGroup $sportingNews
+ * @property-read \Crawlora\Generated\SportsCardsProGroup $sportsCardsPro
  * @property-read \Crawlora\Generated\SportskeedaGroup $sportskeeda
+ * @property-read \Crawlora\Generated\SpotHeroGroup $spotHero
  * @property-read \Crawlora\Generated\SpotifyPodcastsGroup $spotifyPodcasts
  * @property-read \Crawlora\Generated\SpotifyGroup $spotify
  * @property-read \Crawlora\Generated\EveningStandardGroup $eveningStandard
@@ -11319,8 +12080,10 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\SubstackGroup $substack
  * @property-read \Crawlora\Generated\SubwayGroup $subway
  * @property-read \Crawlora\Generated\TheSunGroup $theSun
+ * @property-read \Crawlora\Generated\SunoGroup $suno
  * @property-read \Crawlora\Generated\SwiggyGroup $swiggy
  * @property-read \Crawlora\Generated\TacoBellGroup $tacoBell
+ * @property-read \Crawlora\Generated\TapTapGroup $tapTap
  * @property-read \Crawlora\Generated\TargetGroup $target
  * @property-read \Crawlora\Generated\TcgplayerGroup $tcgplayer
  * @property-read \Crawlora\Generated\TechCrunchGroup $techCrunch
@@ -11364,6 +12127,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\TrustpilotGroup $trustpilot
  * @property-read \Crawlora\Generated\TwitchGroup $twitch
  * @property-read \Crawlora\Generated\UberEatsGroup $uberEats
+ * @property-read \Crawlora\Generated\UfcstatsGroup $ufcstats
  * @property-read \Crawlora\Generated\UltaBeautyGroup $ultaBeauty
  * @property-read \Crawlora\Generated\UpworkGroup $upwork
  * @property-read \Crawlora\Generated\UsageGroup $usage
@@ -11423,6 +12187,7 @@ abstract class ZomatoGroup {}
  * @property-read \Crawlora\Generated\ZaraGroup $zara
  * @property-read \Crawlora\Generated\ZaxbysGroup $zaxbys
  * @property-read \Crawlora\Generated\ZdnetGroup $zdnet
+ * @property-read \Crawlora\Generated\ZedgeGroup $zedge
  * @property-read \Crawlora\Generated\ZillowGroup $zillow
  * @property-read \Crawlora\Generated\ZomatoGroup $zomato
  */
