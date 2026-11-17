@@ -224,6 +224,203 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        '7brew-categories' => [
+            'id' => '7brew-categories',
+            'method' => 'GET',
+            'path' => '/7brew/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        '7brew-directory' => [
+            'id' => '7brew-directory',
+            'method' => 'GET',
+            'path' => '/7brew/directory',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        '7brew-item' => [
+            'id' => '7brew-item',
+            'method' => 'GET',
+            'path' => '/7brew/item',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        '7brew-menu' => [
+            'id' => '7brew-menu',
+            'method' => 'GET',
+            'path' => '/7brew/menu',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'menu',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'section',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        '7brew-nearby' => [
+            'id' => '7brew-nearby',
+            'method' => 'GET',
+            'path' => '/7brew/nearby',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lng',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'radius',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        '7brew-options' => [
+            'id' => '7brew-options',
+            'method' => 'GET',
+            'path' => '/7brew/options',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        '7brew-store' => [
+            'id' => '7brew-store',
+            'method' => 'GET',
+            'path' => '/7brew/store',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         '7now-catalog' => [
             'id' => '7now-catalog',
             'method' => 'GET',
@@ -7138,6 +7335,446 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'aptoide-app' => [
+            'id' => 'aptoide-app',
+            'method' => 'GET',
+            'path' => '/aptoide/app',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'package',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'app_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'md5',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'store',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en_US',
+                        'ar_SA',
+                        'bg_BG',
+                        'bn_BD',
+                        'de_DE',
+                        'el_GR',
+                        'es_ES',
+                        'fa_IR',
+                        'fr_FR',
+                        'hi_IN',
+                        'hu_HU',
+                        'id_ID',
+                        'it_IT',
+                        'mr_IN',
+                        'ms_MY',
+                        'my_MM',
+                        'nl_NL',
+                        'pa_IN',
+                        'pl_PL',
+                        'pt_BR',
+                        'pt_PT',
+                        'ro_RO',
+                        'ru_RU',
+                        'sr_CS',
+                        'th_TH',
+                        'tr_TR',
+                        'vi_VN',
+                        'zh_CN',
+                        'es_MX',
+                        'ja_JP',
+                        'ko_KR',
+                        'uk_UA',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'aptoide-categories' => [
+            'id' => 'aptoide-categories',
+            'method' => 'GET',
+            'path' => '/aptoide/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'applications',
+                        'games',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'aptoide-collections' => [
+            'id' => 'aptoide-collections',
+            'method' => 'GET',
+            'path' => '/aptoide/collections',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'aptoide-list' => [
+            'id' => 'aptoide-list',
+            'method' => 'GET',
+            'path' => '/aptoide/list',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'collection',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'latest',
+                        'added',
+                        'downloads',
+                        'rating',
+                        'trending7d',
+                        'trending30d',
+                        'trending90d',
+                    ],
+                ],
+                [
+                    'name' => 'order',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'aptoide-reviews' => [
+            'id' => 'aptoide-reviews',
+            'method' => 'GET',
+            'path' => '/aptoide/reviews',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'package',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'source',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'reviews',
+                        'comments',
+                    ],
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'latest',
+                        'points',
+                        'rating',
+                    ],
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'aptoide-search' => [
+            'id' => 'aptoide-search',
+            'method' => 'GET',
+            'path' => '/aptoide/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'apps',
+                        'stores',
+                    ],
+                ],
+                [
+                    'name' => 'trusted',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'aptoide-similar' => [
+            'id' => 'aptoide-similar',
+            'method' => 'GET',
+            'path' => '/aptoide/similar',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'package',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'app_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'aptoide-store' => [
+            'id' => 'aptoide-store',
+            'method' => 'GET',
+            'path' => '/aptoide/store',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'store',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'latest',
+                        'added',
+                        'downloads',
+                        'rating',
+                        'trending7d',
+                        'trending30d',
+                        'trending90d',
+                    ],
+                ],
+                [
+                    'name' => 'order',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'aptoide-versions' => [
+            'id' => 'aptoide-versions',
+            'method' => 'GET',
+            'path' => '/aptoide/versions',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'package',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'app_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'store',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'arbys-categories' => [
             'id' => 'arbys-categories',
             'method' => 'GET',
@@ -7796,6 +8433,805 @@ final class Operations
             'consumes' => [
                 'application/json',
             ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'autoscout24-dealer' => [
+            'id' => 'autoscout24-dealer',
+            'method' => 'GET',
+            'path' => '/autoscout24/dealer',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'site',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'com',
+                        'de',
+                        'at',
+                        'it',
+                        'fr',
+                        'es',
+                        'nl',
+                        'lu',
+                        'be-fr',
+                        'be-nl',
+                    ],
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'autoscout24-filters' => [
+            'id' => 'autoscout24-filters',
+            'method' => 'GET',
+            'path' => '/autoscout24/filters',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'site',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'com',
+                        'de',
+                        'at',
+                        'it',
+                        'fr',
+                        'es',
+                        'nl',
+                        'lu',
+                        'be-fr',
+                        'be-nl',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'autoscout24-listing' => [
+            'id' => 'autoscout24-listing',
+            'method' => 'GET',
+            'path' => '/autoscout24/listing',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'site',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'com',
+                        'de',
+                        'at',
+                        'it',
+                        'fr',
+                        'es',
+                        'nl',
+                        'lu',
+                        'be-fr',
+                        'be-nl',
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'autoscout24-makes' => [
+            'id' => 'autoscout24-makes',
+            'method' => 'GET',
+            'path' => '/autoscout24/makes',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'site',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'com',
+                        'de',
+                        'at',
+                        'it',
+                        'fr',
+                        'es',
+                        'nl',
+                        'lu',
+                        'be-fr',
+                        'be-nl',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'autoscout24-models' => [
+            'id' => 'autoscout24-models',
+            'method' => 'GET',
+            'path' => '/autoscout24/models',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'site',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'com',
+                        'de',
+                        'at',
+                        'it',
+                        'fr',
+                        'es',
+                        'nl',
+                        'lu',
+                        'be-fr',
+                        'be-nl',
+                    ],
+                ],
+                [
+                    'name' => 'make',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'autoscout24-search' => [
+            'id' => 'autoscout24-search',
+            'method' => 'GET',
+            'path' => '/autoscout24/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'site',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'com',
+                        'de',
+                        'at',
+                        'it',
+                        'fr',
+                        'es',
+                        'nl',
+                        'lu',
+                        'be-fr',
+                        'be-nl',
+                    ],
+                ],
+                [
+                    'name' => 'make',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'model',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'model_line',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'version',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'keyword',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'A',
+                        'B',
+                        'D',
+                        'E',
+                        'F',
+                        'I',
+                        'L',
+                        'NL',
+                    ],
+                ],
+                [
+                    'name' => 'zip',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'radius',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lon',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'price_from',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'price_to',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'year_from',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'year_to',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'mileage_from',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'mileage_to',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'power_from',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'power_to',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'engine_size_from',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'engine_size_to',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'electric_range_from',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'electric_range_to',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'doors_from',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'doors_to',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'seats_from',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'seats_to',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'fuel',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '2',
+                        '3',
+                        'B',
+                        'C',
+                        'D',
+                        'E',
+                        'H',
+                        'L',
+                        'M',
+                        'O',
+                    ],
+                ],
+                [
+                    'name' => 'gear',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'A',
+                        'M',
+                        'S',
+                    ],
+                ],
+                [
+                    'name' => 'drivetrain',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '4',
+                        'F',
+                        'R',
+                    ],
+                ],
+                [
+                    'name' => 'cylinders',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '3',
+                        '4',
+                        '6',
+                        '8',
+                        '10plus',
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                        '5',
+                        '6',
+                        '7',
+                        '12',
+                        '13',
+                    ],
+                ],
+                [
+                    'name' => 'body_color',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                        '5',
+                        '6',
+                        '7',
+                        '10',
+                        '11',
+                        '12',
+                        '13',
+                        '14',
+                        '15',
+                        '16',
+                    ],
+                ],
+                [
+                    'name' => 'paint',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'M',
+                        'O',
+                    ],
+                ],
+                [
+                    'name' => 'interior_color',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                        '5',
+                        '6',
+                        '7',
+                        '8',
+                        '9',
+                        '10',
+                        '11',
+                    ],
+                ],
+                [
+                    'name' => 'upholstery',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'AL',
+                        'CL',
+                        'FL',
+                        'OT',
+                        'PL',
+                        'VL',
+                    ],
+                ],
+                [
+                    'name' => 'offer',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'N',
+                        'U',
+                        'J',
+                        'O',
+                        'D',
+                        'S',
+                    ],
+                ],
+                [
+                    'name' => 'equipment',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'seals',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'price_evaluation',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                        '5',
+                        '99',
+                    ],
+                ],
+                [
+                    'name' => 'emission_class',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                        '5',
+                        '6',
+                        '11',
+                        '7',
+                        '8',
+                        '9',
+                        '10',
+                    ],
+                ],
+                [
+                    'name' => 'emission_sticker',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '2',
+                        '3',
+                        '4',
+                    ],
+                ],
+                [
+                    'name' => 'seller_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'D',
+                        'P',
+                    ],
+                ],
+                [
+                    'name' => 'dealer_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'damage',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'exclude',
+                        'include',
+                        'only',
+                    ],
+                ],
+                [
+                    'name' => 'previous_owners',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                    ],
+                ],
+                [
+                    'name' => 'online_since',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                        '5',
+                        '6',
+                        '7',
+                        '14',
+                    ],
+                ],
+                [
+                    'name' => 'battery_ownership',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                    ],
+                ],
+                [
+                    'name' => 'vat_deductible',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'super_deal',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'new_driver',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'finance_rate_from',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'finance_rate_to',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'leasing',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'leasing_rate_from',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'leasing_rate_to',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'leasing_duration_from',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'leasing_duration_to',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'leasing_mileage_from',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'leasing_target_group',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'P',
+                        'B',
+                    ],
+                ],
+                [
+                    'name' => 'leasing_available_now',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'leasing_trade_in_bonus',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'leasing_environment_bonus',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'standard',
+                        'price',
+                        'financerate',
+                        'leasing_rate',
+                        'year',
+                        'model_year',
+                        'mileage',
+                        'power',
+                        'age',
+                        'distance',
+                    ],
+                ],
+                [
+                    'name' => 'order',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'autoscout24-suggest' => [
+            'id' => 'autoscout24-suggest',
+            'method' => 'GET',
+            'path' => '/autoscout24/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'site',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'com',
+                        'de',
+                        'at',
+                        'it',
+                        'fr',
+                        'es',
+                        'nl',
+                        'lu',
+                        'be-fr',
+                        'be-nl',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
             'produces' => [
                 'application/json',
             ],
@@ -18943,6 +20379,560 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'chesscom-club' => [
+            'id' => 'chesscom-club',
+            'method' => 'GET',
+            'path' => '/chesscom/club/{slug}',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-club-matches' => [
+            'id' => 'chesscom-club-matches',
+            'method' => 'GET',
+            'path' => '/chesscom/club/{slug}/matches',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-club-members' => [
+            'id' => 'chesscom-club-members',
+            'method' => 'GET',
+            'path' => '/chesscom/club/{slug}/members',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-country' => [
+            'id' => 'chesscom-country',
+            'method' => 'GET',
+            'path' => '/chesscom/country/{iso}',
+            'pathParams' => [
+                'iso',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-match-live' => [
+            'id' => 'chesscom-match-live',
+            'method' => 'GET',
+            'path' => '/chesscom/live-match/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-match-live-board' => [
+            'id' => 'chesscom-match-live-board',
+            'method' => 'GET',
+            'path' => '/chesscom/live-match/{id}/{board}',
+            'pathParams' => [
+                'id',
+                'board',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-match' => [
+            'id' => 'chesscom-match',
+            'method' => 'GET',
+            'path' => '/chesscom/match/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-match-board' => [
+            'id' => 'chesscom-match-board',
+            'method' => 'GET',
+            'path' => '/chesscom/match/{id}/{board}',
+            'pathParams' => [
+                'id',
+                'board',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-player' => [
+            'id' => 'chesscom-player',
+            'method' => 'GET',
+            'path' => '/chesscom/player/{username}',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-player-clubs' => [
+            'id' => 'chesscom-player-clubs',
+            'method' => 'GET',
+            'path' => '/chesscom/player/{username}/clubs',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-player-games' => [
+            'id' => 'chesscom-player-games',
+            'method' => 'GET',
+            'path' => '/chesscom/player/{username}/games',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-player-game-month' => [
+            'id' => 'chesscom-player-game-month',
+            'method' => 'GET',
+            'path' => '/chesscom/player/{username}/games/archive/{year}/{month}',
+            'pathParams' => [
+                'username',
+                'year',
+                'month',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-player-game-month-pgn' => [
+            'id' => 'chesscom-player-game-month-pgn',
+            'method' => 'GET',
+            'path' => '/chesscom/player/{username}/games/archive/{year}/{month}/pgn',
+            'pathParams' => [
+                'username',
+                'year',
+                'month',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-player-game-archives' => [
+            'id' => 'chesscom-player-game-archives',
+            'method' => 'GET',
+            'path' => '/chesscom/player/{username}/games/archives',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-player-live-games-base-time' => [
+            'id' => 'chesscom-player-live-games-base-time',
+            'method' => 'GET',
+            'path' => '/chesscom/player/{username}/games/live/{base_time}',
+            'pathParams' => [
+                'username',
+                'base_time',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-player-live-games' => [
+            'id' => 'chesscom-player-live-games',
+            'method' => 'GET',
+            'path' => '/chesscom/player/{username}/games/live/{base_time}/{increment}',
+            'pathParams' => [
+                'username',
+                'base_time',
+                'increment',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-player-games-to-move' => [
+            'id' => 'chesscom-player-games-to-move',
+            'method' => 'GET',
+            'path' => '/chesscom/player/{username}/games/to-move',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-player-is-online' => [
+            'id' => 'chesscom-player-is-online',
+            'method' => 'GET',
+            'path' => '/chesscom/player/{username}/is-online',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-player-matches' => [
+            'id' => 'chesscom-player-matches',
+            'method' => 'GET',
+            'path' => '/chesscom/player/{username}/matches',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-player-stats' => [
+            'id' => 'chesscom-player-stats',
+            'method' => 'GET',
+            'path' => '/chesscom/player/{username}/stats',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-player-tournaments' => [
+            'id' => 'chesscom-player-tournaments',
+            'method' => 'GET',
+            'path' => '/chesscom/player/{username}/tournaments',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-puzzle' => [
+            'id' => 'chesscom-puzzle',
+            'method' => 'GET',
+            'path' => '/chesscom/puzzle',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-puzzle-random' => [
+            'id' => 'chesscom-puzzle-random',
+            'method' => 'GET',
+            'path' => '/chesscom/puzzle/random',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-tournament' => [
+            'id' => 'chesscom-tournament',
+            'method' => 'GET',
+            'path' => '/chesscom/tournament/{slug}',
+            'pathParams' => [
+                'slug',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-tournament-round' => [
+            'id' => 'chesscom-tournament-round',
+            'method' => 'GET',
+            'path' => '/chesscom/tournament/{slug}/{round}',
+            'pathParams' => [
+                'slug',
+                'round',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'chesscom-tournament-round-group' => [
+            'id' => 'chesscom-tournament-round-group',
+            'method' => 'GET',
+            'path' => '/chesscom/tournament/{slug}/{round}/{group}',
+            'pathParams' => [
+                'slug',
+                'round',
+                'group',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'chewy-brands' => [
             'id' => 'chewy-brands',
             'method' => 'GET',
@@ -21102,6 +23092,700 @@ final class Operations
             'id' => 'clevelandcom-news',
             'method' => 'GET',
             'path' => '/clevelandcom/news',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'clinicaltrials-stats-field-sizes' => [
+            'id' => 'clinicaltrials-stats-field-sizes',
+            'method' => 'GET',
+            'path' => '/clinicaltrials/stats/field-sizes',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'fields',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'clinicaltrials-stats-field-values' => [
+            'id' => 'clinicaltrials-stats-field-values',
+            'method' => 'GET',
+            'path' => '/clinicaltrials/stats/field-values',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'fields',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'types',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ENUM',
+                        'STRING',
+                        'DATE',
+                        'INTEGER',
+                        'NUMBER',
+                        'BOOLEAN',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'clinicaltrials-stats-size' => [
+            'id' => 'clinicaltrials-stats-size',
+            'method' => 'GET',
+            'path' => '/clinicaltrials/stats/size',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'clinicaltrials-studies' => [
+            'id' => 'clinicaltrials-studies',
+            'method' => 'GET',
+            'path' => '/clinicaltrials/studies',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'cond',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'term',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'locn',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'titles',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'intr',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'outc',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'spons',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lead',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'patient',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'overall_status',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ACTIVE_NOT_RECRUITING',
+                        'COMPLETED',
+                        'ENROLLING_BY_INVITATION',
+                        'NOT_YET_RECRUITING',
+                        'RECRUITING',
+                        'SUSPENDED',
+                        'TERMINATED',
+                        'WITHDRAWN',
+                        'AVAILABLE',
+                        'NO_LONGER_AVAILABLE',
+                        'TEMPORARILY_NOT_AVAILABLE',
+                        'APPROVED_FOR_MARKETING',
+                        'WITHHELD',
+                        'UNKNOWN',
+                    ],
+                ],
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'distance',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'geo_decay',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'advanced',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'synonyms',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'agg_filters',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'start_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'start_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'primary_completion_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'primary_completion_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'completion_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'completion_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'first_posted_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'first_posted_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'results_first_posted_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'results_first_posted_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'last_update_posted_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'last_update_posted_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'age_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'age_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'fields',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'count_total',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_token',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'markup_format',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'markdown',
+                        'legacy',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'page_token',
+            ],
+        ],
+        'clinicaltrials-studies-enums' => [
+            'id' => 'clinicaltrials-studies-enums',
+            'method' => 'GET',
+            'path' => '/clinicaltrials/studies/enums',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'clinicaltrials-studies-facets' => [
+            'id' => 'clinicaltrials-studies-facets',
+            'method' => 'GET',
+            'path' => '/clinicaltrials/studies/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'cond',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'term',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'locn',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'titles',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'intr',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'outc',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'spons',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lead',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'patient',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'overall_status',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ACTIVE_NOT_RECRUITING',
+                        'COMPLETED',
+                        'ENROLLING_BY_INVITATION',
+                        'NOT_YET_RECRUITING',
+                        'RECRUITING',
+                        'SUSPENDED',
+                        'TERMINATED',
+                        'WITHDRAWN',
+                        'AVAILABLE',
+                        'NO_LONGER_AVAILABLE',
+                        'TEMPORARILY_NOT_AVAILABLE',
+                        'APPROVED_FOR_MARKETING',
+                        'WITHHELD',
+                        'UNKNOWN',
+                    ],
+                ],
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'distance',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'geo_decay',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'advanced',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'synonyms',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'agg_filters',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'city',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'start_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'start_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'primary_completion_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'primary_completion_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'completion_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'completion_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'first_posted_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'first_posted_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'results_first_posted_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'results_first_posted_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'last_update_posted_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'last_update_posted_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'age_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'age_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'clinicaltrials-studies-metadata' => [
+            'id' => 'clinicaltrials-studies-metadata',
+            'method' => 'GET',
+            'path' => '/clinicaltrials/studies/metadata',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'include_indexed_only',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'include_historic_only',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'clinicaltrials-studies-search-areas' => [
+            'id' => 'clinicaltrials-studies-search-areas',
+            'method' => 'GET',
+            'path' => '/clinicaltrials/studies/search-areas',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'clinicaltrials-study' => [
+            'id' => 'clinicaltrials-study',
+            'method' => 'GET',
+            'path' => '/clinicaltrials/study',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'nct_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'fields',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'markup_format',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'markdown',
+                        'legacy',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'clinicaltrials-suggest' => [
+            'id' => 'clinicaltrials-suggest',
+            'method' => 'GET',
+            'path' => '/clinicaltrials/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'input',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'dictionary',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Condition',
+                        'InterventionName',
+                        'LeadSponsorName',
+                        'LocationFacility',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'clinicaltrials-version' => [
+            'id' => 'clinicaltrials-version',
+            'method' => 'GET',
+            'path' => '/clinicaltrials/version',
             'pathParams' => [],
             'queryParams' => [],
             'formParams' => [],
@@ -24290,6 +26974,423 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'copart-auctions' => [
+            'id' => 'copart-auctions',
+            'method' => 'GET',
+            'path' => '/copart/auctions',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'copart-filters' => [
+            'id' => 'copart-filters',
+            'method' => 'GET',
+            'path' => '/copart/filters',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'make',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'model',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'yard',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'vehicle_type',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'copart-locations' => [
+            'id' => 'copart-locations',
+            'method' => 'GET',
+            'path' => '/copart/locations',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'copart-lot' => [
+            'id' => 'copart-lot',
+            'method' => 'GET',
+            'path' => '/copart/lot',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'lot_number',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'copart-lot-images' => [
+            'id' => 'copart-lot-images',
+            'method' => 'GET',
+            'path' => '/copart/lot-images',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'lot_number',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'copart-search' => [
+            'id' => 'copart-search',
+            'method' => 'GET',
+            'path' => '/copart/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'make',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'model',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'model_group',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'engine',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'transmission',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'fuel',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'drive',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'cylinders',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'body_style',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'yard',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'auction_name',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'sale_date',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'featured',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'title',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'damage',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'vehicle_type',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'source',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'odometer_band',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'newly_added',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'last-24-hours',
+                        'last-7-days',
+                    ],
+                ],
+                [
+                    'name' => 'wholesale',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'year_from',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'year_to',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'odometer_min',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'odometer_max',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sale_date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sale_date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'autograde_min',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'autograde_max',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'sale_light',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'enum' => [
+                        'green',
+                        'yellow',
+                        'red',
+                    ],
+                ],
+                [
+                    'name' => 'latitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'longitude',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'radius_miles',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '25',
+                        '50',
+                        '75',
+                        '100',
+                        '125',
+                        '150',
+                        '175',
+                        '200',
+                    ],
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'auction_date',
+                        'odometer',
+                        'year',
+                        'make',
+                        'model',
+                        'item_number',
+                        'buy_it_now',
+                        'current_bid',
+                        'sale_light',
+                        'damage',
+                    ],
+                ],
+                [
+                    'name' => 'sort_order',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'copart-suggest' => [
+            'id' => 'copart-suggest',
+            'method' => 'GET',
+            'path' => '/copart/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'costco-categories' => [
             'id' => 'costco-categories',
             'method' => 'GET',
@@ -24551,6 +27652,396 @@ final class Operations
             'paginatable' => true,
             'cursorParams' => [
                 'cursor',
+            ],
+        ],
+        'craigslist-areas' => [
+            'id' => 'craigslist-areas',
+            'method' => 'GET',
+            'path' => '/craigslist/areas',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'group',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'US',
+                        'Canada',
+                        'Europe',
+                        'Asia/Pacific/Middle East',
+                        'Oceania',
+                        'Latin America',
+                        'Africa',
+                    ],
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'craigslist-categories' => [
+            'id' => 'craigslist-categories',
+            'method' => 'GET',
+            'path' => '/craigslist/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'area',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'craigslist-category-counts' => [
+            'id' => 'craigslist-category-counts',
+            'method' => 'GET',
+            'path' => '/craigslist/category-counts',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'area',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'postal',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lon',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'search_distance',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'subarea',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'craigslist-category-filters' => [
+            'id' => 'craigslist-category-filters',
+            'method' => 'GET',
+            'path' => '/craigslist/category-filters',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'area',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'craigslist-likely-categories' => [
+            'id' => 'craigslist-likely-categories',
+            'method' => 'GET',
+            'path' => '/craigslist/likely-categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'area',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'craigslist-locations' => [
+            'id' => 'craigslist-locations',
+            'method' => 'GET',
+            'path' => '/craigslist/locations',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'lon',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'craigslist-posting' => [
+            'id' => 'craigslist-posting',
+            'method' => 'GET',
+            'path' => '/craigslist/posting',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'craigslist-search' => [
+            'id' => 'craigslist-search',
+            'method' => 'GET',
+            'path' => '/craigslist/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'area',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'date',
+                        'dateoldest',
+                        'rel',
+                        'priceasc',
+                        'pricedsc',
+                        'dist',
+                    ],
+                ],
+                [
+                    'name' => 'min_price',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_price',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'has_pic',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'posted_today',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'title_only',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'postal',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'search_distance',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lon',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'craigslist-suggest' => [
+            'id' => 'craigslist-suggest',
+            'method' => 'GET',
+            'path' => '/craigslist/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'search',
+                        'makemodel',
+                        'location',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'area',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'lon',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
             ],
         ],
         'cricbuzz-archives' => [
@@ -25142,6 +28633,35 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'cricbuzz-commentary' => [
+            'id' => 'cricbuzz-commentary',
+            'method' => 'GET',
+            'path' => '/cricbuzz/commentary',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'match_url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'innings_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'cricbuzz-match-facts' => [
             'id' => 'cricbuzz-match-facts',
             'method' => 'GET',
@@ -25305,6 +28825,30 @@ final class Operations
                     'name' => 'q',
                     'in' => 'query',
                     'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-player' => [
+            'id' => 'cricbuzz-player',
+            'method' => 'GET',
+            'path' => '/cricbuzz/player',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'player_url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
                 ],
             ],
             'formParams' => [],
@@ -25530,6 +29074,35 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'cricbuzz-series-squads' => [
+            'id' => 'cricbuzz-series-squads',
+            'method' => 'GET',
+            'path' => '/cricbuzz/series/squads',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'series_url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'squad_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'cricbuzz-series-stats' => [
             'id' => 'cricbuzz-series-stats',
             'method' => 'GET',
@@ -25568,6 +29141,42 @@ final class Operations
                     'name' => 'format',
                     'in' => 'query',
                     'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricbuzz-team-players' => [
+            'id' => 'cricbuzz-team-players',
+            'method' => 'GET',
+            'path' => '/cricbuzz/team/players',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'international',
+                        'domestic',
+                        'league',
+                        'women',
+                    ],
+                ],
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
                 ],
             ],
             'formParams' => [],
@@ -25762,6 +29371,30 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'cricinfo-ball-by-ball' => [
+            'id' => 'cricinfo-ball-by-ball',
+            'method' => 'GET',
+            'path' => '/cricinfo/ball-by-ball',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'cricinfo-calendar' => [
             'id' => 'cricinfo-calendar',
             'method' => 'GET',
@@ -25852,6 +29485,54 @@ final class Operations
             'id' => 'cricinfo-match',
             'method' => 'GET',
             'path' => '/cricinfo/match',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricinfo-match-impact-player' => [
+            'id' => 'cricinfo-match-impact-player',
+            'method' => 'GET',
+            'path' => '/cricinfo/match-impact-player',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'cricinfo-match-statistics' => [
+            'id' => 'cricinfo-match-statistics',
+            'method' => 'GET',
+            'path' => '/cricinfo/match-statistics',
             'pathParams' => [],
             'queryParams' => [
                 [
@@ -33816,6 +37497,13 @@ final class Operations
                         'google-jobs',
                         'meta-jobs',
                         'tesla-jobs',
+                        'breezy',
+                        'jazzhr',
+                        'phenom',
+                        'ibm-jobs',
+                        'adp',
+                        'successfactors',
+                        'talentbrew',
                     ],
                 ],
                 [
@@ -33992,6 +37680,13 @@ final class Operations
                         'google-jobs',
                         'meta-jobs',
                         'tesla-jobs',
+                        'breezy',
+                        'jazzhr',
+                        'phenom',
+                        'ibm-jobs',
+                        'adp',
+                        'successfactors',
+                        'talentbrew',
                     ],
                 ],
                 [
@@ -34066,6 +37761,13 @@ final class Operations
                         'google-jobs',
                         'meta-jobs',
                         'tesla-jobs',
+                        'breezy',
+                        'jazzhr',
+                        'phenom',
+                        'ibm-jobs',
+                        'adp',
+                        'successfactors',
+                        'talentbrew',
                     ],
                 ],
                 [
@@ -42229,6 +45931,96 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'discord-invite' => [
+            'id' => 'discord-invite',
+            'method' => 'GET',
+            'path' => '/discord/invite',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'discord-server' => [
+            'id' => 'discord-server',
+            'method' => 'GET',
+            'path' => '/discord/server',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'guild_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'discord-servers' => [
+            'id' => 'discord-servers',
+            'method' => 'GET',
+            'path' => '/discord/servers',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'gaming',
+                        'music',
+                        'education',
+                        'science_tech',
+                        'entertainment',
+                    ],
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'dollartree-blog-article' => [
             'id' => 'dollartree-blog-article',
             'method' => 'GET',
@@ -46097,6 +49889,153 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'espn-athlete-gamelog' => [
+            'id' => 'espn-athlete-gamelog',
+            'method' => 'GET',
+            'path' => '/espn/athlete-gamelog',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'football',
+                        'basketball',
+                        'baseball',
+                        'hockey',
+                        'soccer',
+                    ],
+                ],
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'college-football',
+                        'nba',
+                        'wnba',
+                        'mens-college-basketball',
+                        'womens-college-basketball',
+                        'mlb',
+                        'nhl',
+                        'eng.1',
+                        'esp.1',
+                        'ita.1',
+                        'ger.1',
+                        'fra.1',
+                        'usa.1',
+                        'uefa.champions',
+                    ],
+                ],
+                [
+                    'name' => 'athlete',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'batting',
+                        'pitching',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'espn-athlete-splits' => [
+            'id' => 'espn-athlete-splits',
+            'method' => 'GET',
+            'path' => '/espn/athlete-splits',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'football',
+                        'basketball',
+                        'baseball',
+                        'hockey',
+                    ],
+                ],
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'college-football',
+                        'nba',
+                        'wnba',
+                        'mens-college-basketball',
+                        'womens-college-basketball',
+                        'mlb',
+                        'nhl',
+                    ],
+                ],
+                [
+                    'name' => 'athlete',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'batting',
+                        'pitching',
+                        'per_game',
+                        'total',
+                        'per_48',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'espn-game-summary' => [
             'id' => 'espn-game-summary',
             'method' => 'GET',
@@ -46528,6 +50467,159 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'espn-team-schedule' => [
+            'id' => 'espn-team-schedule',
+            'method' => 'GET',
+            'path' => '/espn/team-schedule',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'football',
+                        'basketball',
+                        'baseball',
+                        'hockey',
+                        'soccer',
+                    ],
+                ],
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'college-football',
+                        'nba',
+                        'wnba',
+                        'mens-college-basketball',
+                        'womens-college-basketball',
+                        'mlb',
+                        'nhl',
+                        'eng.1',
+                        'esp.1',
+                        'ita.1',
+                        'ger.1',
+                        'fra.1',
+                        'usa.1',
+                        'uefa.champions',
+                    ],
+                ],
+                [
+                    'name' => 'team',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'seasontype',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                    ],
+                ],
+                [
+                    'name' => 'fixture',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'espn-team-stats' => [
+            'id' => 'espn-team-stats',
+            'method' => 'GET',
+            'path' => '/espn/team-stats',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'football',
+                        'basketball',
+                        'baseball',
+                        'hockey',
+                    ],
+                ],
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'college-football',
+                        'nba',
+                        'wnba',
+                        'mens-college-basketball',
+                        'womens-college-basketball',
+                        'mlb',
+                        'nhl',
+                    ],
+                ],
+                [
+                    'name' => 'team',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'seasontype',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'espn-teams' => [
             'id' => 'espn-teams',
             'method' => 'GET',
@@ -46583,6 +50675,83 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'espn-transactions' => [
+            'id' => 'espn-transactions',
+            'method' => 'GET',
+            'path' => '/espn/transactions',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sport',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'football',
+                        'basketball',
+                        'baseball',
+                        'hockey',
+                        'soccer',
+                    ],
+                ],
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'nfl',
+                        'college-football',
+                        'nba',
+                        'wnba',
+                        'mens-college-basketball',
+                        'womens-college-basketball',
+                        'mlb',
+                        'nhl',
+                        'eng.1',
+                        'esp.1',
+                        'ita.1',
+                        'ger.1',
+                        'fra.1',
+                        'usa.1',
+                        'uefa.champions',
+                    ],
+                ],
+                [
+                    'name' => 'team',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'etsy-listing' => [
             'id' => 'etsy-listing',
@@ -54717,6 +58886,243 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'fdroid-anti-features' => [
+            'id' => 'fdroid-anti-features',
+            'method' => 'GET',
+            'path' => '/fdroid/anti-features',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fdroid-app' => [
+            'id' => 'fdroid-app',
+            'method' => 'GET',
+            'path' => '/fdroid/app',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'package',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fdroid-apps' => [
+            'id' => 'fdroid-apps',
+            'method' => 'GET',
+            'path' => '/fdroid/apps',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'license',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'anti_feature',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'enum' => [
+                        'Ads',
+                        'DisabledAlgorithm',
+                        'KnownVuln',
+                        'NoSourceSince',
+                        'NonFreeAdd',
+                        'NonFreeAssets',
+                        'NonFreeDep',
+                        'NonFreeNet',
+                        'TetheredNet',
+                        'Tracking',
+                    ],
+                ],
+                [
+                    'name' => 'exclude_anti_feature',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'enum' => [
+                        'any',
+                        'Ads',
+                        'DisabledAlgorithm',
+                        'KnownVuln',
+                        'NoSourceSince',
+                        'NonFreeAdd',
+                        'NonFreeAssets',
+                        'NonFreeDep',
+                        'NonFreeNet',
+                        'TetheredNet',
+                        'Tracking',
+                    ],
+                ],
+                [
+                    'name' => 'added_since',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'updated_since',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'last_updated',
+                        'added',
+                        'name',
+                    ],
+                ],
+                [
+                    'name' => 'order',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'fdroid-categories' => [
+            'id' => 'fdroid-categories',
+            'method' => 'GET',
+            'path' => '/fdroid/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fdroid-licenses' => [
+            'id' => 'fdroid-licenses',
+            'method' => 'GET',
+            'path' => '/fdroid/licenses',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fdroid-search' => [
+            'id' => 'fdroid-search',
+            'method' => 'GET',
+            'path' => '/fdroid/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'fever-cities' => [
             'id' => 'fever-cities',
             'method' => 'GET',
@@ -59674,6 +64080,414 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'fortnite-ecosystem-metric' => [
+            'id' => 'fortnite-ecosystem-metric',
+            'method' => 'GET',
+            'path' => '/fortnite/ecosystem-metric',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'interval',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'day',
+                        'hour',
+                        'minute',
+                    ],
+                ],
+                [
+                    'name' => 'metric',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'in-client-peak-ccu',
+                        'in-match-peak-ccu',
+                    ],
+                ],
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fortnite-ecosystem-metrics' => [
+            'id' => 'fortnite-ecosystem-metrics',
+            'method' => 'GET',
+            'path' => '/fortnite/ecosystem-metrics',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'interval',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'day',
+                        'hour',
+                        'minute',
+                    ],
+                ],
+                [
+                    'name' => 'metrics',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'inMatchPeakCCU',
+                        'inClientPeakCCU',
+                    ],
+                ],
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fortnite-enums' => [
+            'id' => 'fortnite-enums',
+            'method' => 'GET',
+            'path' => '/fortnite/enums',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fortnite-genre-rankings' => [
+            'id' => 'fortnite-genre-rankings',
+            'method' => 'GET',
+            'path' => '/fortnite/genre-rankings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'at',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'before',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fortnite-genres' => [
+            'id' => 'fortnite-genres',
+            'method' => 'GET',
+            'path' => '/fortnite/genres',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fortnite-island' => [
+            'id' => 'fortnite-island',
+            'method' => 'GET',
+            'path' => '/fortnite/island',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fortnite-island-metric' => [
+            'id' => 'fortnite-island-metric',
+            'method' => 'GET',
+            'path' => '/fortnite/island-metric',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'interval',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'day',
+                        'hour',
+                        'minute',
+                    ],
+                ],
+                [
+                    'name' => 'metric',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'peak-ccu',
+                        'favorites',
+                        'minutes-played',
+                        'average-minutes-per-player',
+                        'recommendations',
+                        'unique-players',
+                        'plays',
+                        'retention',
+                    ],
+                ],
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fortnite-island-metrics' => [
+            'id' => 'fortnite-island-metrics',
+            'method' => 'GET',
+            'path' => '/fortnite/island-metrics',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'interval',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'day',
+                        'hour',
+                        'minute',
+                    ],
+                ],
+                [
+                    'name' => 'metrics',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'averageMinutesPerPlayer',
+                        'peakCCU',
+                        'favorites',
+                        'minutesPlayed',
+                        'recommendations',
+                        'plays',
+                        'uniquePlayers',
+                        'retention',
+                    ],
+                ],
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fortnite-island-rankings' => [
+            'id' => 'fortnite-island-rankings',
+            'method' => 'GET',
+            'path' => '/fortnite/island-rankings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fortnite-islands' => [
+            'id' => 'fortnite-islands',
+            'method' => 'GET',
+            'path' => '/fortnite/islands',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'before',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'fortune-article' => [
             'id' => 'fortune-article',
             'method' => 'GET',
@@ -60337,6 +65151,32 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'fotmob-match-heatmap' => [
+            'id' => 'fotmob-match-heatmap',
+            'method' => 'GET',
+            'path' => '/fotmob/match-heatmap',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'match_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'fotmob-match-media' => [
             'id' => 'fotmob-match-media',
             'method' => 'GET',
@@ -60467,6 +65307,32 @@ final class Operations
                     'name' => 'include_market_values',
                     'in' => 'query',
                     'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'fotmob-player-injuries' => [
+            'id' => 'fotmob-player-injuries',
+            'method' => 'GET',
+            'path' => '/fotmob/player-injuries',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'player_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
                 ],
             ],
             'formParams' => [],
@@ -63327,10 +68193,44 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'futgg-fc27-campaign-squads' => [
+            'id' => 'futgg-fc27-campaign-squads',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/campaign-squads',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'futgg-fc27-catalog' => [
             'id' => 'futgg-fc27-catalog',
             'method' => 'GET',
             'path' => '/futgg/fc27/catalog',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-chemistry-style-roles' => [
+            'id' => 'futgg-fc27-chemistry-style-roles',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/chemistry-style-roles',
             'pathParams' => [],
             'queryParams' => [],
             'formParams' => [],
@@ -63459,6 +68359,171 @@ final class Operations
             'path' => '/futgg/fc27/gg-ratings',
             'pathParams' => [],
             'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-manager-facets' => [
+            'id' => 'futgg-fc27-manager-facets',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/manager-facets',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-manager-leagues' => [
+            'id' => 'futgg-fc27-manager-leagues',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/manager-leagues',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-managers' => [
+            'id' => 'futgg-fc27-managers',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/managers',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'platform',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ps5',
+                        'pc',
+                    ],
+                ],
+                [
+                    'name' => 'quality',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'bronze',
+                        'silver',
+                        'gold',
+                    ],
+                ],
+                [
+                    'name' => 'extinct',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'only',
+                        'hide',
+                    ],
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'nation',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'league',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_price',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_price',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'futgg-fc27-manager' => [
+            'id' => 'futgg-fc27-manager',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/managers/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-misc-prices' => [
+            'id' => 'futgg-fc27-misc-prices',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/misc-prices',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'platform',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'ps5',
+                        'pc',
+                    ],
+                ],
+            ],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -63655,6 +68720,18 @@ final class Operations
                     'name' => 'rarity_id',
                     'in' => 'query',
                     'type' => 'integer',
+                ],
+                [
+                    'name' => 'rarity_squad_id',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'excluded_rarity_squad_id',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
                 ],
                 [
                     'name' => 'positions',
@@ -64135,6 +69212,46 @@ final class Operations
             'path' => '/futgg/fc27/price-index',
             'pathParams' => [],
             'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'futgg-fc27-price-range-changes' => [
+            'id' => 'futgg-fc27-price-range-changes',
+            'method' => 'GET',
+            'path' => '/futgg/fc27/price-range-changes',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'platform',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ps5',
+                        'pc',
+                    ],
+                ],
+                [
+                    'name' => 'extinct',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'yes',
+                    ],
+                ],
+                [
+                    'name' => 'before',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -66209,6 +71326,395 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'gemrate-card' => [
+            'id' => 'gemrate-card',
+            'method' => 'GET',
+            'path' => '/gemrate/card',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'gemrate_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'gemrate-categories' => [
+            'id' => 'gemrate-categories',
+            'method' => 'GET',
+            'path' => '/gemrate/categories',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'gemrate-grading-trends' => [
+            'id' => 'gemrate-grading-trends',
+            'method' => 'GET',
+            'path' => '/gemrate/grading-trends',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'gemrate-leaders' => [
+            'id' => 'gemrate-leaders',
+            'method' => 'GET',
+            'path' => '/gemrate/leaders',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'segment',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'sports',
+                        'tcg',
+                        'combined',
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'athletes',
+                        'sets',
+                        'cards',
+                    ],
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'gemrate-report' => [
+            'id' => 'gemrate-report',
+            'method' => 'GET',
+            'path' => '/gemrate/report',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'gemrate-reports' => [
+            'id' => 'gemrate-reports',
+            'method' => 'GET',
+            'path' => '/gemrate/reports',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'gemrate-sales-trends' => [
+            'id' => 'gemrate-sales-trends',
+            'method' => 'GET',
+            'path' => '/gemrate/sales-trends',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'segment',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'athletes',
+                        'pokemon',
+                    ],
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ytd',
+                        'latest_month',
+                        'name',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'gemrate-search-presets' => [
+            'id' => 'gemrate-search-presets',
+            'method' => 'GET',
+            'path' => '/gemrate/search/presets',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'gemrate-pop-collection' => [
+            'id' => 'gemrate-pop-collection',
+            'method' => 'GET',
+            'path' => '/gemrate/universal-pop-report/collection',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'gemrate-pop-collections' => [
+            'id' => 'gemrate-pop-collections',
+            'method' => 'GET',
+            'path' => '/gemrate/universal-pop-report/collections',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'gemrate-pop-set' => [
+            'id' => 'gemrate-pop-set',
+            'method' => 'GET',
+            'path' => '/gemrate/universal-pop-report/set',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'set_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'gemrate-pop-sets' => [
+            'id' => 'gemrate-pop-sets',
+            'method' => 'GET',
+            'path' => '/gemrate/universal-pop-report/sets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'geocoding-lookup' => [
             'id' => 'geocoding-lookup',
@@ -76623,6 +82129,270 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'hltb-filters' => [
+            'id' => 'hltb-filters',
+            'method' => 'GET',
+            'path' => '/hltb/filters',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'hltb-game' => [
+            'id' => 'hltb-game',
+            'method' => 'GET',
+            'path' => '/hltb/game/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'hltb-popular' => [
+            'id' => 'hltb-popular',
+            'method' => 'GET',
+            'path' => '/hltb/popular',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'hltb-search' => [
+            'id' => 'hltb-search',
+            'method' => 'GET',
+            'path' => '/hltb/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'range_category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'min_hours',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_hours',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'platform',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'platform_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'perspective',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'perspective_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'flow',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'flow_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'year_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'modifier',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'game_pass',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'hltb-stats' => [
+            'id' => 'hltb-stats',
+            'method' => 'GET',
+            'path' => '/hltb/stats',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'genre',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'genre_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'perspective',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'perspective_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'flow',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'flow_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'platform',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'platform_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'year_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'hltv-coach' => [
+            'id' => 'hltv-coach',
+            'method' => 'GET',
+            'path' => '/hltv/coach',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'hltv-event' => [
             'id' => 'hltv-event',
             'method' => 'GET',
@@ -76788,6 +82558,28 @@ final class Operations
                     'in' => 'query',
                     'type' => 'integer',
                 ],
+                [
+                    'name' => 'team',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'map',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'stars',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                        '5',
+                    ],
+                ],
             ],
             'formParams' => [],
             'bodyParam' => null,
@@ -76839,6 +82631,91 @@ final class Operations
                 ],
                 [
                     'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'hltv-transfers' => [
+            'id' => 'hltv-transfers',
+            'method' => 'GET',
+            'path' => '/hltv/transfers',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'hltv-valve-ranking' => [
+            'id' => 'hltv-valve-ranking',
+            'method' => 'GET',
+            'path' => '/hltv/valve-ranking',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'hltv-valve-ranking-details' => [
+            'id' => 'hltv-valve-ranking-details',
+            'method' => 'GET',
+            'path' => '/hltv/valve-ranking-details',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'lineup',
                     'in' => 'query',
                     'type' => 'string',
                 ],
@@ -77844,6 +83721,146 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'ibm-jobs-filters' => [
+            'id' => 'ibm-jobs-filters',
+            'method' => 'GET',
+            'path' => '/ibm-jobs/filters',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'ibm-jobs-job' => [
+            'id' => 'ibm-jobs-job',
+            'method' => 'GET',
+            'path' => '/ibm-jobs/job',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'ibm-jobs-search' => [
+            'id' => 'ibm-jobs-search',
+            'method' => 'GET',
+            'path' => '/ibm-jobs/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'team',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'enum' => [
+                        'Cloud',
+                        'Consulting',
+                        'Data & Analytics',
+                        'Design & UX',
+                        'Enterprise Operations',
+                        'Infrastructure & Technology',
+                        'Product Management',
+                        'Project Management',
+                        'Research',
+                        'Sales',
+                        'Security',
+                        'Software Engineering',
+                    ],
+                ],
+                [
+                    'name' => 'experience_level',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'enum' => [
+                        'Entry Level',
+                        'Internship',
+                        'Professional',
+                    ],
+                ],
+                [
+                    'name' => 'work_arrangement',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'enum' => [
+                        'Hybrid',
+                        'Remote',
+                    ],
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'newest',
+                        'oldest',
+                        'title_asc',
+                        'title_desc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'ign-article' => [
             'id' => 'ign-article',
@@ -89399,6 +95416,1363 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'lichess-cloud-eval' => [
+            'id' => 'lichess-cloud-eval',
+            'method' => 'GET',
+            'path' => '/lichess/cloud-eval',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'fen',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'multiPv',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'variant',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'standard',
+                        'chess960',
+                        'crazyhouse',
+                        'antichess',
+                        'atomic',
+                        'horde',
+                        'kingOfTheHill',
+                        'racingKings',
+                        'threeCheck',
+                        'fromPosition',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'lichess-enums' => [
+            'id' => 'lichess-enums',
+            'method' => 'GET',
+            'path' => '/lichess/enums',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'lichess-puzzle' => [
+            'id' => 'lichess-puzzle',
+            'method' => 'GET',
+            'path' => '/lichess/puzzle',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'lichess-puzzle-batch' => [
+            'id' => 'lichess-puzzle-batch',
+            'method' => 'GET',
+            'path' => '/lichess/puzzle/batch',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'angle',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'difficulty',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'easiest',
+                        'easier',
+                        'normal',
+                        'harder',
+                        'hardest',
+                    ],
+                ],
+                [
+                    'name' => 'nb',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'color',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'white',
+                        'black',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'lichess-puzzle-daily' => [
+            'id' => 'lichess-puzzle-daily',
+            'method' => 'GET',
+            'path' => '/lichess/puzzle/daily',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'lichess-puzzle-many' => [
+            'id' => 'lichess-puzzle-many',
+            'method' => 'GET',
+            'path' => '/lichess/puzzle/many',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'lichess-puzzle-next' => [
+            'id' => 'lichess-puzzle-next',
+            'method' => 'GET',
+            'path' => '/lichess/puzzle/next',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'angle',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'difficulty',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'easiest',
+                        'easier',
+                        'normal',
+                        'harder',
+                        'hardest',
+                    ],
+                ],
+                [
+                    'name' => 'color',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'white',
+                        'black',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'lichess-puzzle-themes' => [
+            'id' => 'lichess-puzzle-themes',
+            'method' => 'GET',
+            'path' => '/lichess/puzzle/themes',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'lichess-simuls' => [
+            'id' => 'lichess-simuls',
+            'method' => 'GET',
+            'path' => '/lichess/simuls',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'lichess-tablebase' => [
+            'id' => 'lichess-tablebase',
+            'method' => 'GET',
+            'path' => '/lichess/tablebase',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'variant',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'standard',
+                        'atomic',
+                        'antichess',
+                    ],
+                ],
+                [
+                    'name' => 'fen',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'dtc',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'never',
+                        'auxiliary',
+                        'always',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'lichess-version' => [
+            'id' => 'lichess-version',
+            'method' => 'GET',
+            'path' => '/lichess/version',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'limitless-card' => [
+            'id' => 'limitless-card',
+            'method' => 'GET',
+            'path' => '/limitless/card',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'set',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'number',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'de',
+                        'fr',
+                        'it',
+                        'es',
+                        'la',
+                        'pt',
+                        'jp',
+                        'jp-en',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'limitless-cards' => [
+            'id' => 'limitless-cards',
+            'method' => 'GET',
+            'path' => '/limitless/cards',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'de',
+                        'fr',
+                        'it',
+                        'es',
+                        'la',
+                        'pt',
+                        'jp',
+                        'jp-en',
+                        'all',
+                    ],
+                ],
+                [
+                    'name' => 'unique',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'prints',
+                        'cards',
+                        'text',
+                    ],
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'set',
+                        'name',
+                        'type',
+                        'usd',
+                        'eur',
+                        'pokedex',
+                        'rarity',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '25',
+                        '50',
+                        '100',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'limitless-deck' => [
+            'id' => 'limitless-deck',
+            'method' => 'GET',
+            'path' => '/limitless/deck',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'variant',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'limitless-decklist' => [
+            'id' => 'limitless-decklist',
+            'method' => 'GET',
+            'path' => '/limitless/decklist',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'source',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'global',
+                        'japan',
+                    ],
+                ],
+                [
+                    'name' => 'lang',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'en',
+                        'jp',
+                        'de',
+                        'fr',
+                        'it',
+                        'es',
+                        'la',
+                        'pt',
+                    ],
+                ],
+                [
+                    'name' => 'mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'regular',
+                        'bling',
+                        'cheapest',
+                        'chaos',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'limitless-decklists' => [
+            'id' => 'limitless-decklists',
+            'method' => 'GET',
+            'path' => '/limitless/decklists',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'last',
+                        'rank',
+                    ],
+                ],
+                [
+                    'name' => 'time',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'regional',
+                        'international',
+                        'worlds',
+                        'special',
+                        'national',
+                        'cl',
+                        'rl',
+                        'pbl',
+                        'mbl',
+                        'online',
+                        'players_cup',
+                        'invitational',
+                    ],
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'eu',
+                        'na',
+                        'la',
+                        'oc',
+                        'asia',
+                        'other',
+                    ],
+                ],
+                [
+                    'name' => 'division',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'ma',
+                        'sr',
+                        'jr',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '25',
+                        '50',
+                        '100',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'limitless-decks' => [
+            'id' => 'limitless-decks',
+            'method' => 'GET',
+            'path' => '/limitless/decks',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'rank',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'points',
+                        'money',
+                        'day2s',
+                        'cuts',
+                        'wins',
+                    ],
+                ],
+                [
+                    'name' => 'time',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'regional',
+                        'international',
+                        'worlds',
+                        'special',
+                        'national',
+                        'cl',
+                        'rl',
+                        'pbl',
+                        'mbl',
+                        'online',
+                        'players_cup',
+                        'invitational',
+                    ],
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'eu',
+                        'na',
+                        'la',
+                        'oc',
+                        'asia',
+                        'other',
+                    ],
+                ],
+                [
+                    'name' => 'division',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'ma',
+                        'sr',
+                        'jr',
+                    ],
+                ],
+                [
+                    'name' => 'variants',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '25',
+                        '50',
+                        '100',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'limitless-filters' => [
+            'id' => 'limitless-filters',
+            'method' => 'GET',
+            'path' => '/limitless/filters',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'limitless-games' => [
+            'id' => 'limitless-games',
+            'method' => 'GET',
+            'path' => '/limitless/games',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'limitless-online-pairings' => [
+            'id' => 'limitless-online-pairings',
+            'method' => 'GET',
+            'path' => '/limitless/online/pairings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'limitless-online-standings' => [
+            'id' => 'limitless-online-standings',
+            'method' => 'GET',
+            'path' => '/limitless/online/standings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'limitless-online-tournament' => [
+            'id' => 'limitless-online-tournament',
+            'method' => 'GET',
+            'path' => '/limitless/online/tournament',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'limitless-online-tournaments' => [
+            'id' => 'limitless-online-tournaments',
+            'method' => 'GET',
+            'path' => '/limitless/online/tournaments',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PTCG',
+                        'VGC',
+                        'OP',
+                        'DCG',
+                        'FW',
+                        'DBS',
+                        'BSS',
+                        'GUNDAM',
+                        'LORCANA',
+                        'SWU',
+                        'RB',
+                        'POCKET',
+                        'PGO',
+                        'other',
+                    ],
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'organizer_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'limitless-player' => [
+            'id' => 'limitless-player',
+            'method' => 'GET',
+            'path' => '/limitless/player',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'source',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'global',
+                        'japan',
+                    ],
+                ],
+                [
+                    'name' => 'all_results',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'time',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'regional',
+                        'international',
+                        'worlds',
+                        'special',
+                        'national',
+                        'cl',
+                        'rl',
+                        'pbl',
+                        'mbl',
+                        'online',
+                        'players_cup',
+                        'invitational',
+                    ],
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'eu',
+                        'na',
+                        'la',
+                        'oc',
+                        'asia',
+                        'other',
+                    ],
+                ],
+                [
+                    'name' => 'division',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'ma',
+                        'sr',
+                        'jr',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'limitless-players' => [
+            'id' => 'limitless-players',
+            'method' => 'GET',
+            'path' => '/limitless/players',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'rank',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'points',
+                        'money',
+                        'day2s',
+                        'cuts',
+                        'wins',
+                        'awards',
+                    ],
+                ],
+                [
+                    'name' => 'zone',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'time',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'regional',
+                        'international',
+                        'worlds',
+                        'special',
+                        'national',
+                        'cl',
+                        'rl',
+                        'pbl',
+                        'mbl',
+                        'online',
+                        'players_cup',
+                        'invitational',
+                    ],
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'eu',
+                        'na',
+                        'la',
+                        'oc',
+                        'asia',
+                        'other',
+                    ],
+                ],
+                [
+                    'name' => 'division',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'ma',
+                        'sr',
+                        'jr',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '25',
+                        '50',
+                        '100',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'limitless-tournament' => [
+            'id' => 'limitless-tournament',
+            'method' => 'GET',
+            'path' => '/limitless/tournament',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'source',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'global',
+                        'japan',
+                    ],
+                ],
+                [
+                    'name' => 'division',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'masters',
+                        'seniors',
+                        'juniors',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'limitless-tournaments' => [
+            'id' => 'limitless-tournaments',
+            'method' => 'GET',
+            'path' => '/limitless/tournaments',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'time',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'regional',
+                        'international',
+                        'worlds',
+                        'special',
+                        'national',
+                        'cl',
+                        'rl',
+                        'pbl',
+                        'mbl',
+                        'online',
+                        'players_cup',
+                        'invitational',
+                    ],
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'eu',
+                        'na',
+                        'la',
+                        'oc',
+                        'asia',
+                        'other',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '25',
+                        '50',
+                        '100',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'limitless-tournaments-japan' => [
+            'id' => 'limitless-tournaments-japan',
+            'method' => 'GET',
+            'path' => '/limitless/tournaments/japan',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '25',
+                        '50',
+                        '100',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'limitless-tournaments-upcoming' => [
+            'id' => 'limitless-tournaments-upcoming',
+            'method' => 'GET',
+            'path' => '/limitless/tournaments/upcoming',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'regional',
+                        'international',
+                        'worlds',
+                        'special',
+                        'national',
+                        'cl',
+                        'rl',
+                        'pbl',
+                        'mbl',
+                        'online',
+                        'players_cup',
+                        'invitational',
+                    ],
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'eu',
+                        'na',
+                        'la',
+                        'oc',
+                        'asia',
+                        'other',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'linkedin-company' => [
             'id' => 'linkedin-company',
             'method' => 'GET',
@@ -89512,6 +96886,1041 @@ final class Operations
             'pathParams' => [
                 'id',
             ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'liquipedia-all-pages' => [
+            'id' => 'liquipedia-all-pages',
+            'method' => 'GET',
+            'path' => '/liquipedia/all-pages',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'wiki',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'apfrom',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'apto',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'apprefix',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'apnamespace',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'apfilterredir',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'nonredirects',
+                        'redirects',
+                    ],
+                ],
+                [
+                    'name' => 'apfilterlanglinks',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'withlanglinks',
+                        'withoutlanglinks',
+                    ],
+                ],
+                [
+                    'name' => 'apminsize',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'apmaxsize',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'apprtype',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'edit',
+                        'move',
+                        'upload',
+                    ],
+                ],
+                [
+                    'name' => 'apprlevel',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'autoconfirmed',
+                        'sysop',
+                    ],
+                ],
+                [
+                    'name' => 'apprfiltercascade',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'cascading',
+                        'noncascading',
+                    ],
+                ],
+                [
+                    'name' => 'apprexpiry',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'definite',
+                        'indefinite',
+                    ],
+                ],
+                [
+                    'name' => 'aplimit',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'apdir',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ascending',
+                        'descending',
+                    ],
+                ],
+                [
+                    'name' => 'apcontinue',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'continue',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'liquipedia-backlinks' => [
+            'id' => 'liquipedia-backlinks',
+            'method' => 'GET',
+            'path' => '/liquipedia/backlinks',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'wiki',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'bltitle',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'blpageid',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'blnamespace',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'bldir',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ascending',
+                        'descending',
+                    ],
+                ],
+                [
+                    'name' => 'blfilterredir',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'nonredirects',
+                        'redirects',
+                    ],
+                ],
+                [
+                    'name' => 'bllimit',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'blredirect',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'blcontinue',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'continue',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'liquipedia-categories' => [
+            'id' => 'liquipedia-categories',
+            'method' => 'GET',
+            'path' => '/liquipedia/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'wiki',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'acfrom',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'acto',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'acprefix',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'acdir',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ascending',
+                        'descending',
+                    ],
+                ],
+                [
+                    'name' => 'acmin',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'acmax',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'aclimit',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'acprop',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'size',
+                        'hidden',
+                    ],
+                ],
+                [
+                    'name' => 'accontinue',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'continue',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'liquipedia-category-members' => [
+            'id' => 'liquipedia-category-members',
+            'method' => 'GET',
+            'path' => '/liquipedia/category-members',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'wiki',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'cmtitle',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cmpageid',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'cmnamespace',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'cmtype',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'file',
+                        'page',
+                        'subcat',
+                    ],
+                ],
+                [
+                    'name' => 'cmprop',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'ids',
+                        'title',
+                        'sortkey',
+                        'sortkeyprefix',
+                        'type',
+                        'timestamp',
+                    ],
+                ],
+                [
+                    'name' => 'cmlimit',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'continue',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cmcontinue',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cmsort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'sortkey',
+                        'timestamp',
+                    ],
+                ],
+                [
+                    'name' => 'cmdir',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'ascending',
+                        'desc',
+                        'descending',
+                        'newer',
+                        'older',
+                    ],
+                ],
+                [
+                    'name' => 'cmstart',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cmend',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cmstarthexsortkey',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cmendhexsortkey',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cmstartsortkeyprefix',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cmendsortkeyprefix',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'liquipedia-enums' => [
+            'id' => 'liquipedia-enums',
+            'method' => 'GET',
+            'path' => '/liquipedia/enums',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'wiki',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'liquipedia-links' => [
+            'id' => 'liquipedia-links',
+            'method' => 'GET',
+            'path' => '/liquipedia/links',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'wiki',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'titles',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'pageids',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'revids',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'plnamespace',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'pllimit',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'plcontinue',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'pltitles',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'pldir',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ascending',
+                        'descending',
+                    ],
+                ],
+                [
+                    'name' => 'redirects',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'continue',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'liquipedia-page' => [
+            'id' => 'liquipedia-page',
+            'method' => 'GET',
+            'path' => '/liquipedia/page',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'wiki',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'pageid',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'oldid',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'section',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'redirects',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'liquipedia-prefix-search' => [
+            'id' => 'liquipedia-prefix-search',
+            'method' => 'GET',
+            'path' => '/liquipedia/prefix-search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'wiki',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'pssearch',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'psnamespace',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'pslimit',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'psoffset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'psprofile',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'classic',
+                        'engine_autoselect',
+                        'fast-fuzzy',
+                        'fuzzy',
+                        'fuzzy-subphrases',
+                        'normal',
+                        'normal-subphrases',
+                        'strict',
+                    ],
+                ],
+                [
+                    'name' => 'continue',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'liquipedia-recent-changes' => [
+            'id' => 'liquipedia-recent-changes',
+            'method' => 'GET',
+            'path' => '/liquipedia/recent-changes',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'wiki',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'rcstart',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'rcend',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'rcdir',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'newer',
+                        'older',
+                    ],
+                ],
+                [
+                    'name' => 'rcnamespace',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'rctag',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'rcprop',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'flags',
+                        'ids',
+                        'redirect',
+                        'sha1',
+                        'sizes',
+                        'tags',
+                        'timestamp',
+                        'title',
+                    ],
+                ],
+                [
+                    'name' => 'rcshow',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        '!anon',
+                        '!autopatrolled',
+                        '!bot',
+                        '!minor',
+                        '!patrolled',
+                        '!redirect',
+                        'anon',
+                        'autopatrolled',
+                        'bot',
+                        'minor',
+                        'patrolled',
+                        'redirect',
+                        'unpatrolled',
+                    ],
+                ],
+                [
+                    'name' => 'rclimit',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'rctype',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'categorize',
+                        'edit',
+                        'external',
+                        'log',
+                        'new',
+                    ],
+                ],
+                [
+                    'name' => 'rctoponly',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'rctitle',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'rccontinue',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'continue',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'rcslot',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'main',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'liquipedia-search' => [
+            'id' => 'liquipedia-search',
+            'method' => 'GET',
+            'path' => '/liquipedia/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'wiki',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'srnamespace',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                ],
+                [
+                    'name' => 'srwhat',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'nearmatch',
+                        'text',
+                        'title',
+                    ],
+                ],
+                [
+                    'name' => 'srlimit',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sroffset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'continue',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'srsort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'create_timestamp_asc',
+                        'create_timestamp_desc',
+                        'incoming_links_asc',
+                        'incoming_links_desc',
+                        'just_match',
+                        'last_edit_asc',
+                        'last_edit_desc',
+                        'none',
+                        'random',
+                        'relevance',
+                        'title_natural_asc',
+                        'title_natural_desc',
+                        'user_random',
+                    ],
+                ],
+                [
+                    'name' => 'srinfo',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'rewrittenquery',
+                        'suggestion',
+                        'totalhits',
+                    ],
+                ],
+                [
+                    'name' => 'srprop',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'size',
+                        'wordcount',
+                        'timestamp',
+                        'snippet',
+                        'titlesnippet',
+                        'redirecttitle',
+                        'redirectsnippet',
+                        'sectiontitle',
+                        'sectionsnippet',
+                        'isfilematch',
+                        'categorysnippet',
+                        'extensiondata',
+                    ],
+                ],
+                [
+                    'name' => 'srinterwiki',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'srenablerewrites',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'srqiprofile',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'classic',
+                        'classic_noboostlinks',
+                        'empty',
+                        'wsum_inclinks',
+                        'wsum_inclinks_pv',
+                        'popular_inclinks_pv',
+                        'popular_inclinks',
+                        'engine_autoselect',
+                    ],
+                ],
+                [
+                    'name' => 'srqdprofile',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'default',
+                        'perfield_builder',
+                        'perfield_builder_relaxed',
+                        'perfield_builder_title_filter',
+                        'engine_autoselect',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'liquipedia-tags' => [
+            'id' => 'liquipedia-tags',
+            'method' => 'GET',
+            'path' => '/liquipedia/tags',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'wiki',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'tgprop',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'active',
+                        'defined',
+                        'description',
+                        'displayname',
+                        'hitcount',
+                        'source',
+                    ],
+                ],
+                [
+                    'name' => 'tglimit',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'tgcontinue',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'continue',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'liquipedia-wikis' => [
+            'id' => 'liquipedia-wikis',
+            'method' => 'GET',
+            'path' => '/liquipedia/wikis',
+            'pathParams' => [],
             'queryParams' => [],
             'formParams' => [],
             'bodyParam' => null,
@@ -107757,6 +116166,695 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'motogp-world-standings' => [
+            'id' => 'motogp-world-standings',
+            'method' => 'GET',
+            'path' => '/motogp/world-standings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'team',
+                        'constructor',
+                    ],
+                ],
+                [
+                    'name' => 'season_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category_uuid',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'mtggoldfish-archetype' => [
+            'id' => 'mtggoldfish-archetype',
+            'method' => 'GET',
+            'path' => '/mtggoldfish/archetype',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'archetype',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'mtggoldfish-autocomplete' => [
+            'id' => 'mtggoldfish-autocomplete',
+            'method' => 'GET',
+            'path' => '/mtggoldfish/autocomplete',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'mtggoldfish-card' => [
+            'id' => 'mtggoldfish-card',
+            'method' => 'GET',
+            'path' => '/mtggoldfish/card',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'path',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'mtggoldfish-deck' => [
+            'id' => 'mtggoldfish-deck',
+            'method' => 'GET',
+            'path' => '/mtggoldfish/deck',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'paper',
+                        'online',
+                        'arena',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'mtggoldfish-deck-search' => [
+            'id' => 'mtggoldfish-deck-search',
+            'method' => 'GET',
+            'path' => '/mtggoldfish/deck-search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'standard',
+                        'modern',
+                        'pioneer',
+                        'historic',
+                        'explorer',
+                        'timeless',
+                        'alchemy',
+                        'pauper',
+                        'legacy',
+                        'vintage',
+                        'penny_dreadful',
+                        'premodern',
+                        'duel_commander',
+                        'commander',
+                        'brawl',
+                        'arena_singleton',
+                        'gladiator',
+                        'artisan_historic',
+                        'cascade',
+                        'oathbreaker',
+                        'canadian_highlander',
+                        'old_school',
+                        'no_banned_list_modern',
+                        'frontier',
+                        'tiny_leaders',
+                        'limited',
+                        'block',
+                        'free_form',
+                    ],
+                ],
+                [
+                    'name' => 'types',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'player',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'card',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'card_quantity',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'card_board',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'maindeck',
+                        'sideboard',
+                        'commander',
+                    ],
+                ],
+                [
+                    'name' => 'card2',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'card2_quantity',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'card2_board',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'maindeck',
+                        'sideboard',
+                        'commander',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'mtggoldfish-filters' => [
+            'id' => 'mtggoldfish-filters',
+            'method' => 'GET',
+            'path' => '/mtggoldfish/filters',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'mtggoldfish-metagame' => [
+            'id' => 'mtggoldfish-metagame',
+            'method' => 'GET',
+            'path' => '/mtggoldfish/metagame',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'standard',
+                        'modern',
+                        'pioneer',
+                        'historic',
+                        'explorer',
+                        'timeless',
+                        'alchemy',
+                        'pauper',
+                        'legacy',
+                        'vintage',
+                        'penny_dreadful',
+                        'premodern',
+                        'duel_commander',
+                        'commander',
+                        'brawl',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'mtggoldfish-movers' => [
+            'id' => 'mtggoldfish-movers',
+            'method' => 'GET',
+            'path' => '/mtggoldfish/movers',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'paper',
+                        'online',
+                    ],
+                ],
+                [
+                    'name' => 'scope',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'winners',
+                        'losers',
+                    ],
+                ],
+                [
+                    'name' => 'period',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'dod',
+                        'wow',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'mtggoldfish-price-history' => [
+            'id' => 'mtggoldfish-price-history',
+            'method' => 'GET',
+            'path' => '/mtggoldfish/price-history',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'kind',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'card',
+                        'set',
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'paper',
+                        'online',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'mtggoldfish-price-index' => [
+            'id' => 'mtggoldfish-price-index',
+            'method' => 'GET',
+            'path' => '/mtggoldfish/price-index',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'index',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'WOE_EOE',
+                        'pioneer',
+                        'modern',
+                        'legacy',
+                        'vintage',
+                        'PAUPER',
+                        'RESERVED_LIST',
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'paper',
+                        'online',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'mtggoldfish-price-list' => [
+            'id' => 'mtggoldfish-price-list',
+            'method' => 'GET',
+            'path' => '/mtggoldfish/price-list',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'list',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'standard',
+                        'pioneer',
+                        'modern_one',
+                        'modern_two',
+                        'legacy_one',
+                        'legacy_two',
+                        'special',
+                        'boosters',
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'paper',
+                        'online',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'mtggoldfish-set' => [
+            'id' => 'mtggoldfish-set',
+            'method' => 'GET',
+            'path' => '/mtggoldfish/set',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'set',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'subset',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'mtggoldfish-sets' => [
+            'id' => 'mtggoldfish-sets',
+            'method' => 'GET',
+            'path' => '/mtggoldfish/sets',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'mtggoldfish-staples' => [
+            'id' => 'mtggoldfish-staples',
+            'method' => 'GET',
+            'path' => '/mtggoldfish/staples',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'standard',
+                        'modern',
+                        'pioneer',
+                        'historic',
+                        'explorer',
+                        'timeless',
+                        'alchemy',
+                        'pauper',
+                        'legacy',
+                        'vintage',
+                        'penny_dreadful',
+                        'premodern',
+                        'duel_commander',
+                    ],
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'creatures',
+                        'spells',
+                        'lands',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'mtggoldfish-tournament' => [
+            'id' => 'mtggoldfish-tournament',
+            'method' => 'GET',
+            'path' => '/mtggoldfish/tournament',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'mtggoldfish-tournaments' => [
+            'id' => 'mtggoldfish-tournaments',
+            'method' => 'GET',
+            'path' => '/mtggoldfish/tournaments',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'format',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'standard',
+                        'modern',
+                        'pioneer',
+                        'historic',
+                        'explorer',
+                        'timeless',
+                        'alchemy',
+                        'pauper',
+                        'legacy',
+                        'vintage',
+                        'penny_dreadful',
+                        'premodern',
+                    ],
+                ],
+                [
+                    'name' => 'date_from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'date_to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'nascar-live-feed' => [
             'id' => 'nascar-live-feed',
             'method' => 'GET',
@@ -108427,6 +117525,32 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'nba-box-score-defensive' => [
+            'id' => 'nba-box-score-defensive',
+            'method' => 'GET',
+            'path' => '/nba/box-score-defensive',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'nba-box-score-four-factors' => [
             'id' => 'nba-box-score-four-factors',
             'method' => 'GET',
@@ -108570,6 +117694,32 @@ final class Operations
                     'name' => 'end_period',
                     'in' => 'query',
                     'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-box-score-summary' => [
+            'id' => 'nba-box-score-summary',
+            'method' => 'GET',
+            'path' => '/nba/box-score-summary',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
                 ],
             ],
             'formParams' => [],
@@ -108856,6 +118006,125 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'nba-homepage-v2' => [
+            'id' => 'nba-homepage-v2',
+            'method' => 'GET',
+            'path' => '/nba/homepage-v2',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'game_scope',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Season',
+                    ],
+                ],
+                [
+                    'name' => 'player_scope',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'player_or_team',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Player',
+                    ],
+                ],
+                [
+                    'name' => 'stat_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Traditional',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-hustle-player' => [
+            'id' => 'nba-hustle-player',
+            'method' => 'GET',
+            'path' => '/nba/hustle-player',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'nba-hustle-stats' => [
             'id' => 'nba-hustle-stats',
             'method' => 'GET',
@@ -108990,6 +118259,75 @@ final class Operations
                     'enum' => [
                         'DATE',
                     ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-lineup-shot-chart' => [
+            'id' => 'nba-lineup-shot-chart',
+            'method' => 'GET',
+            'path' => '/nba/lineup-shot-chart',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'context_measure',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'FGA',
+                        'FG_PCT',
+                    ],
+                ],
+                [
+                    'name' => 'group_quantity',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '5',
+                    ],
+                ],
+                [
+                    'name' => 'period',
+                    'in' => 'query',
+                    'type' => 'integer',
                 ],
             ],
             'formParams' => [],
@@ -109379,6 +118717,473 @@ final class Operations
                     'type' => 'integer',
                     'enum' => [
                         '5',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-player-compare' => [
+            'id' => 'nba-player-compare',
+            'method' => 'GET',
+            'path' => '/nba/player-compare',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'player_ids',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'vs_player_ids',
+                    'in' => 'query',
+                    'collectionFormat' => 'multi',
+                    'type' => 'array',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                        'Playoffs',
+                        'Pre Season',
+                        'All Star',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                        'Totals',
+                        'Per36',
+                        'Per48',
+                        'Per100Possessions',
+                        'MinutesPer',
+                        'PerPossession',
+                    ],
+                ],
+                [
+                    'name' => 'measure_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Base',
+                        'Advanced',
+                        'Misc',
+                        'Scoring',
+                        'Defense',
+                        'Opponent',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-player-dash-by-clutch' => [
+            'id' => 'nba-player-dash-by-clutch',
+            'method' => 'GET',
+            'path' => '/nba/player-dash-by-clutch',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'player_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
+                ],
+                [
+                    'name' => 'measure_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Base',
+                        'Advanced',
+                        'Misc',
+                        'Scoring',
+                        'Defense',
+                        'Opponent',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-player-dash-by-game-splits' => [
+            'id' => 'nba-player-dash-by-game-splits',
+            'method' => 'GET',
+            'path' => '/nba/player-dash-by-game-splits',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'player_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
+                ],
+                [
+                    'name' => 'measure_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Base',
+                        'Advanced',
+                        'Misc',
+                        'Scoring',
+                        'Defense',
+                        'Opponent',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-player-dash-by-last-n-games' => [
+            'id' => 'nba-player-dash-by-last-n-games',
+            'method' => 'GET',
+            'path' => '/nba/player-dash-by-last-n-games',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'player_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
+                ],
+                [
+                    'name' => 'measure_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Base',
+                        'Advanced',
+                        'Misc',
+                        'Scoring',
+                        'Defense',
+                        'Opponent',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-player-dash-by-opponent' => [
+            'id' => 'nba-player-dash-by-opponent',
+            'method' => 'GET',
+            'path' => '/nba/player-dash-by-opponent',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'player_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
+                ],
+                [
+                    'name' => 'measure_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Base',
+                        'Advanced',
+                        'Misc',
+                        'Scoring',
+                        'Defense',
+                        'Opponent',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-player-dash-pt-pass' => [
+            'id' => 'nba-player-dash-pt-pass',
+            'method' => 'GET',
+            'path' => '/nba/player-dash-pt-pass',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'player_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-player-dash-pt-reb' => [
+            'id' => 'nba-player-dash-pt-reb',
+            'method' => 'GET',
+            'path' => '/nba/player-dash-pt-reb',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'player_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
                     ],
                 ],
             ],
@@ -109833,6 +119638,39 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'nba-playoff-series' => [
+            'id' => 'nba-playoff-series',
+            'method' => 'GET',
+            'path' => '/nba/playoff-series',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'nba-pt-defend' => [
             'id' => 'nba-pt-defend',
             'method' => 'GET',
@@ -109986,6 +119824,66 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'nba-shot-chart' => [
+            'id' => 'nba-shot-chart',
+            'method' => 'GET',
+            'path' => '/nba/shot-chart',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'player_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'context_measure',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'FGA',
+                        'FG_PCT',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'nba-standings' => [
             'id' => 'nba-standings',
             'method' => 'GET',
@@ -110103,6 +120001,278 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'nba-team-dash-by-clutch' => [
+            'id' => 'nba-team-dash-by-clutch',
+            'method' => 'GET',
+            'path' => '/nba/team-dash-by-clutch',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
+                ],
+                [
+                    'name' => 'measure_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Base',
+                        'Advanced',
+                        'Misc',
+                        'Scoring',
+                        'Defense',
+                        'Opponent',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-team-dash-by-game-splits' => [
+            'id' => 'nba-team-dash-by-game-splits',
+            'method' => 'GET',
+            'path' => '/nba/team-dash-by-game-splits',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
+                ],
+                [
+                    'name' => 'measure_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Base',
+                        'Advanced',
+                        'Misc',
+                        'Scoring',
+                        'Defense',
+                        'Opponent',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-team-dash-by-last-n-games' => [
+            'id' => 'nba-team-dash-by-last-n-games',
+            'method' => 'GET',
+            'path' => '/nba/team-dash-by-last-n-games',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
+                ],
+                [
+                    'name' => 'measure_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Base',
+                        'Advanced',
+                        'Misc',
+                        'Scoring',
+                        'Defense',
+                        'Opponent',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-team-dash-by-opponent' => [
+            'id' => 'nba-team-dash-by-opponent',
+            'method' => 'GET',
+            'path' => '/nba/team-dash-by-opponent',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
+                ],
+                [
+                    'name' => 'measure_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Base',
+                        'Advanced',
+                        'Misc',
+                        'Scoring',
+                        'Defense',
+                        'Opponent',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'nba-team-dash-pt-pass' => [
             'id' => 'nba-team-dash-pt-pass',
             'method' => 'GET',
@@ -110152,6 +120322,61 @@ final class Operations
                     'in' => 'query',
                     'type' => 'integer',
                     'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'nba-team-dash-pt-reb' => [
+            'id' => 'nba-team-dash-pt-reb',
+            'method' => 'GET',
+            'path' => '/nba/team-dash-pt-reb',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'team_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'league_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '00',
+                    ],
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'season_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Regular Season',
+                    ],
+                ],
+                [
+                    'name' => 'per_mode',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'PerGame',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -119950,6 +130175,211 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'pandaexpress-categories' => [
+            'id' => 'pandaexpress-categories',
+            'method' => 'GET',
+            'path' => '/pandaexpress/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'store_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'include_single_use',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pandaexpress-directory' => [
+            'id' => 'pandaexpress-directory',
+            'method' => 'GET',
+            'path' => '/pandaexpress/directory',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'state',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'pandaexpress-item' => [
+            'id' => 'pandaexpress-item',
+            'method' => 'GET',
+            'path' => '/pandaexpress/item',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'store_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'product_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pandaexpress-menu' => [
+            'id' => 'pandaexpress-menu',
+            'method' => 'GET',
+            'path' => '/pandaexpress/menu',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'store_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'include_single_use',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pandaexpress-nearby' => [
+            'id' => 'pandaexpress-nearby',
+            'method' => 'GET',
+            'path' => '/pandaexpress/nearby',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'lng',
+                    'in' => 'query',
+                    'type' => 'number',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'radius',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pandaexpress-store' => [
+            'id' => 'pandaexpress-store',
+            'method' => 'GET',
+            'path' => '/pandaexpress/store',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'store_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'store_number',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'include_hours',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'pandamart-search' => [
             'id' => 'pandamart-search',
             'method' => 'GET',
@@ -122163,6 +132593,183 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'peacock-channels' => [
+            'id' => 'peacock-channels',
+            'method' => 'GET',
+            'path' => '/peacock/channels',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'peacock-collection' => [
+            'id' => 'peacock-collection',
+            'method' => 'GET',
+            'path' => '/peacock/collection',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'enum' => [
+                        '24',
+                        '30',
+                        '100',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'peacock-genres' => [
+            'id' => 'peacock-genres',
+            'method' => 'GET',
+            'path' => '/peacock/genres',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'tv',
+                        'movies',
+                        'kids',
+                        'latino',
+                        'news',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'peacock-page' => [
+            'id' => 'peacock-page',
+            'method' => 'GET',
+            'path' => '/peacock/page',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'peacock-season' => [
+            'id' => 'peacock-season',
+            'method' => 'GET',
+            'path' => '/peacock/season',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'season',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'peacock-title' => [
+            'id' => 'peacock-title',
+            'method' => 'GET',
+            'path' => '/peacock/title',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'people-article' => [
             'id' => 'people-article',
             'method' => 'GET',
@@ -122600,6 +133207,87 @@ final class Operations
             'consumes' => [
                 'application/json',
             ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pgatour-cups' => [
+            'id' => 'pgatour-cups',
+            'method' => 'GET',
+            'path' => '/pgatour/cups',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pgatour-cup-standings' => [
+            'id' => 'pgatour-cup-standings',
+            'method' => 'GET',
+            'path' => '/pgatour/cups/{cup_id}',
+            'pathParams' => [
+                'cup_id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'query_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'THROUGH_EVENT',
+                        'EVENT_ONLY',
+                    ],
+                ],
+                [
+                    'name' => 'tournament_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pgatour-cup-options' => [
+            'id' => 'pgatour-cup-options',
+            'method' => 'GET',
+            'path' => '/pgatour/cups/{cup_id}/options',
+            'pathParams' => [
+                'cup_id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
             'produces' => [
                 'application/json',
             ],
@@ -124640,6 +135328,1005 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'pokedata-card-sales' => [
+            'id' => 'pokedata-card-sales',
+            'method' => 'GET',
+            'path' => '/pokedata/card/sales',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'card_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'pokedata-card-stats' => [
+            'id' => 'pokedata-card-stats',
+            'method' => 'GET',
+            'path' => '/pokedata/card/stats',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'card_ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pokedata-marketplace-listing' => [
+            'id' => 'pokedata-marketplace-listing',
+            'method' => 'GET',
+            'path' => '/pokedata/marketplace/listing',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'listing_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pokedata-marketplace-search' => [
+            'id' => 'pokedata-marketplace-search',
+            'method' => 'GET',
+            'path' => '/pokedata/marketplace/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pokedata-portfolio' => [
+            'id' => 'pokedata-portfolio',
+            'method' => 'GET',
+            'path' => '/pokedata/portfolio',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'portfolio_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pokedata-portfolio-value' => [
+            'id' => 'pokedata-portfolio-value',
+            'method' => 'GET',
+            'path' => '/pokedata/portfolio/value',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'portfolio_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pokedata-portfolios' => [
+            'id' => 'pokedata-portfolios',
+            'method' => 'GET',
+            'path' => '/pokedata/portfolios',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'featured',
+                        'value',
+                        'views',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'pokedata-product-sales' => [
+            'id' => 'pokedata-product-sales',
+            'method' => 'GET',
+            'path' => '/pokedata/product/sales',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'product_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pokedata-product-stats' => [
+            'id' => 'pokedata-product-stats',
+            'method' => 'GET',
+            'path' => '/pokedata/product/stats',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'product_ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pokedata-products' => [
+            'id' => 'pokedata-products',
+            'method' => 'GET',
+            'path' => '/pokedata/products',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tcg',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Pokemon',
+                        'Magic the Gathering',
+                        'Yugioh',
+                        'One Piece',
+                        'Digimon Card Game',
+                        'Flesh and Blood',
+                        'Union Arena',
+                        'MetaZoo',
+                        'Lorcana',
+                        'Dragon Ball Super Fusion World',
+                        'Gundam Card Game',
+                        'Star Wars Unlimited',
+                        'Sorcery Contested Realm',
+                        'Dragon Ball Z TCG',
+                        'Grand Archive',
+                    ],
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ENGLISH',
+                        'JAPANESE',
+                        'CHINESE',
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'BATTLEBOX',
+                        'BLISTERPACK',
+                        'BOOSTERBOX',
+                        'BOOSTERPACK',
+                        'COLLECTIONBOX',
+                        'COLLECTIONCHEST',
+                        'DECK',
+                        'DECKBUILDBOX',
+                        'ELITETRAINERBOX',
+                        'JUMBOPACK',
+                        'LIMITEDSET',
+                        'MISCELLANEOUS',
+                        'PINCOLLECTION',
+                        'PREMIUMTRAINERBOX',
+                        'SHEET',
+                        'SPECIALBOX',
+                        'SPECIALPACK',
+                        'SPECIALSET',
+                        'STARTERSET',
+                        'STARTPACK',
+                        'TIN',
+                        'TRAINERCARDCOLLECTION',
+                    ],
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'pokedata-products-facets' => [
+            'id' => 'pokedata-products-facets',
+            'method' => 'GET',
+            'path' => '/pokedata/products/facets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tcg',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Pokemon',
+                        'Magic the Gathering',
+                        'Yugioh',
+                        'One Piece',
+                        'Digimon Card Game',
+                        'Flesh and Blood',
+                        'Union Arena',
+                        'MetaZoo',
+                        'Lorcana',
+                        'Dragon Ball Super Fusion World',
+                        'Gundam Card Game',
+                        'Star Wars Unlimited',
+                        'Sorcery Contested Realm',
+                        'Dragon Ball Z TCG',
+                        'Grand Archive',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pokedata-search' => [
+            'id' => 'pokedata-search',
+            'method' => 'GET',
+            'path' => '/pokedata/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'cards',
+                        'products',
+                    ],
+                ],
+                [
+                    'name' => 'tcg',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Pokemon',
+                        'Magic the Gathering',
+                        'Yugioh',
+                        'One Piece',
+                        'Digimon Card Game',
+                        'Flesh and Blood',
+                        'Union Arena',
+                        'MetaZoo',
+                        'Lorcana',
+                        'Dragon Ball Super Fusion World',
+                        'Gundam Card Game',
+                        'Star Wars Unlimited',
+                        'Sorcery Contested Realm',
+                        'Dragon Ball Z TCG',
+                        'Grand Archive',
+                    ],
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ENGLISH',
+                        'JAPANESE',
+                        'CHINESE',
+                    ],
+                ],
+                [
+                    'name' => 'set_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'secret',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'true',
+                        'false',
+                    ],
+                ],
+                [
+                    'name' => 'product_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'BATTLEBOX',
+                        'BLISTERPACK',
+                        'BOOSTERBOX',
+                        'BOOSTERPACK',
+                        'COLLECTIONBOX',
+                        'COLLECTIONCHEST',
+                        'DECK',
+                        'DECKBUILDBOX',
+                        'ELITETRAINERBOX',
+                        'JUMBOPACK',
+                        'LIMITEDSET',
+                        'MISCELLANEOUS',
+                        'PINCOLLECTION',
+                        'PREMIUMTRAINERBOX',
+                        'SHEET',
+                        'SPECIALBOX',
+                        'SPECIALPACK',
+                        'SPECIALSET',
+                        'STARTERSET',
+                        'STARTPACK',
+                        'TIN',
+                        'TRAINERCARDCOLLECTION',
+                    ],
+                ],
+                [
+                    'name' => 'year',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'name_asc',
+                        'name_desc',
+                        'release_date_desc',
+                        'release_date_asc',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'pokedata-set' => [
+            'id' => 'pokedata-set',
+            'method' => 'GET',
+            'path' => '/pokedata/set',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'set_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pokedata-set-cards' => [
+            'id' => 'pokedata-set-cards',
+            'method' => 'GET',
+            'path' => '/pokedata/set/cards',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'set_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'pokedata-set-products' => [
+            'id' => 'pokedata-set-products',
+            'method' => 'GET',
+            'path' => '/pokedata/set/products',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'set_id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pokedata-sets' => [
+            'id' => 'pokedata-sets',
+            'method' => 'GET',
+            'path' => '/pokedata/sets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'tcg',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Pokemon',
+                        'Magic the Gathering',
+                        'Yugioh',
+                        'One Piece',
+                        'Digimon Card Game',
+                        'Flesh and Blood',
+                        'Union Arena',
+                        'MetaZoo',
+                        'Lorcana',
+                        'Dragon Ball Super Fusion World',
+                        'Gundam Card Game',
+                        'Star Wars Unlimited',
+                        'Sorcery Contested Realm',
+                        'Dragon Ball Z TCG',
+                        'Grand Archive',
+                    ],
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'ENGLISH',
+                        'JAPANESE',
+                        'CHINESE',
+                    ],
+                ],
+                [
+                    'name' => 'series',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'pokedata-sources' => [
+            'id' => 'pokedata-sources',
+            'method' => 'GET',
+            'path' => '/pokedata/sources',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'pokedata-tcgs' => [
+            'id' => 'pokedata-tcgs',
+            'method' => 'GET',
+            'path' => '/pokedata/tcgs',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'poketrace-card' => [
+            'id' => 'poketrace-card',
+            'method' => 'GET',
+            'path' => '/poketrace/card',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'poketrace-catalog' => [
+            'id' => 'poketrace-catalog',
+            'method' => 'GET',
+            'path' => '/poketrace/catalog',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'set',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'market',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'US',
+                        'EU',
+                    ],
+                ],
+                [
+                    'name' => 'product_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'single',
+                        'sealed',
+                        'code_card',
+                        'accessory',
+                    ],
+                ],
+                [
+                    'name' => 'product_family',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'card',
+                        'code_card',
+                        'booster_box',
+                        'booster_pack',
+                        'booster_bundle',
+                        'elite_trainer_box',
+                        'tin',
+                        'deck',
+                        'box_collection',
+                        'blister',
+                        'sealed_case',
+                        'other_sealed',
+                        'coin',
+                        'accessory',
+                        'other',
+                    ],
+                ],
+                [
+                    'name' => 'tier',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'trend',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'up',
+                        'down',
+                        'stable',
+                    ],
+                ],
+                [
+                    'name' => 'confidence',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'very_low',
+                        'low',
+                        'medium',
+                        'high',
+                        'very_high',
+                    ],
+                ],
+                [
+                    'name' => 'min_price',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'max_price',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'graded',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'true',
+                        'false',
+                    ],
+                ],
+                [
+                    'name' => 'variant',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Normal',
+                        'Holofoil',
+                        'Reverse_Holofoil',
+                        '1st_Edition',
+                        '1st_Edition_Holofoil',
+                        'Unlimited',
+                        'Unlimited_Holofoil',
+                    ],
+                ],
+                [
+                    'name' => 'game',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'pokemon',
+                        'pokemon-japanese',
+                        'pokemon-chinese',
+                        'pokemon-thai',
+                        'pokemon-indonesian',
+                    ],
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'recent',
+                        'sale_count',
+                        'price_desc',
+                        'price_asc',
+                        'name',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'poketrace-filters' => [
+            'id' => 'poketrace-filters',
+            'method' => 'GET',
+            'path' => '/poketrace/filters',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'poketrace-sets' => [
+            'id' => 'poketrace-sets',
+            'method' => 'GET',
+            'path' => '/poketrace/sets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'pokemon',
+                        'pokemon-japanese',
+                        'pokemon-chinese',
+                        'pokemon-thai',
+                        'pokemon-indonesian',
+                    ],
+                ],
+                [
+                    'name' => 'market',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'US',
+                        'EU',
+                    ],
+                ],
+                [
+                    'name' => 'product_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'single',
+                        'sealed',
+                        'code_card',
+                        'accessory',
+                    ],
+                ],
+                [
+                    'name' => 'product_family',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'card',
+                        'code_card',
+                        'booster_box',
+                        'booster_pack',
+                        'booster_bundle',
+                        'elite_trainer_box',
+                        'tin',
+                        'deck',
+                        'box_collection',
+                        'blister',
+                        'sealed_case',
+                        'other_sealed',
+                        'coin',
+                        'accessory',
+                        'other',
+                    ],
+                ],
+                [
+                    'name' => 'graded',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'true',
+                        'false',
+                    ],
+                ],
+                [
+                    'name' => 'variant',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'Normal',
+                        'Holofoil',
+                        'Reverse_Holofoil',
+                        '1st_Edition',
+                        '1st_Edition_Holofoil',
+                        'Unlimited',
+                        'Unlimited_Holofoil',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'politico-article' => [
             'id' => 'politico-article',
             'method' => 'GET',
@@ -124890,6 +136577,11 @@ final class Operations
                     'type' => 'integer',
                 ],
                 [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
                     'name' => 'taker_only',
                     'in' => 'query',
                     'type' => 'string',
@@ -124944,6 +136636,9 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
         ],
         'polymarket-clob-market' => [
             'id' => 'polymarket-clob-market',
@@ -125157,6 +136852,11 @@ final class Operations
                     'type' => 'integer',
                 ],
                 [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
                     'name' => 'taker_only',
                     'in' => 'query',
                     'type' => 'string',
@@ -125201,6 +136901,9 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
         ],
         'polymarket-event-detail' => [
             'id' => 'polymarket-event-detail',
@@ -125242,6 +136945,11 @@ final class Operations
                     'type' => 'integer',
                 ],
                 [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
                     'name' => 'taker_only',
                     'in' => 'query',
                     'type' => 'string',
@@ -125286,6 +136994,9 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
         ],
         'polymarket-events' => [
             'id' => 'polymarket-events',
@@ -125707,6 +137418,11 @@ final class Operations
                     'type' => 'integer',
                 ],
                 [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
                     'name' => 'taker_only',
                     'in' => 'query',
                     'type' => 'string',
@@ -125751,6 +137467,9 @@ final class Operations
                 'ApiKeyAuth',
             ],
             'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
         ],
         'polymarket-market-liquidity-by-condition' => [
             'id' => 'polymarket-market-liquidity-by-condition',
@@ -131921,6 +143640,48 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'reddit-comment' => [
+            'id' => 'reddit-comment',
+            'method' => 'GET',
+            'path' => '/reddit/comment/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-comment-awards' => [
+            'id' => 'reddit-comment-awards',
+            'method' => 'GET',
+            'path' => '/reddit/comment/{id}/awards',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'reddit-comments' => [
             'id' => 'reddit-comments',
             'method' => 'GET',
@@ -131951,11 +143712,6 @@ final class Operations
                     'name' => 'depth',
                     'in' => 'query',
                     'type' => 'integer',
-                ],
-                [
-                    'name' => 'include_metrics',
-                    'in' => 'query',
-                    'type' => 'boolean',
                 ],
             ],
             'formParams' => [],
@@ -132103,6 +143859,58 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'reddit-popular' => [
+            'id' => 'reddit-popular',
+            'method' => 'GET',
+            'path' => '/reddit/popular',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'hot',
+                        'top',
+                    ],
+                ],
+                [
+                    'name' => 'time',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'hour',
+                        'day',
+                        'week',
+                        'month',
+                        'year',
+                        'all',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'reddit-post' => [
             'id' => 'reddit-post',
             'method' => 'GET',
@@ -132110,11 +143918,52 @@ final class Operations
             'pathParams' => [
                 'id',
             ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-post-awards' => [
+            'id' => 'reddit-post-awards',
+            'method' => 'GET',
+            'path' => '/reddit/post/{id}/awards',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-posts-by-ids' => [
+            'id' => 'reddit-posts-by-ids',
+            'method' => 'GET',
+            'path' => '/reddit/posts/ids',
+            'pathParams' => [],
             'queryParams' => [
                 [
-                    'name' => 'include_metrics',
+                    'name' => 'ids',
                     'in' => 'query',
-                    'type' => 'boolean',
+                    'type' => 'string',
+                    'required' => true,
                 ],
             ],
             'formParams' => [],
@@ -132170,6 +144019,120 @@ final class Operations
                         'month',
                         'year',
                         'all',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-search-comments' => [
+            'id' => 'reddit-search-comments',
+            'method' => 'GET',
+            'path' => '/reddit/search/comments',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'subreddit',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'hot',
+                        'new',
+                        'top',
+                        'comments',
+                    ],
+                ],
+                [
+                    'name' => 'time',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'hour',
+                        'day',
+                        'week',
+                        'month',
+                        'year',
+                        'all',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-search-people' => [
+            'id' => 'reddit-search-people',
+            'method' => 'GET',
+            'path' => '/reddit/search/people',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevance',
+                        'hot',
+                        'new',
+                        'top',
+                        'comments',
                     ],
                 ],
                 [
@@ -132255,6 +144218,69 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'reddit-subreddit-flairs' => [
+            'id' => 'reddit-subreddit-flairs',
+            'method' => 'GET',
+            'path' => '/reddit/subreddit/{subreddit}/flairs',
+            'pathParams' => [
+                'subreddit',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-subreddit-highlights' => [
+            'id' => 'reddit-subreddit-highlights',
+            'method' => 'GET',
+            'path' => '/reddit/subreddit/{subreddit}/highlights',
+            'pathParams' => [
+                'subreddit',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-subreddit-leaderboard-categories' => [
+            'id' => 'reddit-subreddit-leaderboard-categories',
+            'method' => 'GET',
+            'path' => '/reddit/subreddit/{subreddit}/leaderboard/categories',
+            'pathParams' => [
+                'subreddit',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'reddit-subreddit-posts' => [
             'id' => 'reddit-subreddit-posts',
             'method' => 'GET',
@@ -132272,6 +144298,7 @@ final class Operations
                         'new',
                         'top',
                         'rising',
+                        'controversial',
                     ],
                 ],
                 [
@@ -132285,6 +144312,116 @@ final class Operations
                         'month',
                         'year',
                         'all',
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-subreddit-rules' => [
+            'id' => 'reddit-subreddit-rules',
+            'method' => 'GET',
+            'path' => '/reddit/subreddit/{subreddit}/rules',
+            'pathParams' => [
+                'subreddit',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-subreddit-user-flairs' => [
+            'id' => 'reddit-subreddit-user-flairs',
+            'method' => 'GET',
+            'path' => '/reddit/subreddit/{subreddit}/user-flairs',
+            'pathParams' => [
+                'subreddit',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-subreddit-wiki' => [
+            'id' => 'reddit-subreddit-wiki',
+            'method' => 'GET',
+            'path' => '/reddit/subreddit/{subreddit}/wiki',
+            'pathParams' => [
+                'subreddit',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'reddit-subreddits-discover' => [
+            'id' => 'reddit-subreddits-discover',
+            'method' => 'GET',
+            'path' => '/reddit/subreddits/discover',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'feed',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'popular',
+                        'new',
+                        'default',
                     ],
                 ],
                 [
@@ -132356,6 +144493,143 @@ final class Operations
                     'name' => 'after',
                     'in' => 'query',
                     'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-subreddits-search' => [
+            'id' => 'reddit-subreddits-search',
+            'method' => 'GET',
+            'path' => '/reddit/subreddits/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-subreddits-suggest' => [
+            'id' => 'reddit-subreddits-suggest',
+            'method' => 'GET',
+            'path' => '/reddit/subreddits/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-topics' => [
+            'id' => 'reddit-topics',
+            'method' => 'GET',
+            'path' => '/reddit/topics',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'after',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-topics-broad' => [
+            'id' => 'reddit-topics-broad',
+            'method' => 'GET',
+            'path' => '/reddit/topics/broad',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-topics-search' => [
+            'id' => 'reddit-topics-search',
+            'method' => 'GET',
+            'path' => '/reddit/topics/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
                 ],
             ],
             'formParams' => [],
@@ -132476,6 +144750,27 @@ final class Operations
                     'type' => 'string',
                 ],
             ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'reddit-user-profile' => [
+            'id' => 'reddit-user-profile',
+            'method' => 'GET',
+            'path' => '/reddit/user/{username}/profile',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [],
             'formParams' => [],
             'bodyParam' => null,
             'bodyRequired' => false,
@@ -139809,6 +152104,23 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'serebii-pokemongo-eggs' => [
+            'id' => 'serebii-pokemongo-eggs',
+            'method' => 'GET',
+            'path' => '/serebii/pokemongo/eggs',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'serebii-pokemongo-event-categories' => [
             'id' => 'serebii-pokemongo-event-categories',
             'method' => 'GET',
@@ -139978,6 +152290,23 @@ final class Operations
             'pathParams' => [
                 'filename',
             ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'serebii-pokemongo-raid-bosses' => [
+            'id' => 'serebii-pokemongo-raid-bosses',
+            'method' => 'GET',
+            'path' => '/serebii/pokemongo/raid-bosses',
+            'pathParams' => [],
             'queryParams' => [],
             'formParams' => [],
             'bodyParam' => null,
@@ -143157,6 +155486,493 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'skyscanner-currencies' => [
+            'id' => 'skyscanner-currencies',
+            'method' => 'GET',
+            'path' => '/skyscanner/currencies',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'skyscanner-flights-explore' => [
+            'id' => 'skyscanner-flights-explore',
+            'method' => 'GET',
+            'path' => '/skyscanner/flights/explore',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'origin',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'destination',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'depart',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'return',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'adults',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'child_ages',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cabin_class',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'economy',
+                        'premium_economy',
+                        'business',
+                        'first',
+                    ],
+                ],
+                [
+                    'name' => 'bucket',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'CHEAPEST_FLIGHTS',
+                        'DIRECT',
+                        'POPULAR',
+                        'UNDERRATED_DESTINATIONS',
+                        'BEACH',
+                        'ART_AND_CULTURE',
+                        'GREAT_FOOD',
+                        'OUTDOOR_ADVENTURES',
+                        'NIGHTLIFE_AND_ENTERTAINMENT',
+                    ],
+                ],
+                [
+                    'name' => 'market',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'locale',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'currency',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'skyscanner-flights-options' => [
+            'id' => 'skyscanner-flights-options',
+            'method' => 'GET',
+            'path' => '/skyscanner/flights/options',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'skyscanner-flights-price-calendar' => [
+            'id' => 'skyscanner-flights-price-calendar',
+            'method' => 'GET',
+            'path' => '/skyscanner/flights/price-calendar',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'origin',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'destination',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'from',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'to',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'market',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'locale',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'currency',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'skyscanner-flights-price-calendar-months' => [
+            'id' => 'skyscanner-flights-price-calendar-months',
+            'method' => 'GET',
+            'path' => '/skyscanner/flights/price-calendar/months',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'origin',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'destination',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'direct_only',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'market',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'locale',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'currency',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'skyscanner-flights-search' => [
+            'id' => 'skyscanner-flights-search',
+            'method' => 'GET',
+            'path' => '/skyscanner/flights/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'origin',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'destination',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'depart_date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'return_date',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'legs',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'adults',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'child_ages',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cabin_class',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'economy',
+                        'premium_economy',
+                        'business',
+                        'first',
+                    ],
+                ],
+                [
+                    'name' => 'nearby_origin_airports',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'nearby_destination_airports',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'bags',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'market',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'locale',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'currency',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'best',
+                        'cheapest',
+                        'fastest',
+                        'departure_outbound_asc',
+                        'departure_inbound_asc',
+                    ],
+                ],
+                [
+                    'name' => 'stops',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'airlines',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'alliances',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'max_duration',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'outbound_departure',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'inbound_departure',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'layover_airports',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'max_layover',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'greener_only',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'skyscanner-locales' => [
+            'id' => 'skyscanner-locales',
+            'method' => 'GET',
+            'path' => '/skyscanner/locales',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'skyscanner-markets' => [
+            'id' => 'skyscanner-markets',
+            'method' => 'GET',
+            'path' => '/skyscanner/markets',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'locale',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'skyscanner-places-autosuggest' => [
+            'id' => 'skyscanner-places-autosuggest',
+            'method' => 'GET',
+            'path' => '/skyscanner/places/autosuggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'destination',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'cities_airports_only',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'market',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'locale',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'skysports-article' => [
             'id' => 'skysports-article',
             'method' => 'GET',
@@ -144056,6 +156872,570 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'snkrdunk-brands' => [
+            'id' => 'snkrdunk-brands',
+            'method' => 'GET',
+            'path' => '/snkrdunk/brands',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'snkrdunk-categories' => [
+            'id' => 'snkrdunk-categories',
+            'method' => 'GET',
+            'path' => '/snkrdunk/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'snkrdunk-filters' => [
+            'id' => 'snkrdunk-filters',
+            'method' => 'GET',
+            'path' => '/snkrdunk/filters',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'snkrdunk-product' => [
+            'id' => 'snkrdunk-product',
+            'method' => 'GET',
+            'path' => '/snkrdunk/product',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'snkrdunk-product-listings' => [
+            'id' => 'snkrdunk-product-listings',
+            'method' => 'GET',
+            'path' => '/snkrdunk/product/listings',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'used',
+                        'new',
+                    ],
+                ],
+                [
+                    'name' => 'condition',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'like_new',
+                        'minor_scratches',
+                        'moderate_scratches',
+                        'significant_damage',
+                        'psa_10',
+                        'psa_9',
+                        'psa_8_below',
+                        'bgs_10_black',
+                        'bgs_10_gold',
+                        'bgs_9_5',
+                        'bgs_9_below',
+                        'ars_10_plus',
+                        'ars_10',
+                        'ars_9',
+                        'ars_8_below',
+                        'other_grading_company',
+                    ],
+                ],
+                [
+                    'name' => 'size_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'latest',
+                        'price_asc',
+                    ],
+                ],
+                [
+                    'name' => 'on_sale_only',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'snkrdunk-price-chart' => [
+            'id' => 'snkrdunk-price-chart',
+            'method' => 'GET',
+            'path' => '/snkrdunk/product/price-chart',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'market',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'used',
+                        'new',
+                    ],
+                ],
+                [
+                    'name' => 'range',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'all',
+                        'oneWeek',
+                        'oneMonth',
+                        'threeMonths',
+                    ],
+                ],
+                [
+                    'name' => 'condition',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'like_new',
+                        'minor_scratches',
+                        'moderate_scratches',
+                        'significant_damage',
+                        'psa_10',
+                        'psa_9',
+                        'psa_8_below',
+                        'bgs_10_black',
+                        'bgs_10_gold',
+                        'bgs_9_5',
+                        'bgs_9_below',
+                        'ars_10_plus',
+                        'ars_10',
+                        'ars_9',
+                        'ars_8_below',
+                        'other_grading_company',
+                    ],
+                ],
+                [
+                    'name' => 'size_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'snkrdunk-product-related' => [
+            'id' => 'snkrdunk-product-related',
+            'method' => 'GET',
+            'path' => '/snkrdunk/product/related',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'single',
+                        'box',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'snkrdunk-sales-history' => [
+            'id' => 'snkrdunk-sales-history',
+            'method' => 'GET',
+            'path' => '/snkrdunk/product/sales-history',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'code',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'condition',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'like_new',
+                        'minor_scratches',
+                        'moderate_scratches',
+                        'significant_damage',
+                        'psa_10',
+                        'psa_9',
+                        'psa_8_below',
+                        'bgs_10_black',
+                        'bgs_10_gold',
+                        'bgs_9_5',
+                        'bgs_9_below',
+                        'ars_10_plus',
+                        'ars_10',
+                        'ars_9',
+                        'ars_8_below',
+                        'other_grading_company',
+                    ],
+                ],
+                [
+                    'name' => 'size_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'snkrdunk-search' => [
+            'id' => 'snkrdunk-search',
+            'method' => 'GET',
+            'path' => '/snkrdunk/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'brand_ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category_ids',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'conditions',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'stock',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'any',
+                        'in_stock',
+                    ],
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'default',
+                        'conversion',
+                        'registered_at',
+                        'launched_at',
+                        'favorite_count',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'snkrdunk-suggest' => [
+            'id' => 'snkrdunk-suggest',
+            'method' => 'GET',
+            'path' => '/snkrdunk/suggest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'snkrdunk-trading-cards' => [
+            'id' => 'snkrdunk-trading-cards',
+            'method' => 'GET',
+            'path' => '/snkrdunk/trading-cards',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'brand_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '0',
+                        '14',
+                        '25',
+                    ],
+                ],
+                [
+                    'name' => 'order',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'popular',
+                        'release',
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'snkrdunk-trading-cards-used' => [
+            'id' => 'snkrdunk-trading-cards-used',
+            'method' => 'GET',
+            'path' => '/snkrdunk/trading-cards/used',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'brand_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'category_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '0',
+                        '14',
+                        '25',
+                    ],
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'latest',
+                        'price_asc',
+                    ],
+                ],
+                [
+                    'name' => 'on_sale_only',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'per_page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'sofascore-categories' => [
             'id' => 'sofascore-categories',
@@ -145676,6 +159056,42 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'sofascore-player-statistics' => [
+            'id' => 'sofascore-player-statistics',
+            'method' => 'GET',
+            'path' => '/sofascore/player-statistics',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'match_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'overall',
+                        'home',
+                        'away',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'sofascore-player-statistics-seasons' => [
             'id' => 'sofascore-player-statistics-seasons',
             'method' => 'GET',
@@ -145701,6 +159117,44 @@ final class Operations
             'security' => [
                 'ApiKeyAuth',
             ],
+        ],
+        'sofascore-player-tournament-events' => [
+            'id' => 'sofascore-player-tournament-events',
+            'method' => 'GET',
+            'path' => '/sofascore/player-tournament-events',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'tournament_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
         ],
         'sofascore-player-tournaments' => [
             'id' => 'sofascore-player-tournaments',
@@ -149591,6 +163045,164 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'speedrun-runs' => [
+            'id' => 'speedrun-runs',
+            'method' => 'GET',
+            'path' => '/speedrun/runs',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'game',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'level',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'platform',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'emulated',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'new',
+                        'verified',
+                        'rejected',
+                    ],
+                ],
+                [
+                    'name' => 'orderby',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'game',
+                        'category',
+                        'level',
+                        'platform',
+                        'region',
+                        'emulated',
+                        'date',
+                        'submitted',
+                        'status',
+                        'verify-date',
+                    ],
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+                [
+                    'name' => 'max',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'embed',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'game',
+                        'category',
+                        'level',
+                        'platform',
+                        'region',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'speedrun-runs-options' => [
+            'id' => 'speedrun-runs-options',
+            'method' => 'GET',
+            'path' => '/speedrun/runs/options',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'speedrun-run' => [
+            'id' => 'speedrun-run',
+            'method' => 'GET',
+            'path' => '/speedrun/runs/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'embed',
+                    'in' => 'query',
+                    'collectionFormat' => 'csv',
+                    'type' => 'array',
+                    'enum' => [
+                        'game',
+                        'category',
+                        'level',
+                        'platform',
+                        'region',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'sportingnews-article' => [
             'id' => 'sportingnews-article',
             'method' => 'GET',
@@ -149745,6 +163357,305 @@ final class Operations
             ],
             'security' => [
                 'ApiKeyAuth',
+            ],
+        ],
+        'sportscardspro-brand' => [
+            'id' => 'sportscardspro-brand',
+            'method' => 'GET',
+            'path' => '/sportscardspro/brand',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                    'enum' => [
+                        'baseball-cards',
+                        'basketball-cards',
+                        'football-cards',
+                        'hockey-cards',
+                        'racing-cards',
+                        'soccer-cards',
+                        'ufc-cards',
+                        'wrestling-cards',
+                        'tennis-cards',
+                        'golf-cards',
+                        'boxing-cards',
+                    ],
+                ],
+                [
+                    'name' => 'brand',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sportscardspro-categories' => [
+            'id' => 'sportscardspro-categories',
+            'method' => 'GET',
+            'path' => '/sportscardspro/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'baseball-cards',
+                        'basketball-cards',
+                        'football-cards',
+                        'hockey-cards',
+                        'racing-cards',
+                        'soccer-cards',
+                        'ufc-cards',
+                        'wrestling-cards',
+                        'tennis-cards',
+                        'golf-cards',
+                        'boxing-cards',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sportscardspro-price-history' => [
+            'id' => 'sportscardspro-price-history',
+            'method' => 'GET',
+            'path' => '/sportscardspro/price-history',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'set',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sportscardspro-product' => [
+            'id' => 'sportscardspro-product',
+            'method' => 'GET',
+            'path' => '/sportscardspro/product',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'set',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'slug',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sportscardspro-search' => [
+            'id' => 'sportscardspro-search',
+            'method' => 'GET',
+            'path' => '/sportscardspro/search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'q',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'set_uid',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'baseball-cards',
+                        'basketball-cards',
+                        'football-cards',
+                        'hockey-cards',
+                        'racing-cards',
+                        'soccer-cards',
+                        'ufc-cards',
+                        'wrestling-cards',
+                        'tennis-cards',
+                        'golf-cards',
+                        'boxing-cards',
+                    ],
+                ],
+                [
+                    'name' => 'exclude_variants',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'popularity',
+                        'highest-price',
+                        'name',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'sportscardspro-set' => [
+            'id' => 'sportscardspro-set',
+            'method' => 'GET',
+            'path' => '/sportscardspro/set',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'set',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'popularity',
+                        'name',
+                        'card-number',
+                        'highest-price',
+                        'lowest-price',
+                    ],
+                ],
+                [
+                    'name' => 'rookies_only',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'exclude_variants',
+                    'in' => 'query',
+                    'type' => 'boolean',
+                ],
+                [
+                    'name' => 'sealed',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'include',
+                        'exclude',
+                        'only',
+                    ],
+                ],
+                [
+                    'name' => 'card_number',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
             ],
         ],
         'sportskeeda-article' => [
@@ -151459,6 +165370,127 @@ final class Operations
                     'in' => 'query',
                     'type' => 'string',
                     'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'spothero-monthly-search' => [
+            'id' => 'spothero-monthly-search',
+            'method' => 'GET',
+            'path' => '/spothero/monthly-search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'oversize',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'include_walking_distance',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort_by',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lon',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'starts',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'show_unavailable',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'max_distance_meters',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'spothero-transient-search' => [
+            'id' => 'spothero-transient-search',
+            'method' => 'GET',
+            'path' => '/spothero/transient-search',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'oversize',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'max_distance_meters',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'lon',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'include_walking_distance',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'starts',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'ends',
+                    'in' => 'query',
+                    'type' => 'string',
                 ],
             ],
             'formParams' => [],
@@ -157721,6 +171753,254 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'suno-contest' => [
+            'id' => 'suno-contest',
+            'method' => 'GET',
+            'path' => '/suno/contest',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'contest_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'suno-contests' => [
+            'id' => 'suno-contests',
+            'method' => 'GET',
+            'path' => '/suno/contests',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'suno-explore' => [
+            'id' => 'suno-explore',
+            'method' => 'GET',
+            'path' => '/suno/explore',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'collection',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'explore',
+                        'combined',
+                        'homepage',
+                        'mobile',
+                    ],
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'suno-feed' => [
+            'id' => 'suno-feed',
+            'method' => 'GET',
+            'path' => '/suno/feed',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'feed_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'target_user_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort_by',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'created_at',
+                        'upvote_count',
+                        'play_count',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
+        'suno-genres' => [
+            'id' => 'suno-genres',
+            'method' => 'GET',
+            'path' => '/suno/genres',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'suno-playlist' => [
+            'id' => 'suno-playlist',
+            'method' => 'GET',
+            'path' => '/suno/playlist',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'playlist_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'suno-profile' => [
+            'id' => 'suno-profile',
+            'method' => 'GET',
+            'path' => '/suno/profile',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'handle',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'clips_sort_by',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'created_at',
+                        'upvote_count',
+                        'play_count',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'suno-song' => [
+            'id' => 'suno-song',
+            'method' => 'GET',
+            'path' => '/suno/song',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'song_id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'swiggy-collections' => [
             'id' => 'swiggy-collections',
             'method' => 'GET',
@@ -158140,6 +172420,92 @@ final class Operations
             'consumes' => [
                 'application/json',
             ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'taptap-app' => [
+            'id' => 'taptap-app',
+            'method' => 'GET',
+            'path' => '/taptap/app/{id}',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'taptap-genres' => [
+            'id' => 'taptap-genres',
+            'method' => 'GET',
+            'path' => '/taptap/genres',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'taptap-tag-games' => [
+            'id' => 'taptap-tag-games',
+            'method' => 'GET',
+            'path' => '/taptap/tag/{tag_slug}',
+            'pathParams' => [
+                'tag_slug',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
+        'taptap-top-charts' => [
+            'id' => 'taptap-top-charts',
+            'method' => 'GET',
+            'path' => '/taptap/top-charts',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
             'produces' => [
                 'application/json',
             ],
@@ -169500,6 +183866,74 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'ufcstats-stat-leaders' => [
+            'id' => 'ufcstats-stat-leaders',
+            'method' => 'GET',
+            'path' => '/ufcstats/stat-leaders/{category}',
+            'pathParams' => [
+                'category',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'fighter_status',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        '0',
+                        '1',
+                    ],
+                ],
+                [
+                    'name' => 'weight_class',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'HW',
+                        'LHW',
+                        'MW',
+                        'WW',
+                        'LW',
+                        'FTW',
+                        'BW',
+                        'FLW',
+                        'WBW',
+                        'WFLW',
+                        'WSW',
+                    ],
+                ],
+                [
+                    'name' => 'country',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'aus',
+                        'bra',
+                        'can',
+                        'chn',
+                        'jpn',
+                        'kor',
+                        'mex',
+                        'nzl',
+                        'rus',
+                        'swe',
+                        'gbr',
+                        'usa',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'ulta-categories' => [
             'id' => 'ulta-categories',
             'method' => 'GET',
@@ -175759,6 +190193,64 @@ final class Operations
             ],
             'paginatable' => true,
         ],
+        'wta-season-stats-options' => [
+            'id' => 'wta-season-stats-options',
+            'method' => 'GET',
+            'path' => '/wta/season-stats/options',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'wta-season-stats' => [
+            'id' => 'wta-season-stats',
+            'method' => 'GET',
+            'path' => '/wta/season-stats/{year}/{metric}',
+            'pathParams' => [
+                'year',
+                'metric',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'asc',
+                        'desc',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+        ],
         'wta-tournament-seasons' => [
             'id' => 'wta-tournament-seasons',
             'method' => 'GET',
@@ -175984,6 +190476,27 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'x-post-detail' => [
+            'id' => 'x-post-detail',
+            'method' => 'GET',
+            'path' => '/x/post/{id}/detail',
+            'pathParams' => [
+                'id',
+            ],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'x-profile' => [
             'id' => 'x-profile',
             'method' => 'GET',
@@ -176005,6 +190518,42 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'x-profile-highlights' => [
+            'id' => 'x-profile-highlights',
+            'method' => 'GET',
+            'path' => '/x/profile/{username}/highlights',
+            'pathParams' => [
+                'username',
+            ],
+            'queryParams' => [
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'cursor',
+            ],
+        ],
         'x-profile-posts' => [
             'id' => 'x-profile-posts',
             'method' => 'GET',
@@ -176017,6 +190566,80 @@ final class Operations
                     'name' => 'limit',
                     'in' => 'query',
                     'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'x-trending' => [
+            'id' => 'x-trending',
+            'method' => 'GET',
+            'path' => '/x/trending',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'x-trends' => [
+            'id' => 'x-trends',
+            'method' => 'GET',
+            'path' => '/x/trends',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'woeid',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'x-trends-locations' => [
+            'id' => 'x-trends-locations',
+            'method' => 'GET',
+            'path' => '/x/trends/locations',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'lat',
+                    'in' => 'query',
+                    'type' => 'number',
+                ],
+                [
+                    'name' => 'long',
+                    'in' => 'query',
+                    'type' => 'number',
                 ],
             ],
             'formParams' => [],
@@ -176869,6 +191492,16 @@ final class Operations
                     'name' => 'channel_id',
                     'in' => 'query',
                     'type' => 'string',
+                ],
+                [
+                    'name' => 'source',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'mainland',
+                        'international',
+                        'auto',
+                    ],
                 ],
             ],
             'formParams' => [],
@@ -183132,6 +197765,244 @@ final class Operations
                 'ApiKeyAuth',
             ],
         ],
+        'zedge-browse' => [
+            'id' => 'zedge-browse',
+            'method' => 'GET',
+            'path' => '/zedge/browse',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'item_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'wallpaper',
+                        'ringtone',
+                        'notification_sound',
+                    ],
+                ],
+                [
+                    'name' => 'categories',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'tags',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'colors',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'relevant',
+                        'newest',
+                        'popular',
+                        'price_asc',
+                        'price_desc',
+                    ],
+                ],
+                [
+                    'name' => 'price',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'free',
+                        'paid',
+                    ],
+                ],
+                [
+                    'name' => 'min_price',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_price',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'min_duration',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'max_duration',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'profile_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'any',
+                        'premium',
+                        'ugc',
+                    ],
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'next',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'next',
+            ],
+        ],
+        'zedge-categories' => [
+            'id' => 'zedge-categories',
+            'method' => 'GET',
+            'path' => '/zedge/categories',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'item_type',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'enum' => [
+                        'wallpaper',
+                        'ringtone',
+                        'notification_sound',
+                    ],
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'zedge-creators' => [
+            'id' => 'zedge-creators',
+            'method' => 'GET',
+            'path' => '/zedge/creators',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'keyword',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'type' => 'integer',
+                ],
+                [
+                    'name' => 'next',
+                    'in' => 'query',
+                    'type' => 'string',
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+            'paginatable' => true,
+            'cursorParams' => [
+                'next',
+            ],
+        ],
+        'zedge-item' => [
+            'id' => 'zedge-item',
+            'method' => 'GET',
+            'path' => '/zedge/item',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'zedge-tags' => [
+            'id' => 'zedge-tags',
+            'method' => 'GET',
+            'path' => '/zedge/tags',
+            'pathParams' => [],
+            'queryParams' => [
+                [
+                    'name' => 'keyword',
+                    'in' => 'query',
+                    'type' => 'string',
+                    'required' => true,
+                ],
+            ],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
+        'zedge-trending-searches' => [
+            'id' => 'zedge-trending-searches',
+            'method' => 'GET',
+            'path' => '/zedge/trending-searches',
+            'pathParams' => [],
+            'queryParams' => [],
+            'formParams' => [],
+            'bodyParam' => null,
+            'bodyRequired' => false,
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'security' => [
+                'ApiKeyAuth',
+            ],
+        ],
         'zillow-autocomplete' => [
             'id' => 'zillow-autocomplete',
             'method' => 'GET',
@@ -183469,6 +198340,15 @@ final class Operations
             'product' => 'firstdibs-product',
             'search' => 'firstdibs-search',
         ],
+        'Platform7Brew' => [
+            'categories' => '7brew-categories',
+            'directory' => '7brew-directory',
+            'item' => '7brew-item',
+            'menu' => '7brew-menu',
+            'nearby' => '7brew-nearby',
+            'options' => '7brew-options',
+            'store' => '7brew-store',
+        ],
         'sevenNow' => [
             'catalog' => '7now-catalog',
             'categories' => '7now-categories',
@@ -183703,6 +198583,17 @@ final class Operations
             'suggest' => 'appstore-suggest',
             'versionHistory' => 'appstore-version-history',
         ],
+        'aptoide' => [
+            'app' => 'aptoide-app',
+            'categories' => 'aptoide-categories',
+            'collections' => 'aptoide-collections',
+            'list_' => 'aptoide-list',
+            'reviews' => 'aptoide-reviews',
+            'search' => 'aptoide-search',
+            'similar' => 'aptoide-similar',
+            'store' => 'aptoide-store',
+            'versions' => 'aptoide-versions',
+        ],
         'arbys' => [
             'categories' => 'arbys-categories',
             'directory' => 'arbys-directory',
@@ -183729,6 +198620,15 @@ final class Operations
             'products' => 'audible-products',
             'search' => 'audible-search',
             'series' => 'audible-series',
+        ],
+        'autoScout24' => [
+            'autoscout24Dealer' => 'autoscout24-dealer',
+            'autoscout24Filters' => 'autoscout24-filters',
+            'autoscout24Listing' => 'autoscout24-listing',
+            'autoscout24Makes' => 'autoscout24-makes',
+            'autoscout24Models' => 'autoscout24-models',
+            'autoscout24Search' => 'autoscout24-search',
+            'autoscout24Suggest' => 'autoscout24-suggest',
         ],
         'autotrader' => [
             'dealer' => 'autotrader-dealer',
@@ -184118,6 +199018,34 @@ final class Operations
             'cbssportsNews' => 'cbssports-news',
             'cbssportsSections' => 'cbssports-sections',
         ],
+        'chessCom' => [
+            'chesscomClub' => 'chesscom-club',
+            'chesscomClubMatches' => 'chesscom-club-matches',
+            'chesscomClubMembers' => 'chesscom-club-members',
+            'chesscomCountry' => 'chesscom-country',
+            'chesscomMatchLive' => 'chesscom-match-live',
+            'chesscomMatchLiveBoard' => 'chesscom-match-live-board',
+            'chesscomMatch' => 'chesscom-match',
+            'chesscomMatchBoard' => 'chesscom-match-board',
+            'chesscomPlayer' => 'chesscom-player',
+            'chesscomPlayerClubs' => 'chesscom-player-clubs',
+            'chesscomPlayerGames' => 'chesscom-player-games',
+            'chesscomPlayerGameMonth' => 'chesscom-player-game-month',
+            'chesscomPlayerGameMonthPgn' => 'chesscom-player-game-month-pgn',
+            'chesscomPlayerGameArchives' => 'chesscom-player-game-archives',
+            'chesscomPlayerLiveGamesBaseTime' => 'chesscom-player-live-games-base-time',
+            'chesscomPlayerLiveGames' => 'chesscom-player-live-games',
+            'chesscomPlayerGamesToMove' => 'chesscom-player-games-to-move',
+            'chesscomPlayerIsOnline' => 'chesscom-player-is-online',
+            'chesscomPlayerMatches' => 'chesscom-player-matches',
+            'chesscomPlayerStats' => 'chesscom-player-stats',
+            'chesscomPlayerTournaments' => 'chesscom-player-tournaments',
+            'chesscomPuzzle' => 'chesscom-puzzle',
+            'chesscomPuzzleRandom' => 'chesscom-puzzle-random',
+            'chesscomTournament' => 'chesscom-tournament',
+            'chesscomTournamentRound' => 'chesscom-tournament-round',
+            'chesscomTournamentRoundGroup' => 'chesscom-tournament-round-group',
+        ],
         'chewy' => [
             'brands' => 'chewy-brands',
             'categories' => 'chewy-categories',
@@ -184187,6 +199115,19 @@ final class Operations
         ],
         'clevelandCom' => [
             'clevelandcomNews' => 'clevelandcom-news',
+        ],
+        'clinicalTrialsGov' => [
+            'clinicaltrialsStatsFieldSizes' => 'clinicaltrials-stats-field-sizes',
+            'clinicaltrialsStatsFieldValues' => 'clinicaltrials-stats-field-values',
+            'clinicaltrialsStatsSize' => 'clinicaltrials-stats-size',
+            'clinicaltrialsStudies' => 'clinicaltrials-studies',
+            'clinicaltrialsStudiesEnums' => 'clinicaltrials-studies-enums',
+            'clinicaltrialsStudiesFacets' => 'clinicaltrials-studies-facets',
+            'clinicaltrialsStudiesMetadata' => 'clinicaltrials-studies-metadata',
+            'clinicaltrialsStudiesSearchAreas' => 'clinicaltrials-studies-search-areas',
+            'clinicaltrialsStudy' => 'clinicaltrials-study',
+            'clinicaltrialsSuggest' => 'clinicaltrials-suggest',
+            'clinicaltrialsVersion' => 'clinicaltrials-version',
         ],
         'cna' => [
             'article' => 'cna-article',
@@ -184274,6 +199215,15 @@ final class Operations
             'scrape' => 'web-scrape',
             'techstack' => 'web-techstack',
         ],
+        'copart' => [
+            'auctions' => 'copart-auctions',
+            'filters' => 'copart-filters',
+            'locations' => 'copart-locations',
+            'lot' => 'copart-lot',
+            'lotImages' => 'copart-lot-images',
+            'search' => 'copart-search',
+            'suggest' => 'copart-suggest',
+        ],
         'costco' => [
             'categories' => 'costco-categories',
             'product' => 'costco-product',
@@ -184286,6 +199236,17 @@ final class Operations
             'courtlistenerCourts' => 'courtlistener-courts',
             'courtlistenerPeople' => 'courtlistener-people',
             'courtlistenerSearch' => 'courtlistener-search',
+        ],
+        'craigslist' => [
+            'areas' => 'craigslist-areas',
+            'categories' => 'craigslist-categories',
+            'categoryCounts' => 'craigslist-category-counts',
+            'categoryFilters' => 'craigslist-category-filters',
+            'likelyCategories' => 'craigslist-likely-categories',
+            'locations' => 'craigslist-locations',
+            'posting' => 'craigslist-posting',
+            'search' => 'craigslist-search',
+            'suggest' => 'craigslist-suggest',
         ],
         'cricbuzz' => [
             'archives' => 'cricbuzz-archives',
@@ -184304,6 +199265,7 @@ final class Operations
             'auctionUpcoming' => 'cricbuzz-auction-upcoming',
             'auctionUpcomingOptions' => 'cricbuzz-auction-upcoming-options',
             'auctionVideos' => 'cricbuzz-auction-videos',
+            'commentary' => 'cricbuzz-commentary',
             'matchFacts' => 'cricbuzz-match-facts',
             'matchGraphs' => 'cricbuzz-match-graphs',
             'matchOvers' => 'cricbuzz-match-overs',
@@ -184311,12 +199273,15 @@ final class Operations
             'navigation' => 'cricbuzz-navigation',
             'newsStory' => 'cricbuzz-news-story',
             'newsTopics' => 'cricbuzz-news-topics',
+            'player' => 'cricbuzz-player',
             'rankings' => 'cricbuzz-rankings',
             'records' => 'cricbuzz-records',
             'schedule' => 'cricbuzz-schedule',
             'scorecard' => 'cricbuzz-scorecard',
             'series' => 'cricbuzz-series',
+            'seriesSquads' => 'cricbuzz-series-squads',
             'seriesStats' => 'cricbuzz-series-stats',
+            'teamPlayers' => 'cricbuzz-team-players',
             'teamStats' => 'cricbuzz-team-stats',
             'teamStatsOptions' => 'cricbuzz-team-stats-options',
             'teams' => 'cricbuzz-teams',
@@ -184325,11 +199290,14 @@ final class Operations
             'wtc' => 'cricbuzz-wtc',
         ],
         'cricinfo' => [
+            'ballByBall' => 'cricinfo-ball-by-ball',
             'calendar' => 'cricinfo-calendar',
             'commentary' => 'cricinfo-commentary',
             'grounds' => 'cricinfo-grounds',
             'liveMatches' => 'cricinfo-live-matches',
             'match_' => 'cricinfo-match',
+            'matchImpactPlayer' => 'cricinfo-match-impact-player',
+            'matchStatistics' => 'cricinfo-match-statistics',
             'news' => 'cricinfo-news',
             'photos' => 'cricinfo-photos',
             'rankings' => 'cricinfo-rankings',
@@ -184660,6 +199628,11 @@ final class Operations
             'release' => 'discogs-release',
             'search' => 'discogs-search',
         ],
+        'discord' => [
+            'invite' => 'discord-invite',
+            'server' => 'discord-server',
+            'servers' => 'discord-servers',
+        ],
         'dollarTree' => [
             'dollartreeBlogArticle' => 'dollartree-blog-article',
             'dollartreeCategories' => 'dollartree-categories',
@@ -184824,6 +199797,8 @@ final class Operations
         ],
         'espn' => [
             'athlete' => 'espn-athlete',
+            'athleteGamelog' => 'espn-athlete-gamelog',
+            'athleteSplits' => 'espn-athlete-splits',
             'gameSummary' => 'espn-game-summary',
             'news' => 'espn-news',
             'rankings' => 'espn-rankings',
@@ -184831,7 +199806,10 @@ final class Operations
             'standings' => 'espn-standings',
             'team' => 'espn-team',
             'teamRoster' => 'espn-team-roster',
+            'teamSchedule' => 'espn-team-schedule',
+            'teamStats' => 'espn-team-stats',
             'teams' => 'espn-teams',
+            'transactions' => 'espn-transactions',
         ],
         'etsy' => [
             'listing' => 'etsy-listing',
@@ -185073,6 +200051,14 @@ final class Operations
             'fastcompanyNews' => 'fastcompany-news',
             'fastcompanySections' => 'fastcompany-sections',
         ],
+        'fDroid' => [
+            'fdroidAntiFeatures' => 'fdroid-anti-features',
+            'fdroidApp' => 'fdroid-app',
+            'fdroidApps' => 'fdroid-apps',
+            'fdroidCategories' => 'fdroid-categories',
+            'fdroidLicenses' => 'fdroid-licenses',
+            'fdroidSearch' => 'fdroid-search',
+        ],
         'fever' => [
             'cities' => 'fever-cities',
             'feed' => 'fever-feed',
@@ -185106,7 +200092,7 @@ final class Operations
             'matchBoxScore' => 'flashscore-match-box-score',
             'matchCommentary' => 'flashscore-match-commentary',
             'matchDarts' => 'flashscore-match-darts',
-            'matchH2h' => 'flashscore-match-h2h',
+            'matchH2H' => 'flashscore-match-h2h',
             'matchHighlights' => 'flashscore-match-highlights',
             'matchIncidents' => 'flashscore-match-incidents',
             'matchInfo' => 'flashscore-match-info',
@@ -185227,6 +200213,18 @@ final class Operations
             'teamSeasonResults' => 'formula1-team-season-results',
             'teamStandings' => 'formula1-team-standings',
         ],
+        'fortnite' => [
+            'ecosystemMetric' => 'fortnite-ecosystem-metric',
+            'ecosystemMetrics' => 'fortnite-ecosystem-metrics',
+            'enums' => 'fortnite-enums',
+            'genreRankings' => 'fortnite-genre-rankings',
+            'genres' => 'fortnite-genres',
+            'island' => 'fortnite-island',
+            'islandMetric' => 'fortnite-island-metric',
+            'islandMetrics' => 'fortnite-island-metrics',
+            'islandRankings' => 'fortnite-island-rankings',
+            'islands' => 'fortnite-islands',
+        ],
         'fortune' => [
             'article' => 'fortune-article',
             'author' => 'fortune-author',
@@ -185251,11 +200249,13 @@ final class Operations
             'fotmobLineupBuilderPlayers' => 'fotmob-lineup-builder-players',
             'fotmobLineupBuilderTeam' => 'fotmob-lineup-builder-team',
             'fotmobMatch' => 'fotmob-match',
+            'fotmobMatchHeatmap' => 'fotmob-match-heatmap',
             'fotmobMatchMedia' => 'fotmob-match-media',
             'fotmobMatches' => 'fotmob-matches',
             'fotmobNews' => 'fotmob-news',
             'fotmobNewsArticle' => 'fotmob-news-article',
             'fotmobPlayer' => 'fotmob-player',
+            'fotmobPlayerInjuries' => 'fotmob-player-injuries',
             'fotmobPlayerMatchStats' => 'fotmob-player-match-stats',
             'fotmobPlayerMatches' => 'fotmob-player-matches',
             'fotmobPlayerStats' => 'fotmob-player-stats',
@@ -185343,12 +200343,19 @@ final class Operations
             'fussballdeTopScorers' => 'fussballde-top-scorers',
         ],
         'futGg' => [
+            'futggFc27CampaignSquads' => 'futgg-fc27-campaign-squads',
             'futggFc27Catalog' => 'futgg-fc27-catalog',
+            'futggFc27ChemistryStyleRoles' => 'futgg-fc27-chemistry-style-roles',
             'futggFc27Definitions' => 'futgg-fc27-definitions',
             'futggFc27Evolutions' => 'futgg-fc27-evolutions',
             'futggFc27Evolution' => 'futgg-fc27-evolution',
             'futggFc27GgRatingRanks' => 'futgg-fc27-gg-rating-ranks',
             'futggFc27GgRatings' => 'futgg-fc27-gg-ratings',
+            'futggFc27ManagerFacets' => 'futgg-fc27-manager-facets',
+            'futggFc27ManagerLeagues' => 'futgg-fc27-manager-leagues',
+            'futggFc27Managers' => 'futgg-fc27-managers',
+            'futggFc27Manager' => 'futgg-fc27-manager',
+            'futggFc27MiscPrices' => 'futgg-fc27-misc-prices',
             'futggFc27ObjectiveCategories' => 'futgg-fc27-objective-categories',
             'futggFc27ObjectiveGroups' => 'futgg-fc27-objective-groups',
             'futggFc27ObjectiveGroupByEa' => 'futgg-fc27-objective-group-by-ea',
@@ -185357,6 +200364,7 @@ final class Operations
             'futggFc27PlayerSorts' => 'futgg-fc27-player-sorts',
             'futggFc27Players' => 'futgg-fc27-players',
             'futggFc27PriceIndex' => 'futgg-fc27-price-index',
+            'futggFc27PriceRangeChanges' => 'futgg-fc27-price-range-changes',
             'futggFc27Prices' => 'futgg-fc27-prices',
             'futggFc27SbcCategories' => 'futgg-fc27-sbc-categories',
             'futggFc27SbcSets' => 'futgg-fc27-sbc-sets',
@@ -185399,6 +200407,20 @@ final class Operations
             'tvTimeline' => 'gdelt-tv-timeline',
             'tvVisualEntities' => 'gdelt-tv-visual-entities',
             'tvWordcloud' => 'gdelt-tv-wordcloud',
+        ],
+        'gemRate' => [
+            'gemrateCard' => 'gemrate-card',
+            'gemrateCategories' => 'gemrate-categories',
+            'gemrateGradingTrends' => 'gemrate-grading-trends',
+            'gemrateLeaders' => 'gemrate-leaders',
+            'gemrateReport' => 'gemrate-report',
+            'gemrateReports' => 'gemrate-reports',
+            'gemrateSalesTrends' => 'gemrate-sales-trends',
+            'gemrateSearchPresets' => 'gemrate-search-presets',
+            'gemratePopCollection' => 'gemrate-pop-collection',
+            'gemratePopCollections' => 'gemrate-pop-collections',
+            'gemratePopSet' => 'gemrate-pop-set',
+            'gemratePopSets' => 'gemrate-pop-sets',
         ],
         'geocoding' => [
             'lookup' => 'geocoding-lookup',
@@ -185739,7 +200761,15 @@ final class Operations
             'hindustantimesNews' => 'hindustantimes-news',
             'hindustantimesSections' => 'hindustantimes-sections',
         ],
+        'howLongToBeat' => [
+            'hltbFilters' => 'hltb-filters',
+            'hltbGame' => 'hltb-game',
+            'hltbPopular' => 'hltb-popular',
+            'hltbSearch' => 'hltb-search',
+            'hltbStats' => 'hltb-stats',
+        ],
         'hltv' => [
+            'coach' => 'hltv-coach',
             'event' => 'hltv-event',
             'events' => 'hltv-events',
             'match_' => 'hltv-match',
@@ -185749,6 +200779,9 @@ final class Operations
             'results' => 'hltv-results',
             'search' => 'hltv-search',
             'team' => 'hltv-team',
+            'transfers' => 'hltv-transfers',
+            'valveRanking' => 'hltv-valve-ranking',
+            'valveRankingDetails' => 'hltv-valve-ranking-details',
         ],
         'hM' => [
             'hmCategories' => 'hm-categories',
@@ -185799,6 +200832,11 @@ final class Operations
             'huffpostHeadlines' => 'huffpost-headlines',
             'huffpostNews' => 'huffpost-news',
             'huffpostSections' => 'huffpost-sections',
+        ],
+        'ibmJobs' => [
+            'filters' => 'ibm-jobs-filters',
+            'job' => 'ibm-jobs-job',
+            'search' => 'ibm-jobs-search',
         ],
         'ign' => [
             'article' => 'ign-article',
@@ -186216,12 +201254,59 @@ final class Operations
             'popular' => 'letterboxd-popular',
             'search' => 'letterboxd-search',
         ],
+        'lichess' => [
+            'cloudEval' => 'lichess-cloud-eval',
+            'enums' => 'lichess-enums',
+            'puzzle' => 'lichess-puzzle',
+            'puzzleBatch' => 'lichess-puzzle-batch',
+            'puzzleDaily' => 'lichess-puzzle-daily',
+            'puzzleMany' => 'lichess-puzzle-many',
+            'puzzleNext' => 'lichess-puzzle-next',
+            'puzzleThemes' => 'lichess-puzzle-themes',
+            'simuls' => 'lichess-simuls',
+            'tablebase' => 'lichess-tablebase',
+            'version' => 'lichess-version',
+        ],
+        'limitlessTcg' => [
+            'limitlessCard' => 'limitless-card',
+            'limitlessCards' => 'limitless-cards',
+            'limitlessDeck' => 'limitless-deck',
+            'limitlessDecklist' => 'limitless-decklist',
+            'limitlessDecklists' => 'limitless-decklists',
+            'limitlessDecks' => 'limitless-decks',
+            'limitlessFilters' => 'limitless-filters',
+            'limitlessGames' => 'limitless-games',
+            'limitlessOnlinePairings' => 'limitless-online-pairings',
+            'limitlessOnlineStandings' => 'limitless-online-standings',
+            'limitlessOnlineTournament' => 'limitless-online-tournament',
+            'limitlessOnlineTournaments' => 'limitless-online-tournaments',
+            'limitlessPlayer' => 'limitless-player',
+            'limitlessPlayers' => 'limitless-players',
+            'limitlessTournament' => 'limitless-tournament',
+            'limitlessTournaments' => 'limitless-tournaments',
+            'limitlessTournamentsJapan' => 'limitless-tournaments-japan',
+            'limitlessTournamentsUpcoming' => 'limitless-tournaments-upcoming',
+        ],
         'linkedIn' => [
             'linkedinCompany' => 'linkedin-company',
             'linkedinProductCategories' => 'linkedin-product-categories',
             'linkedinProduct' => 'linkedin-product',
             'linkedinProductsSearch' => 'linkedin-products-search',
             'linkedinShowcase' => 'linkedin-showcase',
+        ],
+        'liquipedia' => [
+            'allPages' => 'liquipedia-all-pages',
+            'backlinks' => 'liquipedia-backlinks',
+            'categories' => 'liquipedia-categories',
+            'categoryMembers' => 'liquipedia-category-members',
+            'enums' => 'liquipedia-enums',
+            'links' => 'liquipedia-links',
+            'page' => 'liquipedia-page',
+            'prefixSearch' => 'liquipedia-prefix-search',
+            'recentChanges' => 'liquipedia-recent-changes',
+            'search' => 'liquipedia-search',
+            'tags' => 'liquipedia-tags',
+            'wikis' => 'liquipedia-wikis',
         ],
         'mint' => [
             'livemintArticle' => 'livemint-article',
@@ -186624,6 +201709,25 @@ final class Operations
             'motogpStandings' => 'motogp-standings',
             'motogpStandingsFiles' => 'motogp-standings-files',
             'motogpStartingGrid' => 'motogp-starting-grid',
+            'motogpWorldStandings' => 'motogp-world-standings',
+        ],
+        'mtggoldfish' => [
+            'archetype' => 'mtggoldfish-archetype',
+            'autocomplete' => 'mtggoldfish-autocomplete',
+            'card' => 'mtggoldfish-card',
+            'deck' => 'mtggoldfish-deck',
+            'deckSearch' => 'mtggoldfish-deck-search',
+            'filters' => 'mtggoldfish-filters',
+            'metagame' => 'mtggoldfish-metagame',
+            'movers' => 'mtggoldfish-movers',
+            'priceHistory' => 'mtggoldfish-price-history',
+            'priceIndex' => 'mtggoldfish-price-index',
+            'priceList' => 'mtggoldfish-price-list',
+            'set' => 'mtggoldfish-set',
+            'sets' => 'mtggoldfish-sets',
+            'staples' => 'mtggoldfish-staples',
+            'tournament' => 'mtggoldfish-tournament',
+            'tournaments' => 'mtggoldfish-tournaments',
         ],
         'nascar' => [
             'liveFeed' => 'nascar-live-feed',
@@ -186656,10 +201760,12 @@ final class Operations
         'nba' => [
             'boxScore' => 'nba-box-score',
             'boxScoreAdvanced' => 'nba-box-score-advanced',
+            'boxScoreDefensive' => 'nba-box-score-defensive',
             'boxScoreFourFactors' => 'nba-box-score-four-factors',
             'boxScoreMisc' => 'nba-box-score-misc',
             'boxScorePlayerTrack' => 'nba-box-score-player-track',
             'boxScoreScoring' => 'nba-box-score-scoring',
+            'boxScoreSummary' => 'nba-box-score-summary',
             'boxScoreUsage' => 'nba-box-score-usage',
             'commonAllPlayers' => 'nba-common-all-players',
             'draftCombineAnthro' => 'nba-draft-combine-anthro',
@@ -186668,9 +201774,12 @@ final class Operations
             'gameDetail' => 'nba-game-detail',
             'games' => 'nba-games',
             'homepageLeaders' => 'nba-homepage-leaders',
+            'homepageV2' => 'nba-homepage-v2',
+            'hustlePlayer' => 'nba-hustle-player',
             'hustleStats' => 'nba-hustle-stats',
             'hustleTeam' => 'nba-hustle-team',
             'leagueGameLog' => 'nba-league-game-log',
+            'lineupShotChart' => 'nba-lineup-shot-chart',
             'lineups' => 'nba-lineups',
             'news' => 'nba-news',
             'oppPtShot' => 'nba-opp-pt-shot',
@@ -186679,6 +201788,13 @@ final class Operations
             'playerBioStats' => 'nba-player-bio-stats',
             'playerCareerStats' => 'nba-player-career-stats',
             'playerClutch' => 'nba-player-clutch',
+            'playerCompare' => 'nba-player-compare',
+            'playerDashByClutch' => 'nba-player-dash-by-clutch',
+            'playerDashByGameSplits' => 'nba-player-dash-by-game-splits',
+            'playerDashByLastNGames' => 'nba-player-dash-by-last-n-games',
+            'playerDashByOpponent' => 'nba-player-dash-by-opponent',
+            'playerDashPtPass' => 'nba-player-dash-pt-pass',
+            'playerDashPtReb' => 'nba-player-dash-pt-reb',
             'playerDashPtShots' => 'nba-player-dash-pt-shots',
             'playerGameLogs' => 'nba-player-game-logs',
             'playerInfo' => 'nba-player-info',
@@ -186688,12 +201804,19 @@ final class Operations
             'playerStreakFinder' => 'nba-player-streak-finder',
             'players' => 'nba-players',
             'playoffPicture' => 'nba-playoff-picture',
+            'playoffSeries' => 'nba-playoff-series',
             'ptDefend' => 'nba-pt-defend',
             'ptStats' => 'nba-pt-stats',
             'scoreboard' => 'nba-scoreboard',
+            'shotChart' => 'nba-shot-chart',
             'standings' => 'nba-standings',
             'synergyPlayTypes' => 'nba-synergy-play-types',
+            'teamDashByClutch' => 'nba-team-dash-by-clutch',
+            'teamDashByGameSplits' => 'nba-team-dash-by-game-splits',
+            'teamDashByLastNGames' => 'nba-team-dash-by-last-n-games',
+            'teamDashByOpponent' => 'nba-team-dash-by-opponent',
             'teamDashPtPass' => 'nba-team-dash-pt-pass',
+            'teamDashPtReb' => 'nba-team-dash-pt-reb',
             'teamDashPtShots' => 'nba-team-dash-pt-shots',
             'teamDetails' => 'nba-team-details',
             'teamGameLogs' => 'nba-team-game-logs',
@@ -187038,6 +202161,14 @@ final class Operations
             'pagesixNews' => 'pagesix-news',
             'pagesixSections' => 'pagesix-sections',
         ],
+        'pandaExpress' => [
+            'pandaexpressCategories' => 'pandaexpress-categories',
+            'pandaexpressDirectory' => 'pandaexpress-directory',
+            'pandaexpressItem' => 'pandaexpress-item',
+            'pandaexpressMenu' => 'pandaexpress-menu',
+            'pandaexpressNearby' => 'pandaexpress-nearby',
+            'pandaexpressStore' => 'pandaexpress-store',
+        ],
         'pandamart' => [
             'search' => 'pandamart-search',
             'store' => 'pandamart-store',
@@ -187112,6 +202243,14 @@ final class Operations
             'news' => 'pcmag-news',
             'sections' => 'pcmag-sections',
         ],
+        'peacock' => [
+            'channels' => 'peacock-channels',
+            'collection' => 'peacock-collection',
+            'genres' => 'peacock-genres',
+            'page' => 'peacock-page',
+            'season' => 'peacock-season',
+            'title' => 'peacock-title',
+        ],
         'people' => [
             'article' => 'people-article',
             'author' => 'people-author',
@@ -187128,6 +202267,9 @@ final class Operations
             'petsmartSuggest' => 'petsmart-suggest',
         ],
         'pgaTour' => [
+            'pgatourCups' => 'pgatour-cups',
+            'pgatourCupStandings' => 'pgatour-cup-standings',
+            'pgatourCupOptions' => 'pgatour-cup-options',
             'pgatourLeaderboard' => 'pgatour-leaderboard',
             'pgatourPlayers' => 'pgatour-players',
             'pgatourSchedule' => 'pgatour-schedule',
@@ -187211,6 +202353,32 @@ final class Operations
             'playstationProduct' => 'playstation-product',
             'playstationSearch' => 'playstation-search',
             'playstationSuggest' => 'playstation-suggest',
+        ],
+        'pokeData' => [
+            'pokedataCardSales' => 'pokedata-card-sales',
+            'pokedataCardStats' => 'pokedata-card-stats',
+            'pokedataMarketplaceListing' => 'pokedata-marketplace-listing',
+            'pokedataMarketplaceSearch' => 'pokedata-marketplace-search',
+            'pokedataPortfolio' => 'pokedata-portfolio',
+            'pokedataPortfolioValue' => 'pokedata-portfolio-value',
+            'pokedataPortfolios' => 'pokedata-portfolios',
+            'pokedataProductSales' => 'pokedata-product-sales',
+            'pokedataProductStats' => 'pokedata-product-stats',
+            'pokedataProducts' => 'pokedata-products',
+            'pokedataProductsFacets' => 'pokedata-products-facets',
+            'pokedataSearch' => 'pokedata-search',
+            'pokedataSet' => 'pokedata-set',
+            'pokedataSetCards' => 'pokedata-set-cards',
+            'pokedataSetProducts' => 'pokedata-set-products',
+            'pokedataSets' => 'pokedata-sets',
+            'pokedataSources' => 'pokedata-sources',
+            'pokedataTcgs' => 'pokedata-tcgs',
+        ],
+        'pokeTrace' => [
+            'poketraceCard' => 'poketrace-card',
+            'poketraceCatalog' => 'poketrace-catalog',
+            'poketraceFilters' => 'poketrace-filters',
+            'poketraceSets' => 'poketrace-sets',
         ],
         'politico' => [
             'article' => 'politico-article',
@@ -187472,18 +202640,38 @@ final class Operations
             'archivePostsSearch' => 'reddit-archive-posts-search',
             'archiveSubredditsSearch' => 'reddit-archive-subreddits-search',
             'archiveTimeSeries' => 'reddit-archive-time-series',
+            'comment' => 'reddit-comment',
+            'commentAwards' => 'reddit-comment-awards',
             'comments' => 'reddit-comments',
             'domainPosts' => 'reddit-domain-posts',
             'leads' => 'reddit-leads',
+            'popular' => 'reddit-popular',
             'post' => 'reddit-post',
+            'postAwards' => 'reddit-post-awards',
+            'postsByIds' => 'reddit-posts-by-ids',
             'search' => 'reddit-search',
+            'searchComments' => 'reddit-search-comments',
+            'searchPeople' => 'reddit-search-people',
             'subredditAbout' => 'reddit-subreddit-about',
             'subredditComments' => 'reddit-subreddit-comments',
+            'subredditFlairs' => 'reddit-subreddit-flairs',
+            'subredditHighlights' => 'reddit-subreddit-highlights',
+            'subredditLeaderboardCategories' => 'reddit-subreddit-leaderboard-categories',
             'subredditPosts' => 'reddit-subreddit-posts',
+            'subredditRules' => 'reddit-subreddit-rules',
+            'subredditUserFlairs' => 'reddit-subreddit-user-flairs',
+            'subredditWiki' => 'reddit-subreddit-wiki',
+            'subredditsDiscover' => 'reddit-subreddits-discover',
             'subredditsPosts' => 'reddit-subreddits-posts',
+            'subredditsSearch' => 'reddit-subreddits-search',
+            'subredditsSuggest' => 'reddit-subreddits-suggest',
+            'topics' => 'reddit-topics',
+            'topicsBroad' => 'reddit-topics-broad',
+            'topicsSearch' => 'reddit-topics-search',
             'trends' => 'reddit-trends',
             'userComments' => 'reddit-user-comments',
             'userPosts' => 'reddit-user-posts',
+            'userProfile' => 'reddit-user-profile',
         ],
         'redfin' => [
             'estimate' => 'redfin-estimate',
@@ -187745,6 +202933,7 @@ final class Operations
         ],
         'serebii' => [
             'pokemongoEventDetailCommunityDay' => 'serebii-pokemongo-event-detail-community-day',
+            'pokemongoEggs' => 'serebii-pokemongo-eggs',
             'pokemongoEventCategories' => 'serebii-pokemongo-event-categories',
             'pokemongoEventOnlyMoves' => 'serebii-pokemongo-event-only-moves',
             'pokemongoEventOnlyResearch' => 'serebii-pokemongo-event-only-research',
@@ -187754,6 +202943,7 @@ final class Operations
             'pokemongoEventDetailIncenseDay' => 'serebii-pokemongo-event-detail-incense-day',
             'pokemongoEventDetailResearchDay' => 'serebii-pokemongo-event-detail-research-day',
             'pokemongoEventDetailMaxBattleDay' => 'serebii-pokemongo-event-detail-max-battle-day',
+            'pokemongoRaidBosses' => 'serebii-pokemongo-raid-bosses',
             'pokemongoEventDetailRaidDay' => 'serebii-pokemongo-event-detail-raid-day',
             'pokemongoEventDetailRealLife' => 'serebii-pokemongo-event-detail-real-life',
             'pokemongoSpotlightHours' => 'serebii-pokemongo-spotlight-hours',
@@ -187872,6 +203062,17 @@ final class Operations
             'skynewsVideo' => 'skynews-video',
             'skynewsVideos' => 'skynews-videos',
         ],
+        'skyscanner' => [
+            'currencies' => 'skyscanner-currencies',
+            'flightsExplore' => 'skyscanner-flights-explore',
+            'flightsOptions' => 'skyscanner-flights-options',
+            'flightsPriceCalendar' => 'skyscanner-flights-price-calendar',
+            'flightsPriceCalendarMonths' => 'skyscanner-flights-price-calendar-months',
+            'flightsSearch' => 'skyscanner-flights-search',
+            'locales' => 'skyscanner-locales',
+            'markets' => 'skyscanner-markets',
+            'placesAutosuggest' => 'skyscanner-places-autosuggest',
+        ],
         'skySports' => [
             'skysportsArticle' => 'skysports-article',
             'skysportsAuthor' => 'skysports-author',
@@ -187911,6 +203112,20 @@ final class Operations
             'smhNews' => 'smh-news',
             'smhSections' => 'smh-sections',
         ],
+        'snkrdunk' => [
+            'brands' => 'snkrdunk-brands',
+            'categories' => 'snkrdunk-categories',
+            'filters' => 'snkrdunk-filters',
+            'product' => 'snkrdunk-product',
+            'productListings' => 'snkrdunk-product-listings',
+            'priceChart' => 'snkrdunk-price-chart',
+            'productRelated' => 'snkrdunk-product-related',
+            'salesHistory' => 'snkrdunk-sales-history',
+            'search' => 'snkrdunk-search',
+            'suggest' => 'snkrdunk-suggest',
+            'tradingCards' => 'snkrdunk-trading-cards',
+            'tradingCardsUsed' => 'snkrdunk-trading-cards-used',
+        ],
         'sofaScore' => [
             'sofascoreCategories' => 'sofascore-categories',
             'sofascoreCategoryTournaments' => 'sofascore-category-tournaments',
@@ -187926,7 +203141,7 @@ final class Operations
             'sofascoreEventComments' => 'sofascore-event-comments',
             'sofascoreEventEsportsGames' => 'sofascore-event-esports-games',
             'sofascoreEventGraph' => 'sofascore-event-graph',
-            'sofascoreEventH2h' => 'sofascore-event-h2h',
+            'sofascoreEventH2H' => 'sofascore-event-h2h',
             'sofascoreEventHighlights' => 'sofascore-event-highlights',
             'sofascoreEventIncidents' => 'sofascore-event-incidents',
             'sofascoreEventInnings' => 'sofascore-event-innings',
@@ -187963,7 +203178,9 @@ final class Operations
             'sofascorePlayerSeasonHeatmap' => 'sofascore-player-season-heatmap',
             'sofascorePlayerSeasonStatistics' => 'sofascore-player-season-statistics',
             'sofascorePlayerStatisticalRankings' => 'sofascore-player-statistical-rankings',
+            'sofascorePlayerStatistics' => 'sofascore-player-statistics',
             'sofascorePlayerStatisticsSeasons' => 'sofascore-player-statistics-seasons',
+            'sofascorePlayerTournamentEvents' => 'sofascore-player-tournament-events',
             'sofascorePlayerTournaments' => 'sofascore-player-tournaments',
             'sofascorePlayerTransfers' => 'sofascore-player-transfers',
             'sofascoreRankingTypes' => 'sofascore-ranking-types',
@@ -188076,6 +203293,9 @@ final class Operations
             'speedrunLevelRecords' => 'speedrun-level-records',
             'speedrunLevelVariables' => 'speedrun-level-variables',
             'speedrunResourceOptions' => 'speedrun-resource-options',
+            'speedrunRuns' => 'speedrun-runs',
+            'speedrunRunsOptions' => 'speedrun-runs-options',
+            'speedrunRun' => 'speedrun-run',
         ],
         'sportingNews' => [
             'sportingnewsArticle' => 'sportingnews-article',
@@ -188083,6 +203303,14 @@ final class Operations
             'sportingnewsHeadlines' => 'sportingnews-headlines',
             'sportingnewsNews' => 'sportingnews-news',
             'sportingnewsSections' => 'sportingnews-sections',
+        ],
+        'sportsCardsPro' => [
+            'sportscardsproBrand' => 'sportscardspro-brand',
+            'sportscardsproCategories' => 'sportscardspro-categories',
+            'sportscardsproPriceHistory' => 'sportscardspro-price-history',
+            'sportscardsproProduct' => 'sportscardspro-product',
+            'sportscardsproSearch' => 'sportscardspro-search',
+            'sportscardsproSet' => 'sportscardspro-set',
         ],
         'sportskeeda' => [
             'article' => 'sportskeeda-article',
@@ -188133,6 +203361,10 @@ final class Operations
             'wikiOptions' => 'sportskeeda-wiki-options',
             'wikiPages' => 'sportskeeda-wiki-pages',
             'wikiSummary' => 'sportskeeda-wiki-summary',
+        ],
+        'spotHero' => [
+            'spotheroMonthlySearch' => 'spothero-monthly-search',
+            'spotheroTransientSearch' => 'spothero-transient-search',
         ],
         'spotifyPodcasts' => [
             'categories' => 'spotify-podcasts-categories',
@@ -188321,6 +203553,16 @@ final class Operations
             'sunNews' => 'sun-news',
             'sunSections' => 'sun-sections',
         ],
+        'suno' => [
+            'contest' => 'suno-contest',
+            'contests' => 'suno-contests',
+            'explore' => 'suno-explore',
+            'feed' => 'suno-feed',
+            'genres' => 'suno-genres',
+            'playlist' => 'suno-playlist',
+            'profile' => 'suno-profile',
+            'song' => 'suno-song',
+        ],
         'swiggy' => [
             'collections' => 'swiggy-collections',
             'restaurant' => 'swiggy-restaurant',
@@ -188336,6 +203578,12 @@ final class Operations
             'store' => 'taco-bell-store',
             'storeMenu' => 'taco-bell-store-menu',
             'stores' => 'taco-bell-stores',
+        ],
+        'tapTap' => [
+            'taptapApp' => 'taptap-app',
+            'taptapGenres' => 'taptap-genres',
+            'taptapTagGames' => 'taptap-tag-games',
+            'taptapTopCharts' => 'taptap-top-charts',
         ],
         'target' => [
             'categories' => 'target-categories',
@@ -188768,6 +204016,9 @@ final class Operations
             'ubereatsStoreMenu' => 'ubereats-store-menu',
             'ubereatsStoreReviews' => 'ubereats-store-reviews',
         ],
+        'ufcstats' => [
+            'statLeaders' => 'ufcstats-stat-leaders',
+        ],
         'ultaBeauty' => [
             'ultaCategories' => 'ulta-categories',
             'ultaCategory' => 'ulta-category',
@@ -189033,6 +204284,8 @@ final class Operations
             'countries' => 'wta-countries',
             'matchStates' => 'wta-match-states',
             'rankings' => 'wta-rankings',
+            'seasonStatsOptions' => 'wta-season-stats-options',
+            'seasonStats' => 'wta-season-stats',
             'tournamentSeasons' => 'wta-tournament-seasons',
             'tournaments' => 'wta-tournaments',
             'tournament' => 'wta-tournament',
@@ -189043,8 +204296,13 @@ final class Operations
         ],
         'x' => [
             'post' => 'x-post',
+            'postDetail' => 'x-post-detail',
             'profile' => 'x-profile',
+            'profileHighlights' => 'x-profile-highlights',
             'profilePosts' => 'x-profile-posts',
+            'trending' => 'x-trending',
+            'trends' => 'x-trends',
+            'trendsLocations' => 'x-trends-locations',
         ],
         'xbox' => [
             'browse' => 'xbox-browse',
@@ -189297,6 +204555,14 @@ final class Operations
             'news' => 'zdnet-news',
             'sections' => 'zdnet-sections',
         ],
+        'zedge' => [
+            'browse' => 'zedge-browse',
+            'categories' => 'zedge-categories',
+            'creators' => 'zedge-creators',
+            'item' => 'zedge-item',
+            'tags' => 'zedge-tags',
+            'trendingSearches' => 'zedge-trending-searches',
+        ],
         'zillow' => [
             'autocomplete' => 'zillow-autocomplete',
             'property' => 'zillow-property',
@@ -189312,7 +204578,7 @@ final class Operations
         ],
     ];
 
-    public const OPERATION_COUNT = 4769;
+    public const OPERATION_COUNT = 5106;
 
     /** @var array<int,string> */
     public const OPERATION_IDS = [
@@ -189320,6 +204586,13 @@ final class Operations
         'firstdibs-designers',
         'firstdibs-product',
         'firstdibs-search',
+        '7brew-categories',
+        '7brew-directory',
+        '7brew-item',
+        '7brew-menu',
+        '7brew-nearby',
+        '7brew-options',
+        '7brew-store',
         '7now-catalog',
         '7now-categories',
         '7now-category',
@@ -189506,6 +204779,15 @@ final class Operations
         'appstore-similar',
         'appstore-suggest',
         'appstore-version-history',
+        'aptoide-app',
+        'aptoide-categories',
+        'aptoide-collections',
+        'aptoide-list',
+        'aptoide-reviews',
+        'aptoide-search',
+        'aptoide-similar',
+        'aptoide-store',
+        'aptoide-versions',
         'arbys-categories',
         'arbys-directory',
         'arbys-location',
@@ -189527,6 +204809,13 @@ final class Operations
         'audible-products',
         'audible-search',
         'audible-series',
+        'autoscout24-dealer',
+        'autoscout24-filters',
+        'autoscout24-listing',
+        'autoscout24-makes',
+        'autoscout24-models',
+        'autoscout24-search',
+        'autoscout24-suggest',
         'autotrader-dealer',
         'autotrader-search',
         'autotrader-vehicle',
@@ -189825,6 +205114,32 @@ final class Operations
         'cbssports-headlines',
         'cbssports-news',
         'cbssports-sections',
+        'chesscom-club',
+        'chesscom-club-matches',
+        'chesscom-club-members',
+        'chesscom-country',
+        'chesscom-match-live',
+        'chesscom-match-live-board',
+        'chesscom-match',
+        'chesscom-match-board',
+        'chesscom-player',
+        'chesscom-player-clubs',
+        'chesscom-player-games',
+        'chesscom-player-game-month',
+        'chesscom-player-game-month-pgn',
+        'chesscom-player-game-archives',
+        'chesscom-player-live-games-base-time',
+        'chesscom-player-live-games',
+        'chesscom-player-games-to-move',
+        'chesscom-player-is-online',
+        'chesscom-player-matches',
+        'chesscom-player-stats',
+        'chesscom-player-tournaments',
+        'chesscom-puzzle',
+        'chesscom-puzzle-random',
+        'chesscom-tournament',
+        'chesscom-tournament-round',
+        'chesscom-tournament-round-group',
         'chewy-brands',
         'chewy-categories',
         'chewy-category',
@@ -189881,6 +205196,17 @@ final class Operations
         'chrono24-models',
         'chrono24-search',
         'clevelandcom-news',
+        'clinicaltrials-stats-field-sizes',
+        'clinicaltrials-stats-field-values',
+        'clinicaltrials-stats-size',
+        'clinicaltrials-studies',
+        'clinicaltrials-studies-enums',
+        'clinicaltrials-studies-facets',
+        'clinicaltrials-studies-metadata',
+        'clinicaltrials-studies-search-areas',
+        'clinicaltrials-study',
+        'clinicaltrials-suggest',
+        'clinicaltrials-version',
         'cna-article',
         'cna-author',
         'cna-headlines',
@@ -189942,6 +205268,13 @@ final class Operations
         'congress-report',
         'congress-stock-disclosures',
         'contact',
+        'copart-auctions',
+        'copart-filters',
+        'copart-locations',
+        'copart-lot',
+        'copart-lot-images',
+        'copart-search',
+        'copart-suggest',
         'costco-categories',
         'costco-product',
         'costco-product-availability',
@@ -189951,6 +205284,15 @@ final class Operations
         'courtlistener-courts',
         'courtlistener-people',
         'courtlistener-search',
+        'craigslist-areas',
+        'craigslist-categories',
+        'craigslist-category-counts',
+        'craigslist-category-filters',
+        'craigslist-likely-categories',
+        'craigslist-locations',
+        'craigslist-posting',
+        'craigslist-search',
+        'craigslist-suggest',
         'cricbuzz-archives',
         'cricbuzz-auction-info',
         'cricbuzz-auction-live',
@@ -189967,6 +205309,7 @@ final class Operations
         'cricbuzz-auction-upcoming',
         'cricbuzz-auction-upcoming-options',
         'cricbuzz-auction-videos',
+        'cricbuzz-commentary',
         'cricbuzz-match-facts',
         'cricbuzz-match-graphs',
         'cricbuzz-match-overs',
@@ -189974,23 +205317,29 @@ final class Operations
         'cricbuzz-navigation',
         'cricbuzz-news-story',
         'cricbuzz-news-topics',
+        'cricbuzz-player',
         'cricbuzz-rankings',
         'cricbuzz-records',
         'cricbuzz-schedule',
         'cricbuzz-scorecard',
         'cricbuzz-series',
+        'cricbuzz-series-squads',
         'cricbuzz-series-stats',
+        'cricbuzz-team-players',
         'cricbuzz-team-stats',
         'cricbuzz-team-stats-options',
         'cricbuzz-teams',
         'cricbuzz-video-categories',
         'cricbuzz-video-playlists',
         'cricbuzz-wtc',
+        'cricinfo-ball-by-ball',
         'cricinfo-calendar',
         'cricinfo-commentary',
         'cricinfo-grounds',
         'cricinfo-live-matches',
         'cricinfo-match',
+        'cricinfo-match-impact-player',
+        'cricinfo-match-statistics',
         'cricinfo-news',
         'cricinfo-photos',
         'cricinfo-rankings',
@@ -190276,6 +205625,9 @@ final class Operations
         'discogs-master',
         'discogs-release',
         'discogs-search',
+        'discord-invite',
+        'discord-server',
+        'discord-servers',
         'dollartree-blog-article',
         'dollartree-categories',
         'dollartree-price',
@@ -190402,6 +205754,8 @@ final class Operations
         'eonline-sections',
         'epicgames-free-promotions',
         'espn-athlete',
+        'espn-athlete-gamelog',
+        'espn-athlete-splits',
         'espn-game-summary',
         'espn-news',
         'espn-rankings',
@@ -190409,7 +205763,10 @@ final class Operations
         'espn-standings',
         'espn-team',
         'espn-team-roster',
+        'espn-team-schedule',
+        'espn-team-stats',
         'espn-teams',
+        'espn-transactions',
         'etsy-listing',
         'etsy-listing-reviews',
         'etsy-search',
@@ -190619,6 +205976,12 @@ final class Operations
         'fastcompany-headlines',
         'fastcompany-news',
         'fastcompany-sections',
+        'fdroid-anti-features',
+        'fdroid-app',
+        'fdroid-apps',
+        'fdroid-categories',
+        'fdroid-licenses',
+        'fdroid-search',
         'fever-cities',
         'fever-feed',
         'fever-filters',
@@ -190753,6 +206116,16 @@ final class Operations
         'formula1-team-grid',
         'formula1-team-season-results',
         'formula1-team-standings',
+        'fortnite-ecosystem-metric',
+        'fortnite-ecosystem-metrics',
+        'fortnite-enums',
+        'fortnite-genre-rankings',
+        'fortnite-genres',
+        'fortnite-island',
+        'fortnite-island-metric',
+        'fortnite-island-metrics',
+        'fortnite-island-rankings',
+        'fortnite-islands',
         'fortune-article',
         'fortune-author',
         'fortune-companies',
@@ -190774,11 +206147,13 @@ final class Operations
         'fotmob-lineup-builder-players',
         'fotmob-lineup-builder-team',
         'fotmob-match',
+        'fotmob-match-heatmap',
         'fotmob-match-media',
         'fotmob-matches',
         'fotmob-news',
         'fotmob-news-article',
         'fotmob-player',
+        'fotmob-player-injuries',
         'fotmob-player-match-stats',
         'fotmob-player-matches',
         'fotmob-player-stats',
@@ -190850,12 +206225,19 @@ final class Operations
         'fussballde-team-matches',
         'fussballde-team-squad',
         'fussballde-top-scorers',
+        'futgg-fc27-campaign-squads',
         'futgg-fc27-catalog',
+        'futgg-fc27-chemistry-style-roles',
         'futgg-fc27-definitions',
         'futgg-fc27-evolutions',
         'futgg-fc27-evolution',
         'futgg-fc27-gg-rating-ranks',
         'futgg-fc27-gg-ratings',
+        'futgg-fc27-manager-facets',
+        'futgg-fc27-manager-leagues',
+        'futgg-fc27-managers',
+        'futgg-fc27-manager',
+        'futgg-fc27-misc-prices',
         'futgg-fc27-objective-categories',
         'futgg-fc27-objective-groups',
         'futgg-fc27-objective-group-by-ea',
@@ -190864,6 +206246,7 @@ final class Operations
         'futgg-fc27-player-sorts',
         'futgg-fc27-players',
         'futgg-fc27-price-index',
+        'futgg-fc27-price-range-changes',
         'futgg-fc27-prices',
         'futgg-fc27-sbc-categories',
         'futgg-fc27-sbc-sets',
@@ -190898,6 +206281,18 @@ final class Operations
         'gdelt-tv-timeline',
         'gdelt-tv-visual-entities',
         'gdelt-tv-wordcloud',
+        'gemrate-card',
+        'gemrate-categories',
+        'gemrate-grading-trends',
+        'gemrate-leaders',
+        'gemrate-report',
+        'gemrate-reports',
+        'gemrate-sales-trends',
+        'gemrate-search-presets',
+        'gemrate-pop-collection',
+        'gemrate-pop-collections',
+        'gemrate-pop-set',
+        'gemrate-pop-sets',
         'geocoding-lookup',
         'geocoding-reverse',
         'geocoding-search',
@@ -191177,6 +206572,12 @@ final class Operations
         'hindustantimes-headlines',
         'hindustantimes-news',
         'hindustantimes-sections',
+        'hltb-filters',
+        'hltb-game',
+        'hltb-popular',
+        'hltb-search',
+        'hltb-stats',
+        'hltv-coach',
         'hltv-event',
         'hltv-events',
         'hltv-match',
@@ -191186,6 +206587,9 @@ final class Operations
         'hltv-results',
         'hltv-search',
         'hltv-team',
+        'hltv-transfers',
+        'hltv-valve-ranking',
+        'hltv-valve-ranking-details',
         'hm-categories',
         'hm-listing',
         'hm-product',
@@ -191222,6 +206626,9 @@ final class Operations
         'huffpost-headlines',
         'huffpost-news',
         'huffpost-sections',
+        'ibm-jobs-filters',
+        'ibm-jobs-job',
+        'ibm-jobs-search',
         'ign-article',
         'ign-author',
         'ign-headlines',
@@ -191558,11 +206965,52 @@ final class Operations
         'letterboxd-person',
         'letterboxd-popular',
         'letterboxd-search',
+        'lichess-cloud-eval',
+        'lichess-enums',
+        'lichess-puzzle',
+        'lichess-puzzle-batch',
+        'lichess-puzzle-daily',
+        'lichess-puzzle-many',
+        'lichess-puzzle-next',
+        'lichess-puzzle-themes',
+        'lichess-simuls',
+        'lichess-tablebase',
+        'lichess-version',
+        'limitless-card',
+        'limitless-cards',
+        'limitless-deck',
+        'limitless-decklist',
+        'limitless-decklists',
+        'limitless-decks',
+        'limitless-filters',
+        'limitless-games',
+        'limitless-online-pairings',
+        'limitless-online-standings',
+        'limitless-online-tournament',
+        'limitless-online-tournaments',
+        'limitless-player',
+        'limitless-players',
+        'limitless-tournament',
+        'limitless-tournaments',
+        'limitless-tournaments-japan',
+        'limitless-tournaments-upcoming',
         'linkedin-company',
         'linkedin-product-categories',
         'linkedin-product',
         'linkedin-products-search',
         'linkedin-showcase',
+        'liquipedia-all-pages',
+        'liquipedia-backlinks',
+        'liquipedia-categories',
+        'liquipedia-category-members',
+        'liquipedia-enums',
+        'liquipedia-links',
+        'liquipedia-page',
+        'liquipedia-prefix-search',
+        'liquipedia-recent-changes',
+        'liquipedia-search',
+        'liquipedia-tags',
+        'liquipedia-wikis',
         'livemint-article',
         'livemint-author',
         'livemint-headlines',
@@ -191895,6 +207343,23 @@ final class Operations
         'motogp-standings',
         'motogp-standings-files',
         'motogp-starting-grid',
+        'motogp-world-standings',
+        'mtggoldfish-archetype',
+        'mtggoldfish-autocomplete',
+        'mtggoldfish-card',
+        'mtggoldfish-deck',
+        'mtggoldfish-deck-search',
+        'mtggoldfish-filters',
+        'mtggoldfish-metagame',
+        'mtggoldfish-movers',
+        'mtggoldfish-price-history',
+        'mtggoldfish-price-index',
+        'mtggoldfish-price-list',
+        'mtggoldfish-set',
+        'mtggoldfish-sets',
+        'mtggoldfish-staples',
+        'mtggoldfish-tournament',
+        'mtggoldfish-tournaments',
         'nascar-live-feed',
         'nascar-races',
         'nascar-season-races',
@@ -191917,10 +207382,12 @@ final class Operations
         'nationalpost-sections',
         'nba-box-score',
         'nba-box-score-advanced',
+        'nba-box-score-defensive',
         'nba-box-score-four-factors',
         'nba-box-score-misc',
         'nba-box-score-player-track',
         'nba-box-score-scoring',
+        'nba-box-score-summary',
         'nba-box-score-usage',
         'nba-common-all-players',
         'nba-draft-combine-anthro',
@@ -191929,9 +207396,12 @@ final class Operations
         'nba-game-detail',
         'nba-games',
         'nba-homepage-leaders',
+        'nba-homepage-v2',
+        'nba-hustle-player',
         'nba-hustle-stats',
         'nba-hustle-team',
         'nba-league-game-log',
+        'nba-lineup-shot-chart',
         'nba-lineups',
         'nba-news',
         'nba-opp-pt-shot',
@@ -191940,6 +207410,13 @@ final class Operations
         'nba-player-bio-stats',
         'nba-player-career-stats',
         'nba-player-clutch',
+        'nba-player-compare',
+        'nba-player-dash-by-clutch',
+        'nba-player-dash-by-game-splits',
+        'nba-player-dash-by-last-n-games',
+        'nba-player-dash-by-opponent',
+        'nba-player-dash-pt-pass',
+        'nba-player-dash-pt-reb',
         'nba-player-dash-pt-shots',
         'nba-player-game-logs',
         'nba-player-info',
@@ -191949,12 +207426,19 @@ final class Operations
         'nba-player-streak-finder',
         'nba-players',
         'nba-playoff-picture',
+        'nba-playoff-series',
         'nba-pt-defend',
         'nba-pt-stats',
         'nba-scoreboard',
+        'nba-shot-chart',
         'nba-standings',
         'nba-synergy-play-types',
+        'nba-team-dash-by-clutch',
+        'nba-team-dash-by-game-splits',
+        'nba-team-dash-by-last-n-games',
+        'nba-team-dash-by-opponent',
         'nba-team-dash-pt-pass',
+        'nba-team-dash-pt-reb',
         'nba-team-dash-pt-shots',
         'nba-team-details',
         'nba-team-game-logs',
@@ -192236,6 +207720,12 @@ final class Operations
         'pagesix-headlines',
         'pagesix-news',
         'pagesix-sections',
+        'pandaexpress-categories',
+        'pandaexpress-directory',
+        'pandaexpress-item',
+        'pandaexpress-menu',
+        'pandaexpress-nearby',
+        'pandaexpress-store',
         'pandamart-search',
         'pandamart-store',
         'pandamart-store-categories',
@@ -192296,6 +207786,12 @@ final class Operations
         'pcmag-headlines',
         'pcmag-news',
         'pcmag-sections',
+        'peacock-channels',
+        'peacock-collection',
+        'peacock-genres',
+        'peacock-page',
+        'peacock-season',
+        'peacock-title',
         'people-article',
         'people-author',
         'people-headlines',
@@ -192307,6 +207803,9 @@ final class Operations
         'petsmart-search',
         'petsmart-search-filters',
         'petsmart-suggest',
+        'pgatour-cups',
+        'pgatour-cup-standings',
+        'pgatour-cup-options',
         'pgatour-leaderboard',
         'pgatour-players',
         'pgatour-schedule',
@@ -192371,6 +207870,28 @@ final class Operations
         'playstation-product',
         'playstation-search',
         'playstation-suggest',
+        'pokedata-card-sales',
+        'pokedata-card-stats',
+        'pokedata-marketplace-listing',
+        'pokedata-marketplace-search',
+        'pokedata-portfolio',
+        'pokedata-portfolio-value',
+        'pokedata-portfolios',
+        'pokedata-product-sales',
+        'pokedata-product-stats',
+        'pokedata-products',
+        'pokedata-products-facets',
+        'pokedata-search',
+        'pokedata-set',
+        'pokedata-set-cards',
+        'pokedata-set-products',
+        'pokedata-sets',
+        'pokedata-sources',
+        'pokedata-tcgs',
+        'poketrace-card',
+        'poketrace-catalog',
+        'poketrace-filters',
+        'poketrace-sets',
         'politico-article',
         'politico-author',
         'politico-categories',
@@ -192589,18 +208110,38 @@ final class Operations
         'reddit-archive-posts-search',
         'reddit-archive-subreddits-search',
         'reddit-archive-time-series',
+        'reddit-comment',
+        'reddit-comment-awards',
         'reddit-comments',
         'reddit-domain-posts',
         'reddit-leads',
+        'reddit-popular',
         'reddit-post',
+        'reddit-post-awards',
+        'reddit-posts-by-ids',
         'reddit-search',
+        'reddit-search-comments',
+        'reddit-search-people',
         'reddit-subreddit-about',
         'reddit-subreddit-comments',
+        'reddit-subreddit-flairs',
+        'reddit-subreddit-highlights',
+        'reddit-subreddit-leaderboard-categories',
         'reddit-subreddit-posts',
+        'reddit-subreddit-rules',
+        'reddit-subreddit-user-flairs',
+        'reddit-subreddit-wiki',
+        'reddit-subreddits-discover',
         'reddit-subreddits-posts',
+        'reddit-subreddits-search',
+        'reddit-subreddits-suggest',
+        'reddit-topics',
+        'reddit-topics-broad',
+        'reddit-topics-search',
         'reddit-trends',
         'reddit-user-comments',
         'reddit-user-posts',
+        'reddit-user-profile',
         'redfin-estimate',
         'redfin-property',
         'redfin-region-trends',
@@ -192804,6 +208345,7 @@ final class Operations
         'sephora-stores',
         'sephora-suggest',
         'serebii-pokemongo-event-detail-community-day',
+        'serebii-pokemongo-eggs',
         'serebii-pokemongo-event-categories',
         'serebii-pokemongo-event-only-moves',
         'serebii-pokemongo-event-only-research',
@@ -192813,6 +208355,7 @@ final class Operations
         'serebii-pokemongo-event-detail-incense-day',
         'serebii-pokemongo-event-detail-research-day',
         'serebii-pokemongo-event-detail-max-battle-day',
+        'serebii-pokemongo-raid-bosses',
         'serebii-pokemongo-event-detail-raid-day',
         'serebii-pokemongo-event-detail-real-life',
         'serebii-pokemongo-spotlight-hours',
@@ -192910,6 +208453,15 @@ final class Operations
         'skynews-sections',
         'skynews-video',
         'skynews-videos',
+        'skyscanner-currencies',
+        'skyscanner-flights-explore',
+        'skyscanner-flights-options',
+        'skyscanner-flights-price-calendar',
+        'skyscanner-flights-price-calendar-months',
+        'skyscanner-flights-search',
+        'skyscanner-locales',
+        'skyscanner-markets',
+        'skyscanner-places-autosuggest',
         'skysports-article',
         'skysports-author',
         'skysports-headlines',
@@ -192939,6 +208491,18 @@ final class Operations
         'smh-headlines',
         'smh-news',
         'smh-sections',
+        'snkrdunk-brands',
+        'snkrdunk-categories',
+        'snkrdunk-filters',
+        'snkrdunk-product',
+        'snkrdunk-product-listings',
+        'snkrdunk-price-chart',
+        'snkrdunk-product-related',
+        'snkrdunk-sales-history',
+        'snkrdunk-search',
+        'snkrdunk-suggest',
+        'snkrdunk-trading-cards',
+        'snkrdunk-trading-cards-used',
         'sofascore-categories',
         'sofascore-category-tournaments',
         'sofascore-draft',
@@ -192990,7 +208554,9 @@ final class Operations
         'sofascore-player-season-heatmap',
         'sofascore-player-season-statistics',
         'sofascore-player-statistical-rankings',
+        'sofascore-player-statistics',
         'sofascore-player-statistics-seasons',
+        'sofascore-player-tournament-events',
         'sofascore-player-tournaments',
         'sofascore-player-transfers',
         'sofascore-ranking-types',
@@ -193093,11 +208659,20 @@ final class Operations
         'speedrun-level-records',
         'speedrun-level-variables',
         'speedrun-resource-options',
+        'speedrun-runs',
+        'speedrun-runs-options',
+        'speedrun-run',
         'sportingnews-article',
         'sportingnews-author',
         'sportingnews-headlines',
         'sportingnews-news',
         'sportingnews-sections',
+        'sportscardspro-brand',
+        'sportscardspro-categories',
+        'sportscardspro-price-history',
+        'sportscardspro-product',
+        'sportscardspro-search',
+        'sportscardspro-set',
         'sportskeeda-article',
         'sportskeeda-author',
         'sportskeeda-college-basketball-schedule',
@@ -193146,6 +208721,8 @@ final class Operations
         'sportskeeda-wiki-options',
         'sportskeeda-wiki-pages',
         'sportskeeda-wiki-summary',
+        'spothero-monthly-search',
+        'spothero-transient-search',
         'spotify-podcasts-categories',
         'spotify-podcasts-charts',
         'spotify-podcasts-episode',
@@ -193299,6 +208876,14 @@ final class Operations
         'sun-headlines',
         'sun-news',
         'sun-sections',
+        'suno-contest',
+        'suno-contests',
+        'suno-explore',
+        'suno-feed',
+        'suno-genres',
+        'suno-playlist',
+        'suno-profile',
+        'suno-song',
         'swiggy-collections',
         'swiggy-restaurant',
         'swiggy-restaurant-menu',
@@ -193311,6 +208896,10 @@ final class Operations
         'taco-bell-store',
         'taco-bell-store-menu',
         'taco-bell-stores',
+        'taptap-app',
+        'taptap-genres',
+        'taptap-tag-games',
+        'taptap-top-charts',
         'target-categories',
         'target-category-products',
         'target-filter-options',
@@ -193656,6 +209245,7 @@ final class Operations
         'ubereats-store',
         'ubereats-store-menu',
         'ubereats-store-reviews',
+        'ufcstats-stat-leaders',
         'ulta-categories',
         'ulta-category',
         'ulta-product-questions',
@@ -193861,6 +209451,8 @@ final class Operations
         'wta-countries',
         'wta-match-states',
         'wta-rankings',
+        'wta-season-stats-options',
+        'wta-season-stats',
         'wta-tournament-seasons',
         'wta-tournaments',
         'wta-tournament',
@@ -193869,8 +209461,13 @@ final class Operations
         'wta-tournament-order-of-play',
         'wta-tournament-players',
         'x-post',
+        'x-post-detail',
         'x-profile',
+        'x-profile-highlights',
         'x-profile-posts',
+        'x-trending',
+        'x-trends',
+        'x-trends-locations',
         'xbox-browse',
         'xbox-collection',
         'xbox-game',
@@ -194076,6 +209673,12 @@ final class Operations
         'zdnet-headlines',
         'zdnet-news',
         'zdnet-sections',
+        'zedge-browse',
+        'zedge-categories',
+        'zedge-creators',
+        'zedge-item',
+        'zedge-tags',
+        'zedge-trending-searches',
         'zillow-autocomplete',
         'zillow-property',
         'zillow-search',
@@ -194304,6 +209907,15 @@ final class OperationId
     public const APPLE_PODCASTS_SHOW = 'apple-podcasts-show';
     public const APPLE_PODCASTS_SHOW_EPISODES = 'apple-podcasts-show-episodes';
     public const APPLE_PODCASTS_SHOW_RELATED = 'apple-podcasts-show-related';
+    public const APTOIDE_APP = 'aptoide-app';
+    public const APTOIDE_CATEGORIES = 'aptoide-categories';
+    public const APTOIDE_COLLECTIONS = 'aptoide-collections';
+    public const APTOIDE_LIST = 'aptoide-list';
+    public const APTOIDE_REVIEWS = 'aptoide-reviews';
+    public const APTOIDE_SEARCH = 'aptoide-search';
+    public const APTOIDE_SIMILAR = 'aptoide-similar';
+    public const APTOIDE_STORE = 'aptoide-store';
+    public const APTOIDE_VERSIONS = 'aptoide-versions';
     public const ARBYS_CATEGORIES = 'arbys-categories';
     public const ARBYS_DIRECTORY = 'arbys-directory';
     public const ARBYS_LOCATION = 'arbys-location';
@@ -194325,6 +209937,13 @@ final class OperationId
     public const AUDIBLE_PRODUCTS = 'audible-products';
     public const AUDIBLE_SEARCH = 'audible-search';
     public const AUDIBLE_SERIES = 'audible-series';
+    public const AUTO_SCOUT24_AUTOSCOUT24_DEALER = 'autoscout24-dealer';
+    public const AUTO_SCOUT24_AUTOSCOUT24_FILTERS = 'autoscout24-filters';
+    public const AUTO_SCOUT24_AUTOSCOUT24_LISTING = 'autoscout24-listing';
+    public const AUTO_SCOUT24_AUTOSCOUT24_MAKES = 'autoscout24-makes';
+    public const AUTO_SCOUT24_AUTOSCOUT24_MODELS = 'autoscout24-models';
+    public const AUTO_SCOUT24_AUTOSCOUT24_SEARCH = 'autoscout24-search';
+    public const AUTO_SCOUT24_AUTOSCOUT24_SUGGEST = 'autoscout24-suggest';
     public const AUTOTRADER_DEALER = 'autotrader-dealer';
     public const AUTOTRADER_SEARCH = 'autotrader-search';
     public const AUTOTRADER_VEHICLE = 'autotrader-vehicle';
@@ -194623,6 +210242,32 @@ final class OperationId
     public const CBS_SPORTS_CBSSPORTS_HEADLINES = 'cbssports-headlines';
     public const CBS_SPORTS_CBSSPORTS_NEWS = 'cbssports-news';
     public const CBS_SPORTS_CBSSPORTS_SECTIONS = 'cbssports-sections';
+    public const CHESS_COM_CHESSCOM_CLUB = 'chesscom-club';
+    public const CHESS_COM_CHESSCOM_CLUB_MATCHES = 'chesscom-club-matches';
+    public const CHESS_COM_CHESSCOM_CLUB_MEMBERS = 'chesscom-club-members';
+    public const CHESS_COM_CHESSCOM_COUNTRY = 'chesscom-country';
+    public const CHESS_COM_CHESSCOM_MATCH = 'chesscom-match';
+    public const CHESS_COM_CHESSCOM_MATCH_BOARD = 'chesscom-match-board';
+    public const CHESS_COM_CHESSCOM_MATCH_LIVE = 'chesscom-match-live';
+    public const CHESS_COM_CHESSCOM_MATCH_LIVE_BOARD = 'chesscom-match-live-board';
+    public const CHESS_COM_CHESSCOM_PLAYER = 'chesscom-player';
+    public const CHESS_COM_CHESSCOM_PLAYER_CLUBS = 'chesscom-player-clubs';
+    public const CHESS_COM_CHESSCOM_PLAYER_GAME_ARCHIVES = 'chesscom-player-game-archives';
+    public const CHESS_COM_CHESSCOM_PLAYER_GAME_MONTH = 'chesscom-player-game-month';
+    public const CHESS_COM_CHESSCOM_PLAYER_GAME_MONTH_PGN = 'chesscom-player-game-month-pgn';
+    public const CHESS_COM_CHESSCOM_PLAYER_GAMES = 'chesscom-player-games';
+    public const CHESS_COM_CHESSCOM_PLAYER_GAMES_TO_MOVE = 'chesscom-player-games-to-move';
+    public const CHESS_COM_CHESSCOM_PLAYER_IS_ONLINE = 'chesscom-player-is-online';
+    public const CHESS_COM_CHESSCOM_PLAYER_LIVE_GAMES = 'chesscom-player-live-games';
+    public const CHESS_COM_CHESSCOM_PLAYER_LIVE_GAMES_BASE_TIME = 'chesscom-player-live-games-base-time';
+    public const CHESS_COM_CHESSCOM_PLAYER_MATCHES = 'chesscom-player-matches';
+    public const CHESS_COM_CHESSCOM_PLAYER_STATS = 'chesscom-player-stats';
+    public const CHESS_COM_CHESSCOM_PLAYER_TOURNAMENTS = 'chesscom-player-tournaments';
+    public const CHESS_COM_CHESSCOM_PUZZLE = 'chesscom-puzzle';
+    public const CHESS_COM_CHESSCOM_PUZZLE_RANDOM = 'chesscom-puzzle-random';
+    public const CHESS_COM_CHESSCOM_TOURNAMENT = 'chesscom-tournament';
+    public const CHESS_COM_CHESSCOM_TOURNAMENT_ROUND = 'chesscom-tournament-round';
+    public const CHESS_COM_CHESSCOM_TOURNAMENT_ROUND_GROUP = 'chesscom-tournament-round-group';
     public const CHEWY_BRANDS = 'chewy-brands';
     public const CHEWY_CATEGORIES = 'chewy-categories';
     public const CHEWY_CATEGORY = 'chewy-category';
@@ -194679,6 +210324,17 @@ final class OperationId
     public const CHRONO24_MODELS = 'chrono24-models';
     public const CHRONO24_SEARCH = 'chrono24-search';
     public const CLEVELAND_COM_CLEVELANDCOM_NEWS = 'clevelandcom-news';
+    public const CLINICAL_TRIALS_GOV_CLINICALTRIALS_STATS_FIELD_SIZES = 'clinicaltrials-stats-field-sizes';
+    public const CLINICAL_TRIALS_GOV_CLINICALTRIALS_STATS_FIELD_VALUES = 'clinicaltrials-stats-field-values';
+    public const CLINICAL_TRIALS_GOV_CLINICALTRIALS_STATS_SIZE = 'clinicaltrials-stats-size';
+    public const CLINICAL_TRIALS_GOV_CLINICALTRIALS_STUDIES = 'clinicaltrials-studies';
+    public const CLINICAL_TRIALS_GOV_CLINICALTRIALS_STUDIES_ENUMS = 'clinicaltrials-studies-enums';
+    public const CLINICAL_TRIALS_GOV_CLINICALTRIALS_STUDIES_FACETS = 'clinicaltrials-studies-facets';
+    public const CLINICAL_TRIALS_GOV_CLINICALTRIALS_STUDIES_METADATA = 'clinicaltrials-studies-metadata';
+    public const CLINICAL_TRIALS_GOV_CLINICALTRIALS_STUDIES_SEARCH_AREAS = 'clinicaltrials-studies-search-areas';
+    public const CLINICAL_TRIALS_GOV_CLINICALTRIALS_STUDY = 'clinicaltrials-study';
+    public const CLINICAL_TRIALS_GOV_CLINICALTRIALS_SUGGEST = 'clinicaltrials-suggest';
+    public const CLINICAL_TRIALS_GOV_CLINICALTRIALS_VERSION = 'clinicaltrials-version';
     public const CNA_ARTICLE = 'cna-article';
     public const CNA_AUTHOR = 'cna-author';
     public const CNA_HEADLINES = 'cna-headlines';
@@ -194739,6 +210395,13 @@ final class OperationId
     public const COMC_SEARCH = 'comc-search';
     public const CONGRESS_REPORT = 'congress-report';
     public const CONGRESS_STOCK_DISCLOSURES = 'congress-stock-disclosures';
+    public const COPART_AUCTIONS = 'copart-auctions';
+    public const COPART_FILTERS = 'copart-filters';
+    public const COPART_LOCATIONS = 'copart-locations';
+    public const COPART_LOT = 'copart-lot';
+    public const COPART_LOT_IMAGES = 'copart-lot-images';
+    public const COPART_SEARCH = 'copart-search';
+    public const COPART_SUGGEST = 'copart-suggest';
     public const COSTCO_CATEGORIES = 'costco-categories';
     public const COSTCO_PRODUCT = 'costco-product';
     public const COSTCO_PRODUCT_AVAILABILITY = 'costco-product-availability';
@@ -194748,6 +210411,15 @@ final class OperationId
     public const COURT_LISTENER_COURTLISTENER_COURTS = 'courtlistener-courts';
     public const COURT_LISTENER_COURTLISTENER_PEOPLE = 'courtlistener-people';
     public const COURT_LISTENER_COURTLISTENER_SEARCH = 'courtlistener-search';
+    public const CRAIGSLIST_AREAS = 'craigslist-areas';
+    public const CRAIGSLIST_CATEGORIES = 'craigslist-categories';
+    public const CRAIGSLIST_CATEGORY_COUNTS = 'craigslist-category-counts';
+    public const CRAIGSLIST_CATEGORY_FILTERS = 'craigslist-category-filters';
+    public const CRAIGSLIST_LIKELY_CATEGORIES = 'craigslist-likely-categories';
+    public const CRAIGSLIST_LOCATIONS = 'craigslist-locations';
+    public const CRAIGSLIST_POSTING = 'craigslist-posting';
+    public const CRAIGSLIST_SEARCH = 'craigslist-search';
+    public const CRAIGSLIST_SUGGEST = 'craigslist-suggest';
     public const CRICBUZZ_ARCHIVES = 'cricbuzz-archives';
     public const CRICBUZZ_AUCTION_INFO = 'cricbuzz-auction-info';
     public const CRICBUZZ_AUCTION_LIVE = 'cricbuzz-auction-live';
@@ -194764,6 +210436,7 @@ final class OperationId
     public const CRICBUZZ_AUCTION_UPCOMING = 'cricbuzz-auction-upcoming';
     public const CRICBUZZ_AUCTION_UPCOMING_OPTIONS = 'cricbuzz-auction-upcoming-options';
     public const CRICBUZZ_AUCTION_VIDEOS = 'cricbuzz-auction-videos';
+    public const CRICBUZZ_COMMENTARY = 'cricbuzz-commentary';
     public const CRICBUZZ_MATCH_FACTS = 'cricbuzz-match-facts';
     public const CRICBUZZ_MATCH_GRAPHS = 'cricbuzz-match-graphs';
     public const CRICBUZZ_MATCH_OVERS = 'cricbuzz-match-overs';
@@ -194771,23 +210444,29 @@ final class OperationId
     public const CRICBUZZ_NAVIGATION = 'cricbuzz-navigation';
     public const CRICBUZZ_NEWS_STORY = 'cricbuzz-news-story';
     public const CRICBUZZ_NEWS_TOPICS = 'cricbuzz-news-topics';
+    public const CRICBUZZ_PLAYER = 'cricbuzz-player';
     public const CRICBUZZ_RANKINGS = 'cricbuzz-rankings';
     public const CRICBUZZ_RECORDS = 'cricbuzz-records';
     public const CRICBUZZ_SCHEDULE = 'cricbuzz-schedule';
     public const CRICBUZZ_SCORECARD = 'cricbuzz-scorecard';
     public const CRICBUZZ_SERIES = 'cricbuzz-series';
+    public const CRICBUZZ_SERIES_SQUADS = 'cricbuzz-series-squads';
     public const CRICBUZZ_SERIES_STATS = 'cricbuzz-series-stats';
+    public const CRICBUZZ_TEAM_PLAYERS = 'cricbuzz-team-players';
     public const CRICBUZZ_TEAM_STATS = 'cricbuzz-team-stats';
     public const CRICBUZZ_TEAM_STATS_OPTIONS = 'cricbuzz-team-stats-options';
     public const CRICBUZZ_TEAMS = 'cricbuzz-teams';
     public const CRICBUZZ_VIDEO_CATEGORIES = 'cricbuzz-video-categories';
     public const CRICBUZZ_VIDEO_PLAYLISTS = 'cricbuzz-video-playlists';
     public const CRICBUZZ_WTC = 'cricbuzz-wtc';
+    public const CRICINFO_BALL_BY_BALL = 'cricinfo-ball-by-ball';
     public const CRICINFO_CALENDAR = 'cricinfo-calendar';
     public const CRICINFO_COMMENTARY = 'cricinfo-commentary';
     public const CRICINFO_GROUNDS = 'cricinfo-grounds';
     public const CRICINFO_LIVE_MATCHES = 'cricinfo-live-matches';
     public const CRICINFO_MATCH = 'cricinfo-match';
+    public const CRICINFO_MATCH_IMPACT_PLAYER = 'cricinfo-match-impact-player';
+    public const CRICINFO_MATCH_STATISTICS = 'cricinfo-match-statistics';
     public const CRICINFO_NEWS = 'cricinfo-news';
     public const CRICINFO_PHOTOS = 'cricinfo-photos';
     public const CRICINFO_RANKINGS = 'cricinfo-rankings';
@@ -195060,6 +210739,9 @@ final class OperationId
     public const DISCOGS_MASTER = 'discogs-master';
     public const DISCOGS_RELEASE = 'discogs-release';
     public const DISCOGS_SEARCH = 'discogs-search';
+    public const DISCORD_INVITE = 'discord-invite';
+    public const DISCORD_SERVER = 'discord-server';
+    public const DISCORD_SERVERS = 'discord-servers';
     public const DOLLAR_TREE_DOLLARTREE_BLOG_ARTICLE = 'dollartree-blog-article';
     public const DOLLAR_TREE_DOLLARTREE_CATEGORIES = 'dollartree-categories';
     public const DOLLAR_TREE_DOLLARTREE_KEYWORD_TYPEAHEAD = 'dollartree-keyword-typeahead';
@@ -195190,6 +210872,8 @@ final class OperationId
     public const ENTERTAINMENT_WEEKLY_EW_SECTIONS = 'ew-sections';
     public const EPIC_GAMES_STORE_EPICGAMES_FREE_PROMOTIONS = 'epicgames-free-promotions';
     public const ESPN_ATHLETE = 'espn-athlete';
+    public const ESPN_ATHLETE_GAMELOG = 'espn-athlete-gamelog';
+    public const ESPN_ATHLETE_SPLITS = 'espn-athlete-splits';
     public const ESPN_GAME_SUMMARY = 'espn-game-summary';
     public const ESPN_NEWS = 'espn-news';
     public const ESPN_RANKINGS = 'espn-rankings';
@@ -195197,7 +210881,10 @@ final class OperationId
     public const ESPN_STANDINGS = 'espn-standings';
     public const ESPN_TEAM = 'espn-team';
     public const ESPN_TEAM_ROSTER = 'espn-team-roster';
+    public const ESPN_TEAM_SCHEDULE = 'espn-team-schedule';
+    public const ESPN_TEAM_STATS = 'espn-team-stats';
     public const ESPN_TEAMS = 'espn-teams';
+    public const ESPN_TRANSACTIONS = 'espn-transactions';
     public const ETSY_LISTING = 'etsy-listing';
     public const ETSY_LISTING_REVIEWS = 'etsy-listing-reviews';
     public const ETSY_SEARCH = 'etsy-search';
@@ -195233,6 +210920,12 @@ final class OperationId
     public const EXPEDIA_PROPERTIES_FILTERS = 'expedia-properties-filters';
     public const EXPEDIA_PROPERTIES_REVIEWS = 'expedia-properties-reviews';
     public const EXPEDIA_PROPERTIES_SEARCH = 'expedia-properties-search';
+    public const FDROID_FDROID_ANTI_FEATURES = 'fdroid-anti-features';
+    public const FDROID_FDROID_APP = 'fdroid-app';
+    public const FDROID_FDROID_APPS = 'fdroid-apps';
+    public const FDROID_FDROID_CATEGORIES = 'fdroid-categories';
+    public const FDROID_FDROID_LICENSES = 'fdroid-licenses';
+    public const FDROID_FDROID_SEARCH = 'fdroid-search';
     public const FACEBOOK_MARKETPLACE_SEARCH = 'facebook-marketplace-search';
     public const FACEBOOK_PAGE = 'facebook-page';
     public const FACEIT_BAN_REASONS = 'faceit-ban-reasons';
@@ -195431,7 +211124,7 @@ final class OperationId
     public const FLASHSCORE_MATCH_BOX_SCORE = 'flashscore-match-box-score';
     public const FLASHSCORE_MATCH_COMMENTARY = 'flashscore-match-commentary';
     public const FLASHSCORE_MATCH_DARTS = 'flashscore-match-darts';
-    public const FLASHSCORE_MATCH_H2H = 'flashscore-match-h2h';
+    public const FLASHSCORE_MATCH_H2_H = 'flashscore-match-h2h';
     public const FLASHSCORE_MATCH_HIGHLIGHTS = 'flashscore-match-highlights';
     public const FLASHSCORE_MATCH_INCIDENTS = 'flashscore-match-incidents';
     public const FLASHSCORE_MATCH_INFO = 'flashscore-match-info';
@@ -195539,6 +211232,16 @@ final class OperationId
     public const FORMULA1_TEAM_GRID = 'formula1-team-grid';
     public const FORMULA1_TEAM_SEASON_RESULTS = 'formula1-team-season-results';
     public const FORMULA1_TEAM_STANDINGS = 'formula1-team-standings';
+    public const FORTNITE_ECOSYSTEM_METRIC = 'fortnite-ecosystem-metric';
+    public const FORTNITE_ECOSYSTEM_METRICS = 'fortnite-ecosystem-metrics';
+    public const FORTNITE_ENUMS = 'fortnite-enums';
+    public const FORTNITE_GENRE_RANKINGS = 'fortnite-genre-rankings';
+    public const FORTNITE_GENRES = 'fortnite-genres';
+    public const FORTNITE_ISLAND = 'fortnite-island';
+    public const FORTNITE_ISLAND_METRIC = 'fortnite-island-metric';
+    public const FORTNITE_ISLAND_METRICS = 'fortnite-island-metrics';
+    public const FORTNITE_ISLAND_RANKINGS = 'fortnite-island-rankings';
+    public const FORTNITE_ISLANDS = 'fortnite-islands';
     public const FORTUNE_ARTICLE = 'fortune-article';
     public const FORTUNE_AUTHOR = 'fortune-author';
     public const FORTUNE_COMPANIES = 'fortune-companies';
@@ -195560,11 +211263,13 @@ final class OperationId
     public const FOT_MOB_FOTMOB_LINEUP_BUILDER_PLAYERS = 'fotmob-lineup-builder-players';
     public const FOT_MOB_FOTMOB_LINEUP_BUILDER_TEAM = 'fotmob-lineup-builder-team';
     public const FOT_MOB_FOTMOB_MATCH = 'fotmob-match';
+    public const FOT_MOB_FOTMOB_MATCH_HEATMAP = 'fotmob-match-heatmap';
     public const FOT_MOB_FOTMOB_MATCH_MEDIA = 'fotmob-match-media';
     public const FOT_MOB_FOTMOB_MATCHES = 'fotmob-matches';
     public const FOT_MOB_FOTMOB_NEWS = 'fotmob-news';
     public const FOT_MOB_FOTMOB_NEWS_ARTICLE = 'fotmob-news-article';
     public const FOT_MOB_FOTMOB_PLAYER = 'fotmob-player';
+    public const FOT_MOB_FOTMOB_PLAYER_INJURIES = 'fotmob-player-injuries';
     public const FOT_MOB_FOTMOB_PLAYER_MATCH_STATS = 'fotmob-player-match-stats';
     public const FOT_MOB_FOTMOB_PLAYER_MATCHES = 'fotmob-player-matches';
     public const FOT_MOB_FOTMOB_PLAYER_STATS = 'fotmob-player-stats';
@@ -195636,12 +211341,19 @@ final class OperationId
     public const FUSSBALL_DE_FUSSBALLDE_TEAM_MATCHES = 'fussballde-team-matches';
     public const FUSSBALL_DE_FUSSBALLDE_TEAM_SQUAD = 'fussballde-team-squad';
     public const FUSSBALL_DE_FUSSBALLDE_TOP_SCORERS = 'fussballde-top-scorers';
+    public const FUT_GG_FUTGG_FC27_CAMPAIGN_SQUADS = 'futgg-fc27-campaign-squads';
     public const FUT_GG_FUTGG_FC27_CATALOG = 'futgg-fc27-catalog';
+    public const FUT_GG_FUTGG_FC27_CHEMISTRY_STYLE_ROLES = 'futgg-fc27-chemistry-style-roles';
     public const FUT_GG_FUTGG_FC27_DEFINITIONS = 'futgg-fc27-definitions';
     public const FUT_GG_FUTGG_FC27_EVOLUTION = 'futgg-fc27-evolution';
     public const FUT_GG_FUTGG_FC27_EVOLUTIONS = 'futgg-fc27-evolutions';
     public const FUT_GG_FUTGG_FC27_GG_RATING_RANKS = 'futgg-fc27-gg-rating-ranks';
     public const FUT_GG_FUTGG_FC27_GG_RATINGS = 'futgg-fc27-gg-ratings';
+    public const FUT_GG_FUTGG_FC27_MANAGER = 'futgg-fc27-manager';
+    public const FUT_GG_FUTGG_FC27_MANAGER_FACETS = 'futgg-fc27-manager-facets';
+    public const FUT_GG_FUTGG_FC27_MANAGER_LEAGUES = 'futgg-fc27-manager-leagues';
+    public const FUT_GG_FUTGG_FC27_MANAGERS = 'futgg-fc27-managers';
+    public const FUT_GG_FUTGG_FC27_MISC_PRICES = 'futgg-fc27-misc-prices';
     public const FUT_GG_FUTGG_FC27_OBJECTIVE_CATEGORIES = 'futgg-fc27-objective-categories';
     public const FUT_GG_FUTGG_FC27_OBJECTIVE_GROUP = 'futgg-fc27-objective-group';
     public const FUT_GG_FUTGG_FC27_OBJECTIVE_GROUP_BY_EA = 'futgg-fc27-objective-group-by-ea';
@@ -195650,6 +211362,7 @@ final class OperationId
     public const FUT_GG_FUTGG_FC27_PLAYER_SORTS = 'futgg-fc27-player-sorts';
     public const FUT_GG_FUTGG_FC27_PLAYERS = 'futgg-fc27-players';
     public const FUT_GG_FUTGG_FC27_PRICE_INDEX = 'futgg-fc27-price-index';
+    public const FUT_GG_FUTGG_FC27_PRICE_RANGE_CHANGES = 'futgg-fc27-price-range-changes';
     public const FUT_GG_FUTGG_FC27_PRICES = 'futgg-fc27-prices';
     public const FUT_GG_FUTGG_FC27_SBC_CATEGORIES = 'futgg-fc27-sbc-categories';
     public const FUT_GG_FUTGG_FC27_SBC_SET = 'futgg-fc27-sbc-set';
@@ -195684,6 +211397,18 @@ final class OperationId
     public const GDELT_TV_TIMELINE = 'gdelt-tv-timeline';
     public const GDELT_TV_VISUAL_ENTITIES = 'gdelt-tv-visual-entities';
     public const GDELT_TV_WORDCLOUD = 'gdelt-tv-wordcloud';
+    public const GEM_RATE_GEMRATE_CARD = 'gemrate-card';
+    public const GEM_RATE_GEMRATE_CATEGORIES = 'gemrate-categories';
+    public const GEM_RATE_GEMRATE_GRADING_TRENDS = 'gemrate-grading-trends';
+    public const GEM_RATE_GEMRATE_LEADERS = 'gemrate-leaders';
+    public const GEM_RATE_GEMRATE_POP_COLLECTION = 'gemrate-pop-collection';
+    public const GEM_RATE_GEMRATE_POP_COLLECTIONS = 'gemrate-pop-collections';
+    public const GEM_RATE_GEMRATE_POP_SET = 'gemrate-pop-set';
+    public const GEM_RATE_GEMRATE_POP_SETS = 'gemrate-pop-sets';
+    public const GEM_RATE_GEMRATE_REPORT = 'gemrate-report';
+    public const GEM_RATE_GEMRATE_REPORTS = 'gemrate-reports';
+    public const GEM_RATE_GEMRATE_SALES_TRENDS = 'gemrate-sales-trends';
+    public const GEM_RATE_GEMRATE_SEARCH_PRESETS = 'gemrate-search-presets';
     public const GEOCODING_LOOKUP = 'geocoding-lookup';
     public const GEOCODING_REVERSE = 'geocoding-reverse';
     public const GEOCODING_SEARCH = 'geocoding-search';
@@ -195970,6 +211695,7 @@ final class OperationId
     public const HINDUSTAN_TIMES_HINDUSTANTIMES_HEADLINES = 'hindustantimes-headlines';
     public const HINDUSTAN_TIMES_HINDUSTANTIMES_NEWS = 'hindustantimes-news';
     public const HINDUSTAN_TIMES_HINDUSTANTIMES_SECTIONS = 'hindustantimes-sections';
+    public const HLTV_COACH = 'hltv-coach';
     public const HLTV_EVENT = 'hltv-event';
     public const HLTV_EVENTS = 'hltv-events';
     public const HLTV_MATCH = 'hltv-match';
@@ -195979,6 +211705,9 @@ final class OperationId
     public const HLTV_RESULTS = 'hltv-results';
     public const HLTV_SEARCH = 'hltv-search';
     public const HLTV_TEAM = 'hltv-team';
+    public const HLTV_TRANSFERS = 'hltv-transfers';
+    public const HLTV_VALVE_RANKING = 'hltv-valve-ranking';
+    public const HLTV_VALVE_RANKING_DETAILS = 'hltv-valve-ranking-details';
     public const HOLLYWOOD_REPORTER_HOLLYWOODREPORTER_ARTICLE = 'hollywoodreporter-article';
     public const HOLLYWOOD_REPORTER_HOLLYWOODREPORTER_AUTHOR = 'hollywoodreporter-author';
     public const HOLLYWOOD_REPORTER_HOLLYWOODREPORTER_HEADLINES = 'hollywoodreporter-headlines';
@@ -196002,6 +211731,11 @@ final class OperationId
     public const HOUSTON_CHRONICLE_HEADLINES = 'houston-chronicle-headlines';
     public const HOUSTON_CHRONICLE_NEWS = 'houston-chronicle-news';
     public const HOUSTON_CHRONICLE_SECTIONS = 'houston-chronicle-sections';
+    public const HOW_LONG_TO_BEAT_HLTB_FILTERS = 'hltb-filters';
+    public const HOW_LONG_TO_BEAT_HLTB_GAME = 'hltb-game';
+    public const HOW_LONG_TO_BEAT_HLTB_POPULAR = 'hltb-popular';
+    public const HOW_LONG_TO_BEAT_HLTB_SEARCH = 'hltb-search';
+    public const HOW_LONG_TO_BEAT_HLTB_STATS = 'hltb-stats';
     public const HOW_TO_GEEK_HOWTOGEEK_NEWS = 'howtogeek-news';
     public const HUFF_POST_HUFFPOST_ARTICLE = 'huffpost-article';
     public const HUFF_POST_HUFFPOST_AUTHOR = 'huffpost-author';
@@ -196013,6 +211747,9 @@ final class OperationId
     public const IINEWS_HEADLINES = 'inews-headlines';
     public const IINEWS_NEWS = 'inews-news';
     public const IINEWS_SECTIONS = 'inews-sections';
+    public const IBM_JOBS_FILTERS = 'ibm-jobs-filters';
+    public const IBM_JOBS_JOB = 'ibm-jobs-job';
+    public const IBM_JOBS_SEARCH = 'ibm-jobs-search';
     public const IGN_ARTICLE = 'ign-article';
     public const IGN_AUTHOR = 'ign-author';
     public const IGN_HEADLINES = 'ign-headlines';
@@ -196320,11 +212057,52 @@ final class OperationId
     public const LETTERBOXD_PERSON = 'letterboxd-person';
     public const LETTERBOXD_POPULAR = 'letterboxd-popular';
     public const LETTERBOXD_SEARCH = 'letterboxd-search';
+    public const LICHESS_CLOUD_EVAL = 'lichess-cloud-eval';
+    public const LICHESS_ENUMS = 'lichess-enums';
+    public const LICHESS_PUZZLE = 'lichess-puzzle';
+    public const LICHESS_PUZZLE_BATCH = 'lichess-puzzle-batch';
+    public const LICHESS_PUZZLE_DAILY = 'lichess-puzzle-daily';
+    public const LICHESS_PUZZLE_MANY = 'lichess-puzzle-many';
+    public const LICHESS_PUZZLE_NEXT = 'lichess-puzzle-next';
+    public const LICHESS_PUZZLE_THEMES = 'lichess-puzzle-themes';
+    public const LICHESS_SIMULS = 'lichess-simuls';
+    public const LICHESS_TABLEBASE = 'lichess-tablebase';
+    public const LICHESS_VERSION = 'lichess-version';
+    public const LIMITLESS_TCG_LIMITLESS_CARD = 'limitless-card';
+    public const LIMITLESS_TCG_LIMITLESS_CARDS = 'limitless-cards';
+    public const LIMITLESS_TCG_LIMITLESS_DECK = 'limitless-deck';
+    public const LIMITLESS_TCG_LIMITLESS_DECKLIST = 'limitless-decklist';
+    public const LIMITLESS_TCG_LIMITLESS_DECKLISTS = 'limitless-decklists';
+    public const LIMITLESS_TCG_LIMITLESS_DECKS = 'limitless-decks';
+    public const LIMITLESS_TCG_LIMITLESS_FILTERS = 'limitless-filters';
+    public const LIMITLESS_TCG_LIMITLESS_GAMES = 'limitless-games';
+    public const LIMITLESS_TCG_LIMITLESS_ONLINE_PAIRINGS = 'limitless-online-pairings';
+    public const LIMITLESS_TCG_LIMITLESS_ONLINE_STANDINGS = 'limitless-online-standings';
+    public const LIMITLESS_TCG_LIMITLESS_ONLINE_TOURNAMENT = 'limitless-online-tournament';
+    public const LIMITLESS_TCG_LIMITLESS_ONLINE_TOURNAMENTS = 'limitless-online-tournaments';
+    public const LIMITLESS_TCG_LIMITLESS_PLAYER = 'limitless-player';
+    public const LIMITLESS_TCG_LIMITLESS_PLAYERS = 'limitless-players';
+    public const LIMITLESS_TCG_LIMITLESS_TOURNAMENT = 'limitless-tournament';
+    public const LIMITLESS_TCG_LIMITLESS_TOURNAMENTS = 'limitless-tournaments';
+    public const LIMITLESS_TCG_LIMITLESS_TOURNAMENTS_JAPAN = 'limitless-tournaments-japan';
+    public const LIMITLESS_TCG_LIMITLESS_TOURNAMENTS_UPCOMING = 'limitless-tournaments-upcoming';
     public const LINKED_IN_LINKEDIN_COMPANY = 'linkedin-company';
     public const LINKED_IN_LINKEDIN_PRODUCT = 'linkedin-product';
     public const LINKED_IN_LINKEDIN_PRODUCT_CATEGORIES = 'linkedin-product-categories';
     public const LINKED_IN_LINKEDIN_PRODUCTS_SEARCH = 'linkedin-products-search';
     public const LINKED_IN_LINKEDIN_SHOWCASE = 'linkedin-showcase';
+    public const LIQUIPEDIA_ALL_PAGES = 'liquipedia-all-pages';
+    public const LIQUIPEDIA_BACKLINKS = 'liquipedia-backlinks';
+    public const LIQUIPEDIA_CATEGORIES = 'liquipedia-categories';
+    public const LIQUIPEDIA_CATEGORY_MEMBERS = 'liquipedia-category-members';
+    public const LIQUIPEDIA_ENUMS = 'liquipedia-enums';
+    public const LIQUIPEDIA_LINKS = 'liquipedia-links';
+    public const LIQUIPEDIA_PAGE = 'liquipedia-page';
+    public const LIQUIPEDIA_PREFIX_SEARCH = 'liquipedia-prefix-search';
+    public const LIQUIPEDIA_RECENT_CHANGES = 'liquipedia-recent-changes';
+    public const LIQUIPEDIA_SEARCH = 'liquipedia-search';
+    public const LIQUIPEDIA_TAGS = 'liquipedia-tags';
+    public const LIQUIPEDIA_WIKIS = 'liquipedia-wikis';
     public const LIVE_SCIENCE_LIVESCIENCE_ARTICLE = 'livescience-article';
     public const LIVE_SCIENCE_LIVESCIENCE_AUTHOR = 'livescience-author';
     public const LIVE_SCIENCE_LIVESCIENCE_HEADLINES = 'livescience-headlines';
@@ -196664,6 +212442,23 @@ final class OperationId
     public const MOTO_GP_MOTOGP_STANDINGS = 'motogp-standings';
     public const MOTO_GP_MOTOGP_STANDINGS_FILES = 'motogp-standings-files';
     public const MOTO_GP_MOTOGP_STARTING_GRID = 'motogp-starting-grid';
+    public const MOTO_GP_MOTOGP_WORLD_STANDINGS = 'motogp-world-standings';
+    public const MTGGOLDFISH_ARCHETYPE = 'mtggoldfish-archetype';
+    public const MTGGOLDFISH_AUTOCOMPLETE = 'mtggoldfish-autocomplete';
+    public const MTGGOLDFISH_CARD = 'mtggoldfish-card';
+    public const MTGGOLDFISH_DECK = 'mtggoldfish-deck';
+    public const MTGGOLDFISH_DECK_SEARCH = 'mtggoldfish-deck-search';
+    public const MTGGOLDFISH_FILTERS = 'mtggoldfish-filters';
+    public const MTGGOLDFISH_METAGAME = 'mtggoldfish-metagame';
+    public const MTGGOLDFISH_MOVERS = 'mtggoldfish-movers';
+    public const MTGGOLDFISH_PRICE_HISTORY = 'mtggoldfish-price-history';
+    public const MTGGOLDFISH_PRICE_INDEX = 'mtggoldfish-price-index';
+    public const MTGGOLDFISH_PRICE_LIST = 'mtggoldfish-price-list';
+    public const MTGGOLDFISH_SET = 'mtggoldfish-set';
+    public const MTGGOLDFISH_SETS = 'mtggoldfish-sets';
+    public const MTGGOLDFISH_STAPLES = 'mtggoldfish-staples';
+    public const MTGGOLDFISH_TOURNAMENT = 'mtggoldfish-tournament';
+    public const MTGGOLDFISH_TOURNAMENTS = 'mtggoldfish-tournaments';
     public const NASCAR_LIVE_FEED = 'nascar-live-feed';
     public const NASCAR_RACE_WEEKEND = 'nascar-race-weekend';
     public const NASCAR_RACES = 'nascar-races';
@@ -196681,10 +212476,12 @@ final class OperationId
     public const NATIONAL_POST_NATIONALPOST_SECTIONS = 'nationalpost-sections';
     public const NBA_BOX_SCORE = 'nba-box-score';
     public const NBA_BOX_SCORE_ADVANCED = 'nba-box-score-advanced';
+    public const NBA_BOX_SCORE_DEFENSIVE = 'nba-box-score-defensive';
     public const NBA_BOX_SCORE_FOUR_FACTORS = 'nba-box-score-four-factors';
     public const NBA_BOX_SCORE_MISC = 'nba-box-score-misc';
     public const NBA_BOX_SCORE_PLAYER_TRACK = 'nba-box-score-player-track';
     public const NBA_BOX_SCORE_SCORING = 'nba-box-score-scoring';
+    public const NBA_BOX_SCORE_SUMMARY = 'nba-box-score-summary';
     public const NBA_BOX_SCORE_USAGE = 'nba-box-score-usage';
     public const NBA_COMMON_ALL_PLAYERS = 'nba-common-all-players';
     public const NBA_DRAFT_COMBINE_ANTHRO = 'nba-draft-combine-anthro';
@@ -196693,9 +212490,12 @@ final class OperationId
     public const NBA_GAME_DETAIL = 'nba-game-detail';
     public const NBA_GAMES = 'nba-games';
     public const NBA_HOMEPAGE_LEADERS = 'nba-homepage-leaders';
+    public const NBA_HOMEPAGE_V2 = 'nba-homepage-v2';
+    public const NBA_HUSTLE_PLAYER = 'nba-hustle-player';
     public const NBA_HUSTLE_STATS = 'nba-hustle-stats';
     public const NBA_HUSTLE_TEAM = 'nba-hustle-team';
     public const NBA_LEAGUE_GAME_LOG = 'nba-league-game-log';
+    public const NBA_LINEUP_SHOT_CHART = 'nba-lineup-shot-chart';
     public const NBA_LINEUPS = 'nba-lineups';
     public const NBA_NEWS = 'nba-news';
     public const NBA_OPP_PT_SHOT = 'nba-opp-pt-shot';
@@ -196704,6 +212504,13 @@ final class OperationId
     public const NBA_PLAYER_BIO_STATS = 'nba-player-bio-stats';
     public const NBA_PLAYER_CAREER_STATS = 'nba-player-career-stats';
     public const NBA_PLAYER_CLUTCH = 'nba-player-clutch';
+    public const NBA_PLAYER_COMPARE = 'nba-player-compare';
+    public const NBA_PLAYER_DASH_BY_CLUTCH = 'nba-player-dash-by-clutch';
+    public const NBA_PLAYER_DASH_BY_GAME_SPLITS = 'nba-player-dash-by-game-splits';
+    public const NBA_PLAYER_DASH_BY_LAST_NGAMES = 'nba-player-dash-by-last-n-games';
+    public const NBA_PLAYER_DASH_BY_OPPONENT = 'nba-player-dash-by-opponent';
+    public const NBA_PLAYER_DASH_PT_PASS = 'nba-player-dash-pt-pass';
+    public const NBA_PLAYER_DASH_PT_REB = 'nba-player-dash-pt-reb';
     public const NBA_PLAYER_DASH_PT_SHOTS = 'nba-player-dash-pt-shots';
     public const NBA_PLAYER_GAME_LOGS = 'nba-player-game-logs';
     public const NBA_PLAYER_INFO = 'nba-player-info';
@@ -196713,12 +212520,19 @@ final class OperationId
     public const NBA_PLAYER_STREAK_FINDER = 'nba-player-streak-finder';
     public const NBA_PLAYERS = 'nba-players';
     public const NBA_PLAYOFF_PICTURE = 'nba-playoff-picture';
+    public const NBA_PLAYOFF_SERIES = 'nba-playoff-series';
     public const NBA_PT_DEFEND = 'nba-pt-defend';
     public const NBA_PT_STATS = 'nba-pt-stats';
     public const NBA_SCOREBOARD = 'nba-scoreboard';
+    public const NBA_SHOT_CHART = 'nba-shot-chart';
     public const NBA_STANDINGS = 'nba-standings';
     public const NBA_SYNERGY_PLAY_TYPES = 'nba-synergy-play-types';
+    public const NBA_TEAM_DASH_BY_CLUTCH = 'nba-team-dash-by-clutch';
+    public const NBA_TEAM_DASH_BY_GAME_SPLITS = 'nba-team-dash-by-game-splits';
+    public const NBA_TEAM_DASH_BY_LAST_NGAMES = 'nba-team-dash-by-last-n-games';
+    public const NBA_TEAM_DASH_BY_OPPONENT = 'nba-team-dash-by-opponent';
     public const NBA_TEAM_DASH_PT_PASS = 'nba-team-dash-pt-pass';
+    public const NBA_TEAM_DASH_PT_REB = 'nba-team-dash-pt-reb';
     public const NBA_TEAM_DASH_PT_SHOTS = 'nba-team-dash-pt-shots';
     public const NBA_TEAM_DETAILS = 'nba-team-details';
     public const NBA_TEAM_GAME_LOGS = 'nba-team-game-logs';
@@ -196995,6 +212809,12 @@ final class OperationId
     public const PAGE_SIX_PAGESIX_HEADLINES = 'pagesix-headlines';
     public const PAGE_SIX_PAGESIX_NEWS = 'pagesix-news';
     public const PAGE_SIX_PAGESIX_SECTIONS = 'pagesix-sections';
+    public const PANDA_EXPRESS_PANDAEXPRESS_CATEGORIES = 'pandaexpress-categories';
+    public const PANDA_EXPRESS_PANDAEXPRESS_DIRECTORY = 'pandaexpress-directory';
+    public const PANDA_EXPRESS_PANDAEXPRESS_ITEM = 'pandaexpress-item';
+    public const PANDA_EXPRESS_PANDAEXPRESS_MENU = 'pandaexpress-menu';
+    public const PANDA_EXPRESS_PANDAEXPRESS_NEARBY = 'pandaexpress-nearby';
+    public const PANDA_EXPRESS_PANDAEXPRESS_STORE = 'pandaexpress-store';
     public const PANDAMART_SEARCH = 'pandamart-search';
     public const PANDAMART_STORE = 'pandamart-store';
     public const PANDAMART_STORE_CATEGORIES = 'pandamart-store-categories';
@@ -197055,6 +212875,12 @@ final class OperationId
     public const PCMAG_HEADLINES = 'pcmag-headlines';
     public const PCMAG_NEWS = 'pcmag-news';
     public const PCMAG_SECTIONS = 'pcmag-sections';
+    public const PEACOCK_CHANNELS = 'peacock-channels';
+    public const PEACOCK_COLLECTION = 'peacock-collection';
+    public const PEACOCK_GENRES = 'peacock-genres';
+    public const PEACOCK_PAGE = 'peacock-page';
+    public const PEACOCK_SEASON = 'peacock-season';
+    public const PEACOCK_TITLE = 'peacock-title';
     public const PEOPLE_ARTICLE = 'people-article';
     public const PEOPLE_AUTHOR = 'people-author';
     public const PEOPLE_HEADLINES = 'people-headlines';
@@ -197066,6 +212892,9 @@ final class OperationId
     public const PET_SMART_PETSMART_SEARCH = 'petsmart-search';
     public const PET_SMART_PETSMART_SEARCH_FILTERS = 'petsmart-search-filters';
     public const PET_SMART_PETSMART_SUGGEST = 'petsmart-suggest';
+    public const PGA_TOUR_PGATOUR_CUP_OPTIONS = 'pgatour-cup-options';
+    public const PGA_TOUR_PGATOUR_CUP_STANDINGS = 'pgatour-cup-standings';
+    public const PGA_TOUR_PGATOUR_CUPS = 'pgatour-cups';
     public const PGA_TOUR_PGATOUR_LEADERBOARD = 'pgatour-leaderboard';
     public const PGA_TOUR_PGATOUR_PLAYERS = 'pgatour-players';
     public const PGA_TOUR_PGATOUR_SCHEDULE = 'pgatour-schedule';
@@ -197124,6 +212953,13 @@ final class OperationId
     public const PIZZA_HUT_PIZZAHUT_MODIFIERS = 'pizzahut-modifiers';
     public const PIZZA_HUT_PIZZAHUT_STORE = 'pizzahut-store';
     public const PIZZA_HUT_PIZZAHUT_STORES = 'pizzahut-stores';
+    public const PLATFORM7_BREW_CATEGORIES = '7brew-categories';
+    public const PLATFORM7_BREW_DIRECTORY = '7brew-directory';
+    public const PLATFORM7_BREW_ITEM = '7brew-item';
+    public const PLATFORM7_BREW_MENU = '7brew-menu';
+    public const PLATFORM7_BREW_NEARBY = '7brew-nearby';
+    public const PLATFORM7_BREW_OPTIONS = '7brew-options';
+    public const PLATFORM7_BREW_STORE = '7brew-store';
     public const PLAY_STATION_PLAYSTATION_BROWSE = 'playstation-browse';
     public const PLAY_STATION_PLAYSTATION_CATEGORY = 'playstation-category';
     public const PLAY_STATION_PLAYSTATION_CONCEPT = 'playstation-concept';
@@ -197134,6 +212970,28 @@ final class OperationId
     public const PLAY_STATION_PLAYSTATION_PRODUCT = 'playstation-product';
     public const PLAY_STATION_PLAYSTATION_SEARCH = 'playstation-search';
     public const PLAY_STATION_PLAYSTATION_SUGGEST = 'playstation-suggest';
+    public const POKE_DATA_POKEDATA_CARD_SALES = 'pokedata-card-sales';
+    public const POKE_DATA_POKEDATA_CARD_STATS = 'pokedata-card-stats';
+    public const POKE_DATA_POKEDATA_MARKETPLACE_LISTING = 'pokedata-marketplace-listing';
+    public const POKE_DATA_POKEDATA_MARKETPLACE_SEARCH = 'pokedata-marketplace-search';
+    public const POKE_DATA_POKEDATA_PORTFOLIO = 'pokedata-portfolio';
+    public const POKE_DATA_POKEDATA_PORTFOLIO_VALUE = 'pokedata-portfolio-value';
+    public const POKE_DATA_POKEDATA_PORTFOLIOS = 'pokedata-portfolios';
+    public const POKE_DATA_POKEDATA_PRODUCT_SALES = 'pokedata-product-sales';
+    public const POKE_DATA_POKEDATA_PRODUCT_STATS = 'pokedata-product-stats';
+    public const POKE_DATA_POKEDATA_PRODUCTS = 'pokedata-products';
+    public const POKE_DATA_POKEDATA_PRODUCTS_FACETS = 'pokedata-products-facets';
+    public const POKE_DATA_POKEDATA_SEARCH = 'pokedata-search';
+    public const POKE_DATA_POKEDATA_SET = 'pokedata-set';
+    public const POKE_DATA_POKEDATA_SET_CARDS = 'pokedata-set-cards';
+    public const POKE_DATA_POKEDATA_SET_PRODUCTS = 'pokedata-set-products';
+    public const POKE_DATA_POKEDATA_SETS = 'pokedata-sets';
+    public const POKE_DATA_POKEDATA_SOURCES = 'pokedata-sources';
+    public const POKE_DATA_POKEDATA_TCGS = 'pokedata-tcgs';
+    public const POKE_TRACE_POKETRACE_CARD = 'poketrace-card';
+    public const POKE_TRACE_POKETRACE_CATALOG = 'poketrace-catalog';
+    public const POKE_TRACE_POKETRACE_FILTERS = 'poketrace-filters';
+    public const POKE_TRACE_POKETRACE_SETS = 'poketrace-sets';
     public const POLITICO_ARTICLE = 'politico-article';
     public const POLITICO_AUTHOR = 'politico-author';
     public const POLITICO_CATEGORIES = 'politico-categories';
@@ -197351,18 +213209,38 @@ final class OperationId
     public const REDDIT_ARCHIVE_POSTS_SEARCH = 'reddit-archive-posts-search';
     public const REDDIT_ARCHIVE_SUBREDDITS_SEARCH = 'reddit-archive-subreddits-search';
     public const REDDIT_ARCHIVE_TIME_SERIES = 'reddit-archive-time-series';
+    public const REDDIT_COMMENT = 'reddit-comment';
+    public const REDDIT_COMMENT_AWARDS = 'reddit-comment-awards';
     public const REDDIT_COMMENTS = 'reddit-comments';
     public const REDDIT_DOMAIN_POSTS = 'reddit-domain-posts';
     public const REDDIT_LEADS = 'reddit-leads';
+    public const REDDIT_POPULAR = 'reddit-popular';
     public const REDDIT_POST = 'reddit-post';
+    public const REDDIT_POST_AWARDS = 'reddit-post-awards';
+    public const REDDIT_POSTS_BY_IDS = 'reddit-posts-by-ids';
     public const REDDIT_SEARCH = 'reddit-search';
+    public const REDDIT_SEARCH_COMMENTS = 'reddit-search-comments';
+    public const REDDIT_SEARCH_PEOPLE = 'reddit-search-people';
     public const REDDIT_SUBREDDIT_ABOUT = 'reddit-subreddit-about';
     public const REDDIT_SUBREDDIT_COMMENTS = 'reddit-subreddit-comments';
+    public const REDDIT_SUBREDDIT_FLAIRS = 'reddit-subreddit-flairs';
+    public const REDDIT_SUBREDDIT_HIGHLIGHTS = 'reddit-subreddit-highlights';
+    public const REDDIT_SUBREDDIT_LEADERBOARD_CATEGORIES = 'reddit-subreddit-leaderboard-categories';
     public const REDDIT_SUBREDDIT_POSTS = 'reddit-subreddit-posts';
+    public const REDDIT_SUBREDDIT_RULES = 'reddit-subreddit-rules';
+    public const REDDIT_SUBREDDIT_USER_FLAIRS = 'reddit-subreddit-user-flairs';
+    public const REDDIT_SUBREDDIT_WIKI = 'reddit-subreddit-wiki';
+    public const REDDIT_SUBREDDITS_DISCOVER = 'reddit-subreddits-discover';
     public const REDDIT_SUBREDDITS_POSTS = 'reddit-subreddits-posts';
+    public const REDDIT_SUBREDDITS_SEARCH = 'reddit-subreddits-search';
+    public const REDDIT_SUBREDDITS_SUGGEST = 'reddit-subreddits-suggest';
+    public const REDDIT_TOPICS = 'reddit-topics';
+    public const REDDIT_TOPICS_BROAD = 'reddit-topics-broad';
+    public const REDDIT_TOPICS_SEARCH = 'reddit-topics-search';
     public const REDDIT_TRENDS = 'reddit-trends';
     public const REDDIT_USER_COMMENTS = 'reddit-user-comments';
     public const REDDIT_USER_POSTS = 'reddit-user-posts';
+    public const REDDIT_USER_PROFILE = 'reddit-user-profile';
     public const REDFIN_ESTIMATE = 'redfin-estimate';
     public const REDFIN_PROPERTY = 'redfin-property';
     public const REDFIN_REGION_TRENDS = 'redfin-region-trends';
@@ -197574,6 +213452,7 @@ final class OperationId
     public const SEPHORA_SEARCH = 'sephora-search';
     public const SEPHORA_STORES = 'sephora-stores';
     public const SEPHORA_SUGGEST = 'sephora-suggest';
+    public const SEREBII_POKEMONGO_EGGS = 'serebii-pokemongo-eggs';
     public const SEREBII_POKEMONGO_EVENT_CATEGORIES = 'serebii-pokemongo-event-categories';
     public const SEREBII_POKEMONGO_EVENT_DETAIL_COMMUNITY_DAY = 'serebii-pokemongo-event-detail-community-day';
     public const SEREBII_POKEMONGO_EVENT_DETAIL_GLOBAL = 'serebii-pokemongo-event-detail-global';
@@ -197587,6 +213466,7 @@ final class OperationId
     public const SEREBII_POKEMONGO_EVENT_ONLY_MOVES = 'serebii-pokemongo-event-only-moves';
     public const SEREBII_POKEMONGO_EVENT_ONLY_RESEARCH = 'serebii-pokemongo-event-only-research';
     public const SEREBII_POKEMONGO_EVENTS = 'serebii-pokemongo-events';
+    public const SEREBII_POKEMONGO_RAID_BOSSES = 'serebii-pokemongo-raid-bosses';
     public const SEREBII_POKEMONGO_SPOTLIGHT_HOURS = 'serebii-pokemongo-spotlight-hours';
     public const SEREBII_POKEMONGO_UNOWN_EVENTS = 'serebii-pokemongo-unown-events';
     public const SEVEN_NEWS_AUSTRALIA_ARTICLE = 'sevennewsau-article';
@@ -197699,6 +213579,15 @@ final class OperationId
     public const SKY_SPORTS_SKYSPORTS_HEADLINES = 'skysports-headlines';
     public const SKY_SPORTS_SKYSPORTS_NEWS = 'skysports-news';
     public const SKY_SPORTS_SKYSPORTS_SECTIONS = 'skysports-sections';
+    public const SKYSCANNER_CURRENCIES = 'skyscanner-currencies';
+    public const SKYSCANNER_FLIGHTS_EXPLORE = 'skyscanner-flights-explore';
+    public const SKYSCANNER_FLIGHTS_OPTIONS = 'skyscanner-flights-options';
+    public const SKYSCANNER_FLIGHTS_PRICE_CALENDAR = 'skyscanner-flights-price-calendar';
+    public const SKYSCANNER_FLIGHTS_PRICE_CALENDAR_MONTHS = 'skyscanner-flights-price-calendar-months';
+    public const SKYSCANNER_FLIGHTS_SEARCH = 'skyscanner-flights-search';
+    public const SKYSCANNER_LOCALES = 'skyscanner-locales';
+    public const SKYSCANNER_MARKETS = 'skyscanner-markets';
+    public const SKYSCANNER_PLACES_AUTOSUGGEST = 'skyscanner-places-autosuggest';
     public const SLATE_ARTICLE = 'slate-article';
     public const SLATE_CATEGORIES = 'slate-categories';
     public const SLATE_HEADLINES = 'slate-headlines';
@@ -197713,6 +213602,18 @@ final class OperationId
     public const SLICKDEALS_PRIMARY_CATEGORY = 'slickdeals-primary-category';
     public const SLICKDEALS_SEARCH = 'slickdeals-search';
     public const SLICKDEALS_SEARCH_ADVANCED = 'slickdeals-search-advanced';
+    public const SNKRDUNK_BRANDS = 'snkrdunk-brands';
+    public const SNKRDUNK_CATEGORIES = 'snkrdunk-categories';
+    public const SNKRDUNK_FILTERS = 'snkrdunk-filters';
+    public const SNKRDUNK_PRICE_CHART = 'snkrdunk-price-chart';
+    public const SNKRDUNK_PRODUCT = 'snkrdunk-product';
+    public const SNKRDUNK_PRODUCT_LISTINGS = 'snkrdunk-product-listings';
+    public const SNKRDUNK_PRODUCT_RELATED = 'snkrdunk-product-related';
+    public const SNKRDUNK_SALES_HISTORY = 'snkrdunk-sales-history';
+    public const SNKRDUNK_SEARCH = 'snkrdunk-search';
+    public const SNKRDUNK_SUGGEST = 'snkrdunk-suggest';
+    public const SNKRDUNK_TRADING_CARDS = 'snkrdunk-trading-cards';
+    public const SNKRDUNK_TRADING_CARDS_USED = 'snkrdunk-trading-cards-used';
     public const SOFA_SCORE_SOFASCORE_CATEGORIES = 'sofascore-categories';
     public const SOFA_SCORE_SOFASCORE_CATEGORY_TOURNAMENTS = 'sofascore-category-tournaments';
     public const SOFA_SCORE_SOFASCORE_DRAFT = 'sofascore-draft';
@@ -197727,7 +213628,7 @@ final class OperationId
     public const SOFA_SCORE_SOFASCORE_EVENT_COMMENTS = 'sofascore-event-comments';
     public const SOFA_SCORE_SOFASCORE_EVENT_ESPORTS_GAMES = 'sofascore-event-esports-games';
     public const SOFA_SCORE_SOFASCORE_EVENT_GRAPH = 'sofascore-event-graph';
-    public const SOFA_SCORE_SOFASCORE_EVENT_H2H = 'sofascore-event-h2h';
+    public const SOFA_SCORE_SOFASCORE_EVENT_H2_H = 'sofascore-event-h2h';
     public const SOFA_SCORE_SOFASCORE_EVENT_HIGHLIGHTS = 'sofascore-event-highlights';
     public const SOFA_SCORE_SOFASCORE_EVENT_INCIDENTS = 'sofascore-event-incidents';
     public const SOFA_SCORE_SOFASCORE_EVENT_INNINGS = 'sofascore-event-innings';
@@ -197764,7 +213665,9 @@ final class OperationId
     public const SOFA_SCORE_SOFASCORE_PLAYER_SEASON_HEATMAP = 'sofascore-player-season-heatmap';
     public const SOFA_SCORE_SOFASCORE_PLAYER_SEASON_STATISTICS = 'sofascore-player-season-statistics';
     public const SOFA_SCORE_SOFASCORE_PLAYER_STATISTICAL_RANKINGS = 'sofascore-player-statistical-rankings';
+    public const SOFA_SCORE_SOFASCORE_PLAYER_STATISTICS = 'sofascore-player-statistics';
     public const SOFA_SCORE_SOFASCORE_PLAYER_STATISTICS_SEASONS = 'sofascore-player-statistics-seasons';
+    public const SOFA_SCORE_SOFASCORE_PLAYER_TOURNAMENT_EVENTS = 'sofascore-player-tournament-events';
     public const SOFA_SCORE_SOFASCORE_PLAYER_TOURNAMENTS = 'sofascore-player-tournaments';
     public const SOFA_SCORE_SOFASCORE_PLAYER_TRANSFERS = 'sofascore-player-transfers';
     public const SOFA_SCORE_SOFASCORE_RANKING_TYPES = 'sofascore-ranking-types';
@@ -197866,12 +213769,21 @@ final class OperationId
     public const SPEEDRUN_COM_SPEEDRUN_LEVELS = 'speedrun-levels';
     public const SPEEDRUN_COM_SPEEDRUN_RECORDS = 'speedrun-records';
     public const SPEEDRUN_COM_SPEEDRUN_RESOURCE_OPTIONS = 'speedrun-resource-options';
+    public const SPEEDRUN_COM_SPEEDRUN_RUN = 'speedrun-run';
+    public const SPEEDRUN_COM_SPEEDRUN_RUNS = 'speedrun-runs';
+    public const SPEEDRUN_COM_SPEEDRUN_RUNS_OPTIONS = 'speedrun-runs-options';
     public const SPEEDRUN_COM_SPEEDRUN_VARIABLES = 'speedrun-variables';
     public const SPORTING_NEWS_SPORTINGNEWS_ARTICLE = 'sportingnews-article';
     public const SPORTING_NEWS_SPORTINGNEWS_AUTHOR = 'sportingnews-author';
     public const SPORTING_NEWS_SPORTINGNEWS_HEADLINES = 'sportingnews-headlines';
     public const SPORTING_NEWS_SPORTINGNEWS_NEWS = 'sportingnews-news';
     public const SPORTING_NEWS_SPORTINGNEWS_SECTIONS = 'sportingnews-sections';
+    public const SPORTS_CARDS_PRO_SPORTSCARDSPRO_BRAND = 'sportscardspro-brand';
+    public const SPORTS_CARDS_PRO_SPORTSCARDSPRO_CATEGORIES = 'sportscardspro-categories';
+    public const SPORTS_CARDS_PRO_SPORTSCARDSPRO_PRICE_HISTORY = 'sportscardspro-price-history';
+    public const SPORTS_CARDS_PRO_SPORTSCARDSPRO_PRODUCT = 'sportscardspro-product';
+    public const SPORTS_CARDS_PRO_SPORTSCARDSPRO_SEARCH = 'sportscardspro-search';
+    public const SPORTS_CARDS_PRO_SPORTSCARDSPRO_SET = 'sportscardspro-set';
     public const SPORTSKEEDA_ARTICLE = 'sportskeeda-article';
     public const SPORTSKEEDA_AUTHOR = 'sportskeeda-author';
     public const SPORTSKEEDA_COLLEGE_BASKETBALL_SCHEDULE = 'sportskeeda-college-basketball-schedule';
@@ -197920,6 +213832,8 @@ final class OperationId
     public const SPORTSKEEDA_WIKI_OPTIONS = 'sportskeeda-wiki-options';
     public const SPORTSKEEDA_WIKI_PAGES = 'sportskeeda-wiki-pages';
     public const SPORTSKEEDA_WIKI_SUMMARY = 'sportskeeda-wiki-summary';
+    public const SPOT_HERO_SPOTHERO_MONTHLY_SEARCH = 'spothero-monthly-search';
+    public const SPOT_HERO_SPOTHERO_TRANSIENT_SEARCH = 'spothero-transient-search';
     public const SPOTIFY_ALBUM = 'spotify-album';
     public const SPOTIFY_ALBUM_TRACKS = 'spotify-album-tracks';
     public const SPOTIFY_ALBUMS_SEARCH = 'spotify-albums-search';
@@ -198057,6 +213971,14 @@ final class OperationId
     public const SUBWAY_NEARBY = 'subway-nearby';
     public const SUBWAY_SITEMAP = 'subway-sitemap';
     public const SUBWAY_STORE = 'subway-store';
+    public const SUNO_CONTEST = 'suno-contest';
+    public const SUNO_CONTESTS = 'suno-contests';
+    public const SUNO_EXPLORE = 'suno-explore';
+    public const SUNO_FEED = 'suno-feed';
+    public const SUNO_GENRES = 'suno-genres';
+    public const SUNO_PLAYLIST = 'suno-playlist';
+    public const SUNO_PROFILE = 'suno-profile';
+    public const SUNO_SONG = 'suno-song';
     public const SWIGGY_COLLECTIONS = 'swiggy-collections';
     public const SWIGGY_RESTAURANT = 'swiggy-restaurant';
     public const SWIGGY_RESTAURANT_MENU = 'swiggy-restaurant-menu';
@@ -198069,6 +213991,10 @@ final class OperationId
     public const TACO_BELL_STORE = 'taco-bell-store';
     public const TACO_BELL_STORE_MENU = 'taco-bell-store-menu';
     public const TACO_BELL_STORES = 'taco-bell-stores';
+    public const TAP_TAP_TAPTAP_APP = 'taptap-app';
+    public const TAP_TAP_TAPTAP_GENRES = 'taptap-genres';
+    public const TAP_TAP_TAPTAP_TAG_GAMES = 'taptap-tag-games';
+    public const TAP_TAP_TAPTAP_TOP_CHARTS = 'taptap-top-charts';
     public const TARGET_CATEGORIES = 'target-categories';
     public const TARGET_CATEGORY_PRODUCTS = 'target-category-products';
     public const TARGET_FILTER_OPTIONS = 'target-filter-options';
@@ -198474,6 +214400,7 @@ final class OperationId
     public const UBER_EATS_UBEREATS_STORE = 'ubereats-store';
     public const UBER_EATS_UBEREATS_STORE_MENU = 'ubereats-store-menu';
     public const UBER_EATS_UBEREATS_STORE_REVIEWS = 'ubereats-store-reviews';
+    public const UFCSTATS_STAT_LEADERS = 'ufcstats-stat-leaders';
     public const ULTA_BEAUTY_ULTA_CATEGORIES = 'ulta-categories';
     public const ULTA_BEAUTY_ULTA_CATEGORY = 'ulta-category';
     public const ULTA_BEAUTY_ULTA_PRODUCT = 'ulta-product';
@@ -198673,6 +214600,8 @@ final class OperationId
     public const WTA_COUNTRIES = 'wta-countries';
     public const WTA_MATCH_STATES = 'wta-match-states';
     public const WTA_RANKINGS = 'wta-rankings';
+    public const WTA_SEASON_STATS = 'wta-season-stats';
+    public const WTA_SEASON_STATS_OPTIONS = 'wta-season-stats-options';
     public const WTA_TOURNAMENT = 'wta-tournament';
     public const WTA_TOURNAMENT_DRAWS = 'wta-tournament-draws';
     public const WTA_TOURNAMENT_MATCHES = 'wta-tournament-matches';
@@ -198681,8 +214610,13 @@ final class OperationId
     public const WTA_TOURNAMENT_SEASONS = 'wta-tournament-seasons';
     public const WTA_TOURNAMENTS = 'wta-tournaments';
     public const XPOST = 'x-post';
+    public const XPOST_DETAIL = 'x-post-detail';
     public const XPROFILE = 'x-profile';
+    public const XPROFILE_HIGHLIGHTS = 'x-profile-highlights';
     public const XPROFILE_POSTS = 'x-profile-posts';
+    public const XTRENDING = 'x-trending';
+    public const XTRENDS = 'x-trends';
+    public const XTRENDS_LOCATIONS = 'x-trends-locations';
     public const XBOX_BROWSE = 'xbox-browse';
     public const XBOX_COLLECTION = 'xbox-collection';
     public const XBOX_GAME = 'xbox-game';
@@ -198888,6 +214822,12 @@ final class OperationId
     public const ZDNET_HEADLINES = 'zdnet-headlines';
     public const ZDNET_NEWS = 'zdnet-news';
     public const ZDNET_SECTIONS = 'zdnet-sections';
+    public const ZEDGE_BROWSE = 'zedge-browse';
+    public const ZEDGE_CATEGORIES = 'zedge-categories';
+    public const ZEDGE_CREATORS = 'zedge-creators';
+    public const ZEDGE_ITEM = 'zedge-item';
+    public const ZEDGE_TAGS = 'zedge-tags';
+    public const ZEDGE_TRENDING_SEARCHES = 'zedge-trending-searches';
     public const ZILLOW_AUTOCOMPLETE = 'zillow-autocomplete';
     public const ZILLOW_PROPERTY = 'zillow-property';
     public const ZILLOW_SEARCH = 'zillow-search';
